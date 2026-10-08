@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Xcode: per-user state and build output
+xcuserdata/
+DerivedData/
+*.xcuserstate
+build/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Packages/
+
+# Secrets (API keys, Firebase config with keys) never go into git
+*.env
+.netrc
