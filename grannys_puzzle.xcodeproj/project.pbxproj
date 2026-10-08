@@ -12,7 +12,6 @@
 
 /* Begin PBXFileReference section */
 		540DBB71307858E60067F8F0 /* grannys_puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grannys_puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		540DBB81307859E30067F8F0 /* grannys_puzzle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = grannys_puzzle.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -46,11 +45,6 @@
 			children = (
 				540DBB71307858E60067F8F0 /* grannys_puzzle.app */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		540DBB83307859E30067F8F0 /* Products */ = {
-			isa = PBXGroup;
 			name = Products;
 			sourceTree = "<group>";
 		};
@@ -108,12 +102,6 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 540DBB72307858E60067F8F0 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 540DBB83307859E30067F8F0 /* Products */;
-					ProjectRef = 540DBB81307859E30067F8F0 /* grannys_puzzle.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				540DBB70307858E60067F8F0 /* grannys_puzzle */,
