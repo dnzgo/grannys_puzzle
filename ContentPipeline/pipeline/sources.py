@@ -77,6 +77,11 @@ def read_wordnet(dict_dir: Path) -> dict[str, Definition]:
     For each word, keeps the most-used sense across parts of speech (by
     `tagsense_cnt`, how often that word was tagged in a reference corpus) and
     returns its first definition, minus example sentences.
+
+    Senses WordNet marks as slurs or obscene are skipped in favour of the
+    word's next sense: "shrimp" should be the crustacean, not "disparaging
+    terms for small people". A word with no clean sense gets no definition,
+    which keeps it out of the word list entirely.
     """
     glosses: dict[tuple[str, str], str] = {}
     best: dict[str, tuple[int, Definition]] = {}
@@ -98,14 +103,34 @@ def read_wordnet(dict_dir: Path) -> dict[str, Definition]:
                 continue
             pointer_count = int(fields[3])
             tagged_count = int(fields[5 + pointer_count])
-            first_offset = fields[6 + pointer_count]
-            gloss = glosses.get((pos, first_offset))
+            sense_offsets = fields[6 + pointer_count:]
+            gloss = next(
+                (
+                    candidate
+                    for offset in sense_offsets
+                    if (candidate := glosses.get((pos, offset))) and not is_offensive_gloss(candidate)
+                ),
+                None,
+            )
             if not gloss:
                 continue
             if lemma not in best or tagged_count > best[lemma][0]:
                 best[lemma] = (tagged_count, Definition(pos, gloss))
 
     return {lemma: definition for lemma, (_, definition) in best.items()}
+
+
+# Phrases WordNet uses to label insulting or obscene senses. Deliberately
+# narrow: plain "offensive" also means "attacking" ("an offensive against an
+# enemy"), and plain "slang" covers harmless words like "tummy".
+_OFFENSIVE_GLOSS = re.compile(
+    r"\b(slur|offensive (term|name|word)s?|obscene|disparaging|derogatory|vulgar)\b",
+    re.IGNORECASE,
+)
+
+
+def is_offensive_gloss(gloss: str) -> bool:
+    return _OFFENSIVE_GLOSS.search(gloss) is not None
 
 
 def _first_definition(gloss: str) -> str:

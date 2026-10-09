@@ -116,6 +116,24 @@ class LayoutWeights:
         )
 
 
+def letters_connected(layout: Layout) -> bool:
+    """True if every letter cell can reach every other one through
+    side-by-side letter cells (a flood fill from the first letter cell)."""
+    rows, columns = len(layout), len(layout[0])
+    letters = {(r, c) for r in range(rows) for c in range(columns) if not layout[r][c]}
+    if not letters:
+        return False
+    start = next(iter(letters))
+    reached, to_visit = {start}, [start]
+    while to_visit:
+        row, column = to_visit.pop()
+        for neighbour in ((row + 1, column), (row - 1, column), (row, column + 1), (row, column - 1)):
+            if neighbour in letters and neighbour not in reached:
+                reached.add(neighbour)
+                to_visit.append(neighbour)
+    return len(reached) == len(letters)
+
+
 def layout_key(layout: Layout) -> str:
     """A compact text form of a layout, for remembering ones that failed."""
     return "/".join("".join("#" if cell else "." for cell in row) for row in layout)
@@ -170,6 +188,11 @@ def layout_problems(
                     penalty += 100
                 elif count == 1:
                     penalty += weights.unchecked_cell
+
+    # A wall of clue cells can cut the board into separate mini-puzzles that
+    # never cross, which feels broken to play.
+    if not letters_connected(layout):
+        penalty += 100
 
     two_letter = sum(1 for slot in slots if len(slot.cells) == 2)
     penalty += weights.two_letter_answer * two_letter

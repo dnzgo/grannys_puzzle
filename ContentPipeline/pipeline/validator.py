@@ -6,8 +6,8 @@ the app does. A bug in the generator then can't hide itself by being wrong
 in the same way in its own check.
 
 The checks mirror Swift's `Level(file:)` (same rules, same order), plus a few
-quality checks the app doesn't need: clue length, no repeated answers, and
-the two-letter answer limit.
+quality checks the app doesn't need: clue length, no repeated answers, the
+two-letter answer limit, and letters forming one connected board.
 """
 
 from __future__ import annotations
@@ -16,6 +16,21 @@ from .rules import Rules
 
 _START = {"right": (0, 1), "rightDown": (0, 1), "down": (1, 0), "downRight": (1, 0)}
 _DIRECTION = {"right": "across", "downRight": "across", "down": "down", "rightDown": "down"}
+
+
+def _all_reachable(cells: set[tuple[int, int]]) -> bool:
+    """Breadth-first search from the top-left-most cell over side-by-side neighbours."""
+    first = min(cells)
+    reached, frontier = {first}, [first]
+    while frontier:
+        next_frontier = []
+        for r, c in frontier:
+            for neighbour in ((r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)):
+                if neighbour in cells and neighbour not in reached:
+                    reached.add(neighbour)
+                    next_frontier.append(neighbour)
+        frontier = next_frontier
+    return reached == cells
 
 
 def validate_level(level: dict, rules: Rules) -> list[str]:
@@ -116,6 +131,12 @@ def validate_level(level: dict, rules: Rules) -> list[str]:
     repeated = sorted({word for word in words if words.count(word) > 1})
     if repeated:
         problem(f"answer used twice: {', '.join(repeated)}")
+    # A split board still plays, so the app accepts it; but two mini-puzzles
+    # that never cross feel broken. Written separately from
+    # layout.letters_connected on purpose: a check shouldn't share code with
+    # what it checks.
+    if not _all_reachable(set(letter_cells)):
+        problem("letter cells are split into separate groups")
     two_letter = sum(1 for word in words if len(word) == 2)
     if two_letter > rules.max_two_letter_answers:
         problem(f"{two_letter} two-letter answers, limit is {rules.max_two_letter_answers}")

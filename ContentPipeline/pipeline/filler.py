@@ -63,7 +63,11 @@ class WordIndex:
             pool = set(words) if pool is None else pool & words
             if not pool:
                 break
-        result = tuple(self.by_length.get(length, ())) if pool is None else tuple(pool)
+        # Sorted, not set order: Python shuffles string hashing on every run,
+        # so set order differs between runs. The filler draws a random number
+        # per word in this order, so an unsorted result would make the same
+        # seed produce different levels each time.
+        result = tuple(self.by_length.get(length, ())) if pool is None else tuple(sorted(pool))
         self._pattern_cache[pattern] = result
         return result
 

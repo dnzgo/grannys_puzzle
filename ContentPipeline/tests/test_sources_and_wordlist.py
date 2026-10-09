@@ -46,6 +46,18 @@ class WordNetTests(unittest.TestCase):
     def test_skips_multi_word_entries(self):
         self.assertNotIn("ice_cream", self.definitions)
 
+    def test_skips_an_offensive_first_sense_for_the_next_one(self):
+        # The fixture lists "shrimp" with a disparaging sense first, as WordNet does.
+        self.assertEqual(self.definitions["shrimp"].gloss, "small edible crustacean")
+
+    def test_drops_words_whose_only_sense_is_offensive(self):
+        self.assertNotIn("puss", self.definitions)
+
+    def test_offensive_check_ignores_the_military_meaning(self):
+        # "offensive" alone also means "attacking"; that must not count.
+        self.assertFalse(sources.is_offensive_gloss("an offensive against an enemy"))
+        self.assertTrue(sources.is_offensive_gloss("(ethnic slur) offensive term for a person"))
+
 
 class WordListTests(unittest.TestCase):
     def build(self, max_familiarity=50):

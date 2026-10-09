@@ -2,13 +2,16 @@
 sample word list of about 2,000 common words."""
 
 import copy
+import os
+import subprocess
+import sys
 import json
 import unittest
 from pathlib import Path
 
 from pipeline.clues import ClueBank
 from pipeline.generator import LevelGenerator, LevelSpec
-from pipeline.layout import find_slots
+from pipeline.layout import find_slots, letters_connected
 from pipeline.rules import load_rules
 from pipeline.validator import validate_level
 from pipeline.wordlist import WordEntry
@@ -37,14 +40,24 @@ class LayoutTests(unittest.TestCase):
         clues = {((c["row"], c["column"]), c["arrow"]) for c in level_100()["clues"]}
         self.assertEqual(by_cell, clues)
 
+    def test_a_full_row_of_clue_cells_splits_the_letters(self):
+        open_grid = [[r == 0 or c == 0 for c in range(5)] for r in range(5)]
+        self.assertTrue(letters_connected(open_grid))
+        walled = [row[:] for row in open_grid]
+        walled[2] = [True] * 5  # rows 1 and 3-4 can no longer reach each other
+        self.assertFalse(letters_connected(walled))
+
 
 class ValidatorTests(unittest.TestCase):
-    def test_level_100_breaks_only_the_two_letter_rule(self):
-        # Level 100 was made by hand before the limit existed: it has five
-        # two-letter answers (GO, AN, ON, AT, TO). Everything else is valid.
+    def test_level_100_breaks_only_two_quality_rules(self):
+        # Level 100 was made by hand before these rules existed: it has five
+        # two-letter answers (GO, AN, ON, AT, TO), and its bottom-right block
+        # (ON, AT, TO) is walled off from the rest. Structurally it's valid,
+        # which is why the app still loads it.
         problems = validate_level(level_100(), RULES)
-        self.assertEqual(len(problems), 1)
-        self.assertIn("two-letter", problems[0])
+        self.assertEqual(len(problems), 2)
+        self.assertTrue(any("separate groups" in p for p in problems))
+        self.assertTrue(any("two-letter" in p for p in problems))
 
     def test_rejects_a_letter_outside_the_alphabet(self):
         level = level_100()
@@ -66,6 +79,11 @@ class ValidatorTests(unittest.TestCase):
         level["clues"] = [c for c in level["clues"] if not (c["row"] == 0 and c["column"] == 0)]
         self.assertTrue(any("no answer" in p for p in validate_level(level, RULES)))
 
+    def test_rejects_letters_split_into_separate_groups(self):
+        level = level_100()
+        level["grid"][3] = "#" * len(level["grid"][3])
+        self.assertTrue(any("separate groups" in p for p in validate_level(level, RULES)))
+
 
 class GeneratorTests(unittest.TestCase):
     @classmethod
@@ -77,7 +95,7 @@ class GeneratorTests(unittest.TestCase):
 
     def test_generated_levels_are_valid(self):
         generator = self.make_generator()
-        for number, (rows, columns) in enumerate([(5, 5), (6, 5), (7, 6), (9, 7)], start=1):
+        for number, (rows, columns) in enumerate([(5, 5), (6, 5), (7, 6), (8, 6), (9, 7)], start=1):
             with self.subTest(size=f"{columns}x{rows}"):
                 level = generator.generate(f"en-{number:06d}", LevelSpec(rows, columns, 50), seed=number)
                 self.assertIsNotNone(level, "no fill found")
@@ -89,6 +107,29 @@ class GeneratorTests(unittest.TestCase):
         first = self.make_generator().generate("en-000001", spec, seed=42)
         second = self.make_generator().generate("en-000001", spec, seed=42)
         self.assertEqual(first, second)
+
+    def test_the_same_seed_makes_the_same_level_in_separate_runs(self):
+        # Python randomises string hashing per process, so set order differs
+        # between runs. The test above can't see that (one process, one hash
+        # seed); this one runs the generator in two processes with different
+        # hash seeds and compares the output.
+        script = (
+            "import json, sys; sys.path.insert(0, '.');"
+            "from tests.test_levels import sample_words, RULES;"
+            "from pipeline.clues import ClueBank;"
+            "from pipeline.generator import LevelGenerator, LevelSpec;"
+            "g = LevelGenerator('en', sample_words(), ClueBank({}), RULES);"
+            "print(json.dumps(g.generate('en-000001', LevelSpec(6, 5, 50), seed=5)))"
+        )
+        root = Path(__file__).parent.parent
+        outputs = [
+            subprocess.run(
+                [sys.executable, "-c", script], cwd=root, capture_output=True, text=True, check=True,
+                env={**os.environ, "PYTHONHASHSEED": hash_seed},
+            ).stdout
+            for hash_seed in ("1", "2")
+        ]
+        self.assertEqual(outputs[0], outputs[1])
 
     def test_real_clues_are_used_when_the_bank_has_them(self):
         # Give every word a real clue; no placeholder should be needed.
