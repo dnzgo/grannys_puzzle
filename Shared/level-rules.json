@@ -1,0 +1,19 @@
+{
+  "_comment": "The level format spec. The Python content pipeline reads this file directly; the Swift app's LevelRules mirrors it, and an ArrowwordCore test fails if the two disagree. Change rules here first.",
+  "formatVersion": 1,
+  "grid": {
+    "minRows": 5,
+    "maxRows": 9,
+    "minColumns": 5,
+    "maxColumns": 7
+  },
+  "maxDistinctLetters": 16,
+  "maxCluesPerCell": 2,
+  "minAnswerLength": 2,
+  "maxTwoLetterAnswers": 4,
+  "clueMaxLength": 20,
+  "alphabets": {
+    "en": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "tr": "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ"
+  }
+}

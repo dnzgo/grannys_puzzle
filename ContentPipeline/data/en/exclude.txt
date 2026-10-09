@@ -1,0 +1,3 @@
+# Words to keep out of the game, one per line. Say why after a #.
+# Example:
+# gay    # meaning has shifted; risky as a puzzle answer
