@@ -43,8 +43,8 @@ private struct CluePill: View {
         .overlay(alignment: .bottom) {
             GeometryReader { geometry in
                 ZStack(alignment: .leading) {
-                    Rectangle().fill(Color(hex: 0xEDEDEA))
-                    Rectangle().fill(Theme.accent)
+                    Rectangle().fill(Theme.progressTrack)
+                    Rectangle().fill(Theme.primary)
                         .frame(width: geometry.size.width * model.progressFraction)
                 }
             }
@@ -61,7 +61,7 @@ private struct CluePill: View {
             HStack(spacing: 5) {
                 Image(systemName: answer.direction == .across ? "arrow.right" : "arrow.down")
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(ClueColors.fill(model.colorIndex(ofAnswer: answer.id), strength: 1))
+                    .foregroundStyle(ClueColors.line(model.colorIndex(ofAnswer: answer.id)))
                     .accessibilityLabel(answer.direction == .across ? "Across" : "Down")
                 Text(answer.clueText)
                     .font(.system(size: 15, weight: .semibold))

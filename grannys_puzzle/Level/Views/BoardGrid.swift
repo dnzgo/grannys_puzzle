@@ -40,7 +40,8 @@ struct BoardGrid: View {
 }
 
 /// A clue cell holding zero, one or two clues. Every clue shows its own
-/// colour: a light tint while idle, the full colour while it's being answered.
+/// colour: a light tint while idle; a stronger tint with a darker border in
+/// that colour while it's being answered.
 /// With two clues, the one whose arrow leaves through the right edge sits on
 /// top (Level orders them).
 struct ClueCellView: View {
@@ -64,9 +65,9 @@ struct ClueCellView: View {
     }
 
     private func clueButton(_ clue: ClueAppearance) -> some View {
-        let strength = clue.isActive ? 1 : ClueColors.idleClueTint
-        let textColor = clue.isActive ? ClueColors.text(on: clue.colorIndex, strength: 1) : Theme.clueInk
-        let arrowColor = clue.isActive ? textColor : ClueColors.fill(clue.colorIndex, strength: 1)
+        let strength = clue.isActive ? ClueColors.activeClueTint : ClueColors.idleClueTint
+        let textColor = clue.isActive ? ClueColors.text(on: clue.colorIndex, strength: strength) : Theme.clueInk
+        let lineColor = ClueColors.line(clue.colorIndex)
 
         return Button { onTap(clue.answerID) } label: {
             Text(clue.text)
@@ -79,11 +80,19 @@ struct ClueCellView: View {
                 .padding(EdgeInsets(top: 1, leading: 2, bottom: 4, trailing: 5))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(ClueColors.fill(clue.colorIndex, strength: strength))
+                // A border marks the active clue, so the tint alone doesn't
+                // have to carry the difference.
+                .overlay {
+                    if clue.isActive {
+                        RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                            .strokeBorder(lineColor, lineWidth: ClueColors.activeClueBorderWidth)
+                    }
+                }
                 .overlay(alignment: arrowAlignment(clue.arrow)) {
                     Image(systemName: arrowSymbol(clue.arrow))
                         .font(.system(size: arrowSize, weight: .heavy))
-                        .foregroundStyle(arrowColor)
-                        .padding(1)
+                        .foregroundStyle(lineColor)
+                        .padding(clue.isActive ? 2 : 1)
                 }
                 .contentShape(Rectangle())
         }

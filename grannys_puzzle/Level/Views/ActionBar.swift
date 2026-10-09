@@ -105,28 +105,30 @@ private struct HelperButton: View {
             .offset(x: 6, y: -6)
     }
 
+    // Prominent (the cat) uses the main button style; the other (grandma)
+    // uses the secondary style: white with a brown border and icon.
     private var foreground: Color {
         guard isEnabled else { return Theme.usedUpKey }
-        return isProminent ? .white : Theme.ink
+        return isProminent ? Theme.onPrimary : Theme.secondary
     }
 
     private var fill: Color {
-        guard isEnabled else { return Color(hex: 0xE9E9E5) }
-        return isProminent ? Theme.accent : Theme.surface
+        guard isEnabled else { return Theme.disabledFill }
+        return isProminent ? Theme.primary : Theme.surface
     }
 
     private var border: Color {
         guard isEnabled else { return .clear }
-        return isProminent ? .clear : Theme.accent
+        return isProminent ? .clear : Theme.secondary
     }
 
-    /// Dark on both buttons, so the count reads the same on blue and on white.
+    /// Dark on both buttons, so the count reads the same on orange and on white.
     private var badgeFill: Color {
         isEnabled ? Theme.ink : Theme.usedUpKey
     }
 }
 
-/// The full-width blue button (Submit, Next level, Try again).
+/// The full-width main button (Submit, Next level, Try again).
 private struct PrimaryButton: View {
     let title: LocalizedStringKey
     let height: CGFloat
@@ -134,12 +136,18 @@ private struct PrimaryButton: View {
 
     var body: some View {
         Button(action: action) {
+            // Large, heavy, rounded text: white on this light orange relies
+            // on size and weight to stay readable (see Theme.primary).
             Text(title)
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(.white)
+                .font(.system(size: 21, weight: .heavy, design: .rounded))
+                .foregroundStyle(Theme.onPrimary)
                 .frame(maxWidth: .infinity)
                 .frame(height: height)
-                .background(Capsule().fill(Theme.accent))
+                .background(
+                    Capsule()
+                        .fill(Theme.primary)
+                        .shadow(color: Theme.primary.opacity(0.35), radius: 8, y: 4)
+                )
         }
         .buttonStyle(.plain)
     }

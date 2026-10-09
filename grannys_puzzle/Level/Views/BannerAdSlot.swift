@@ -13,10 +13,10 @@ struct BannerAdSlot: View {
                 .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(Theme.secondaryInk)
                 .frame(width: Self.adSize.width, height: Self.adSize.height)
-                .background(RoundedRectangle(cornerRadius: 6).fill(Color(hex: 0xEFEFEB)))
+                .background(RoundedRectangle(cornerRadius: 6).fill(Theme.adPlaceholderFill))
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
-                        .strokeBorder(Color(hex: 0xC9C9C4), style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
+                        .strokeBorder(Theme.adPlaceholderBorder, style: StrokeStyle(lineWidth: 1, dash: [4, 3]))
                 )
                 .padding(.vertical, 8)
         }
