@@ -79,6 +79,19 @@ python3 -m pipeline.cli import-clues --lang en clue-batches/en-001-002.csv
 
 Then regenerate the pack: real clues replace the placeholders.
 
+## 5. Ship a pack in the app
+
+Copy the pack into the app's `Levels` folder (Xcode picks it up
+automatically):
+
+```
+cp data/en/packs/en-001.json ../grannys_puzzle/Levels/
+```
+
+Then run the ArrowwordCore tests (⌘U). `testEveryShippedPackLoads` checks
+every pack in that folder with the app's own Swift rules, a second opinion
+on top of the Python validator.
+
 ## Credits the app must show
 
 These licences require a notice. They go in the app's Acknowledgements

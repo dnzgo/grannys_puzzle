@@ -19,6 +19,11 @@ final class LevelViewModel {
         case finished(LevelResult)
     }
 
+    /// What a new player starts with until the progression phase saves a
+    /// real wallet.
+    static let startingHints = 4
+    static let startingGrandmas = 1
+
     let levelNumber: Int
     private(set) var puzzle: PuzzleState
 
@@ -38,13 +43,17 @@ final class LevelViewModel {
     @ObservationIgnored private let clueColorIndices: [Int]
     @ObservationIgnored private var catTask: Task<Void, Never>?
     @ObservationIgnored private var grandmaTask: Task<Void, Never>?
+    /// Called when the player continues after passing. Whoever created this
+    /// level decides what comes next; this class only knows one level.
+    @ObservationIgnored private let onPassed: () -> Void
 
     init(
         level: Level,
         levelNumber: Int,
-        hints: Int = 4,
-        grandmas: Int = 1,
-        scoringRules: ScoringRules = .standard
+        hints: Int = LevelViewModel.startingHints,
+        grandmas: Int = LevelViewModel.startingGrandmas,
+        scoringRules: ScoringRules = .standard,
+        onPassed: @escaping () -> Void = {}
     ) {
         self.levelNumber = levelNumber
         self.puzzle = PuzzleState(level: level)
@@ -52,6 +61,7 @@ final class LevelViewModel {
         self.grandmas = grandmas
         self.scoringRules = scoringRules
         self.clueColorIndices = ClueColors.assignments(for: level)
+        self.onPassed = onPassed
     }
 
     // MARK: - What the screen shows
@@ -185,11 +195,15 @@ final class LevelViewModel {
         puzzle.submit(rules: scoringRules)
     }
 
-    /// After the result: a pass goes to the next level, a fail starts over.
-    /// Only one level is bundled so far, so both replay it; the level list
-    /// arrives with the home screen.
+    /// After the result: a pass moves on (decided by `onPassed`), a fail
+    /// starts this level over with a cleared board.
     func continueAfterResult() {
-        puzzle.restart()
+        guard let result = puzzle.result else { return }
+        if result.passed {
+            onPassed()
+        } else {
+            puzzle.restart()
+        }
     }
 
     // MARK: - Short-lived UI state

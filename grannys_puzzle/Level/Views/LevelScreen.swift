@@ -86,9 +86,10 @@ struct SpeechBubble: View {
 }
 
 #Preview {
-    if let level = try? LevelLoader.bundledLevel(named: "level-100") {
-        LevelScreen(model: LevelViewModel(level: level, levelNumber: 100))
+    if let pack = try? LevelLoader.bundledPack(named: LevelLoader.firstPackName),
+       let level = pack.levels.first {
+        LevelScreen(model: LevelViewModel(level: level, levelNumber: 1))
     } else {
-        Text("level-100.json is missing from the app bundle")
+        Text("\(LevelLoader.firstPackName).json is missing from the app bundle")
     }
 }

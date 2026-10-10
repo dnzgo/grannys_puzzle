@@ -1,20 +1,31 @@
 import SwiftUI
 import ArrowwordCore
 
-/// The app's root. For now it opens straight into Level 100; the home screen
-/// with grandma and the level list will sit here later.
+/// The app's root. For now it opens straight into the first pack; the home
+/// screen with grandma and the level list will sit here later.
 struct ContentView: View {
-    @State private var screen = Screen.loadFirstLevel()
+    @State private var screen = Screen.loadFirstPack()
 
     var body: some View {
         switch screen {
-        case .level(let model):
-            LevelScreen(model: model)
+        case .playing(let sequence):
+            if let model = sequence.current {
+                LevelScreen(model: model)
+                    // A new identity per level, so SwiftUI starts the next
+                    // level's views fresh instead of reusing the last one's.
+                    .id(model.level.id)
+            } else {
+                ContentUnavailableView(
+                    "You've solved every puzzle!",
+                    systemImage: "star.fill",
+                    description: Text("Grandma is knitting new ones. Check back soon, dear.")
+                )
+            }
         case .failed(let message):
-            // A bundled level failing to load is a bug in the build, but the
+            // A bundled pack failing to load is a bug in the build, but the
             // app should say so instead of crashing.
             ContentUnavailableView(
-                "This level couldn't be loaded",
+                "The puzzles couldn't be loaded",
                 systemImage: "exclamationmark.triangle",
                 description: Text(message)
             )
@@ -23,13 +34,13 @@ struct ContentView: View {
 }
 
 private enum Screen {
-    case level(LevelViewModel)
+    case playing(LevelSequence)
     case failed(String)
 
-    static func loadFirstLevel() -> Screen {
+    static func loadFirstPack() -> Screen {
         do {
-            let level = try LevelLoader.bundledLevel(named: "level-100")
-            return .level(LevelViewModel(level: level, levelNumber: 100))
+            let pack = try LevelLoader.bundledPack(named: LevelLoader.firstPackName)
+            return .playing(LevelSequence(pack: pack))
         } catch {
             return .failed(String(describing: error))
         }
