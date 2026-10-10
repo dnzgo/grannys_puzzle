@@ -1,4 +1,5 @@
 import CoreGraphics
+import ArrowwordCore
 
 /// Sizes that depend on the screen.
 ///
@@ -12,6 +13,11 @@ import CoreGraphics
 /// | iPhone 15–18 and larger           | 690pt or more       | 48pt |
 /// | iPhone 12/13 mini                 | 640–690pt           | 45pt |
 /// | iPhone SE (compact)               | under 640pt         | 40pt |
+///
+/// Those sizes are for the largest grid the rules allow (7×9), and they
+/// define a fixed *board box* per screen. A smaller grid gets the largest
+/// cells that fit in that box, so a 5×6 level fills the same space as a 7×9
+/// one instead of floating in empty space, and no level is ever bigger.
 ///
 /// The width and height checks below are a safety net for screens not in this
 /// table (iPad split view, future devices): the grid never overflows.
@@ -40,15 +46,25 @@ struct BoardMetrics {
     init(width: CGFloat, height: CGFloat, columns: Int, rows: Int) {
         let compact = height < Self.compactHeight
         isCompact = compact
-        let columnCount = CGFloat(max(1, columns))
-        let rowCount = CGFloat(max(1, rows))
+        let available = CGSize(width: width, height: height - Self.reservedHeight(isCompact: compact))
 
-        let fitsWidth = (width - Self.cellGap * (columnCount - 1)) / columnCount
-        let gridHeight = height - Self.reservedHeight(isCompact: compact)
-        let fitsHeight = (gridHeight - Self.cellGap * (rowCount - 1)) / rowCount
-
-        let fitting = min(Self.preferredCellSize(forHeight: height), fitsWidth, fitsHeight)
-        cellSize = max(0, fitting.rounded(.down))
+        // 1. Size the largest allowed grid for this screen: the preferred cell
+        //    size from the table, shrunk only if the screen is too small.
+        let largest = LevelRules.standard
+        let referenceCell = Self.largestCell(
+            fitting: available,
+            columns: largest.columns.upperBound,
+            rows: largest.rows.upperBound,
+            cap: Self.preferredCellSize(forHeight: height)
+        )
+        // 2. That grid's outline is the board box every level shares.
+        let boardBox = CGSize(
+            width: Self.span(of: largest.columns.upperBound, cellSize: referenceCell),
+            height: Self.span(of: largest.rows.upperBound, cellSize: referenceCell)
+        )
+        // 3. This level's cells grow until its grid touches the box's width
+        //    or height. The box already fits the screen, so this one does too.
+        cellSize = Self.largestCell(fitting: boardBox, columns: columns, rows: rows, cap: .infinity)
     }
 
     var gap: CGFloat { Self.cellGap }
@@ -59,6 +75,21 @@ struct BoardMetrics {
     var gridTopPadding: CGFloat { Self.gridTopPadding(isCompact: isCompact) }
     var trayKeyHeight: CGFloat { Self.trayKeyHeight(isCompact: isCompact) }
     var actionHeight: CGFloat { Self.actionHeight(isCompact: isCompact) }
+
+    /// The largest whole-point square cell that lets a grid fit in `size`.
+    /// Rounded down so cell edges land on whole points and stay crisp.
+    private static func largestCell(fitting size: CGSize, columns: Int, rows: Int, cap: CGFloat) -> CGFloat {
+        let columnCount = CGFloat(max(1, columns))
+        let rowCount = CGFloat(max(1, rows))
+        let fitsWidth = (size.width - cellGap * (columnCount - 1)) / columnCount
+        let fitsHeight = (size.height - cellGap * (rowCount - 1)) / rowCount
+        return max(0, min(cap, fitsWidth, fitsHeight).rounded(.down))
+    }
+
+    /// The length of `count` cells side by side, including the gaps between them.
+    private static func span(of count: Int, cellSize: CGFloat) -> CGFloat {
+        CGFloat(count) * cellSize + CGFloat(max(0, count - 1)) * cellGap
+    }
 
     private static func preferredCellSize(forHeight height: CGFloat) -> CGFloat {
         if height >= regularHeight { return 48 }
