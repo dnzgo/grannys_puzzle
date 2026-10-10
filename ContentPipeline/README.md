@@ -52,7 +52,7 @@ python3 -m pipeline.cli validate data/en/packs/en-001.json
 ```
 
 Options: `--sizes 7x9,6x8,7x7,5x6` (columns x rows, cycled),
-`--max-familiarity 35` (lower = only more common words), `--first-number`,
+`--max-familiarity 20` (lower = only more common words; 35 adds harder words like ARIA and LEVEE), `--first-number`,
 `--seed`. The same command always makes the same levels.
 
 Words without a real clue get a placeholder cut from the dictionary

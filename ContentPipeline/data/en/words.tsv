@@ -54,7 +54,6 @@ AIM	10	verb	point or cause to go (blows, weapons, or objects such as photographi
 AIR	10	noun	a mixture of gases (especially oxygen) required for breathing
 ALARM	10	noun	fear resulting from the awareness of danger
 ALBUM	10	noun	one or more recordings issued together
-ALIAS	10	noun	a name that has been assumed temporarily
 ALIVE	10	adjective	possessing life
 ALL	10	adjective	quantifier
 ALLOW	10	verb	make it possible through a specific action or lack of action for something to happen
@@ -70,7 +69,6 @@ AM	10	noun	a radioactive transuranic metallic element
 AMOUNT	10	noun	a quantity of money
 AMUSE	10	verb	occupy in an agreeable, entertaining or pleasant fashion
 AN	10	noun	an associate degree in nursing
-ANALOG	10	noun	something having the property of being analogous to something else
 ANALOGUE	10	noun	something having the property of being analogous to something else
 ANALYSIS	10	noun	an investigation of the component parts of a whole and their relations in making up the whole
 ANCIENT	10	adjective	belonging to times long past especially of the historical period before the fall of the Western Roman Empire
@@ -159,7 +157,6 @@ BECOME	10	verb	enter or assume a certain state or condition
 BED	10	noun	a piece of furniture that provides a place to sleep
 BEFORE	10	adverb	earlier in time
 BEGIN	10	verb	take the first step or steps in carrying out an action
-BEHALF	10	noun	as the agent of or on someone's part (usually expressed as
 BEHAVE	10	verb	behave in a certain manner
 BEHAVIOR	10	noun	manner of acting or controlling yourself
 BEHIND	10	adverb	in or to or toward the rear
@@ -177,7 +174,6 @@ BEYOND	10	adverb	farther along in space or time or degree
 BID	10	verb	propose a payment
 BIG	10	adjective	above average in size or number or quantity or magnitude or extent
 BILL	10	noun	a statute in draft before it becomes law
-BINARY	10	noun	a system of two stars that revolve around each other under their mutual gravitation
 BIND	10	verb	stick to firmly
 BINDING	10	noun	the capacity to attract and hold something
 BIOLOGY	10	noun	the science that studies living organisms
@@ -220,7 +216,6 @@ BROTHER	10	noun	a male with the same parents as someone else
 BROWN	10	noun	an orange of low brightness and saturation
 BUCKET	10	noun	a roughly cylindrical vessel that is open at the top
 BUDGET	10	noun	a sum of money allocated for a particular purpose
-BUFFER	10	noun	(chemistry) an ionic compound that resists changes in its pH
 BUG	10	noun	general term for any insect or similar creeping or crawling invertebrate
 BUILD	10	verb	make by combining materials and parts
 BUILDING	10	noun	a structure that has a roof and walls and stands more or less permanently in one place
@@ -235,7 +230,6 @@ BUT	10	adverb	and nothing more
 BUTTON	10	noun	a round fastener sewn to shirts and coats etc to fit through buttonholes
 BUY	10	verb	obtain by purchase
 BY	10	adverb	so as to pass a given point
-BYTE	10	noun	a sequence of 8 bits (enough to represent one character of alphanumeric data) processed as a single unit of information
 CALL	10	verb	assign a specified (usually proper) proper name to
 CALLING	10	noun	the particular occupation for which you are trained
 CAMPAIGN	10	noun	a race between candidates for elective office
@@ -270,7 +264,6 @@ CHANGE	10	verb	cause to change
 CHANNEL	10	noun	a path over which electrical signals can pass
 CHAOS	10	noun	a state of extreme confusion and disorder
 CHAPTER	10	noun	a subdivision of a written work
-CHAR	10	noun	a charred substance
 CHARGE	10	verb	to make a rush at or sudden attack upon, as in battle
 CHARGED	10	adjective	of a particle or body or system
 CHEAP	10	adjective	relatively low in price or charging low prices
@@ -374,7 +367,6 @@ CUP	10	noun	a small open container usually used for drinking
 CURE	10	verb	provide a cure for, make healthy again
 CURIOUS	10	adjective	beyond or deviating from the usual or expected
 CURRENT	10	noun	a flow of electricity through a conductor
-CURSOR	10	noun	(computer science) indicator consisting of a movable spot of light (an icon) on a visual display
 CUSTOMER	10	noun	someone who pays for goods or services
 CUT	10	verb	separate with or as if with an instrument
 CUTTING	10	noun	the activity of selecting the scenes to be shown and putting them together to create a film
@@ -401,8 +393,6 @@ DECLARE	10	verb	state emphatically and authoritatively
 DECLARED	10	adjective	made known or openly avowed
 DECREASE	10	verb	decrease in size, extent, or range
 DEDICATE	10	verb	give entirely to a specific person, activity, or cause
-DEDUCE	10	verb	reason by deduction
-DEEM	10	verb	keep in mind or convey as a conviction or view
 DEEP	10	adjective	relatively deep or strong
 DEEPLY	10	adverb	to a great depth psychologically
 DEFAULT	10	noun	loss due to not showing up
@@ -418,7 +408,6 @@ DELIVERY	10	noun	the act of delivering or distributing something (as goods or ma
 DEMAND	10	noun	an urgent or peremptory request
 DEPEND	10	verb	be contingent upon (something that is elided)
 DEPTH	10	noun	the extent downward or backward or inward
-DERIVE	10	verb	reason by deduction
 DERIVED	10	adjective	formed or developed from something else
 DESCRIBE	10	verb	give a description of
 DESIGN	10	noun	the act of working out the form of something (as by making a sketch or outline or plan)
@@ -463,7 +452,6 @@ DOCUMENT	10	noun	writing that provides information (especially information of an
 DOE	10	noun	the federal department responsible for maintaining a national energy policy of the United States
 DOG	10	noun	a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times
 DOLLAR	10	noun	the basic monetary unit in many countries
-DOMAIN	10	noun	a particular environment or walk of life
 DOOR	10	noun	a swinging or sliding barrier that will close the entrance to a room or building or vehicle
 DOUBLE	10	verb	increase twofold
 DOUBT	10	noun	the state of being unsure of something
@@ -482,7 +470,6 @@ DROVE	10	noun	a group of animals (a herd or flock) moving together
 DRY	10	verb	remove the moisture from and make dry
 DUBIOUS	10	adjective	fraught with uncertainty or doubt
 DUE	10	adjective	owed and payable immediately or on demand
-DUMB	10	adjective	slow to learn or understand
 DUMP	10	verb	throw away as refuse
 DUTY	10	noun	the social force that binds you to the courses of action demanded by that force
 EACH	10	adjective	(used of count nouns) every one considered individually
@@ -525,7 +512,6 @@ ENTER	10	verb	to come or go into
 ENTIRE	10	adjective	constituting the full quantity or extent
 ENTIRELY	10	adverb	to a complete degree or to the full or entire extent (`whole' is often used informally for `wholly')
 ENTITLE	10	verb	give the right to
-ENTITY	10	noun	that which is perceived or known or inferred to have its own distinct existence (living or nonliving)
 ENTRANCE	10	noun	something that provides access (to get in or get out)
 ENTRY	10	noun	an item inserted in a written record
 EQUAL	10	verb	be identical or equivalent to
@@ -624,12 +610,10 @@ FINE	10	adjective	being satisfactory or in satisfactory condition
 FINGER	10	verb	feel or handle with the fingers
 FINISH	10	verb	come or bring to a finish or an end
 FINISHED	10	adjective	(of materials or goods) brought to the desired final state
-FINITE	10	adjective	bounded or limited in magnitude or spatial or temporal extent
 FIRE	10	verb	start firing a weapon
 FIRM	10	adjective	marked by firm determination or resolution
 FIRST	10	adjective	preceding all others in time or space or degree
 FIRSTLY	10	adverb	before anything else
-FISCAL	10	adjective	involving financial matters
 FISH	10	noun	any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills
 FIT	10	verb	be agreeable or acceptable to
 FITTING	10	adjective	in harmony with the spirit of particular persons or occasion
@@ -745,7 +729,6 @@ HATE	10	noun	the emotion of intense dislike
 HAVE	10	verb	have or possess, either in a concrete or an abstract sense
 HE	10	noun	a very light colorless element that is one of the six inert gasses
 HEAD	10	noun	the upper part of the human body or the front part of the body in animals
-HEADER	10	noun	a line of text serving to indicate what the passage below it is about
 HEADING	10	noun	a line of text serving to indicate what the passage below it is about
 HEALTH	10	noun	a healthy state of wellbeing free from disease
 HEALTHY	10	adjective	having or indicating good health in body or mind
@@ -759,9 +742,7 @@ HELD	10	adjective	occupied or in the control of
 HELLO	10	noun	an expression of greeting
 HELP	10	verb	give help or assistance
 HELPING	10	noun	an individual quantity of food or drink taken as part of a meal
-HENCE	10	adverb	(used to introduce a logical conclusion) from that fact or reason or as a result
 HERE	10	adverb	in or at this place
-HEREBY	10	adverb	(formal) by means of this
 HIDE	10	noun	the dressed skin of an animal (especially a large animal)
 HIGH	10	adjective	greater than normal in degree or intensity or amount
 HILL	10	noun	a local and well-defined elevation of the land
@@ -801,8 +782,6 @@ ILLEGAL	10	adjective	prohibited by law or by official or accepted rules
 IMAGE	10	noun	an iconic mental representation
 IMAGINE	10	verb	form a mental image of something that is not present or that is not the case
 IMPACT	10	noun	the striking of one body against another
-IMPLY	10	verb	express or state indirectly
-IMPOSE	10	verb	compel to behave in a certain way
 IMPOSED	10	adjective	set forth authoritatively as obligatory
 IMPOSING	10	adjective	impressive in appearance
 IMPROVE	10	verb	to make better
@@ -887,12 +866,10 @@ LARGE	10	adjective	above average in size or number or quantity or magnitude or e
 LARGELY	10	adverb	in large part
 LAST	10	adjective	immediately past
 LATE	10	adjective	being or occurring at an advanced period of time or after a usual or expected time
-LATTER	10	adjective	referring to the second of two things or persons mentioned (or the last one or ones of several)
 LAW	10	noun	the collection of rules imposed by authority
 LAY	10	verb	put into a certain place or abstract location
 LAYOUT	10	noun	a plan or design of something that is laid out
 LAZY	10	adjective	moving slowly and gently
-LEACH	10	noun	the process of leaching
 LEAD	10	verb	take somebody somewhere
 LEADER	10	noun	a person who rules or guides or inspires others
 LEAF	10	noun	the main organ of photosynthesis and transpiration in higher plants
@@ -910,7 +887,6 @@ LESSON	10	noun	a unit of instruction
 LET	10	verb	make it possible through a specific action or lack of action for something to happen
 LETTER	10	noun	a written message addressed to a person or organization
 LEVEL	10	noun	a position on a scale of intensity or amount or quality
-LIABLE	10	adjective	at risk of or subject to experiencing something usually unpleasant
 LIBRARY	10	noun	a room where books are kept
 LIE	10	verb	be located or situated somewhere
 LIFE	10	noun	a characteristic state or mode of living
@@ -923,7 +899,6 @@ LIKEWISE	10	adverb	in like or similar manner
 LIKING	10	noun	a feeling of pleasure and enjoyment
 LIMIT	10	noun	the greatest possible degree of something
 LINE	10	noun	a formation of people or things one beside another
-LINEAR	10	adjective	designating or involving an equation whose terms are of the first degree
 LINK	10	verb	make a logical or causal connection
 LINKED	10	adjective	connected by a link, as railway cars or trailer trucks
 LIST	10	noun	a database containing an ordered array of items (names or topics)
@@ -946,7 +921,6 @@ LONG	10	adjective	primarily temporal sense
 LOOK	10	verb	perceive with attention
 LOOP	10	verb	move in loops
 LOOSE	10	adjective	not compact or dense in structure or arrangement
-LORRY	10	noun	a large low horse-drawn wagon without sides
 LOSE	10	verb	fail to keep or to maintain
 LOSS	10	noun	something that is lost
 LOST	10	adjective	no longer in your possession or control
@@ -1008,8 +982,6 @@ MEETING	10	noun	a formally arranged gathering
 MEMBER	10	noun	one of the persons who compose a social group (especially individuals who have joined and participate in a group organization)
 MEMORY	10	noun	something that is remembered
 MENTION	10	verb	make reference to
-MERE	10	adjective	being nothing more than specified
-MERELY	10	adverb	and nothing more
 MERIT	10	noun	any admirable quality or attribute
 MESS	10	noun	a state of confusion and disorderliness
 MESSAGE	10	noun	a communication (usually brief) that is written or spoken or signaled
@@ -1035,7 +1007,6 @@ MISSING	10	adjective	not able to be found
 MISTAKE	10	noun	a wrong action attributable to bad judgment or ignorance or inattention
 MISUSE	10	noun	improper or excessive use
 MIX	10	verb	mix together different elements
-MOD	10	noun	a British teenager or young adult in the 1960s
 MODE	10	noun	how something is done or how it happens
 MODEL	10	noun	a hypothetical description of a complex entity or process
 MODERN	10	adjective	belonging to the modern era
@@ -1063,7 +1034,6 @@ MUSIC	10	noun	an artistic form of auditory communication incorporating instrumen
 MUST	10	noun	a necessary or essential thing
 NAIVE	10	adjective	marked by or showing unaffected simplicity and lack of guile or worldly experience
 NAME	10	verb	assign a specified (usually proper) proper name to
-NAMELY	10	adverb	as follows
 NASTY	10	adjective	offensive or even (of persons) malicious
 NATION	10	noun	a politically organized body of people under a single government
 NATIONAL	10	adjective	of or relating to or belonging to a nation or country
@@ -1160,7 +1130,6 @@ OUTSIDE	10	adjective	relating to or being on or near the outer side or limit
 OVER	10	adverb	at or to a point across intervening space etc.
 OVERALL	10	adjective	involving only main features
 OWE	10	verb	be obliged to pay or repay
-OWING	10	adjective	owed as a debt
 OWN	10	verb	have ownership or possession of
 OWNER	10	noun	(law) someone who owns (is legal possessor of) a business
 PACK	10	verb	arrange in a container
@@ -1200,7 +1169,6 @@ PERMIT	10	noun	a legal document giving official permission to do something
 PERSON	10	noun	a human being
 PERSONAL	10	adjective	concerning or affecting a particular person or his or her private life and personality
 PERSUADE	10	verb	win approval or support for
-PETROL	10	noun	a volatile flammable mixture of hydrocarbons (hexane and heptane and octane etc.) derived from petroleum
 PHASE	10	noun	any distinct time period in a sequence of events
 PHONE	10	noun	electronic equipment that converts sound into electrical signals that can be transmitted over distances and then converts received signals back into sounds
 PHRASE	10	noun	an expression consisting of one or more words forming a grammatical constituent of a sentence
@@ -1488,11 +1456,9 @@ SENT	10	noun	100 senti equal 1 kroon in Estonia
 SENTENCE	10	noun	a string of words satisfying the grammatical rules of a language
 SEPARATE	10	verb	act as a barrier between
 SEQUENCE	10	noun	serial arrangement in which things follow in logical order or a recurrent pattern
-SERIAL	10	adjective	in regular succession without gaps
 SERIES	10	noun	similar things placed in order or happening one after another
 SERIOUS	10	adjective	concerned with work or important matters rather than play or trivialities
 SERVE	10	verb	serve a purpose, role, or function
-SERVER	10	noun	a person whose occupation is to serve at table (as in a restaurant)
 SERVICE	10	noun	work done by one person or group that benefits another
 SERVING	10	noun	an individual quantity of food or drink taken as part of a meal
 SESSION	10	noun	a meeting for execution of a group's functions
@@ -1553,7 +1519,6 @@ SOCIAL	10	adjective	relating to human society and its members
 SOCIETY	10	noun	an extended social group having a distinctive cultural and economic organization
 SOFT	10	adjective	yielding readily to pressure or weight
 SOFTWARE	10	noun	(computer science) written programs or procedures or rules and associated documentation pertaining to the operation of a computer system and that are stored in read/write memory
-SOLELY	10	adverb	without any others being included or involved
 SOLID	10	adjective	characterized by good substantial quality
 SOLUTION	10	noun	a homogeneous mixture of two or more substances
 SOLVE	10	verb	find the solution to (a problem or question) or understand the meaning of
@@ -1634,11 +1599,9 @@ STUDENT	10	noun	a learner who is enrolled in an educational institution
 STUDIED	10	adjective	produced or marked by conscious design or premeditation
 STUDY	10	noun	a detailed critical inspection
 STUFF	10	noun	the tangible substance that goes into the makeup of a physical object
-STUPID	10	adjective	lacking or marked by lack of intellectual acuity
 STYLE	10	noun	how something is done or how it happens
 SUBJECT	10	noun	the subject matter of a conversation or discussion
 SUBMIT	10	verb	refer for judgment or consideration
-SUBSET	10	noun	a set whose members are members of another set
 SUBTLE	10	adjective	difficult to detect or grasp by the mind or analyze
 SUCCEED	10	verb	attain success or reach a desired goal
 SUCCESS	10	noun	an event that accomplishes its intended purpose
@@ -1670,7 +1633,6 @@ SUSPECT	10	verb	imagine to be the case or true or probable
 SUSPEND	10	verb	hang freely
 SWITCH	10	verb	change over, change around, as to a new order or sequence
 SYMBOL	10	noun	an arbitrary sign (written or printed) that has acquired a conventional significance
-SYNTAX	10	noun	the grammatical arrangement of words in sentences
 SYSTEM	10	noun	instrumentality that combines interrelated interacting artifacts designed to work as a coherent entity
 TABLE	10	noun	a set of data arranged in rows and columns
 TAKE	10	verb	carry out
@@ -1814,7 +1776,6 @@ VARIETY	10	noun	a collection containing a variety of sorts of things
 VARIOUS	10	adjective	of many different kinds purposefully arranged but lacking any uniformity
 VARY	10	verb	become different in some particular way, without permanently losing one's or its former characteristics or essence
 VAST	10	adjective	unusually great in size or amount or degree or especially extent or scope
-VECTOR	10	noun	a variable quantity that can be resolved into components
 VERSION	10	noun	an interpretation of a matter from a particular viewpoint
 VERY	10	adjective	precisely as stated
 VICE	10	noun	moral weakness
@@ -1902,7 +1863,6 @@ YET	10	adverb	up to the present time
 YOUNG	10	adjective	(used of living things especially persons) in an early period of life or development or growth
 ZERO	10	adjective	indicating the absence of any or all units under consideration
 ABANDON	20	verb	forsake, leave behind
-ABIDE	20	verb	dwell
 ABNORMAL	20	adjective	not normal
 ABOLISH	20	verb	do away with
 ABORT	20	noun	the act of terminating a project or procedure before it is completed
@@ -1930,9 +1890,7 @@ ACUTE	20	adjective	having or experiencing a rapid onset and short but severe cou
 ADAPT	20	verb	make fit for, or change to suit a new purpose
 ADAPTED	20	adjective	changed in order to improve or made more fit for a particular purpose
 ADAPTER	20	noun	a musician who adapts a composition for particular voices or instruments or for another style of performance
-ADDICT	20	noun	someone who is so ardently devoted to something that it resembles an addiction
 ADDICTED	20	adjective	compulsively or physiologically dependent on something habit-forming
-ADHERE	20	verb	be compatible or in accordance with
 ADJACENT	20	adjective	nearest in space or position
 ADJUSTED	20	adjective	altered to accommodate to certain requirements or bring into a proper relation
 ADMIRE	20	verb	feel admiration for
@@ -1959,7 +1917,6 @@ ALGEBRA	20	noun	the mathematics of generalized arithmetical operations
 ALIEN	20	adjective	not contained in or deriving from the essential nature of something
 ALIGN	20	verb	place in a line or arrange so as to be parallel or straight
 ALIKE	20	adjective	having the same or similar characteristics
-ALLEGE	20	verb	report or maintain
 ALLERGIC	20	adjective	characterized by or caused by allergy
 ALLIANCE	20	noun	the state of being allied or confederated
 ALLOCATE	20	verb	distribute according to a plan or set apart for a special purpose
@@ -1972,7 +1929,6 @@ AMAZE	20	verb	affect with wonder
 AMBER	20	noun	a deep yellow color
 AMBIENT	20	adjective	completely enveloping
 AMEND	20	verb	make amendments to
-AMP	20	noun	the basic unit of electric current adopted under the Systeme International d'Unites
 AMPLE	20	adjective	more than enough in size or scope or capacity
 ANAGRAM	20	noun	a word or phrase spelled by rearranging the letters of another word or phrase
 ANALOGY	20	noun	an inference that if things agree in some respects they probably agree in others
@@ -1987,21 +1943,18 @@ ANGER	20	noun	a strong emotion
 ANGUISH	20	noun	extreme mental distress
 ANNUALLY	20	adverb	without missing a year
 ANOMALY	20	noun	deviation from the normal or common order or form or rule
-ANORAK	20	noun	a kind of heavy jacket (`windcheater' is a British term)
 ANTIDOTE	20	noun	a remedy that stops or controls the effects of a poison
 ANTIQUE	20	adjective	made in or typical of earlier times and valued for its age
 ANXIOUS	20	adjective	eagerly desirous
 ANYHOW	20	adverb	used to indicate that a statement explains or supports a previous statement
 APATHY	20	noun	an absence of emotion or enthusiasm
 APPALL	20	verb	strike with disgust or revulsion
-APPEND	20	verb	add to the very end
 APPENDIX	20	noun	supplementary material that is collected and appended at the back of a book
 APPLAUSE	20	noun	a demonstration of approval by clapping the hands together
 APPOINT	20	verb	create and charge with a task or function
 APT	20	adjective	(usually followed by `to') naturally disposed toward
 ARC	20	noun	electrical conduction through a gas in an applied electric field
 ARCADE	20	noun	a covered passageway with shops and stalls on either side
-ARCANE	20	adjective	requiring secret or mysterious knowledge
 ARCH	20	noun	a curved shape in the vertical plane that spans an opening
 ARCHAIC	20	adjective	so extremely old as seeming to belong to an earlier period
 ARCHIVE	20	noun	a depository containing historical records and documents
@@ -2014,18 +1967,15 @@ ARRIVAL	20	noun	accomplishment of an objective
 ARROGANT	20	adjective	having or showing feelings of unwarranted importance out of overbearing pride
 ARROW	20	noun	a mark to indicate a direction or relation
 ARTISTIC	20	adjective	relating to or characteristic of art or artists
-ASCEND	20	verb	travel up
 ASH	20	noun	the residue that remains when something is burned
 ASHAMED	20	adjective	feeling shame or guilt or embarrassment or remorse
 ASSEMBLE	20	verb	create by putting components or members together
-ASSERT	20	verb	state categorically
 ASSESS	20	verb	evaluate or estimate the nature, quality, ability, extent, or significance of
 ASSET	20	noun	a useful or valuable quality
 ASSIGN	20	verb	give an assignment to (a person) to a post, or assign a task to (a person)
 ASSIGNED	20	adjective	appointed to a post or duty
 ASSIST	20	noun	the activity of contributing to the fulfillment of a need or furtherance of an effort or purpose
 ASSISTED	20	adjective	having help
-ASSORT	20	verb	keep company with
 ASSORTED	20	adjective	consisting of a haphazard assortment of different kinds
 ASTERISK	20	noun	a star-shaped character * used in printing
 ATHEISM	20	noun	the doctrine or belief that there is no God
@@ -2034,7 +1984,6 @@ ATLAS	20	noun	(Greek mythology) a Titan who was forced by Zeus to bear the sky o
 ATOM	20	noun	(physics and chemistry) the smallest component of an element having the chemical properties of the element
 ATOMIC	20	adjective	of or relating to or comprising atoms
 ATROCITY	20	noun	the quality of being shockingly cruel and inhumane
-ATTAIN	20	verb	to gain with effort
 ATTORNEY	20	noun	a professional person authorized to practice law
 AUDIBLE	20	adjective	heard or perceptible by the ear
 AUDIO	20	noun	the audible part of a transmitted signal
@@ -2043,7 +1992,6 @@ AUTOMATE	20	verb	make automatic or control or operate automatically
 AWAIT	20	verb	look forward to the probable occurrence of
 AWFULLY	20	adverb	used as intensifiers
 AX	20	noun	an edge tool with a heavy bladed head mounted across a handle
-AXIOM	20	noun	a saying that is widely accepted on its own merits
 AXIS	20	noun	a straight line through a body or figure that satisfies certain conditions
 BABY	20	noun	a very young child (birth to 1 year) who has not yet begun to walk or talk
 BACKBONE	20	noun	a central cohesive source of support and stability
@@ -2057,7 +2005,6 @@ BAGGAGE	20	noun	cases used to carry belongings when traveling
 BAKE	20	verb	cook and make edible by putting in a hot oven
 BALLET	20	noun	a theatrical representation of a story that is performed to music by trained dancers
 BALLOT	20	noun	a document listing the alternatives that is used in voting
-BANAL	20	adjective	repeated too often
 BANANA	20	noun	any of several tropical and subtropical treelike herbs of the genus Musa having a terminal crown of large entire leaves and usually bearing hanging clusters of elongated fruits
 BANG	20	verb	strike violently
 BANKRUPT	20	verb	reduce to bankruptcy
@@ -2109,7 +2056,6 @@ BIAS	20	noun	a partiality that prevents objective consideration of an issue or s
 BIASED	20	adjective	favoring one person or side over another
 BIBLICAL	20	adjective	of or pertaining to or contained in or in accordance with the Bible
 BICYCLE	20	noun	a wheeled vehicle that has two wheels and is moved by foot pedals
-BIGOT	20	noun	a prejudiced person who is intolerant of any opinions differing from his own
 BIGOTED	20	adjective	blindly and obstinately attached to some creed or opinion and intolerant toward others
 BIGOTRY	20	noun	the intolerance and prejudice of a bigot
 BILLION	20	noun	the number that is represented as a one followed by 12 zeros
@@ -2133,7 +2079,6 @@ BLISS	20	noun	a state of extreme happiness
 BLOB	20	noun	an indistinct shapeless form
 BLOCKED	20	adjective	closed to traffic
 BLOOD	20	noun	the fluid (red in vertebrates) that is pumped through the body by the heart and contains plasma, blood cells, and platelets
-BLOODY	20	adjective	having or covered with or accompanied by blood
 BLUES	20	noun	a type of folksong that originated among Black Americans at the beginning of the 20th century
 BLURB	20	noun	a promotional statement (as found on the dust jackets of books)
 BOB	20	verb	move up and down repeatedly
@@ -2205,12 +2150,10 @@ CALCULUS	20	noun	a hard lump produced by the concretion of mineral salts
 CALENDAR	20	noun	a system of timekeeping that defines the beginning and length and divisions of the year
 CALLER	20	noun	a social or business visitor
 CALM	20	verb	make calm or still
-CAM	20	noun	a river in east central England that flows past Cambridge to join the Ouse River
 CAMERA	20	noun	equipment for taking photographs (usually consisting of a lightproof box with a lens at one end and light-sensitive film at the other)
 CAMP	20	noun	temporary living quarters specially built by the army for soldiers
 CAMPUS	20	noun	a field on which the buildings of a university are situated
 CANCEL	20	verb	postpone indefinitely or annul something that was scheduled
-CANT	20	noun	stock phrases that have become nonsense through endless repetition
 CAP	20	noun	a tight-fitting headdress
 CAPTURE	20	verb	succeed in representing or expressing something intangible
 CARBON	20	noun	an abundant nonmetallic tetravalent element occurring in three allotropic forms: amorphous carbon and graphite and diamond
@@ -2221,7 +2164,6 @@ CARRIER	20	noun	someone whose employment involves carrying something
 CARROT	20	noun	deep orange edible root of the cultivated carrot plant
 CARTOON	20	noun	a humorous or satirical drawing published in a newspaper or magazine
 CASH	20	noun	money in the form of bills or coins
-CASING	20	noun	the housing or outer covering of something
 CAST	20	verb	put or send forth
 CASTING	20	noun	object formed by a mold
 CASTLE	20	noun	a large and stately mansion
@@ -2230,10 +2172,8 @@ CATER	20	verb	give what is desired or needed, especially support, food or susten
 CATERING	20	noun	providing food and services
 CATHOLIC	20	noun	a member of a Catholic church
 CATTLE	20	noun	domesticated bovine animals as a group regardless of sex or age
-CAUSAL	20	adjective	involving or constituting a cause
 CAUTION	20	noun	the trait of being cautious
 CAVE	20	noun	a geological formation consisting of an underground enclosure with access from the surface of the ground or from the sea
-CAVEAT	20	noun	a warning against certain acts
 CEILING	20	noun	the overhead upper surface of a covered space
 CELLULAR	20	adjective	relating to cells
 CENSOR	20	noun	someone who censures or condemns
@@ -2273,7 +2213,6 @@ CHUCK	20	noun	informal terms for a meal
 CHUNK	20	noun	a compact mass
 CINEMA	20	noun	a medium that disseminates moving pictures
 CIRCULAR	20	adjective	having a circular shape
-CITE	20	verb	make reference to
 CIVIL	20	adjective	applying to ordinary citizens as contrasted with the military
 CIVILIAN	20	noun	a nonmilitary citizen
 CIVILIZE	20	verb	teach or refine to be discriminative in taste or judgment
@@ -2295,7 +2234,6 @@ CLINICAL	20	adjective	relating to a clinic or conducted in or as if in a clinic 
 CLIP	20	noun	a metal frame or container holding cartridges
 CLIPPED	20	adjective	cut or trimmed by clipping
 CLIPPING	20	noun	an excerpt cut from a newspaper or magazine
-CLIQUE	20	noun	an exclusive circle of people with a common purpose
 CLOG	20	verb	become or cause to become obstructed
 CLONE	20	noun	a person who is almost identical to another
 CLOSET	20	noun	a small room (or recess) or cabinet used for storage space
@@ -2316,7 +2254,6 @@ COBBLER	20	noun	a person who makes or repairs shoes
 COHERENT	20	adjective	marked by an orderly, logical, and aesthetically consistent relation of parts
 COIN	20	noun	a flat metal piece (usually a disc) used as money
 COINCIDE	20	verb	go with, fall together
-COKE	20	noun	carbon fuel produced by distillation of coal
 COLLAR	20	noun	a band that fits around the neck and is usually folded over
 COLLATE	20	verb	compare critically
 COLON	20	noun	the part of the large intestine between the cecum and the rectum
@@ -2332,7 +2269,6 @@ COMMENCE	20	verb	take the first step or steps in carrying out an action
 COMMIT	20	verb	perform an act, usually with a negative connotation
 COMMUNAL	20	adjective	for or by a group rather than individuals
 COMPACT	20	noun	a small cosmetics case with a mirror
-COMPEL	20	verb	force somebody to do something
 COMPETE	20	verb	compete for something
 COMPILE	20	verb	get or gather together
 COMPLY	20	verb	act in accordance with someone's rules, commands, or wishes
@@ -2348,7 +2284,6 @@ CONCERT	20	noun	a performance of music by players or singers not involving theat
 CONCERTO	20	noun	a composition for orchestra and a soloist
 CONCISE	20	adjective	expressing much in few words
 CONCLUDE	20	verb	decide by reasoning
-CONCUR	20	verb	be in accord
 CONDEMN	20	verb	express strong disapproval of
 CONDENSE	20	verb	undergo condensation
 CONDONE	20	verb	excuse, overlook, or make allowances for
@@ -2375,7 +2310,6 @@ CONVICT	20	noun	a person serving a sentence in a jail or prison
 COOK	20	verb	prepare a hot meal
 COOKIE	20	noun	any of various small flat sweet cakes (`biscuit' is the British term)
 COOL	20	verb	make cool or cooler
-COPING	20	noun	brick that is laid sideways at the top of a wall
 COPPER	20	noun	a ductile malleable reddish-brown corrosion-resistant diamagnetic metallic element
 CORN	20	noun	tall annual cereal grass bearing kernels on large ears: widely cultivated in America in many varieties
 CORRIDOR	20	noun	an enclosed passageway
@@ -2397,7 +2331,6 @@ CRACKED	20	adjective	used of skin roughened as a result of cold or exposure
 CRAFT	20	noun	the skilled practice of a practical occupation
 CRAMP	20	noun	a painful and involuntary muscular contraction
 CRAMPED	20	adjective	constricted in size
-CRASS	20	adjective	(of persons) so unrefined as to be lacking in discrimination and sensibility
 CRAWL	20	verb	move slowly
 CREAM	20	noun	the best people or things in a group
 CREATIVE	20	adjective	having the ability or power to create
@@ -2438,7 +2371,6 @@ CURED	20	adjective	freed from illness or injury
 CURLY	20	adjective	(of hair) having curls or waves
 CURRENCY	20	noun	the metal or paper medium of exchange that is presently used
 CURRY	20	noun	(East Indian cookery) a pungent dish of vegetables or meats flavored with curry powder and usually eaten with rice
-CURSE	20	noun	an appeal to some supernatural power to inflict evil on someone or some group
 CURTAIN	20	noun	hanging cloth used as a blind (especially for a window)
 CURVE	20	noun	the trace of a point whose direction of motion changes
 CUSTARD	20	noun	sweetened mixture of milk and eggs baked or boiled or frozen
@@ -2447,9 +2379,7 @@ CUTE	20	adjective	attractive especially by means of smallness or prettiness or q
 CYCLING	20	noun	the sport of traveling on a bicycle or motorcycle
 CYCLIST	20	noun	a person who rides a bicycle
 CYLINDER	20	noun	a solid bounded by a cylindrical surface and two parallel planes (the bases)
-CYNIC	20	noun	someone who is critical of the motives of others
 CYNICAL	20	adjective	believing the worst of human nature and motives
-DAFT	20	adjective	informal or slang terms for mentally irregular
 DAMP	20	adjective	slightly wet
 DANCE	20	noun	an artistic form of nonverbal communication
 DANCING	20	noun	taking a series of rhythmical steps (and movements) in time to music
@@ -2466,7 +2396,6 @@ DEADLINE	20	noun	the point in time at which something must be completed
 DEAF	20	noun	people who have severe hearing impairments
 DEALER	20	noun	someone who purchases and maintains an inventory of goods to be sold
 DEBT	20	noun	the state of owing something (especially money)
-DEBUG	20	verb	locate and correct errors in a computer program code
 DECAY	20	noun	the process of gradually becoming inferior
 DECIMAL	20	noun	a proper fraction whose denominator is a power of 10
 DECK	20	noun	any of various platforms built into a vessel
@@ -2488,9 +2417,7 @@ DELIGHT	20	verb	give pleasure to or be pleasing to
 DELTA	20	noun	a low triangular area of alluvial deposits where a river divides before entering a larger body of water
 DELUSION	20	noun	(psychology) an erroneous belief that is held in the face of evidence to the contrary
 DEMENTED	20	adjective	affected with madness or insanity
-DEMISE	20	noun	the time when something ends
 DEMOLISH	20	verb	destroy completely
-DENOTE	20	verb	be a sign or indication of
 DENSE	20	adjective	permitting little if any light to pass through because of denseness of matter
 DENSITY	20	noun	the amount per unit size
 DENTIST	20	noun	a person qualified to practice dentistry
@@ -2517,8 +2444,6 @@ DETECTOR	20	noun	any device that receives a signal or stimulus (as heat or press
 DETER	20	verb	try to prevent
 DETRACT	20	verb	take away a part from
 DEVIOUS	20	adjective	indirect in departing from the accepted or proper way
-DEVISE	20	verb	come up with (an idea, plan, explanation, theory, or principle) after a mental effort
-DEVOID	20	adjective	completely wanting or lacking
 DIAGONAL	20	adjective	connecting two nonadjacent corners of a plane figure or any two corners of a solid that are not in the same face
 DIAGRAM	20	noun	a drawing intended to explain how something works
 DIAL	20	noun	the face of a timepiece
@@ -2542,7 +2467,6 @@ DINE	20	verb	have supper
 DINER	20	noun	a person eating a meal (especially in a restaurant)
 DINING	20	noun	the act of eating dinner
 DIP	20	verb	immerse briefly into a liquid so as to wet, coat, or saturate
-DIRE	20	adjective	fraught with extreme danger
 DIRT	20	noun	the part of the earth's surface consisting of humus and disintegrated rock
 DISABLE	20	verb	make unable to perform a certain action
 DISCARD	20	verb	throw or cast away
@@ -2571,7 +2495,6 @@ DIVORCE	20	verb	part
 DOCTOR	20	noun	a licensed medical practitioner
 DOCTRINE	20	noun	a belief (or system of beliefs) accepted as authoritative by some group or school
 DODGE	20	verb	make a sudden movement in a new direction so as to avoid
-DOGMA	20	noun	a religious doctrine that is proclaimed as true without proof
 DOLE	20	noun	a share of money or food or clothing that has been charitably given
 DOMESTIC	20	adjective	of concern to or concerning the internal affairs of a nation
 DOMINANT	20	adjective	exercising influence or control
@@ -2580,7 +2503,6 @@ DON	20	noun	a Spanish gentleman or nobleman
 DONATE	20	verb	give to a charity or good cause
 DONATION	20	noun	a voluntary gift (as of money or service or ideas) made to some worthwhile cause
 DOOM	20	noun	an unpleasant or disastrous destiny
-DOOMED	20	noun	people who are destined to die soon
 DOSE	20	noun	a measured portion of medicine taken at any one time
 DOT	20	noun	a very small circular shape
 DOTTED	20	adjective	having a pattern of dots
@@ -2611,7 +2533,6 @@ DUAL	20	adjective	consisting of or involving two parts or components usually in 
 DUCK	20	verb	to move (the head or body) quickly downwards or away
 DUG	20	noun	an udder or breast or teat
 DULL	20	adjective	lacking in liveliness or animation
-DULY	20	adverb	at the proper time
 DUMMY	20	noun	a person who does not talk
 DUMPING	20	noun	selling goods abroad at a price below that charged in the domestic market
 DUMPSTER	20	noun	a container designed to receive and transport and dump waste
@@ -2657,7 +2578,6 @@ EMPLOYER	20	noun	a person or firm that employs workers
 EMULATE	20	verb	strive to equal or match, especially by imitating
 ENCLOSE	20	verb	enclose or enfold completely with or as if with a covering
 ENCLOSED	20	adjective	closed in or surrounded or included within
-ENCODE	20	verb	convert information into code
 ENDEAVOR	20	noun	a purposeful or industrious undertaking (especially one that requires effort or boldness)
 ENERGY	20	noun	(physics) a thermodynamic quantity equivalent to the capacity of a physical system to do work
 ENFORCE	20	verb	ensure observance of laws and rules
@@ -2669,7 +2589,6 @@ ENHANCE	20	verb	increase
 ENHANCED	20	adjective	increased or intensified in value or beauty or quality
 ENLARGE	20	verb	make larger
 ENLARGED	20	adjective	(of an organ or body part) excessively enlarged as a result of increased size in the constituent cells
-ENTAIL	20	verb	have as a logical consequence
 ENTIRETY	20	noun	the state of being total and complete
 ENVELOPE	20	noun	a flat (usually rectangular) container for a letter, thin package, etc.
 ENVISAGE	20	verb	form a mental image of something that is not present or that is not the case
@@ -2677,7 +2596,6 @@ ENVY	20	noun	a feeling of grudging admiration and desire to have something that 
 EPIC	20	adjective	very imposing or impressive
 EPISODE	20	noun	a happening that is distinctive in a series of related events
 EQUALITY	20	noun	the quality of being the same in quantity or measure or value or status
-EQUATE	20	verb	consider or describe as similar, equal, or analogous
 EQUATION	20	noun	a mathematical statement that two expressions are equal
 EQUIP	20	verb	provide with (something) usually for a specific purpose
 ERA	20	noun	a period marked by distinctive character or reckoned from a fixed point or event
@@ -2689,9 +2607,7 @@ ESSENCE	20	noun	the choicest or most essential or most vital part of some idea o
 ESTATE	20	noun	everything you own
 ETERNAL	20	adjective	continuing forever or indefinitely
 ETERNITY	20	noun	time without end
-ETHIC	20	noun	the principles of right and wrong that are accepted by an individual or a social group
 ETHICAL	20	adjective	of or relating to the philosophical study of ethics
-ETHNIC	20	adjective	denoting or deriving from or distinctive of the ways of living built up by a group of people
 EVALUATE	20	verb	evaluate or estimate the nature, quality, ability, extent, or significance of
 EVENLY	20	adverb	in equal amounts or shares
 EVENTUAL	20	adjective	expected to follow in the indefinite future from causes already operating
@@ -2703,7 +2619,6 @@ EXAM	20	noun	a set of questions or exercises evaluating skill or knowledge
 EXAMINER	20	noun	someone who administers a test to determine your qualifications
 EXCEED	20	verb	be greater in scope or size than some standard
 EXCITE	20	verb	arouse or elicit a feeling
-EXEMPT	20	verb	grant relief or an exemption from a rule or requirement to
 EXHAUST	20	verb	wear out completely
 EXHIBIT	20	verb	show an attribute, property, knowledge, or skill
 EXIT	20	noun	an opening that permits escape or release
@@ -2718,7 +2633,6 @@ EXPORT	20	noun	commodities (goods or services) sold to a foreign country
 EXPOSE	20	verb	expose or make accessible to some action or influence
 EXPOSED	20	adjective	with no protection or shield
 EXPOSURE	20	noun	vulnerability to the elements
-EXTANT	20	adjective	still in existence
 EYESIGHT	20	noun	normal use of the faculty of vision
 FABRIC	20	noun	artifact made by weaving or felting or knitting or crocheting natural or synthetic fibers
 FACTORY	20	noun	a plant consisting of one or more buildings with facilities for manufacturing
@@ -2769,7 +2683,6 @@ FIRED	20	adjective	having lost your job
 FIREWORK	20	noun	(usually plural) a device with an explosive that burns at a low rate and with colored flames
 FIRING	20	noun	the act of firing weapons or artillery at an enemy
 FISHING	20	noun	the act of someone who fishes as a diversion
-FIVER	20	noun	a United States bill worth 5 dollars
 FLAGGING	20	noun	flagstones collectively
 FLAME	20	noun	the process of combustion of inflammable materials producing heat and light and (often) smoke
 FLAW	20	noun	an imperfection in an object or machine
@@ -2838,7 +2751,6 @@ FUSE	20	verb	mix together different elements
 FUSION	20	noun	an occurrence that involves the production of a union
 FUSS	20	verb	worry unnecessarily or excessively
 FUSSY	20	adjective	annoyed and irritable
-FUTILE	20	adjective	producing no result or effect
 FUZZY	20	adjective	covering with fine light hairs
 GALACTIC	20	adjective	of or relating to a galaxy (especially our galaxy the Milky Way)
 GALAXY	20	noun	a splendid assemblage (especially of famous people)
@@ -2870,7 +2782,6 @@ GIFT	20	noun	something acquired without compensation
 GIG	20	noun	long and light rowing boat
 GLADLY	20	adverb	in a willing manner
 GLANCE	20	verb	throw a glance at
-GLEAN	20	verb	gather, as of natural products
 GLOBALLY	20	adverb	throughout the world
 GLORIOUS	20	adjective	having or deserving or conferring glory
 GLORY	20	noun	a state of high honor
@@ -2924,7 +2835,6 @@ GUM	20	noun	a preparation (usually made of sweetened chicle) for chewing
 GUT	20	noun	the part of the alimentary canal between the stomach and the anus
 GUTTER	20	noun	a channel along the eaves or on the roof
 HA	20	noun	(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing
-HACKER	20	noun	someone who plays golf poorly
 HAIL	20	verb	praise vociferously
 HAIRCUT	20	noun	the style in which hair has been cut
 HAIRY	20	adjective	having or covered with hair
@@ -3022,9 +2932,7 @@ IMMINENT	20	adjective	close in time
 IMMORAL	20	adjective	deliberately violating accepted principles of right and wrong
 IMMORTAL	20	adjective	not subject to death
 IMMUNE	20	noun	a person who is immune to a particular infection
-IMPAIR	20	verb	make worse or less effective
 IMPAIRED	20	adjective	diminished in strength, quality, or utility
-IMPEND	20	verb	be imminent or about to happen
 IMPERIAL	20	adjective	relating to or associated with an empire
 IMPLICIT	20	adjective	implied though not directly expressed
 IMPORT	20	noun	commodities (goods or services) bought from a foreign country
@@ -3032,12 +2940,9 @@ IMPORTED	20	adjective	used of especially merchandise brought from a foreign sour
 IMPRESS	20	verb	have an emotional or cognitive impact upon
 IMPRISON	20	verb	lock up or confine, in or as in a jail
 IMPULSE	20	noun	an instinctive motive
-INANE	20	adjective	devoid of intelligence
 INCOMING	20	adjective	arriving at a place or position
-INCUR	20	verb	make oneself subject to
 INDENT	20	noun	an order for goods to be exported or imported
 INDIRECT	20	adjective	having intervening factors or persons or influences
-INDUCE	20	verb	cause to arise
 INDUCED	20	adjective	brought about or caused
 INDULGE	20	verb	give free rein to
 INERTIA	20	noun	a disposition to remain inactive or inert
@@ -3045,7 +2950,6 @@ INFAMOUS	20	adjective	known widely and usually unfavorably
 INFANT	20	noun	a very young child (birth to 1 year) who has not yet begun to walk or talk
 INFECT	20	verb	communicate a disease to
 INFECTED	20	adjective	containing or resulting from disease-causing organisms
-INFER	20	verb	reason by deduction
 INFINITY	20	noun	time without end
 INFLICT	20	verb	impose something unpleasant
 INFORMAL	20	adjective	not formal
@@ -3074,7 +2978,6 @@ INTACT	20	adjective	constituting the undiminished entirety
 INTAKE	20	noun	the process of taking food into the body through the mouth (as by eating)
 INTENSE	20	adjective	possessing or displaying a distinctive feature to a heightened degree
 INTENT	20	noun	an anticipated outcome that is intended or that guides your planned actions
-INTER	20	verb	place in a grave or tomb
 INTERIM	20	noun	the time between one event, process, or period and another
 INTERIOR	20	noun	the region that is inside of something
 INTIMATE	20	adjective	marked by close acquaintance, association, or familiarity
@@ -3083,12 +2986,9 @@ INVADING	20	adjective	involving invasion or aggressive attack
 INVASION	20	noun	the act of invading
 INVENTOR	20	noun	someone who is the first to think of or make something
 INVERSE	20	adjective	reversed (turned backward) in order or nature or effect
-INVERT	20	verb	make an inversion (in a musical composition)
 INVERTED	20	adjective	being in such a position that top and bottom are reversed
 INVEST	20	verb	make an investment
-INVOKE	20	verb	summon into action or bring into existence, often as if by magic
 ION	20	noun	a particle that is electrically charged (positive or negative)
-IRATE	20	adjective	feeling or showing extreme anger
 IRON	20	noun	a heavy ductile magnetic metallic element
 IRONIC	20	adjective	humorously sarcastic or mocking
 IRONY	20	noun	witty language used to convey insults or scorn
@@ -3117,7 +3017,6 @@ JURY	20	noun	a body of citizens sworn to give a true verdict according to the ev
 JUSTICE	20	noun	the quality of being just or fair
 JUVENILE	20	adjective	of or relating to or characteristic of or appropriate for children or young people
 KEEPER	20	noun	someone in charge of other people
-KERNEL	20	noun	the inner and usually edible part of a seed or grain or nut or fruit stone
 KETTLE	20	noun	a metal pot for stewing or boiling
 KICK	20	verb	drive or propel with the foot
 KICKING	20	noun	a rhythmic thrusting movement of the legs as in swimming or calisthenics
@@ -3166,7 +3065,6 @@ LENIENT	20	adjective	tolerant or lenient
 LENS	20	noun	a transparent optical device used to converge or diverge transmitted light and to form images
 LESBIAN	20	noun	a female homosexual
 LIAISON	20	noun	a usually secretive or illicit sexual relationship
-LIBEL	20	noun	a false and malicious publication printed for the purpose of defaming a living person
 LIBERAL	20	adjective	showing or characterized by broad-mindedness
 LIBERTY	20	noun	immunity from arbitrary exercise of authority: political independence
 LICENSE	20	noun	a legal document giving official permission to do something
@@ -3188,7 +3086,6 @@ LITERATE	20	adjective	able to read and write
 LITTER	20	noun	the offspring at one birth of a multiparous mammal
 LIVELY	20	adjective	full of life and energy
 LIVER	20	noun	large and complicated reddish-brown glandular organ located in the upper right portion of the abdominal cavity
-LOADER	20	noun	a laborer who loads and unloads vessels in a port
 LOBBY	20	noun	a large entrance or reception room or area
 LOCALLY	20	adverb	by a particular locality
 LOCATE	20	verb	discover the location of
@@ -3234,7 +3131,6 @@ MARKER	20	noun	some conspicuous object used to distinguish or mark something
 MARRIED	20	adjective	joined in matrimony
 MASK	20	noun	a covering to disguise or conceal the face
 MATE	20	noun	the officer below the master on a commercial ship
-MATRIX	20	noun	(mathematics) a rectangular array of quantities or expressions set out by rows and columns
 MATURE	20	adjective	characteristic of maturity
 MAXIMIZE	20	verb	make as big or large as possible
 MAYOR	20	noun	the head of a city government
@@ -3257,7 +3153,6 @@ MERGE	20	verb	become one
 MERRY	20	adjective	full of or showing high-spirited merriment
 METAPHOR	20	noun	a figure of speech in which an expression is used to refer to something that it does not literally denote in order to suggest a similarity
 METER	20	noun	the basic unit of length adopted under the Systeme International d'Unites (approximately 1.094 yards)
-METRIC	20	noun	a function of a topological space that gives, for any two points in the space, a value equal to the distance between them
 METRO	20	noun	an electric railway operating below the surface of the ground (usually in a city)
 MIDDAY	20	noun	the middle of the day
 MIGHTY	20	adjective	having or showing great strength or force or intensity
@@ -3290,7 +3185,6 @@ MOBILE	20	adjective	migratory
 MOCK	20	verb	treat with contempt
 MODERATE	20	verb	preside over
 MODEST	20	adjective	marked by simplicity
-MODULE	20	noun	one of the inherent cognitive or perceptual powers of the mind
 MOLD	20	noun	the distinctive form in which a thing is made
 MOLE	20	noun	the molecular weight of a substance expressed in grams
 MOLECULE	20	noun	(physics and chemistry) the simplest structural unit of an element or compound
@@ -3321,7 +3215,6 @@ MUDDLE	20	noun	a confused multitude of things
 MUDDLED	20	adjective	confused and vague
 MUG	20	noun	the quantity that can be held in a mug
 MULTIPLY	20	verb	combine by multiplication
-MUM	20	adjective	failing to speak or communicate etc when expected to
 MUMBLE	20	verb	talk indistinctly
 MUMMY	20	noun	informal terms for a mother
 MUNDANE	20	adjective	found in the ordinary course of events
@@ -3341,24 +3234,19 @@ MYTHICAL	20	adjective	based on or told of in traditional stories
 NAIL	20	verb	attach something somewhere by means of nails
 NARROW	20	verb	make or become more narrow or restricted
 NATIVE	20	adjective	characteristic of or existing by virtue of geographic origin
-NAY	20	noun	a negative
 NEAT	20	adjective	clean or organized
 NEEDLE	20	noun	the leaf of a conifer
-NEGATE	20	verb	be in contradiction with
 NEGLECT	20	verb	leave undone or leave out
 NEIGHBOR	20	noun	a person who lives (or is located) near another
 NERVE	20	noun	any bundle of nerve fibers running to various organs and tissues of the body
 NEST	20	noun	a structure in which animals lay eggs or give birth to their young
-NEURAL	20	adjective	of or relating to the nervous system
 NEUTRAL	20	adjective	having no personal preference
 NEWCOMER	20	noun	any new participant in some activity
 NEWLY	20	adverb	very recently
 NICELY	20	adverb	in a nice way
 NICK	20	noun	an impression in a surface (as made by a blow)
 NICKNAME	20	noun	a familiar name for a person (often a shortened version of a person's given name)
-NIL	20	noun	a quantity of no importance
 NOBLE	20	adjective	impressive in appearance
-NODE	20	noun	a connecting point at which several lines come together
 NOMINAL	20	adjective	relating to or constituting or bearing or giving a name
 NOMINATE	20	verb	propose as a candidate for some honor
 NOON	20	noun	the middle of the day
@@ -3374,14 +3262,12 @@ NOVELTY	20	noun	originality by virtue of being refreshingly novel
 NOVICE	20	noun	someone who has entered a religious order but has not taken final vows
 NUCLEAR	20	adjective	(weapons) deriving destructive energy from the release of atomic energy
 NUISANCE	20	noun	(law) a broad legal concept including anything that disturbs the reasonable use of your property or endangers life and health or is offensive
-NULL	20	adjective	lacking any legal or binding force
 NUMERAL	20	noun	a symbol used to represent a number
 NUMERIC	20	adjective	of or relating to or denoting numbers
 NURSE	20	noun	one skilled in caring for young children or the sick (usually under the supervision of a physician)
 NUT	20	noun	usually large hard-shelled seed
 NUTS	20	adjective	informal or slang terms for mentally irregular
 OAR	20	noun	an implement used to propel or steer a boat
-OBLIGE	20	verb	force somebody to do something
 OBSCENE	20	adjective	designed to incite to indecency or lust
 OBSERVER	20	noun	a person who becomes aware (of things or events) through the senses
 OBSESS	20	verb	haunt like a ghost
@@ -3394,11 +3280,9 @@ OFFEND	20	verb	cause to feel resentment or indignation
 OFFENDER	20	noun	a person who transgresses moral or civil law
 OFFENSE	20	noun	a lack of politeness
 OFFHAND	20	adjective	with little or no preparation or forethought
-OFFSET	20	verb	compensate for or counterbalance
 OMISSION	20	noun	a mistake resulting from neglect
 ONGOING	20	adjective	currently happening
 ONION	20	noun	the bulb of an onion plant
-ONUS	20	noun	an onerous or difficult concern
 OPERA	20	noun	a drama set to music
 OPPONENT	20	noun	a contestant that you are matched against
 OPPRESS	20	verb	come down on or keep down by unjust use of one's authority
@@ -3408,14 +3292,12 @@ OPTICAL	20	adjective	of or relating to or involving light or optics
 OPTIMAL	20	adjective	most desirable possible under a restriction expressed or implied
 OPTIMIZE	20	verb	make optimal
 OPTIMUM	20	noun	most favorable conditions or greatest degree or amount possible under given circumstances
-OPUS	20	noun	a musical work that has been created
 ORAL	20	adjective	using speech rather than writing
 ORANGE	20	noun	round yellow to orange fruit of any of several citrus trees
 ORBIT	20	noun	the (usually elliptical) path described by one celestial body in its revolution about another
 ORBITAL	20	adjective	of or relating to an orbit
 ORGAN	20	noun	a fully differentiated structural and functional unit in an animal that is specialized for some particular function
 ORGANIC	20	adjective	relating or belonging to the class of chemical compounds having a carbon basis
-ORIENT	20	verb	be oriented
 ORIENTAL	20	adjective	denoting or characteristic of countries of Asia
 ORIENTED	20	adjective	adjusted or located in relation to surroundings or circumstances
 ORTHODOX	20	adjective	of or pertaining to or characteristic of Judaism
@@ -3428,7 +3310,6 @@ OUTLOOK	20	noun	a habitual or characteristic mental attitude that determines how
 OUTRAGE	20	noun	a feeling of righteous anger
 OUTRAGED	20	adjective	angered at something unjust or wrong
 OUTRIGHT	20	adjective	without reservation or exception
-OUTSET	20	noun	the time at which something is supposed to begin
 OUTWEIGH	20	verb	be heavier than
 OVERCOME	20	verb	win a victory over
 OVERDUE	20	adjective	past due
@@ -3449,7 +3330,6 @@ OZONE	20	noun	a colorless gas (O3) soluble in alkalis and cold water
 PACE	20	noun	the rate of moving (especially walking or running)
 PACIFIER	20	noun	someone who tries to bring peace
 PAD	20	noun	a number of sheets of paper fastened together along one edge
-PAGING	20	noun	calling out the name of a person (especially by a loudspeaker system)
 PAINT	20	verb	make a painting
 PAINTED	20	adjective	coated with paint
 PAINTING	20	noun	graphic art consisting of an artistic composition made by applying paints to a surface
@@ -3467,10 +3347,8 @@ PARADOX	20	noun	(logic) a statement that contradicts itself
 PARANOIA	20	noun	a psychological disorder characterized by delusions of persecution or grandeur
 PARANOID	20	adjective	suffering from paranoia
 PARDON	20	verb	accept an excuse for
-PARITY	20	noun	(obstetrics) the number of liveborn children a woman has delivered
 PARODY	20	noun	a composition that imitates or misrepresents somebody's style, usually in a humorous way
 PARROT	20	noun	usually brightly colored zygodactyl tropical birds with short hooked beaks and the ability to mimic sounds
-PARSE	20	verb	analyze syntactically by assigning a constituent structure to (a sentence)
 PARTICLE	20	noun	(nontechnical usage) a tiny piece of anything
 PARTNER	20	noun	a person's partner in marriage
 PASSAGE	20	noun	the act of passing from one state or place to the next
@@ -3612,23 +3490,19 @@ PUNCH	20	verb	deliver a quick blow to
 PUNISH	20	verb	impose a penalty on
 PUNT	20	verb	kick the ball
 PUPIL	20	noun	a learner who is enrolled in an educational institution
-PURGE	20	verb	oust politically
 PURITY	20	noun	being undiluted or unmixed with extraneous material
 PURPLE	20	noun	a purple color or pigment
 PURSUE	20	verb	carry out or participate in an activity
 PURSUIT	20	noun	the act of pursuing in an effort to overtake or capture
 PUZZLE	20	verb	be a mystery or bewildering to
-PYTHON	20	noun	large Old World boas
 QUANTUM	20	noun	a discrete amount of something that is analogous to the quantities in quantum theory
 QUEEN	20	noun	the only fertile female in a colony of social insects such as bees and ants and termites
 QUERY	20	noun	an instance of questioning
 QUEST	20	noun	a search for an alternative that meets cognitive criteria
 QUIBBLE	20	noun	an evasion of the point of an argument by raising irrelevant distinctions or objections
 QUIZ	20	noun	an examination consisting of a few short questions
-QUOTA	20	noun	a prescribed number
 RABBIT	20	noun	any of various burrowing animals of the family Leporidae having long ears and short tails
 RABID	20	adjective	of or infected by rabies
-RACIAL	20	adjective	of or related to genetically distinguished groups of people
 RACING	20	noun	the sport of engaging in contests of speed
 RACK	20	verb	go at a rack
 RACKET	20	noun	a loud and disturbing noise
@@ -3681,9 +3555,7 @@ REFRAIN	20	noun	the part of a song where a soloist is joined by a group of singe
 REFRESH	20	verb	refresh one's memory
 REFUND	20	noun	money returned to a payer
 REFUSAL	20	noun	the act of refusing
-REFUTE	20	verb	overthrow by argument, evidence, or proof
 REGAIN	20	verb	get or find back
-REGIME	20	noun	the organization that is the governing authority of a political unit
 REGIONAL	20	adjective	characteristic of a region
 REIGN	20	verb	have sovereign power
 RELAX	20	verb	become less tense, rest, or take one's ease
@@ -3694,7 +3566,6 @@ RELIEVED	20	adjective	(of pain or sorrow) made easier to bear
 REMEDY	20	noun	act of correcting an error or a fault or an evil
 REMINDER	20	noun	a message that helps you remember something
 RENAME	20	verb	assign a new name to
-REND	20	verb	tear or be torn violently
 RENDER	20	verb	cause to become
 RENEW	20	verb	reestablish on a new, usually improved, basis or make new or like new
 RENEWED	20	adjective	restored to a new condition
@@ -3707,7 +3578,6 @@ RESCUE	20	noun	recovery or preservation from loss or danger
 RESEMBLE	20	verb	appear like
 RESENT	20	verb	feel bitter or indignant about
 RESET	20	verb	set anew
-RESIDE	20	verb	make one's home in a particular place or community
 RESIGN	20	verb	leave (a job, post, or position) voluntarily
 RESIST	20	verb	elude, especially in a baffling way
 RESOLVE	20	verb	bring to an end
@@ -3787,7 +3657,6 @@ SAUCE	20	noun	flavorful relish or dressing or topping served as an accompaniment
 SCALING	20	noun	the act of arranging in a graduated series
 SCANDAL	20	noun	disgraceful gossip about the private lives of other people
 SCANNER	20	noun	someone who scans verse to determine the number and prosodic value of the syllables
-SCARCE	20	adverb	only a very short time before
 SCARCELY	20	adverb	only a very short time before
 SCARE	20	verb	cause fear in
 SCARED	20	adjective	made afraid
@@ -3799,11 +3668,9 @@ SCENERY	20	noun	the painted structures of a stage set that are intended to sugge
 SCHEDULE	20	noun	a temporally organized plan for matters to be attended to
 SCHOLAR	20	noun	a learned person (especially in the humanities)
 SCOPE	20	noun	an area in which something acts or operates or has power or control:
-SCOTCH	20	noun	a slight surface cut (especially a notch that is made to keep a tally)
 SCREAM	20	verb	utter a sudden loud cry
 SCREW	20	noun	someone who guards prisoners
 SCROLL	20	noun	a round shape formed by a series of concentric circles (as formed by leaves or flower petals)
-SCUM	20	noun	worthless people
 SEA	20	noun	a division of an ocean or a large body of salt water partially enclosed by land
 SEAL	20	verb	make tight
 SEALED	20	adjective	established irrevocably
@@ -3849,15 +3716,12 @@ SHOVE	20	verb	come into rough contact with while moving
 SHOWER	20	noun	a plumbing fixture that sprays water over you
 SHUTDOWN	20	noun	termination of operations
 SHY	20	verb	start suddenly, as from fright
-SIC	20	adverb	intentionally so written (used after a printed word or phrase)
 SICK	20	adjective	affected by an impairment of normal physical or mental function
 SICKEN	20	verb	cause aversion in
 SIDEWAYS	20	adjective	(of movement) at an angle
-SIDING	20	noun	a short stretch of railroad track used to store rolling stock or enable trains on the same line to pass
 SIGH	20	verb	heave or utter a sigh
 SIGHTED	20	adjective	able to see
 SIGHTING	20	noun	the act of observing
-SIGMA	20	noun	the 18th letter of the Greek alphabet
 SILENCE	20	noun	the state of being silent (as when no one is speaking)
 SILENT	20	adjective	marked by absence of sound
 SILICON	20	noun	a tetravalent nonmetallic element
@@ -3865,7 +3729,6 @@ SILVER	20	noun	a soft white precious univalent metallic element having the highe
 SIMPLIFY	20	verb	make simpler or easier or reduce in complexity or extent
 SIMULATE	20	verb	reproduce someone's behavior or looks
 SINCERE	20	adjective	open and genuine
-SINE	20	noun	ratio of the length of the side opposite the given angle to the length of the hypotenuse of a right-angled triangle
 SING	20	verb	deliver by singing
 SINGER	20	noun	a person who sings
 SINGULAR	20	adjective	unusual or striking
@@ -3886,10 +3749,8 @@ SKIP	20	verb	bypass
 SKIRT	20	noun	cloth covering that forms the part of a garment below the waist
 SKULL	20	noun	the bony skeleton of the head of vertebrates
 SKY	20	noun	the atmosphere and outer space as viewed from the earth
-SLAG	20	noun	the scum formed by oxidation at the surface of molten metals
 SLANG	20	noun	informal language consisting of words and expressions that are not considered appropriate for formal occasions
 SLASH	20	verb	cut with sweeping strokes
-SLAVE	20	noun	a person who is owned by someone
 SLICE	20	noun	a share of something
 SLICED	20	adjective	prepared by cutting
 SLIDE	20	noun	a small flat rectangular piece of glass on which specimens can be mounted for microscopic study
@@ -3918,14 +3779,12 @@ SOBER	20	adjective	not affected by a chemical substance (especially alcohol)
 SOCIALLY	20	adverb	by or with respect to society
 SOCK	20	noun	hosiery consisting of a cloth covering for the foot
 SOCKET	20	noun	a bony hollow into which a structure fits
-SOD	20	noun	surface layer of ground containing a mat of grass and grass roots
 SOIL	20	noun	the state of being covered with unclean things
 SOLAR	20	adjective	relating to or derived from the sun or utilizing the energies of the sun
 SOLDIER	20	noun	an enlisted man or woman who serves in an army
 SOLE	20	noun	the underside of footwear or a golf club
 SOLO	20	noun	any activity that is performed alone without assistance
 SONG	20	noun	a short musical composition with words
-SORDID	20	adjective	morally degraded
 SORE	20	adjective	hurting
 SOUL	20	noun	the immaterial part of a person
 SOUP	20	noun	liquid food especially of meat or fish or vegetable stock often containing pieces of solid food
@@ -3936,7 +3795,6 @@ SPECIES	20	noun	(biology) taxonomic group whose members can interbreed
 SPECIMEN	20	noun	an example regarded as typical of its class
 SPECTRUM	20	noun	an ordered array of the components of an emission or wave
 SPHERE	20	noun	a particular environment or walk of life
-SPIGOT	20	noun	a plug for a bunghole in a cask
 SPIKE	20	noun	a transient variation in voltage or current
 SPILL	20	verb	cause or allow (a liquid substance) to run or flow from a container
 SPIN	20	verb	revolve quickly and repeatedly around one's own axis
@@ -3946,7 +3804,6 @@ SPLENDID	20	adjective	having great beauty and splendor
 SPOIL	20	verb	make a mess of, destroy or ruin
 SPONSOR	20	verb	assume sponsorship of
 SPOOF	20	noun	a composition that imitates or misrepresents somebody's style, usually in a humorous way
-SPOOL	20	noun	a winder around which thread or tape or film or other flexible materials can be wound
 SPORT	20	noun	an active diversion requiring physical exertion and competition
 SPOUT	20	verb	gush forth in a sudden stream or jet
 SPRAY	20	noun	a pesticide in suspension or solution
@@ -4012,7 +3869,6 @@ SUFFERER	20	noun	a person suffering from an illness
 SUFFIX	20	noun	an affix that is added at the end of the word
 SUICIDAL	20	adjective	dangerous to yourself or your interests
 SUITE	20	noun	a musical composition of several movements only loosely connected
-SUNDRY	20	adjective	consisting of a haphazard assortment of different kinds
 SUNLIGHT	20	noun	the rays of the sun
 SUNNY	20	adjective	bright and pleasant
 SUNRISE	20	noun	the first light of day
@@ -4085,7 +3941,6 @@ TENTH	20	noun	a tenth part
 TERRIBLE	20	adjective	causing fear or dread or terror
 TERRIFY	20	verb	fill with terror
 TERROR	20	noun	an overwhelming feeling of fear and anxiety
-TERSE	20	adjective	brief and to the point
 TEXTBOOK	20	noun	a book prepared for use in schools or colleges
 TEXTUAL	20	adjective	of or relating to or based on a text
 THEATER	20	noun	a building where theatrical performances or motion-picture shows can be presented
@@ -4103,7 +3958,6 @@ THIEVE	20	verb	take by theft
 THIRST	20	noun	a physiological need to drink
 THIRTY	20	noun	the cardinal number that is the product of ten and three
 THOROUGH	20	adjective	painstakingly careful and accurate
-THOU	20	noun	the cardinal number that is the product of 10 and 100
 THREAD	20	verb	to move or cause to move in a sinuous, spiral, or circular course
 THREATEN	20	verb	pose a threat to
 THROAT	20	noun	the passage to the stomach and lungs
@@ -4122,13 +3976,11 @@ TIRESOME	20	adjective	so lacking in interest as to cause mental weariness
 TOAD	20	noun	any of various tailless stout-bodied amphibians with long hind limbs for leaping
 TOAST	20	verb	make brown and crisp by heating
 TOE	20	noun	one of the digits of the foot
-TOGGLE	20	noun	any instruction that works first one way and then the other
 TOILET	20	noun	a room or building equipped with one or more toilets
 TOLERANT	20	adjective	showing respect for the rights or opinions or practices of others
 TOLERATE	20	verb	put up with something or somebody unpleasant
 TOLL	20	noun	a fee levied for the use of roads or bridges (used for maintenance)
 TOMATO	20	noun	mildly acid red or yellow pulpy fruit eaten as a vegetable
-TOME	20	noun	a (usually) large and scholarly book
 TON	20	noun	a United States unit of weight equivalent to 2000 pounds
 TONE	20	noun	the quality of a person's voice
 TONGUE	20	noun	a mobile mass of muscular tissue covered with mucous membrane and located in the oral cavity
@@ -4170,7 +4022,6 @@ TROOP	20	noun	a group of soldiers
 TROUSER	20	noun	(usually in the plural) a garment extending from the waist to the knee or ankle, covering each leg separately
 TRUMPET	20	noun	a brass musical instrument with a brilliant tone
 TRUNCATE	20	verb	replace a corner by a plane
-TRUSTY	20	noun	a convict who is considered trustworthy and granted special privileges
 TUBE	20	noun	conduit consisting of a long hollow object (usually cylindrical) used to hold and conduct objects or liquids or gases
 TUNNEL	20	verb	move through by or as by digging
 TUTOR	20	noun	a person who gives private instruction (as in singing, acting, etc.)
@@ -4186,7 +4037,6 @@ UNDERGO	20	verb	pass through
 UNDERLIE	20	verb	be or form the base for
 UNDO	20	verb	cancel, annul, or reverse an action or its effect
 UNDOING	20	noun	an act that makes a previous act of no effect (as if not done)
-UNDULY	20	adverb	to an undue degree
 UNEASY	20	adjective	lacking a sense of security or affording no ease or reassurance
 UNFAIR	20	adjective	not fair
 UNIFY	20	verb	become one
@@ -4233,7 +4083,6 @@ VAT	20	noun	a tax levied on the difference between a commodity's price before ta
 VEHICLE	20	noun	a conveyance that transports people or objects
 VEIN	20	noun	a blood vessel that carries blood from the capillaries toward the heart
 VELOCITY	20	noun	distance travelled per unit time
-VEND	20	verb	sell or offer for sale from place to place
 VENDING	20	noun	the act of selling goods for a living
 VENDOR	20	noun	someone who promotes or exchanges goods or services for money
 VENTURE	20	noun	any venturesome undertaking especially one with an uncertain outcome
@@ -4248,7 +4097,6 @@ VERSE	20	noun	literature in metrical form
 VERTICAL	20	adjective	at right angles to the plane of the horizon or a base line
 VESSEL	20	noun	a tube in which a body fluid circulates
 VET	20	noun	a doctor who practices veterinary medicine
-VIABLE	20	adjective	capable of being done with means at hand and circumstances as they are
 VICINITY	20	noun	a surrounding or nearby region
 VICIOUS	20	adjective	(of persons or their actions) able or disposed to inflict pain or suffering
 VICTIM	20	noun	an unfortunate person who suffers from some adverse circumstance
@@ -4273,7 +4121,6 @@ VOID	20	adjective	lacking any legal or binding force
 VOLTAGE	20	noun	the rate at which energy is drawn from a source that produces a flow of electricity in a circuit
 VOTER	20	noun	a citizen who has a legal right to vote
 VOTING	20	noun	a choice that is made by counting the number of people in favor of each alternative
-VOUCH	20	verb	give personal assurance
 VOWEL	20	noun	a speech sound made with the vocal tract open
 WADE	20	verb	walk (through relatively shallow water)
 WAFFLE	20	noun	pancake batter baked in a waffle iron
@@ -4307,7 +4154,6 @@ WEIGH	20	verb	have a certain weight
 WELFARE	20	noun	governmental provision of economic assistance to persons in need
 WET	20	noun	wetness caused by water
 WHALE	20	noun	a very large person
-WHENCE	20	adverb	from what place, source, or cause
 WHIM	20	noun	a sudden desire
 WHISKEY	20	noun	a liquor made from fermented mash of grain
 WHISTLE	20	verb	make whistling sounds

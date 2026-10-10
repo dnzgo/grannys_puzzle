@@ -195,7 +195,10 @@ def main(argv: list[str] | None = None) -> int:
     generate.add_argument("--pack", required=True, help="pack name, e.g. en-001")
     generate.add_argument("--first-number", type=int, default=1)
     generate.add_argument("--sizes", default="7x9,6x8,7x7,5x6", help="columns x rows, cycled")
-    generate.add_argument("--max-familiarity", type=int, default=35)
+    generate.add_argument(
+        "--max-familiarity", type=int, default=20,
+        help="SCOWL size cut-off (default 20: everyday words; 35 adds crossword-veteran words like ARIA, LEVEE)",
+    )
     generate.add_argument("--seed", type=int, default=1)
     generate.set_defaults(run=cmd_generate)
 
