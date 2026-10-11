@@ -28,6 +28,8 @@ final class LevelViewModel {
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
+    /// The latest haptic to play; the level screen turns it into a vibration.
+    private(set) var haptic: HapticSignal?
     let speech = GrandmaSpeech()
 
     // Internal bookkeeping the views never read, so SwiftUI needn't watch it.
@@ -35,6 +37,7 @@ final class LevelViewModel {
     /// Palette index per answer, worked out once per level.
     @ObservationIgnored private let clueColorIndices: [Int]
     @ObservationIgnored private var catTask: Task<Void, Never>?
+    @ObservationIgnored private var hapticCount = 0
     /// Weak because the host (the Game) owns this view model through its
     /// current screen; a strong reference back would be a retain cycle.
     @ObservationIgnored private weak var host: LevelHost?
@@ -141,26 +144,35 @@ final class LevelViewModel {
 
     func tapCell(_ cell: Coordinate) {
         puzzle.select(cell)
+        feel(.select)
     }
 
     func tapClue(answerID: Int) {
         puzzle.selectAnswer(answerID)
+        feel(.select)
     }
 
     func showNextClue() {
         puzzle.selectNextAnswer()
+        feel(.select)
     }
 
     func showPreviousClue() {
         puzzle.selectPreviousAnswer()
+        feel(.select)
     }
 
     func type(_ letter: Character) {
-        puzzle.place(letter)
+        // Only a letter that actually landed clicks; a refused one stays silent.
+        if puzzle.place(letter) {
+            feel(.letterPlaced)
+        }
     }
 
     func erase() {
-        puzzle.erase()
+        if puzzle.erase() {
+            feel(.letterErased)
+        }
     }
 
     /// The cat reveals one letter. The hint is only charged if a letter was
@@ -170,6 +182,7 @@ final class LevelViewModel {
         guard hints > 0, let cell = puzzle.revealLetter() else { return }
         _ = host?.spendHint()
         showCat(at: cell)
+        feel(.reveal)
     }
 
     /// Grandma solves the selected word, charged only if she changed something.
@@ -179,6 +192,7 @@ final class LevelViewModel {
         guard !revealed.isEmpty else { return }
         _ = host?.spendGrandma()
         speech.say(GrandmaLines.solved(answer.solution))
+        feel(.reveal)
     }
 
     func submit() {
@@ -187,6 +201,7 @@ final class LevelViewModel {
         // record the level once, not award yarn twice and skip a level.
         guard let result = puzzle.submit(rules: scoringRules) else { return }
         earnedYarn = host?.record(result) ?? []
+        feel(result.passed ? .levelPassed : .levelFailed)
     }
 
     /// After the result: a pass moves on (the host decides where), a fail
@@ -208,6 +223,11 @@ final class LevelViewModel {
     }
 
     // MARK: - Short-lived UI state
+
+    private func feel(_ event: HapticEvent) {
+        hapticCount += 1
+        haptic = HapticSignal(event: event, id: hapticCount)
+    }
 
     private func showCat(at cell: Coordinate) {
         catTask?.cancel()

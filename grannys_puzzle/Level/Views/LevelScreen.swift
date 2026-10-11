@@ -42,6 +42,7 @@ struct LevelScreen: View {
         }
         .background(Theme.background.ignoresSafeArea())
         .preferredColorScheme(.light)
+        .gameHaptics(model.haptic)
     }
 
     @ViewBuilder
