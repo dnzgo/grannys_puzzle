@@ -71,10 +71,10 @@ struct JarMoment: View {
         VStack(spacing: 16) {
             HStack(spacing: 10) {
                 ForEach(0..<opening.reward.hints, id: \.self) { _ in
-                    RewardToken(systemImage: "cat.fill", isProminent: true)
+                    RewardToken(face: .cat)
                 }
                 ForEach(0..<opening.reward.grandmas, id: \.self) { _ in
-                    RewardToken(systemImage: "eyeglasses", isProminent: false)
+                    RewardToken(face: .grandma)
                 }
             }
             .accessibilityHidden(true)
@@ -118,16 +118,13 @@ struct JarMoment: View {
 /// One cat or grandma coming out of the jar, styled like the level's
 /// helper buttons so the player recognises what they got.
 private struct RewardToken: View {
-    let systemImage: String
-    let isProminent: Bool
+    let face: HelperFace
 
     var body: some View {
-        Image(systemName: systemImage)
-            .font(.system(size: 24, weight: .semibold))
-            .foregroundStyle(isProminent ? Theme.onPrimary : Theme.secondary)
+        HelperFaceImage(face: face, size: 50)
             .frame(width: 54, height: 54)
-            .background(Circle().fill(isProminent ? Theme.primary : Theme.surface))
-            .overlay(Circle().strokeBorder(isProminent ? Color.clear : Theme.secondary, lineWidth: 1.5))
+            // The same soft orange glow as the level's helper buttons.
+            .background(Circle().fill(Theme.surface).shadow(color: Theme.primary.opacity(0.45), radius: 6, y: 2))
     }
 }
 

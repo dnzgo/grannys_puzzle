@@ -116,8 +116,8 @@ struct HomeView: View {
 
     private var topRow: some View {
         HStack(spacing: 8) {
-            HelperCountChip(systemImage: "cat.fill", count: game.progress.hints, label: "Cat hints")
-            HelperCountChip(systemImage: "eyeglasses", count: game.progress.grandmas, label: "Grandma helpers")
+            HelperCountChip(face: .cat, count: game.progress.hints, label: "Cat hints")
+            HelperCountChip(face: .grandma, count: game.progress.grandmas, label: "Grandma helpers")
             Spacer()
             CircleIconButton(systemName: "hanger", label: "Wardrobe") { showsWardrobe = true }
             CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
@@ -179,23 +179,27 @@ private struct HomeStage: View {
             let at = { (x: CGFloat, y: CGFloat) in CGPoint(x: origin.x + x * side, y: origin.y + y * side) }
 
             ZStack {
-                // Back to front, like layers of a painting.
+                // Back to front, like layers of a painting: the bag tucked
+                // half behind the armchair's right side, grandma, the cat's
+                // bed just in front of the chair's left side, and the jar on
+                // the floor at the front (it moves to a coffee table later).
                 Ellipse()
                     .fill(Theme.clueCell)
                     .frame(width: side * 0.95, height: side * 0.24)
                     .position(at(0.5, 0.88))
 
-                JarView(width: side * 0.2, isReady: jarReady, action: onJar)
-                    .position(at(0.86, 0.66))
+                // Its bottom stays on the same floor line as the chair's feet.
+                YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.25, action: onYarnBag)
+                    .position(at(0.8, 0.705))
 
                 GrannyView(width: side * 0.6, action: onGranny)
                     .position(at(0.5, 0.52))
 
-                CatBedView(width: side * 0.36, action: onCat)
-                    .position(at(0.17, 0.83))
+                CatBedView(width: side * 0.34, action: onCat)
+                    .position(at(0.31, 0.8))
 
-                YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.26, action: onYarnBag)
-                    .position(at(0.83, 0.9))
+                JarView(width: side * 0.17, isReady: jarReady, action: onJar)
+                    .position(at(0.82, 0.92))
 
                 if let speechLine {
                     SpeechBubble(text: speechLine)
@@ -217,6 +221,10 @@ private struct GrannyView: View {
     var body: some View {
         Button(action: action) {
             Image("granny").resizable().scaledToFit().frame(width: width)
+                // An oval rather than the image's rectangle, so the empty
+                // corners around the armchair don't steal taps meant for
+                // the yarn bag tucked behind it.
+                .contentShape(Ellipse())
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Grandma")
@@ -257,63 +265,30 @@ private struct JarView: View {
     }
 }
 
-/// Placeholder yarn bag until the artwork arrives: a wicker basket drawn in
-/// code, with the player's three most plentiful colours on top and the
-/// total count as a badge.
+/// Grandma's yarn bag, with the number of balls in it as a badge and a
+/// "Knit!" tag when there's enough yarn for something new.
 private struct YarnBagView: View {
     let progress: PlayerProgress
-    /// Shows a "Knit!" tag when there's enough yarn for something new.
     let canKnit: Bool
     let width: CGFloat
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            ZStack(alignment: .bottom) {
-                HStack(spacing: -width * 0.1) {
-                    ForEach(Array(topColors.enumerated()), id: \.offset) { _, color in
-                        YarnBall(color: color, size: width * 0.42)
-                    }
+            Image("yarn-bag").resizable().scaledToFit().frame(width: width)
+                // The badge sits on the bag's open top, where the balls are,
+                // rather than the image corner, which is empty space.
+                .overlay(alignment: .topTrailing) {
+                    countBadge.offset(x: -width * 0.08, y: width * 0.1)
                 }
-                .offset(y: -width * 0.36)
-
-                basket
-            }
-            .frame(width: width, height: width * 0.95, alignment: .bottom)
-            .overlay(alignment: .topTrailing) { countBadge }
-            .overlay(alignment: .top) {
-                if canKnit { NudgeTag(text: "Knit!").offset(y: -width * 0.32) }
-            }
+                .overlay(alignment: .top) {
+                    if canKnit { NudgeTag(text: "Knit!").offset(y: -width * 0.12) }
+                }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Yarn bag")
         .accessibilityValue("\(progress.totalYarn) balls")
         .accessibilityHint(canKnit ? Text("Enough yarn to knit something") : Text(""))
-    }
-
-    private var basket: some View {
-        RoundedRectangle(cornerRadius: width * 0.12)
-            .fill(Color(hex: 0xC08A5B))
-            .overlay {
-                // Wicker bands.
-                VStack(spacing: width * 0.07) {
-                    ForEach(0..<3, id: \.self) { _ in
-                        Capsule().fill(Color(hex: 0xA06E44)).frame(height: width * 0.04)
-                    }
-                }
-                .padding(.horizontal, width * 0.08)
-            }
-            .frame(width: width, height: width * 0.5)
-            .shadow(color: .black.opacity(0.12), radius: 3, y: 2)
-    }
-
-    /// The colours to show on top: most balls first; if the bag is empty,
-    /// the starting colours as a hint of what's to come.
-    private var topColors: [YarnColor] {
-        let owned = YarnColor.allCases
-            .filter { progress.yarnCount(of: $0) > 0 }
-            .sorted { progress.yarnCount(of: $0) > progress.yarnCount(of: $1) }
-        return Array((owned.isEmpty ? YarnColor.allCases : owned).prefix(3))
     }
 
     private var countBadge: some View {
@@ -347,15 +322,13 @@ private struct NudgeTag: View {
 
 /// A small pill showing how many of a helper the player has.
 private struct HelperCountChip: View {
-    let systemImage: String
+    let face: HelperFace
     let count: Int
     let label: LocalizedStringKey
 
     var body: some View {
         HStack(spacing: 6) {
-            Image(systemName: systemImage)
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(Theme.primary)
+            HelperFaceImage(face: face, size: 26)
             Text("\(count)")
                 .font(.system(size: 16, weight: .bold, design: .rounded))
                 .monospacedDigit()

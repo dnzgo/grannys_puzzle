@@ -155,10 +155,7 @@ private struct GuideLayer: View {
 
     private var card: some View {
         HStack(alignment: .top, spacing: 12) {
-            Image(decorative: "granny")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 56)
+            HelperFaceImage(face: .grandma, size: 56)
 
             VStack(alignment: .leading, spacing: 10) {
                 Text(text)
@@ -256,7 +253,7 @@ extension TutorialLine {
         case .finishWord:
             String(localized: "Clever cat! Now put in the last letter yourself.")
         case .askGrandma:
-            String(localized: "For a whole word, ask me. Tap my glasses!")
+            String(localized: "For a whole word, just ask me. Tap me!")
         case .submit:
             String(localized: "All filled in! Tap Submit to see how you did.")
         }

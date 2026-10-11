@@ -59,7 +59,6 @@ enum Theme {
     static let usedUpBorder = Color(hex: 0xE3D6CC)
     /// An empty yarn slot on the result panel (a pale, colourless ball).
     static let emptyYarnSlot = Color(hex: 0xDCCFC5)
-    static let cat = Color(hex: 0xE8892B)
 
     // MARK: Ad placeholder
 

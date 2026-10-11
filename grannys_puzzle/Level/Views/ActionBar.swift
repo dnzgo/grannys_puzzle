@@ -14,9 +14,8 @@ struct ActionBar: View {
             case .playing:
                 eraseButton
                 HelperButton(
-                    systemImage: "eyeglasses",
+                    face: .grandma,
                     count: model.grandmas,
-                    isProminent: false,
                     diameter: height,
                     action: model.useGrandma
                 )
@@ -25,9 +24,8 @@ struct ActionBar: View {
                 .accessibilityLabel("Grandma: solve this word")
                 .accessibilityValue("\(model.grandmas) left")
                 HelperButton(
-                    systemImage: "cat.fill",
+                    face: .cat,
                     count: model.hints,
-                    isProminent: true,
                     diameter: height,
                     action: model.useCat
                 )
@@ -66,13 +64,12 @@ struct ActionBar: View {
     }
 }
 
-/// A round help button: the character's icon, with the saved count in a
+/// A round help button: the helper's face, with the saved count in a
 /// small circle on its top-right edge. At 0 it's disabled for now; the
 /// rewarded-ad offer replaces that state when ads are added.
 private struct HelperButton: View {
-    let systemImage: String
+    let face: HelperFace
     let count: Int
-    let isProminent: Bool
     let diameter: CGFloat
     let action: () -> Void
 
@@ -83,12 +80,11 @@ private struct HelperButton: View {
 
     var body: some View {
         Button(action: action) {
-            Image(systemName: systemImage)
-                .font(.system(size: diameter * 0.44, weight: .semibold))
-                .foregroundStyle(foreground)
+            // The face nearly fills the circle; the white rim around it is
+            // the button's edge, so it needs no extra ring.
+            HelperFaceImage(face: face, size: diameter * 0.92, isEnabled: isEnabled)
                 .frame(width: diameter, height: diameter)
-                .background(Circle().fill(fill).shadow(color: .black.opacity(0.08), radius: 2, y: 1))
-                .overlay(Circle().strokeBorder(border, lineWidth: 1.5))
+                .background(Circle().fill(fill).shadow(color: glow, radius: 6, y: 2))
                 .overlay(alignment: .topTrailing) { badge }
         }
         .buttonStyle(.plain)
@@ -109,21 +105,16 @@ private struct HelperButton: View {
             .offset(x: 6, y: -6)
     }
 
-    // Prominent (the cat) uses the main button style; the other (grandma)
-    // uses the secondary style: white with a brown border and icon.
-    private var foreground: Color {
-        guard isEnabled else { return Theme.usedUpKey }
-        return isProminent ? Theme.onPrimary : Theme.secondary
-    }
-
+    // White on both, because the faces are colourful (an orange cat on an
+    // orange button would vanish). The faces themselves tell them apart.
     private var fill: Color {
-        guard isEnabled else { return Theme.disabledFill }
-        return isProminent ? Theme.primary : Theme.surface
+        isEnabled ? Theme.surface : Theme.disabledFill
     }
 
-    private var border: Color {
-        guard isEnabled else { return .clear }
-        return isProminent ? .clear : Theme.secondary
+    /// A soft orange glow under the circle; gone when the helper is used
+    /// up, so an available helper looks lit and an empty one looks flat.
+    private var glow: Color {
+        isEnabled ? Theme.primary.opacity(0.45) : .clear
     }
 
     /// Dark on both buttons, so the count reads the same on orange and on white.

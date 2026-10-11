@@ -135,9 +135,7 @@ struct LetterCellView: View {
                 RoundedRectangle(cornerRadius: Theme.cornerRadius).fill(fill)
                 RoundedRectangle(cornerRadius: Theme.cornerRadius).strokeBorder(border, lineWidth: 1)
                 if appearance.showsCat {
-                    Image(systemName: "cat.fill")
-                        .font(.system(size: fontSize * 0.9))
-                        .foregroundStyle(Theme.cat)
+                    HelperFaceImage(face: .cat, size: fontSize * 1.5)
                         .transition(.scale.combined(with: .opacity))
                 } else if let letter = appearance.letter {
                     Text(String(letter))
