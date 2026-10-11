@@ -1,5 +1,6 @@
 import SwiftUI
 import os
+import AdKit
 import ArrowwordCore
 
 /// The app's root: loads the game once, then hands over to `GameView`.
@@ -10,6 +11,9 @@ struct ContentView: View {
         switch startup {
         case .ready(let game):
             GameView(game: game)
+                // Views that show ads (the banner, Settings' privacy row)
+                // read the controller from here instead of through Game.
+                .environment(game.ads)
         case .failed(let message):
             // A bundled pack failing to load is a bug in the build, but the
             // app should say so instead of crashing.
@@ -50,7 +54,12 @@ private enum Startup {
     static func load() -> Startup {
         do {
             let pack = try LevelLoader.bundledPack(named: LevelLoader.firstPackName)
-            let game = Game(pack: pack, tutorial: tutorialLevel(), store: progressStore())
+            let game = Game(
+                pack: pack,
+                tutorial: tutorialLevel(),
+                store: progressStore(),
+                ads: AdsSetup.makeController()
+            )
             game.startTutorialIfNeeded()
             return .ready(game)
         } catch {

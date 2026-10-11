@@ -1,6 +1,7 @@
 import Foundation
 import Observation
 import os
+import AdKit
 import ArrowwordCore
 
 /// The running game: the player's saved progress, the level pack, and which
@@ -19,6 +20,8 @@ final class Game {
 
     let pack: LevelPack
     let catalog: KnittingCatalog
+    /// Nil in previews (no ads there).
+    let ads: AdsController?
     /// The lesson's board. Nil only if it failed to load, a build problem
     /// that the tests catch; the game then simply plays without it.
     let tutorial: Level?
@@ -33,8 +36,15 @@ final class Game {
     /// Kept here because levels only hold their host weakly.
     @ObservationIgnored private let tutorialHost = TutorialHost()
 
-    init(pack: LevelPack, tutorial: Level? = nil, store: ProgressStore?, catalog: KnittingCatalog = .standard) {
+    init(
+        pack: LevelPack,
+        tutorial: Level? = nil,
+        store: ProgressStore?,
+        ads: AdsController? = nil,
+        catalog: KnittingCatalog = .standard
+    ) {
         self.pack = pack
+        self.ads = ads
         self.tutorial = tutorial
         self.catalog = catalog
         self.store = store
@@ -207,6 +217,23 @@ extension Game: LevelHost {
             $0.board = nil
         }
         return earned
+    }
+
+    var canWatchAdForHelper: Bool {
+        ads?.isRewardedReady ?? false
+    }
+
+    func watchAd(for reward: HelperAdReward) async -> Bool {
+        // Granted only when the ad reports the reward as earned, and saved
+        // right away like every other change.
+        guard let ads, await ads.showRewarded() else { return false }
+        update { progress in
+            switch reward {
+            case .catHints: progress.hints += reward.amount
+            case .grandma: progress.grandmas += reward.amount
+            }
+        }
+        return true
     }
 
     func saveBoard(_ board: SavedBoard?) {

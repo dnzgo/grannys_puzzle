@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import AdKit
 
 /// Settings: the music, sound and haptics switches, language, feedback,
 /// the legal pages, credits and the version.
@@ -9,9 +10,10 @@ import UIKit
 /// `UserDefaults` through `@AppStorage` and knows nothing about `Game`:
 /// none of these settings is part of the player's progress.
 ///
+/// "Privacy choices" reopens the ad consent form. It only appears where
+/// consent applies (EU, UK, some US states), which the ads controller knows.
+///
 /// Still to come, when the things they control exist:
-/// - "Privacy choices": the ad consent form (Google's UMP), added with ads.
-///   It's only required where consent applies, and UMP says when.
 /// - "Save your progress" (Sign in with Apple), and "Delete account" once an
 ///   account is linked, which App Store rules require.
 struct SettingsSheet: View {
@@ -25,6 +27,8 @@ struct SettingsSheet: View {
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
+    /// Nil in previews.
+    @Environment(AdsController.self) private var ads: AdsController?
 
     /// Set when Mail couldn't open, so the player still gets the address.
     @State private var showsMailFallback = false
@@ -62,6 +66,17 @@ struct SettingsSheet: View {
                     feedbackRow
                     linkRow("Terms of Use", systemImage: "doc.text", url: SupportLinks.termsOfUse)
                     linkRow("Privacy Policy", systemImage: "hand.raised", url: SupportLinks.privacyPolicy)
+                    if let ads, ads.isPrivacyOptionsRequired {
+                        // Required by Google's consent rules wherever the
+                        // form was shown: changing your mind must be as easy
+                        // as the first choice.
+                        Button {
+                            Task { await ads.presentPrivacyOptions() }
+                        } label: {
+                            Label("Privacy choices", systemImage: "checkmark.shield")
+                        }
+                        .foregroundStyle(Theme.ink)
+                    }
                     NavigationLink {
                         AcknowledgementsView()
                     } label: {

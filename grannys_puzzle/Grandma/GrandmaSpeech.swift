@@ -63,4 +63,11 @@ enum GrandmaLines {
     static let catNapping = "Shh, the cat's having a little nap."
     static let knitted = "Doesn't the cat look smart?"
     static let allLevelsDone = "You've solved them all! I'm writing more."
+
+    static func adReward(_ reward: HelperAdReward) -> String {
+        switch reward {
+        case .catHints: "Three cat hints, just for you, dear!"
+        case .grandma: "Here I am! Tap me when a word's too tricky."
+        }
+    }
 }

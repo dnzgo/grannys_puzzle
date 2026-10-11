@@ -16,23 +16,25 @@ struct ActionBar: View {
                 HelperButton(
                     face: .grandma,
                     count: model.grandmas,
+                    offersAd: model.grandmaOffersAd,
                     diameter: height,
                     action: model.useGrandma
                 )
                 .disabled(!model.canUseGrandma)
                 .spotlight(.target(.grandma))
                 .accessibilityLabel("Grandma: solve this word")
-                .accessibilityValue("\(model.grandmas) left")
+                .accessibilityValue(helperValue(count: model.grandmas, offersAd: model.grandmaOffersAd))
                 HelperButton(
                     face: .cat,
                     count: model.hints,
+                    offersAd: model.catOffersAd,
                     diameter: height,
                     action: model.useCat
                 )
                 .disabled(!model.canUseCat)
                 .spotlight(.target(.cat))
                 .accessibilityLabel("Cat: reveal a letter")
-                .accessibilityValue("\(model.hints) left")
+                .accessibilityValue(helperValue(count: model.hints, offersAd: model.catOffersAd))
 
             case .readyToSubmit:
                 eraseButton
@@ -51,6 +53,10 @@ struct ActionBar: View {
         .frame(height: height)
     }
 
+    private func helperValue(count: Int, offersAd: Bool) -> Text {
+        offersAd ? Text("None left. Watch a short video for more help") : Text("\(count) left")
+    }
+
     private var eraseButton: some View {
         Button(action: model.erase) {
             Image(systemName: "delete.left")
@@ -65,11 +71,14 @@ struct ActionBar: View {
 }
 
 /// A round help button: the helper's face, with the saved count in a
-/// small circle on its top-right edge. At 0 it's disabled for now; the
-/// rewarded-ad offer replaces that state when ads are added.
+/// small circle on its top-right edge. At 0 it offers a short ad for one
+/// more when an ad is ready, and is disabled when none is.
 private struct HelperButton: View {
     let face: HelperFace
     let count: Int
+    /// Out of this helper, but a short ad can earn one: the badge shows a
+    /// play sign instead of 0, and the button stays lit.
+    let offersAd: Bool
     let diameter: CGFloat
     let action: () -> Void
 
@@ -91,18 +100,25 @@ private struct HelperButton: View {
     }
 
     private var badge: some View {
-        Text("\(count)")
-            .font(.system(size: 12, weight: .bold))
-            .monospacedDigit()
-            .foregroundStyle(.white)
-            .padding(.horizontal, 5)
-            .frame(minWidth: badgeSize, minHeight: badgeSize)
-            .background(Capsule().fill(badgeFill))
-            // A ring in the screen's background colour separates the badge
-            // from the button it overlaps.
-            .overlay(Capsule().strokeBorder(Theme.background, lineWidth: 2))
-            // Half outside the circle, like an app icon badge.
-            .offset(x: 6, y: -6)
+        Group {
+            if offersAd {
+                Image(systemName: "play.fill")
+                    .font(.system(size: 9, weight: .bold))
+            } else {
+                Text("\(count)")
+                    .font(.system(size: 12, weight: .bold))
+                    .monospacedDigit()
+            }
+        }
+        .foregroundStyle(.white)
+        .padding(.horizontal, 5)
+        .frame(minWidth: badgeSize, minHeight: badgeSize)
+        .background(Capsule().fill(offersAd && isEnabled ? Theme.primary : badgeFill))
+        // A ring in the screen's background colour separates the badge
+        // from the button it overlaps.
+        .overlay(Capsule().strokeBorder(Theme.background, lineWidth: 2))
+        // Half outside the circle, like an app icon badge.
+        .offset(x: 6, y: -6)
     }
 
     // White on both, because the faces are colourful (an orange cat on an

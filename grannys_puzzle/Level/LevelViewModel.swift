@@ -95,8 +95,20 @@ final class LevelViewModel {
 
     var hints: Int { host?.hints ?? 0 }
     var grandmas: Int { host?.grandmas ?? 0 }
-    var canUseCat: Bool { hints > 0 }
-    var canUseGrandma: Bool { grandmas > 0 }
+
+    /// Out of cat hints, but more can be earned by watching a short ad.
+    var catOffersAd: Bool { hints == 0 && canWatchAd }
+    var grandmaOffersAd: Bool { grandmas == 0 && canWatchAd }
+    var canUseCat: Bool { !isWatchingAd && (hints > 0 || catOffersAd) }
+    var canUseGrandma: Bool { !isWatchingAd && (grandmas > 0 || grandmaOffersAd) }
+
+    /// The "watch a video, pick a treat" card is up.
+    private(set) var isOfferingAd = false
+    /// True while a rewarded ad is on screen, so a second tap can't start
+    /// another one.
+    private(set) var isWatchingAd = false
+
+    private var canWatchAd: Bool { host?.canWatchAdForHelper ?? false }
 
     /// The palette index of an answer's colour.
     func colorIndex(ofAnswer answerID: Int) -> Int {
@@ -203,7 +215,11 @@ final class LevelViewModel {
     /// actually revealed: that's why `revealLetter()` returns nil when
     /// there's nothing to fix.
     func useCat() {
-        guard hints > 0, coachAllows(.useCat), let cell = puzzle.revealLetter() else { return }
+        if hints == 0 {
+            offerAd()
+            return
+        }
+        guard coachAllows(.useCat), let cell = puzzle.revealLetter() else { return }
         _ = host?.spendHint()
         showCat(at: cell)
         feel(.reveal)
@@ -213,7 +229,11 @@ final class LevelViewModel {
 
     /// Grandma solves the selected word, charged only if she changed something.
     func useGrandma() {
-        guard grandmas > 0, coachAllows(.useGrandma), let answer = puzzle.activeAnswer else { return }
+        if grandmas == 0 {
+            offerAd()
+            return
+        }
+        guard coachAllows(.useGrandma), let answer = puzzle.activeAnswer else { return }
         let revealed = puzzle.revealActiveAnswer()
         guard !revealed.isEmpty else { return }
         _ = host?.spendGrandma()
@@ -254,6 +274,35 @@ final class LevelViewModel {
     /// change saves it), so coming back picks up where the player left off.
     func goHome() {
         host?.goHome()
+    }
+
+    // MARK: - Helpers from ads
+
+    /// Out of a helper: offers a video, with a choice of reward (three cats
+    /// or one grandma) whichever button was tapped. The reward goes to the
+    /// player's helpers rather than being used at once, so they decide when
+    /// and where to spend it.
+    private func offerAd() {
+        guard !isWatchingAd, !isCoaching, canWatchAd else { return }
+        isOfferingAd = true
+    }
+
+    func cancelAdOffer() {
+        isOfferingAd = false
+    }
+
+    func watchAd(for reward: HelperAdReward) {
+        guard isOfferingAd, !isWatchingAd else { return }
+        isOfferingAd = false
+        isWatchingAd = true
+        Task { [weak self] in
+            guard let self else { return }
+            let earned = await self.host?.watchAd(for: reward) ?? false
+            self.isWatchingAd = false
+            guard earned else { return }
+            self.feel(.helperEarned)
+            self.speech.say(GrandmaLines.adReward(reward))
+        }
     }
 
     // MARK: - Tutorial

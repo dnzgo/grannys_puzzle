@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import AdKit
 import ArrowwordCore
 
 /// The home screen: grandma in her armchair with the cat, the treat jar and
@@ -84,6 +85,13 @@ struct HomeView: View {
         .onAppear {
             today = JarDay.number()
             speech.say(openingLine)
+        }
+        // Ads start here rather than at launch: a new player meets grandma's
+        // lesson first, and the consent form and tracking question come
+        // after it, once they know what the game is. For everyone else home
+        // is the first screen anyway. Repeat calls do nothing once started.
+        .task {
+            await game.ads?.start()
         }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { today = JarDay.number() }

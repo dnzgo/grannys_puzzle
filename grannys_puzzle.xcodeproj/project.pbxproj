@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		540DBB8A30785A400067F8F0 /* ArrowwordCore in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB8930785A400067F8F0 /* ArrowwordCore */; };
+		540DBB9330785A400067F8F0 /* AdKit in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB9130785A400067F8F0 /* AdKit */; };
+		540DBB9430785A400067F8F0 /* AdKitGoogle in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB9230785A400067F8F0 /* AdKitGoogle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 			isa = PBXFrameworksBuildPhase;
 			files = (
 				540DBB8A30785A400067F8F0 /* ArrowwordCore in Frameworks */,
+				540DBB9330785A400067F8F0 /* AdKit in Frameworks */,
+				540DBB9430785A400067F8F0 /* AdKitGoogle in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 			name = grannys_puzzle;
 			packageProductDependencies = (
 				540DBB8930785A400067F8F0 /* ArrowwordCore */,
+				540DBB9130785A400067F8F0 /* AdKit */,
+				540DBB9230785A400067F8F0 /* AdKitGoogle */,
 			);
 			productName = grannys_puzzle;
 			productReference = 540DBB71307858E60067F8F0 /* grannys_puzzle.app */;
@@ -98,6 +104,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				540DBB8830785A400067F8F0 /* XCLocalSwiftPackageReference "ArrowwordCore" */,
+				540DBB9030785A400067F8F0 /* XCLocalSwiftPackageReference "AdKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 540DBB72307858E60067F8F0 /* Products */;
@@ -257,6 +264,7 @@
 				DEVELOPMENT_TEAM = 737WW78VY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/grannys_puzzle-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -289,6 +297,7 @@
 				DEVELOPMENT_TEAM = 737WW78VY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Config/grannys_puzzle-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -337,12 +346,24 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ArrowwordCore;
 		};
+		540DBB9030785A400067F8F0 /* XCLocalSwiftPackageReference "AdKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = AdKit;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		540DBB8930785A400067F8F0 /* ArrowwordCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ArrowwordCore;
+		};
+		540DBB9130785A400067F8F0 /* AdKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AdKit;
+		};
+		540DBB9230785A400067F8F0 /* AdKitGoogle */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AdKitGoogle;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

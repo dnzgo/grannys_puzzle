@@ -27,6 +27,29 @@ protocol LevelHost: AnyObject {
     /// closed) doesn't lose it. Nil means there's nothing to keep.
     func saveBoard(_ board: SavedBoard?)
 
+    /// Whether helpers can be earned by watching a short ad right now
+    /// (an ad is loaded and allowed).
+    var canWatchAdForHelper: Bool { get }
+
+    /// Plays a rewarded ad and, if it's watched to the end, gives the
+    /// reward the player picked. Returns whether it was given.
+    func watchAd(for reward: HelperAdReward) async -> Bool
+
     func continueToNextLevel()
     func goHome()
+}
+
+/// What one rewarded video can give. The player picks before watching.
+enum HelperAdReward: CaseIterable {
+    case catHints
+    case grandma
+
+    /// A grandma solves a whole word, about three letters' worth, so one
+    /// grandma and three cats are offered as equal choices. Tune here.
+    var amount: Int {
+        switch self {
+        case .catHints: 3
+        case .grandma: 1
+        }
+    }
 }

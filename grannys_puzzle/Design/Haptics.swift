@@ -20,6 +20,8 @@ enum HapticEvent: Equatable {
     case itemKnitted
     /// The jar's treat revealed.
     case jarOpened
+    /// Helpers earned by watching a video.
+    case helperEarned
 
     /// How each moment feels. Small and frequent actions get the lightest
     /// taps; only real outcomes get the stronger, patterned ones. If every
@@ -29,7 +31,7 @@ enum HapticEvent: Equatable {
         case .select, .letterErased: .selection
         case .letterPlaced: .impact(flexibility: .soft, intensity: 0.6)
         case .reveal: .impact(weight: .medium)
-        case .levelPassed, .itemKnitted, .jarOpened: .success
+        case .levelPassed, .itemKnitted, .jarOpened, .helperEarned: .success
         case .levelFailed: .warning
         }
     }

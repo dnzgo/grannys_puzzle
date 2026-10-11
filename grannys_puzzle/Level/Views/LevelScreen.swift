@@ -55,6 +55,13 @@ struct LevelScreen: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: model.tutorialLine)
+        .overlay {
+            if model.isOfferingAd {
+                AdOfferCard(onChoose: model.watchAd(for:), onCancel: model.cancelAdOffer)
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.2), value: model.isOfferingAd)
         // Both the tagged views and the overlay sit inside this space, so
         // their frames line up. Applied after the overlay so it covers it.
         .coordinateSpace(.named(SpotlightFrames.spaceName))
