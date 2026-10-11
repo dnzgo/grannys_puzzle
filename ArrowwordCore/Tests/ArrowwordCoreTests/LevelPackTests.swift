@@ -68,16 +68,7 @@ final class LevelPackTests: XCTestCase {
         }
     }
 
-    /// <repo>/grannys_puzzle/Levels, found from this file's location:
-    /// <repo>/ArrowwordCore/Tests/ArrowwordCoreTests/LevelPackTests.swift
-    private var appLevelsFolder: URL {
-        URL(fileURLWithPath: #filePath)
-            .deletingLastPathComponent()  // ArrowwordCoreTests
-            .deletingLastPathComponent()  // Tests
-            .deletingLastPathComponent()  // ArrowwordCore
-            .deletingLastPathComponent()  // repo root
-            .appendingPathComponent("grannys_puzzle/Levels")
-    }
+    private var appLevelsFolder: URL { ShippedFiles.appLevelsFolder }
 
     /// Pack files are the JSON files whose top level has a "levels" list;
     /// single-level files such as level-100.json are skipped.

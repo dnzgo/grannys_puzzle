@@ -1,4 +1,5 @@
 import SwiftUI
+import ArrowwordCore
 
 /// One key per distinct letter, with how many are left. Keys keep their place
 /// (alphabet order) even when used up, so nothing moves under the thumb.
@@ -17,6 +18,7 @@ struct LetterTray: View {
                 }
                 .buttonStyle(.plain)
                 .disabled(key.isUsedUp)
+                .spotlight(.target(.key(key.letter)))
                 .accessibilityLabel(String(key.letter))
                 .accessibilityValue("\(key.remaining) left")
             }

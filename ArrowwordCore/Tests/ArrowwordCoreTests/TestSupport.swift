@@ -7,6 +7,28 @@ func cell(_ row: Int, _ column: Int) -> Coordinate {
     Coordinate(row: row, column: column)
 }
 
+/// Files the app ships, read straight from the repo so tests check the real
+/// thing rather than a copy.
+enum ShippedFiles {
+    /// <repo>/grannys_puzzle/Levels, found from this file's location:
+    /// <repo>/ArrowwordCore/Tests/ArrowwordCoreTests/TestSupport.swift
+    static var appLevelsFolder: URL {
+        URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent()  // ArrowwordCoreTests
+            .deletingLastPathComponent()  // Tests
+            .deletingLastPathComponent()  // ArrowwordCore
+            .deletingLastPathComponent()  // repo root
+            .appendingPathComponent("grannys_puzzle/Levels")
+    }
+
+    /// The tutorial's hand-made board.
+    static func tutorialLevel() throws -> Level {
+        let url = appLevelsFolder.appendingPathComponent("tutorial-en.json")
+        let pack = try LevelPack.decode(from: Data(contentsOf: url))
+        return try XCTUnwrap(pack.levels.first)
+    }
+}
+
 enum TestLevels {
     /// A 5×5 level whose 4×4 letter area is a word square: every row and
     /// column reads CARD, AREA, REAR, DART. Clue cells run along the top row

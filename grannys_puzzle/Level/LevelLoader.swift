@@ -20,6 +20,9 @@ enum LevelLoader {
     /// The first pack the game plays. Moves into a pack catalog once there's
     /// more than one.
     static let firstPackName = "en-001"
+    /// The first-time lesson's hand-made board, a pack of one level so it
+    /// loads and is validated exactly like the real ones.
+    static let tutorialPackName = "tutorial-en"
 
     static func bundledPack(named name: String, in bundle: Bundle = .main) throws -> LevelPack {
         try LevelPack.decode(from: Data(contentsOf: bundledURL(named: name, in: bundle)))

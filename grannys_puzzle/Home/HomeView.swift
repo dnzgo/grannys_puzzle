@@ -58,7 +58,9 @@ struct HomeView: View {
             WardrobeSheet(progress: game.progress, catalog: game.catalog)
         }
         .sheet(isPresented: $showsSettings) {
-            SettingsSheet()
+            SettingsSheet(onHowToPlay: {
+                withAnimation(.easeInOut(duration: 0.25)) { game.startTutorial() }
+            })
         }
         .overlay {
             if let item = knittingItem {

@@ -21,6 +21,7 @@ struct ActionBar: View {
                     action: model.useGrandma
                 )
                 .disabled(!model.canUseGrandma)
+                .spotlight(.target(.grandma))
                 .accessibilityLabel("Grandma: solve this word")
                 .accessibilityValue("\(model.grandmas) left")
                 HelperButton(
@@ -31,16 +32,19 @@ struct ActionBar: View {
                     action: model.useCat
                 )
                 .disabled(!model.canUseCat)
+                .spotlight(.target(.cat))
                 .accessibilityLabel("Cat: reveal a letter")
                 .accessibilityValue("\(model.hints) left")
 
             case .readyToSubmit:
                 eraseButton
                 PrimaryButton(title: "Submit", height: height, action: model.submit)
+                    .spotlight(.target(.submit))
 
             case .finished(let result):
                 PrimaryButton(
-                    title: result.passed ? "Next level" : "Try again",
+                    // After the lesson, the next stop is home with the first yarn.
+                    title: result.passed ? (model.isTutorial ? "Let's play!" : "Next level") : "Try again",
                     height: height,
                     action: model.continueAfterResult
                 )

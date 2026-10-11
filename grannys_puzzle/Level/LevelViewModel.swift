@@ -23,6 +23,8 @@ final class LevelViewModel {
 
     let levelNumber: Int
     private(set) var puzzle: PuzzleState
+    /// Grandma's lesson, when this level is the tutorial; nil for real levels.
+    private(set) var coach: TutorialCoach?
     /// The yarn balls this level earned, shown on the result panel.
     private(set) var earnedYarn: [YarnColor] = []
 
@@ -42,16 +44,21 @@ final class LevelViewModel {
     /// current screen; a strong reference back would be a retain cycle.
     @ObservationIgnored private weak var host: LevelHost?
 
-    /// - Parameter puzzle: the board to start from: fresh, or restored from a
-    ///   save when the player left this level halfway.
+    /// - Parameters:
+    ///   - puzzle: the board to start from: fresh, or restored from a save
+    ///     when the player left this level halfway.
+    ///   - coach: set for the tutorial. It decides which actions are allowed;
+    ///     the host (a `TutorialHost`) decides what they cost.
     init(
         puzzle: PuzzleState,
         levelNumber: Int,
         host: LevelHost?,
+        coach: TutorialCoach? = nil,
         scoringRules: ScoringRules = .standard
     ) {
         self.levelNumber = levelNumber
         self.puzzle = puzzle
+        self.coach = coach
         self.host = host
         self.scoringRules = scoringRules
         self.clueColorIndices = ClueColors.assignments(for: puzzle.level)
@@ -143,36 +150,49 @@ final class LevelViewModel {
     }
 
     // MARK: - Player actions
+    //
+    // During the lesson every action first asks the coach, and reports back
+    // after it's done. Actions the lesson never uses (tapping a cell,
+    // erasing, the clue bar's arrows) are simply off until it's over.
 
     func tapCell(_ cell: Coordinate) {
+        guard !isCoaching else { return }
         puzzle.select(cell)
         feel(.select)
     }
 
     func tapClue(answerID: Int) {
+        let action = TutorialAction.selectClue(answerID: answerID)
+        guard coachAllows(action) else { return }
         puzzle.selectAnswer(answerID)
         feel(.select)
+        coachSaw(action)
     }
 
     func showNextClue() {
+        guard !isCoaching else { return }
         puzzle.selectNextAnswer()
         feel(.select)
     }
 
     func showPreviousClue() {
+        guard !isCoaching else { return }
         puzzle.selectPreviousAnswer()
         feel(.select)
     }
 
     func type(_ letter: Character) {
+        guard coachAllows(.type(letter)) else { return }
         // Only a letter that actually landed clicks; a refused one stays silent.
         if puzzle.place(letter) {
             feel(.letterPlaced)
             boardChanged()
+            coachSaw(.type(letter))
         }
     }
 
     func erase() {
+        guard !isCoaching else { return }
         if puzzle.erase() {
             feel(.letterErased)
             boardChanged()
@@ -183,31 +203,39 @@ final class LevelViewModel {
     /// actually revealed: that's why `revealLetter()` returns nil when
     /// there's nothing to fix.
     func useCat() {
-        guard hints > 0, let cell = puzzle.revealLetter() else { return }
+        guard hints > 0, coachAllows(.useCat), let cell = puzzle.revealLetter() else { return }
         _ = host?.spendHint()
         showCat(at: cell)
         feel(.reveal)
         boardChanged()
+        coachSaw(.useCat)
     }
 
     /// Grandma solves the selected word, charged only if she changed something.
     func useGrandma() {
-        guard grandmas > 0, let answer = puzzle.activeAnswer else { return }
+        guard grandmas > 0, coachAllows(.useGrandma), let answer = puzzle.activeAnswer else { return }
         let revealed = puzzle.revealActiveAnswer()
         guard !revealed.isEmpty else { return }
         _ = host?.spendGrandma()
-        speech.say(GrandmaLines.solved(answer.solution))
+        // In the lesson grandma is already talking in her card; a second
+        // bubble would compete with it.
+        if !isTutorial {
+            speech.say(GrandmaLines.solved(answer.solution))
+        }
         feel(.reveal)
         boardChanged()
+        coachSaw(.useGrandma)
     }
 
     func submit() {
+        guard coachAllows(.submit) else { return }
         // `submit` returns nil if the board was already judged. Using its
         // return value (not `puzzle.result`) makes a double tap on Submit
         // record the level once, not award yarn twice and skip a level.
         guard let result = puzzle.submit(rules: scoringRules) else { return }
         earnedYarn = host?.record(result) ?? []
         feel(result.passed ? .levelPassed : .levelFailed)
+        coachSaw(.submit)
     }
 
     /// After the result: a pass moves on (the host decides where), a fail
@@ -226,6 +254,58 @@ final class LevelViewModel {
     /// change saves it), so coming back picks up where the player left off.
     func goHome() {
         host?.goHome()
+    }
+
+    // MARK: - Tutorial
+
+    var isTutorial: Bool { coach != nil }
+
+    /// What grandma is saying; nil outside the lesson and once it's over
+    /// (the result screen is the normal one).
+    var tutorialLine: TutorialLine? { coach?.line }
+
+    /// Whether her card shows a Next button (she's explaining).
+    var tutorialWaitsForNext: Bool { coach?.waitsForNext ?? false }
+
+    /// The one thing the player can tap now.
+    var tutorialTarget: TutorialTarget? { coach?.target(on: puzzle) }
+
+    /// The cells to keep lit (not dimmed) so the player sees letters land.
+    var tutorialLitCells: [Coordinate] {
+        guard let id = coach?.litAnswerID(on: puzzle) else { return [] }
+        return level.answers[id].cells
+    }
+
+    /// The clue to keep lit with those cells.
+    var tutorialLitClue: TutorialTarget? {
+        coach?.litAnswerID(on: puzzle).map { TutorialTarget.clue(answerID: $0) }
+    }
+
+    func tutorialNext() {
+        guard coachAllows(.next) else { return }
+        coachSaw(.next)
+    }
+
+    /// Leaves the lesson. The tutorial's host marks it done and goes home.
+    func skipTutorial() {
+        host?.goHome()
+    }
+
+    /// True while the lesson is running (not before or after).
+    private var isCoaching: Bool {
+        coach.map { !$0.isFinished } ?? false
+    }
+
+    /// Always true on a real level; in the lesson, only for its current step.
+    private func coachAllows(_ action: TutorialAction) -> Bool {
+        guard isCoaching, let coach else { return true }
+        return coach.allows(action, on: puzzle)
+    }
+
+    /// Tells the lesson what just happened, with the board as it is now.
+    private func coachSaw(_ action: TutorialAction) {
+        guard isCoaching else { return }
+        coach?.didPerform(action, on: puzzle)
     }
 
     // MARK: - Short-lived UI state

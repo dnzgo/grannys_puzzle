@@ -35,6 +35,7 @@ struct BoardGrid: View {
                 accessibilityText: "Row \(cell.row + 1), column \(cell.column + 1)",
                 onTap: { model.tapCell(cell) }
             )
+            .spotlight(.cell(cell))
         }
     }
 }
@@ -97,6 +98,7 @@ struct ClueCellView: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+        .spotlight(.target(.clue(answerID: clue.answerID)))
         .accessibilityLabel("\(clue.arrow.direction == .across ? "Across" : "Down") clue: \(clue.text)")
         .accessibilityAddTraits(clue.isActive ? .isSelected : [])
     }

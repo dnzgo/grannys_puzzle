@@ -10,6 +10,9 @@ struct LevelScreen: View {
     /// model's: opening settings doesn't change the puzzle, and the level
     /// carries on underneath exactly as it was.
     @State private var showsSettings = false
+    /// Where the lesson's tap targets are. Only put in the environment for
+    /// the tutorial, so real levels don't track any frames.
+    @State private var spotlightFrames = SpotlightFrames()
 
     var body: some View {
         VStack(spacing: 0) {
@@ -46,6 +49,16 @@ struct LevelScreen: View {
             BannerAdSlot()
         }
         .background(Theme.background.ignoresSafeArea())
+        .overlay {
+            if model.isTutorial {
+                TutorialOverlay(model: model, frames: spotlightFrames)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: model.tutorialLine)
+        // Both the tagged views and the overlay sit inside this space, so
+        // their frames line up. Applied after the overlay so it covers it.
+        .coordinateSpace(.named(SpotlightFrames.spaceName))
+        .environment(model.isTutorial ? spotlightFrames : nil)
         .preferredColorScheme(.light)
         .gameHaptics(model.haptic)
         .sheet(isPresented: $showsSettings) {

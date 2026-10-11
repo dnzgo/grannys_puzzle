@@ -19,6 +19,9 @@ final class Game {
 
     let pack: LevelPack
     let catalog: KnittingCatalog
+    /// The lesson's board. Nil only if it failed to load, a build problem
+    /// that the tests catch; the game then simply plays without it.
+    let tutorial: Level?
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
 
@@ -26,15 +29,20 @@ final class Game {
     @ObservationIgnored private let store: ProgressStore?
     @ObservationIgnored private var generator = SystemRandomNumberGenerator()
     @ObservationIgnored private let logger = Logger(subsystem: "grannys_puzzle", category: "progress")
+    /// Stands in for the game while the lesson plays (see TutorialHost).
+    /// Kept here because levels only hold their host weakly.
+    @ObservationIgnored private let tutorialHost = TutorialHost()
 
-    init(pack: LevelPack, store: ProgressStore?, catalog: KnittingCatalog = .standard) {
+    init(pack: LevelPack, tutorial: Level? = nil, store: ProgressStore?, catalog: KnittingCatalog = .standard) {
         self.pack = pack
+        self.tutorial = tutorial
         self.catalog = catalog
         self.store = store
         self.progress = .newPlayer
         if let store {
             progress = loadProgress(from: store)
         }
+        tutorialHost.game = self
     }
 
     // MARK: - What the home screen shows
@@ -68,6 +76,49 @@ final class Game {
         var opening: JarOpening?
         update { opening = $0.openJar(today: today, using: &generator) }
         return opening
+    }
+
+    // MARK: - Tutorial
+
+    /// Opens the lesson if the player hasn't been through it. Called once at
+    /// launch, rather than from `init`, so creating a `Game` (in a preview,
+    /// say) never changes the screen by itself.
+    func startTutorialIfNeeded() {
+        if !progress.tutorialDone { startTutorial() }
+    }
+
+    /// Plays the lesson: on first launch, or again from Settings.
+    func startTutorial() {
+        guard let tutorial else { return }
+        guard let coach = TutorialCoach(script: .standard, level: tutorial) else {
+            // The script names a word the board lacks; a test checks this,
+            // so it can only happen with a mismatched build.
+            logger.error("Tutorial script doesn't fit the tutorial board; skipping it")
+            return
+        }
+        screen = .level(LevelViewModel(
+            puzzle: PuzzleState(level: tutorial),
+            levelNumber: 0,
+            host: tutorialHost,
+            coach: coach
+        ))
+    }
+
+    /// The lesson's board was solved: its yarn, the first time only.
+    func completeTutorial() -> [YarnColor] {
+        var earned: [YarnColor] = []
+        update { earned = $0.completeTutorial(using: &generator) }
+        return earned
+    }
+
+    /// Leaving the lesson, finished or skipped. Either way it's done: a
+    /// player who skipped chose not to see it, so it doesn't come back
+    /// (Settings has it if they change their mind).
+    func leaveTutorial() {
+        if !progress.tutorialDone {
+            update { $0.tutorialDone = true }
+        }
+        screen = .home
     }
 
     // MARK: - Navigation

@@ -25,6 +25,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var jarStreak: Int
     /// `JarDay` number of the last jar opened, nil before the first one.
     public var lastJarDay: Int?
+    /// Whether the first-time lesson is behind the player (finished or
+    /// skipped). Until it is, the app opens on the lesson.
+    public var tutorialDone: Bool
 
     public init(
         version: Int = currentVersion,
@@ -35,7 +38,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         wardrobe: Set<String> = [],
         board: SavedBoard? = nil,
         jarStreak: Int = 0,
-        lastJarDay: Int? = nil
+        lastJarDay: Int? = nil,
+        tutorialDone: Bool = false
     ) {
         self.version = version
         self.levelNumber = levelNumber
@@ -46,12 +50,13 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.board = board
         self.jarStreak = jarStreak
         self.lastJarDay = lastJarDay
+        self.tutorialDone = tutorialDone
     }
 
     // MARK: - Saving format
 
     private enum CodingKeys: String, CodingKey {
-        case version, levelNumber, hints, grandmas, yarn, wardrobe, board, jarStreak, lastJarDay
+        case version, levelNumber, hints, grandmas, yarn, wardrobe, board, jarStreak, lastJarDay, tutorialDone
     }
 
     /// Written by hand rather than generated, for one reason: saves from
@@ -70,6 +75,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         board = try container.decodeIfPresent(SavedBoard.self, forKey: .board)
         jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
         lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
+        // Saves from before the tutorial existed: someone past level 1 has
+        // clearly learnt to play and shouldn't be sent back to the lesson.
+        tutorialDone = try container.decodeIfPresent(Bool.self, forKey: .tutorialDone) ?? (levelNumber > 1)
     }
 
     /// What a brand-new player starts with.
@@ -114,11 +122,37 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     ) -> [YarnColor] {
         guard result.passed else { return [] }
         let balls = dropper.draw(result.yarnBalls, given: yarn, using: &generator)
+        addYarn(balls)
+        levelNumber += 1
+        return balls
+    }
+
+    // MARK: - Tutorial
+
+    /// Yarn for finishing the lesson: a full reward, so the first thing the
+    /// player sees is how solving fills grandma's bag.
+    public static let tutorialYarn = 3
+
+    /// Marks the lesson done and gives its yarn, the first time only.
+    /// Replaying it later (from Settings) gives nothing, or it would be a
+    /// free yarn tap. Skipping just sets `tutorialDone`, with no yarn.
+    ///
+    /// - Returns: the balls given, empty on a replay.
+    public mutating func completeTutorial<Generator: RandomNumberGenerator>(
+        dropper: YarnDropper = YarnDropper(),
+        using generator: inout Generator
+    ) -> [YarnColor] {
+        guard !tutorialDone else { return [] }
+        tutorialDone = true
+        let balls = dropper.draw(Self.tutorialYarn, given: yarn, using: &generator)
+        addYarn(balls)
+        return balls
+    }
+
+    private mutating func addYarn(_ balls: [YarnColor]) {
         for color in balls {
             yarn[color, default: 0] += 1
         }
-        levelNumber += 1
-        return balls
     }
 
     // MARK: - Knitting

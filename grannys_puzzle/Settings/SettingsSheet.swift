@@ -15,6 +15,10 @@ import UIKit
 /// - "Save your progress" (Sign in with Apple), and "Delete account" once an
 ///   account is linked, which App Store rules require.
 struct SettingsSheet: View {
+    /// Replays grandma's lesson. Only the home screen offers it: from inside
+    /// a level it would mean leaving the level, which is a surprise.
+    var onHowToPlay: (() -> Void)? = nil
+
     @AppStorage(ToggleSetting.music.key) private var musicOn = ToggleSetting.music.defaultValue
     @AppStorage(ToggleSetting.sound.key) private var soundOn = ToggleSetting.sound.defaultValue
     @AppStorage(ToggleSetting.haptics.key) private var hapticsOn = ToggleSetting.haptics.defaultValue
@@ -39,6 +43,18 @@ struct SettingsSheet: View {
                         languageRow
                     } footer: {
                         Text("Changes the app's language in the iPhone Settings app.")
+                    }
+                }
+
+                if let onHowToPlay {
+                    Section {
+                        Button {
+                            dismiss()
+                            onHowToPlay()
+                        } label: {
+                            Label("How to play", systemImage: "questionmark.circle")
+                        }
+                        .foregroundStyle(Theme.ink)
                     }
                 }
 

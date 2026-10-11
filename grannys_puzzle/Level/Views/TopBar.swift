@@ -28,7 +28,7 @@ private struct CluePill: View {
             stepButton(systemName: "chevron.left", label: "Previous clue", action: model.showPreviousClue)
 
             VStack(spacing: 2) {
-                Text("LEVEL \(model.levelNumber) · \(model.progressText)")
+                header
                     .font(.system(size: 10.5, weight: .semibold))
                     .kerning(0.5)
                     .monospacedDigit()
@@ -55,6 +55,15 @@ private struct CluePill: View {
         }
         .clipShape(RoundedRectangle(cornerRadius: 14))
         .shadow(color: .black.opacity(0.06), radius: 1, y: 1)
+    }
+
+    @ViewBuilder
+    private var header: some View {
+        if model.isTutorial {
+            Text("HOW TO PLAY · \(model.progressText)")
+        } else {
+            Text("LEVEL \(model.levelNumber) · \(model.progressText)")
+        }
     }
 
     @ViewBuilder

@@ -50,9 +50,23 @@ private enum Startup {
     static func load() -> Startup {
         do {
             let pack = try LevelLoader.bundledPack(named: LevelLoader.firstPackName)
-            return .ready(Game(pack: pack, store: progressStore()))
+            let game = Game(pack: pack, tutorial: tutorialLevel(), store: progressStore())
+            game.startTutorialIfNeeded()
+            return .ready(game)
         } catch {
             return .failed(String(describing: error))
+        }
+    }
+
+    /// Unlike the level pack, a missing lesson isn't worth stopping the
+    /// game for: players can still play, so log it and go on without.
+    private static func tutorialLevel() -> Level? {
+        do {
+            return try LevelLoader.bundledPack(named: LevelLoader.tutorialPackName).levels.first
+        } catch {
+            Logger(subsystem: "grannys_puzzle", category: "tutorial")
+                .error("Tutorial couldn't be loaded: \(String(describing: error), privacy: .public)")
+            return nil
         }
     }
 
