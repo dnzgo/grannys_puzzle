@@ -16,6 +16,7 @@ Two things keep it fast:
 from __future__ import annotations
 
 import random
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 from .layout import Cell, Slot
@@ -79,9 +80,19 @@ def fill_slots(
     max_distinct_letters: int,
     node_limit: int = 4000,
     candidates_per_slot: int = 40,
+    freshness: Callable[[str], tuple[int, ...]] | None = None,
+    blocked: frozenset[str] = frozenset(),
 ) -> dict[int, str] | None:
     """Returns {slot position: word}, or None if no fill was found within
-    `node_limit` search steps."""
+    `node_limit` search steps.
+
+    `freshness` ranks words by how recently and how often earlier levels
+    used them (lower first). Without it, every level would reach for the
+    same handful of easy words, because the search tries the most familiar
+    candidates first and only ever looks at the top few.
+
+    `blocked` words aren't used at all (the generator passes the words of
+    the last few levels, so a word doesn't come straight back)."""
     grid: dict[Cell, str] = {}
     used: set[str] = set()
     assignment: dict[int, str] = {}
@@ -91,13 +102,17 @@ def fill_slots(
         return "".join(grid.get(cell, "?") for cell in slot.cells)
 
     def options(slot: Slot) -> list[str]:
-        return [word for word in index.matching(pattern(slot)) if word not in used]
+        return [word for word in index.matching(pattern(slot)) if word not in used and word not in blocked]
 
     def ordered(words: list[str]) -> list[str]:
-        # Prefer familiar words, with random order inside each familiarity
-        # level so levels don't all reuse the same few words.
-        keyed = sorted((index.familiarity[word], rng.random(), word) for word in words)
-        return [word for _, _, word in keyed[:candidates_per_slot]]
+        # Least-used words first (when the caller tracks usage), then the
+        # most familiar, in random order inside each group. Every word in
+        # the index is already familiar enough for the level, so preferring
+        # an unused one costs nothing in difficulty.
+        def key(word: str) -> tuple:
+            fresh = freshness(word) if freshness else ()
+            return (*fresh, index.familiarity[word], rng.random(), word)
+        return sorted(words, key=key)[:candidates_per_slot]
 
     def solve() -> bool:
         nonlocal nodes

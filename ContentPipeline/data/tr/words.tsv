@@ -21,6 +21,7 @@ ALET	10	noun	Araç
 ALEV	10	noun	Ateş dili
 ALKIŞ	10	noun	El çırpma
 ALMAK	10	verb	Vermek karşıtı
+ALO	10	other	Telefon sözü
 ALT	10	noun	Üst karşıtı
 ALTI	10	other	Beşten sonra
 ALTIN	10	noun	Sarı maden
@@ -131,6 +132,7 @@ BEŞ	10	other	Dörtten sonra
 BIYIK	10	noun	Dudak üstü kıl
 BIÇAK	10	noun	Kesici araç
 BODRUM	10	noun	Yer altı katı
+BOL	10	adjective	Çok
 BONCUK	10	noun	Delikli süs
 BORÇ	10	noun	Ödenecek para
 BOY	10	noun	Uzunluk
@@ -229,6 +231,7 @@ DEVE	10	noun	Hörgüçlü hayvan
 DEVLET	10	noun	Ülke yönetimi
 DEĞER	10	noun	Kıymet
 DEĞİRMEN	10	noun	Un öğütür
+DIŞ	10	noun	İç karşıtı
 DIŞARI	10	adverb	Dış taraf
 DOKTOR	10	noun	Hekim
 DOKUZ	10	other	Sekizden sonra
@@ -316,6 +319,7 @@ EŞYA	10	noun	Mal
 EŞİT	10	adjective	Denk
 FABRİKA	10	noun	İmalathane
 FAKİR	10	adjective	Yoksul
+FAR	10	noun	Araba lambası
 FARE	10	noun	Kedinin avı
 FARK	10	noun	Ayrım
 FASULYE	10	noun	Kuru veya taze
@@ -383,6 +387,7 @@ GİZLİ	10	adjective	Saklı
 HABER	10	noun	Bilgi
 HAFTA	10	noun	Yedi gün
 HAFİF	10	adjective	Ağır karşıtı
+HAK	10	noun	Adalet
 HALA	10	noun	Babanın kız kardeşi
 HALI	10	noun	Yere serilir
 HAMUR	10	noun	Undan yapılır
@@ -410,6 +415,8 @@ HEDİYE	10	noun	Armağan
 HELVA	10	noun	Tahin tatlısı
 HEMEN	10	adverb	Derhal
 HEMŞİRE	10	noun	Hastabakıcı
+HEP	10	adverb	Daima
+HER	10	other	Tüm
 HESAP	10	noun	Sayım
 HEYKEL	10	noun	Yontu
 HIRKA	10	noun	Örgü ceket
@@ -442,6 +449,7 @@ KALIP	10	noun	Döküm modeli
 KALMAK	10	verb	Gitmemek
 KALP	10	noun	Yürek
 KAMYON	10	noun	Yük aracı
+KAN	10	noun	Damarda akar
 KANAL	10	noun	Su yolu
 KANAT	10	noun	Uçma organı
 KANEPE	10	noun	Divan
@@ -475,6 +483,7 @@ KAYMAK	10	noun	Süt üstü
 KAZAK	10	noun	Yün giysi
 KAZAN	10	noun	Büyük tencere
 KAZMAK	10	verb	Toprak açmak
+KAÇ	10	other	Soru sözü
 KAÇMAK	10	verb	Firar etmek
 KAŞ	10	noun	Göz üstünde
 KAŞAR	10	noun	Sarı peynir
@@ -557,6 +566,7 @@ KÜÇÜK	10	adjective	Büyük karşıtı
 KİBRİT	10	noun	Ateş yakar
 KİLİM	10	noun	Dokuma yaygı
 KİLİT	10	noun	Kapıyı kapatır
+KİM	10	other	Soru sözü
 KİR	10	noun	Pislik
 KİRAZ	10	noun	Saplı meyve
 KİRLİ	10	adjective	Pis
@@ -650,6 +660,7 @@ NEFİS	10	adjective	Lezzetli
 NEHİR	10	noun	Irmak
 NEMLİ	10	adjective	Rutubetli
 NESİL	10	noun	Kuşak
+NET	10	adjective	Açık
 NEŞE	10	noun	Sevinç
 NEŞELİ	10	adjective	Şen
 NOHUT	10	noun	Baklagil
@@ -661,6 +672,7 @@ NİŞAN	10	noun	Evlilik sözü
 OCAK	10	noun	Yılın ilk ayı
 ODA	10	noun	Evin bölümü
 ODUN	10	noun	Yakılan tahta
+OFİS	10	noun	Büro
 OK	10	noun	Yayla atılır
 OKUL	10	noun	Öğrenci gider
 OKUMAK	10	verb	Kitaba bakmak
@@ -766,6 +778,7 @@ SAYGI	10	noun	Hürmet
 SAYI	10	noun	Rakam
 SAYMAK	10	verb	Bir iki üç demek
 SAÇ	10	noun	Başta uzar
+SAĞ	10	noun	Sol karşıtı
 SAĞIR	10	adjective	Duymayan
 SAĞLAM	10	adjective	Dayanıklı
 SEBEP	10	noun	Neden
@@ -773,6 +786,7 @@ SEBZE	10	noun	Bostan ürünü
 SEKİZ	10	other	Yediden sonra
 SEL	10	noun	Taşkın
 SEMT	10	noun	Mahalle
+SEN	10	other	Ben değil
 SENE	10	noun	Yıl
 SEPET	10	noun	Örme kap
 SERT	10	adjective	Yumuşak karşıtı
@@ -800,6 +814,8 @@ SOBA	10	noun	Odun yakılır
 SOFRA	10	noun	Yemek masası
 SOHBET	10	noun	Muhabbet
 SOKAK	10	noun	Dar yol
+SOL	10	noun	Sağ karşıtı
+SON	10	noun	Bitiş
 SONBAHAR	10	noun	Güz
 SONUÇ	10	noun	Netice
 SORMAK	10	verb	Soru yöneltmek
@@ -823,6 +839,7 @@ SÜPÜRGE	10	noun	Toz alır
 SÜRE	10	noun	Müddet
 SÜRMEK	10	verb	Araç kullanmak
 SÜRÜ	10	noun	Hayvan topluluğu
+SÜS	10	noun	Bezek
 SÜT	10	noun	İnek verir
 SİLGİ	10	noun	Kalemi siler
 SİLMEK	10	verb	Temizlemek
@@ -834,6 +851,7 @@ SİNEMA	10	noun	Film izlenir
 SİRK	10	noun	Palyaço gösterisi
 SİS	10	noun	Duman gibi bulut
 SİYAH	10	adjective	Kara
+SİZ	10	other	Biz değil
 TABAK	10	noun	Yemek konur
 TABAN	10	noun	Ayak altı
 TABLO	10	noun	Resim
@@ -851,6 +869,7 @@ TARAK	10	noun	Saç düzeltir
 TARLA	10	noun	Ekin yeri
 TARİF	10	noun	Yemek yapılışı
 TARİH	10	noun	Geçmiş
+TAT	10	noun	Lezzet
 TATLI	10	adjective	Şekerli
 TATMAK	10	verb	Lezzete bakmak
 TATİL	10	noun	Dinlence
@@ -915,6 +934,7 @@ UFUK	10	noun	Göğün yere değdiği
 UMUT	10	noun	Ümit
 UN	10	noun	Ekmeğin hammaddesi
 USLU	10	adjective	Terbiyeli
+USTA	10	noun	Zanaatkâr
 UYARI	10	noun	İkaz
 UYKU	10	noun	Dinlenme hali
 UYMAK	10	verb	Uygun düşmek
@@ -1067,6 +1087,7 @@ ZİRVE	10	noun	Doruk
 ÇİFTLİK	10	noun	Tarım işletmesi
 ÇİFTÇİ	10	noun	Toprak işler
 ÇİLEK	10	noun	Kırmızı meyve
+ÇİM	10	noun	Yeşil ot
 ÇİMEN	10	noun	Yeşil ot
 ÇİRKİN	10	adjective	Güzel karşıtı
 ÇİVİ	10	noun	Çekiçle çakılır
@@ -1155,6 +1176,7 @@ ZİRVE	10	noun	Doruk
 ŞELALE	10	noun	Çağlayan
 ŞEMSİYE	10	noun	Yağmurda açılır
 ŞEN	10	adjective	Neşeli
+ŞIK	10	adjective	Zarif
 ŞOFÖR	10	noun	Sürücü
 ŞU	10	other	Bu değil
 ŞUBAT	10	noun	İkinci ay
@@ -1172,6 +1194,7 @@ AHIR	20	noun	İnek barınağı
 AHŞAP	20	noun	Tahta
 AKIN	20	noun	Hücum
 AKREP	20	noun	Zehirli kuyruklu
+AKÜ	20	noun	Araba bataryası
 AL	20	adjective	Kırmızı
 ALAY	20	noun	Dalga geçme
 ALIM	20	noun	Satın alma
@@ -1185,6 +1208,7 @@ ANTEN	20	noun	Yayın alıcı
 ANİ	20	adjective	Birden olan
 ARSA	20	noun	Boş yer
 ART	20	noun	Arka
+ASA	20	noun	Değnek
 ASIK	20	adjective	Somurtkan
 ASIR	20	noun	Yüzyıl
 ASMA	20	noun	Üzüm ağacı
@@ -1216,12 +1240,14 @@ BAMYA	20	noun	Yeşil sebze
 BANDO	20	noun	Mızıka takımı
 BANK	20	noun	Park sırası
 BANT	20	noun	Yapıştırıcı şerit
+BAR	20	noun	İçki yeri
 BARBUNYA	20	noun	Kırmızı fasulye
 BASIN	20	noun	Gazeteler
 BASMA	20	noun	Pamuklu kumaş
 BATAK	20	noun	Çamurlu yer
 BATAKLIK	20	noun	Çamurlu yer
 BAYIR	20	noun	Yokuş
+BAZ	20	noun	Temel
 BELLEK	20	noun	Hafıza
 BENEK	20	noun	Nokta
 BENZEMEK	20	verb	Andırmak
@@ -1233,6 +1259,7 @@ BLUZ	20	noun	Kadın gömleği
 BOLCA	20	adverb	Çokça
 BOLLUK	20	noun	Bereket
 BOMBA	20	noun	Patlayıcı
+BOR	20	noun	Maden
 BORA	20	noun	Fırtına
 BORSA	20	noun	Hisse piyasası
 BORU	20	noun	Su hattı
@@ -1251,6 +1278,7 @@ BİÇMEK	20	verb	Kesmek
 CENNET	20	noun	Uçmak
 CEYLAN	20	noun	Ahu
 CIVATA	20	noun	Somunla takılır
+COP	20	noun	Polis sopası
 CÜCE	20	noun	Kısa boylu
 CİLA	20	noun	Parlatıcı
 CİVCİV	20	noun	Tavuk yavrusu
@@ -1263,9 +1291,10 @@ DAMAK	20	noun	Ağız tavanı
 DAVA	20	noun	Mahkeme konusu
 DAYAK	20	noun	Kötek
 DAYANAK	20	noun	Destek
-DE	20	other	Bağlaç
+DE	20	other	Dahi, bile
 DEFNE	20	noun	Yaprağı yemeğe
 DEHA	20	noun	Üstün zekâ
+DEK	20	other	Kadar
 DEKOR	20	noun	Süsleme
 DEM	20	noun	Çayın koyuluğu
 DEMET	20	noun	Bağlam
@@ -1317,8 +1346,11 @@ EZGİ	20	noun	Melodi
 EŞARP	20	noun	Baş örtüsü
 EŞİK	20	noun	Kapı altı
 FAL	20	noun	Kahve ile bakılır
+FAN	20	noun	Hayran
 FASIL	20	noun	Bölüm
+FEN	20	noun	Bilim
 FERMUAR	20	noun	Dişli kapama
+FES	20	noun	Püsküllü başlık
 FISTIK	20	noun	Kuruyemiş
 FIÇI	20	noun	Varil
 FON	20	noun	Arka plan
@@ -1341,6 +1373,7 @@ GİDON	20	noun	Bisiklet direksiyonu
 GİŞE	20	noun	Bilet satılan yer
 HAL	20	noun	Durum
 HALAT	20	noun	Kalın ip
+HAM	20	adjective	Olgunlaşmamış
 HAMAK	20	noun	Asılı yatak
 HAMAL	20	noun	Yük taşıyan
 HAMAM	20	noun	Kese yapılır
@@ -1426,8 +1459,10 @@ KRAVAT	20	noun	Boyun bağı
 KRİZ	20	noun	Bunalım
 KUAFÖR	20	noun	Saç yapar
 KUBBE	20	noun	Yarım küre çatı
+KUL	20	noun	Köle
 KULÜBE	20	noun	Küçük ev
 KUMRU	20	noun	Güvercin türü
+KUR	20	noun	Döviz değeri
 KURDELE	20	noun	Süs şeridi
 KURŞUN	20	noun	Ağır metal
 KUTSAL	20	adjective	Mukaddes
@@ -1438,15 +1473,16 @@ KÖR	20	adjective	Görmeyen
 KÖRFEZ	20	noun	Deniz girintisi
 KÖZ	20	noun	Ateş parçası
 KÖŞK	20	noun	Bahçeli ev
+KÜF	20	noun	Ekmekte oluşur
 KÜP	20	noun	Büyük kap
 KÜTLE	20	noun	Yığın
 KÜTÜK	20	noun	Kalın odun
-Kİ	20	other	Bağlaç
 KİL	20	noun	Çömlek toprağı
 KİLER	20	noun	Erzak odası
 KİN	20	noun	Garez
 KİTLE	20	noun	Yığın
 LABİRENT	20	noun	Çıkışı zor yol
+LAF	20	noun	Söz
 LAKAP	20	noun	Takma ad
 LAVABO	20	noun	El yıkanır
 LAVANTA	20	noun	Mor çiçek
@@ -1455,6 +1491,7 @@ LEVHA	20	noun	Tabela
 LEYLEK	20	noun	Uzun bacaklı kuş
 LEĞEN	20	noun	Çamaşır kabı
 LİF	20	noun	İnce tel
+LİG	20	noun	Futbol kümesi
 LİSAN	20	noun	Dil
 MABET	20	noun	Tapınak
 MACUN	20	noun	Diş ___
@@ -1467,6 +1504,7 @@ MANTO	20	noun	Kadın paltosu
 MARANGOZ	20	noun	Tahta işçisi
 MASKARA	20	noun	Rimel
 MASRAF	20	noun	Gider
+MAT	20	adjective	Parlak değil
 MATBAA	20	noun	Basımevi
 MAYA	20	noun	Hamur kabartır
 MAŞA	20	noun	Ateş aracı
@@ -1495,6 +1533,7 @@ MİSİNA	20	noun	Olta ipi
 NABIZ	20	noun	Kalp atışı
 NAKIŞ	20	noun	İşleme
 NAL	20	noun	At ayakkabısı
+NAM	20	noun	Ün
 NASİHAT	20	noun	Öğüt
 NAZ	20	noun	Cilve
 NAZAR	20	noun	Göz değmesi
@@ -1503,8 +1542,10 @@ NERGİS	20	noun	Bahar çiçeği
 NÜFUS	20	noun	Ahali
 NİŞASTA	20	noun	Kola
 OF	20	other	Bıkkınlık ünlemi
+OJE	20	noun	Tırnak cilası
 OKLAVA	20	noun	Hamur açar
 OLTA	20	noun	Balık tutma aracı
+OLUK	20	noun	Yağmur kanalı
 ORAN	20	noun	Nispet
 OTLAK	20	noun	Mera
 OTO	20	noun	Araba
@@ -1527,6 +1568,7 @@ PENGUEN	20	noun	Uçamayan kuş
 PENSE	20	noun	Kerpeten
 PERVANE	20	noun	Dönen kanat
 PERVAZ	20	noun	Kenar çıtası
+PES	20	adjective	Alçak ses
 PINAR	20	noun	Kaynak
 PIRASA	20	noun	Uzun sebze
 PIRLANTA	20	noun	Elmas
@@ -1535,6 +1577,7 @@ PLAKA	20	noun	Araç numarası
 PRİZ	20	noun	Fiş takılır
 PUDİNG	20	noun	Muhallebi
 PUL	20	noun	Zarfa yapıştırılır
+PÜF	20	other	Üfleme sesi
 PÜRÜZ	20	noun	Engel
 PİNTİ	20	adjective	Cimri
 PİPO	20	noun	Tütün içilir
@@ -1543,6 +1586,7 @@ PİST	20	noun	Uçak yolu
 RADAR	20	noun	Uzak algılayıcı
 RAY	20	noun	Tren yolu
 RENDE	20	noun	Doğrama aracı
+RET	20	noun	Kabul etmeme
 RIHTIM	20	noun	İskele
 ROL	20	noun	Oyuncu canlandırır
 ROTA	20	noun	Yön
@@ -1607,6 +1651,7 @@ TIRTIL	20	noun	Kelebek larvası
 TIĞ	20	noun	Dantel iğnesi
 TOMURCUK	20	noun	Gonca
 TOPUK	20	noun	Ayak arkası
+TOY	20	adjective	Acemi
 TUFAN	20	noun	Büyük sel
 TULUM	20	noun	İş giysisi
 TURNA	20	noun	Uzun bacaklı kuş
@@ -1615,6 +1660,7 @@ TURTA	20	noun	Meyveli pasta
 TUTKAL	20	noun	Zamk
 TUVAL	20	noun	Resim bezi
 TUĞLA	20	noun	Pişmiş blok
+TUŞ	20	noun	Klavye düğmesi
 TÖRE	20	noun	Gelenek
 TÜL	20	noun	Perde kumaşı
 TÜP	20	noun	Gaz kabı
@@ -1667,6 +1713,7 @@ ZİNDE	20	adjective	Dinç
 ÇAKIL	20	noun	Küçük taş
 ÇAN	20	noun	Kilise zili
 ÇANAK	20	noun	Toprak kap
+ÇAP	20	noun	Genişlik
 ÇARK	20	noun	Dişli tekerlek
 ÇARŞI	20	noun	Pazar yeri
 ÇATLAK	20	noun	Yarık
@@ -1685,11 +1732,14 @@ ZİNDE	20	adjective	Dinç
 ÇÖMLEK	20	noun	Toprak kap
 ÇİLE	20	noun	Sıkıntı
 ÇİNİ	20	noun	Süslü seramik
+ÇİP	20	noun	Elektronik devre
 ÇİT	20	noun	Bahçe sınırı
 ÇİY	20	noun	Sabah nemi
 ÇİĞ	20	adjective	Pişmemiş
+ÖBÜR	20	adjective	Diğer
 ÖDENEK	20	noun	Tahsisat
 ÖDÜNÇ	20	noun	Geri verilecek
+ÖGE	20	noun	Unsur
 ÖKÜZ	20	noun	Erkek sığır
 ÖLMEK	20	verb	Hayatını kaybetmek
 ÖLÇEK	20	noun	Ölçü kabı
@@ -1733,9 +1783,12 @@ ZİNDE	20	adjective	Dinç
 ŞERBET	20	noun	Tatlı içecek
 ŞERİT	20	noun	Bant
 ŞOK	20	noun	Sarsıntı
+ŞOV	20	noun	Gösteri
 ŞUBE	20	noun	Kol
 ŞİFA	20	noun	Sağlık bulma
 ŞİLTE	20	noun	Döşek
+ABA	35	noun	Kalın yün kumaş
+ABU	35	other	Şaşkınlık ünlemi
 ACUN	35	noun	Dünya
 ADAK	35	noun	Nezir
 AHU	35	noun	Ceylan
@@ -1757,19 +1810,20 @@ BADE	35	noun	Şarap
 BALÇIK	35	noun	Yapışkan çamur
 BAS	35	noun	Kalın ses
 BEYİT	35	noun	İki dize
+BOA	35	noun	Büyük yılan
 BOCUK	35	noun	Kayık türü
 BUCAK	35	noun	Köşe
 BİBLO	35	noun	Süs eşyası
 CEVHER	35	noun	Maden filizi
 CİN	35	noun	Peri
 DEKAN	35	noun	Fakülte başı
+DEO	35	noun	Koku giderici
 ECEL	35	noun	Ölüm vakti
 ECZA	35	noun	İlaç maddesi
 ELA	35	adjective	Göz rengi
 EMSAL	35	noun	Benzer örnek
 ERK	35	noun	Güç
 ERMEK	35	verb	Ulaşmak
-ES	35	other	Rüzgâr, ___ geçmek
 ESARET	35	noun	Tutsaklık
 EĞE	35	noun	Törpü
 FELEK	35	noun	Kader
@@ -1777,8 +1831,6 @@ FİİL	35	noun	Eylem
 GERDAN	35	noun	Boyun önü
 GERGEF	35	noun	Nakış çerçevesi
 GÜRZ	35	noun	Topuz
-HA	35	other	Şaşkınlık ünlemi
-HE	35	other	Evet anlamında
 ILGIM	35	noun	Serap
 ILGIN	35	noun	Bir ağaç
 IRGAT	35	noun	Tarım işçisi
@@ -1821,6 +1873,7 @@ SULH	35	noun	Barış
 SİMSAR	35	noun	Aracı
 TATAR	35	noun	Ulak
 TIMAR	35	noun	At bakımı
+TUĞ	35	noun	At kılı sancak
 TİRAT	35	noun	Uzun konuşma
 UD	35	noun	Telli çalgı
 ULAK	35	noun	Haberci
@@ -1831,6 +1884,7 @@ UZ	35	adjective	Usta
 VAH	35	other	Acıma ünlemi
 YEN	35	noun	Elbise kolu
 YULAR	35	noun	At başlığı
+ZAN	35	noun	Sanı
 ZERDALİ	35	noun	Yabani kayısı
 ÇEKÜL	35	noun	Şakul
 ÇEKİ	35	noun	Ağırlık ölçüsü

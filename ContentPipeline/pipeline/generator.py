@@ -8,6 +8,7 @@ exactly to investigate it.
 from __future__ import annotations
 
 import random
+from collections import Counter, deque
 from dataclasses import dataclass
 
 from .clues import ClueBank, placeholder_clue
@@ -51,6 +52,19 @@ class LevelGenerator:
         self._indexes: dict[int, WordIndex] = {}
         self.stats = GenerationStats()
         self.used_words: set[str] = set()
+        # Word usage so far in this run, so later levels prefer words the
+        # player hasn't just seen. `recent` covers the last few levels (a
+        # word shouldn't come back right away); `total` the whole run (use
+        # the whole vocabulary before repeating). Because levels are made in
+        # order, the same command still gives the same pack. The trade-off:
+        # regenerating one level on its own no longer reproduces it exactly,
+        # since its result now depends on the levels made before it.
+        self.recent_window = 15
+        # Words from this many latest levels are kept out entirely, as long
+        # as the level can still be filled without them.
+        self.block_window = 8
+        self._recent: deque[set[str]] = deque(maxlen=self.recent_window)
+        self._total_uses: Counter[str] = Counter()
 
     def _index(self, max_familiarity: int) -> WordIndex:
         if max_familiarity not in self._indexes:
@@ -78,13 +92,28 @@ class LevelGenerator:
                 continue  # a hard problem remains: not playable
             slots = find_slots(layout, self.rules.min_answer_length)
             # A few quick fills per layout, each with a fresh random word order.
-            for _ in range(4):
+            # The first ones keep recently used words out; the last allows
+            # them, so a hard layout can still be filled.
+            blocked = self._recently_used()
+            for fill_attempt in range(4):
                 self.stats.fills_tried += 1
-                assignment = fill_slots(slots, index, rng, self.rules.max_distinct_letters)
+                assignment = fill_slots(
+                    slots, index, rng, self.rules.max_distinct_letters,
+                    freshness=self._freshness,
+                    blocked=blocked if fill_attempt < 3 else frozenset(),
+                )
                 if assignment is not None:
                     return self._build(level_id, spec, layout, slots, assignment, rng)
             failed_layouts.add(layout_key(layout))
         return None
+
+    def _recently_used(self) -> frozenset[str]:
+        latest = list(self._recent)[-self.block_window:]
+        return frozenset().union(*latest) if latest else frozenset()
+
+    def _freshness(self, word: str) -> tuple[int, int]:
+        recent = sum(word in level for level in self._recent)
+        return (recent, self._total_uses[word])
 
     def _build(
         self,
@@ -114,6 +143,10 @@ class LevelGenerator:
             "".join("#" if layout[r][c] else letters[(r, c)] for c in range(spec.columns))
             for r in range(spec.rows)
         ]
+        level_words = {assignment[position] for position in range(len(slots))}
+        self._recent.append(level_words)
+        self._total_uses.update(level_words)
+
         letter_cells = sorted(letters)
         starter_count = max(1, round(len(letter_cells) * spec.starter_share))
         givens = sorted(rng.sample(letter_cells, starter_count))

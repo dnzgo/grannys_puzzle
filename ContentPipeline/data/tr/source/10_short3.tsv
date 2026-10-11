@@ -1,0 +1,59 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+aba	35	noun	Kalın yün kumaş	Keçe giysi	
+abu	35	other	Şaşkınlık ünlemi	Hayret sesi	
+akü	20	noun	Araba bataryası	Elektrik deposu	
+alo	10	other	Telefon sözü	Telefonu açınca	
+asa	20	noun	Değnek	Baston	
+bar	20	noun	İçki yeri	Meyhane	
+baz	20	noun	Temel	Kimyada asit karşıtı	
+boa	35	noun	Büyük yılan	Sarmal yılan	
+bol	10	adjective	Çok	Geniş	
+bor	20	noun	Maden	Kimyasal element	
+cop	20	noun	Polis sopası	Kısa sopa	
+çap	20	noun	Genişlik	Daire ölçüsü	
+çim	10	noun	Yeşil ot	Futbol sahası zemini	
+çip	20	noun	Elektronik devre	Kumar fişi	
+dek	20	other	Kadar	Değin	
+deo	35	noun	Koku giderici	Ter önleyici	
+dış	10	noun	İç karşıtı	Haricî	
+fan	20	noun	Hayran	Pervane	
+far	10	noun	Araba lambası	Göz boyası	
+fen	20	noun	Bilim	Teknik	
+fes	20	noun	Püsküllü başlık	Kırmızı başlık	
+hak	10	noun	Adalet	Pay	
+ham	20	adjective	Olgunlaşmamış	Çiğ	
+hep	10	adverb	Daima	Bütün	
+her	10	other	Tüm	Bütün	
+kaç	10	other	Soru sözü	Hangi sayı	
+kan	10	noun	Damarda akar	Kırmızı sıvı	
+kim	10	other	Soru sözü	Hangi kişi	
+kul	20	noun	Köle	Bende	
+kur	20	noun	Döviz değeri	Flört	
+küf	20	noun	Ekmekte oluşur	Bozulma lekesi	
+laf	20	noun	Söz	Konuşma	
+lig	20	noun	Futbol kümesi	Takımlar sıralaması	
+mat	20	adjective	Parlak değil	Satrançta son	
+nam	20	noun	Ün	Şöhret	
+net	10	adjective	Açık	Kesin	
+ofis	10	noun	Büro	Çalışma yeri	
+oje	20	noun	Tırnak cilası	Tırnak boyası	
+oluk	20	noun	Yağmur kanalı	Su yolu	
+öbür	20	adjective	Diğer	Öteki	
+öge	20	noun	Unsur	Element	
+pes	20	adjective	Alçak ses	Yenilgiyi kabul	
+püf	20	other	Üfleme sesi	___ noktası	
+ret	20	noun	Kabul etmeme	Geri çevirme	
+sağ	10	noun	Sol karşıtı	Canlı	
+sen	10	other	Ben değil	İkinci kişi	
+siz	10	other	Biz değil	Kibar hitap	
+sol	10	noun	Sağ karşıtı	Nota adı	
+son	10	noun	Bitiş	Final	
+süs	10	noun	Bezek	Ziynet	
+şık	10	adjective	Zarif	Seçenek	
+şov	20	noun	Gösteri	Eğlence	
+tat	10	noun	Lezzet	Çeşni	
+toy	20	adjective	Acemi	Deneyimsiz	
+tuğ	35	noun	At kılı sancak	Eski bayrak	
+tuş	20	noun	Klavye düğmesi	Piyano parçası	
+usta	10	noun	Zanaatkâr	Çırağın hocası	
+zan	35	noun	Sanı	Kuşku	

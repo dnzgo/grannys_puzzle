@@ -86,8 +86,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
         rows, columns = sizes[offset % len(sizes)]
         spec = LevelSpec(rows=rows, columns=columns, max_familiarity=args.max_familiarity)
         level_id = f"{args.lang}-{number:06d}"
-        # The seed comes from the level number, so regenerating level 57
-        # gives level 57 again, whatever else is in the batch.
+        # The seed comes from the level number, so the same command always
+        # makes the same pack. (A level also depends on the ones before it,
+        # which steer it away from recently used words; regenerate the whole
+        # pack, not a single level, to reproduce it.)
         level = generator.generate(level_id, spec, seed=args.seed * 1_000_003 + number)
         if level is None:
             failures += 1
