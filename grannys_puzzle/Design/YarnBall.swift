@@ -16,12 +16,12 @@ extension YarnColor {
     }
 
     /// The colour's name for labels and VoiceOver.
-    var displayName: LocalizedStringKey {
+    var name: String {
         switch self {
-        case .red: "Red"
-        case .blue: "Blue"
-        case .yellow: "Yellow"
-        case .green: "Green"
+        case .red: String(localized: "Red")
+        case .blue: String(localized: "Blue")
+        case .yellow: String(localized: "Yellow")
+        case .green: String(localized: "Green")
         }
     }
 }

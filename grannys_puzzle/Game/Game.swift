@@ -18,6 +18,7 @@ final class Game {
     }
 
     let pack: LevelPack
+    let catalog: KnittingCatalog
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
 
@@ -26,8 +27,9 @@ final class Game {
     @ObservationIgnored private var generator = SystemRandomNumberGenerator()
     @ObservationIgnored private let logger = Logger(subsystem: "grannys_puzzle", category: "progress")
 
-    init(pack: LevelPack, store: ProgressStore?) {
+    init(pack: LevelPack, store: ProgressStore?, catalog: KnittingCatalog = .standard) {
         self.pack = pack
+        self.catalog = catalog
         self.store = store
         self.progress = .newPlayer
         if let store {
@@ -40,6 +42,22 @@ final class Game {
     /// The level the Play button starts, if the pack has one left.
     var nextLevelNumber: Int? {
         pack.levels.indices.contains(progress.levelNumber - 1) ? progress.levelNumber : nil
+    }
+
+    /// True when the player can afford at least one item they don't own yet;
+    /// the home screen uses it to nudge them toward the yarn bag.
+    var canKnitSomething: Bool {
+        catalog.items.contains(where: progress.canKnit)
+    }
+
+    // MARK: - Knitting
+
+    /// Knits an item if the player can afford it, and saves at once, before
+    /// any animation plays. Returns whether it was knitted.
+    func knit(_ item: KnitItem) -> Bool {
+        var outcome = PlayerProgress.KnitOutcome.alreadyOwned
+        update { outcome = $0.knit(item) }
+        return outcome == .knitted
     }
 
     // MARK: - Navigation
@@ -133,7 +151,11 @@ extension Game {
     static func preview() -> Game? {
         guard let pack = try? LevelLoader.bundledPack(named: LevelLoader.firstPackName) else { return nil }
         let game = Game(pack: pack, store: nil)
-        game.progress = PlayerProgress(levelNumber: 7, hints: 3, grandmas: 1, yarn: [.red: 4, .blue: 2, .green: 1])
+        game.progress = PlayerProgress(
+            levelNumber: 7, hints: 3, grandmas: 1,
+            yarn: [.red: 8, .blue: 2, .green: 1],
+            wardrobe: ["cat.scarf.yellow"]
+        )
         return game
     }
 }

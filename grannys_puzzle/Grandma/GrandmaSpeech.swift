@@ -60,5 +60,6 @@ enum GrandmaLines {
 
     static let jarComingSoon = "That's my treat jar. It opens soon, dear!"
     static let catNapping = "Shh, the cat's having a little nap."
+    static let knitted = "Doesn't the cat look smart?"
     static let allLevelsDone = "You've solved them all! I'm writing more."
 }

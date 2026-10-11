@@ -12,6 +12,9 @@ struct HomeView: View {
 
     @State private var speech = GrandmaSpeech()
     @State private var showsYarnBag = false
+    @State private var showsWardrobe = false
+    /// The item whose knitting moment is playing, if any.
+    @State private var knittingItem: KnitItem?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -21,6 +24,7 @@ struct HomeView: View {
 
             HomeStage(
                 progress: game.progress,
+                canKnit: game.canKnitSomething,
                 speechLine: speech.line,
                 onGranny: { speech.say(GrandmaLines.greeting()) },
                 onCat: { speech.say(GrandmaLines.catNapping) },
@@ -36,8 +40,21 @@ struct HomeView: View {
         .background(Theme.background.ignoresSafeArea())
         .preferredColorScheme(.light)
         .sheet(isPresented: $showsYarnBag) {
-            YarnBagSheet(progress: game.progress)
+            YarnBagSheet(progress: game.progress, catalog: game.catalog, onKnit: startKnitting)
         }
+        .sheet(isPresented: $showsWardrobe) {
+            WardrobeSheet(progress: game.progress, catalog: game.catalog)
+        }
+        .overlay {
+            if let item = knittingItem {
+                KnittingMoment(item: item) {
+                    knittingItem = nil
+                    speech.say(GrandmaLines.knitted)
+                }
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: knittingItem)
         .onAppear {
             speech.say(game.nextLevelNumber == nil ? GrandmaLines.allLevelsDone : GrandmaLines.greeting())
         }
@@ -48,10 +65,18 @@ struct HomeView: View {
             HelperCountChip(systemImage: "cat.fill", count: game.progress.hints, label: "Cat hints")
             HelperCountChip(systemImage: "eyeglasses", count: game.progress.grandmas, label: "Grandma helpers")
             Spacer()
+            CircleIconButton(systemName: "hanger", label: "Wardrobe") { showsWardrobe = true }
             // Settings gets its action when the settings screen exists.
             CircleIconButton(systemName: "gearshape", label: "Settings") {}
         }
         .frame(height: BoardMetrics.topBarHeight)
+    }
+
+    /// Knitting is saved first; the moment on screen is only the reveal.
+    private func startKnitting(_ item: KnitItem) {
+        if game.knit(item) {
+            knittingItem = item
+        }
     }
 
     @ViewBuilder
@@ -78,6 +103,7 @@ struct HomeView: View {
 /// composition from an iPhone SE to a Pro Max.
 private struct HomeStage: View {
     let progress: PlayerProgress
+    let canKnit: Bool
     let speechLine: String?
     let onGranny: () -> Void
     let onCat: () -> Void
@@ -114,7 +140,7 @@ private struct HomeStage: View {
                 CatBedView(width: side * 0.36, action: onCat)
                     .position(at(0.17, 0.83))
 
-                YarnBagView(progress: progress, width: side * 0.26, action: onYarnBag)
+                YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.26, action: onYarnBag)
                     .position(at(0.83, 0.9))
 
                 if let speechLine {
@@ -176,6 +202,8 @@ private struct JarView: View {
 /// total count as a badge.
 private struct YarnBagView: View {
     let progress: PlayerProgress
+    /// Shows a "Knit!" tag when there's enough yarn for something new.
+    let canKnit: Bool
     let width: CGFloat
     let action: () -> Void
 
@@ -193,10 +221,24 @@ private struct YarnBagView: View {
             }
             .frame(width: width, height: width * 0.95, alignment: .bottom)
             .overlay(alignment: .topTrailing) { countBadge }
+            .overlay(alignment: .top) {
+                if canKnit { knitTag.offset(y: -width * 0.32) }
+            }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Yarn bag")
         .accessibilityValue("\(progress.totalYarn) balls")
+        .accessibilityHint(canKnit ? Text("Enough yarn to knit something") : Text(""))
+    }
+
+    private var knitTag: some View {
+        Text("Knit!")
+            .font(.system(size: 13, weight: .heavy, design: .rounded))
+            .foregroundStyle(Theme.onPrimary)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(Theme.primary))
+            .shadow(color: Theme.primary.opacity(0.4), radius: 4, y: 2)
     }
 
     private var basket: some View {

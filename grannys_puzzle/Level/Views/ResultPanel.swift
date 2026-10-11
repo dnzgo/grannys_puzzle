@@ -50,7 +50,7 @@ struct ResultPanel: View {
     private var yarnLabel: Text {
         guard !earnedYarn.isEmpty else { return Text("No yarn this time") }
         // "2 yarn balls: red, blue" for VoiceOver.
-        let names = earnedYarn.map(\.rawValue).joined(separator: ", ")
+        let names = earnedYarn.map(\.name).joined(separator: ", ")
         return Text("\(earnedYarn.count) yarn balls: \(names)")
     }
 }
