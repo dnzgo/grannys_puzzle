@@ -1,0 +1,198 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+acemi	10	adjective	Tecrübesiz	Usta karşıtı	
+açık	10	adjective	Kapalı karşıtı	Aydınlık	
+akıllı	10	adjective	Zeki	Uslu	
+alçak	10	adjective	Yüksek karşıtı	Kötü kimse	
+bayat	10	adjective	Taze değil	Eski ekmek	
+bozuk	10	adjective	Arızalı	Çalışmayan	
+büyük	10	adjective	Küçük karşıtı	İri	
+canlı	10	adjective	Diri	Hareketli	
+cesur	10	adjective	Yürekli	Korkusuz	
+cimri	10	adjective	Eli sıkı	Pinti	
+çirkin	10	adjective	Güzel karşıtı	Hoş değil	
+çürük	10	adjective	Bozulmuş	Dayanıksız	
+deli	10	adjective	Akılsız	Çılgın	
+diri	20	adjective	Canlı	Taze	
+doğru	10	adjective	Yanlış karşıtı	Düz	
+dürüst	10	adjective	Doğru sözlü	Namuslu	
+erken	10	adverb	Geç karşıtı	Vaktinden önce	
+eğri	10	adjective	Düz karşıtı	Çarpık	
+fena	10	adjective	Kötü	Berbat	
+geç	10	adjective	Erken karşıtı	Gecikmiş	
+gergin	20	adjective	Sinirli	Gerilmiş	
+gri	10	adjective	Kül rengi	Boz	
+güçlü	10	adjective	Kuvvetli	Zayıf karşıtı	
+hızlı	10	adjective	Süratli	Yavaş karşıtı	
+ılıman	20	adjective	Mutedil	Ne sıcak ne soğuk	
+ıssız	20	adjective	Tenha	Kimsesiz	
+kirli	10	adjective	Pis	Temiz karşıtı	
+korkak	10	adjective	Ödlek	Cesur karşıtı	
+kurnaz	10	adjective	Tilki gibi	Açıkgöz	
+kutsal	20	adjective	Mukaddes	Yüce	
+lezzetli	10	adjective	Tatlı, nefis	Leziz	
+meşhur	10	adjective	Ünlü	Tanınmış	
+nazik	10	adjective	Kibar	İnce ruhlu	
+nemli	10	adjective	Rutubetli	Islakça	
+neşeli	10	adjective	Şen	Keyifli	
+pahalı	10	adjective	Ucuz karşıtı	Değerli	
+parlak	10	adjective	Işıltılı	Mat karşıtı	
+pembe	10	adjective	Açık kırmızı	Gül rengi	
+sade	10	adjective	Süssüz	Şekersiz kahve	
+sağır	10	adjective	Duymayan	Kulağı ağır	
+sağlam	10	adjective	Dayanıklı	Kırılmaz	
+sakin	10	adjective	Durgun	Uysal	
+sarhoş	35	adjective	Kendinden geçmiş	Esrik	
+sert	10	adjective	Yumuşak karşıtı	Katı	
+serin	10	adjective	Hafif soğuk	Ferah	
+sessiz	10	adjective	Gürültüsüz	Sakin	
+sevimli	10	adjective	Şirin	Tatlı	
+sığ	20	adjective	Derin karşıtı	Yüzeysel	
+sıkı	10	adjective	Gevşek karşıtı	Sağlam	
+siyah	10	adjective	Kara	Beyaz karşıtı	
+şen	10	adjective	Neşeli	Keyifli	
+şişman	10	adjective	Kilolu	Zayıf karşıtı	
+taze	10	adjective	Yeni	Bayat karşıtı	
+temiz	10	adjective	Pak	Kirli karşıtı	
+tembel	10	adjective	Üşengeç	Çalışkan karşıtı	
+tuhaf	10	adjective	Garip	Acayip	
+turuncu	10	adjective	Portakal rengi	Havuç rengi	
+uysal	20	adjective	Yumuşak huylu	Söz dinleyen	
+uzman	10	noun	Bilirkişi	Usta	
+yakın	10	adjective	Uzak karşıtı	Bitişik	
+yalnız	10	adjective	Tek başına	Kimsesiz	
+yanlış	10	adjective	Hatalı	Doğru karşıtı	
+yaramaz	10	adjective	Haylaz	Uslu değil	
+yavaş	10	adjective	Ağır	Hızlı karşıtı	
+yorgun	10	adjective	Bitkin	Halsiz	
+zeki	10	adjective	Akıllı	Kafası çalışan	
+acele	10	noun	Telaş	İvedilik	
+adres	10	noun	Konum bilgisi	Zarfa yazılır	
+amaç	10	noun	Hedef	Gaye	
+anı	10	noun	Hatıra	Geçmişten kalan	
+anlam	10	noun	Mana	Kavram	
+araç	10	noun	Alet	Taşıt	
+armağan	10	noun	Hediye	Ödül	
+aşama	20	noun	Basamak	Evre	
+bayram	10	noun	Kutlama günü	Şeker ___	
+bekçi	10	noun	Gece nöbetçisi	Gözcü	
+bilgi	10	noun	Malumat	Haber	
+borç	10	noun	Ödenecek para	Verecek	
+cevap	10	noun	Yanıt	Soruya karşılık	
+cümle	10	noun	Tümce	Noktayla biter	
+çare	10	noun	Çözüm	Derman	
+çocuk	10	noun	Küçük insan	Evlat	
+dakika	10	noun	Altmış saniye	Saat parçası	
+dert	10	noun	Sıkıntı	Tasa	
+dilek	10	noun	İstek	Temenni	
+düşünce	10	noun	Fikir	Görüş	
+ezgi	20	noun	Melodi	Nağme	
+fark	10	noun	Ayrım	Değişiklik	
+gelecek	10	noun	İstikbal	Yarınlar	
+görev	10	noun	Vazife	İş	
+güç	10	noun	Kuvvet	Zor	
+haber	10	noun	Bilgi	Havadis	
+hafta	10	noun	Yedi gün	Ayın dörtte biri	
+hata	10	noun	Yanlış	Kusur	
+hayal	10	noun	Düş	Kurgu	
+hikaye	10	noun	Öykü	Masal	
+huzur	10	noun	Rahatlık	Sükûn	
+istek	10	noun	Arzu	Talep	
+kader	20	noun	Alın yazısı	Yazgı	
+kahkaha	10	noun	Gürültülü gülme	Gülüş	
+kalite	20	noun	Nitelik	Değer	
+karar	10	noun	Hüküm	Seçim	
+kural	10	noun	Yasa	Kaide	
+merak	10	noun	Bilme isteği	Endişe	
+mevsim	10	noun	Yılın dörtte biri	Kış veya yaz	
+neden	10	noun	Sebep	Niçin	
+nefes	10	noun	Soluk	Solunum	
+neşe	10	noun	Sevinç	Keyif	
+oran	20	noun	Nispet	Pay	
+ortak	10	noun	Paydaş	Hissedar	
+öykü	10	noun	Hikâye	Kısa anlatı	
+özlem	10	noun	Hasret	Burukluk	
+para	10	noun	Nakit	Lira	
+parça	10	noun	Kısım	Bölüm	
+plan	10	noun	Tasarı	Kroki	
+puan	10	noun	Not	Skor	
+rahat	10	adjective	Konforlu	Huzurlu	
+saygı	10	noun	Hürmet	İtibar	
+sebep	10	noun	Neden	Gerekçe	
+sınav	10	noun	İmtihan	Test	
+sınır	10	noun	Hudut	Limit	
+sonuç	10	noun	Netice	Akıbet	
+süre	10	noun	Müddet	Zaman dilimi	
+şaka	10	noun	Latife	Espri	
+şans	10	noun	Talih	Baht	
+şarkı	10	noun	Türkü	Nağme	
+tatil	10	noun	Dinlence	Yaz ___	
+teşekkür	10	noun	Sağ ol demek	Minnet	
+umut	10	noun	Ümit	Beklenti	
+uyarı	10	noun	İkaz	İhtar	
+yardım	10	noun	Destek	İmdat	
+yarış	10	noun	Müsabaka	Koşu	
+yaşam	10	noun	Hayat	Ömür	
+yazı	10	noun	Metin	El ___	
+yetenek	10	noun	Kabiliyet	Hüner	
+zevk	10	noun	Keyif	Haz	
+bahçe	10	noun	Çiçek ekilen yer	Bostan	
+cami	10	noun	Minareli yapı	Mabet	
+çeşme	10	noun	Su akan yer	Pınar	
+dükkan	10	noun	Mağaza	Satış yeri	
+eczane	10	noun	İlaç satılır	Reçete verilir	
+fabrika	10	noun	İmalathane	Üretim yeri	
+hastane	10	noun	Şifa yurdu	Doktorlar çalışır	
+kasaba	10	noun	Küçük şehir	Köyden büyük	
+lokanta	10	noun	Restoran	Yemek yeri	
+mahalle	10	noun	Semt	Komşular yeri	
+meydan	10	noun	Alan	Açık yer	
+müze	10	noun	Eser sergiler	Tarih evi	
+otel	10	noun	Konaklama yeri	Pansiyon	
+park	10	noun	Yeşil alan	Oyun yeri	
+sınıf	10	noun	Derslik	Mertebe	
+sinema	10	noun	Film izlenir	Beyaz perde	
+asır	20	noun	Yüzyıl	Çağ	
+bugün	10	adverb	Şimdiki gün	Dünden sonra	
+dün	10	adverb	Bugünden önce	Geçen gün	
+gündüz	10	noun	Gece karşıtı	Aydınlık vakit	
+mart	10	noun	Üçüncü ay	Bahar ayı	
+mayıs	10	noun	Beşinci ay	Bahar ayı	
+nisan	10	noun	Dördüncü ay	Yağmurlu ay	
+şubat	10	noun	İkinci ay	En kısa ay	
+temmuz	10	noun	Yedinci ay	Yaz ayı	
+ağustos	10	noun	Sekizinci ay	Yaz ayı	
+eylül	10	noun	Dokuzuncu ay	Okul açılır	
+aralık	10	noun	Son ay	Yılbaşı ayı	
+kasım	10	noun	On birinci ay	Güz ayı	
+haziran	10	noun	Altıncı ay	Yaz başı	
+cuma	10	noun	Perşembeden sonra	Hafta sonu öncesi	
+perşembe	10	noun	Çarşambadan sonra	Cumadan önce	
+bir	10	other	İlk sayı	Tek	
+iki	10	other	Birden sonra	Çift	
+dört	10	other	Üçten sonra	Kare kenar sayısı	
+beş	10	other	Dörtten sonra	El parmağı sayısı	
+yedi	10	other	Altıdan sonra	Haftanın günleri	
+sekiz	10	other	Yediden sonra	Örümcek bacakları	
+dokuz	10	other	Sekizden sonra	Ondan bir eksik	
+yirmi	10	other	İki kere on	Ondan sonra on	
+otuz	10	other	Üç kere on	Ayın günleri	
+kırk	10	other	Dört kere on	Otuz dokuzdan sonra	
+elli	10	other	Yarım yüz	Beş kere on	
+bin	10	other	On kere yüz	Çok sayı	
+milyon	10	other	Bin kere bin	Büyük sayı	
+yarım	10	adjective	İkiye bölünmüş	Buçuk	
+çeyrek	10	noun	Dörtte bir	On beş dakika	
+atkı	10	noun	Boyna sarılır	Şal	
+bere	20	noun	Yün başlık	Kasket	
+bluz	20	noun	Kadın gömleği	Üst giysi	
+çizme	10	noun	Uzun ayakkabı	Yağmur ___	
+çorap	10	noun	Ayağa giyilir	Ayakkabı içi	
+eldiven	10	noun	Ele giyilir	Kış aksesuarı	
+hırka	10	noun	Örgü ceket	Yelek benzeri	
+kemer	10	noun	Bele takılır	Pantolon tutar	
+kravat	20	noun	Boyun bağı	Takım aksesuarı	
+mont	10	noun	Kalın ceket	Kaban	
+palto	10	noun	Uzun kaban	Kışlık giysi	
+pantolon	10	noun	Bacaklı giysi	Kot ___	
+pijama	10	noun	Uyku giysisi	Gecelik	
+yelek	10	noun	Kolsuz ceket	Hırka benzeri	

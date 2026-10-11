@@ -1,0 +1,102 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+açmak	10	verb	Kapamak karşıtı	Kilidi çevirmek	
+acımak	10	verb	Ağrımak	Merhamet etmek	
+ağlamak	10	verb	Gözyaşı dökmek	Gülmek karşıtı	
+almak	10	verb	Vermek karşıtı	Satın edinmek	
+anmak	20	verb	Hatırlamak	Söz etmek	
+aramak	10	verb	Bulmaya çalışmak	Telefon etmek	
+artmak	10	verb	Çoğalmak	Azalmak karşıtı	
+asmak	10	verb	Çiviye takmak	Sarkıtmak	
+atmak	10	verb	Fırlatmak	Çöpe koymak	
+avlamak	20	verb	Av yapmak	Tuzağa düşürmek	
+azmak	35	verb	Şımarmak	Kabarmak	
+bakmak	10	verb	Göz atmak	İlgilenmek	
+basmak	10	verb	Ayakla çiğnemek	Bastırmak	
+batmak	10	verb	Suya gömülmek	İflas etmek	
+benzemek	20	verb	Andırmak	Aynı gibi olmak	
+biçmek	20	verb	Kesmek	Ekin toplamak	
+bilmek	10	verb	Öğrenmiş olmak	Tanımak	
+binmek	10	verb	Ata çıkmak	Araca girmek	
+bitmek	10	verb	Sona ermek	Tükenmek	
+boğmak	20	verb	Nefessiz bırakmak	Suya batırmak	
+bölmek	10	verb	Parçalamak	Ayırmak	
+bulmak	10	verb	Aramanın sonu	Keşfetmek	
+burmak	20	verb	Çevirmek	Kıvırmak	
+büyümek	10	verb	Gelişmek	Serpilmek	
+çalmak	10	verb	Hırsızlık etmek	Müzik yapmak	
+çekmek	10	verb	Kendine doğru almak	Sürüklemek	
+çıkmak	10	verb	Girmek karşıtı	Yükselmek	
+çizmek	10	verb	Resim yapmak	Hat çekmek	
+çözmek	10	verb	Düğüm açmak	Bulmaca bitirmek	
+dalmak	20	verb	Suya girmek	Düşünceye gömülmek	
+demek	10	verb	Söylemek	Anlamına gelmek	
+denemek	10	verb	Sınamak	Prova etmek	
+dikmek	10	verb	İğneyle tutturmak	Fidan toprağa koymak	
+dinmek	20	verb	Durulmak	Kesilmek	
+dökmek	10	verb	Akıtmak	Saçmak	
+dolmak	10	verb	Boş kalmamak	Taşmak üzere olmak	
+donmak	10	verb	Buz tutmak	Üşümek	
+dönmek	10	verb	Geri gelmek	Çevrilmek	
+durmak	10	verb	Hareketsiz kalmak	Beklemek	
+duymak	10	verb	İşitmek	Hissetmek	
+düşmek	10	verb	Yere yığılmak	Azalmak	
+emmek	20	verb	Çekip içmek	Bebek yapar	
+ermek	35	verb	Ulaşmak	Kavuşmak	
+esmek	20	verb	Rüzgâr çıkmak	Yel olmak	
+etmek	10	verb	Yapmak	Eylemek	
+gelmek	10	verb	Varmak	Gitmek karşıtı	
+gerek	20	adjective	Lazım	İcap eden	
+girmek	10	verb	İçeri geçmek	Çıkmak karşıtı	
+gitmek	10	verb	Ayrılmak	Gelmek karşıtı	
+gömmek	20	verb	Toprağa koymak	Saklamak	
+görmek	10	verb	Göz ile algılamak	Bakmak	
+gülmek	10	verb	Kahkaha atmak	Ağlamak karşıtı	
+içmek	10	verb	Yudumlamak	Su ___	
+inmek	10	verb	Aşağı gitmek	Binmek karşıtı	
+itmek	10	verb	Öteye sürmek	Çekmek karşıtı	
+kalmak	10	verb	Gitmemek	Konaklamak	
+kapmak	20	verb	Hızla almak	Yakalamak	
+kaçmak	10	verb	Firar etmek	Uzaklaşmak	
+kazmak	10	verb	Toprak açmak	Oymak	
+kesmek	10	verb	Bıçakla ayırmak	Durdurmak	
+kırmak	10	verb	Parçalamak	Gücendirmek	
+kokmak	20	verb	Koku vermek	Bozulmak	
+konmak	20	verb	Kuş tünemek	Yerleşmek	
+koşmak	10	verb	Hızlı yürümek	Seğirtmek	
+koymak	10	verb	Yerleştirmek	Bırakmak	
+kurmak	10	verb	İnşa etmek	Saat ayarlamak	
+olmak	10	verb	Mevcut bulunmak	Gerçekleşmek	
+okumak	10	verb	Kitaba bakmak	Öğrenim görmek	
+oymak	20	verb	Kazımak	Delik açmak	
+ölçmek	10	verb	Miktar bulmak	Tartmak	
+ölmek	20	verb	Hayatını kaybetmek	Can vermek	
+örmek	10	verb	Şişle işlemek	Duvar yapmak	
+övmek	10	verb	Methetmek	Yermek karşıtı	
+öpmek	10	verb	Dudak değdirmek	Buse vermek	
+satmak	10	verb	Para ile vermek	Almak karşıtı	
+saymak	10	verb	Bir iki üç demek	Hürmet etmek	
+sermek	20	verb	Yaymak	Örtmek	
+sevmek	10	verb	Gönül vermek	Hoşlanmak	
+silmek	10	verb	Temizlemek	Yok etmek	
+sokmak	20	verb	İçine itmek	Arı yapar	
+sormak	10	verb	Soru yöneltmek	Danışmak	
+sökmek	20	verb	Dikişi açmak	Yerinden çıkarmak	
+susmak	10	verb	Sessiz kalmak	Konuşmamak	
+sürmek	10	verb	Araç kullanmak	Devam etmek	
+şaşmak	20	verb	Hayret etmek	Yolu kaybetmek	
+takmak	10	verb	Bağlamak	Giymek	
+tatmak	10	verb	Lezzete bakmak	Denemek	
+tutmak	10	verb	Elde etmek	Yakalamak	
+uçmak	10	verb	Havada süzülmek	Kanat çırpmak	
+umak	35	verb	Ummak	Beklemek	
+uymak	10	verb	Uygun düşmek	Boyun eğmek	
+uzanmak	10	verb	Yatmak	Elini uzatmak	
+üzmek	10	verb	Kederlendirmek	Kırmak	
+vermek	10	verb	Almak karşıtı	Teslim etmek	
+yakmak	10	verb	Ateşe vermek	Tutuşturmak	
+yapmak	10	verb	Etmek	İnşa etmek	
+yatmak	10	verb	Uzanmak	Uyumak	
+yazmak	10	verb	Kalemle not etmek	Kaleme almak	
+yıkmak	10	verb	Devirmek	Tahrip etmek	
+yorulmak	10	verb	Bitkin düşmek	Güçsüz kalmak	
+yüzmek	10	verb	Suda kulaç atmak	Deri soymak	

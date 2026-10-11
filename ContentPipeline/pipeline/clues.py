@@ -20,6 +20,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
+from .textcase import lower, upper
 from .wordlist import WordEntry
 
 CLUE_COLUMNS = ["clue_1", "clue_2", "clue_3"]
@@ -99,7 +100,7 @@ class ClueProblem:
     reason: str
 
 
-def check_clue(word: str, clue: str, max_length: int) -> str | None:
+def check_clue(word: str, clue: str, max_length: int, language: str = "en") -> str | None:
     """Why a clue is rejected, or None if it passes the automatic checks.
     These catch mechanical mistakes; whether a clue is *good* is still a
     person's call (see CLUE_STYLE.md)."""
@@ -110,8 +111,8 @@ def check_clue(word: str, clue: str, max_length: int) -> str | None:
         return f"too long ({len(text)} > {max_length} characters)"
     if "\n" in text or "\t" in text:
         return "contains a line break or tab"
-    lowered = text.lower()
-    answer = word.lower()
+    lowered = lower(text, language)
+    answer = lower(word, language)
     if re.search(rf"\b{re.escape(answer)}", lowered):
         return "contains the answer"
     # "Running" as a clue for RUN gives it away too. Checking a 4-letter stem
@@ -121,26 +122,26 @@ def check_clue(word: str, clue: str, max_length: int) -> str | None:
     return None
 
 
-def import_batch(path: Path, max_length: int) -> tuple[list[tuple[str, str]], list[ClueProblem]]:
+def import_batch(path: Path, max_length: int, language: str = "en") -> tuple[list[tuple[str, str]], list[ClueProblem]]:
     """Reads a filled-in batch. Returns accepted (word, clue) pairs and the
     problems found."""
     accepted: list[tuple[str, str]] = []
     problems: list[ClueProblem] = []
     with path.open(encoding="utf-8", newline="") as file:
         for row in csv.DictReader(file):
-            word = row["word"].strip().upper()
+            word = upper(row["word"].strip(), language)
             seen: set[str] = set()
             for column in CLUE_COLUMNS:
                 clue = (row.get(column) or "").strip()
                 if not clue:
                     continue
-                reason = check_clue(word, clue, max_length)
-                if reason is None and clue.lower() in seen:
+                reason = check_clue(word, clue, max_length, language)
+                if reason is None and lower(clue, language) in seen:
                     reason = "same clue twice for this word"
                 if reason:
                     problems.append(ClueProblem(word, clue, reason))
                 else:
-                    seen.add(clue.lower())
+                    seen.add(lower(clue, language))
                     accepted.append((word, clue))
     return accepted, problems
 

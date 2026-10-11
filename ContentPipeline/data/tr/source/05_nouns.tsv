@@ -1,0 +1,160 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+aile	10	noun	Ana baba çocuk	Hane halkı	
+anahtar	10	noun	Kilidi açar	Çözüm yolu	
+ayakkabı	10	noun	Ayağa giyilir	Pabuç	
+balkon	10	noun	Evin çıkıntısı	Teras	
+banyo	10	noun	Yıkanma yeri	Küvetli oda	
+bardak	10	noun	Su içilir	Çay ___	
+bavul	10	noun	Yolculuk çantası	Valiz	
+beşik	20	noun	Bebek yatağı	Sallanan yatak	
+çekmece	20	noun	Dolap gözü	Komodin bölmesi	
+çerçeve	10	noun	Resim kenarı	Pervaz	
+demlik	20	noun	Çay kabı	Çaydanlık üstü	
+dikiş	10	noun	İğne işi	Yara kapatılır	
+döşek	20	noun	Yer yatağı	Şilte	
+elek	20	noun	Un ayırır	Kalbur	
+fincan	10	noun	Kahve içilir	Kulplu kap	
+halat	20	noun	Kalın ip	Urgan	
+iplik	10	noun	Dikiş teli	Bobine sarılır	
+kazan	10	noun	Büyük tencere	Isıtma cihazı	
+kibrit	10	noun	Ateş yakar	Çöp başında barut	
+kilim	10	noun	Dokuma yaygı	Halı benzeri	
+kilit	10	noun	Kapıyı kapatır	Asma ___	
+lavabo	20	noun	El yıkanır	Musluk altı	
+mendil	10	noun	Burun silinir	Cep bezi	
+merdiven	10	noun	Basamaklı yol	Kat çıkılır	
+musluk	10	noun	Su akıtır	Çeşme ağzı	
+oklava	20	noun	Hamur açar	Merdane	
+örtü	10	noun	Masaya serilir	Kapak	
+priz	20	noun	Fiş takılır	Elektrik çıkışı	
+raf	10	noun	Kitap dizilir	Dolap bölmesi	
+sandalye	10	noun	Oturulur	İskemle	
+sehpa	20	noun	Küçük masa	Orta masası	
+semaver	35	noun	Büyük çaydanlık	Rus çaydanlığı	
+soba	10	noun	Odun yakılır	Isıtıcı	
+süpürge	10	noun	Toz alır	Elektrikli ___	
+şilte	20	noun	Döşek	Yer yatağı	
+tencere	10	noun	Yemek pişer	Kapaklı kap	
+tepsi	10	noun	Servis düzlüğü	Baklava ___	
+terlik	10	noun	Ev ayakkabısı	Patik	
+testere	20	noun	Odun keser	Dişli bıçak	
+tığ	20	noun	Dantel iğnesi	Kroşe aracı	
+ayran	10	noun	Yoğurtlu içecek	Köpüklü içecek	
+baklava	10	noun	Şerbetli tatlı	Fıstıklı tatlı	
+bamya	20	noun	Yeşil sebze	Kılçıklı sebze	
+biber	10	noun	Acı veya tatlı	Dolma yapılır	
+börek	10	noun	Yufkalı yiyecek	Su ___	
+bulgur	10	noun	Kırık buğday	Pilavı olur	
+buğday	10	noun	Un yapılır	Tahıl	
+dolma	10	noun	İçi doldurulur	Biber ___	
+dondurma	10	noun	Soğuk tatlı	Külahta yenir	
+helva	10	noun	Tahin tatlısı	İrmik ___	
+havuç	10	noun	Turuncu sebze	Tavşan sever	
+incir	10	noun	Ballı meyve	Kuru yemiş	
+kavun	10	noun	Yaz meyvesi	Karpuz eşi	
+karpuz	10	noun	Yeşil kabuklu	Kırmızı içli meyve	
+kayısı	10	noun	Turuncu meyve	Malatya ürünü	
+kebap	10	noun	Şişte et	Adana ___	
+köfte	10	noun	Kıyma topu	Izgara yemeği	
+lahana	10	noun	Yapraklı sebze	Sarması olur	
+leblebi	20	noun	Kavrulmuş nohut	Çerez	
+lokum	10	noun	Şekerli tatlı	Kahve yanında	
+makarna	10	noun	Hamur yemeği	Spagetti	
+marul	10	noun	Salata yeşili	Yeşil yaprak	
+mercimek	10	noun	Çorbası olur	Kırmızı ___	
+muz	10	noun	Sarı meyve	Maymun sever	
+patlıcan	10	noun	Mor sebze	Karnıyarık yapılır	
+pekmez	20	noun	Üzüm şurubu	Tahinle yenir	
+portakal	10	noun	Turuncu meyve	Narenciye	
+salça	10	noun	Domates ezmesi	Yemeğe katılır	
+sarımsak	10	noun	Kokulu baharat	Diş diş olur	
+susam	20	noun	Simit üstünde	Tahin yapılır	
+şerbet	20	noun	Tatlı içecek	Baklavaya dökülür	
+tahin	20	noun	Susam ezmesi	Pekmezle yenir	
+tarçın	20	noun	Kokulu kabuk	Baharat	
+turşu	10	noun	Salamura sebze	Kavanozda saklanır	
+vişne	10	noun	Ekşi kiraz	Şurubu olur	
+yoğurt	10	noun	Sütten yapılır	Ayran olur	
+yufka	20	noun	İnce hamur	Börek yapılır	
+zerdali	35	noun	Yabani kayısı	Küçük meyve	
+ada	10	noun	Etrafı su	Kara parçası	
+bataklık	20	noun	Çamurlu yer	Sazlık	
+çağlayan	20	noun	Şelale	Akan su	
+çakıl	20	noun	Küçük taş	Dere taşı	
+çiy	20	noun	Sabah nemi	Şebnem	
+fırtına	10	noun	Şiddetli rüzgâr	Bora	
+kaya	10	noun	Büyük taş	Uçurum taşı	
+kıyı	10	noun	Sahil	Kenar	
+kutup	20	noun	Buzul bölge	Kuzey ___	
+körfez	20	noun	Deniz girintisi	Koy	
+okyanus	10	noun	Büyük deniz	Atlas ___	
+pınar	20	noun	Kaynak	Çeşme	
+sahil	10	noun	Kıyı	Deniz kenarı	
+şimşek	10	noun	Gök gürültüsü öncesi	Yıldırım ışığı	
+tepe	10	noun	Küçük dağ	Zirve	
+vadi	20	noun	Dağlar arası	Koyak	
+yamaç	20	noun	Dağ eteği	Bayır	
+yıldırım	10	noun	Gökten düşen ışık	Şimşek	
+zirve	10	noun	Doruk	Tepe noktası	
+balina	10	noun	Dev deniz memelisi	Fışkıran hayvan	
+baykuş	10	noun	Gece kuşu	Gece öten kuş	
+böcek	10	noun	Küçük canlı	Haşere	
+ceylan	20	noun	Ahu	Güzel gözlü hayvan	
+deve	10	noun	Hörgüçlü hayvan	Çöl gemisi	
+domuz	20	noun	Yaban ___	Kıllı hayvan	
+güvercin	10	noun	Posta kuşu	Barış simgesi	
+hindi	20	noun	Yılbaşı kuşu	Kabaran kuş	
+kanarya	20	noun	Sarı ötücü kuş	Kafes kuşu	
+karınca	10	noun	Çalışkan böcek	Yuva taşır	
+kartal	10	noun	Yırtıcı kuş	Kuşların kralı	
+katır	20	noun	At ile eşek arası	Yük hayvanı	
+kelebek	10	noun	Renkli kanatlı	Tırtıl olur	
+kurbağa	10	noun	Vıraklar	Su kenarı hayvanı	
+leylek	20	noun	Uzun bacaklı kuş	Bebek getirir	
+maymun	10	noun	Muz sever	Ağaçta yaşar	
+martı	10	noun	Deniz kuşu	Simit kapar	
+öküz	20	noun	Erkek sığır	Saban çeker	
+örümcek	10	noun	Ağ örer	Sekiz bacaklı	
+penguen	20	noun	Uçamayan kuş	Buzul kuşu	
+serçe	10	noun	Küçük kuş	Cıvıldar	
+sincap	10	noun	Fındık toplar	Kabarık kuyruklu	
+solucan	20	noun	Toprak kurdu	Yağmur kurdu	
+şahin	20	noun	Yırtıcı kuş	Doğan	
+timsah	10	noun	İri sürüngen	Nil hayvanı	
+yarasa	20	noun	Uçan memeli	Gece uçar	
+zebra	10	noun	Çizgili at	Siyah beyaz hayvan	
+zürafa	10	noun	Uzun boyunlu	Benekli hayvan	
+bacak	10	noun	Kalçadan ayağa	Yürüme uzvu	
+beyin	10	noun	Düşünme organı	Kafanın içi	
+boyun	10	noun	Baş ile gövde arası	Atkı sarılır	
+dudak	10	noun	Ağız kenarı	Ruj sürülür	
+göbek	10	noun	Karın ortası	Orta nokta	
+göğüs	10	noun	Bağır	Sine	
+kas	10	noun	Adale	Pazu	
+kirpik	10	noun	Göz kılı	Rimel sürülür	
+omuz	10	noun	Kol başı	Yük taşır	
+parmak	10	noun	Elde beş tane	Yüzük takılır	
+sırt	10	noun	Arka	Bel üstü	
+tırnak	10	noun	Parmak ucu	Oje sürülür	
+topuk	20	noun	Ayak arkası	Ökçe	
+yanak	10	noun	Yüzün yanı	Al olur	
+amca	10	noun	Babanın kardeşi	Akraba	
+bakkal	10	noun	Mahalle dükkânı	Dükkâncı	
+çiftçi	10	noun	Toprak işler	Rençper	
+çoban	10	noun	Sürü güder	Kaval çalar	
+damat	10	noun	Gelinin eşi	Enişte	
+dayı	10	noun	Annenin kardeşi	Akraba	
+doktor	10	noun	Hekim	Hasta bakar	
+enişte	20	noun	Halanın kocası	Kız kardeş kocası	
+hemşire	10	noun	Hastabakıcı	Sağlık çalışanı	
+kasap	10	noun	Et satar	Satır kullanır	
+komşu	10	noun	Yan evdeki	Hemşeri	
+kuaför	20	noun	Saç yapar	Berber	
+öğrenci	10	noun	Talebe	Okula gider	
+öğretmen	10	noun	Hoca	Ders verir	
+polis	10	noun	Güvenlik görevlisi	Karakolda çalışır	
+pilot	10	noun	Uçak sürer	Kaptan	
+şoför	10	noun	Sürücü	Direksiyon başında	
+teyze	10	noun	Annenin kız kardeşi	Akraba	
+torun	10	noun	Çocuğun çocuğu	Nine sever	
+yenge	20	noun	Amcanın eşi	Ağabeyin eşi	

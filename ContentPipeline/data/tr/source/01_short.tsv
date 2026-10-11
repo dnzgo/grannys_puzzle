@@ -1,0 +1,61 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+ad	10	noun	İsim	Kişiye verilen söz	
+ağ	20	noun	Balıkçı aracı	Örümceğin ördüğü	
+ah	20	other	Acı ünlemi	Of ile birlikte	
+al	20	adjective	Kırmızı	Bayraktaki renk	
+an	20	noun	Kısa süre	Lahza	
+ar	35	noun	Utanma duygusu	Hayâ	
+at	10	noun	Binek hayvanı	Yarış hayvanı	
+ay	10	noun	Dünyanın uydusu	Otuz günlük süre	
+az	10	adjective	Çok değil	Biraz	
+cam	10	noun	Pencere malzemesi	Şişe yapılan madde	
+bu	10	other	Şu değil	Yakındakini gösterir	
+de	20	other	Bağlaç	"""Sen ___ gel"""	
+ek	20	noun	Takı	Kelime sonuna gelen	
+el	10	noun	Parmakların yeri	Vücut organı	
+en	20	noun	Genişlik	Boyun karşıtı	
+er	20	noun	Asker	Yiğit kimse	
+es	35	other	Rüzgâr, ___ geçmek	Hiç saymamak	
+et	10	noun	Kasap satar	Kemiği saran doku	
+ev	10	noun	Yuva	Oturulan yer	
+ha	35	other	Şaşkınlık ünlemi	"""___ şunu bil"""	
+he	35	other	Evet anlamında	Onay sözü	
+iç	10	noun	Dış karşıtı	Ortası	
+il	20	noun	Vilayet	Şehir	
+in	20	noun	Hayvan yuvası	Mağara	
+ip	10	noun	Halat	Kalın sicim	
+is	20	noun	Duman kirliliği	Kurum	
+iş	10	noun	Meslek	Görev	
+it	35	noun	Köpek	Kötü kimse	
+iz	10	noun	Geride kalan işaret	Ayak bırakır	
+ki	20	other	Bağlaç	"""Bil ___ gel"""	
+ne	10	other	Soru sözü	"""___ var ___ yok"""	
+od	35	noun	Ateş	Alev	
+of	20	other	Bıkkınlık ünlemi	Yorgunluk sözü	
+oh	35	other	Rahatlama ünlemi	Ferahlık sesi	
+ok	10	noun	Yayla atılır	Yön işareti	
+on	10	other	Dokuzdan sonra	İki beş	
+ot	10	noun	Çimen	Yeşil bitki	
+oy	20	noun	Seçimde atılır	Rey	
+öç	20	noun	İntikam	Kısas	
+ön	10	noun	Arka karşıtı	İleri taraf	
+öz	20	noun	Esas	Asıl kısım	
+su	10	noun	Hayat kaynağı	Musluktan akar	
+şu	10	other	Bu değil	İşaret sözü	
+tam	10	adjective	Eksiksiz	Bütün	
+ud	35	noun	Telli çalgı	Mızrap ile çalınır	
+uç	10	noun	Kalemin sivri yeri	Son nokta	
+un	10	noun	Ekmeğin hammaddesi	Öğütülmüş buğday	
+us	35	noun	Akıl	Zihin	
+uz	35	adjective	Usta	Becerikli	
+üç	10	other	İkiden sonra	Sayı	
+ün	20	noun	Şöhret	Nam	
+üs	35	noun	Askeri merkez	Kuvvet sayısı	
+üst	10	noun	Alt karşıtı	Yukarı taraf	
+ya	20	other	Veya	"""___ sen ___ ben"""	
+yağ	10	noun	Tereyağı	Zeytin ürünü	
+yaz	10	noun	Sıcak mevsim	İlkbahardan sonra	
+yer	10	noun	Mekân	Zemin	
+yol	10	noun	Cadde	Gidilen hat	
+yük	10	noun	Taşınan şey	Ağırlık	
+yüz	10	noun	Surat	Doksandan sonra on	

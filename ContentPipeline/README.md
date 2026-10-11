@@ -107,3 +107,21 @@ screen (Settings):
 
 Check each source's own licence file when downloading: the exact notice text
 comes from there.
+
+## Turkish (and other hand-written languages)
+
+There are no open Turkish word lists and dictionaries we can use freely in a
+paid or ad-funded app, so Turkish words are written by us, each with its
+clues, in `data/tr/source/*.tsv` (columns: word, familiarity 10/20/35,
+part_of_speech, clue_1..clue_3). Those files are the record; everything else
+is built from them:
+
+    python3 -m pipeline.cli import-word-list --lang tr     # -> words.tsv, clues.tsv
+    python3 -m pipeline.cli generate --lang tr --count 100 --pack tr-001
+    python3 -m pipeline.cli validate data/tr/packs/tr-001.json
+
+`import-word-list` applies the same clue checks as `import-clues`, with
+Turkish casing (i → İ, ı → I; see `pipeline/textcase.py`), and lists every
+line it rejects. To change a word or a clue, edit its source line and run the
+three commands again. Copy the pack to `grannys_puzzle/Levels/` to ship it.
+

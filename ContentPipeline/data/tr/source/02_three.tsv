@@ -1,0 +1,213 @@
+word	familiarity	part_of_speech	clue_1	clue_2	clue_3
+acı	10	adjective	Tatlı karşıtı	Biberin tadı	
+aç	10	adjective	Tok karşıtı	Karnı boş	
+ağa	20	noun	Köyün zengini	Büyük kardeş	
+ahu	35	noun	Ceylan	Güzel gözlü hayvan	
+ait	20	adjective	İlgili	Birine özgü	
+ak	10	adjective	Beyaz	Kara karşıtı	
+ala	35	adjective	Benekli	Çok renkli	
+alt	10	noun	Üst karşıtı	Aşağı taraf	
+ama	10	other	Fakat	Lakin	
+ana	10	noun	Anne	Valide	
+ani	20	adjective	Birden olan	Beklenmedik	
+arı	10	noun	Bal yapan böcek	Kovanda yaşar	
+ark	35	noun	Su kanalı	Hark	
+art	20	noun	Arka	Geri taraf	
+arz	35	noun	Sunma	Yer küre	
+aşı	10	noun	Hastalığa karşı iğne	Tıbbi koruma	
+aşk	10	noun	Büyük sevgi	Sevda	
+ata	20	noun	Dede	Soy büyüğü	
+ateş	10	noun	Alev	Yüksek vücut ısısı	
+avcı	20	noun	Av yapan kişi	Tüfekli kişi	
+ayı	10	noun	Bal sever hayvan	Kış uykusu çeker	
+ayna	10	noun	Yansıtan cam	Tarak ile durur	
+baba	10	noun	Peder	Anne ile birlikte	
+bağ	10	noun	Üzüm bahçesi	Düğüm	
+bal	10	noun	Arının ürünü	Petekte olur	
+bas	35	noun	Kalın ses	Pes perde	
+baş	10	noun	Kafa	Önder	
+bel	10	noun	Kalça üstü	Kürek benzeri alet	
+ben	10	other	Kendim	Ciltteki leke	
+bey	20	noun	Erkeğe hitap	Efendi	
+bez	10	noun	Kumaş parçası	Toz alma aracı	
+biz	10	other	Siz değil	Çuval iğnesi	
+bit	20	noun	Saç böceği	Küçük asalak	
+boş	10	adjective	Dolu karşıtı	Bomboş	
+boy	10	noun	Uzunluk	Soy, kabile	
+boz	20	adjective	Kül rengi	Gri	
+cep	10	noun	Para konan yer	Ceketteki bölme	
+cin	35	noun	Peri	Masal varlığı	
+çam	10	noun	Yılbaşı ağacı	İğne yapraklı ağaç	
+çan	20	noun	Kilise zili	Büyük zil	
+çay	10	noun	Demlenip içilir	Küçük ırmak	
+çek	20	noun	Banka belgesi	Ödeme kâğıdı	
+çil	35	noun	Yüzdeki benek	Keklik türü	
+çit	20	noun	Bahçe sınırı	Tel örgü	
+çok	10	adjective	Az karşıtı	Fazla	
+çöl	10	noun	Kumlu bölge	Sahra	
+çöp	10	noun	Atık	Süprüntü	
+dağ	10	noun	Yüksek tepe	Zirvesi olur	
+dal	10	noun	Ağaç kolu	Şube	
+dam	20	noun	Çatı	Ahır	
+dar	10	adjective	Geniş karşıtı	Sıkışık	
+dede	10	noun	Büyükbaba	Ata	
+dem	20	noun	Çayın koyuluğu	An, zaman	
+deri	10	noun	Cilt	Ten	
+dev	20	adjective	Kocaman	Masal yaratığı	
+diş	10	noun	Ağızda olur	Çiğneme organı	
+diz	10	noun	Bacak eklemi	Çökülen yer	
+dil	10	noun	Lisan	Ağızdaki organ	
+dua	20	noun	Yakarış	Niyaz	
+düş	20	noun	Rüya	Hayal	
+düz	10	adjective	Eğri değil	Pürüzsüz	
+eğe	35	noun	Törpü	Kaburga kemiği	
+ela	35	adjective	Göz rengi	Yeşil kahve arası	
+elma	10	noun	Kırmızı meyve	Ağaçta yetişir	
+emek	20	noun	Çaba	Zahmet	
+erk	35	noun	Güç	İktidar	
+eş	10	noun	Karı veya koca	Benzer	
+fal	20	noun	Kahve ile bakılır	Gelecek tahmini	
+fare	10	noun	Kedinin avı	Bilgisayar aracı	
+fil	10	noun	Hortumlu hayvan	Satranç taşı	
+gam	20	noun	Keder	Tasa	
+gaz	10	noun	Hava gibi madde	Ocakta yanar	
+göl	10	noun	Durgun su	Kara içi su	
+göz	10	noun	Görme organı	Kirpikli organ	
+gün	10	noun	Yirmi dört saat	Gece karşıtı	
+güz	20	noun	Sonbahar	Hazan	
+hal	20	noun	Durum	Pazar yeri	
+han	20	noun	Kervansaray	Hükümdar	
+hap	10	noun	İlaç	Yutulan ilaç	
+hat	20	noun	Çizgi	Telefon bağlantısı	
+hız	10	noun	Sürat	Çabukluk	
+his	20	noun	Duygu	Sezgi	
+hoş	10	adjective	Güzel	Tatlı, sevimli	
+huy	20	noun	Karakter	Mizaç	
+ılık	20	adjective	Sıcakla soğuk arası	Ilıman	
+ırk	20	noun	Soy	Nesil	
+ısı	10	noun	Sıcaklık	Derece ölçer	
+ışık	10	noun	Aydınlık	Lamba verir	
+iğne	10	noun	Dikiş aracı	Aşı aleti	
+ilk	10	adjective	Birinci	Başlangıç	
+inci	20	noun	İstiridyede olur	Kıymetli tane	
+iri	10	adjective	Büyük	Kocaman	
+iyi	10	adjective	Kötü karşıtı	Güzel	
+kar	10	noun	Kışın yağar	Beyaz örtü	
+kaş	10	noun	Göz üstünde	Kıl kavisi	
+kat	10	noun	Apartman bölümü	Tabaka	
+kaz	20	noun	Kanatlı hayvan	Ördeğe benzer	
+kek	10	noun	Fırında tatlı	Pasta türü	
+kel	20	adjective	Saçsız	Saçı dökülmüş	
+kem	35	adjective	Kötü	Nazar sahibi	
+kep	35	noun	Mezuniyet şapkası	Başlık	
+kır	10	noun	Açık arazi	Çayırlık	
+kış	10	noun	Soğuk mevsim	Kar yağar	
+kil	20	noun	Çömlek toprağı	Balçık	
+kin	20	noun	Garez	Nefret	
+kir	10	noun	Pislik	Leke	
+koç	20	noun	Erkek koyun	Antrenör	
+kol	10	noun	Omuzdan ele	Dal	
+kor	20	noun	Közden ateş	Ateş parçası	
+koy	10	noun	Küçük körfez	Deniz girintisi	
+köy	10	noun	Kasaba değil	Kentin karşıtı	
+kök	10	noun	Bitkinin altı	Temel	
+kör	20	adjective	Görmeyen	Âmâ	
+köz	20	noun	Ateş parçası	Kor	
+kum	10	noun	Plaj zemini	Çölde bol	
+kuş	10	noun	Uçan hayvan	Serçe	
+küp	20	noun	Büyük kap	Zar şekli	
+kül	10	noun	Yanık artığı	Gri toz	
+lif	20	noun	İnce tel	Banyo aracı	
+lir	35	noun	Telli çalgı	Arp benzeri	
+mal	10	noun	Servet	Eşya	
+mana	20	noun	Anlam	Mânâ	
+mavi	10	adjective	Gök rengi	Deniz rengi	
+mor	10	adjective	Menekşe rengi	Erguvan	
+mum	10	noun	Fitilli ışık	Balmumu	
+nal	20	noun	At ayakkabısı	Demir pabuç	
+nar	10	noun	Taneli meyve	Kırmızı meyve	
+naz	20	noun	Cilve	Kırıtma	
+nem	20	noun	Rutubet	Islaklık	
+not	10	noun	Karne puanı	Kâğıda yazılan	
+oba	35	noun	Göçebe çadırı	Aşiret	
+ocak	10	noun	Yılın ilk ayı	Fırın, mangal	
+oda	10	noun	Evin bölümü	Salon	
+oğul	20	noun	Erkek evlat	Arı topluluğu	
+ova	10	noun	Düz arazi	Geniş düzlük	
+oya	20	noun	İğne süsü	El işi	
+oyun	10	noun	Eğlence	Maç	
+öbek	35	noun	Küme	Yığın	
+ödül	10	noun	Mükafat	Armağan	
+öğle	20	noun	Gün ortası	Kuşluk sonrası	
+ölü	20	adjective	Cansız	Diri karşıtı	
+ördek	10	noun	Su kuşu	Vak vak eder	
+öte	20	noun	Uzak taraf	Karşı taraf	
+pak	35	adjective	Temiz	Arı	
+pas	10	noun	Demir küfü	Topu vermek	
+pek	20	adverb	Çok	Sağlam	
+pil	10	noun	Batarya	Saate takılır	
+pir	35	noun	Usta	Bilge yaşlı	
+pis	10	adjective	Kirli	Temiz değil	
+pul	20	noun	Zarfa yapıştırılır	Balık derisi	
+rab	35	noun	Yaratıcı	Tanrı	
+renk	10	noun	Boya tonu	Kırmızı veya mavi	
+rol	20	noun	Oyuncu canlandırır	Görev	
+saç	10	noun	Başta uzar	Kıl	
+saf	20	adjective	Arı, katışıksız	Temiz kalpli	
+sal	20	noun	Tahta yüzer	Kayık benzeri	
+sap	20	noun	Tutacak yer	Çiçeğin gövdesi	
+sarı	10	adjective	Limon rengi	Altın rengi	
+saz	20	noun	Bağlama	Bataklık otu	
+sel	10	noun	Taşkın	Su baskını	
+ses	10	noun	Kulağa gelen	Seda	
+sıfır	10	noun	Hiç	Birden önce	
+sır	10	noun	Gizli şey	Ayna arkası	
+sis	10	noun	Duman gibi bulut	Pus	
+soy	20	noun	Nesil	Aile ağacı	
+söz	10	noun	Kelime	Vaat	
+süt	10	noun	İnek verir	Beyaz içecek	
+şal	20	noun	Omuz örtüsü	Atkı benzeri	
+şan	20	noun	Ün	Şöhret	
+şah	35	noun	Hükümdar	Satrançta önemli	
+şiş	10	noun	Kebap demiri	Örgü aracı	
+şok	20	noun	Sarsıntı	Ani etki	
+tad	20	noun	Lezzet	Çeşni	
+tas	20	noun	Çanak	Hamam kabı	
+taş	10	noun	Sert madde	Kaya parçası	
+tay	20	noun	Yavru at	Küçük at	
+tek	10	adjective	Bir	Yalnız	
+tel	10	noun	İnce metal	Gitar ipi	
+ten	20	noun	Cilt	Deri	
+ter	10	noun	Sıcakta olur	Bedenden çıkan su	
+tez	20	noun	Savunulan fikir	Bitirme çalışması	
+tok	10	adjective	Aç karşıtı	Doymuş	
+top	10	noun	Futbol aracı	Yuvarlak oyuncak	
+toz	10	noun	Ufak kir	Pudra	
+tuz	10	noun	Yemeğe atılır	Deniz suyunda var	
+tül	20	noun	Perde kumaşı	İnce kumaş	
+tüm	10	adjective	Bütün	Hepsi	
+tüp	20	noun	Gaz kabı	Boru	
+tür	10	noun	Çeşit	Cins	
+tüy	10	noun	Kuşta olur	Hav	
+uçak	10	noun	Hava taşıtı	Kanatlı araç	
+ulu	20	adjective	Yüce	Büyük	
+ur	35	noun	Tümör	Şiş	
+vah	35	other	Acıma ünlemi	Yazık	
+var	10	other	Yok karşıtı	Mevcut	
+vay	20	other	Şaşırma ünlemi	Hayret sözü	
+yan	10	noun	Kenar	Taraf	
+yar	20	noun	Sevgili	Uçurum	
+yas	20	noun	Matem	Keder	
+yaş	10	noun	Islak	Ömür süresi	
+yay	20	noun	Ok atar	Kemanın aracı	
+yaya	20	noun	Yürüyen kişi	Piyade	
+yel	20	noun	Rüzgâr	Esinti	
+yem	10	noun	Hayvan yiyeceği	Olta ucundaki	
+yen	35	noun	Elbise kolu	Japon parası	
+yok	10	other	Var karşıtı	Mevcut değil	
+yön	10	noun	İstikamet	Taraf	
+yün	10	noun	Örgü ipliği	Koyun tüyü	
+zam	20	noun	Fiyat artışı	Maaş artışı	
+zar	20	noun	Tavla aracı	İnce örtü	
+zil	10	noun	Kapıda çalar	Çan	
+zor	10	adjective	Kolay değil	Güç	

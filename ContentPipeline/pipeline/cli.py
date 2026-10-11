@@ -20,6 +20,7 @@ import sys
 from pathlib import Path
 
 from . import sources
+from .authored import read_sources, write_clue_bank
 from .clues import ClueBank, append_to_bank, import_batch, write_batches
 from .generator import LevelGenerator, LevelSpec
 from .rules import load_rules
@@ -164,7 +165,7 @@ def cmd_import_clues(args: argparse.Namespace) -> int:
     rules = load_rules()
     all_accepted, all_problems = [], []
     for name in args.paths:
-        accepted, problems = import_batch(Path(name), rules.clue_max_length)
+        accepted, problems = import_batch(Path(name), rules.clue_max_length, args.lang)
         all_accepted += accepted
         all_problems += problems
     added = append_to_bank(all_accepted, data_dir(args.lang) / "clues.tsv")
@@ -172,6 +173,30 @@ def cmd_import_clues(args: argparse.Namespace) -> int:
         print(f"  rejected {p.word}: {p.clue!r} ({p.reason})")
     print(f"Accepted {len(all_accepted)} clues ({added} new), rejected {len(all_problems)}")
     return 0 if not all_problems else 1
+
+
+def cmd_import_word_list(args: argparse.Namespace) -> int:
+    """Builds words.tsv and clues.tsv from hand-written source files."""
+    rules = load_rules()
+    folder = data_dir(args.lang) / "source"
+    paths = sorted(folder.glob("*.tsv"))
+    if not paths:
+        print(f"No source files in {folder}", file=sys.stderr)
+        return 1
+    words, clues, problems = read_sources(
+        paths,
+        language=args.lang,
+        alphabet=rules.alphabet(args.lang),
+        min_length=rules.min_answer_length,
+        max_length=rules.max_rows - 1,
+        clue_max_length=rules.clue_max_length,
+    )
+    for p in problems:
+        print(f"  {p.file}:{p.line} {p.word}: {p.reason}")
+    write_word_list(words, data_dir(args.lang) / "words.tsv")
+    write_clue_bank(clues, data_dir(args.lang) / "clues.tsv")
+    print(f"Read {len(paths)} source files: {len(words)} words, {len(clues)} clues, {len(problems)} problems")
+    return 0 if not problems else 1
 
 
 # MARK: - Entry point
@@ -188,6 +213,12 @@ def main(argv: list[str] | None = None) -> int:
     build.add_argument("--badwords", required=True, help="LDNOOBW list for the language")
     build.add_argument("--max-familiarity", type=int, default=50, help="SCOWL size cut-off (default 50)")
     build.set_defaults(run=cmd_build_words)
+
+    authored = commands.add_parser(
+        "import-word-list", help="build words.tsv and clues.tsv from data/<lang>/source/*.tsv"
+    )
+    authored.add_argument("--lang", required=True)
+    authored.set_defaults(run=cmd_import_word_list)
 
     generate = commands.add_parser("generate", help="generate a level pack")
     generate.add_argument("--lang", required=True)
