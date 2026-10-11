@@ -42,17 +42,19 @@ final class LevelViewModel {
     /// current screen; a strong reference back would be a retain cycle.
     @ObservationIgnored private weak var host: LevelHost?
 
+    /// - Parameter puzzle: the board to start from: fresh, or restored from a
+    ///   save when the player left this level halfway.
     init(
-        level: Level,
+        puzzle: PuzzleState,
         levelNumber: Int,
         host: LevelHost?,
         scoringRules: ScoringRules = .standard
     ) {
         self.levelNumber = levelNumber
-        self.puzzle = PuzzleState(level: level)
+        self.puzzle = puzzle
         self.host = host
         self.scoringRules = scoringRules
-        self.clueColorIndices = ClueColors.assignments(for: level)
+        self.clueColorIndices = ClueColors.assignments(for: puzzle.level)
     }
 
     // MARK: - What the screen shows
@@ -166,12 +168,14 @@ final class LevelViewModel {
         // Only a letter that actually landed clicks; a refused one stays silent.
         if puzzle.place(letter) {
             feel(.letterPlaced)
+            boardChanged()
         }
     }
 
     func erase() {
         if puzzle.erase() {
             feel(.letterErased)
+            boardChanged()
         }
     }
 
@@ -183,6 +187,7 @@ final class LevelViewModel {
         _ = host?.spendHint()
         showCat(at: cell)
         feel(.reveal)
+        boardChanged()
     }
 
     /// Grandma solves the selected word, charged only if she changed something.
@@ -193,6 +198,7 @@ final class LevelViewModel {
         _ = host?.spendGrandma()
         speech.say(GrandmaLines.solved(answer.solution))
         feel(.reveal)
+        boardChanged()
     }
 
     func submit() {
@@ -216,13 +222,19 @@ final class LevelViewModel {
         }
     }
 
-    /// Back to the home screen. The board isn't kept yet: coming back starts
-    /// the level fresh.
+    /// Back to the home screen. The board is already saved (every letter
+    /// change saves it), so coming back picks up where the player left off.
     func goHome() {
         host?.goHome()
     }
 
     // MARK: - Short-lived UI state
+
+    /// Hands the board to the host to keep. Only letter changes call this:
+    /// moving the selection around isn't worth a save.
+    private func boardChanged() {
+        host?.saveBoard(puzzle.savedBoard())
+    }
 
     private func feel(_ event: HapticEvent) {
         hapticCount += 1

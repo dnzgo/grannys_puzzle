@@ -60,13 +60,37 @@ final class Game {
         return outcome == .knitted
     }
 
+    // MARK: - Daily jar
+
+    /// Opens the jar for `today` (a `JarDay` number) and saves at once, before
+    /// any animation. Nil if it was already opened today.
+    func openJar(today: Int) -> JarOpening? {
+        var opening: JarOpening?
+        update { opening = $0.openJar(today: today, using: &generator) }
+        return opening
+    }
+
     // MARK: - Navigation
 
-    /// Opens the player's next level. The board always starts fresh: a level
-    /// left halfway isn't resumed yet (that needs saving the board too).
+    /// Opens the player's next level, picking up where they left it if they
+    /// left it halfway.
     func play() {
         guard let number = nextLevelNumber else { return }
-        screen = .level(LevelViewModel(level: pack.levels[number - 1], levelNumber: number, host: self))
+        let level = pack.levels[number - 1]
+        screen = .level(LevelViewModel(puzzle: startingPuzzle(for: level), levelNumber: number, host: self))
+    }
+
+    /// The level as the player left it, or fresh if there's no saved board
+    /// for it (or the saved one no longer fits, e.g. the pack was regenerated).
+    private func startingPuzzle(for level: Level) -> PuzzleState {
+        guard let saved = progress.board else { return PuzzleState(level: level) }
+        if let restored = PuzzleState.restored(level: level, from: saved) {
+            return restored
+        }
+        // Expected after a pack update; anything else is worth knowing about.
+        logger.notice("Saved board didn't fit level \(level.id, privacy: .public); starting fresh")
+        update { $0.board = nil }
+        return PuzzleState(level: level)
     }
 
     // MARK: - Saving
@@ -126,8 +150,18 @@ extension Game: LevelHost {
 
     func record(_ result: LevelResult) -> [YarnColor] {
         var earned: [YarnColor] = []
-        update { earned = $0.record(result, using: &generator) }
+        update {
+            earned = $0.record(result, using: &generator)
+            // Judged boards are finished: a pass moves on, a fail starts over.
+            $0.board = nil
+        }
         return earned
+    }
+
+    func saveBoard(_ board: SavedBoard?) {
+        // Each change writes the progress file. It's a few kilobytes, so this
+        // is cheap, and it means even a crash or a force-quit keeps the board.
+        update { $0.board = board }
     }
 
     func continueToNextLevel() {

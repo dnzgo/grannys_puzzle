@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 import ArrowwordCore
 
 /// The home screen: grandma in her armchair with the cat, the treat jar and
@@ -15,6 +16,15 @@ struct HomeView: View {
     @State private var showsWardrobe = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
+    /// The jar opening being shown, if any.
+    @State private var jarOpening: JarOpening?
+    /// Today as a `JarDay` number. Kept as state and refreshed at midnight
+    /// and when the app returns to the foreground, so the jar wakes up
+    /// without the player having to relaunch.
+    @State private var today = JarDay.number()
+    @Environment(\.scenePhase) private var scenePhase
+
+    private var jarReady: Bool { game.progress.canOpenJar(today: today) }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -25,10 +35,11 @@ struct HomeView: View {
             HomeStage(
                 progress: game.progress,
                 canKnit: game.canKnitSomething,
+                jarReady: jarReady,
                 speechLine: speech.line,
                 onGranny: { speech.say(GrandmaLines.greeting()) },
                 onCat: { speech.say(GrandmaLines.catNapping) },
-                onJar: { speech.say(GrandmaLines.jarComingSoon) },
+                onJar: tapJar,
                 onYarnBag: { showsYarnBag = true }
             )
             .animation(.easeOut(duration: 0.2), value: speech.line)
@@ -55,8 +66,45 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: knittingItem)
+        .overlay {
+            if let opening = jarOpening {
+                JarMoment(opening: opening, streakLength: DailyJarRules.standard.streakLength) {
+                    jarOpening = nil
+                }
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: jarOpening)
         .onAppear {
-            speech.say(game.nextLevelNumber == nil ? GrandmaLines.allLevelsDone : GrandmaLines.greeting())
+            today = JarDay.number()
+            speech.say(openingLine)
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active { today = JarDay.number() }
+        }
+        // iOS posts this at midnight (and on time zone changes). It can
+        // arrive on any thread, so hop to the main thread before touching
+        // view state.
+        .onReceive(
+            NotificationCenter.default.publisher(for: .NSCalendarDayChanged).receive(on: DispatchQueue.main)
+        ) { _ in
+            today = JarDay.number()
+        }
+    }
+
+    private var openingLine: String {
+        if game.nextLevelNumber == nil { return GrandmaLines.allLevelsDone }
+        if jarReady { return GrandmaLines.jarReady }
+        return GrandmaLines.greeting()
+    }
+
+    /// Opens today's jar, or reminds the player when it opens next. Like
+    /// knitting, the reward is saved first; the moment on screen is the reveal.
+    private func tapJar() {
+        if let opening = game.openJar(today: today) {
+            jarOpening = opening
+        } else {
+            speech.say(GrandmaLines.jarTomorrow)
         }
     }
 
@@ -104,6 +152,7 @@ struct HomeView: View {
 private struct HomeStage: View {
     let progress: PlayerProgress
     let canKnit: Bool
+    let jarReady: Bool
     let speechLine: String?
     let onGranny: () -> Void
     let onCat: () -> Void
@@ -131,7 +180,7 @@ private struct HomeStage: View {
                     .frame(width: side * 0.95, height: side * 0.24)
                     .position(at(0.5, 0.88))
 
-                JarView(width: side * 0.2, action: onJar)
+                JarView(width: side * 0.2, isReady: jarReady, action: onJar)
                     .position(at(0.86, 0.66))
 
                 GrannyView(width: side * 0.6, action: onGranny)
@@ -183,17 +232,23 @@ private struct CatBedView: View {
     }
 }
 
-/// The daily treat jar. Later: shakes and opens for the daily reward.
+/// The daily treat jar, with an "Open!" tag while today's treat is waiting.
+/// Later: a gentle idle wobble when ready, and a real open animation.
 private struct JarView: View {
     let width: CGFloat
+    let isReady: Bool
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
             Image("jar").resizable().scaledToFit().frame(width: width)
+                .overlay(alignment: .top) {
+                    if isReady { NudgeTag(text: "Open!").offset(y: -width * 0.32) }
+                }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Treat jar")
+        .accessibilityHint(isReady ? Text("Today's treat is waiting") : Text("Opens again tomorrow"))
     }
 }
 
@@ -222,23 +277,13 @@ private struct YarnBagView: View {
             .frame(width: width, height: width * 0.95, alignment: .bottom)
             .overlay(alignment: .topTrailing) { countBadge }
             .overlay(alignment: .top) {
-                if canKnit { knitTag.offset(y: -width * 0.32) }
+                if canKnit { NudgeTag(text: "Knit!").offset(y: -width * 0.32) }
             }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Yarn bag")
         .accessibilityValue("\(progress.totalYarn) balls")
         .accessibilityHint(canKnit ? Text("Enough yarn to knit something") : Text(""))
-    }
-
-    private var knitTag: some View {
-        Text("Knit!")
-            .font(.system(size: 13, weight: .heavy, design: .rounded))
-            .foregroundStyle(Theme.onPrimary)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 4)
-            .background(Capsule().fill(Theme.primary))
-            .shadow(color: Theme.primary.opacity(0.4), radius: 4, y: 2)
     }
 
     private var basket: some View {
@@ -275,6 +320,23 @@ private struct YarnBagView: View {
             .frame(minWidth: 24, minHeight: 24)
             .background(Capsule().fill(Theme.ink))
             .overlay(Capsule().strokeBorder(Theme.background, lineWidth: 2))
+    }
+}
+
+/// A small orange tag over a scene object that has something waiting
+/// ("Knit!", "Open!").
+private struct NudgeTag: View {
+    let text: LocalizedStringKey
+
+    var body: some View {
+        Text(text)
+            .font(.system(size: 13, weight: .heavy, design: .rounded))
+            .foregroundStyle(Theme.onPrimary)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 4)
+            .background(Capsule().fill(Theme.primary))
+            .shadow(color: Theme.primary.opacity(0.4), radius: 4, y: 2)
+            .fixedSize()
     }
 }
 

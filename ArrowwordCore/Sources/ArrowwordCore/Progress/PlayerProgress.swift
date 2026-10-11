@@ -19,6 +19,12 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var yarn: [YarnColor: Int]
     /// Ids of the items grandma has knitted (see `KnitItem.id`).
     public var wardrobe: Set<String>
+    /// The current level as the player left it, if they left it halfway.
+    public var board: SavedBoard?
+    /// The streak day of the last jar opened (0 before the first one).
+    public var jarStreak: Int
+    /// `JarDay` number of the last jar opened, nil before the first one.
+    public var lastJarDay: Int?
 
     public init(
         version: Int = currentVersion,
@@ -26,7 +32,10 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         hints: Int,
         grandmas: Int,
         yarn: [YarnColor: Int],
-        wardrobe: Set<String> = []
+        wardrobe: Set<String> = [],
+        board: SavedBoard? = nil,
+        jarStreak: Int = 0,
+        lastJarDay: Int? = nil
     ) {
         self.version = version
         self.levelNumber = levelNumber
@@ -34,12 +43,15 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.grandmas = grandmas
         self.yarn = yarn
         self.wardrobe = wardrobe
+        self.board = board
+        self.jarStreak = jarStreak
+        self.lastJarDay = lastJarDay
     }
 
     // MARK: - Saving format
 
     private enum CodingKeys: String, CodingKey {
-        case version, levelNumber, hints, grandmas, yarn, wardrobe
+        case version, levelNumber, hints, grandmas, yarn, wardrobe, board, jarStreak, lastJarDay
     }
 
     /// Written by hand rather than generated, for one reason: saves from
@@ -55,6 +67,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         grandmas = try container.decode(Int.self, forKey: .grandmas)
         yarn = try container.decode([YarnColor: Int].self, forKey: .yarn)
         wardrobe = try container.decodeIfPresent(Set<String>.self, forKey: .wardrobe) ?? []
+        board = try container.decodeIfPresent(SavedBoard.self, forKey: .board)
+        jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
+        lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
     }
 
     /// What a brand-new player starts with.
@@ -87,6 +102,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
 
     /// Records a submitted level. A pass awards yarn and moves the player on;
     /// a fail changes nothing, because the level is simply played again.
+    /// (The saved board is the caller's to clear: either way the board that
+    /// was submitted is finished with.)
     ///
     /// - Returns: the yarn balls awarded, in the order they were drawn (the
     ///   result screen shows them in this order).

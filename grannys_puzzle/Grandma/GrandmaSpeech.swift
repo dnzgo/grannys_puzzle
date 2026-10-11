@@ -58,7 +58,8 @@ enum GrandmaLines {
         greetings.randomElement() ?? greetings[0]
     }
 
-    static let jarComingSoon = "That's my treat jar. It opens soon, dear!"
+    static let jarReady = "My jar has a treat for you today, dear!"
+    static let jarTomorrow = "That's all for today. Come back tomorrow for another treat!"
     static let catNapping = "Shh, the cat's having a little nap."
     static let knitted = "Doesn't the cat look smart?"
     static let allLevelsDone = "You've solved them all! I'm writing more."

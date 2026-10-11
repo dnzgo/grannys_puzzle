@@ -23,6 +23,10 @@ protocol LevelHost: AnyObject {
     /// the reward is saved even if the app is closed on the result screen.
     func record(_ result: LevelResult) -> [YarnColor]
 
+    /// Keeps the board as it is now, so leaving the level (or the app being
+    /// closed) doesn't lose it. Nil means there's nothing to keep.
+    func saveBoard(_ board: SavedBoard?)
+
     func continueToNextLevel()
     func goHome()
 }

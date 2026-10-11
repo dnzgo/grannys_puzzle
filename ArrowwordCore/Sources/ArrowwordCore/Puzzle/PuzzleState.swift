@@ -36,11 +36,21 @@ public struct PuzzleState: Sendable {
             entries[cell] = Entry(letter: level.letter(at: cell), source: .given)
         }
         self.entries = entries
-        // A validated level always has letter cells, so `letterCells[0]` exists.
-        let start = level.letterCells.first(where: { entries[$0] == nil }) ?? level.letterCells[0]
-        self.selection = start
-        self.direction = level.answerID(at: start, direction: .across) != nil ? .across : .down
+        // Placeholders until `selectFirstEmptyCell` below, which needs `self`
+        // to exist. A validated level always has letter cells.
+        self.selection = level.letterCells[0]
+        self.direction = .across
         self.result = nil
+        selectFirstEmptyCell()
+    }
+
+    /// Selects the first cell without a letter (reading order), in a
+    /// direction that has an answer. Used when a level opens, fresh or
+    /// restored from a saved board.
+    private mutating func selectFirstEmptyCell() {
+        let start = level.letterCells.first(where: { entries[$0] == nil }) ?? level.letterCells[0]
+        selection = start
+        direction = level.answerID(at: start, direction: .across) != nil ? .across : .down
     }
 
     // MARK: - Reading the board
@@ -300,5 +310,53 @@ public struct PuzzleState: Sendable {
                 return
             }
         }
+    }
+}
+
+// MARK: - Saving a level left halfway
+
+extension PuzzleState {
+    /// The board to save, or nil when there's nothing worth keeping: no
+    /// letters added yet, or the level already judged.
+    public func savedBoard() -> SavedBoard? {
+        guard !isSubmitted else { return nil }
+        let letters = level.letterCells.compactMap { cell -> SavedBoard.Letter? in
+            guard let entry = entries[cell], entry.source != .given else { return nil }
+            return SavedBoard.Letter(
+                row: cell.row, column: cell.column,
+                letter: String(entry.letter), revealed: entry.source == .revealed
+            )
+        }
+        guard !letters.isEmpty else { return nil }
+        return SavedBoard(levelID: level.id, levelFingerprint: level.fingerprint, letters: letters)
+    }
+
+    /// The level with a saved board put back, or nil if the board doesn't fit
+    /// this level. The caller then starts the level fresh.
+    ///
+    /// A save file can be stale (the pack was regenerated) or damaged, so
+    /// every letter is checked rather than trusted: right level, a letter
+    /// cell that isn't a starter, no cell twice, revealed letters correct,
+    /// and never more of a letter than the tray holds.
+    public static func restored(level: Level, from saved: SavedBoard) -> PuzzleState? {
+        guard saved.levelID == level.id, saved.levelFingerprint == level.fingerprint else { return nil }
+
+        var state = PuzzleState(level: level)
+        for item in saved.letters {
+            let cell = Coordinate(row: item.row, column: item.column)
+            guard item.letter.count == 1, let letter = item.letter.first,
+                  level.isLetterCell(cell),
+                  !level.givens.contains(cell),
+                  state.entries[cell] == nil
+            else { return nil }
+            if item.revealed, letter != level.letter(at: cell) { return nil }
+            state.entries[cell] = Entry(letter: letter, source: item.revealed ? .revealed : .placed)
+        }
+        // A letter the tray never had (or too many of one) leaves a count
+        // below zero; the board can't have been made by playing this level.
+        guard state.remainingCounts().values.allSatisfy({ $0 >= 0 }) else { return nil }
+
+        state.selectFirstEmptyCell()
+        return state
     }
 }
