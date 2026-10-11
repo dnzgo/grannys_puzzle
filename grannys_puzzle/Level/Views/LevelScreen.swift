@@ -33,7 +33,7 @@ struct LevelScreen: View {
                         .padding(.bottom, BoardMetrics.actionBottomPadding)
                         .overlay(alignment: .top) { grandmaBubble }
                         // Animating on the container lets the bubble fade in and out.
-                        .animation(.easeOut(duration: 0.2), value: model.grandmaLine)
+                        .animation(.easeOut(duration: 0.2), value: model.speech.line)
                 }
                 .padding(.horizontal, Theme.sidePadding)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -47,7 +47,7 @@ struct LevelScreen: View {
     @ViewBuilder
     private func trayOrResult(metrics: BoardMetrics) -> some View {
         if case .finished(let result) = model.phase {
-            ResultPanel(result: result)
+            ResultPanel(result: result, earnedYarn: model.earnedYarn)
         } else {
             LetterTray(model: model, keyHeight: metrics.trayKeyHeight)
         }
@@ -56,7 +56,7 @@ struct LevelScreen: View {
     /// Grandma's line floats just above the action row for a moment.
     @ViewBuilder
     private var grandmaBubble: some View {
-        if let line = model.grandmaLine {
+        if let line = model.speech.line {
             SpeechBubble(text: line)
                 .alignmentGuide(.top) { dimensions in dimensions[.bottom] + 10 }
                 .transition(.opacity.combined(with: .move(edge: .bottom)))
@@ -86,9 +86,9 @@ struct SpeechBubble: View {
 }
 
 #Preview {
-    if let pack = try? LevelLoader.bundledPack(named: LevelLoader.firstPackName),
-       let level = pack.levels.first {
-        LevelScreen(model: LevelViewModel(level: level, levelNumber: 1))
+    if let game = Game.preview() {
+        let _ = game.play()
+        GameView(game: game)
     } else {
         Text("\(LevelLoader.firstPackName).json is missing from the app bundle")
     }

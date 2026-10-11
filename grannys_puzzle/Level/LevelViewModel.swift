@@ -9,6 +9,8 @@ import ArrowwordCore
 /// - This view model decides whether an action is allowed right now (does the
 ///   player have a hint?), calls the puzzle, and holds short-lived UI state
 ///   such as the cat animation and grandma's speech bubble.
+/// - The `LevelHost` (the `Game`) owns the player's saved helpers and yarn,
+///   and decides where to go after the level.
 /// - The views only read these properties and call these methods. They
 ///   contain no game rules, so they stay simple.
 @Observable
@@ -19,49 +21,35 @@ final class LevelViewModel {
         case finished(LevelResult)
     }
 
-    /// What a new player starts with until the progression phase saves a
-    /// real wallet.
-    static let startingHints = 4
-    static let startingGrandmas = 1
-
     let levelNumber: Int
     private(set) var puzzle: PuzzleState
-
-    // A temporary in-memory wallet. The progression phase moves it into the
-    // saved player profile so it carries across levels and app launches.
-    private(set) var hints: Int
-    private(set) var grandmas: Int
+    /// The yarn balls this level earned, shown on the result panel.
+    private(set) var earnedYarn: [YarnColor] = []
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
-    /// Grandma's speech bubble while it's on screen.
-    private(set) var grandmaLine: String?
+    let speech = GrandmaSpeech()
 
     // Internal bookkeeping the views never read, so SwiftUI needn't watch it.
     @ObservationIgnored private let scoringRules: ScoringRules
     /// Palette index per answer, worked out once per level.
     @ObservationIgnored private let clueColorIndices: [Int]
     @ObservationIgnored private var catTask: Task<Void, Never>?
-    @ObservationIgnored private var grandmaTask: Task<Void, Never>?
-    /// Called when the player continues after passing. Whoever created this
-    /// level decides what comes next; this class only knows one level.
-    @ObservationIgnored private let onPassed: () -> Void
+    /// Weak because the host (the Game) owns this view model through its
+    /// current screen; a strong reference back would be a retain cycle.
+    @ObservationIgnored private weak var host: LevelHost?
 
     init(
         level: Level,
         levelNumber: Int,
-        hints: Int = LevelViewModel.startingHints,
-        grandmas: Int = LevelViewModel.startingGrandmas,
-        scoringRules: ScoringRules = .standard,
-        onPassed: @escaping () -> Void = {}
+        host: LevelHost?,
+        scoringRules: ScoringRules = .standard
     ) {
         self.levelNumber = levelNumber
         self.puzzle = PuzzleState(level: level)
-        self.hints = hints
-        self.grandmas = grandmas
+        self.host = host
         self.scoringRules = scoringRules
         self.clueColorIndices = ClueColors.assignments(for: level)
-        self.onPassed = onPassed
     }
 
     // MARK: - What the screen shows
@@ -93,6 +81,8 @@ final class LevelViewModel {
         }
     }
 
+    var hints: Int { host?.hints ?? 0 }
+    var grandmas: Int { host?.grandmas ?? 0 }
     var canUseCat: Bool { hints > 0 }
     var canUseGrandma: Bool { grandmas > 0 }
 
@@ -178,7 +168,7 @@ final class LevelViewModel {
     /// there's nothing to fix.
     func useCat() {
         guard hints > 0, let cell = puzzle.revealLetter() else { return }
-        hints -= 1
+        _ = host?.spendHint()
         showCat(at: cell)
     }
 
@@ -187,23 +177,34 @@ final class LevelViewModel {
         guard grandmas > 0, let answer = puzzle.activeAnswer else { return }
         let revealed = puzzle.revealActiveAnswer()
         guard !revealed.isEmpty else { return }
-        grandmas -= 1
-        say(GrandmaLines.solved(answer.solution))
+        _ = host?.spendGrandma()
+        speech.say(GrandmaLines.solved(answer.solution))
     }
 
     func submit() {
-        puzzle.submit(rules: scoringRules)
+        // `submit` returns nil if the board was already judged. Using its
+        // return value (not `puzzle.result`) makes a double tap on Submit
+        // record the level once, not award yarn twice and skip a level.
+        guard let result = puzzle.submit(rules: scoringRules) else { return }
+        earnedYarn = host?.record(result) ?? []
     }
 
-    /// After the result: a pass moves on (decided by `onPassed`), a fail
+    /// After the result: a pass moves on (the host decides where), a fail
     /// starts this level over with a cleared board.
     func continueAfterResult() {
         guard let result = puzzle.result else { return }
         if result.passed {
-            onPassed()
+            host?.continueToNextLevel()
         } else {
+            earnedYarn = []
             puzzle.restart()
         }
+    }
+
+    /// Back to the home screen. The board isn't kept yet: coming back starts
+    /// the level fresh.
+    func goHome() {
+        host?.goHome()
     }
 
     // MARK: - Short-lived UI state
@@ -217,16 +218,6 @@ final class LevelViewModel {
             try? await Task.sleep(for: .milliseconds(650))
             guard !Task.isCancelled else { return }
             self?.catCell = nil
-        }
-    }
-
-    private func say(_ line: String) {
-        grandmaTask?.cancel()
-        grandmaLine = line
-        grandmaTask = Task { [weak self] in
-            try? await Task.sleep(for: .seconds(2.6))
-            guard !Task.isCancelled else { return }
-            self?.grandmaLine = nil
         }
     }
 }
@@ -267,20 +258,4 @@ struct ClueAppearance: Identifiable, Equatable {
     let isActive: Bool
 
     var id: Int { answerID }
-}
-
-/// Grandma's lines. They move into a data file (with Turkish versions and
-/// triggers) when the home screen and mascot are built.
-enum GrandmaLines {
-    private static let solvedTemplates = [
-        "Ah, that one's %@, dear.",
-        "%@! I knew it before my tea went cold.",
-        "Let me see… %@. Easy as purl.",
-        "It's %@, sweetheart. Keep going!",
-    ]
-
-    static func solved(_ word: String) -> String {
-        let template = solvedTemplates.randomElement() ?? "%@"
-        return String(format: template, word)
-    }
 }

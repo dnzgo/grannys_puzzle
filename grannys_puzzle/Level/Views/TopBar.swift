@@ -9,8 +9,10 @@ struct TopBar: View {
 
     var body: some View {
         HStack(spacing: 8) {
-            // Back and settings get their actions when those screens exist.
-            CircleIconButton(systemName: "chevron.left", label: "Back to levels") {}
+            CircleIconButton(systemName: "chevron.left", label: "Home") {
+                withAnimation(.easeInOut(duration: 0.25)) { model.goHome() }
+            }
+            // Settings gets its action when the settings screen exists.
             CluePill(model: model)
             CircleIconButton(systemName: "gearshape", label: "Settings") {}
         }

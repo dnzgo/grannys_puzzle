@@ -220,13 +220,13 @@ final class PuzzleStateTests: XCTestCase {
         XCTAssertFalse(state.isSubmitted)
     }
 
-    func testAPerfectBoardEarnsThreeStars() throws {
+    func testAPerfectBoardEarnsThreeYarnBalls() throws {
         var state = try newSquareGame()
         state.fillBoard()
 
         let result = try XCTUnwrap(state.submit())
 
-        XCTAssertEqual(result.stars, 3)
+        XCTAssertEqual(result.yarnBalls, 3)
         XCTAssertTrue(result.passed)
     }
 
@@ -240,7 +240,7 @@ final class PuzzleStateTests: XCTestCase {
 
         XCTAssertEqual(result.correctLetters, 14)
         XCTAssertEqual(result.judgedLetters, 16)
-        XCTAssertEqual(result.stars, 1, "14 / 16 = 87.5%: above 80%, below 90%")
+        XCTAssertEqual(result.yarnBalls, 1, "14 / 16 = 87.5%: above 80%, below 90%")
         XCTAssertTrue(result.passed)
     }
 
@@ -256,16 +256,16 @@ final class PuzzleStateTests: XCTestCase {
         let result = try XCTUnwrap(state.submit())
 
         XCTAssertEqual(result.correctLetters, 8)
-        XCTAssertEqual(result.stars, 0)
+        XCTAssertEqual(result.yarnBalls, 0)
         XCTAssertFalse(result.passed)
     }
 
-    func testHelpersDoNotCostStars() throws {
+    func testHelpersDoNotCostYarn() throws {
         var state = try newSquareGame()
         state.revealActiveAnswer()  // grandma does CARD
         state.fillBoard()
 
-        XCTAssertEqual(state.submit()?.stars, 3)
+        XCTAssertEqual(state.submit()?.yarnBalls, 3)
     }
 
     func testStarterLettersAreNotJudged() throws {

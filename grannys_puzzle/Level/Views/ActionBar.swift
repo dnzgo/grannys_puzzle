@@ -128,8 +128,9 @@ private struct HelperButton: View {
     }
 }
 
-/// The full-width main button (Submit, Next level, Try again).
-private struct PrimaryButton: View {
+/// The full-width main button (Submit, Next level, Try again, and Play on
+/// the home screen).
+struct PrimaryButton: View {
     let title: LocalizedStringKey
     let height: CGFloat
     let action: () -> Void
