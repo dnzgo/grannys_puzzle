@@ -6,6 +6,10 @@ import ArrowwordCore
 /// The app's root: loads the game once, then hands over to `GameView`.
 struct ContentView: View {
     @State private var startup = Startup.load()
+    /// The in-game language choice (Settings → Language). Changing it here
+    /// swaps the text at once (through the environment's locale) and the
+    /// puzzles (through the game).
+    @AppStorage(AppLanguage.storageKey) private var languageCode = AppLanguage.current.rawValue
 
     var body: some View {
         switch startup {
@@ -14,6 +18,11 @@ struct ContentView: View {
                 // Views that show ads (the banner, Settings' privacy row)
                 // read the controller from here instead of through Game.
                 .environment(game.ads)
+                // Every `Text` below looks its words up in this locale.
+                .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
+                .onChange(of: languageCode) { _, newCode in
+                    game.switchLanguage(to: newCode)
+                }
         case .failed(let message):
             // A bundled pack failing to load is a bug in the build, but the
             // app should say so instead of crashing.
@@ -53,29 +62,20 @@ private enum Startup {
 
     static func load() -> Startup {
         do {
-            let pack = try LevelLoader.bundledPack(named: LevelLoader.firstPackName)
+            let language = AppLanguage.current.rawValue
+            let content = try LevelLoader.content(for: language)
             let game = Game(
-                pack: pack,
-                tutorial: tutorialLevel(),
+                pack: content.pack,
+                tutorial: content.tutorial,
+                language: language,
                 store: progressStore(),
-                ads: AdsSetup.makeController()
+                ads: AdsSetup.makeController(),
+                loadContent: LevelLoader.content(for:)
             )
             game.startTutorialIfNeeded()
             return .ready(game)
         } catch {
             return .failed(String(describing: error))
-        }
-    }
-
-    /// Unlike the level pack, a missing lesson isn't worth stopping the
-    /// game for: players can still play, so log it and go on without.
-    private static func tutorialLevel() -> Level? {
-        do {
-            return try LevelLoader.bundledPack(named: LevelLoader.tutorialPackName).levels.first
-        } catch {
-            Logger(subsystem: "grannys_puzzle", category: "tutorial")
-                .error("Tutorial couldn't be loaded: \(String(describing: error), privacy: .public)")
-            return nil
         }
     }
 

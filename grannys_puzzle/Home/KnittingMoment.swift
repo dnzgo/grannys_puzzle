@@ -78,7 +78,7 @@ struct KnittingMoment: View {
                     .offset(x: 8, y: reduceMotion ? 0 : (rocking ? -6 : 4))
             }
             // "the" reads right for singular and plural (the scarf, the mittens).
-            Text("Knitting the \(item.displayName.lowercased())…")
+            Text("Knitting the \(item.displayName.lowercased(with: .appLanguage))…")
                 .font(.system(size: 17, weight: .semibold, design: .rounded))
                 .foregroundStyle(Theme.ink)
                 .multilineTextAlignment(.center)

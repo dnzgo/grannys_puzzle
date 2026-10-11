@@ -32,42 +32,40 @@ final class GrandmaSpeech {
     }
 }
 
-/// Grandma's lines. They move into a data file (with Turkish versions and
-/// triggers) when the mascot's full behaviour is built.
+/// Grandma's lines, translated through the String Catalog like the rest of
+/// the app's text. Computed on each use rather than stored, so they always
+/// come out in the app's current language.
 enum GrandmaLines {
-    private static let solvedTemplates = [
-        "Ah, that one's %@, dear.",
-        "%@! I knew it before my tea went cold.",
-        "Let me see… %@. Easy as purl.",
-        "It's %@, sweetheart. Keep going!",
-    ]
-
-    private static let greetings = [
-        "Hello, dear! Fancy a puzzle?",
-        "Every puzzle you solve brings me yarn.",
-        "My needles are waiting for some colour!",
-        "Come sit with me, sweetheart.",
-    ]
-
     static func solved(_ word: String) -> String {
-        let template = solvedTemplates.randomElement() ?? "%@"
-        return String(format: template, word)
+        // The word goes in the middle of the sentence, and its place differs
+        // between languages, so each line is a whole localized sentence.
+        switch Int.random(in: 0..<4) {
+        case 0: String(localized: "Ah, that one's \(word), dear.", bundle: .appLanguage, locale: .appLanguage)
+        case 1: String(localized: "\(word)! I knew it before my tea went cold.", bundle: .appLanguage, locale: .appLanguage)
+        case 2: String(localized: "Let me see… \(word). Easy as purl.", bundle: .appLanguage, locale: .appLanguage)
+        default: String(localized: "It's \(word), sweetheart. Keep going!", bundle: .appLanguage, locale: .appLanguage)
+        }
     }
 
     static func greeting() -> String {
-        greetings.randomElement() ?? greetings[0]
+        switch Int.random(in: 0..<4) {
+        case 0: String(localized: "Hello, dear! Fancy a puzzle?", bundle: .appLanguage, locale: .appLanguage)
+        case 1: String(localized: "Every puzzle you solve brings me yarn.", bundle: .appLanguage, locale: .appLanguage)
+        case 2: String(localized: "My needles are waiting for some colour!", bundle: .appLanguage, locale: .appLanguage)
+        default: String(localized: "Come sit with me, sweetheart.", bundle: .appLanguage, locale: .appLanguage)
+        }
     }
 
-    static let jarReady = "My jar has a treat for you today, dear!"
-    static let jarTomorrow = "That's all for today. Come back tomorrow for another treat!"
-    static let catNapping = "Shh, the cat's having a little nap."
-    static let knitted = "Doesn't the cat look smart?"
-    static let allLevelsDone = "You've solved them all! I'm writing more."
+    static var jarReady: String { String(localized: "My jar has a treat for you today, dear!", bundle: .appLanguage, locale: .appLanguage) }
+    static var jarTomorrow: String { String(localized: "That's all for today. Come back tomorrow for another treat!", bundle: .appLanguage, locale: .appLanguage) }
+    static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }
+    static var knitted: String { String(localized: "Doesn't the cat look smart?", bundle: .appLanguage, locale: .appLanguage) }
+    static var allLevelsDone: String { String(localized: "You've solved them all! I'm writing more.", bundle: .appLanguage, locale: .appLanguage) }
 
     static func adReward(_ reward: HelperAdReward) -> String {
         switch reward {
-        case .catHints: "Three cat hints, just for you, dear!"
-        case .grandma: "Here I am! Tap me when a word's too tricky."
+        case .catHints: String(localized: "Three cat hints, just for you, dear!", bundle: .appLanguage, locale: .appLanguage)
+        case .grandma: String(localized: "Here I am! Tap me when a word's too tricky.", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 }

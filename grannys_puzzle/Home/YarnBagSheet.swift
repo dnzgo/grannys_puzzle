@@ -162,8 +162,8 @@ private struct KnitChoice: View {
     }
 
     private var caption: String {
-        if owned { return String(localized: "Knitted") }
-        if affordable { return String(localized: "Knit!") }
+        if owned { return String(localized: "Knitted", bundle: .appLanguage, locale: .appLanguage) }
+        if affordable { return String(localized: "Knit!", bundle: .appLanguage, locale: .appLanguage) }
         return "\(progress.yarnCount(of: item.color))/\(item.cost)"
     }
 

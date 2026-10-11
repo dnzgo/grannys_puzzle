@@ -236,26 +236,27 @@ private struct PulsingRing: View {
 // MARK: - Grandma's words
 
 extension TutorialLine {
-    /// What grandma says at each step. Some lines name the lesson board's
-    /// words (CAT, the T), so they change together with tutorial-en.json.
+    /// What grandma says at each step. Two lines name the lesson board's
+    /// words (CAT and its T in English; ÇAY and its Y in Turkish), so each
+    /// language's translation goes with its own tutorial-<lang>.json.
     var text: String {
         switch self {
         case .welcome:
-            String(localized: "Hello, dear! Let me show you how my puzzles work.")
+            String(localized: "Hello, dear! Let me show you how my puzzles work.", bundle: .appLanguage, locale: .appLanguage)
         case .clueBox:
-            String(localized: "Each clue sits in a little box. The arrow shows where its answer goes.")
+            String(localized: "Each clue sits in a little box. The arrow shows where its answer goes.", bundle: .appLanguage, locale: .appLanguage)
         case .typeWord:
-            String(localized: "A purring pet… that's CAT! Tap the glowing letters to write it in.")
+            String(localized: "A purring pet… that's CAT! Tap the glowing letters to write it in.", bundle: .appLanguage, locale: .appLanguage)
         case .tapClue:
-            String(localized: "Lovely! Now tap this clue to start the next word.")
+            String(localized: "Lovely! Now tap this clue to start the next word.", bundle: .appLanguage, locale: .appLanguage)
         case .catHelps:
-            String(localized: "The T is already there: words share letters. Stuck on the next one? Tap my cat!")
+            String(localized: "The T is already there: words share letters. Stuck on the next one? Tap my cat!", bundle: .appLanguage, locale: .appLanguage)
         case .finishWord:
-            String(localized: "Clever cat! Now put in the last letter yourself.")
+            String(localized: "Clever cat! Now put in the last letter yourself.", bundle: .appLanguage, locale: .appLanguage)
         case .askGrandma:
-            String(localized: "For a whole word, just ask me. Tap me!")
+            String(localized: "For a whole word, just ask me. Tap me!", bundle: .appLanguage, locale: .appLanguage)
         case .submit:
-            String(localized: "All filled in! Tap Submit to see how you did.")
+            String(localized: "All filled in! Tap Submit to see how you did.", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 }

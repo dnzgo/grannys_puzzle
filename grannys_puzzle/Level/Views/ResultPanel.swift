@@ -43,8 +43,10 @@ struct ResultPanel: View {
     }
 
     private var detail: String {
-        let percent = Int((result.share * 100).rounded())
-        return "\(percent)% correct · \(result.correctLetters) of \(result.judgedLetters) letters"
+        // The percentage is formatted for the game's language, which puts
+        // the sign in that language's place (Turkish writes it first: %90).
+        let percent = result.share.formatted(.percent.precision(.fractionLength(0)).locale(.appLanguage))
+        return String(localized: "\(percent) correct · \(result.correctLetters) of \(result.judgedLetters) letters", bundle: .appLanguage, locale: .appLanguage)
     }
 
     private var yarnLabel: Text {

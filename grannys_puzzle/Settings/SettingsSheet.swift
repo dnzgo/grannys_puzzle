@@ -2,7 +2,8 @@ import SwiftUI
 import UIKit
 import AdKit
 
-/// Settings: the music, sound and haptics switches, language, feedback,
+/// Settings: the music, sound and haptics switches, the game's language
+/// (switched here, in the game, without a restart), feedback,
 /// the legal pages, credits and the version.
 ///
 /// It's a sheet over whatever screen opened it (home or a level), so the
@@ -24,6 +25,9 @@ struct SettingsSheet: View {
     @AppStorage(ToggleSetting.music.key) private var musicOn = ToggleSetting.music.defaultValue
     @AppStorage(ToggleSetting.sound.key) private var soundOn = ToggleSetting.sound.defaultValue
     @AppStorage(ToggleSetting.haptics.key) private var hapticsOn = ToggleSetting.haptics.defaultValue
+    /// The game's language. The app root watches the same key and switches
+    /// the text and the puzzles the moment it changes.
+    @AppStorage(AppLanguage.storageKey) private var languageCode = AppLanguage.current.rawValue
 
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
@@ -42,12 +46,10 @@ struct SettingsSheet: View {
                     Toggle(isOn: $hapticsOn) { Label("Haptics", systemImage: "iphone.radiowaves.left.and.right") }
                 }
 
-                if Self.hasSeveralLanguages {
-                    Section {
-                        languageRow
-                    } footer: {
-                        Text("Changes the app's language in the iPhone Settings app.")
-                    }
+                Section {
+                    languagePicker
+                } footer: {
+                    Text("Each language has its own puzzles and remembers your level.")
                 }
 
                 if let onHowToPlay {
@@ -115,24 +117,16 @@ struct SettingsSheet: View {
 
     // MARK: - Rows
 
-    /// iOS keeps each app's language in the Settings app (iPhone Settings →
-    /// Granny's Puzzle → Language) and restarts the app when it changes, so
-    /// the app doesn't need its own picker; this row just takes the player
-    /// there. iOS only shows that option when the app ships more than one
-    /// language, which is why the row is hidden until Turkish is added.
-    private var languageRow: some View {
-        Button {
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                openURL(url)
+    /// Languages are listed by their own names ("English", "Türkçe"), not
+    /// translated, so a player can find theirs whatever is showing now.
+    private var languagePicker: some View {
+        Picker(selection: $languageCode) {
+            ForEach(AppLanguage.allCases) { language in
+                Text(verbatim: language.nativeName).tag(language.rawValue)
             }
         } label: {
-            LabeledContent {
-                Text(Self.currentLanguageName)
-            } label: {
-                Label("Language", systemImage: "globe")
-            }
+            Label("Language", systemImage: "globe")
         }
-        .foregroundStyle(Theme.ink)
     }
 
     private var feedbackRow: some View {
@@ -169,21 +163,6 @@ struct SettingsSheet: View {
         }
     }
 
-    // MARK: - Language
-
-    /// True when the app is translated into more than one language. "Base"
-    /// is Xcode's development folder, not a language a player can choose.
-    private static var hasSeveralLanguages: Bool {
-        Bundle.main.localizations.filter { $0 != "Base" }.count > 1
-    }
-
-    /// The language the app is showing, named in that language ("English",
-    /// "Türkçe"), the way iOS lists languages.
-    private static var currentLanguageName: String {
-        let code = Bundle.main.preferredLocalizations.first ?? "en"
-        let locale = Locale(identifier: code)
-        return locale.localizedString(forIdentifier: code)?.localizedCapitalized ?? code
-    }
 }
 
 #Preview {

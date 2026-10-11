@@ -21,9 +21,12 @@ enum ShippedFiles {
             .appendingPathComponent("grannys_puzzle/Levels")
     }
 
-    /// The tutorial's hand-made board.
-    static func tutorialLevel() throws -> Level {
-        let url = appLevelsFolder.appendingPathComponent("tutorial-en.json")
+    /// Languages with a shipped tutorial board.
+    static let tutorialLanguages = ["en", "tr"]
+
+    /// A tutorial's hand-made board.
+    static func tutorialLevel(language: String = "en") throws -> Level {
+        let url = appLevelsFolder.appendingPathComponent("tutorial-\(language).json")
         let pack = try LevelPack.decode(from: Data(contentsOf: url))
         return try XCTUnwrap(pack.levels.first)
     }

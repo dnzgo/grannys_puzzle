@@ -18,13 +18,15 @@ final class Game {
         case level(LevelViewModel)
     }
 
-    let pack: LevelPack
+    /// The current language's puzzles; replaced when the language changes.
+    private(set) var pack: LevelPack
     let catalog: KnittingCatalog
     /// Nil in previews (no ads there).
     let ads: AdsController?
-    /// The lesson's board. Nil only if it failed to load, a build problem
-    /// that the tests catch; the game then simply plays without it.
-    let tutorial: Level?
+    /// The lesson's board in the current language. Nil only if it failed
+    /// to load, a build problem that the tests catch; the game then simply
+    /// plays without it.
+    private(set) var tutorial: Level?
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
 
@@ -35,15 +37,24 @@ final class Game {
     /// Stands in for the game while the lesson plays (see TutorialHost).
     /// Kept here because levels only hold their host weakly.
     @ObservationIgnored private let tutorialHost = TutorialHost()
+    /// The language the content was loaded for. Not always `pack.language`:
+    /// a language whose pack isn't written yet plays the English one.
+    @ObservationIgnored private var contentLanguage: String
+    /// Loads another language's content; nil in previews.
+    @ObservationIgnored private let loadContent: ((String) throws -> GameContent)?
 
     init(
         pack: LevelPack,
         tutorial: Level? = nil,
+        language: String? = nil,
         store: ProgressStore?,
         ads: AdsController? = nil,
-        catalog: KnittingCatalog = .standard
+        catalog: KnittingCatalog = .standard,
+        loadContent: ((String) throws -> GameContent)? = nil
     ) {
         self.pack = pack
+        self.contentLanguage = language ?? pack.language
+        self.loadContent = loadContent
         self.ads = ads
         self.tutorial = tutorial
         self.catalog = catalog
@@ -52,6 +63,8 @@ final class Game {
         if let store {
             progress = loadProgress(from: store)
         }
+        // Level and saved board are kept per language; play the pack's.
+        progress.activeLanguage = pack.language
         tutorialHost.game = self
     }
 
@@ -88,6 +101,27 @@ final class Game {
         return opening
     }
 
+    // MARK: - Language
+
+    /// Switches to another language's puzzles at once: its pack, its lesson,
+    /// and its own level and saved board. The player lands on the home
+    /// screen; a level they were in is already saved, under its language.
+    func switchLanguage(to language: String) {
+        guard language != contentLanguage, let loadContent else { return }
+        do {
+            let content = try loadContent(language)
+            pack = content.pack
+            tutorial = content.tutorial
+            contentLanguage = language
+            progress.activeLanguage = pack.language
+            screen = .home
+        } catch {
+            // Only a broken build gets here; staying in the current language
+            // is better than a game with no puzzles.
+            logger.error("Couldn't load \(language, privacy: .public) puzzles: \(String(describing: error), privacy: .public)")
+        }
+    }
+
     // MARK: - Tutorial
 
     /// Opens the lesson if the player hasn't been through it. Called once at
@@ -100,7 +134,9 @@ final class Game {
     /// Plays the lesson: on first launch, or again from Settings.
     func startTutorial() {
         guard let tutorial else { return }
-        guard let coach = TutorialCoach(script: .standard, level: tutorial) else {
+        guard let script = TutorialScript.standard(for: tutorial.answerLanguage),
+              let coach = TutorialCoach(script: script, level: tutorial)
+        else {
             // The script names a word the board lacks; a test checks this,
             // so it can only happen with a mismatched build.
             logger.error("Tutorial script doesn't fit the tutorial board; skipping it")
@@ -261,7 +297,7 @@ extension Game: LevelHost {
 extension Game {
     /// A game for SwiftUI previews: the bundled pack, a made-up bag, no saving.
     static func preview() -> Game? {
-        guard let pack = try? LevelLoader.bundledPack(named: LevelLoader.firstPackName) else { return nil }
+        guard let pack = try? LevelLoader.firstPack(for: LevelLoader.fallbackLanguage) else { return nil }
         let game = Game(pack: pack, store: nil)
         game.progress = PlayerProgress(
             levelNumber: 7, hints: 3, grandmas: 1,

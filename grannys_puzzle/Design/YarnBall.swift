@@ -18,10 +18,10 @@ extension YarnColor {
     /// The colour's name for labels and VoiceOver.
     var name: String {
         switch self {
-        case .red: String(localized: "Red")
-        case .blue: String(localized: "Blue")
-        case .yellow: String(localized: "Yellow")
-        case .green: String(localized: "Green")
+        case .red: String(localized: "Red", bundle: .appLanguage, locale: .appLanguage)
+        case .blue: String(localized: "Blue", bundle: .appLanguage, locale: .appLanguage)
+        case .yellow: String(localized: "Yellow", bundle: .appLanguage, locale: .appLanguage)
+        case .green: String(localized: "Green", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 }

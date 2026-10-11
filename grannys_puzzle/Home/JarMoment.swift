@@ -98,20 +98,20 @@ struct JarMoment: View {
     private var rewardTitle: String {
         let reward = opening.reward
         let cats = reward.hints == 1
-            ? String(localized: "1 cat hint")
-            : String(localized: "\(reward.hints) cat hints")
+            ? String(localized: "1 cat hint", bundle: .appLanguage, locale: .appLanguage)
+            : String(localized: "\(reward.hints) cat hints", bundle: .appLanguage, locale: .appLanguage)
         switch (reward.hints > 0, reward.grandmas > 0) {
-        case (true, true): return String(localized: "\(cats) and a grandma!")
-        case (false, true): return String(localized: "A grandma helper!")
+        case (true, true): return String(localized: "\(cats) and a grandma!", bundle: .appLanguage, locale: .appLanguage)
+        case (false, true): return String(localized: "A grandma helper!", bundle: .appLanguage, locale: .appLanguage)
         default: return "\(cats)!"
         }
     }
 
     private var streakCaption: String {
         if opening.streakDay >= streakLength {
-            return String(localized: "A full week! Tomorrow a new week begins.")
+            return String(localized: "A full week! Tomorrow a new week begins.", bundle: .appLanguage, locale: .appLanguage)
         }
-        return String(localized: "Day \(opening.streakDay) of \(streakLength). Come back tomorrow to keep it going!")
+        return String(localized: "Day \(opening.streakDay) of \(streakLength). Come back tomorrow to keep it going!", bundle: .appLanguage, locale: .appLanguage)
     }
 }
 

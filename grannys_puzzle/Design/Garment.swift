@@ -4,11 +4,11 @@ import ArrowwordCore
 extension GarmentKind {
     var name: String {
         switch self {
-        case .scarf: String(localized: "Scarf")
-        case .hat: String(localized: "Hat")
-        case .sweater: String(localized: "Sweater")
-        case .mittens: String(localized: "Mittens")
-        case .blanket: String(localized: "Blanket")
+        case .scarf: String(localized: "Scarf", bundle: .appLanguage, locale: .appLanguage)
+        case .hat: String(localized: "Hat", bundle: .appLanguage, locale: .appLanguage)
+        case .sweater: String(localized: "Sweater", bundle: .appLanguage, locale: .appLanguage)
+        case .mittens: String(localized: "Mittens", bundle: .appLanguage, locale: .appLanguage)
+        case .blanket: String(localized: "Blanket", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 
@@ -26,11 +26,16 @@ extension GarmentKind {
 }
 
 extension KnitItem {
-    /// "Red scarf". English word order for now; Turkish puts it the same way
-    /// round ("Kırmızı atkı"), but this moves into the String Catalog with a
-    /// proper format when localization starts.
+    /// "Red scarf", "Kırmızı atkı". A localized format, so a language
+    /// that puts the colour after the garment can reorder it. Lowercased
+    /// with the game's language: Turkish has its own rules (I → ı).
     var displayName: String {
-        "\(color.name) \(kind.name.lowercased())"
+        String(
+            localized: "\(color.name) \(kind.name.lowercased(with: .appLanguage))",
+            bundle: .appLanguage,
+            locale: .appLanguage,
+            comment: "A knitted item: colour, then garment, e.g. Red scarf"
+        )
     }
 }
 

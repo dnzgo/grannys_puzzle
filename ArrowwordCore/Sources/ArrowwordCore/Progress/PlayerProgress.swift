@@ -6,11 +6,21 @@
 public struct PlayerProgress: Codable, Equatable, Sendable {
     /// The save format this code writes. Bump it when a field changes meaning,
     /// so an older save can be recognised and converted.
-    public static let currentVersion = 1
+    ///
+    /// 2: level and saved board are kept per language (`levelNumbers`,
+    /// `boards`). Version 1 saves had a single `levelNumber` and `board`,
+    /// which were always English, since that was the only pack.
+    public static let currentVersion = 2
+
+    /// The language a save from before per-language progress belongs to.
+    public static let legacyLanguage = "en"
 
     public var version: Int
-    /// The level the player plays next, starting at 1.
-    public var levelNumber: Int
+    /// The next level to play in each language's pack, by language code.
+    /// A language not in here hasn't been played yet: it starts at level 1.
+    /// Separate because each language has its own puzzles; a player at
+    /// English level 40 hasn't solved Turkish level 39.
+    public var levelNumbers: [String: Int]
     /// Cat helpers: each reveals one letter.
     public var hints: Int
     /// Grandma helpers: each solves one word.
@@ -19,15 +29,33 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var yarn: [YarnColor: Int]
     /// Ids of the items grandma has knitted (see `KnitItem.id`).
     public var wardrobe: Set<String>
-    /// The current level as the player left it, if they left it halfway.
-    public var board: SavedBoard?
+    /// Each language's level as the player left it, if they left it halfway.
+    public var boards: [String: SavedBoard]
     /// The streak day of the last jar opened (0 before the first one).
     public var jarStreak: Int
     /// `JarDay` number of the last jar opened, nil before the first one.
     public var lastJarDay: Int?
     /// Whether the first-time lesson is behind the player (finished or
-    /// skipped). Until it is, the app opens on the lesson.
+    /// skipped). Until it is, the app opens on the lesson. Shared by all
+    /// languages: the rules of the game are the same in each.
     public var tutorialDone: Bool
+
+    /// The language being played. Not saved: the app sets it at launch
+    /// from the pack it loads (which follows the device language), and
+    /// `levelNumber` and `board` below read and write that language's entry.
+    public var activeLanguage = PlayerProgress.legacyLanguage
+
+    /// The next level in the active language, starting at 1.
+    public var levelNumber: Int {
+        get { levelNumbers[activeLanguage] ?? 1 }
+        set { levelNumbers[activeLanguage] = newValue }
+    }
+
+    /// The active language's level as the player left it, if halfway.
+    public var board: SavedBoard? {
+        get { boards[activeLanguage] }
+        set { boards[activeLanguage] = newValue }
+    }
 
     public init(
         version: Int = currentVersion,
@@ -39,45 +67,75 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         board: SavedBoard? = nil,
         jarStreak: Int = 0,
         lastJarDay: Int? = nil,
-        tutorialDone: Bool = false
+        tutorialDone: Bool = false,
+        activeLanguage: String = PlayerProgress.legacyLanguage
     ) {
         self.version = version
-        self.levelNumber = levelNumber
+        self.levelNumbers = [activeLanguage: levelNumber]
         self.hints = hints
         self.grandmas = grandmas
         self.yarn = yarn
         self.wardrobe = wardrobe
-        self.board = board
+        self.boards = board.map { [activeLanguage: $0] } ?? [:]
         self.jarStreak = jarStreak
         self.lastJarDay = lastJarDay
         self.tutorialDone = tutorialDone
+        self.activeLanguage = activeLanguage
     }
 
     // MARK: - Saving format
 
     private enum CodingKeys: String, CodingKey {
-        case version, levelNumber, hints, grandmas, yarn, wardrobe, board, jarStreak, lastJarDay, tutorialDone
+        case version, levelNumbers, hints, grandmas, yarn, wardrobe, boards, jarStreak, lastJarDay, tutorialDone
+        // Version 1 only; read when converting, never written.
+        case levelNumber, board
     }
 
-    /// Written by hand rather than generated, for one reason: saves from
-    /// before knitting existed have no `wardrobe`, and the generated decoder
-    /// would reject them as damaged. A missing wardrobe simply means empty.
-    /// This is the pattern for every field added later: decode it with
-    /// `decodeIfPresent` and a sensible default.
+    /// Written by hand rather than generated, for one reason: older saves
+    /// lack fields added since, and the generated decoder would reject them
+    /// as damaged. This is the pattern for every field added later: decode
+    /// it with `decodeIfPresent` and a sensible default.
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        version = try container.decode(Int.self, forKey: .version)
-        levelNumber = try container.decode(Int.self, forKey: .levelNumber)
+        // Whatever the file's version, it's converted to the current format
+        // here, so the next save writes the current version.
+        version = Self.currentVersion
         hints = try container.decode(Int.self, forKey: .hints)
         grandmas = try container.decode(Int.self, forKey: .grandmas)
         yarn = try container.decode([YarnColor: Int].self, forKey: .yarn)
         wardrobe = try container.decodeIfPresent(Set<String>.self, forKey: .wardrobe) ?? []
-        board = try container.decodeIfPresent(SavedBoard.self, forKey: .board)
         jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
         lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
+
+        if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
+            self.levelNumbers = levelNumbers
+            boards = try container.decodeIfPresent([String: SavedBoard].self, forKey: .boards) ?? [:]
+        } else {
+            // Version 1: one level and board, which were English.
+            let level = try container.decode(Int.self, forKey: .levelNumber)
+            levelNumbers = [Self.legacyLanguage: level]
+            let board = try container.decodeIfPresent(SavedBoard.self, forKey: .board)
+            boards = board.map { [Self.legacyLanguage: $0] } ?? [:]
+        }
+
         // Saves from before the tutorial existed: someone past level 1 has
         // clearly learnt to play and shouldn't be sent back to the lesson.
-        tutorialDone = try container.decodeIfPresent(Bool.self, forKey: .tutorialDone) ?? (levelNumber > 1)
+        let playedOn = levelNumbers.values.contains { $0 > 1 }
+        tutorialDone = try container.decodeIfPresent(Bool.self, forKey: .tutorialDone) ?? playedOn
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(version, forKey: .version)
+        try container.encode(levelNumbers, forKey: .levelNumbers)
+        try container.encode(hints, forKey: .hints)
+        try container.encode(grandmas, forKey: .grandmas)
+        try container.encode(yarn, forKey: .yarn)
+        try container.encode(wardrobe, forKey: .wardrobe)
+        try container.encode(boards, forKey: .boards)
+        try container.encode(jarStreak, forKey: .jarStreak)
+        try container.encodeIfPresent(lastJarDay, forKey: .lastJarDay)
+        try container.encode(tutorialDone, forKey: .tutorialDone)
     }
 
     /// What a brand-new player starts with.

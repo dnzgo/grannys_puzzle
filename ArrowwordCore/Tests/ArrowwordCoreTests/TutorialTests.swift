@@ -7,51 +7,62 @@ final class TutorialCoachTests: XCTestCase {
     /// The most important check: a new player who does exactly what grandma
     /// points at gets through the whole lesson to a perfect board. If the
     /// board file and the script ever drift apart, this is where it shows.
-    func testFollowingGrandmaFinishesTheShippedLessonWithAPerfectBoard() throws {
-        let level = try ShippedFiles.tutorialLevel()
-        var coach = try XCTUnwrap(TutorialCoach(script: .standard, level: level), "Script names a word the board lacks")
-        var puzzle = PuzzleState(level: level)
-        var linesSeen: [TutorialLine] = []
+    func testFollowingGrandmaFinishesEveryShippedLessonWithAPerfectBoard() throws {
+        for language in ShippedFiles.tutorialLanguages {
+            let level = try ShippedFiles.tutorialLevel(language: language)
+            XCTAssertEqual(level.answerLanguage, language)
+            let script = try XCTUnwrap(TutorialScript.standard(for: language), "No script for \(language)")
+            var coach = try XCTUnwrap(TutorialCoach(script: script, level: level), "\(language): script names a word the board lacks")
+            var puzzle = PuzzleState(level: level)
+            var linesSeen: [TutorialLine] = []
 
-        // Bounded, so a lesson that stops moving fails instead of hanging.
-        for _ in 0..<50 where !coach.isFinished {
-            if let line = coach.line, linesSeen.last != line { linesSeen.append(line) }
-            let action = try XCTUnwrap(Self.actionFollowingGrandma(coach, puzzle), "Step \(coach.stepIndex) has nothing to do")
-            XCTAssertTrue(coach.allows(action, on: puzzle), "Grandma points at \(action) but refuses it")
-            Self.perform(action, on: &puzzle)
-            coach.didPerform(action, on: puzzle)
+            // Bounded, so a lesson that stops moving fails instead of hanging.
+            for _ in 0..<50 where !coach.isFinished {
+                if let line = coach.line, linesSeen.last != line { linesSeen.append(line) }
+                let action = try XCTUnwrap(Self.actionFollowingGrandma(coach, puzzle), "\(language): step \(coach.stepIndex) has nothing to do")
+                XCTAssertTrue(coach.allows(action, on: puzzle), "\(language): grandma points at \(action) but refuses it")
+                Self.perform(action, on: &puzzle)
+                coach.didPerform(action, on: puzzle)
+            }
+
+            XCTAssertTrue(coach.isFinished, language)
+            XCTAssertEqual(linesSeen, TutorialLine.allCases, "\(language): every step should be shown, in order")
+            let result = try XCTUnwrap(puzzle.result, language)
+            XCTAssertTrue(result.passed, language)
+            XCTAssertEqual(result.yarnBalls, 3, language)
         }
-
-        XCTAssertTrue(coach.isFinished)
-        XCTAssertEqual(linesSeen, TutorialLine.allCases, "Every step should be shown, in order")
-        let result = try XCTUnwrap(puzzle.result)
-        XCTAssertTrue(result.passed)
-        XCTAssertEqual(result.yarnBalls, 3)
     }
 
-    func testTheShippedLessonUsesBothHelpersOnRealWork() throws {
+    func testEveryShippedLessonUsesBothHelpersOnRealWork() throws {
         // The cat and grandma steps must each have something to reveal, or
         // the player would tap the button and see nothing happen.
-        let level = try ShippedFiles.tutorialLevel()
-        var coach = try XCTUnwrap(TutorialCoach(script: .standard, level: level))
-        var puzzle = PuzzleState(level: level)
+        for language in ShippedFiles.tutorialLanguages {
+            let level = try ShippedFiles.tutorialLevel(language: language)
+            let script = try XCTUnwrap(TutorialScript.standard(for: language))
+            var coach = try XCTUnwrap(TutorialCoach(script: script, level: level))
+            var puzzle = PuzzleState(level: level)
 
-        for _ in 0..<50 where !coach.isFinished {
-            guard let action = Self.actionFollowingGrandma(coach, puzzle) else { break }
-            let filledBefore = puzzle.filledCount
-            Self.perform(action, on: &puzzle)
-            if action == .useCat { XCTAssertEqual(puzzle.filledCount, filledBefore + 1, "The cat revealed nothing") }
-            if action == .useGrandma { XCTAssertGreaterThan(puzzle.filledCount, filledBefore + 1, "Grandma should solve more than a letter") }
-            coach.didPerform(action, on: puzzle)
+            for _ in 0..<50 where !coach.isFinished {
+                guard let action = Self.actionFollowingGrandma(coach, puzzle) else { break }
+                let filledBefore = puzzle.filledCount
+                Self.perform(action, on: &puzzle)
+                if action == .useCat { XCTAssertEqual(puzzle.filledCount, filledBefore + 1, "\(language): the cat revealed nothing") }
+                if action == .useGrandma { XCTAssertGreaterThan(puzzle.filledCount, filledBefore + 1, "\(language): grandma should solve more than a letter") }
+                coach.didPerform(action, on: puzzle)
+            }
+            XCTAssertTrue(coach.isFinished, language)
         }
-        XCTAssertTrue(coach.isFinished)
+    }
+
+    func testThereIsNoLessonForALanguageWithoutABoard() {
+        XCTAssertNil(TutorialScript.standard(for: "de"))
     }
 
     // MARK: - Staying on the lesson
 
     func testOnlyTheLetterGrandmaPointsAtIsAllowed() throws {
         let level = try ShippedFiles.tutorialLevel()
-        var coach = try XCTUnwrap(TutorialCoach(script: .standard, level: level))
+        var coach = try XCTUnwrap(TutorialCoach(script: .english, level: level))
         let puzzle = PuzzleState(level: level)
         // Past the two explaining steps, onto "type CAT".
         coach.didPerform(.next, on: puzzle)
@@ -67,7 +78,7 @@ final class TutorialCoachTests: XCTestCase {
 
     func testWhileGrandmaExplainsOnlyNextMovesOn() throws {
         let level = try ShippedFiles.tutorialLevel()
-        var coach = try XCTUnwrap(TutorialCoach(script: .standard, level: level))
+        var coach = try XCTUnwrap(TutorialCoach(script: .english, level: level))
         let puzzle = PuzzleState(level: level)
 
         XCTAssertTrue(coach.waitsForNext)

@@ -1,0 +1,26 @@
+{
+  "formatVersion": 1,
+  "packId": "tutorial-tr",
+  "language": "tr",
+  "levels": [
+    {
+      "formatVersion": 1,
+      "id": "tutorial-tr-1",
+      "clueLanguage": "tr",
+      "answerLanguage": "tr",
+      "grid": [
+        "#####",
+        "#ÇAY#",
+        "###Ü#",
+        "##ANA",
+        "#####"
+      ],
+      "clues": [
+        { "row": 1, "column": 0, "arrow": "right", "text": "Demlenip içilir" },
+        { "row": 0, "column": 3, "arrow": "down", "text": "Örgü ipliği" },
+        { "row": 3, "column": 1, "arrow": "right", "text": "Anne" }
+      ],
+      "givens": []
+    }
+  ]
+}

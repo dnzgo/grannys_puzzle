@@ -1,0 +1,36 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "grannys_puzzle"
+          }
+        }
+      }
+    },
+    "NSUserTrackingUsageDescription" : {
+      "comment" : "Text in iOS's 'Allow tracking?' prompt.",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This lets Granny's Puzzle show ads that suit you better. You'll see the same number of ads either way."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Böylece Ninenin Bulmacası sana daha uygun reklamlar gösterebilir. Her iki durumda da aynı sayıda reklam görürsün."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

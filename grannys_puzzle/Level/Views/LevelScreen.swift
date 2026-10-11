@@ -119,6 +119,6 @@ struct SpeechBubble: View {
         let _ = game.play()
         GameView(game: game)
     } else {
-        Text("\(LevelLoader.firstPackName).json is missing from the app bundle")
+        Text("\(LevelLoader.firstPackName(for: LevelLoader.fallbackLanguage)).json is missing from the app bundle")
     }
 }

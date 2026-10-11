@@ -173,3 +173,50 @@ final class ProgressStoreTests: XCTestCase {
         }
     }
 }
+
+final class PerLanguageProgressTests: XCTestCase {
+    func testEachLanguageKeepsItsOwnLevel() {
+        var progress = PlayerProgress.newPlayer
+        progress.levelNumber = 40
+
+        progress.activeLanguage = "tr"
+        XCTAssertEqual(progress.levelNumber, 1, "Turkish starts at its own level 1")
+        progress.levelNumber = 3
+
+        progress.activeLanguage = "en"
+        XCTAssertEqual(progress.levelNumber, 40, "and English is where it was")
+    }
+
+    func testPassingALevelMovesOnlyTheActiveLanguage() {
+        var progress = PlayerProgress.newPlayer
+        progress.activeLanguage = "tr"
+        var generator = SeededGenerator(seed: 5)
+
+        _ = progress.record(LevelResult(correctLetters: 10, judgedLetters: 10, rules: .standard), using: &generator)
+
+        XCTAssertEqual(progress.levelNumbers, ["en": 1, "tr": 2])
+    }
+
+    func testAVersionOneSaveBecomesEnglishProgress() throws {
+        // Before per-language progress there was only the English pack.
+        let oldSave = #"{"version": 1, "levelNumber": 23, "hints": 2, "grandmas": 1, "yarn": {}}"#
+        var progress = try JSONDecoder().decode(PlayerProgress.self, from: Data(oldSave.utf8))
+
+        XCTAssertEqual(progress.levelNumbers, ["en": 23])
+        XCTAssertEqual(progress.version, PlayerProgress.currentVersion, "converted, so the next save is current")
+        progress.activeLanguage = "tr"
+        XCTAssertEqual(progress.levelNumber, 1)
+    }
+
+    func testBothLanguagesSurviveSaving() throws {
+        var progress = PlayerProgress.newPlayer
+        progress.levelNumber = 12
+        progress.activeLanguage = "tr"
+        progress.levelNumber = 5
+
+        let decoded = try JSONDecoder().decode(PlayerProgress.self, from: JSONEncoder().encode(progress))
+
+        XCTAssertEqual(decoded.levelNumbers, ["en": 12, "tr": 5])
+        XCTAssertEqual(decoded.activeLanguage, "en", "the active language isn't saved; the app sets it at launch")
+    }
+}

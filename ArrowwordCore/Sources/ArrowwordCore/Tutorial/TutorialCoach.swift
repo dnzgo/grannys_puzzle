@@ -68,23 +68,44 @@ public struct TutorialScript: Sendable {
         self.steps = steps
     }
 
-    /// The first-time lesson, for the hand-made board in
-    /// grannys_puzzle/Levels/tutorial-en.json: CAT across, TEA down from
-    /// CAT's T, and HAT across through TEA's A. A test plays this script on
-    /// that file, so a change to either one that breaks the other fails there.
-    public static let standard = TutorialScript(steps: [
-        Step(.welcome, .read(pointingAt: nil)),
-        Step(.clueBox, .read(pointingAt: "CAT")),
-        Step(.typeWord, .fill("CAT")),
-        Step(.tapClue, .selectClue(of: "TEA")),
-        // TEA's T is already there from CAT: the cat reveals the E, ...
-        Step(.catHelps, .useCat),
-        // ... the player types the A, ...
-        Step(.finishWord, .fill("TEA")),
-        // ... and the selection has moved on to HAT, which grandma solves.
-        Step(.askGrandma, .useGrandma),
-        Step(.submit, .submit),
-    ])
+    /// The lesson for a language, or nil if there's none for it.
+    public static func standard(for language: String) -> TutorialScript? {
+        switch language {
+        case "en": english
+        case "tr": turkish
+        default: nil
+        }
+    }
+
+    /// For grannys_puzzle/Levels/tutorial-en.json: CAT across, TEA down
+    /// from CAT's T, and HAT across through TEA's A. A test plays each script
+    /// on its file, so a change to either that breaks the other fails there.
+    public static let english = lesson(first: "CAT", second: "TEA")
+
+    /// For tutorial-tr.json, the same shape: ÇAY across, YÜN down from
+    /// ÇAY's Y, and ANA across through YÜN's N.
+    public static let turkish = lesson(first: "ÇAY", second: "YÜN")
+
+    /// Every language's lesson has the same steps on the same board shape,
+    /// so only the two words the steps point at differ. (The third word is
+    /// the one grandma solves; the selection moves onto it by itself.)
+    private static func lesson(first: String, second: String) -> TutorialScript {
+        TutorialScript(steps: [
+            Step(.welcome, .read(pointingAt: nil)),
+            Step(.clueBox, .read(pointingAt: first)),
+            Step(.typeWord, .fill(first)),
+            Step(.tapClue, .selectClue(of: second)),
+            // The second word's first letter is already there from the
+            // first word: the cat reveals the next one, ...
+            Step(.catHelps, .useCat),
+            // ... the player types the last, ...
+            Step(.finishWord, .fill(second)),
+            // ... and the selection has moved on to the third word, which
+            // grandma solves.
+            Step(.askGrandma, .useGrandma),
+            Step(.submit, .submit),
+        ])
+    }
 }
 
 /// Runs a tutorial script: which step the player is on, what they may do,

@@ -73,7 +73,7 @@ private struct CluePill: View {
                 Image(systemName: answer.direction == .across ? "arrow.right" : "arrow.down")
                     .font(.system(size: 11, weight: .bold))
                     .foregroundStyle(ClueColors.line(model.colorIndex(ofAnswer: answer.id)))
-                    .accessibilityLabel(answer.direction == .across ? "Across" : "Down")
+                    .accessibilityLabel(answer.direction == .across ? Text("Across") : Text("Down"))
                 Text(answer.clueText)
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(Theme.ink)
