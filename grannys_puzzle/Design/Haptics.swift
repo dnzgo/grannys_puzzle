@@ -42,16 +42,10 @@ struct HapticSignal: Equatable {
     let id: Int
 }
 
-/// The player's Haptics setting. The Settings screen will toggle this key;
-/// until it exists, haptics are on.
-enum HapticsSetting {
-    static let key = "hapticsEnabled"
-    static let defaultValue = true
-}
-
 private struct GameHaptics: ViewModifier {
     let signal: HapticSignal?
-    @AppStorage(HapticsSetting.key) private var isEnabled = HapticsSetting.defaultValue
+    // The Haptics switch in Settings writes this same key.
+    @AppStorage(ToggleSetting.haptics.key) private var isEnabled = ToggleSetting.haptics.defaultValue
 
     func body(content: Content) -> some View {
         // Returning nil plays nothing: that's how the setting switches it off.

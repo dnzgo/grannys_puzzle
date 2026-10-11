@@ -6,15 +6,15 @@ import ArrowwordCore
 /// the player reads most.
 struct TopBar: View {
     let model: LevelViewModel
+    let onSettings: () -> Void
 
     var body: some View {
         HStack(spacing: 8) {
             CircleIconButton(systemName: "chevron.left", label: "Home") {
                 withAnimation(.easeInOut(duration: 0.25)) { model.goHome() }
             }
-            // Settings gets its action when the settings screen exists.
             CluePill(model: model)
-            CircleIconButton(systemName: "gearshape", label: "Settings") {}
+            CircleIconButton(systemName: "gearshape", label: "Settings", action: onSettings)
         }
         .frame(height: BoardMetrics.topBarHeight)
     }

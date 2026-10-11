@@ -6,6 +6,11 @@ import ArrowwordCore
 struct LevelScreen: View {
     let model: LevelViewModel
 
+    /// Whether the settings sheet is up. Plain view state, not the view
+    /// model's: opening settings doesn't change the puzzle, and the level
+    /// carries on underneath exactly as it was.
+    @State private var showsSettings = false
+
     var body: some View {
         VStack(spacing: 0) {
             GeometryReader { geometry in
@@ -18,7 +23,7 @@ struct LevelScreen: View {
                 // The spacing values come from BoardMetrics, which reserves
                 // exactly this much height when sizing the cells.
                 VStack(spacing: 0) {
-                    TopBar(model: model)
+                    TopBar(model: model) { showsSettings = true }
                         .padding(.top, BoardMetrics.topBarTopPadding)
 
                     BoardGrid(model: model, metrics: metrics)
@@ -43,6 +48,9 @@ struct LevelScreen: View {
         .background(Theme.background.ignoresSafeArea())
         .preferredColorScheme(.light)
         .gameHaptics(model.haptic)
+        .sheet(isPresented: $showsSettings) {
+            SettingsSheet()
+        }
     }
 
     @ViewBuilder

@@ -14,6 +14,7 @@ struct HomeView: View {
     @State private var speech = GrandmaSpeech()
     @State private var showsYarnBag = false
     @State private var showsWardrobe = false
+    @State private var showsSettings = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
     /// The jar opening being shown, if any.
@@ -55,6 +56,9 @@ struct HomeView: View {
         }
         .sheet(isPresented: $showsWardrobe) {
             WardrobeSheet(progress: game.progress, catalog: game.catalog)
+        }
+        .sheet(isPresented: $showsSettings) {
+            SettingsSheet()
         }
         .overlay {
             if let item = knittingItem {
@@ -114,8 +118,7 @@ struct HomeView: View {
             HelperCountChip(systemImage: "eyeglasses", count: game.progress.grandmas, label: "Grandma helpers")
             Spacer()
             CircleIconButton(systemName: "hanger", label: "Wardrobe") { showsWardrobe = true }
-            // Settings gets its action when the settings screen exists.
-            CircleIconButton(systemName: "gearshape", label: "Settings") {}
+            CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
         }
         .frame(height: BoardMetrics.topBarHeight)
     }
