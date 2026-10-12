@@ -6,6 +6,7 @@
 /// as `GADApplicationIdentifier`, where the SDK reads it.
 public struct GoogleAdsConfiguration: Sendable {
     public var rewardedAdUnitID: String
+    public var interstitialAdUnitID: String
     public var bannerAdUnitID: String
 
     /// Devices that see consent forms in test mode (IDs are printed in the
@@ -17,11 +18,13 @@ public struct GoogleAdsConfiguration: Sendable {
 
     public init(
         rewardedAdUnitID: String,
+        interstitialAdUnitID: String,
         bannerAdUnitID: String,
         consentTestDeviceIDs: [String] = [],
         simulatesEEAForConsent: Bool = false
     ) {
         self.rewardedAdUnitID = rewardedAdUnitID
+        self.interstitialAdUnitID = interstitialAdUnitID
         self.bannerAdUnitID = bannerAdUnitID
         self.consentTestDeviceIDs = consentTestDeviceIDs
         self.simulatesEEAForConsent = simulatesEEAForConsent
@@ -32,6 +35,7 @@ public struct GoogleAdsConfiguration: Sendable {
     /// AdMob account suspended for invalid traffic.
     public static let googleTestUnits = GoogleAdsConfiguration(
         rewardedAdUnitID: "ca-app-pub-3940256099942544/1712485313",
+        interstitialAdUnitID: "ca-app-pub-3940256099942544/4411468910",
         bannerAdUnitID: "ca-app-pub-3940256099942544/2934735716"
     )
 }

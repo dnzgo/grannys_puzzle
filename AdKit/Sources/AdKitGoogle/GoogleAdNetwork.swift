@@ -76,6 +76,11 @@ public final class GoogleAdNetwork: AdNetwork {
         return GoogleRewardedAd(ad: ad)
     }
 
+    public func loadInterstitial() async throws -> any LoadedInterstitialAd {
+        let ad = try await InterstitialAd.load(with: configuration.interstitialAdUnitID, request: Request())
+        return GoogleInterstitialAd(ad: ad)
+    }
+
     public func makeBannerView(size: AdBannerSize) -> AnyView {
         AnyView(
             GoogleBannerView(adUnitID: configuration.bannerAdUnitID)

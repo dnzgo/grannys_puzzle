@@ -1,7 +1,7 @@
 # AdKit
 
-Ads for our iOS games: consent, the tracking question, rewarded ads and
-banners, written once and reused.
+Ads for our iOS games: consent, the tracking question, rewarded ads,
+interstitials and banners, written once and reused.
 
 - **AdKit**: the rules (start order, preloading, retries, expiry) behind a
   small `AdNetwork` protocol. No ad SDK inside, so `swift test` runs it on
@@ -29,9 +29,15 @@ banners, written once and reused.
    and preloads a rewarded ad. Repeat calls do nothing.
 5. Rewarded: show the offer only when `ads.isRewardedReady`, then
    `if await ads.showRewarded() { grant the reward }`.
-6. Banner: `ads.bannerView(size: .standard)` (nil until ads may show).
+6. Interstitials: call `ads.prepareInterstitials()` a little before the app
+   would first show one (so nothing loads for players who won't see one),
+   then `await ads.showInterstitial()` at a natural break. It returns once
+   the ad closes, or at once with `false` if it's too soon (`AdPolicy`:
+   3 minutes between interstitials, 2 minutes after a rewarded video) or
+   none is loaded. *Which* breaks qualify is the app's rule, not AdKit's.
+7. Banner: `ads.bannerView(size: .standard)` (nil until ads may show).
    Reserve its size either way so the layout doesn't jump.
-7. Settings: when `ads.isPrivacyOptionsRequired`, show a "Privacy choices"
+8. Settings: when `ads.isPrivacyOptionsRequired`, show a "Privacy choices"
    row that calls `await ads.presentPrivacyOptions()`.
 
 ## Before release

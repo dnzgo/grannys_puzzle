@@ -29,6 +29,10 @@ public protocol AdNetwork: AnyObject {
     /// Loads one rewarded ad, ready to show.
     func loadRewarded() async throws -> any LoadedRewardedAd
 
+    /// Loads one interstitial (a full-screen ad shown at a natural break,
+    /// with nothing to earn), ready to show.
+    func loadInterstitial() async throws -> any LoadedInterstitialAd
+
     /// A banner view of the given size, loading its own ads.
     func makeBannerView(size: AdBannerSize) -> AnyView
 }
@@ -40,6 +44,13 @@ public protocol LoadedRewardedAd: AnyObject {
     /// long enough to earn the reward, false if they closed it early or it
     /// couldn't be shown.
     func present() async -> Bool
+}
+
+/// An interstitial that has loaded and can be shown once.
+@MainActor
+public protocol LoadedInterstitialAd: AnyObject {
+    /// Shows the ad and returns when it's closed (or couldn't be shown).
+    func present() async
 }
 
 /// Banner sizes AdKit supports. Only the standard one for now: its fixed

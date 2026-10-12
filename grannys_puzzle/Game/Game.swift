@@ -42,6 +42,11 @@ final class Game {
     @ObservationIgnored private var contentLanguage: String
     /// Loads another language's content; nil in previews.
     @ObservationIgnored private let loadContent: ((String) throws -> GameContent)?
+    /// When an ad break between levels is due (this session only).
+    @ObservationIgnored private var adBreaks = AdBreakSchedule()
+    /// True from tapping Next until the break's ad has closed, so a second
+    /// tap can't open two levels or ask for two ads.
+    @ObservationIgnored private var isTakingAdBreak = false
 
     init(
         pack: LevelPack,
@@ -174,6 +179,9 @@ final class Game {
     func play() {
         guard let number = nextLevelNumber else { return }
         let level = pack.levels[number - 1]
+        if adBreaks.wantsAdsLoaded(forLevel: number) {
+            ads?.prepareInterstitials()
+        }
         screen = .level(LevelViewModel(puzzle: startingPuzzle(for: level), levelNumber: number, host: self))
     }
 
@@ -246,6 +254,9 @@ extension Game: LevelHost {
     }
 
     func record(_ result: LevelResult) -> [YarnColor] {
+        if result.passed {
+            adBreaks.levelPassed(number: progress.levelNumber)
+        }
         var earned: [YarnColor] = []
         update {
             earned = $0.record(result, using: &generator)
@@ -255,19 +266,25 @@ extension Game: LevelHost {
         return earned
     }
 
+    /// An ad is loaded and today's videos aren't used up. (The day is read
+    /// when asked; past midnight the next change on screen picks it up.)
     var canWatchAdForHelper: Bool {
-        ads?.isRewardedReady ?? false
+        guard let ads, ads.isRewardedReady else { return false }
+        return progress.rewardedAdsLeft(today: JarDay.number()) > 0
     }
 
     func watchAd(for reward: HelperAdReward) async -> Bool {
+        guard let ads, progress.rewardedAdsLeft(today: JarDay.number()) > 0 else { return false }
         // Granted only when the ad reports the reward as earned, and saved
         // right away like every other change.
-        guard let ads, await ads.showRewarded() else { return false }
+        guard await ads.showRewarded() else { return false }
+        let today = JarDay.number()
         update { progress in
             switch reward {
             case .catHints: progress.hints += reward.amount
             case .grandma: progress.grandmas += reward.amount
             }
+            progress.recordRewardedAd(today: today)
         }
         return true
     }
@@ -278,7 +295,26 @@ extension Game: LevelHost {
         update { $0.board = board }
     }
 
+    /// Next level, with an ad break first when one is due. The result
+    /// screen stays up under the ad and the next level opens once it
+    /// closes; if no ad shows (too soon, none loaded), it opens at once.
     func continueToNextLevel() {
+        guard !isTakingAdBreak else { return }
+        guard adBreaks.isBreakDue, let ads else {
+            openNextLevel()
+            return
+        }
+        isTakingAdBreak = true
+        Task {
+            if await ads.showInterstitial() {
+                adBreaks.breakTaken()
+            }
+            isTakingAdBreak = false
+            openNextLevel()
+        }
+    }
+
+    private func openNextLevel() {
         // After the last level in the pack, home shows that more are coming.
         if nextLevelNumber != nil {
             play()

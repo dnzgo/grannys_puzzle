@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-  Info.plist keys Xcode can't generate from build settings. Xcode merges
-  this file with the generated Info.plist (INFOPLIST_FILE in the target's
-  build settings points here).
-
-  - GADApplicationIdentifier: the AdMob app ID. This is Google's TEST app ID.
-    TODO: before release, replace it with the real one (AdMob console, App
-    settings). The real ad unit IDs go in grannys_puzzle/Ads/AdsSetup.swift.
-  - NSUserTrackingUsageDescription: the text in iOS's "Allow tracking?"
-    prompt. Without it, iOS stops the app when the prompt is requested.
-  - SKAdNetworkItems: ad networks allowed to attribute installs without
-    tracking (Apple's SKAdNetwork). The list is Google's, from the AdMob
-    iOS quick start; it changes now and then, so refresh it before releases.
--->
 <plist version="1.0">
 <dict>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3940256099942544~1458002511</string>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This lets Granny's Puzzle show ads that suit you better. You'll see the same number of ads either way.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

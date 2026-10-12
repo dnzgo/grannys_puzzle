@@ -125,7 +125,7 @@ final class AdsControllerTests: XCTestCase {
         await controller.start()
         await controller.waitForRewardedLoad()
 
-        XCTAssertEqual(waits.durations.prefix(10).max(), RewardedAdPolicy.standard.maxRetryDelay)
+        XCTAssertEqual(waits.durations.prefix(10).max(), AdPolicy.standard.maxRetryDelay)
     }
 
     func testAnAdAboutToExpireIsReplaced() async {
@@ -148,6 +148,96 @@ final class AdsControllerTests: XCTestCase {
 
         XCTAssertEqual(network.loadCount, 2)
         XCTAssertTrue(controller.isRewardedReady)
+    }
+
+    // MARK: - Interstitials
+
+    func testInterstitialsAreNotLoadedUntilTheAppAsksForThem() async {
+        let network = FakeNetwork()
+        let controller = AdsController(network: network, tracking: FakeTracking(), sleep: WaitLog().sleep)
+
+        await controller.start()
+        await controller.waitForRewardedLoad()
+
+        XCTAssertEqual(network.interstitialLoadCount, 0)
+        let shown = await controller.showInterstitial()
+        XCTAssertFalse(shown)
+    }
+
+    func testAskingBeforeStartingLoadsOneOnceAdsAreAllowed() async {
+        let network = FakeNetwork()
+        let controller = AdsController(network: network, tracking: FakeTracking(), sleep: WaitLog().sleep)
+
+        controller.prepareInterstitials()
+        XCTAssertEqual(network.interstitialLoadCount, 0, "Nothing may load before consent")
+        await controller.start()
+        await controller.waitForInterstitialLoad()
+
+        XCTAssertTrue(controller.isInterstitialReady)
+    }
+
+    func testAShownInterstitialIsReplacedByTheNextOne() async {
+        let network = FakeNetwork()
+        let controller = AdsController(network: network, tracking: FakeTracking(), sleep: WaitLog().sleep)
+        await controller.start()
+        controller.prepareInterstitials()
+        await controller.waitForInterstitialLoad()
+
+        let shown = await controller.showInterstitial()
+        await controller.waitForInterstitialLoad()
+
+        XCTAssertTrue(shown)
+        XCTAssertEqual(network.interstitialsPresented, 1)
+        XCTAssertEqual(network.interstitialLoadCount, 2)
+        XCTAssertTrue(controller.isInterstitialReady)
+    }
+
+    func testTheNextInterstitialWaitsForTheMinimumGap() async {
+        let clock = TestClock()
+        let controller = AdsController(network: FakeNetwork(), tracking: FakeTracking(), sleep: WaitLog().sleep, now: clock.now)
+        await controller.start()
+        controller.prepareInterstitials()
+        await controller.waitForInterstitialLoad()
+        _ = await controller.showInterstitial()
+        await controller.waitForInterstitialLoad()
+
+        clock.advance(by: AdPolicy.standard.interstitialMinimumGap - .seconds(1))
+        let tooSoon = await controller.showInterstitial()
+        clock.advance(by: .seconds(1))
+        let onTime = await controller.showInterstitial()
+
+        XCTAssertFalse(tooSoon)
+        XCTAssertTrue(onTime)
+    }
+
+    func testNoInterstitialRightAfterARewardedVideo() async {
+        let clock = TestClock()
+        let controller = AdsController(network: FakeNetwork(), tracking: FakeTracking(), sleep: WaitLog().sleep, now: clock.now)
+        await controller.start()
+        controller.prepareInterstitials()
+        await controller.waitForRewardedLoad()
+        await controller.waitForInterstitialLoad()
+
+        _ = await controller.showRewarded()
+        let rightAfter = await controller.showInterstitial()
+        clock.advance(by: AdPolicy.standard.interstitialGapAfterRewarded)
+        let later = await controller.showInterstitial()
+
+        XCTAssertFalse(rightAfter)
+        XCTAssertTrue(later)
+    }
+
+    func testWithoutConsentNoInterstitialLoadsOrShows() async {
+        let network = FakeNetwork()
+        network.consentGiven = false
+        let controller = AdsController(network: network, tracking: FakeTracking(), sleep: WaitLog().sleep)
+
+        controller.prepareInterstitials()
+        await controller.start()
+        let shown = await controller.showInterstitial()
+
+        XCTAssertFalse(shown)
+        XCTAssertEqual(network.interstitialLoadCount, 0)
     }
 
     // MARK: - Privacy choices
@@ -188,7 +278,7 @@ private final class WaitLog: @unchecked Sendable {
     var sleep: @Sendable (Duration) async throws -> Void {
         { [self] duration in
             await MainActor.run { self.durations.append(duration) }
-            guard duration == RewardedAdPolicy.standard.maxAge else { return }
+            guard duration == AdPolicy.standard.maxAge else { return }
             let runsOut = await MainActor.run { () -> Bool in
                 guard self.expiriesToRunOut > 0 else { return false }
                 self.expiriesToRunOut -= 1
@@ -242,6 +332,14 @@ private final class FakeNetwork: AdNetwork {
         return FakeRewardedAd(earns: viewerWatchesToTheEnd)
     }
 
+    private(set) var interstitialLoadCount = 0
+    private(set) var interstitialsPresented = 0
+
+    func loadInterstitial() async throws -> any LoadedInterstitialAd {
+        interstitialLoadCount += 1
+        return FakeInterstitialAd { [weak self] in self?.interstitialsPresented += 1 }
+    }
+
     func makeBannerView(size: AdBannerSize) -> AnyView { AnyView(Color.clear) }
 }
 
@@ -250,4 +348,24 @@ private final class FakeRewardedAd: LoadedRewardedAd {
     private let earns: Bool
     init(earns: Bool) { self.earns = earns }
     func present() async -> Bool { earns }
+}
+
+@MainActor
+private final class FakeInterstitialAd: LoadedInterstitialAd {
+    private let onPresent: () -> Void
+    init(onPresent: @escaping () -> Void) { self.onPresent = onPresent }
+    func present() async { onPresent() }
+}
+
+/// A clock the test moves by hand, for the time-between-ads rules.
+private final class TestClock: @unchecked Sendable {
+    private var instant = ContinuousClock.now
+
+    var now: () -> ContinuousClock.Instant {
+        { [self] in instant }
+    }
+
+    func advance(by duration: Duration) {
+        instant = instant + duration
+    }
 }

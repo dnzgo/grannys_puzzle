@@ -1,9 +1,9 @@
 import Observation
 import SwiftUI
 
-/// Timing for rewarded ads. Values are AdMob's guidance; other networks are
-/// similar.
-public struct RewardedAdPolicy: Sendable {
+/// Timing rules for full-screen ads. Load and expiry values are AdMob's
+/// guidance; other networks are similar.
+public struct AdPolicy: Sendable {
     /// Wait before retrying a failed load; doubles after each failure, so a
     /// player who is offline doesn't cause a request every few seconds.
     public var firstRetryDelay: Duration = .seconds(5)
@@ -11,18 +11,31 @@ public struct RewardedAdPolicy: Sendable {
     /// A loaded ad expires after an hour; it's replaced a little before.
     public var maxAge: Duration = .seconds(55 * 60)
 
+    /// Least time from one interstitial closing to the next one showing,
+    /// however often the app asks. Ad networks penalise apps that show them
+    /// too often, and players leave.
+    public var interstitialMinimumGap: Duration = .seconds(180)
+    /// No interstitial this soon after a rewarded video: the player just
+    /// chose to watch one, and a second, unasked-for ad would punish that.
+    public var interstitialGapAfterRewarded: Duration = .seconds(120)
+
     public init() {}
 
-    public static let standard = RewardedAdPolicy()
+    public static let standard = AdPolicy()
 }
 
 /// The app's one ads object: gathers consent, asks the tracking question,
-/// starts the network, keeps a rewarded ad ready, and hands out banners.
+/// starts the network, keeps full-screen ads ready, and hands out banners.
 ///
 /// Apps observe it (`status`, `isRewardedReady`, `isPrivacyOptionsRequired`)
 /// and call it; they never touch the network's SDK. The order of the start
 /// steps is the part that matters legally and is easy to get wrong, which
 /// is why it lives here, written once and tested.
+///
+/// It holds the rules every app shares (time between interstitials, none
+/// right after a rewarded video). *When* in the app an interstitial fits
+/// (after which level, how many levels apart) is the app's call: it asks
+/// `showInterstitial()` at those moments, and this may still say no.
 @MainActor
 @Observable
 public final class AdsController {
@@ -39,42 +52,50 @@ public final class AdsController {
     }
 
     public private(set) var status: Status = .idle
-    /// Whether a rewarded ad can be shown right now.
-    public private(set) var isRewardedReady = false
     /// Whether Settings must offer "Privacy choices" (see `presentPrivacyOptions`).
     public private(set) var isPrivacyOptionsRequired = false
 
+    /// Whether a rewarded ad can be shown right now.
+    public var isRewardedReady: Bool { rewarded.isReady }
+
     private let network: any AdNetwork
     private let tracking: any TrackingPermission
-    private let policy: RewardedAdPolicy
-    /// Injected so tests can control time instead of waiting for it.
-    private let sleep: @Sendable (Duration) async throws -> Void
+    private let policy: AdPolicy
+    /// Injected so tests can move time forward instead of waiting.
+    private let now: () -> ContinuousClock.Instant
 
-    @ObservationIgnored private var rewardedAd: (any LoadedRewardedAd)?
-    @ObservationIgnored private var loadTask: Task<Void, Never>?
-    /// Counts loads started, to tell the current one from a cancelled one.
-    @ObservationIgnored private var loadGeneration = 0
-    @ObservationIgnored private var expiryTask: Task<Void, Never>?
+    // Observable themselves, so reading `isReady` through them is tracked.
+    private let rewarded: PreloadedAd<any LoadedRewardedAd>
+    private let interstitial: PreloadedAd<any LoadedInterstitialAd>
+
     @ObservationIgnored private var hasStartedNetwork = false
     @ObservationIgnored private var isPresenting = false
+    /// Off until the app first asks for interstitials, so an app (or a new
+    /// player) that isn't showing them yet doesn't request ads it won't use.
+    @ObservationIgnored private var wantsInterstitials = false
+    @ObservationIgnored private var lastInterstitialClosed: ContinuousClock.Instant?
+    @ObservationIgnored private var lastRewardedClosed: ContinuousClock.Instant?
 
     public init(
         network: any AdNetwork,
         tracking: any TrackingPermission = SystemTrackingPermission(),
-        policy: RewardedAdPolicy = .standard,
-        sleep: @escaping @Sendable (Duration) async throws -> Void = { try await Task.sleep(for: $0) }
+        policy: AdPolicy = .standard,
+        sleep: @escaping @Sendable (Duration) async throws -> Void = { try await Task.sleep(for: $0) },
+        now: @escaping () -> ContinuousClock.Instant = { ContinuousClock.now }
     ) {
         self.network = network
         self.tracking = tracking
         self.policy = policy
-        self.sleep = sleep
+        self.now = now
+        rewarded = PreloadedAd(policy: policy, sleep: sleep) { try await network.loadRewarded() }
+        interstitial = PreloadedAd(policy: policy, sleep: sleep) { try await network.loadInterstitial() }
     }
 
     // MARK: - Starting
 
     /// Consent, then the tracking question, then the SDK, then the first
-    /// rewarded ad. In that order because ads may not be requested (and the
-    /// SDK shouldn't collect anything) before consent, and Apple and Google
+    /// ads. In that order because ads may not be requested (and the SDK
+    /// shouldn't collect anything) before consent, and Apple and Google
     /// both want the consent message before the tracking prompt.
     ///
     /// Call it when the app is ready for a form to appear, e.g. when the
@@ -97,7 +118,8 @@ public final class AdsController {
             hasStartedNetwork = true
         }
         status = .ready
-        loadRewardedIfNeeded()
+        rewarded.activate()
+        if wantsInterstitials { interstitial.activate() }
     }
 
     /// Lets the player change their consent choice (Settings → Privacy
@@ -123,93 +145,68 @@ public final class AdsController {
     // MARK: - Rewarded
 
     /// Shows the rewarded ad. Returns true only if the viewer earned the
-    /// reward, so the caller grants it exactly then. The next ad starts
-    /// loading as soon as this one closes.
+    /// reward, so the caller grants it exactly then. The next one starts
+    /// loading straight away.
     public func showRewarded() async -> Bool {
-        guard status == .ready, !isPresenting, let ad = rewardedAd else { return false }
-        // Taken out before presenting: an ad is shown at most once, and a
-        // second tap while it's on screen finds nothing to show.
-        rewardedAd = nil
-        isRewardedReady = false
-        expiryTask?.cancel()
+        guard status == .ready, !isPresenting, let ad = rewarded.take() else { return false }
         isPresenting = true
         let earned = await ad.present()
         isPresenting = false
-        loadRewardedIfNeeded()
+        lastRewardedClosed = now()
         return earned
     }
 
-    /// Keeps trying until an ad loads, waiting longer after each failure.
-    private func loadRewardedIfNeeded() {
-        guard status == .ready, rewardedAd == nil, loadTask == nil else { return }
-        loadGeneration += 1
-        let generation = loadGeneration
-        loadTask = Task { [weak self] in
-            await self?.loadRewardedWithRetries()
-            // Only clear our own handle: if ads were stopped and restarted
-            // meanwhile, a newer load owns `loadTask` now.
-            if self?.loadGeneration == generation {
-                self?.loadTask = nil
-            }
-        }
+    // MARK: - Interstitials
+
+    /// Starts keeping an interstitial loaded. Call it a little before the
+    /// first moment the app would show one (e.g. once a player is close to
+    /// the level where they start), so it's ready in time. Calling it again
+    /// is harmless.
+    public func prepareInterstitials() {
+        wantsInterstitials = true
+        if status == .ready { interstitial.activate() }
     }
 
-    private func loadRewardedWithRetries() async {
-        var delay = policy.firstRetryDelay
-        while status == .ready, !Task.isCancelled {
-            do {
-                let ad = try await network.loadRewarded()
-                // A network's load doesn't stop when its task is cancelled;
-                // an ad arriving for a cancelled load is dropped.
-                guard status == .ready, !Task.isCancelled else { return }
-                rewardedAd = ad
-                isRewardedReady = true
-                scheduleExpiry()
-                return
-            } catch {
-                // Expected now and then (no ad to fill, offline); the retry
-                // handles it. Nothing for the player to see.
-                do {
-                    try await sleep(delay)
-                } catch {
-                    return  // cancelled
-                }
-                delay = min(delay * 2, policy.maxRetryDelay)
-            }
+    /// Shows an interstitial if one is loaded and the timing rules allow it.
+    /// Returns once it's closed: true if one was shown. False is normal (too
+    /// soon, nothing loaded, no consent); the app just carries on.
+    public func showInterstitial() async -> Bool {
+        guard status == .ready, !isPresenting, interstitialTimingAllows(), let ad = interstitial.take() else {
+            return false
         }
+        isPresenting = true
+        await ad.present()
+        isPresenting = false
+        lastInterstitialClosed = now()
+        return true
     }
 
-    /// Drops the ad shortly before the network would consider it stale,
-    /// and loads a fresh one, so `isRewardedReady` never promises an ad
-    /// that can't play.
-    private func scheduleExpiry() {
-        expiryTask?.cancel()
-        expiryTask = Task { [weak self, sleep, maxAge = policy.maxAge] in
-            do {
-                try await sleep(maxAge)
-            } catch {
-                return  // cancelled: the ad was shown or ads stopped
-            }
-            guard let self else { return }
-            self.rewardedAd = nil
-            self.isRewardedReady = false
-            self.loadRewardedIfNeeded()
-        }
+    private func interstitialTimingAllows() -> Bool {
+        let time = now()
+        if let last = lastInterstitialClosed, time - last < policy.interstitialMinimumGap { return false }
+        if let last = lastRewardedClosed, time - last < policy.interstitialGapAfterRewarded { return false }
+        return true
     }
+
+    // MARK: - Stopping
 
     private func stopAds() {
         status = .unavailable
-        loadTask?.cancel()
-        loadTask = nil
-        expiryTask?.cancel()
-        rewardedAd = nil
-        isRewardedReady = false
+        rewarded.deactivate()
+        interstitial.deactivate()
     }
 
     // MARK: - Testing
 
     /// Waits for the rewarded load in progress, if any.
     func waitForRewardedLoad() async {
-        await loadTask?.value
+        await rewarded.waitForLoad()
     }
+
+    /// Waits for the interstitial load in progress, if any.
+    func waitForInterstitialLoad() async {
+        await interstitial.waitForLoad()
+    }
+
+    var isInterstitialReady: Bool { interstitial.isReady }
 }

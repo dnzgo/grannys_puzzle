@@ -39,6 +39,11 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     /// skipped). Until it is, the app opens on the lesson. Shared by all
     /// languages: the rules of the game are the same in each.
     public var tutorialDone: Bool
+    /// `JarDay` number of the last day a rewarded ad was watched, and how
+    /// many were watched that day; the daily cap counts these (see
+    /// RewardedAdLimit.swift). Saved, so restarting the app doesn't reset it.
+    public var rewardedAdDay: Int?
+    public var rewardedAdsThatDay: Int
 
     /// The language being played. Not saved: the app sets it at launch
     /// from the pack it loads (which follows the device language), and
@@ -68,6 +73,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         jarStreak: Int = 0,
         lastJarDay: Int? = nil,
         tutorialDone: Bool = false,
+        rewardedAdDay: Int? = nil,
+        rewardedAdsThatDay: Int = 0,
         activeLanguage: String = PlayerProgress.legacyLanguage
     ) {
         self.version = version
@@ -80,6 +87,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.jarStreak = jarStreak
         self.lastJarDay = lastJarDay
         self.tutorialDone = tutorialDone
+        self.rewardedAdDay = rewardedAdDay
+        self.rewardedAdsThatDay = rewardedAdsThatDay
         self.activeLanguage = activeLanguage
     }
 
@@ -87,6 +96,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
         case version, levelNumbers, hints, grandmas, yarn, wardrobe, boards, jarStreak, lastJarDay, tutorialDone
+        case rewardedAdDay, rewardedAdsThatDay
         // Version 1 only; read when converting, never written.
         case levelNumber, board
     }
@@ -106,6 +116,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         wardrobe = try container.decodeIfPresent(Set<String>.self, forKey: .wardrobe) ?? []
         jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
         lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
+        rewardedAdDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdDay)
+        rewardedAdsThatDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdsThatDay) ?? 0
 
         if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
             self.levelNumbers = levelNumbers
@@ -136,6 +148,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encode(jarStreak, forKey: .jarStreak)
         try container.encodeIfPresent(lastJarDay, forKey: .lastJarDay)
         try container.encode(tutorialDone, forKey: .tutorialDone)
+        try container.encodeIfPresent(rewardedAdDay, forKey: .rewardedAdDay)
+        try container.encode(rewardedAdsThatDay, forKey: .rewardedAdsThatDay)
     }
 
     /// What a brand-new player starts with.
