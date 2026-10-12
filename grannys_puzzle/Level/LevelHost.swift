@@ -31,6 +31,10 @@ protocol LevelHost: AnyObject {
     /// (an ad is loaded and allowed).
     var canWatchAdForHelper: Bool { get }
 
+    /// How many helpers a video gives for this choice. The host decides
+    /// because the number is tuned remotely (see `GameTuning`).
+    func amount(of reward: HelperAdReward) -> Int
+
     /// Plays a rewarded ad and, if it's watched to the end, gives the
     /// reward the player picked. Returns whether it was given.
     func watchAd(for reward: HelperAdReward) async -> Bool
@@ -44,12 +48,13 @@ enum HelperAdReward: CaseIterable {
     case catHints
     case grandma
 
-    /// A grandma solves a whole word, about three letters' worth, so one
-    /// grandma and three cats are offered as equal choices. Tune here.
-    var amount: Int {
+    /// How many a video gives. A grandma solves a whole word, about three
+    /// letters' worth, so by default one grandma and three cats are offered
+    /// as equal choices; the server can change the rate.
+    func amount(in tuning: GameTuning) -> Int {
         switch self {
-        case .catHints: 3
-        case .grandma: 1
+        case .catHints: tuning.catHintsPerAd
+        case .grandma: tuning.grandmasPerAd
         }
     }
 }

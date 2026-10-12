@@ -287,6 +287,11 @@ final class LevelViewModel {
         isOfferingAd = true
     }
 
+    /// How many helpers a video gives for this choice (the offer card shows it).
+    func adRewardAmount(_ reward: HelperAdReward) -> Int {
+        host?.amount(of: reward) ?? 0
+    }
+
     func cancelAdOffer() {
         isOfferingAd = false
     }
@@ -301,7 +306,7 @@ final class LevelViewModel {
             self.isWatchingAd = false
             guard earned else { return }
             self.feel(.helperEarned)
-            self.speech.say(GrandmaLines.adReward(reward))
+            self.speech.say(GrandmaLines.adReward(reward, amount: self.adRewardAmount(reward)))
         }
     }
 

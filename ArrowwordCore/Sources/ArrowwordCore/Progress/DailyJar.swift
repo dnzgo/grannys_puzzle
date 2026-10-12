@@ -25,7 +25,7 @@ public struct JarOpening: Equatable, Sendable {
 
 /// The jar's numbers, kept together so they can be tuned in one place (and
 /// later come from remote config, like the scoring thresholds).
-public struct DailyJarRules: Sendable {
+public struct DailyJarRules: Equatable, Sendable {
     /// Days in one streak cycle; the last day gives `bigReward`.
     public var streakLength = 7
     /// Chance that an ordinary day gives a grandma instead of cats. Grandmas

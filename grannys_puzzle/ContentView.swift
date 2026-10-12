@@ -23,6 +23,8 @@ struct ContentView: View {
                 .onChange(of: languageCode) { _, newCode in
                     game.switchLanguage(to: newCode)
                 }
+                // Once per launch: the server's numbers, if any.
+                .task { await game.loadRemoteTuning() }
         case .failed(let message):
             // A bundled pack failing to load is a bug in the build, but the
             // app should say so instead of crashing.
@@ -61,6 +63,9 @@ private enum Startup {
     case failed(String)
 
     static func load() -> Startup {
+        // First, before the ads controller exists: Google's consent check
+        // (which the home screen starts) must find Firebase running.
+        let services = ServicesSetup.start()
         do {
             let language = AppLanguage.current.rawValue
             let content = try LevelLoader.content(for: language)
@@ -70,6 +75,7 @@ private enum Startup {
                 language: language,
                 store: progressStore(),
                 ads: AdsSetup.makeController(),
+                services: services,
                 loadContent: LevelLoader.content(for:)
             )
             game.startTutorialIfNeeded()

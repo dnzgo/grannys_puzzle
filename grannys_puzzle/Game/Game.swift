@@ -3,6 +3,7 @@ import Observation
 import os
 import AdKit
 import ArrowwordCore
+import GameServices
 
 /// The running game: the player's saved progress, the level pack, and which
 /// screen is showing.
@@ -29,6 +30,9 @@ final class Game {
     private(set) var tutorial: Level?
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
+    /// The tunable numbers: the defaults, until the server's values are
+    /// loaded at launch (see `loadRemoteTuning`).
+    private(set) var tuning = GameTuning.standard
 
     /// Nil in previews, so previews never touch the real save file.
     @ObservationIgnored private let store: ProgressStore?
@@ -47,6 +51,13 @@ final class Game {
     /// True from tapping Next until the break's ad has closed, so a second
     /// tap can't open two levels or ask for two ads.
     @ObservationIgnored private var isTakingAdBreak = false
+    /// Analytics and remote values; nil without Firebase and in previews.
+    @ObservationIgnored private let events: EventLogger?
+    @ObservationIgnored private let remoteValues: (any RemoteValueSource)?
+    /// When the current level (or its retry) started, for `level_end`'s time.
+    @ObservationIgnored private var attemptStartedAt: ContinuousClock.Instant?
+    /// Whether the lesson now playing was finished, to tell a skip apart.
+    @ObservationIgnored private var lessonFinished = false
 
     init(
         pack: LevelPack,
@@ -55,9 +66,12 @@ final class Game {
         store: ProgressStore?,
         ads: AdsController? = nil,
         catalog: KnittingCatalog = .standard,
+        services: AppServices = .none,
         loadContent: ((String) throws -> GameContent)? = nil
     ) {
         self.pack = pack
+        self.events = services.events
+        self.remoteValues = services.remoteValues
         self.contentLanguage = language ?? pack.language
         self.loadContent = loadContent
         self.ads = ads
@@ -86,6 +100,38 @@ final class Game {
         catalog.items.contains(where: progress.canKnit)
     }
 
+    // MARK: - Tuning
+
+    /// Switches to the numbers the server set (downloaded on an earlier
+    /// launch), then downloads new ones for the next launch.
+    ///
+    /// Safe to run while the home screen shows: a level takes its rules when
+    /// it opens, so one already open keeps the rules it started with.
+    func loadRemoteTuning() async {
+        guard let remoteValues else { return }
+        await remoteValues.activateFetched()
+        // Read every key up front, so the tuning code works on plain values.
+        var values: [String: Double] = [:]
+        for key in GameTuning.Key.allCases {
+            values[key.rawValue] = remoteValues.number(forKey: key.rawValue)
+        }
+        let resolved = GameTuning.resolved { values[$0] }
+        if !resolved.ignored.isEmpty {
+            // A console mistake: the defaults stand in, but it should be fixed.
+            let keys = resolved.ignored.map(\.rawValue).joined(separator: ", ")
+            Logger(subsystem: "grannys_puzzle", category: "tuning")
+                .error("Ignored unusable remote values: \(keys, privacy: .public)")
+        }
+        apply(resolved.tuning)
+        await remoteValues.fetchForNextLaunch()
+    }
+
+    private func apply(_ newTuning: GameTuning) {
+        tuning = newTuning
+        adBreaks.firstLevel = newTuning.adBreakFirstLevel
+        adBreaks.levelsBetween = newTuning.adBreakLevelsBetween
+    }
+
     // MARK: - Knitting
 
     /// Knits an item if the player can afford it, and saves at once, before
@@ -93,7 +139,9 @@ final class Game {
     func knit(_ item: KnitItem) -> Bool {
         var outcome = PlayerProgress.KnitOutcome.alreadyOwned
         update { outcome = $0.knit(item) }
-        return outcome == .knitted
+        guard outcome == .knitted else { return false }
+        events?.log(.itemKnitted(item))
+        return true
     }
 
     // MARK: - Daily jar
@@ -102,7 +150,8 @@ final class Game {
     /// any animation. Nil if it was already opened today.
     func openJar(today: Int) -> JarOpening? {
         var opening: JarOpening?
-        update { opening = $0.openJar(today: today, using: &generator) }
+        update { opening = $0.openJar(today: today, rules: tuning.jar, using: &generator) }
+        if let opening { events?.log(.jarOpened(opening)) }
         return opening
     }
 
@@ -120,6 +169,7 @@ final class Game {
             contentLanguage = language
             progress.activeLanguage = pack.language
             screen = .home
+            events?.log(.languageSwitched(to: language))
         } catch {
             // Only a broken build gets here; staying in the current language
             // is better than a game with no puzzles.
@@ -147,18 +197,22 @@ final class Game {
             logger.error("Tutorial script doesn't fit the tutorial board; skipping it")
             return
         }
+        lessonFinished = false
         screen = .level(LevelViewModel(
             puzzle: PuzzleState(level: tutorial),
             levelNumber: 0,
             host: tutorialHost,
             coach: coach
         ))
+        events?.log(.tutorialBegin)
     }
 
     /// The lesson's board was solved: its yarn, the first time only.
     func completeTutorial() -> [YarnColor] {
         var earned: [YarnColor] = []
         update { earned = $0.completeTutorial(using: &generator) }
+        lessonFinished = true
+        events?.log(.tutorialComplete)
         return earned
     }
 
@@ -166,6 +220,9 @@ final class Game {
     /// player who skipped chose not to see it, so it doesn't come back
     /// (Settings has it if they change their mind).
     func leaveTutorial() {
+        if !lessonFinished {
+            events?.log(.tutorialSkip)
+        }
         if !progress.tutorialDone {
             update { $0.tutorialDone = true }
         }
@@ -182,7 +239,19 @@ final class Game {
         if adBreaks.wantsAdsLoaded(forLevel: number) {
             ads?.prepareInterstitials()
         }
-        screen = .level(LevelViewModel(puzzle: startingPuzzle(for: level), levelNumber: number, host: self))
+        let puzzle = startingPuzzle(for: level)
+        // Read after `startingPuzzle`, which drops a saved board that no
+        // longer fits: only a board actually restored counts as resumed.
+        let resumed = progress.board != nil
+        screen = .level(LevelViewModel(
+            puzzle: puzzle,
+            levelNumber: number,
+            host: self,
+            // The level keeps these rules even if new tuning arrives.
+            scoringRules: tuning.scoring
+        ))
+        attemptStartedAt = .now
+        events?.log(.levelStart(level: number, language: pack.language, resumed: resumed))
     }
 
     /// The level as the player left it, or fresh if there's no saved board
@@ -244,18 +313,22 @@ extension Game: LevelHost {
     func spendHint() -> Bool {
         var spent = false
         update { spent = $0.spendHint() }
+        if spent { events?.log(.helperUsed(.cat, level: progress.levelNumber)) }
         return spent
     }
 
     func spendGrandma() -> Bool {
         var spent = false
         update { spent = $0.spendGrandma() }
+        if spent { events?.log(.helperUsed(.grandma, level: progress.levelNumber)) }
         return spent
     }
 
     func record(_ result: LevelResult) -> [YarnColor] {
+        // The level being judged; `record` below moves the number on.
+        let level = progress.levelNumber
         if result.passed {
-            adBreaks.levelPassed(number: progress.levelNumber)
+            adBreaks.levelPassed(number: level)
         }
         var earned: [YarnColor] = []
         update {
@@ -263,6 +336,12 @@ extension Game: LevelHost {
             // Judged boards are finished: a pass moves on, a fail starts over.
             $0.board = nil
         }
+
+        let now = ContinuousClock.now
+        let seconds = attemptStartedAt.map { Int((now - $0).components.seconds) } ?? 0
+        // A retry after a fail is timed from here.
+        attemptStartedAt = now
+        events?.log(.levelEnd(level: level, language: pack.language, result: result, yarn: earned.count, seconds: seconds))
         return earned
     }
 
@@ -270,19 +349,29 @@ extension Game: LevelHost {
     /// when asked; past midnight the next change on screen picks it up.)
     var canWatchAdForHelper: Bool {
         guard let ads, ads.isRewardedReady else { return false }
-        return progress.rewardedAdsLeft(today: JarDay.number()) > 0
+        return progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay) > 0
+    }
+
+    func amount(of reward: HelperAdReward) -> Int {
+        reward.amount(in: tuning)
     }
 
     func watchAd(for reward: HelperAdReward) async -> Bool {
-        guard let ads, progress.rewardedAdsLeft(today: JarDay.number()) > 0 else { return false }
+        guard let ads, progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay) > 0 else {
+            return false
+        }
+        let level = progress.levelNumber
         // Granted only when the ad reports the reward as earned, and saved
         // right away like every other change.
-        guard await ads.showRewarded() else { return false }
+        let earned = await ads.showRewarded()
+        events?.log(.rewardedVideo(reward, earned: earned, level: level))
+        guard earned else { return false }
+        let amount = reward.amount(in: tuning)
         let today = JarDay.number()
         update { progress in
             switch reward {
-            case .catHints: progress.hints += reward.amount
-            case .grandma: progress.grandmas += reward.amount
+            case .catHints: progress.hints += amount
+            case .grandma: progress.grandmas += amount
             }
             progress.recordRewardedAd(today: today)
         }
@@ -308,6 +397,8 @@ extension Game: LevelHost {
         Task {
             if await ads.showInterstitial() {
                 adBreaks.breakTaken()
+                // The level just passed; `record` already moved the number on.
+                events?.log(.adBreak(afterLevel: progress.levelNumber - 1))
             }
             isTakingAdBreak = false
             openNextLevel()

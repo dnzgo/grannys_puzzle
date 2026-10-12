@@ -15,3 +15,4 @@ Packages/
 # Secrets (API keys, Firebase config with keys) never go into git
 *.env
 .netrc
+GoogleService-Info.plist

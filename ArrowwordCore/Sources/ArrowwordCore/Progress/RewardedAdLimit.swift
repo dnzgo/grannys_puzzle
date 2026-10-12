@@ -6,15 +6,16 @@
 /// anything. It also keeps ad networks happy, which distrust players who
 /// watch dozens a day.
 extension PlayerProgress {
-    /// Starting value from the game plan; tune it with data (a high share
-    /// of players hitting it means it's too low, or helpers are too scarce).
+    /// The default; the game uses `GameTuning.rewardedAdsPerDay`, which
+    /// the server can change. Tune it with data: many players hitting it
+    /// means it's too low, or helpers are too scarce.
     public static let rewardedAdsPerDay = 3
 
     /// Videos the player may still watch today (`today` is a `JarDay`
-    /// number). A new day starts the count again.
-    public func rewardedAdsLeft(today: Int) -> Int {
+    /// number), out of `perDay`. A new day starts the count again.
+    public func rewardedAdsLeft(today: Int, perDay: Int = PlayerProgress.rewardedAdsPerDay) -> Int {
         let watched = rewardedAdDay == today ? rewardedAdsThatDay : 0
-        return max(0, Self.rewardedAdsPerDay - watched)
+        return max(0, perDay - watched)
     }
 
     /// Counts a video that earned its reward. Called only for completed

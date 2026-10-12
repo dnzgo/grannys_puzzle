@@ -57,7 +57,7 @@ struct LevelScreen: View {
         .animation(.easeInOut(duration: 0.25), value: model.tutorialLine)
         .overlay {
             if model.isOfferingAd {
-                AdOfferCard(onChoose: model.watchAd(for:), onCancel: model.cancelAdOffer)
+                AdOfferCard(amount: model.adRewardAmount, onChoose: model.watchAd(for:), onCancel: model.cancelAdOffer)
                     .transition(.opacity)
             }
         }

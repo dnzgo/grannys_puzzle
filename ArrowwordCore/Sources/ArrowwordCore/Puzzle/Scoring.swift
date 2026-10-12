@@ -27,14 +27,19 @@ public struct LevelResult: Sendable, Equatable {
     /// score here in principle, but the game only awards yarn on a pass.
     public let yarnBalls: Int
     public let passed: Bool
+    /// Letters the cat or grandma filled in. Not part of the score (they
+    /// count as correct); kept because it's the clearest sign of how hard
+    /// a level felt, which is what analytics wants to know.
+    public let revealedLetters: Int
 
     public var share: Double {
         judgedLetters == 0 ? 1 : Double(correctLetters) / Double(judgedLetters)
     }
 
-    init(correctLetters: Int, judgedLetters: Int, rules: ScoringRules) {
+    init(correctLetters: Int, judgedLetters: Int, revealedLetters: Int = 0, rules: ScoringRules) {
         self.correctLetters = correctLetters
         self.judgedLetters = judgedLetters
+        self.revealedLetters = revealedLetters
         let share = judgedLetters == 0 ? 1 : Double(correctLetters) / Double(judgedLetters)
         if share >= rules.threeBallThreshold {
             yarnBalls = 3

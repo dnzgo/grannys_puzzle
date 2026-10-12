@@ -268,6 +268,14 @@ final class PuzzleStateTests: XCTestCase {
         XCTAssertEqual(state.submit()?.yarnBalls, 3)
     }
 
+    func testTheResultCountsLettersTheHelpersRevealed() throws {
+        var state = try newSquareGame()
+        state.revealActiveAnswer()  // grandma does CARD: 4 letters
+        state.fillBoard()
+
+        XCTAssertEqual(state.submit()?.revealedLetters, 4)
+    }
+
     func testStarterLettersAreNotJudged() throws {
         var state = PuzzleState(level: try TestLevels.level100())
         state.fillBoard()

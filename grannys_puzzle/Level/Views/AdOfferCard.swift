@@ -7,6 +7,8 @@ import SwiftUI
 /// Placeholder styling like the other reward moments; it gets redesigned
 /// with them.
 struct AdOfferCard: View {
+    /// How many helpers each choice gives (tuned remotely, so not fixed here).
+    let amount: (HelperAdReward) -> Int
     let onChoose: (HelperAdReward) -> Void
     let onCancel: () -> Void
 
@@ -51,13 +53,13 @@ struct AdOfferCard: View {
             VStack(spacing: 10) {
                 // One face per helper given, overlapping like a little crowd.
                 HStack(spacing: -14) {
-                    ForEach(0..<reward.amount, id: \.self) { _ in
+                    ForEach(0..<amount(reward), id: \.self) { _ in
                         HelperFaceImage(face: reward.face, size: 44)
                     }
                 }
                 .frame(height: 48)
 
-                Text(reward.title)
+                Text(reward.title(amount: amount(reward)))
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .foregroundStyle(Theme.ink)
 
@@ -78,7 +80,7 @@ struct AdOfferCard: View {
         }
         .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(reward.title)
+        .accessibilityLabel(reward.title(amount: amount(reward)))
         .accessibilityHint("Plays a short video")
     }
 }
@@ -91,7 +93,7 @@ private extension HelperAdReward {
         }
     }
 
-    var title: LocalizedStringKey {
+    func title(amount: Int) -> LocalizedStringKey {
         switch self {
         case .catHints: "\(amount) cat hints"
         case .grandma: "\(amount) grandma"

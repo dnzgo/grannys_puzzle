@@ -239,7 +239,13 @@ public struct PuzzleState: Sendable {
         guard !isSubmitted, isBoardFull else { return nil }
         let judgedCells = level.letterCells.filter { entries[$0]?.source != .given }
         let correctCount = judgedCells.filter { entries[$0]?.letter == level.letter(at: $0) }.count
-        let outcome = LevelResult(correctLetters: correctCount, judgedLetters: judgedCells.count, rules: rules)
+        let revealedCount = judgedCells.filter { entries[$0]?.source == .revealed }.count
+        let outcome = LevelResult(
+            correctLetters: correctCount,
+            judgedLetters: judgedCells.count,
+            revealedLetters: revealedCount,
+            rules: rules
+        )
         result = outcome
         return outcome
     }

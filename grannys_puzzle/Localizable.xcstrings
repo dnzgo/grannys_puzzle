@@ -79,6 +79,24 @@
             "state" : "translated",
             "value" : "%lld kedi ipucu"
           }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cat hint"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cat hints"
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -88,6 +106,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld nine"
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld grandma"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld grandmas"
+                }
+              }
+            }
           }
         }
       }
@@ -1180,12 +1216,30 @@
         }
       }
     },
-    "Three cat hints, just for you, dear!" : {
+    "%lld cat hints, just for you, dear!" : {
       "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "A cat hint, just for you, dear!"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld cat hints, just for you, dear!"
+                }
+              }
+            }
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Üç kedi ipucu, sadece senin için canım!"
+            "value" : "%lld kedi ipucu, sadece senin için canım!"
           }
         }
       }

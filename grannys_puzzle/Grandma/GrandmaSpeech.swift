@@ -62,9 +62,9 @@ enum GrandmaLines {
     static var knitted: String { String(localized: "Doesn't the cat look smart?", bundle: .appLanguage, locale: .appLanguage) }
     static var allLevelsDone: String { String(localized: "You've solved them all! I'm writing more.", bundle: .appLanguage, locale: .appLanguage) }
 
-    static func adReward(_ reward: HelperAdReward) -> String {
+    static func adReward(_ reward: HelperAdReward, amount: Int) -> String {
         switch reward {
-        case .catHints: String(localized: "Three cat hints, just for you, dear!", bundle: .appLanguage, locale: .appLanguage)
+        case .catHints: String(localized: "\(amount) cat hints, just for you, dear!", bundle: .appLanguage, locale: .appLanguage)
         case .grandma: String(localized: "Here I am! Tap me when a word's too tricky.", bundle: .appLanguage, locale: .appLanguage)
         }
     }

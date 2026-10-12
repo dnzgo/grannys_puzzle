@@ -10,6 +10,8 @@
 		540DBB8A30785A400067F8F0 /* ArrowwordCore in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB8930785A400067F8F0 /* ArrowwordCore */; };
 		540DBB9330785A400067F8F0 /* AdKit in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB9130785A400067F8F0 /* AdKit */; };
 		540DBB9430785A400067F8F0 /* AdKitGoogle in Frameworks */ = {isa = PBXBuildFile; productRef = 540DBB9230785A400067F8F0 /* AdKitGoogle */; };
+		54EA3382307D9E19003C547D /* GameServices in Frameworks */ = {isa = PBXBuildFile; productRef = 54EA3381307D9E19003C547D /* GameServices */; };
+		54EA3384307D9E19003C547D /* GameServicesFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 54EA3383307D9E19003C547D /* GameServicesFirebase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		540DBB6E307858E60067F8F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				54EA3384307D9E19003C547D /* GameServicesFirebase in Frameworks */,
 				540DBB8A30785A400067F8F0 /* ArrowwordCore in Frameworks */,
 				540DBB9330785A400067F8F0 /* AdKit in Frameworks */,
+				54EA3382307D9E19003C547D /* GameServices in Frameworks */,
 				540DBB9430785A400067F8F0 /* AdKitGoogle in Frameworks */,
 			);
 		};
@@ -73,6 +77,8 @@
 				540DBB8930785A400067F8F0 /* ArrowwordCore */,
 				540DBB9130785A400067F8F0 /* AdKit */,
 				540DBB9230785A400067F8F0 /* AdKitGoogle */,
+				54EA3381307D9E19003C547D /* GameServices */,
+				54EA3383307D9E19003C547D /* GameServicesFirebase */,
 			);
 			productName = grannys_puzzle;
 			productReference = 540DBB71307858E60067F8F0 /* grannys_puzzle.app */;
@@ -106,6 +112,7 @@
 			packageReferences = (
 				540DBB8830785A400067F8F0 /* XCLocalSwiftPackageReference "ArrowwordCore" */,
 				540DBB9030785A400067F8F0 /* XCLocalSwiftPackageReference "AdKit" */,
+				54EA3380307D9E19003C547D /* XCLocalSwiftPackageReference "GameServices" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 540DBB72307858E60067F8F0 /* Products */;
@@ -262,6 +269,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 737WW78VY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -279,6 +287,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dengo.grannys-puzzle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -315,6 +324,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dengo.grannys-puzzle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -357,6 +367,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = AdKit;
 		};
+		54EA3380307D9E19003C547D /* XCLocalSwiftPackageReference "GameServices" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = GameServices;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -371,6 +385,14 @@
 		540DBB9230785A400067F8F0 /* AdKitGoogle */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = AdKitGoogle;
+		};
+		54EA3381307D9E19003C547D /* GameServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GameServices;
+		};
+		54EA3383307D9E19003C547D /* GameServicesFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GameServicesFirebase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

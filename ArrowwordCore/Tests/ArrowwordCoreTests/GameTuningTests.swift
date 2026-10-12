@@ -1,0 +1,73 @@
+import XCTest
+@testable import ArrowwordCore
+
+final class GameTuningTests: XCTestCase {
+    /// Server values for a test, by key.
+    private func resolve(_ values: [GameTuning.Key: Double]) -> (tuning: GameTuning, ignored: [GameTuning.Key]) {
+        GameTuning.resolved { name in
+            GameTuning.Key(rawValue: name).flatMap { values[$0] }
+        }
+    }
+
+    func testWithNoServerValuesEverythingKeepsItsDefault() {
+        // First launch, offline, or a console that sets nothing.
+        let result = resolve([:])
+        XCTAssertEqual(result.tuning, .standard)
+        XCTAssertEqual(result.ignored, [])
+    }
+
+    func testServerValuesReplaceDefaults() {
+        let result = resolve([
+            .rewardedAdsPerDay: 5,
+            .catHintsPerAd: 4,
+            .adBreakFirstLevel: 15,
+            .passThreshold: 0.75,
+            .jarGrandmaChance: 0.4,
+        ])
+        XCTAssertEqual(result.tuning.rewardedAdsPerDay, 5)
+        XCTAssertEqual(result.tuning.catHintsPerAd, 4)
+        XCTAssertEqual(result.tuning.adBreakFirstLevel, 15)
+        XCTAssertEqual(result.tuning.scoring.passThreshold, 0.75)
+        XCTAssertEqual(result.tuning.jar.grandmaChance, 0.4)
+        XCTAssertEqual(result.ignored, [])
+    }
+
+    func testOutOfRangeOrFractionalValuesAreIgnored() {
+        // A console typo must not break the game: 3.5 cats, -1 videos, a
+        // share of 80 (meant 0.8).
+        let result = resolve([.catHintsPerAd: 3.5, .rewardedAdsPerDay: -1, .passThreshold: 80])
+        XCTAssertEqual(result.tuning, .standard)
+        XCTAssertEqual(Set(result.ignored), [.catHintsPerAd, .rewardedAdsPerDay, .passThreshold])
+    }
+
+    func testZeroVideosADayIsAValidWayToTurnThemOff() {
+        XCTAssertEqual(resolve([.rewardedAdsPerDay: 0]).tuning.rewardedAdsPerDay, 0)
+    }
+
+    func testScoreThresholdsOutOfOrderAreIgnoredTogether() {
+        // Each value is a fine share on its own, but 2 balls can't need
+        // more than 3 balls. Applying only some would leave the rules
+        // contradicting each other, so all of them keep their defaults.
+        let result = resolve([.threeBallThreshold: 0.9, .twoBallThreshold: 0.95])
+        XCTAssertEqual(result.tuning.scoring, .standard)
+        XCTAssertEqual(Set(result.ignored), [.threeBallThreshold, .twoBallThreshold])
+    }
+
+    func testAJarHintRangeUpsideDownIsIgnoredTogether() {
+        let result = resolve([.jarHintsMin: 4, .jarHintsMax: 2])
+        XCTAssertEqual(result.tuning.jar.hintRange, DailyJarRules.standard.hintRange)
+        XCTAssertEqual(Set(result.ignored), [.jarHintsMin, .jarHintsMax])
+    }
+
+    func testOneSideOfTheJarRangeCanMoveAlone() {
+        XCTAssertEqual(resolve([.jarHintsMax: 5]).tuning.jar.hintRange, 1...5)
+    }
+
+    func testEveryKeyIsReadSomewhere() {
+        // A key added to the list but never read would look tunable in the
+        // console and do nothing. Setting each to an out-of-range value must
+        // get it reported, which only happens if it's read.
+        let silly = Dictionary(uniqueKeysWithValues: GameTuning.Key.allCases.map { ($0, -1.0) })
+        XCTAssertEqual(Set(resolve(silly).ignored), Set(GameTuning.Key.allCases))
+    }
+}
