@@ -20,6 +20,8 @@ struct HomeView: View {
     @State private var knittingItem: KnitItem?
     /// The jar opening being shown, if any.
     @State private var jarOpening: JarOpening?
+    /// Grandma is asking whether she may send reminders.
+    @State private var asksAboutReminders = false
     /// Today as a `JarDay` number. Kept as state and refreshed at midnight
     /// and when the app returns to the foreground, so the jar wakes up
     /// without the player having to relaunch.
@@ -77,11 +79,24 @@ struct HomeView: View {
             if let opening = jarOpening {
                 JarMoment(opening: opening, streakLength: DailyJarRules.standard.streakLength) {
                     jarOpening = nil
+                    // Right after her jar is the moment the offer means
+                    // something: "shall I tell you when the next one's ready?"
+                    if game.mayAskAboutReminders { asksAboutReminders = true }
                 }
                 .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.25), value: jarOpening)
+        .overlay {
+            if asksAboutReminders {
+                ReminderAskCard(
+                    onYes: { answerReminderQuestion(yes: true) },
+                    onNotNow: { answerReminderQuestion(yes: false) }
+                )
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: asksAboutReminders)
         .onAppear {
             today = JarDay.number()
             speech.say(openingLine)
@@ -131,6 +146,13 @@ struct HomeView: View {
             CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
         }
         .frame(height: BoardMetrics.topBarHeight)
+    }
+
+    /// Closes grandma's card first, so on a yes iOS's own prompt appears
+    /// over the home screen rather than over her question.
+    private func answerReminderQuestion(yes: Bool) {
+        asksAboutReminders = false
+        Task { await game.answerReminderQuestion(yes: yes) }
     }
 
     /// Knitting is saved first; the moment on screen is only the reveal.

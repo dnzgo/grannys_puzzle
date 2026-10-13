@@ -96,6 +96,23 @@ extension AnalyticsEvent {
         AnalyticsEvent("language_switched", ["language": .string(language)])
     }
 
+    // MARK: - Reminders
+
+    /// The player answered iOS's notification prompt (after grandma's own
+    /// question).
+    static func reminderPermission(allowed: Bool) -> AnalyticsEvent {
+        AnalyticsEvent("reminder_permission", ["allowed": .bool(allowed)])
+    }
+
+    /// "Not now" to grandma's question.
+    static let reminderAskDeclined = AnalyticsEvent("reminder_ask_declined")
+
+    /// A reminder was tapped and opened the game. `kind` is jar, streak,
+    /// yarn or miss_you.
+    static func reminderOpened(kind: String) -> AnalyticsEvent {
+        AnalyticsEvent("reminder_opened", ["kind": .string(kind)])
+    }
+
     // MARK: - Tutorial
 
     static let tutorialBegin = AnalyticsEvent("tutorial_begin")

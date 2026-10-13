@@ -4,6 +4,7 @@ import os
 import AdKit
 import ArrowwordCore
 import GameServices
+import NotifyKit
 
 /// The running game: the player's saved progress, the level pack, and which
 /// screen is showing.
@@ -24,6 +25,8 @@ final class Game {
     let catalog: KnittingCatalog
     /// Nil in previews (no ads there).
     let ads: AdsController?
+    /// Grandma's reminders; nil in previews.
+    let reminders: Reminders?
     /// The lesson's board in the current language. Nil only if it failed
     /// to load, a build problem that the tests catch; the game then simply
     /// plays without it.
@@ -65,6 +68,7 @@ final class Game {
         language: String? = nil,
         store: ProgressStore?,
         ads: AdsController? = nil,
+        reminders: Reminders? = nil,
         catalog: KnittingCatalog = .standard,
         services: AppServices = .none,
         loadContent: ((String) throws -> GameContent)? = nil
@@ -75,6 +79,7 @@ final class Game {
         self.contentLanguage = language ?? pack.language
         self.loadContent = loadContent
         self.ads = ads
+        self.reminders = reminders
         self.tutorial = tutorial
         self.catalog = catalog
         self.store = store
@@ -158,6 +163,60 @@ final class Game {
         update { opening = $0.openJar(today: today, rules: tuning.jar, using: &generator) }
         if let opening { events?.log(.jarOpened(opening)) }
         return opening
+    }
+
+    // MARK: - Reminders
+
+    /// Re-plans grandma's reminders from where the player is now (their jar,
+    /// streak and yarn), replacing whatever was scheduled before. Nothing is
+    /// sent unless they said yes and the switch in Settings is on; NotifyKit
+    /// checks both.
+    ///
+    /// Called whenever the app opens, goes inactive or goes to the
+    /// background, not only when it leaves: a player who swipes the app away
+    /// from the app switcher kills it before it ever reaches the background.
+    /// Keeping the schedule fresh all the time means a killed app always
+    /// leaves a correct one behind. While the game is open, iOS doesn't show
+    /// them (see ReminderTapRelay), and the next re-plan replaces them.
+    func refreshReminders() async {
+        guard let reminders else { return }
+        // The player may have changed it in iOS Settings since last time.
+        await reminders.refreshPermission()
+        let now = Date.now
+        // Picking a line moves that kind's rotation on even if the reminder
+        // is cancelled before it shows (the player came back first). Fine:
+        // the point is that the lines that do show vary.
+        let candidates = GrannyReminders.candidates(progress: progress, catalog: catalog, now: now) { lines, kind in
+            reminders.line(from: lines, kind: kind)
+        }
+        await reminders.schedule(candidates, now: now)
+    }
+
+    /// Whether grandma may ask about reminders now (after the jar, see
+    /// HomeView). Her own question, before iOS's one-time prompt.
+    var mayAskAboutReminders: Bool {
+        reminders?.canOfferSoftAsk() ?? false
+    }
+
+    /// The player answered grandma's question.
+    func answerReminderQuestion(yes: Bool) async {
+        guard let reminders else { return }
+        if yes {
+            let allowed = await reminders.requestPermission()
+            events?.log(.reminderPermission(allowed: allowed))
+            // Plan straight away: the player may close the app without it
+            // ever going to the background in a way we hear about.
+            if allowed { await refreshReminders() }
+        } else {
+            reminders.declineSoftAsk()
+            events?.log(.reminderAskDeclined)
+        }
+    }
+
+    /// A tapped reminder opened the game: which kinds bring players back is
+    /// how the lines and timing get tuned.
+    func reminderOpened(kind: String) {
+        events?.log(.reminderOpened(kind: kind))
     }
 
     // MARK: - Language

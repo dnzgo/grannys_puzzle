@@ -2,10 +2,17 @@ import SwiftUI
 import os
 import AdKit
 import ArrowwordCore
+import NotifyKit
 
 /// The app's root: loads the game once, then hands over to `GameView`.
 struct ContentView: View {
+    /// Hears taps on grandma's reminders. Made by the App at launch (a tap
+    /// that opens the app arrives before any screen exists), handed here so
+    /// the taps reach the game once it's loaded.
+    let reminderTaps: ReminderTapRelay
+
     @State private var startup = Startup.load()
+    @Environment(\.scenePhase) private var scenePhase
     /// The in-game language choice (Settings → Language). Changing it here
     /// swaps the text at once (through the environment's locale) and the
     /// puzzles (through the game).
@@ -18,6 +25,8 @@ struct ContentView: View {
                 // Views that show ads (the banner, Settings' privacy row)
                 // read the controller from here instead of through Game.
                 .environment(game.ads)
+                // Settings' reminder switch reads it the same way.
+                .environment(game.reminders)
                 // Every `Text` below looks its words up in this locale.
                 .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
                 .onChange(of: languageCode) { _, newCode in
@@ -25,6 +34,17 @@ struct ContentView: View {
                 }
                 // Once per launch: the server's numbers, if any.
                 .task { await game.loadRemoteTuning() }
+                // Re-plan grandma's reminders on every change (opening, going
+                // inactive, going to the background), so whatever the player
+                // does, even swiping the app away, a fresh schedule is left
+                // behind. `initial` also runs it for the launch itself.
+                .onChange(of: scenePhase, initial: true) { _, _ in
+                    Task { await game.refreshReminders() }
+                }
+                .onAppear {
+                    // Also delivers a tap that launched the app, held until now.
+                    reminderTaps.onTap = { kind in game.reminderOpened(kind: kind) }
+                }
         case .failed(let message):
             // A bundled pack failing to load is a bug in the build, but the
             // app should say so instead of crashing.
@@ -75,6 +95,7 @@ private enum Startup {
                 language: language,
                 store: progressStore(),
                 ads: AdsSetup.makeController(),
+                reminders: Reminders(scheduler: SystemReminderScheduler()),
                 services: services,
                 loadContent: LevelLoader.content(for:)
             )

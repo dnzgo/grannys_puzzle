@@ -86,3 +86,38 @@ final class KnittingProgressTests: XCTestCase {
         XCTAssertEqual(progress.wardrobe, [])
     }
 }
+
+final class YarnNeedTests: XCTestCase {
+    private let catalog = KnittingCatalog.standard
+
+    func testAskForTheColourClosestToAnItem() {
+        // 5 yellow is one short of a yellow scarf (6); red needs all 6.
+        let progress = PlayerProgress(levelNumber: 9, hints: 0, grandmas: 0, yarn: [.yellow: 5, .red: 1])
+        let need = progress.closestYarnNeed(in: catalog)
+        XCTAssertEqual(need?.color, .yellow)
+        XCTAssertEqual(need?.missing, 1)
+        XCTAssertEqual(need?.item.kind, .scarf)
+    }
+
+    func testNothingToAskForWhenSomethingCanAlreadyBeKnitted() {
+        let progress = PlayerProgress(levelNumber: 9, hints: 0, grandmas: 0, yarn: [.blue: 6])
+        XCTAssertNil(progress.closestYarnNeed(in: catalog))
+    }
+
+    func testOwnedItemsAreSkipped() {
+        // The red scarf is done, so 7 red is now one short of the red hat (8).
+        let progress = PlayerProgress(
+            levelNumber: 9, hints: 0, grandmas: 0, yarn: [.red: 7],
+            wardrobe: Set(YarnColor.allCases.map { "cat.scarf.\($0.rawValue)" })
+        )
+        XCTAssertEqual(progress.closestYarnNeed(in: catalog)?.item.id, "cat.hat.red")
+    }
+
+    func testAFinishedWardrobeNeedsNothing() {
+        let progress = PlayerProgress(
+            levelNumber: 9, hints: 0, grandmas: 0, yarn: [:],
+            wardrobe: Set(catalog.items.map(\.id))
+        )
+        XCTAssertNil(progress.closestYarnNeed(in: catalog))
+    }
+}

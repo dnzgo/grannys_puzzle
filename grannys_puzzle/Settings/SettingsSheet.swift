@@ -1,10 +1,11 @@
 import SwiftUI
 import UIKit
 import AdKit
+import NotifyKit
 
-/// Settings: the music, sound and haptics switches, the game's language
-/// (switched here, in the game, without a restart), feedback,
-/// the legal pages, credits and the version.
+/// Settings: the music, sound and haptics switches, grandma's reminders,
+/// the game's language (switched here, in the game, without a restart),
+/// feedback, the legal pages, credits and the version.
 ///
 /// It's a sheet over whatever screen opened it (home or a level), so the
 /// player comes back exactly where they were. It reads and writes
@@ -33,6 +34,8 @@ struct SettingsSheet: View {
     @Environment(\.openURL) private var openURL
     /// Nil in previews.
     @Environment(AdsController.self) private var ads: AdsController?
+    /// Nil in previews.
+    @Environment(Reminders.self) private var reminders: Reminders?
 
     /// Set when Mail couldn't open, so the player still gets the address.
     @State private var showsMailFallback = false
@@ -44,6 +47,14 @@ struct SettingsSheet: View {
                     Toggle(isOn: $musicOn) { Label("Music", systemImage: "music.note") }
                     Toggle(isOn: $soundOn) { Label("Sound effects", systemImage: "speaker.wave.2.fill") }
                     Toggle(isOn: $hapticsOn) { Label("Haptics", systemImage: "iphone.radiowaves.left.and.right") }
+                }
+
+                if let reminders {
+                    Section {
+                        remindersRow(reminders)
+                    } footer: {
+                        Text("About your jar, your streak and grandma's yarn. At most one a day, never at night.")
+                    }
                 }
 
                 Section {
@@ -111,6 +122,8 @@ struct SettingsSheet: View {
                 Text("You can write to us at \(SupportLinks.feedbackEmail ?? "")")
             }
         }
+        // The player may have changed it in iOS Settings since last time.
+        .task { await reminders?.refreshPermission() }
         // Like the rest of the app, light only until the art has a dark version.
         .preferredColorScheme(.light)
     }
@@ -126,6 +139,44 @@ struct SettingsSheet: View {
             }
         } label: {
             Label("Language", systemImage: "globe")
+        }
+    }
+
+    /// Three states, because the game's own switch and iOS's permission are
+    /// separate: with permission it's a plain switch; before iOS has been
+    /// asked, a tap asks (the player chose this, so no soft ask first); and
+    /// once iOS says no, only the iOS Settings app can change it.
+    @ViewBuilder
+    private func remindersRow(_ reminders: Reminders) -> some View {
+        switch reminders.permission {
+        case .allowed:
+            Toggle(isOn: Binding(get: { reminders.isEnabled }, set: { reminders.isEnabled = $0 })) {
+                Label("Grandma's notes", systemImage: "bell")
+            }
+        case .notAsked:
+            Button {
+                Task { await reminders.requestPermission() }
+            } label: {
+                LabeledContent {
+                    Text("Turn on")
+                } label: {
+                    Label("Grandma's notes", systemImage: "bell")
+                }
+            }
+            .foregroundStyle(Theme.ink)
+        case .denied:
+            Button {
+                if let url = URL(string: UIApplication.openNotificationSettingsURLString) {
+                    openURL(url)
+                }
+            } label: {
+                LabeledContent {
+                    Text("Off in iOS Settings")
+                } label: {
+                    Label("Grandma's notes", systemImage: "bell.slash")
+                }
+            }
+            .foregroundStyle(Theme.ink)
         }
     }
 
