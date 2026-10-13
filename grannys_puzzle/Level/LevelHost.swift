@@ -31,13 +31,15 @@ protocol LevelHost: AnyObject {
     /// (an ad is loaded and allowed).
     var canWatchAdForHelper: Bool { get }
 
-    /// How many helpers a video gives for this choice. The host decides
-    /// because the number is tuned remotely (see `GameTuning`).
+    /// How many helpers a video gives for this choice right now. The host
+    /// decides because the number is tuned remotely (see `GameTuning`).
     func amount(of reward: HelperAdReward) -> Int
 
     /// Plays a rewarded ad and, if it's watched to the end, gives the
-    /// reward the player picked. Returns whether it was given.
-    func watchAd(for reward: HelperAdReward) async -> Bool
+    /// reward the player picked, in the `amount` they were shown (asked of
+    /// `amount(of:)` when the offer opened, so it can't change mid-video).
+    /// Returns whether it was given.
+    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool
 
     func continueToNextLevel()
     func goHome()

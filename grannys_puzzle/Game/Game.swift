@@ -123,6 +123,11 @@ final class Game {
                 .error("Ignored unusable remote values: \(keys, privacy: .public)")
         }
         apply(resolved.tuning)
+        // Arrives a moment after launch (longer on the very first run), so
+        // its timing helps when a value seems not to have taken effect.
+        let fromServer = values.count - resolved.ignored.count
+        Logger(subsystem: "grannys_puzzle", category: "tuning")
+            .notice("Remote tuning applied: \(fromServer, privacy: .public) value(s) from the server")
         await remoteValues.fetchForNextLaunch()
     }
 
@@ -356,7 +361,7 @@ extension Game: LevelHost {
         reward.amount(in: tuning)
     }
 
-    func watchAd(for reward: HelperAdReward) async -> Bool {
+    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool {
         guard let ads, progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay) > 0 else {
             return false
         }
@@ -366,7 +371,6 @@ extension Game: LevelHost {
         let earned = await ads.showRewarded()
         events?.log(.rewardedVideo(reward, earned: earned, level: level))
         guard earned else { return false }
-        let amount = reward.amount(in: tuning)
         let today = JarDay.number()
         update { progress in
             switch reward {

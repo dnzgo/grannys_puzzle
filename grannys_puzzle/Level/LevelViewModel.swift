@@ -107,6 +107,8 @@ final class LevelViewModel {
     /// True while a rewarded ad is on screen, so a second tap can't start
     /// another one.
     private(set) var isWatchingAd = false
+    /// The amounts the open offer promised; see `offerAd()`.
+    @ObservationIgnored private var offeredAmounts: [HelperAdReward: Int] = [:]
 
     private var canWatchAd: Bool { host?.canWatchAdForHelper ?? false }
 
@@ -284,12 +286,18 @@ final class LevelViewModel {
     /// and where to spend it.
     private func offerAd() {
         guard !isWatchingAd, !isCoaching, canWatchAd else { return }
+        // The card is a promise: the amounts are fixed now and the same ones
+        // are granted after the video. Asking the host again later could give
+        // a different answer, e.g. if server tuning arrives during the video.
+        offeredAmounts = Dictionary(uniqueKeysWithValues: HelperAdReward.allCases.map { reward in
+            (reward, host?.amount(of: reward) ?? 0)
+        })
         isOfferingAd = true
     }
 
-    /// How many helpers a video gives for this choice (the offer card shows it).
-    func adRewardAmount(_ reward: HelperAdReward) -> Int {
-        host?.amount(of: reward) ?? 0
+    /// What each choice on the open offer gives (the card shows these).
+    func offeredAmount(_ reward: HelperAdReward) -> Int {
+        offeredAmounts[reward] ?? 0
     }
 
     func cancelAdOffer() {
@@ -298,15 +306,16 @@ final class LevelViewModel {
 
     func watchAd(for reward: HelperAdReward) {
         guard isOfferingAd, !isWatchingAd else { return }
+        let amount = offeredAmount(reward)
         isOfferingAd = false
         isWatchingAd = true
         Task { [weak self] in
             guard let self else { return }
-            let earned = await self.host?.watchAd(for: reward) ?? false
+            let earned = await self.host?.watchAd(for: reward, amount: amount) ?? false
             self.isWatchingAd = false
             guard earned else { return }
             self.feel(.helperEarned)
-            self.speech.say(GrandmaLines.adReward(reward, amount: self.adRewardAmount(reward)))
+            self.speech.say(GrandmaLines.adReward(reward, amount: amount))
         }
     }
 

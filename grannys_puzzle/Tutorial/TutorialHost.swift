@@ -32,7 +32,7 @@ final class TutorialHost: LevelHost {
     // Helpers are free in the lesson, so there's never an ad to offer.
     var canWatchAdForHelper: Bool { false }
     func amount(of reward: HelperAdReward) -> Int { reward.amount(in: .standard) }
-    func watchAd(for reward: HelperAdReward) async -> Bool { false }
+    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool { false }
 
     func continueToNextLevel() {
         game?.leaveTutorial()
