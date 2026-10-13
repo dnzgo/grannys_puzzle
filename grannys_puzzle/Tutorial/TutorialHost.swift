@@ -31,6 +31,10 @@ final class TutorialHost: LevelHost {
 
     // Helpers are free in the lesson, so there's never an ad to offer.
     var canWatchAdForHelper: Bool { false }
+    var rewardedVideosLeftToday: Int { 0 }
+    /// The lesson is the player's first minutes: far too early to ask.
+    func mayAskForReview() -> Bool { false }
+    func reviewAsked(_ moment: ReviewMoment) {}
     func amount(of reward: HelperAdReward) -> Int { reward.amount(in: .standard) }
     func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool { false }
 

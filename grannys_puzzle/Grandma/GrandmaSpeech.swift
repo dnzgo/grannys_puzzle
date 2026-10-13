@@ -61,6 +61,11 @@ enum GrandmaLines {
     static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }
     static var knitted: String { String(localized: "Doesn't the cat look smart?", bundle: .appLanguage, locale: .appLanguage) }
     static var allLevelsDone: String { String(localized: "You've solved them all! I'm writing more.", bundle: .appLanguage, locale: .appLanguage) }
+    /// Out of a helper and today's videos are used up. Points at the jar,
+    /// where tomorrow's help comes from.
+    static var noMoreVideosToday: String { String(localized: "That's all the videos for today, dear. Come back tomorrow, and don't forget my jar!", bundle: .appLanguage, locale: .appLanguage) }
+    /// Out of a helper and no video happened to be ready (offline, say).
+    static var noVideoReady: String { String(localized: "No video ready just now, dear. Try again in a moment.", bundle: .appLanguage, locale: .appLanguage) }
 
     static func adReward(_ reward: HelperAdReward, amount: Int) -> String {
         switch reward {

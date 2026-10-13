@@ -4,6 +4,26 @@
     "" : {
       "shouldTranslate" : false
     },
+    "No video ready just now, dear. Try again in a moment." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şu an hazır video yok canım. Birazdan tekrar dene."
+          }
+        }
+      }
+    },
+    "That's all the videos for today, dear. Come back tomorrow, and don't forget my jar!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünlük videolar bitti canım. Yarın yine gel, kavanozumu da unutma!"
+          }
+        }
+      }
+    },
     "· %lld yarn each" : {
       "localizations" : {
         "tr" : {

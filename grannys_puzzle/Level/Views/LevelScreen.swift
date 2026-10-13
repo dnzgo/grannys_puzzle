@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 import ArrowwordCore
 
 /// The level screen, top to bottom: clue bar, grid, letter tray (or the
@@ -13,6 +14,8 @@ struct LevelScreen: View {
     /// Where the lesson's tap targets are. Only put in the environment for
     /// the tutorial, so real levels don't track any frames.
     @State private var spotlightFrames = SpotlightFrames()
+    /// Apple's "Enjoying the game?" prompt (iOS decides whether it shows).
+    @Environment(\.requestReview) private var requestReview
 
     var body: some View {
         VStack(spacing: 0) {
@@ -70,6 +73,17 @@ struct LevelScreen: View {
         .gameHaptics(model.haptic)
         .sheet(isPresented: $showsSettings) {
             SettingsSheet()
+        }
+        // After a perfect board, once the player has had a moment to enjoy
+        // the result: a prompt on top of it would steal the celebration.
+        .task(id: model.asksForReview) {
+            guard model.asksForReview else { return }
+            try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
+            // Gone already (Next level tapped during the pause): no prompt,
+            // and nothing recorded, so the chance isn't wasted.
+            guard !Task.isCancelled else { return }
+            model.reviewPromptRequested()
+            requestReview()
         }
     }
 

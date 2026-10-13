@@ -31,6 +31,18 @@ protocol LevelHost: AnyObject {
     /// (an ad is loaded and allowed).
     var canWatchAdForHelper: Bool { get }
 
+    /// Videos the player may still watch today. When an ad can't be offered,
+    /// 0 here means the daily limit is why (grandma says so); otherwise no
+    /// ad happened to be ready.
+    var rewardedVideosLeftToday: Int { get }
+
+    /// Whether a happy moment now may be used to ask for a rating.
+    func mayAskForReview() -> Bool
+    /// The rating prompt was just requested. Recorded only now, not when
+    /// `mayAskForReview` said yes: a player who leaves the screen during the
+    /// short pause before it never saw it, and shouldn't cost a chance.
+    func reviewAsked(_ moment: ReviewMoment)
+
     /// How many helpers a video gives for this choice right now. The host
     /// decides because the number is tuned remotely (see `GameTuning`).
     func amount(of reward: HelperAdReward) -> Int
@@ -43,6 +55,12 @@ protocol LevelHost: AnyObject {
 
     func continueToNextLevel()
     func goHome()
+}
+
+/// The happy moments that may lead to Apple's rating prompt.
+enum ReviewMoment: String {
+    case perfectBoard = "perfect_board"
+    case itemKnitted = "item_knitted"
 }
 
 /// What one rewarded video can give. The player picks before watching.

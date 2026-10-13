@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import StoreKit
 import AdKit
 import ArrowwordCore
 
@@ -27,6 +28,8 @@ struct HomeView: View {
     /// without the player having to relaunch.
     @State private var today = JarDay.number()
     @Environment(\.scenePhase) private var scenePhase
+    /// Apple's "Enjoying the game?" prompt (iOS decides whether it shows).
+    @Environment(\.requestReview) private var requestReview
 
     private var jarReady: Bool { game.progress.canOpenJar(today: today) }
 
@@ -70,6 +73,14 @@ struct HomeView: View {
                 KnittingMoment(item: item) {
                     knittingItem = nil
                     speech.say(GrandmaLines.knitted)
+                    // A finished piece is the other happy moment for asking.
+                    if game.mayAskForReview() {
+                        Task {
+                            try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
+                            game.reviewAsked(.itemKnitted)
+                            requestReview()
+                        }
+                    }
                 }
                 .transition(.opacity)
             }

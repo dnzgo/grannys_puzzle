@@ -113,6 +113,14 @@ extension AnalyticsEvent {
         AnalyticsEvent("reminder_opened", ["kind": .string(kind)])
     }
 
+    // MARK: - Ratings
+
+    /// The game asked iOS for the rating prompt at this moment. iOS decides
+    /// whether it actually shows, and never says, so this counts asks.
+    static func reviewPromptRequested(_ moment: ReviewMoment) -> AnalyticsEvent {
+        AnalyticsEvent("review_prompt_requested", ["moment": .string(moment.rawValue)])
+    }
+
     // MARK: - Tutorial
 
     static let tutorialBegin = AnalyticsEvent("tutorial_begin")

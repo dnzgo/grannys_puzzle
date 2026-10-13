@@ -420,6 +420,26 @@ extension Game: LevelHost {
         reward.amount(in: tuning)
     }
 
+    var rewardedVideosLeftToday: Int {
+        progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay)
+    }
+
+    /// Kept on the device, like the settings switches: it's about this phone
+    /// having shown the prompt, not about the player's progress.
+    private static let lastReviewAskKey = "reviewPrompt.lastAskedAt"
+
+    func mayAskForReview() -> Bool {
+        let lastAsked = UserDefaults.standard.object(forKey: Self.lastReviewAskKey) as? Date
+        // `levelNumber` is the next level to play, so one less have passed.
+        return ReviewPromptRules.standard.mayAsk(levelsPassed: progress.levelNumber - 1, lastAsked: lastAsked, now: .now)
+    }
+
+    func reviewAsked(_ moment: ReviewMoment) {
+        UserDefaults.standard.set(Date.now, forKey: Self.lastReviewAskKey)
+        // Only that the game asked; iOS doesn't say whether it showed.
+        events?.log(.reviewPromptRequested(moment))
+    }
+
     func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool {
         guard let ads, progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay) > 0 else {
             return false

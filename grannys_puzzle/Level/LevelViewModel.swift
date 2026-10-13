@@ -99,8 +99,22 @@ final class LevelViewModel {
     /// Out of cat hints, but more can be earned by watching a short ad.
     var catOffersAd: Bool { hints == 0 && canWatchAd }
     var grandmaOffersAd: Bool { grandmas == 0 && canWatchAd }
+    /// Whether a helper button looks available (lit, with its glow): there
+    /// are some left, or a video can earn more. At 0 with no video it looks
+    /// used up, but stays tappable so grandma can say why (`canTapHelpers`).
     var canUseCat: Bool { !isWatchingAd && (hints > 0 || catOffersAd) }
     var canUseGrandma: Bool { !isWatchingAd && (grandmas > 0 || grandmaOffersAd) }
+    /// Helper buttons respond to taps except while a video is playing.
+    var canTapHelpers: Bool { !isWatchingAd }
+
+    /// Set once when a perfect board may lead to Apple's rating prompt; the
+    /// level screen shows it a moment after the result.
+    private(set) var asksForReview = false
+
+    /// The level screen is requesting the rating prompt now.
+    func reviewPromptRequested() {
+        host?.reviewAsked(.perfectBoard)
+    }
 
     /// The "watch a video, pick a treat" card is up.
     private(set) var isOfferingAd = false
@@ -218,7 +232,7 @@ final class LevelViewModel {
     /// there's nothing to fix.
     func useCat() {
         if hints == 0 {
-            offerAd()
+            if canWatchAd { offerAd() } else { explainNoVideo() }
             return
         }
         guard coachAllows(.useCat), let cell = puzzle.revealLetter() else { return }
@@ -232,7 +246,7 @@ final class LevelViewModel {
     /// Grandma solves the selected word, charged only if she changed something.
     func useGrandma() {
         if grandmas == 0 {
-            offerAd()
+            if canWatchAd { offerAd() } else { explainNoVideo() }
             return
         }
         guard coachAllows(.useGrandma), let answer = puzzle.activeAnswer else { return }
@@ -258,6 +272,11 @@ final class LevelViewModel {
         earnedYarn = host?.record(result) ?? []
         feel(result.passed ? .levelPassed : .levelFailed)
         coachSaw(.submit)
+        // Every letter right: a happy moment, if the rules allow asking now.
+        let isPerfect = result.passed && result.correctLetters == result.judgedLetters
+        if isPerfect, !isTutorial, host?.mayAskForReview() == true {
+            asksForReview = true
+        }
     }
 
     /// After the result: a pass moves on (the host decides where), a fail
@@ -298,6 +317,16 @@ final class LevelViewModel {
     /// What each choice on the open offer gives (the card shows these).
     func offeredAmount(_ reward: HelperAdReward) -> Int {
         offeredAmounts[reward] ?? 0
+    }
+
+    /// Out of a helper and no video to offer: instead of a dead button,
+    /// grandma says why. Either today's videos are used up (and the jar is
+    /// where tomorrow's help comes from), or none happened to be ready.
+    private func explainNoVideo() {
+        // In the lesson helpers never run out, and grandma's card is talking.
+        guard !isTutorial else { return }
+        let limitReached = (host?.rewardedVideosLeftToday ?? 0) == 0
+        speech.say(limitReached ? GrandmaLines.noMoreVideosToday : GrandmaLines.noVideoReady)
     }
 
     func cancelAdOffer() {
