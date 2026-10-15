@@ -33,6 +33,9 @@ final class LevelViewModel {
     /// The celebration has played through (or was tapped past), so the
     /// buttons are up and nothing else is animating.
     private(set) var celebrationFinished = false
+    /// The judged board lighting up green and red after Submit, before the
+    /// level-end card. Nil until Submit, and again after Try again.
+    private(set) var judging: Judging?
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
@@ -45,6 +48,11 @@ final class LevelViewModel {
     /// Palette index per answer, worked out once per level.
     @ObservationIgnored private let clueColorIndices: [Int]
     @ObservationIgnored private var catTask: Task<Void, Never>?
+    @ObservationIgnored private var judgingTask: Task<Void, Never>?
+    /// The wave the previous board used, so the next one is different.
+    /// Static because each level gets a new view model; it only has to last
+    /// as long as the app is open, since a repeat across launches is unnoticeable.
+    private static var lastWave: JudgingWave?
     @ObservationIgnored private var hapticCount = 0
     /// Weak because the host (the Game) owns this view model through its
     /// current screen; a strong reference back would be a retain cycle.
@@ -158,8 +166,14 @@ final class LevelViewModel {
     func appearance(of cell: Coordinate) -> LetterCellAppearance {
         let entry = puzzle.entries[cell]
         let style: LetterCellAppearance.Style
-        if puzzle.isWrong(cell) {
-            style = .wrong
+        if puzzle.isSubmitted {
+            // Green or red only once the wave reaches the cell. Starter
+            // letters are never in the wave, so they stay plain.
+            if judging?.isLit(cell) == true {
+                style = puzzle.isWrong(cell) ? .wrong : .correct
+            } else {
+                style = .normal
+            }
         } else if let answer = activeAnswer, let strength = highlightStrength(of: cell, in: answer) {
             style = .highlighted(colorIndex: colorIndex(ofAnswer: answer.id), strength: strength)
         } else {
@@ -169,7 +183,10 @@ final class LevelViewModel {
             letter: entry?.letter,
             style: style,
             isSelected: !puzzle.isSubmitted && cell == puzzle.selection,
-            isRevealed: entry?.source == .revealed,
+            // Starter letters and the helpers' letters alike: anything the
+            // player didn't place can't be erased, so it looks different.
+            // Only while playing; the judged board is about right and wrong.
+            isLocked: !puzzle.isSubmitted && (entry.map { $0.source != .placed } ?? false),
             showsCat: cell == catCell
         )
     }
@@ -282,7 +299,9 @@ final class LevelViewModel {
         let reward = host?.record(result) ?? LevelReward()
         earnedYarn = reward.yarn
         newlyKnittable = reward.newlyKnittable
-        feel(result.passed ? .levelPassed : .levelFailed)
+        // The pass or fail haptic waits for the card (finishJudging), so it
+        // lands with the verdict instead of before the board has shown it.
+        startJudging(result)
         coachSaw(.submit)
         // Every letter right: a happy moment, if the rules allow asking now.
         let isPerfect = result.passed && result.correctLetters == result.judgedLetters
@@ -300,8 +319,64 @@ final class LevelViewModel {
         } else {
             earnedYarn = []
             newlyKnittable = nil
+            judgingTask?.cancel()
+            judging = nil
             puzzle.restart()
         }
+    }
+
+    // MARK: - Lighting up the judged board
+
+    /// The level-end card is up: the board is judged and has finished
+    /// lighting up.
+    var showsLevelEnd: Bool { judging?.isFinished == true }
+
+    /// The board is lighting up right now; a tap anywhere skips ahead.
+    var isJudging: Bool { judging.map { !$0.isFinished } ?? false }
+
+    /// Lights the rest of the board at once and brings up the card. Players
+    /// see this after every level, so it must never become a wait.
+    func skipJudging() {
+        guard let result = puzzle.result else { return }
+        finishJudging(result)
+    }
+
+    /// Lights the judged cells group by group in a random wave, then shows
+    /// the card after a short pause, long enough to take in the whole board.
+    private func startJudging(_ result: LevelResult) {
+        // Starter letters were never the player's to get right, so they
+        // aren't judged and stay plain.
+        let judgedCells = level.letterCells.filter { puzzle.entries[$0]?.source != .given }
+        var generator = SystemRandomNumberGenerator()
+        let wave = JudgingWave.random(after: Self.lastWave, using: &generator)
+        Self.lastWave = wave
+        let groups = wave.groups(of: judgedCells, rows: level.rows, columns: level.columns)
+        judging = Judging(groups: groups)
+
+        let interval = JudgingTiming.interval(forGroups: groups.count)
+        judgingTask?.cancel()
+        judgingTask = Task { [weak self] in
+            for _ in groups.indices {
+                try? await Task.sleep(for: interval)
+                guard !Task.isCancelled, let self else { return }
+                self.judging?.litGroups += 1
+                self.feel(.cellsJudged)
+            }
+            try? await Task.sleep(for: JudgingTiming.pauseBeforeCard)
+            guard !Task.isCancelled, let self else { return }
+            self.finishJudging(result)
+        }
+    }
+
+    /// Ends the wave, played through or skipped. Safe to call twice: only
+    /// the first call lights the board and plays the verdict haptic.
+    private func finishJudging(_ result: LevelResult) {
+        guard var finished = judging, !finished.isFinished else { return }
+        judgingTask?.cancel()
+        finished.litGroups = finished.groupCount
+        finished.isFinished = true
+        judging = finished
+        feel(result.passed ? .levelPassed : .levelFailed)
     }
 
     /// Back to the home screen. The board is already saved (every letter
@@ -441,6 +516,48 @@ final class LevelViewModel {
 
 // MARK: - Display values
 
+/// The judged board lighting up, group by group (see JudgingWave).
+struct Judging {
+    /// Which group each judged cell lights with.
+    private let groupOfCell: [Coordinate: Int]
+    let groupCount: Int
+    /// How many groups have lit so far.
+    var litGroups = 0
+    /// Every group has lit and the pause after them is over: time for the card.
+    var isFinished = false
+
+    init(groups: [[Coordinate]]) {
+        var groupOfCell: [Coordinate: Int] = [:]
+        for (index, group) in groups.enumerated() {
+            for cell in group { groupOfCell[cell] = index }
+        }
+        self.groupOfCell = groupOfCell
+        self.groupCount = groups.count
+    }
+
+    func isLit(_ cell: Coordinate) -> Bool {
+        guard let group = groupOfCell[cell] else { return false }
+        return group < litGroups
+    }
+}
+
+/// How fast the judged board lights up.
+enum JudgingTiming {
+    /// Every wave takes about this long, whatever its shape: a diagonal
+    /// sweep has twice the steps of a row sweep, and both should feel the
+    /// same length.
+    static let totalSeconds = 0.9
+    /// …but a wave with few steps (a ripple on a small board) shouldn't crawl.
+    static let longestStepSeconds = 0.12
+    /// The whole board lit, before the card covers it.
+    static let pauseBeforeCard: Duration = .seconds(0.45)
+
+    static func interval(forGroups count: Int) -> Duration {
+        guard count > 0 else { return .zero }
+        return .seconds(min(longestStepSeconds, totalSeconds / Double(count)))
+    }
+}
+
 /// One key in the letter tray.
 struct TrayKey: Identifiable, Equatable {
     let letter: Character
@@ -456,13 +573,20 @@ struct LetterCellAppearance: Equatable {
         case normal
         /// Part of the active answer, in its clue's colour at this strength.
         case highlighted(colorIndex: Int, strength: Double)
+        /// Judged right after Submit (revealed letters included).
+        case correct
         case wrong
     }
+
+    /// Lit green or red by the judging wave.
+    var isJudged: Bool { style == .correct || style == .wrong }
 
     let letter: Character?
     let style: Style
     let isSelected: Bool
-    let isRevealed: Bool
+    /// A letter the player can't erase: a starter letter, or one the cat
+    /// or grandma filled in.
+    let isLocked: Bool
     let showsCat: Bool
 }
 

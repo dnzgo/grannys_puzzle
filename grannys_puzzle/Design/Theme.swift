@@ -50,11 +50,21 @@ enum Theme {
 
     // MARK: States
 
-    /// Revealed letters: a dark amber that keeps 4.5:1 contrast on white.
-    static let revealedInk = Color(hex: 0xB4530A)
+    /// Letters the player can't erase (starters, the cat's and grandma's):
+    /// a dark amber that keeps 4.5:1 contrast on white. Their corner mark
+    /// uses it too.
+    static let lockedInk = Color(hex: 0xB4530A)
     static let wrongInk = Color(hex: 0xC62828)
     static let wrongFill = Color(hex: 0xFDECEC)
     static let wrongBorder = Color(hex: 0xF3B9B9)
+    /// A right letter after Submit: the green counterpart of the wrong
+    /// colours, at the same lightness so neither shouts louder. The letter
+    /// itself stays in `ink`, which reads at 9:1 on this fill.
+    static let correctFill = Color(hex: 0xE9F6EA)
+    static let correctBorder = Color(hex: 0xA5D6A7)
+    /// Judged cells get a slightly thicker border than plain ones, so the
+    /// colour reads at a glance even on small cells.
+    static let judgedBorderWidth: CGFloat = 1.5
     static let usedUpKey = Color(hex: 0xC4B5B0)
     static let usedUpBorder = Color(hex: 0xE3D6CC)
     /// An empty yarn slot on the result panel (a pale, colourless ball).

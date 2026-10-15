@@ -43,6 +43,10 @@ enum ClueColors {
     /// Text stays readable here because the colours are light.
     static let activeClueTint: Double = 0.8
     static let activeClueBorderWidth: CGFloat = 1.2
+    /// The strongest tint under a locked (amber) letter in the active word.
+    /// At 0.3, amber keeps at least 3.5:1 on every palette colour, above
+    /// the 3:1 that letters this large need; stronger and it drops toward 2:1.
+    static let lockedCellTint: Double = 0.3
 
     // MARK: - Assigning colours
 

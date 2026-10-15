@@ -44,12 +44,16 @@ struct ActionBar: View {
                     .spotlight(.target(.submit))
 
             case .finished(let result):
-                PrimaryButton(
-                    // After the lesson, the next stop is home with the first yarn.
-                    title: result.passed ? (model.isTutorial ? "Let's play!" : "Next level") : "Try again",
-                    height: height,
-                    action: model.continueAfterResult
-                )
+                // Empty while the board lights up: "Try again" appearing
+                // under the wave would give the verdict away.
+                if model.showsLevelEnd {
+                    PrimaryButton(
+                        // After the lesson, the next stop is home with the first yarn.
+                        title: result.passed ? (model.isTutorial ? "Let's play!" : "Next level") : "Try again",
+                        height: height,
+                        action: model.continueAfterResult
+                    )
+                }
             }
         }
         .frame(height: height)

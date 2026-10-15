@@ -25,6 +25,9 @@ enum HapticEvent: Equatable {
     /// A yarn ball dropping into grandma's bag after a level. Soft: up to
     /// three come in quick succession.
     case yarnLanded
+    /// One group of cells lighting green or red after Submit. The lightest
+    /// tick of all: a wave can have fifteen of them in a second.
+    case cellsJudged
 
     /// How each moment feels. Small and frequent actions get the lightest
     /// taps; only real outcomes get the stronger, patterned ones. If every
@@ -33,6 +36,7 @@ enum HapticEvent: Equatable {
         switch self {
         case .select, .letterErased: .selection
         case .letterPlaced, .yarnLanded: .impact(flexibility: .soft, intensity: 0.6)
+        case .cellsJudged: .impact(flexibility: .soft, intensity: 0.35)
         case .reveal: .impact(weight: .medium)
         case .levelPassed, .itemKnitted, .jarOpened, .helperEarned: .success
         case .levelFailed: .warning

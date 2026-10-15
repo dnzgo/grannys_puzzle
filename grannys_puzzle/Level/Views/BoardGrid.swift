@@ -124,18 +124,25 @@ struct ClueCellView: View {
 }
 
 /// A letter cell. Cells of the active answer take its clue's colour, strongest
-/// on the selected cell. Shows the cat's head briefly after a hint.
+/// on the selected cell. Shows the cat's head briefly after a hint. After
+/// Submit it turns green or red when the judging wave reaches it, with a
+/// quick pop.
 struct LetterCellView: View {
     let appearance: LetterCellAppearance
     let fontSize: CGFloat
     let accessibilityText: String
     let onTap: () -> Void
 
+    /// Counts pops; each increase plays one.
+    @State private var pops = 0
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     var body: some View {
         Button(action: onTap) {
             ZStack {
                 RoundedRectangle(cornerRadius: Theme.cornerRadius).fill(fill)
-                RoundedRectangle(cornerRadius: Theme.cornerRadius).strokeBorder(border, lineWidth: 1)
+                RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                    .strokeBorder(border, lineWidth: borderWidth)
                 if appearance.showsCat {
                     HelperFaceImage(face: .cat, size: fontSize * 1.5)
                         .transition(.scale.combined(with: .opacity))
@@ -143,38 +150,100 @@ struct LetterCellView: View {
                     Text(String(letter))
                         .font(.system(size: fontSize, weight: .semibold, design: .rounded))
                         .foregroundStyle(ink)
+                    if appearance.isLocked {
+                        lockedMark
+                    }
                 }
             }
         }
         .buttonStyle(.plain)
         .animation(.easeOut(duration: 0.15), value: appearance)
+        // The pop: a little bigger, then a spring back. Kept to 14% because
+        // cells sit only a few points apart, and neighbours lit in the same
+        // group pop together.
+        .keyframeAnimator(initialValue: 1.0, trigger: pops) { content, scale in
+            content.scaleEffect(scale)
+        } keyframes: { _ in
+            KeyframeTrack {
+                CubicKeyframe(1.14, duration: 0.1)
+                SpringKeyframe(1.0, duration: 0.3)
+            }
+        }
+        // Pops only on the way into green or red, not when Try again clears
+        // the board; with Reduce Motion the colour change alone carries it.
+        .onChange(of: appearance.isJudged) { _, isJudged in
+            if isJudged, !reduceMotion { pops += 1 }
+        }
         .accessibilityLabel(accessibilityText)
         .accessibilityValue(appearance.letter.map { String($0) } ?? "empty")
         .accessibilityAddTraits(appearance.isSelected ? .isSelected : [])
     }
 
+    /// A small triangle in the top-right corner of a letter the player
+    /// can't erase, in the same amber as the letter. Being a shape, it
+    /// doesn't rely on colour alone.
+    private var lockedMark: some View {
+        CornerTriangle()
+            .fill(ink)
+            // Half the letter size: 10–12pt on phone cells. Smaller, and the
+            // rounded corner clips it down to a sliver.
+            .frame(width: fontSize * 0.5, height: fontSize * 0.5)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
+            // Follows the cell's rounded corner instead of poking past it.
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .accessibilityHidden(true)
+    }
+
     private var fill: Color {
         switch appearance.style {
         case .normal: return Theme.surface
+        case .correct: return Theme.correctFill
         case .wrong: return Theme.wrongFill
-        case .highlighted(let colorIndex, let strength): return ClueColors.fill(colorIndex, strength: strength)
+        case .highlighted(let colorIndex, let strength):
+            // A locked letter inside the active word sits on a light tint of
+            // the word's colour, light enough that its amber stays readable
+            // (the full tint can take amber below 2:1).
+            let tint = appearance.isLocked ? min(strength, ClueColors.lockedCellTint) : strength
+            return ClueColors.fill(colorIndex, strength: tint)
         }
     }
 
     private var border: Color {
         switch appearance.style {
         case .normal: return Theme.cellBorder
+        case .correct: return Theme.correctBorder
         case .wrong: return Theme.wrongBorder
         case .highlighted: return .clear
         }
     }
 
+    private var borderWidth: CGFloat {
+        appearance.isJudged ? Theme.judgedBorderWidth : 1
+    }
+
     private var ink: Color {
         switch appearance.style {
-        case .normal: return appearance.isRevealed ? Theme.revealedInk : Theme.ink
+        case .normal: return appearance.isLocked ? Theme.lockedInk : Theme.ink
+        // Cat and grandma letters lose their amber here: on the judged
+        // board they're simply right, like the rest.
+        case .correct: return Theme.ink
         case .wrong: return Theme.wrongInk
-        // Inside the coloured word, readability wins over the amber marker.
-        case .highlighted(let colorIndex, let strength): return ClueColors.text(on: colorIndex, strength: strength)
+        // Inside the coloured word: amber for locked letters (on their
+        // lighter tint, see `fill`), otherwise whichever text colour reads.
+        case .highlighted(let colorIndex, let strength):
+            return appearance.isLocked ? Theme.lockedInk : ClueColors.text(on: colorIndex, strength: strength)
         }
+    }
+}
+
+/// A right triangle filling the top-right half of its frame.
+private struct CornerTriangle: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+        path.closeSubpath()
+        return path
     }
 }

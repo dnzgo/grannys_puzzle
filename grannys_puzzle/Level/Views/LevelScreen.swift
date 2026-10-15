@@ -53,10 +53,21 @@ struct LevelScreen: View {
             // an ad under a dim layer counts as obscured for AdMob, and the
             // banner shouldn't jump or vanish between levels anyway.
             // The ZStack stays in place while the card comes and goes, so the
-            // animation can fade it in after Submit and out after Try again.
+            // animation can fade it in after the wave and out after Try again.
             .overlay {
-                ZStack { levelEnd }
-                    .animation(.easeOut(duration: 0.25), value: model.puzzle.isSubmitted)
+                ZStack {
+                    if model.isJudging {
+                        // While the board lights up, a tap anywhere skips to
+                        // the card (and can't reach the board or Back).
+                        Color.clear
+                            .contentShape(Rectangle())
+                            .ignoresSafeArea(edges: [.top, .horizontal])
+                            .onTapGesture(perform: model.skipJudging)
+                            .accessibilityHidden(true)
+                    }
+                    levelEnd
+                }
+                .animation(.easeOut(duration: 0.25), value: model.showsLevelEnd)
             }
             BannerAdSlot()
         }
@@ -98,18 +109,21 @@ struct LevelScreen: View {
 
     @ViewBuilder
     private func trayOrResult(metrics: BoardMetrics) -> some View {
-        if case .finished(let result) = model.phase {
+        // The tray stays (locked) during the wave, so the score isn't given
+        // away before the board has shown it.
+        if case .finished(let result) = model.phase, model.showsLevelEnd {
             ResultPanel(result: result, earnedYarn: model.earnedYarn)
         } else {
             LetterTray(model: model, keyHeight: metrics.trayKeyHeight)
         }
     }
 
-    /// After Submit: the celebration on a pass, grandma's encouragement on
-    /// a fail. Both on the same card, over the judged board.
+    /// After Submit and the judging wave: the celebration on a pass,
+    /// grandma's encouragement on a fail. Both on the same card, over the
+    /// judged board.
     @ViewBuilder
     private var levelEnd: some View {
-        if case .finished(let result) = model.phase {
+        if case .finished(let result) = model.phase, model.showsLevelEnd {
             if result.passed {
                 LevelCompleteView(
                     result: result,
