@@ -21,10 +21,10 @@ final class TutorialHost: LevelHost {
     func spendHint() -> Bool { true }
     func spendGrandma() -> Bool { true }
 
-    func record(_ result: LevelResult) -> [YarnColor] {
+    func record(_ result: LevelResult) -> LevelReward {
         // The lesson only lets the player put in correct letters, so the
-        // board always passes.
-        game?.completeTutorial() ?? []
+        // board always passes. Its few balls can't buy anything yet.
+        LevelReward(yarn: game?.completeTutorial() ?? [])
     }
 
     func saveBoard(_ board: SavedBoard?) {}

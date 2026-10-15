@@ -116,8 +116,9 @@ struct JarMoment: View {
 }
 
 /// One cat or grandma coming out of the jar, styled like the level's
-/// helper buttons so the player recognises what they got.
-private struct RewardToken: View {
+/// helper buttons so the player recognises what they got. Also used by
+/// the set prize.
+struct RewardToken: View {
     let face: HelperFace
 
     var body: some View {

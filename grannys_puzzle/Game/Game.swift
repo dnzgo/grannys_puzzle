@@ -144,14 +144,36 @@ final class Game {
 
     // MARK: - Knitting
 
+    /// What knitting an item led to.
+    struct KnitReport {
+        /// Set when this item was the last colour of its garment: the prize
+        /// for the finished set, already added to the player's helpers.
+        let setPrize: JarReward?
+    }
+
     /// Knits an item if the player can afford it, and saves at once, before
-    /// any animation plays. Returns whether it was knitted.
-    func knit(_ item: KnitItem) -> Bool {
+    /// any animation plays. Nil if it wasn't knitted.
+    ///
+    /// Finishing a set (one garment in every colour) earns the jar's big
+    /// reward. It's given in the same save as the knit, so closing the app
+    /// mid-animation can't lose it, and only once, because each item can
+    /// only be knitted once, so only one knit completes a set.
+    func knit(_ item: KnitItem) -> KnitReport? {
         var outcome = PlayerProgress.KnitOutcome.alreadyOwned
-        update { outcome = $0.knit(item) }
-        guard outcome == .knitted else { return false }
+        var prize: JarReward?
+        update { progress in
+            outcome = progress.knit(item)
+            guard outcome == .knitted, catalog.isSetComplete(for: item, in: progress) else { return }
+            // The big jar's reward: four items is a real achievement, and
+            // this way the same remotely tuned number covers both.
+            let reward = tuning.jar.bigReward
+            progress.receive(reward)
+            prize = reward
+        }
+        guard outcome == .knitted else { return nil }
         events?.log(.itemKnitted(item))
-        return true
+        if prize != nil { events?.log(.setCompleted(item)) }
+        return KnitReport(setPrize: prize)
     }
 
     // MARK: - Daily jar
@@ -388,9 +410,10 @@ extension Game: LevelHost {
         return spent
     }
 
-    func record(_ result: LevelResult) -> [YarnColor] {
+    func record(_ result: LevelResult) -> LevelReward {
         // The level being judged; `record` below moves the number on.
         let level = progress.levelNumber
+        let before = progress
         if result.passed {
             adBreaks.levelPassed(number: level)
         }
@@ -406,7 +429,7 @@ extension Game: LevelHost {
         // A retry after a fail is timed from here.
         attemptStartedAt = now
         events?.log(.levelEnd(level: level, language: pack.language, result: result, yarn: earned.count, seconds: seconds))
-        return earned
+        return LevelReward(yarn: earned, newlyKnittable: catalog.newlyKnittable(before: before, after: progress))
     }
 
     /// An ad is loaded and today's videos aren't used up. (The day is read

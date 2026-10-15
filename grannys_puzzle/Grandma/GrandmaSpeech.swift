@@ -56,6 +56,18 @@ enum GrandmaLines {
         }
     }
 
+    /// After a level that didn't pass, on the level-end card. Warm and
+    /// forward-looking: the player should want to try again, not feel told off.
+    static func encouragement() -> String {
+        switch Int.random(in: 0..<5) {
+        case 0: String(localized: "So close, dear! Every puzzle makes you a little sharper.", bundle: .appLanguage, locale: .appLanguage)
+        case 1: String(localized: "Even my best scarves took a few tries. You'll get it this time!", bundle: .appLanguage, locale: .appLanguage)
+        case 2: String(localized: "Don't you worry, sweetheart. A sip of tea, a fresh look, and it's yours.", bundle: .appLanguage, locale: .appLanguage)
+        case 3: String(localized: "A wrong stitch is just one to unpick. Let's knit it again!", bundle: .appLanguage, locale: .appLanguage)
+        default: String(localized: "You're doing wonderfully. One more go, I believe in you!", bundle: .appLanguage, locale: .appLanguage)
+        }
+    }
+
     static var jarReady: String { String(localized: "My jar has a treat for you today, dear!", bundle: .appLanguage, locale: .appLanguage) }
     static var jarTomorrow: String { String(localized: "That's all for today. Come back tomorrow for another treat!", bundle: .appLanguage, locale: .appLanguage) }
     static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }

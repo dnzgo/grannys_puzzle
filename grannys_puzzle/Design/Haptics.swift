@@ -22,6 +22,9 @@ enum HapticEvent: Equatable {
     case jarOpened
     /// Helpers earned by watching a video.
     case helperEarned
+    /// A yarn ball dropping into grandma's bag after a level. Soft: up to
+    /// three come in quick succession.
+    case yarnLanded
 
     /// How each moment feels. Small and frequent actions get the lightest
     /// taps; only real outcomes get the stronger, patterned ones. If every
@@ -29,7 +32,7 @@ enum HapticEvent: Equatable {
     var feedback: SensoryFeedback {
         switch self {
         case .select, .letterErased: .selection
-        case .letterPlaced: .impact(flexibility: .soft, intensity: 0.6)
+        case .letterPlaced, .yarnLanded: .impact(flexibility: .soft, intensity: 0.6)
         case .reveal: .impact(weight: .medium)
         case .levelPassed, .itemKnitted, .jarOpened, .helperEarned: .success
         case .levelFailed: .warning

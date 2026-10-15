@@ -49,6 +49,15 @@ struct LevelScreen: View {
                 .padding(.horizontal, Theme.sidePadding)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            // The level's ending covers the level but stops at the banner:
+            // an ad under a dim layer counts as obscured for AdMob, and the
+            // banner shouldn't jump or vanish between levels anyway.
+            // The ZStack stays in place while the card comes and goes, so the
+            // animation can fade it in after Submit and out after Try again.
+            .overlay {
+                ZStack { levelEnd }
+                    .animation(.easeOut(duration: 0.25), value: model.puzzle.isSubmitted)
+            }
             BannerAdSlot()
         }
         .background(Theme.background.ignoresSafeArea())
@@ -74,10 +83,10 @@ struct LevelScreen: View {
         .sheet(isPresented: $showsSettings) {
             SettingsSheet()
         }
-        // After a perfect board, once the player has had a moment to enjoy
-        // the result: a prompt on top of it would steal the celebration.
-        .task(id: model.asksForReview) {
-            guard model.asksForReview else { return }
+        // After a perfect board, once the celebration has finished and the
+        // player has had a moment: a prompt on top of it would cut it short.
+        .task(id: model.readyForReviewPrompt) {
+            guard model.readyForReviewPrompt else { return }
             try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
             // Gone already (Next level tapped during the pause): no prompt,
             // and nothing recorded, so the chance isn't wasted.
@@ -93,6 +102,34 @@ struct LevelScreen: View {
             ResultPanel(result: result, earnedYarn: model.earnedYarn)
         } else {
             LetterTray(model: model, keyHeight: metrics.trayKeyHeight)
+        }
+    }
+
+    /// After Submit: the celebration on a pass, grandma's encouragement on
+    /// a fail. Both on the same card, over the judged board.
+    @ViewBuilder
+    private var levelEnd: some View {
+        if case .finished(let result) = model.phase {
+            if result.passed {
+                LevelCompleteView(
+                    result: result,
+                    yarn: model.earnedYarn,
+                    newlyKnittable: model.newlyKnittable,
+                    isTutorial: model.isTutorial,
+                    onNext: model.continueAfterResult,
+                    onHome: model.goHome,
+                    onFinished: model.celebrationDidFinish
+                )
+                .transition(.opacity)
+            } else {
+                LevelFailView(
+                    result: result,
+                    isTutorial: model.isTutorial,
+                    onTryAgain: model.continueAfterResult,
+                    onHome: model.goHome
+                )
+                .transition(.opacity)
+            }
         }
     }
 

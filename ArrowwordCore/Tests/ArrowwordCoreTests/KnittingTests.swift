@@ -121,3 +121,61 @@ final class YarnNeedTests: XCTestCase {
         XCTAssertNil(progress.closestYarnNeed(in: catalog))
     }
 }
+
+final class CollectionTests: XCTestCase {
+    private let catalog = KnittingCatalog.standard
+
+    private func progress(yarn: [YarnColor: Int], owned: Set<String> = []) -> PlayerProgress {
+        PlayerProgress(levelNumber: 9, hints: 0, grandmas: 0, yarn: yarn, wardrobe: owned)
+    }
+
+    func testALevelThatTipsAColourOverAPriceMakesThatItemNew() {
+        // 5 red is one short of a red scarf (6); the level brings the sixth.
+        let before = progress(yarn: [.red: 5])
+        let after = progress(yarn: [.red: 6])
+        XCTAssertEqual(catalog.newlyKnittable(before: before, after: after)?.id, "cat.scarf.red")
+    }
+
+    func testSomethingAlreadyAffordableIsNotNewAgain() {
+        // The red scarf was affordable before this level too: grandma has
+        // already mentioned it, so she doesn't repeat herself.
+        let before = progress(yarn: [.red: 6])
+        let after = progress(yarn: [.red: 7])
+        XCTAssertNil(catalog.newlyKnittable(before: before, after: after))
+    }
+
+    func testTheCheapestNewItemIsTheOneMentioned() {
+        // 8 red makes the red hat newly affordable, and the red scarf too:
+        // the scarf comes first.
+        let before = progress(yarn: [.red: 5])
+        let after = progress(yarn: [.red: 8])
+        XCTAssertEqual(catalog.newlyKnittable(before: before, after: after)?.id, "cat.scarf.red")
+    }
+
+    func testOwnedItemsAreNeverNew() {
+        let owned: Set<String> = ["cat.scarf.red"]
+        let before = progress(yarn: [.red: 5], owned: owned)
+        let after = progress(yarn: [.red: 6], owned: owned)
+        XCTAssertNil(catalog.newlyKnittable(before: before, after: after), "the red hat needs 8")
+    }
+
+    func testASetIsOneGarmentInEveryColour() {
+        let scarf = catalog.item(withID: "cat.scarf.red")!
+        XCTAssertEqual(Set(catalog.itemsInSet(of: scarf).map(\.color)), Set(YarnColor.allCases))
+        XCTAssertTrue(catalog.itemsInSet(of: scarf).allSatisfy { $0.kind == .scarf })
+    }
+
+    func testTheSetIsCompleteOnlyWithEveryColour() {
+        let blueScarf = catalog.item(withID: "cat.scarf.blue")!
+        let three: Set<String> = ["cat.scarf.red", "cat.scarf.yellow", "cat.scarf.green"]
+        XCTAssertFalse(catalog.isSetComplete(for: blueScarf, in: progress(yarn: [:], owned: three)))
+        XCTAssertTrue(catalog.isSetComplete(for: blueScarf, in: progress(yarn: [:], owned: three.union(["cat.scarf.blue"]))))
+    }
+
+    func testReceivingAPrizeAddsBothHelpers() {
+        var player = progress(yarn: [:])
+        player.receive(JarReward(hints: 3, grandmas: 1))
+        XCTAssertEqual(player.hints, 3)
+        XCTAssertEqual(player.grandmas, 1)
+    }
+}

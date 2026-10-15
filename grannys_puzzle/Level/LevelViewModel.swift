@@ -27,6 +27,12 @@ final class LevelViewModel {
     private(set) var coach: TutorialCoach?
     /// The yarn balls this level earned, shown on the result panel.
     private(set) var earnedYarn: [YarnColor] = []
+    /// An item this level's yarn made affordable for the first time;
+    /// grandma mentions it in the celebration.
+    private(set) var newlyKnittable: KnitItem?
+    /// The celebration has played through (or was tapped past), so the
+    /// buttons are up and nothing else is animating.
+    private(set) var celebrationFinished = false
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
@@ -78,10 +84,6 @@ final class LevelViewModel {
         puzzle.isSubmitted ? nil : puzzle.activeAnswer
     }
 
-    var progressText: String {
-        "\(puzzle.filledCount)/\(level.letterCells.count)"
-    }
-
     var progressFraction: Double {
         Double(puzzle.filledCount) / Double(level.letterCells.count)
     }
@@ -110,6 +112,14 @@ final class LevelViewModel {
     /// Set once when a perfect board may lead to Apple's rating prompt; the
     /// level screen shows it a moment after the result.
     private(set) var asksForReview = false
+
+    /// The rating prompt waits until the celebration is over: a system
+    /// dialog over flying yarn would cut the best moment short.
+    var readyForReviewPrompt: Bool { asksForReview && celebrationFinished }
+
+    func celebrationDidFinish() {
+        celebrationFinished = true
+    }
 
     /// The level screen is requesting the rating prompt now.
     func reviewPromptRequested() {
@@ -269,7 +279,9 @@ final class LevelViewModel {
         // return value (not `puzzle.result`) makes a double tap on Submit
         // record the level once, not award yarn twice and skip a level.
         guard let result = puzzle.submit(rules: scoringRules) else { return }
-        earnedYarn = host?.record(result) ?? []
+        let reward = host?.record(result) ?? LevelReward()
+        earnedYarn = reward.yarn
+        newlyKnittable = reward.newlyKnittable
         feel(result.passed ? .levelPassed : .levelFailed)
         coachSaw(.submit)
         // Every letter right: a happy moment, if the rules allow asking now.
@@ -287,6 +299,7 @@ final class LevelViewModel {
             host?.continueToNextLevel()
         } else {
             earnedYarn = []
+            newlyKnittable = nil
             puzzle.restart()
         }
     }

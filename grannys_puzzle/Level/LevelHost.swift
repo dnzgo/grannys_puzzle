@@ -18,10 +18,10 @@ protocol LevelHost: AnyObject {
     /// Pays for one grandma. Returns false if the player has none left.
     func spendGrandma() -> Bool
 
-    /// Records a submitted board and returns the yarn it earned (none for a
+    /// Records a submitted board and returns what it earned (nothing for a
     /// fail). Called once per submission, as soon as the result is known, so
     /// the reward is saved even if the app is closed on the result screen.
-    func record(_ result: LevelResult) -> [YarnColor]
+    func record(_ result: LevelResult) -> LevelReward
 
     /// Keeps the board as it is now, so leaving the level (or the app being
     /// closed) doesn't lose it. Nil means there's nothing to keep.
@@ -55,6 +55,15 @@ protocol LevelHost: AnyObject {
 
     func continueToNextLevel()
     func goHome()
+}
+
+/// What a submitted board earned, for the celebration to show.
+struct LevelReward {
+    /// The yarn balls, in the order they were drawn.
+    var yarn: [YarnColor] = []
+    /// An item this level's yarn made affordable for the first time, which
+    /// grandma mentions. Nil when nothing new became affordable.
+    var newlyKnittable: KnitItem?
 }
 
 /// The happy moments that may lead to Apple's rating prompt.

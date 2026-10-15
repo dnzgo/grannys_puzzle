@@ -92,6 +92,14 @@ extension AnalyticsEvent {
         AnalyticsEvent("item_knitted", ["item_id": .string(item.id), "cost": .int(item.cost)])
     }
 
+    /// The last colour of a garment was knitted, finishing its set.
+    static func setCompleted(_ lastItem: KnitItem) -> AnalyticsEvent {
+        AnalyticsEvent("set_completed", [
+            "member": .string(lastItem.member.rawValue),
+            "garment": .string(lastItem.kind.rawValue),
+        ])
+    }
+
     static func languageSwitched(to language: String) -> AnalyticsEvent {
         AnalyticsEvent("language_switched", ["language": .string(language)])
     }

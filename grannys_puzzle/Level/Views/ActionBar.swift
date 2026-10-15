@@ -173,3 +173,29 @@ struct PrimaryButton: View {
         .buttonStyle(.plain)
     }
 }
+
+/// The quieter partner of PrimaryButton (Home under Next level): the same
+/// shape, size and type, but only a brown outline and label, so it's as
+/// easy to hit while the main action stays the obvious one.
+struct SecondaryButton: View {
+    let title: LocalizedStringKey
+    let height: CGFloat
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            // Brown on cream is 3.3:1, which passes for text this large and
+            // heavy (see Theme.secondary).
+            Text(title)
+                .font(.system(size: 21, weight: .heavy, design: .rounded))
+                .foregroundStyle(Theme.secondary)
+                .frame(maxWidth: .infinity)
+                .frame(height: height)
+                .overlay(Capsule().strokeBorder(Theme.secondary, lineWidth: 2))
+                // The inside of an outline isn't hit-testable by default;
+                // this makes the whole capsule the tap target.
+                .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+    }
+}

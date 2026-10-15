@@ -1,9 +1,9 @@
 import SwiftUI
 import ArrowwordCore
 
-/// One compact row: back, the clue pill, settings. Level number and
-/// progress are small meta text; the clue keeps full size because it's what
-/// the player reads most.
+/// One compact row: back, the clue pill, settings. The level number is
+/// small meta text and progress a thin bar; the clue keeps full size
+/// because it's what the player reads most.
 struct TopBar: View {
     let model: LevelViewModel
     let onSettings: () -> Void
@@ -57,12 +57,15 @@ private struct CluePill: View {
         .shadow(color: .black.opacity(0.06), radius: 1, y: 1)
     }
 
+    /// Only which level this is. A filled count ("4/48") sat beside it but
+    /// read like a second level number; the bar along the pill's bottom
+    /// edge already shows how full the board is.
     @ViewBuilder
     private var header: some View {
         if model.isTutorial {
-            Text("HOW TO PLAY · \(model.progressText)")
+            Text("HOW TO PLAY")
         } else {
-            Text("LEVEL \(model.levelNumber) · \(model.progressText)")
+            Text("LEVEL \(model.levelNumber)")
         }
     }
 

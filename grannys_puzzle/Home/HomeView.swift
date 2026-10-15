@@ -19,6 +19,10 @@ struct HomeView: View {
     @State private var showsSettings = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
+    /// A finished set's prize, waiting for the knitting moment to end.
+    @State private var pendingSetPrize: SetPrize?
+    /// The set prize being shown, if any.
+    @State private var setPrize: SetPrize?
     /// The jar opening being shown, if any.
     @State private var jarOpening: JarOpening?
     /// Grandma is asking whether she may send reminders.
@@ -72,20 +76,28 @@ struct HomeView: View {
             if let item = knittingItem {
                 KnittingMoment(item: item) {
                     knittingItem = nil
-                    speech.say(GrandmaLines.knitted)
-                    // A finished piece is the other happy moment for asking.
-                    if game.mayAskForReview() {
-                        Task {
-                            try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
-                            game.reviewAsked(.itemKnitted)
-                            requestReview()
-                        }
+                    // A finished set has its own moment before grandma speaks.
+                    if let prize = pendingSetPrize {
+                        pendingSetPrize = nil
+                        setPrize = prize
+                    } else {
+                        afterKnitting()
                     }
                 }
                 .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.25), value: knittingItem)
+        .overlay {
+            if let prize = setPrize {
+                SetPrizeMoment(items: game.catalog.itemsInSet(of: prize.item), reward: prize.reward) {
+                    setPrize = nil
+                    afterKnitting()
+                }
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: setPrize)
         .overlay {
             if let opening = jarOpening {
                 JarMoment(opening: opening, streakLength: DailyJarRules.standard.streakLength) {
@@ -166,10 +178,23 @@ struct HomeView: View {
         Task { await game.answerReminderQuestion(yes: yes) }
     }
 
-    /// Knitting is saved first; the moment on screen is only the reveal.
+    /// Knitting (and any set prize) is saved first; the moments on screen
+    /// are only the reveal.
     private func startKnitting(_ item: KnitItem) {
-        if game.knit(item) {
-            knittingItem = item
+        guard let report = game.knit(item) else { return }
+        pendingSetPrize = report.setPrize.map { SetPrize(item: item, reward: $0) }
+        knittingItem = item
+    }
+
+    /// Grandma's comment once the knitting (and any set prize) is shown,
+    /// and, a finished piece being a happy moment, maybe the rating prompt.
+    private func afterKnitting() {
+        speech.say(GrandmaLines.knitted)
+        guard game.mayAskForReview() else { return }
+        Task {
+            try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
+            game.reviewAsked(.itemKnitted)
+            requestReview()
         }
     }
 
@@ -398,4 +423,11 @@ private struct SceneButtonStyle: ButtonStyle {
     if let game = Game.preview() {
         HomeView(game: game)
     }
+}
+
+/// A finished set's prize: the item that completed it (which names the
+/// set) and the reward, already given.
+private struct SetPrize: Equatable {
+    let item: KnitItem
+    let reward: JarReward
 }
