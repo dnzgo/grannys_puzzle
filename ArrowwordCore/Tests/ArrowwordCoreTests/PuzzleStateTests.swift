@@ -317,4 +317,36 @@ final class PuzzleStateTests: XCTestCase {
         XCTAssertEqual(state.entries.count, 4)
         XCTAssertFalse(state.isSubmitted)
     }
+
+    /// Restart from the level's settings: the player's own letters go, but
+    /// starter letters stay and so do the helpers' ones, which cost a hint.
+    func testClearingKeepsStarterAndHelperLetters() throws {
+        var state = PuzzleState(level: try TestLevels.level100())
+        let starters = state.entries.count
+        let revealed = try XCTUnwrap(state.revealLetter())
+        let empty = try XCTUnwrap(state.level.letterCells.first { state.entries[$0] == nil })
+        XCTAssertTrue(state.put(try XCTUnwrap(state.level.solution(at: empty)), at: empty))
+        XCTAssertTrue(state.hasPlacedLetters)
+
+        state.clearPlacedLetters()
+
+        XCTAssertNil(state.entries[empty])
+        XCTAssertEqual(state.entries[revealed]?.source, .revealed)
+        XCTAssertEqual(state.entries.count, starters + 1)
+        XCTAssertFalse(state.hasPlacedLetters)
+        // Ready to type again, from the first empty cell.
+        XCTAssertNil(state.entries[state.selection])
+    }
+
+    /// A judged board is locked; only Try again (`restart`) starts it over.
+    func testAJudgedBoardCannotBeCleared() throws {
+        var state = PuzzleState(level: try TestLevels.level100())
+        state.fillBoard()
+        state.submit()
+
+        state.clearPlacedLetters()
+
+        XCTAssertTrue(state.isSubmitted)
+        XCTAssertTrue(state.isBoardFull)
+    }
 }

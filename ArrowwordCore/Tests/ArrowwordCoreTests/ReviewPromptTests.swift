@@ -11,8 +11,8 @@ final class ReviewPromptRulesTests: XCTestCase {
     }
 
     func testNewPlayersAreNeverAsked() {
-        XCTAssertFalse(rules.mayAsk(levelsPassed: 9, lastAsked: nil, now: now, calendar: calendar))
-        XCTAssertTrue(rules.mayAsk(levelsPassed: 10, lastAsked: nil, now: now, calendar: calendar))
+        XCTAssertFalse(rules.mayAsk(levelsPassed: 4, lastAsked: nil, now: now, calendar: calendar))
+        XCTAssertTrue(rules.mayAsk(levelsPassed: 5, lastAsked: nil, now: now, calendar: calendar))
     }
 
     func testAfterAskingTheGameWaitsBeforeAskingAgain() {

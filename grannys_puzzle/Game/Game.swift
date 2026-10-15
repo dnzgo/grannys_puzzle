@@ -214,10 +214,23 @@ final class Game {
         await reminders.schedule(candidates, now: now)
     }
 
-    /// Whether grandma may ask about reminders now (after the jar, see
-    /// HomeView). Her own question, before iOS's one-time prompt.
+    /// Whether grandma may ask about reminders now (see HomeView for when).
+    /// Her own question, before iOS's one-time prompt. Not until the player
+    /// has passed a few real levels: straight after the lesson they don't
+    /// yet know what they'd be reminded of, and iOS only asks once.
     var mayAskAboutReminders: Bool {
-        reminders?.canOfferSoftAsk() ?? false
+        guard levelsPassed >= tuning.reminderAskMinLevels else { return false }
+        return reminders?.canOfferSoftAsk() ?? false
+    }
+
+    /// Real levels passed; the lesson isn't one. `levelNumber` is the next
+    /// level to play, so one less have been passed.
+    private var levelsPassed: Int { progress.levelNumber - 1 }
+
+    /// Asks iOS whether notifications are allowed, before deciding whether
+    /// grandma may ask: at launch the game hasn't heard yet.
+    func refreshReminderPermission() async {
+        await reminders?.refreshPermission()
     }
 
     /// The player answered grandma's question.
@@ -453,8 +466,7 @@ extension Game: LevelHost {
 
     func mayAskForReview() -> Bool {
         let lastAsked = UserDefaults.standard.object(forKey: Self.lastReviewAskKey) as? Date
-        // `levelNumber` is the next level to play, so one less have passed.
-        return ReviewPromptRules.standard.mayAsk(levelsPassed: progress.levelNumber - 1, lastAsked: lastAsked, now: .now)
+        return tuning.review.mayAsk(levelsPassed: levelsPassed, lastAsked: lastAsked, now: .now)
     }
 
     func reviewAsked(_ moment: ReviewMoment) {

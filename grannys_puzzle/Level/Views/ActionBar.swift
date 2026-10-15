@@ -2,8 +2,9 @@ import SwiftUI
 import ArrowwordCore
 
 /// The row in the thumb's reach. While playing: erase · grandma · cat as one
-/// centred group. With a full board: erase · Submit. After the result: Next
-/// level or Try again.
+/// centred group. With a full board: erase · Submit. After Submit it's
+/// empty: the level-end card has the buttons, and a second "Next level"
+/// showing under the dimming would look like two ways on.
 struct ActionBar: View {
     let model: LevelViewModel
     let height: CGFloat
@@ -43,17 +44,8 @@ struct ActionBar: View {
                 PrimaryButton(title: "Submit", height: height, action: model.submit)
                     .spotlight(.target(.submit))
 
-            case .finished(let result):
-                // Empty while the board lights up: "Try again" appearing
-                // under the wave would give the verdict away.
-                if model.showsLevelEnd {
-                    PrimaryButton(
-                        // After the lesson, the next stop is home with the first yarn.
-                        title: result.passed ? (model.isTutorial ? "Let's play!" : "Next level") : "Try again",
-                        height: height,
-                        action: model.continueAfterResult
-                    )
-                }
+            case .finished:
+                EmptyView()
             }
         }
         .frame(height: height)
@@ -152,8 +144,8 @@ private struct HelperButton: View {
     }
 }
 
-/// The full-width main button (Submit, Next level, Try again, and Play on
-/// the home screen).
+/// The full-width main button (Submit, the level-end cards' Next level and
+/// Try again, Restart, and Play on the home screen).
 struct PrimaryButton: View {
     let title: LocalizedStringKey
     let height: CGFloat

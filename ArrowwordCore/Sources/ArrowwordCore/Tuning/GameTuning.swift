@@ -18,6 +18,13 @@ public struct GameTuning: Equatable, Sendable {
     /// See `AdBreakSchedule`.
     public var adBreakFirstLevel = AdBreakSchedule().firstLevel
     public var adBreakLevelsBetween = AdBreakSchedule().levelsBetween
+    /// When the rating prompt may be asked for (levels passed and the wait
+    /// between asks). Only the level count is tunable from the server.
+    public var review = ReviewPromptRules.standard
+    /// Levels passed before grandma asks whether she may send reminders.
+    /// A player who has played a few levels knows what they'd be reminded
+    /// of; the lesson doesn't count.
+    public var reminderAskMinLevels = 3
 
     public init() {}
 
@@ -42,6 +49,8 @@ public struct GameTuning: Equatable, Sendable {
         case grandmasPerAd = "grandmas_per_ad"
         case adBreakFirstLevel = "ad_break_first_level"
         case adBreakLevelsBetween = "ad_break_levels_between"
+        case reviewMinLevels = "review_min_levels"
+        case reminderAskMinLevels = "reminder_ask_min_levels"
     }
 
     /// Builds the tuning from server values, looked up by key.
@@ -98,6 +107,11 @@ public struct GameTuning: Equatable, Sendable {
         tuning.grandmasPerAd = reader.integer(.grandmasPerAd, in: 1...5).value ?? tuning.grandmasPerAd
         tuning.adBreakFirstLevel = reader.integer(.adBreakFirstLevel, in: 1...1_000).value ?? tuning.adBreakFirstLevel
         tuning.adBreakLevelsBetween = reader.integer(.adBreakLevelsBetween, in: 1...50).value ?? tuning.adBreakLevelsBetween
+
+        // When to ask. At least one level, so neither question can ever come
+        // straight after the lesson, whatever the console says.
+        tuning.review.minLevelsPassed = reader.integer(.reviewMinLevels, in: 1...500).value ?? tuning.review.minLevelsPassed
+        tuning.reminderAskMinLevels = reader.integer(.reminderAskMinLevels, in: 1...100).value ?? tuning.reminderAskMinLevels
 
         return (tuning, reader.ignored)
     }

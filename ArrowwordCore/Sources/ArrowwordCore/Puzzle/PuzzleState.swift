@@ -63,6 +63,12 @@ public struct PuzzleState: Sendable {
 
     public var isBoardFull: Bool { filledCount == level.letterCells.count }
 
+    /// Whether the player has typed any letter, i.e. whether clearing
+    /// their letters would lose them anything.
+    public var hasPlacedLetters: Bool {
+        entries.values.contains { $0.source == .placed }
+    }
+
     /// The answer the player is working on: the selected cell's answer in the
     /// current direction, or in the other direction if there's none this way.
     public var activeAnswerID: Int? {
@@ -253,6 +259,16 @@ public struct PuzzleState: Sendable {
     /// Starts the level over from its starter letters (used for "Try again").
     public mutating func restart() {
         self = PuzzleState(level: level)
+    }
+
+    /// Clears every letter the player typed, mid-level (Restart in the
+    /// level's settings). Letters from the cat and grandma stay, unlike
+    /// `restart()`: the player paid a hint for each, and taking them away
+    /// would make them pay again for the same help.
+    public mutating func clearPlacedLetters() {
+        guard !isSubmitted else { return }
+        entries = entries.filter { $0.value.source != .placed }
+        selectFirstEmptyCell()
     }
 
     // MARK: - Private

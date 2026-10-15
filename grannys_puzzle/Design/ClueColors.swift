@@ -47,6 +47,11 @@ enum ClueColors {
     /// At 0.3, amber keeps at least 3.5:1 on every palette colour, above
     /// the 3:1 that letters this large need; stronger and it drops toward 2:1.
     static let lockedCellTint: Double = 0.3
+    /// The clue bar's tint: lighter than the active clue cell (0.8), because
+    /// the bar's text is smaller and can shrink to fit. At 0.6 dark text
+    /// keeps 5.5:1 on every colour and the arrows 3.4:1; at 0.8 brown,
+    /// purple and red fall below 4.5:1.
+    static let clueBarTint: Double = 0.6
 
     // MARK: - Assigning colours
 

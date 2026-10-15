@@ -38,11 +38,11 @@ enum AppVersion {
 /// Where the Settings links go.
 ///
 /// TODO: Fill these in before release. They're nil until the real addresses
-/// exist, and Settings shows their rows as "Coming soon" while they are.
+/// exist, and Settings shows them greyed out and inactive while they are.
 /// The App Store also asks for the privacy policy URL in App Store Connect,
 /// so it has to exist before the first submission anyway.
 enum SupportLinks {
-    /// The address "Send feedback" writes to, e.g. "hello@example.com".
+    /// The address Feedback writes to, e.g. "hello@example.com".
     static let feedbackEmail: String? = nil
     static let termsOfUse: URL? = nil
     static let privacyPolicy: URL? = nil

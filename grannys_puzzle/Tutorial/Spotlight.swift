@@ -1,11 +1,13 @@
 import SwiftUI
 import ArrowwordCore
 
-/// Something on the level screen the lesson can light up: a tap target, or
-/// one letter cell of the word being talked about.
+/// Something on the level screen the lesson can light up: a tap target,
+/// one letter cell of the word being talked about, or the clue bar, which
+/// shows that word's clue larger than its clue cell can.
 enum SpotlightID: Hashable {
     case target(TutorialTarget)
     case cell(Coordinate)
+    case clueBar
 }
 
 /// Where each lit-up-able view sits on the level screen, so the lesson's

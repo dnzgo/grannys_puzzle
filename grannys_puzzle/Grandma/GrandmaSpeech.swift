@@ -68,6 +68,8 @@ enum GrandmaLines {
         }
     }
 
+    /// After Restart from the level's settings.
+    static var freshStart: String { String(localized: "A fresh start, dear! Take your time.", bundle: .appLanguage, locale: .appLanguage) }
     static var jarReady: String { String(localized: "My jar has a treat for you today, dear!", bundle: .appLanguage, locale: .appLanguage) }
     static var jarTomorrow: String { String(localized: "That's all for today. Come back tomorrow for another treat!", bundle: .appLanguage, locale: .appLanguage) }
     static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }

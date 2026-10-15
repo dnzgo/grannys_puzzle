@@ -63,6 +63,23 @@ final class GameTuningTests: XCTestCase {
         XCTAssertEqual(resolve([.jarHintsMax: 5]).tuning.jar.hintRange, 1...5)
     }
 
+    func testWhenToAskCanBeTuned() {
+        let tuned = resolve([.reviewMinLevels: 8, .reminderAskMinLevels: 2]).tuning
+
+        XCTAssertEqual(tuned.review.minLevelsPassed, 8)
+        XCTAssertEqual(tuned.reminderAskMinLevels, 2)
+    }
+
+    /// Zero would mean asking straight after the lesson, the very thing
+    /// these numbers exist to prevent.
+    func testAskingRightAfterTheLessonIsRefused() {
+        let (tuning, ignored) = resolve([.reviewMinLevels: 0, .reminderAskMinLevels: 0])
+
+        XCTAssertEqual(tuning.review.minLevelsPassed, GameTuning.standard.review.minLevelsPassed)
+        XCTAssertEqual(tuning.reminderAskMinLevels, GameTuning.standard.reminderAskMinLevels)
+        XCTAssertEqual(Set(ignored), [.reviewMinLevels, .reminderAskMinLevels])
+    }
+
     func testEveryKeyIsReadSomewhere() {
         // A key added to the list but never read would look tunable in the
         // console and do nothing. Setting each to an out-of-range value must

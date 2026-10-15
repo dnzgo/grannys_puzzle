@@ -2,12 +2,12 @@ import SwiftUI
 import StoreKit
 import ArrowwordCore
 
-/// The level screen, top to bottom: clue bar, grid, letter tray (or the
-/// result), action row, banner ad slot.
+/// The level screen, top to bottom: clue bar, grid, letter tray, action
+/// row, banner ad slot.
 struct LevelScreen: View {
     let model: LevelViewModel
 
-    /// Whether the settings sheet is up. Plain view state, not the view
+    /// Whether the settings card is up. Plain view state, not the view
     /// model's: opening settings doesn't change the puzzle, and the level
     /// carries on underneath exactly as it was.
     @State private var showsSettings = false
@@ -37,7 +37,9 @@ struct LevelScreen: View {
 
                     // Any leftover height goes around the tray as breathing room.
                     Spacer(minLength: BoardMetrics.minimumSpacer)
-                    trayOrResult(metrics: metrics)
+                    // Stays after Submit too, locked: the level-end card
+                    // shows the result, so nothing changes under the dimming.
+                    LetterTray(model: model, keyHeight: metrics.trayKeyHeight)
                     Spacer(minLength: BoardMetrics.minimumSpacer)
 
                     ActionBar(model: model, height: metrics.actionHeight)
@@ -49,11 +51,11 @@ struct LevelScreen: View {
                 .padding(.horizontal, Theme.sidePadding)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
-            // The level's ending covers the level but stops at the banner:
-            // an ad under a dim layer counts as obscured for AdMob, and the
-            // banner shouldn't jump or vanish between levels anyway.
-            // The ZStack stays in place while the card comes and goes, so the
-            // animation can fade it in after the wave and out after Try again.
+            // The level's ending and the settings card cover the level but
+            // stop at the banner: an ad under a dim layer counts as obscured
+            // for AdMob, and the banner shouldn't jump or vanish anyway.
+            // The ZStack stays in place while the cards come and go, so the
+            // animations can fade them in and out.
             .overlay {
                 ZStack {
                     if model.isJudging {
@@ -66,8 +68,13 @@ struct LevelScreen: View {
                             .accessibilityHidden(true)
                     }
                     levelEnd
+                    if showsSettings {
+                        SettingsCard(context: .level(restart: restartOption)) { showsSettings = false }
+                            .transition(.opacity)
+                    }
                 }
                 .animation(.easeOut(duration: 0.25), value: model.showsLevelEnd)
+                .animation(.easeOut(duration: 0.2), value: showsSettings)
             }
             BannerAdSlot()
         }
@@ -91,9 +98,6 @@ struct LevelScreen: View {
         .environment(model.isTutorial ? spotlightFrames : nil)
         .preferredColorScheme(.light)
         .gameHaptics(model.haptic)
-        .sheet(isPresented: $showsSettings) {
-            SettingsSheet()
-        }
         // After a perfect board, once the celebration has finished and the
         // player has had a moment: a prompt on top of it would cut it short.
         .task(id: model.readyForReviewPrompt) {
@@ -104,17 +108,6 @@ struct LevelScreen: View {
             guard !Task.isCancelled else { return }
             model.reviewPromptRequested()
             requestReview()
-        }
-    }
-
-    @ViewBuilder
-    private func trayOrResult(metrics: BoardMetrics) -> some View {
-        // The tray stays (locked) during the wave, so the score isn't given
-        // away before the board has shown it.
-        if case .finished(let result) = model.phase, model.showsLevelEnd {
-            ResultPanel(result: result, earnedYarn: model.earnedYarn)
-        } else {
-            LetterTray(model: model, keyHeight: metrics.trayKeyHeight)
         }
     }
 
@@ -145,6 +138,12 @@ struct LevelScreen: View {
                 .transition(.opacity)
             }
         }
+    }
+
+    /// Restart for the settings card; nil where the level can't restart.
+    private var restartOption: SettingsCard.LevelRestart? {
+        guard model.canRestart else { return nil }
+        return SettingsCard.LevelRestart(hasLettersToClear: model.hasLettersToClear, action: model.restartBoard)
     }
 
     /// Grandma's line floats just above the action row for a moment.

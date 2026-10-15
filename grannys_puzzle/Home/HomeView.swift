@@ -67,11 +67,15 @@ struct HomeView: View {
         .sheet(isPresented: $showsWardrobe) {
             WardrobeSheet(progress: game.progress, catalog: game.catalog)
         }
-        .sheet(isPresented: $showsSettings) {
-            SettingsSheet(onHowToPlay: {
-                withAnimation(.easeInOut(duration: 0.25)) { game.startTutorial() }
-            })
+        .overlay {
+            if showsSettings {
+                SettingsCard(context: .home(onHowToPlay: {
+                    withAnimation(.easeInOut(duration: 0.25)) { game.startTutorial() }
+                })) { showsSettings = false }
+                .transition(.opacity)
+            }
         }
+        .animation(.easeOut(duration: 0.2), value: showsSettings)
         .overlay {
             if let item = knittingItem {
                 KnittingMoment(item: item) {
@@ -131,6 +135,20 @@ struct HomeView: View {
         .task {
             await game.ads?.start()
         }
+        // Grandma's reminder question comes right after her jar opens (see
+        // above). A player who passes enough levels after today's jar would
+        // otherwise wait until tomorrow's, and that's exactly the player who
+        // might not come back. So she also asks on coming home with today's
+        // jar already opened. A moment's pause first, so home appears
+        // before her question.
+        .task {
+            try? await Task.sleep(for: .seconds(0.8))
+            // Asked again rather than trusted: at launch the game hasn't yet
+            // heard from iOS whether notifications are already allowed.
+            await game.refreshReminderPermission()
+            guard !Task.isCancelled, !jarReady, !isShowingSomethingElse, game.mayAskAboutReminders else { return }
+            asksAboutReminders = true
+        }
         .onChange(of: scenePhase) { _, phase in
             if phase == .active { today = JarDay.number() }
         }
@@ -169,6 +187,12 @@ struct HomeView: View {
             CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
         }
         .frame(height: BoardMetrics.topBarHeight)
+    }
+
+    /// A sheet or a moment is up, which grandma's question mustn't cover.
+    private var isShowingSomethingElse: Bool {
+        showsYarnBag || showsWardrobe || showsSettings
+            || jarOpening != nil || knittingItem != nil || setPrize != nil
     }
 
     /// Closes grandma's card first, so on a yes iOS's own prompt appears

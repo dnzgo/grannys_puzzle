@@ -17,7 +17,15 @@ struct TutorialOverlay: View {
         if let line = model.tutorialLine {
             let target = model.tutorialTarget.flatMap { frames.union(of: [.target($0)]) }
             let lit = frames.union(of: litIDs)
-            let holes = [target?.insetBy(dx: -6, dy: -6), lit?.insetBy(dx: -4, dy: -4)].compactMap { $0 }
+            // While a word is lit, so is the clue bar: it shows the same
+            // clue, larger and easier to read than its clue cell. Only when
+            // the bar does show that word's clue (a step can point at a word
+            // before the player has selected it). Its arrows can be tapped
+            // through the hole but do nothing in the lesson.
+            let barShowsLitWord = model.activeAnswer.map { model.tutorialLitClue == .clue(answerID: $0.id) } ?? false
+            let clueBar = barShowsLitWord ? frames.rects[.clueBar] : nil
+            let holes = [target?.insetBy(dx: -6, dy: -6), lit?.insetBy(dx: -4, dy: -4), clueBar?.insetBy(dx: -4, dy: -4)]
+                .compactMap { $0 }
 
             ZStack {
                 DimmingLayer(holes: holes)
@@ -27,6 +35,7 @@ struct TutorialOverlay: View {
                     showsNext: model.tutorialWaitsForNext,
                     target: target,
                     lit: lit,
+                    clueBar: clueBar,
                     onNext: model.tutorialNext,
                     onSkip: model.skipTutorial
                 )
@@ -52,23 +61,25 @@ private struct DimmingLayer: View {
         GeometryReader { proxy in
             let origin = proxy.frame(in: .named(SpotlightFrames.spaceName)).origin
             let shape = Self.path(size: proxy.size, holes: holes.map { $0.offsetBy(dx: -origin.x, dy: -origin.y) })
-            // Even-odd: a point inside a hole is inside two shapes (screen and
-            // hole), so it counts as outside. That's what both draws the hole
-            // and lets taps fall through it to the button underneath.
+            // The holes are cut out of the shape itself, so they're both
+            // undrawn and untappable: taps there fall through to the button
+            // underneath.
             shape
-                .fill(Color.black.opacity(0.45), style: FillStyle(eoFill: true))
-                .contentShape(shape, eoFill: true)
+                .fill(Color.black.opacity(0.45))
+                .contentShape(shape)
                 .onTapGesture {}
                 .accessibilityHidden(true)
         }
     }
 
+    /// The screen minus the holes. The holes are joined first: cut one by
+    /// one with an even-odd fill, two that overlap (the clue bar and the
+    /// word just below it, on a small screen) would dim their overlap again.
     private static func path(size: CGSize, holes: [CGRect]) -> Path {
-        var path = Path(CGRect(origin: .zero, size: size))
-        for hole in holes {
-            path.addRoundedRect(in: hole, cornerSize: CGSize(width: 12, height: 12))
+        let joinedHoles = holes.reduce(Path()) { joined, hole in
+            joined.union(Path(roundedRect: hole, cornerSize: CGSize(width: 12, height: 12)))
         }
-        return path
+        return Path(CGRect(origin: .zero, size: size)).subtracting(joinedHoles)
     }
 }
 
@@ -80,6 +91,8 @@ private struct GuideLayer: View {
     let target: CGRect?
     /// The word she's talking about, in the same space.
     let lit: CGRect?
+    /// The clue bar, when it's lit with the word.
+    let clueBar: CGRect?
     let onNext: () -> Void
     let onSkip: () -> Void
 
@@ -99,6 +112,7 @@ private struct GuideLayer: View {
                 in: proxy.size,
                 target: localTarget,
                 lit: lit.map(toLocal),
+                clueBar: clueBar.map(toLocal),
                 gap: gap
             )
 
@@ -122,12 +136,14 @@ private struct GuideLayer: View {
     /// the player always sees both the button and the letters landing.
     ///
     /// - A target low on the screen (tray, helpers, Submit): just above it,
-    ///   else at the very top, over the top bar the lesson doesn't use.
+    ///   else at the very top, over the top bar (unless the bar is lit).
     /// - A target high up (a clue): at the bottom, else just below it.
     /// - Nothing to tap: at the bottom, else the top, else the middle.
     ///
-    /// If no spot is clear (a very small screen), the first one is used.
-    static func cardTop(cardHeight: CGFloat, in size: CGSize, target: CGRect?, lit: CGRect?, gap: CGFloat) -> CGFloat {
+    /// The middle is the last resort for every case, which matters once the
+    /// lit clue bar takes the top. If no spot is clear (a very small
+    /// screen), the first one is used.
+    static func cardTop(cardHeight: CGFloat, in size: CGSize, target: CGRect?, lit: CGRect?, clueBar: CGRect?, gap: CGFloat) -> CGFloat {
         let top = gap / 2
         let bottom = size.height - gap - cardHeight
         let middle = (size.height - cardHeight) / 2
@@ -143,9 +159,9 @@ private struct GuideLayer: View {
             candidates = [middle]
         }
 
-        let keepClear = [target, lit].compactMap { $0 }
+        let keepClear = [target, lit, clueBar].compactMap { $0 }
         let maxTop = max(0, size.height - cardHeight)
-        let clamped = candidates.map { min(max($0, 0), maxTop) }
+        let clamped = (candidates + [middle]).map { min(max($0, 0), maxTop) }
         let isClear = { (cardTop: CGFloat) in
             let card = CGRect(x: 0, y: cardTop, width: size.width, height: cardHeight)
             return !keepClear.contains { $0.intersects(card) }

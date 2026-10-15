@@ -11,7 +11,9 @@ import Foundation
 public struct ReviewPromptRules: Equatable, Sendable {
     /// Levels passed before the first ask. A player who has finished this
     /// many has an opinion; asking a brand-new one invites a hasty rating.
-    public var minLevelsPassed = 10
+    /// The lesson isn't a level and doesn't count. Tunable from the server
+    /// (see GameTuning).
+    public var minLevelsPassed = 5
     /// Days between asks, on top of iOS's own yearly limit, so the prompt
     /// never feels like the price of a good moment.
     public var daysBetweenAsks = 120

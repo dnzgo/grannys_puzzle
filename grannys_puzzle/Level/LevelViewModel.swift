@@ -379,6 +379,25 @@ final class LevelViewModel {
         feel(result.passed ? .levelPassed : .levelFailed)
     }
 
+    // MARK: - Restart (from the level's settings)
+
+    /// Restart is offered: not in the lesson, where the coach expects its
+    /// board, and not once the board is judged (Try again does that).
+    var canRestart: Bool { !isTutorial && !puzzle.isSubmitted }
+
+    /// The player has typed letters for Restart to clear.
+    var hasLettersToClear: Bool { puzzle.hasPlacedLetters }
+
+    /// Clears the player's letters, keeping starter letters and the
+    /// helpers' ones (see PuzzleState.clearPlacedLetters), and saves.
+    func restartBoard() {
+        guard canRestart else { return }
+        puzzle.clearPlacedLetters()
+        feel(.letterErased)
+        speech.say(GrandmaLines.freshStart)
+        boardChanged()
+    }
+
     /// Back to the home screen. The board is already saved (every letter
     /// change saves it), so coming back picks up where the player left off.
     func goHome() {

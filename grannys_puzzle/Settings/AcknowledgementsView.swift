@@ -7,29 +7,31 @@ import SwiftUI
 /// asks for attribution. The texts are copied from each source's own licence
 /// file; if a source is updated, check its notice again
 /// (ContentPipeline/README.md, "Credits the app must show").
+///
+/// Plain content, shown on a page of the settings card, which supplies the
+/// title and the scrolling.
 struct AcknowledgementsView: View {
     var body: some View {
-        List {
-            Section {
-                Text("Granny's Puzzle's words and clues were chosen with the help of these word lists. Thank you to their authors.")
-                    .font(.system(size: 15))
-                    .foregroundStyle(Theme.secondaryInk)
-                    .listRowBackground(Color.clear)
-            }
+        VStack(alignment: .leading, spacing: 16) {
+            Text("Granny's Puzzle's words and clues were chosen with the help of these word lists. Thank you to their authors.")
+                .font(.system(size: 15))
+                .foregroundStyle(Theme.secondaryInk)
 
             ForEach(Credit.all) { credit in
-                Section(credit.name) {
-                    Text(credit.notice)
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(verbatim: credit.name)
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundStyle(Theme.ink)
+                    Text(verbatim: credit.notice)
                         .font(.system(size: 13))
                         .foregroundStyle(Theme.ink)
                         .textSelection(.enabled)
                 }
+                .padding(14)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(RoundedRectangle(cornerRadius: 14).fill(Theme.surface))
             }
         }
-        .scrollContentBackground(.hidden)
-        .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Acknowledgements")
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -83,5 +85,6 @@ private struct Credit: Identifiable {
 }
 
 #Preview {
-    NavigationStack { AcknowledgementsView() }
+    ScrollView { AcknowledgementsView().padding() }
+        .background(Theme.background)
 }
