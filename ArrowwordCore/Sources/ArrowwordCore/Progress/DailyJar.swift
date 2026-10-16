@@ -1,7 +1,7 @@
 import Foundation
 
 /// What grandma's jar gives: cat hints, grandma helpers, or both.
-public struct JarReward: Equatable, Sendable {
+public struct JarReward: Codable, Equatable, Sendable {
     public let hints: Int
     public let grandmas: Int
 
@@ -11,15 +11,26 @@ public struct JarReward: Equatable, Sendable {
     }
 }
 
-/// The result of opening the jar: what came out, and the streak day it was.
-public struct JarOpening: Equatable, Sendable {
-    public let reward: JarReward
-    /// 1…`DailyJarRules.streakLength`; the last day gives the big reward.
-    public let streakDay: Int
+/// A jar the player has earned and not opened yet.
+///
+/// Collecting and opening are separate on purpose: jars can be saved up and
+/// opened when the help is wanted. What's inside is decided when the jar is
+/// earned, not when it's opened, so a day-7 jar stays a big one whenever
+/// it's opened, and opening can't be repeated for a better draw.
+public struct Jar: Codable, Equatable, Sendable {
+    public enum Source: Codable, Equatable, Sendable {
+        /// Collected from the daily streak, on this day of the cycle.
+        case daily(streakDay: Int)
+        /// The prize for knitting every colour of a garment.
+        case setComplete
+    }
 
-    public init(reward: JarReward, streakDay: Int) {
+    public let reward: JarReward
+    public let source: Source
+
+    public init(reward: JarReward, source: Source) {
         self.reward = reward
-        self.streakDay = streakDay
+        self.source = source
     }
 }
 
@@ -65,38 +76,54 @@ public enum JarDay {
 }
 
 extension PlayerProgress {
-    /// Whether today's jar is still closed.
-    public func canOpenJar(today: Int) -> Bool {
+    /// Whether today's daily jar is still waiting to be collected.
+    public func canCollectDailyJar(today: Int) -> Bool {
         guard let lastJarDay else { return true }
         return today > lastJarDay
     }
 
-    /// The streak day today's jar would be: the next day if the player opened
-    /// it yesterday, otherwise day 1 (first time, or a day was missed).
+    /// The streak day today's jar would be: the next day if the player
+    /// collected one yesterday, otherwise day 1 (first time, or a day was
+    /// missed).
     public func jarStreakDay(today: Int, rules: DailyJarRules = .standard) -> Int {
         guard let lastJarDay, today == lastJarDay + 1 else { return 1 }
         // After the last day of a cycle, a new cycle starts.
         return jarStreak >= rules.streakLength ? 1 : jarStreak + 1
     }
 
-    /// Opens today's jar: draws the reward, adds it to the helpers, and
-    /// records the day. Returns nil if it was already opened today.
+    /// Collects today's jar: draws what's inside, puts it with the
+    /// unopened jars, and moves the streak on. The streak counts collecting,
+    /// not opening, so a player saving jars up keeps their streak. Returns
+    /// nil if today's was already collected.
     ///
     /// The clock is the device's, so a player could move their date forward
     /// for extra jars. That's accepted for now; it only costs us a few free
     /// hints, and a server time check can come with accounts.
-    public mutating func openJar<Generator: RandomNumberGenerator>(
+    public mutating func collectDailyJar<Generator: RandomNumberGenerator>(
         today: Int,
         rules: DailyJarRules = .standard,
         using generator: inout Generator
-    ) -> JarOpening? {
-        guard canOpenJar(today: today) else { return nil }
+    ) -> Jar? {
+        guard canCollectDailyJar(today: today) else { return nil }
         let day = jarStreakDay(today: today, rules: rules)
-        let reward = rules.reward(forStreakDay: day, using: &generator)
-        hints += reward.hints
-        grandmas += reward.grandmas
+        let jar = Jar(reward: rules.reward(forStreakDay: day, using: &generator), source: .daily(streakDay: day))
+        jars.append(jar)
         jarStreak = day
         lastJarDay = today
-        return JarOpening(reward: reward, streakDay: day)
+        return jar
+    }
+
+    /// A jar earned some other way (a finished set), added unopened.
+    public mutating func earnJar(_ reward: JarReward, source: Jar.Source) {
+        jars.append(Jar(reward: reward, source: source))
+    }
+
+    /// Opens the oldest unopened jar and adds what's inside to the helpers.
+    /// Nil when there's none.
+    public mutating func openJar() -> Jar? {
+        guard !jars.isEmpty else { return nil }
+        let jar = jars.removeFirst()
+        receive(jar.reward)
+        return jar
     }
 }

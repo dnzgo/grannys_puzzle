@@ -80,12 +80,33 @@ extension AnalyticsEvent {
 
     // MARK: - Home
 
-    static func jarOpened(_ opening: JarOpening) -> AnalyticsEvent {
-        AnalyticsEvent("jar_opened", [
-            "streak_day": .int(opening.streakDay),
-            "hints": .int(opening.reward.hints),
-            "grandmas": .int(opening.reward.grandmas),
-        ])
+    /// Today's jar collected from the streak card. Whether the jar brings
+    /// players back is measured by these (and their streak days).
+    static func jarCollected(_ jar: Jar) -> AnalyticsEvent {
+        AnalyticsEvent("jar_collected", jarParameters(jar))
+    }
+
+    /// A kept jar opened. `still_unopened` shows whether players save jars
+    /// up, and so whether keeping them is worth having.
+    static func jarOpened(_ jar: Jar, stillUnopened: Int) -> AnalyticsEvent {
+        var parameters = jarParameters(jar)
+        parameters["still_unopened"] = .int(stillUnopened)
+        return AnalyticsEvent("jar_opened", parameters)
+    }
+
+    private static func jarParameters(_ jar: Jar) -> [String: Value] {
+        var parameters: [String: Value] = [
+            "hints": .int(jar.reward.hints),
+            "grandmas": .int(jar.reward.grandmas),
+        ]
+        switch jar.source {
+        case .daily(let streakDay):
+            parameters["jar_source"] = .string("daily")
+            parameters["streak_day"] = .int(streakDay)
+        case .setComplete:
+            parameters["jar_source"] = .string("set")
+        }
+        return parameters
     }
 
     static func itemKnitted(_ item: KnitItem) -> AnalyticsEvent {

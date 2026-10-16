@@ -25,6 +25,10 @@ enum Theme {
     /// A switch that's on (Settings). A deep green, so its white "ON"
     /// reads (5.1:1); the brighter greens of most apps fall below 3:1.
     static let switchOn = Color(hex: 0x2E7D32)
+    /// The small dot on a button with something waiting (the daily jar).
+    static let alertDot = Color(hex: 0xE53935)
+    /// The sparkles trailing a prize as it flies to its counter.
+    static let sparkle = Color(hex: 0xF5B82E)
 
     // MARK: Surfaces
 

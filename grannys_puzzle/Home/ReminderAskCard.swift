@@ -5,7 +5,7 @@ import SwiftUI
 ///
 /// Only a yes here leads to the system's prompt, which iOS shows once per
 /// install, ever. Asked at a moment the player cares about (they've just
-/// opened her jar), a yes is far more likely than at launch, and a "not
+/// collected her jar), a yes is far more likely than at launch, and a "not
 /// now" here costs nothing: she can ask again in a couple of weeks.
 ///
 /// Placeholder styling like the other cards; redesigned with them.

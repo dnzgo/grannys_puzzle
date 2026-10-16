@@ -146,45 +146,59 @@ final class Game {
 
     /// What knitting an item led to.
     struct KnitReport {
-        /// Set when this item was the last colour of its garment: the prize
-        /// for the finished set, already added to the player's helpers.
-        let setPrize: JarReward?
+        /// This item was the last colour of its garment, which earned a jar
+        /// (already saved with the player's unopened jars).
+        let earnedSetJar: Bool
     }
 
     /// Knits an item if the player can afford it, and saves at once, before
     /// any animation plays. Nil if it wasn't knitted.
     ///
-    /// Finishing a set (one garment in every colour) earns the jar's big
-    /// reward. It's given in the same save as the knit, so closing the app
-    /// mid-animation can't lose it, and only once, because each item can
-    /// only be knitted once, so only one knit completes a set.
+    /// Finishing a set (one garment in every colour) earns a jar holding
+    /// the daily jar's big reward. It's added in the same save as the knit,
+    /// so closing the app mid-animation can't lose it, and only once,
+    /// because each item can only be knitted once, so only one knit
+    /// completes a set.
     func knit(_ item: KnitItem) -> KnitReport? {
         var outcome = PlayerProgress.KnitOutcome.alreadyOwned
-        var prize: JarReward?
+        var earnedJar = false
         update { progress in
             outcome = progress.knit(item)
             guard outcome == .knitted, catalog.isSetComplete(for: item, in: progress) else { return }
             // The big jar's reward: four items is a real achievement, and
             // this way the same remotely tuned number covers both.
-            let reward = tuning.jar.bigReward
-            progress.receive(reward)
-            prize = reward
+            progress.earnJar(tuning.jar.bigReward, source: .setComplete)
+            earnedJar = true
         }
         guard outcome == .knitted else { return nil }
         events?.log(.itemKnitted(item))
-        if prize != nil { events?.log(.setCompleted(item)) }
-        return KnitReport(setPrize: prize)
+        if earnedJar { events?.log(.setCompleted(item)) }
+        return KnitReport(earnedSetJar: earnedJar)
     }
 
-    // MARK: - Daily jar
+    // MARK: - Jars
 
-    /// Opens the jar for `today` (a `JarDay` number) and saves at once, before
-    /// any animation. Nil if it was already opened today.
-    func openJar(today: Int) -> JarOpening? {
-        var opening: JarOpening?
-        update { opening = $0.openJar(today: today, rules: tuning.jar, using: &generator) }
-        if let opening { events?.log(.jarOpened(opening)) }
-        return opening
+    /// Whether today's daily jar is waiting to be collected.
+    func canCollectDailyJar(today: Int) -> Bool {
+        progress.canCollectDailyJar(today: today)
+    }
+
+    /// Collects the daily jar for `today` (a `JarDay` number), unopened, and
+    /// saves at once. Nil if today's was already collected.
+    func collectDailyJar(today: Int) -> Jar? {
+        var jar: Jar?
+        update { jar = $0.collectDailyJar(today: today, rules: tuning.jar, using: &generator) }
+        if let jar { events?.log(.jarCollected(jar)) }
+        return jar
+    }
+
+    /// Opens the oldest unopened jar and saves at once, before the prize
+    /// flies to the counters on screen. Nil when there's none.
+    func openJar() -> Jar? {
+        var jar: Jar?
+        update { jar = $0.openJar() }
+        if let jar { events?.log(.jarOpened(jar, stillUnopened: progress.jars.count)) }
+        return jar
     }
 
     // MARK: - Reminders

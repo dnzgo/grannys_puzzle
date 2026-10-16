@@ -25,6 +25,10 @@ enum HapticEvent: Equatable {
     /// A yarn ball dropping into grandma's bag after a level. Soft: up to
     /// three come in quick succession.
     case yarnLanded
+    /// A tapped jar wobbling before it opens.
+    case jarShaken
+    /// A helper from a jar arriving at its counter. Soft, like the yarn.
+    case prizeLanded
     /// One group of cells lighting green or red after Submit. The lightest
     /// tick of all: a wave can have fifteen of them in a second.
     case cellsJudged
@@ -35,7 +39,8 @@ enum HapticEvent: Equatable {
     var feedback: SensoryFeedback {
         switch self {
         case .select, .letterErased: .selection
-        case .letterPlaced, .yarnLanded: .impact(flexibility: .soft, intensity: 0.6)
+        case .letterPlaced, .yarnLanded, .prizeLanded: .impact(flexibility: .soft, intensity: 0.6)
+        case .jarShaken: .impact(weight: .light)
         case .cellsJudged: .impact(flexibility: .soft, intensity: 0.35)
         case .reveal: .impact(weight: .medium)
         case .levelPassed, .itemKnitted, .jarOpened, .helperEarned: .success

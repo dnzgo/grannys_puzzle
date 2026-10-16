@@ -31,10 +31,14 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var wardrobe: Set<String>
     /// Each language's level as the player left it, if they left it halfway.
     public var boards: [String: SavedBoard]
-    /// The streak day of the last jar opened (0 before the first one).
+    /// The streak day of the last daily jar collected (0 before the first).
+    /// Saved under its old meaning, "opened": until jars could be kept,
+    /// collecting and opening were the same tap.
     public var jarStreak: Int
-    /// `JarDay` number of the last jar opened, nil before the first one.
+    /// `JarDay` number of the last daily jar collected, nil before the first.
     public var lastJarDay: Int?
+    /// Jars earned and not opened yet, oldest first (see `Jar`).
+    public var jars: [Jar]
     /// Whether the first-time lesson is behind the player (finished or
     /// skipped). Until it is, the app opens on the lesson. Shared by all
     /// languages: the rules of the game are the same in each.
@@ -72,6 +76,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         board: SavedBoard? = nil,
         jarStreak: Int = 0,
         lastJarDay: Int? = nil,
+        jars: [Jar] = [],
         tutorialDone: Bool = false,
         rewardedAdDay: Int? = nil,
         rewardedAdsThatDay: Int = 0,
@@ -86,6 +91,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.boards = board.map { [activeLanguage: $0] } ?? [:]
         self.jarStreak = jarStreak
         self.lastJarDay = lastJarDay
+        self.jars = jars
         self.tutorialDone = tutorialDone
         self.rewardedAdDay = rewardedAdDay
         self.rewardedAdsThatDay = rewardedAdsThatDay
@@ -95,7 +101,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     // MARK: - Saving format
 
     private enum CodingKeys: String, CodingKey {
-        case version, levelNumbers, hints, grandmas, yarn, wardrobe, boards, jarStreak, lastJarDay, tutorialDone
+        case version, levelNumbers, hints, grandmas, yarn, wardrobe, boards, jarStreak, lastJarDay, jars, tutorialDone
         case rewardedAdDay, rewardedAdsThatDay
         // Version 1 only; read when converting, never written.
         case levelNumber, board
@@ -116,6 +122,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         wardrobe = try container.decodeIfPresent(Set<String>.self, forKey: .wardrobe) ?? []
         jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
         lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
+        jars = try container.decodeIfPresent([Jar].self, forKey: .jars) ?? []
         rewardedAdDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdDay)
         rewardedAdsThatDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdsThatDay) ?? 0
 
@@ -147,6 +154,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encode(boards, forKey: .boards)
         try container.encode(jarStreak, forKey: .jarStreak)
         try container.encodeIfPresent(lastJarDay, forKey: .lastJarDay)
+        try container.encode(jars, forKey: .jars)
         try container.encode(tutorialDone, forKey: .tutorialDone)
         try container.encodeIfPresent(rewardedAdDay, forKey: .rewardedAdDay)
         try container.encode(rewardedAdsThatDay, forKey: .rewardedAdsThatDay)

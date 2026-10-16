@@ -78,59 +78,12 @@ struct SettingsCard: View {
     private let buttonHeight: CGFloat = 50
 
     var body: some View {
-        ZStack {
-            // Every edge: on home that's the whole screen. In a level the
-            // card sits in the area above the banner, which doesn't reach
-            // the bottom safe area, so the banner stays clear regardless.
-            Color.black.opacity(0.35)
-                .ignoresSafeArea()
-                .onTapGesture(perform: onClose)
-                .accessibilityHidden(true)
-
-            VStack(spacing: 0) {
-                header
-                content
-                    .padding(20)
-            }
-            .frame(maxWidth: 360)
-            .background(Theme.background)
-            .clipShape(RoundedRectangle(cornerRadius: 28))
-            .shadow(color: .black.opacity(0.2), radius: 20, y: 8)
-            .padding(.horizontal, 20)
+        GameCard(title: title, onBack: page == .main ? nil : { page = .main }, onClose: onClose) {
+            content
         }
         .animation(.easeInOut(duration: 0.2), value: page)
-        .accessibilityElement(children: .contain)
-        .accessibilityAddTraits(.isModal)
-        // VoiceOver's two-finger scrub: back a page, or close.
-        .accessibilityAction(.escape) {
-            if page == .main { onClose() } else { page = .main }
-        }
         // The player may have changed it in iOS Settings since last time.
         .task { await reminders?.refreshPermission() }
-    }
-
-    // MARK: - Header
-
-    private var header: some View {
-        ZStack {
-            Text(title)
-                .font(.system(size: 26, weight: .heavy, design: .rounded))
-                .foregroundStyle(Theme.ink)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-                .padding(.horizontal, 52)
-            HStack {
-                if page != .main {
-                    headerButton(systemName: "chevron.left", label: "Back") { page = .main }
-                }
-                Spacer()
-                headerButton(systemName: "xmark", label: "Close", action: onClose)
-            }
-        }
-        .padding(.horizontal, 8)
-        .frame(height: 64)
-        .frame(maxWidth: .infinity)
-        .background(Theme.clueCell)
     }
 
     private var title: LocalizedStringKey {
@@ -140,18 +93,6 @@ struct SettingsCard: View {
         case .credits: "Acknowledgements"
         case .confirmRestart: "Restart this level?"
         }
-    }
-
-    private func headerButton(systemName: String, label: LocalizedStringKey, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-                .font(.system(size: 20, weight: .bold))
-                .foregroundStyle(Theme.secondary)
-                .frame(width: 44, height: 44)
-                .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(label)
     }
 
     // MARK: - Pages

@@ -2,15 +2,16 @@ import SwiftUI
 import ArrowwordCore
 
 /// Shown after the knitting moment that finishes a set (one garment in
-/// every colour): the whole set together, and a treat from grandma's jar.
+/// every colour): the whole set together, and a jar of treats.
 ///
-/// The prize is already added and saved when this shows (see Game.knit);
-/// this is only the reveal, like the jar and knitting moments. Placeholder
-/// styling until the reward scenes are redesigned with the new art.
+/// The jar is already saved with the player's unopened jars when this
+/// shows (see Game.knit); collecting it here sends the player home, where
+/// it waits beside grandma's chair like the daily ones. What's inside
+/// stays a surprise until it's opened. Placeholder styling until the
+/// reward scenes are redesigned with the new art.
 struct SetPrizeMoment: View {
     /// Every item in the finished set, in catalog order.
     let items: [KnitItem]
-    let reward: JarReward
     let onDone: () -> Void
 
     @State private var shown = false
@@ -49,16 +50,15 @@ struct SetPrizeMoment: View {
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
 
-                HStack(spacing: 10) {
-                    ForEach(0..<reward.hints, id: \.self) { _ in RewardToken(face: .cat) }
-                    ForEach(0..<reward.grandmas, id: \.self) { _ in RewardToken(face: .grandma) }
-                }
-                .accessibilityElement(children: .ignore)
-                // Labelled like a list ("Cat hints: 3"), which reads right for any
-                // count without plural rules for two numbers in one sentence.
-                .accessibilityLabel(Text("Cat hints: \(reward.hints). Grandma helpers: \(reward.grandmas)."))
+                Image("jar")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 76)
+                    .scaleEffect(shown ? 1 : 0.4)
+                    .animation(reduceMotion ? nil : .spring(response: 0.45, dampingFraction: 0.55).delay(0.45), value: shown)
+                    .accessibilityLabel("Treat jar")
 
-                PrimaryButton(title: "Thank you, Granny!", height: 52, action: onDone)
+                PrimaryButton(title: "Collect jar", height: 52, action: onDone)
             }
             .padding(24)
             .frame(maxWidth: 340)
@@ -77,14 +77,13 @@ struct SetPrizeMoment: View {
     /// "The scarf set is complete! …", named after the garment.
     private var message: String {
         let garment = items.first?.kind.name.lowercased(with: .appLanguage) ?? ""
-        return String(localized: "The \(garment) set is complete! Here's a treat from my jar.", bundle: .appLanguage, locale: .appLanguage)
+        return String(localized: "The \(garment) set is complete! Here's a jar of treats from me.", bundle: .appLanguage, locale: .appLanguage)
     }
 }
 
 #Preview {
     SetPrizeMoment(
         items: KnittingCatalog.standard.items.filter { $0.kind == .scarf },
-        reward: JarReward(hints: 3, grandmas: 1),
         onDone: {}
     )
 }

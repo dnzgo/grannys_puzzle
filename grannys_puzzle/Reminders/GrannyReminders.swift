@@ -55,7 +55,7 @@ enum GrannyReminders {
         add(.jar, after: jarAfterDays, lines: ReminderLines.jar, priority: 1)
 
         // A streak breaks on the first day without a jar: the day after the
-        // last one opened. If a streak worth keeping is going (two days or
+        // last one collected. If a streak worth keeping is going (two days or
         // more), remind them that evening. It usually falls on the same day
         // as the jar reminder, and wins it (higher priority).
         // Not after the last day of a cycle: the jar starts a new one then
