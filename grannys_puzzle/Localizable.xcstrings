@@ -222,32 +222,12 @@
         }
       }
     },
-    "OFF" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "KAPALI"
-          }
-        }
-      }
-    },
     "Off" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kapalı"
-          }
-        }
-      }
-    },
-    "ON" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AÇIK"
           }
         }
       }

@@ -178,8 +178,8 @@ struct SettingsCard: View {
 
     // MARK: - Pieces
 
-    /// Music, sounds, haptics and grandma's notes as four tiles, each with
-    /// its own on/off switch.
+    /// Music, sounds, haptics and grandma's notes as four tiles; tapping a
+    /// tile turns it on or off.
     private var switches: some View {
         HStack(spacing: 8) {
             SettingTile(systemName: "music.note", label: "Music", isOn: musicOn) { musicOn.toggle() }
@@ -286,8 +286,11 @@ struct SettingsCard: View {
     }
 }
 
-/// One switch: an icon and its name, and an on/off pill under them. The
-/// whole tile is the button.
+/// One switch, as a tile that's the button itself: tap to turn it on or
+/// off. No separate toggle, which would be a second control doing the
+/// same thing. The state shows in two ways, so it doesn't rest on colour
+/// alone: on, a white tile with a dark icon; off, a beige tile with a
+/// greyed icon struck through.
 private struct SettingTile: View {
     let systemName: String
     let label: LocalizedStringKey
@@ -296,9 +299,9 @@ private struct SettingTile: View {
 
     var body: some View {
         Button(action: action) {
-            VStack(spacing: 6) {
+            VStack(spacing: 8) {
                 Image(systemName: systemName)
-                    .font(.system(size: 20, weight: .semibold))
+                    .font(.system(size: 24, weight: .semibold))
                     .foregroundStyle(isOn ? Theme.ink : Theme.quietInk)
                     // A drawn slash when off, the same for every icon (SF
                     // Symbols has slashed versions of some but not all).
@@ -306,25 +309,25 @@ private struct SettingTile: View {
                         if !isOn {
                             Capsule()
                                 .fill(Theme.quietInk)
-                                .frame(width: 2.5, height: 30)
+                                .frame(width: 2.5, height: 34)
                                 .rotationEffect(.degrees(-45))
                         }
                     }
-                    .frame(height: 28)
+                    .frame(height: 32)
                 Text(label)
                     .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(Theme.secondaryInk)
+                    .foregroundStyle(isOn ? Theme.secondaryInk : Theme.quietInk)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
-                SwitchPill(isOn: isOn)
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
+            .padding(.vertical, 14)
             .padding(.horizontal, 4)
-            .background(RoundedRectangle(cornerRadius: 16).fill(Theme.surface))
+            .background(RoundedRectangle(cornerRadius: 16).fill(isOn ? Theme.surface : Theme.disabledFill))
             .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(Theme.cellBorder, lineWidth: 1))
+            .contentShape(RoundedRectangle(cornerRadius: 16))
         }
-        .buttonStyle(.plain)
+        .buttonStyle(SettingTileStyle())
         .animation(.easeOut(duration: 0.15), value: isOn)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(label)
@@ -333,32 +336,13 @@ private struct SettingTile: View {
     }
 }
 
-/// The on/off pill: green with the knob on the right when on, beige with
-/// it on the left when off, and the word on the other side, so the state
-/// doesn't rest on colour alone.
-private struct SwitchPill: View {
-    let isOn: Bool
-
-    var body: some View {
-        HStack(spacing: 3) {
-            if isOn { word }
-            Circle()
-                .fill(Theme.surface)
-                .frame(width: 18, height: 18)
-            if !isOn { word }
-        }
-        .padding(3)
-        .frame(minWidth: 58)
-        .background(Capsule().fill(isOn ? Theme.switchOn : Theme.disabledFill))
-    }
-
-    private var word: some View {
-        Text(isOn ? "ON" : "OFF")
-            .font(.system(size: 11, weight: .heavy, design: .rounded))
-            .foregroundStyle(isOn ? Theme.onPrimary : Theme.secondaryInk)
-            .lineLimit(1)
-            .minimumScaleFactor(0.7)
-            .frame(maxWidth: .infinity)
+/// A slight press-in, so a tile feels like something to tap now that it
+/// has no switch on it.
+private struct SettingTileStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1)
+            .animation(.spring(response: 0.25, dampingFraction: 0.6), value: configuration.isPressed)
     }
 }
 

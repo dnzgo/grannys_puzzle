@@ -22,8 +22,8 @@ enum Theme {
     static let onPrimary = Color(red: 1.0, green: 1.0, blue: 1.0)
     /// Secondary buttons: border and label only (3.3:1 on the background).
     static let secondary = Color(red: 0.710, green: 0.471, blue: 0.294)
-    /// A switch that's on (Settings). A deep green, so its white "ON"
-    /// reads (5.1:1); the brighter greens of most apps fall below 3:1.
+    /// The tick on a collected day (daily treats). A deep green, so the
+    /// white tick on it reads (5.1:1); brighter greens fall below 3:1.
     static let switchOn = Color(hex: 0x2E7D32)
     /// The small dot on a button with something waiting (the daily jar).
     static let alertDot = Color(hex: 0xE53935)

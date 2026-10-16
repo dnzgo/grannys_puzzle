@@ -38,6 +38,10 @@ struct HomeView: View {
     @State private var jarShakes = 0
     /// Between the tap and the prize appearing, so a second tap waits.
     @State private var isOpeningJar = false
+    /// The jar shows open (lid off) from the shake until the helpers have
+    /// landed. Kept apart from the jar count, which drops the moment the jar
+    /// opens: the last jar must stay on the table, open, until then.
+    @State private var jarIsOpen = false
     /// Where the jar and the counters are, for the prize's flight.
     @State private var jarFrame = CGRect.zero
     @State private var counterFrames: [HelperFace: CGRect] = [:]
@@ -75,12 +79,14 @@ struct HomeView: View {
                 canKnit: game.canKnitSomething,
                 jarCount: game.progress.jars.count,
                 jarShakes: jarShakes,
+                jarIsOpen: jarIsOpen,
                 speechLine: speech.line,
                 onGranny: { speech.say(GrandmaLines.greeting()) },
                 onCat: { speech.say(GrandmaLines.catNapping) },
                 onJar: tapJar,
                 onJarFrame: { jarFrame = $0 },
-                onYarnBag: { showsYarnBag = true }
+                onYarnBag: { showsYarnBag = true },
+                onWardrobe: { showsWardrobe = true }
             )
             .animation(.easeOut(duration: 0.2), value: speech.line)
             // Like the settings button, but on the right of the scene rather
@@ -106,7 +112,7 @@ struct HomeView: View {
                     start: flight.start,
                     target: counterPoint,
                     onLanded: prizeLanded,
-                    onFinished: { self.flight = nil }
+                    onFinished: closeJar
                 )
             }
         }
@@ -267,13 +273,15 @@ struct HomeView: View {
     /// the counters. Saved the moment it opens, like knitting; the flight is
     /// the reveal.
     private func tapJar() {
-        guard !isOpeningJar, flight == nil, !game.progress.jars.isEmpty else { return }
+        // Not while one is still open: its lid goes back on a moment after
+        // the last helper lands, and a second opening would race that.
+        guard !isOpeningJar, !jarIsOpen, flight == nil, !game.progress.jars.isEmpty else { return }
         isOpeningJar = true
         if !reduceMotion { jarShakes += 1 }
         feel(.jarShaken)
-        // Taken now: when the last jar opens, the jar shrinks away and its
-        // frame changes while the helpers are still popping out of it.
-        let start = CGPoint(x: jarFrame.midX, y: jarFrame.minY)
+        // The open jar's mouth, a little over a third of the way down its
+        // image (the lid floats above it). Taken now, before the jar changes.
+        let start = CGPoint(x: jarFrame.midX, y: jarFrame.minY + jarFrame.height * 0.37)
         Task {
             defer { isOpeningJar = false }
             try? await Task.sleep(for: .seconds(reduceMotion ? 0 : 0.5))
@@ -281,12 +289,23 @@ struct HomeView: View {
             // Set in the same update as the save, so the counters never
             // show the new totals before the helpers arrive.
             unlanded = [.cat: jar.reward.hints, .grandma: jar.reward.grandmas]
+            jarIsOpen = true
             feel(.jarOpened)
             flight = PrizeFlight(
                 start: start,
                 faces: Array(repeating: HelperFace.cat, count: jar.reward.hints)
                     + Array(repeating: HelperFace.grandma, count: jar.reward.grandmas)
             )
+        }
+    }
+
+    /// Everything has landed: the lid goes back on (or, if that was the
+    /// last jar, the jar leaves the table) a moment later.
+    private func closeJar() {
+        flight = nil
+        Task {
+            try? await Task.sleep(for: .seconds(0.3))
+            jarIsOpen = false
         }
     }
 
@@ -318,7 +337,8 @@ struct HomeView: View {
             counter(.cat, label: "Cat hints")
             counter(.grandma, label: "Grandma helpers")
             Spacer()
-            CircleIconButton(systemName: "hanger", label: "Wardrobe") { showsWardrobe = true }
+            // The wardrobe of knitted things opens from the wardrobe in the
+            // scene, so the top row only needs settings.
             CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
         }
         .frame(height: BoardMetrics.topBarHeight)
@@ -340,7 +360,7 @@ struct HomeView: View {
     /// streak card mustn't cover.
     private var isShowingSomethingElse: Bool {
         showsYarnBag || showsWardrobe || showsSettings || showsStreak || asksAboutReminders
-            || isOpeningJar || flight != nil || knittingItem != nil || setPrize != nil
+            || isOpeningJar || jarIsOpen || flight != nil || knittingItem != nil || setPrize != nil
     }
 
     /// Closes grandma's card first, so on a yes iOS's own prompt appears
@@ -398,9 +418,11 @@ struct HomeView: View {
 private struct HomeStage: View {
     let progress: PlayerProgress
     let canKnit: Bool
-    /// Unopened jars; the jar is only on the stage while there's one.
+    /// Unopened jars; the jar is only on the table while there's one (or
+    /// while the last one is open).
     let jarCount: Int
     let jarShakes: Int
+    let jarIsOpen: Bool
     let speechLine: String?
     let onGranny: () -> Void
     let onCat: () -> Void
@@ -408,6 +430,7 @@ private struct HomeStage: View {
     /// Reports where the jar is, for the prize's flight.
     let onJarFrame: (CGRect) -> Void
     let onYarnBag: () -> Void
+    let onWardrobe: () -> Void
 
     /// Stage height as a multiple of its width.
     private let aspect: CGFloat = 1.1
@@ -424,35 +447,50 @@ private struct HomeStage: View {
             let at = { (x: CGFloat, y: CGFloat) in CGPoint(x: origin.x + x * side, y: origin.y + y * side) }
 
             ZStack {
-                // Back to front, like layers of a painting: the bag tucked
-                // half behind the armchair's right side, grandma, the cat's
-                // bed just in front of the chair's left side, and the jar on
-                // the floor at the front (it moves to a coffee table later).
+                // Back to front, like layers of a painting: the floor, the
+                // wardrobe at the back on the right (running off the edge, as
+                // a room does), the yarn bag tucked behind grandma's chair on
+                // the right, grandma, the side table with the jars at the
+                // front left, and the cat's bed in front of her.
+                // Measured from the agreed mock-up of the real art (positions
+                // past 1, or a width running off screen, are on purpose).
                 Ellipse()
                     .fill(Theme.clueCell)
-                    .frame(width: side * 0.95, height: side * 0.24)
-                    .position(at(0.5, 0.88))
+                    .frame(width: side * 1.0, height: side * 0.26)
+                    .position(at(0.5, 1.06))
 
-                // Its bottom stays on the same floor line as the chair's feet.
-                YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.25, action: onYarnBag)
-                    .position(at(0.8, 0.705))
+                WardrobeView(width: side * 0.623, action: onWardrobe)
+                    .position(at(0.896, 0.411))
 
-                GrannyView(width: side * 0.6, action: onGranny)
-                    .position(at(0.5, 0.52))
+                YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.302, action: onYarnBag)
+                    .position(at(0.823, 0.902))
 
-                CatBedView(width: side * 0.34, action: onCat)
-                    .position(at(0.31, 0.8))
+                GrannyView(width: side * 0.804, action: onGranny)
+                    .position(at(0.388, 0.665))
 
-                if jarCount > 0 {
-                    JarView(width: side * 0.17, count: jarCount, shakes: jarShakes, action: onJar)
+                // The bag's "Knit!" tag and count, drawn in front of grandma
+                // although the bag is behind her: half hidden by her chair,
+                // they'd stop telling the player there's something to knit.
+                YarnBagLabels(progress: progress, canKnit: canKnit, width: side * 0.302, action: onYarnBag)
+                    .position(at(0.823, 0.902))
+
+                SideTableView(width: side * 0.315)
+                    .position(at(0.163, 0.982))
+
+                // On the left of the table top, beside the plant.
+                if jarCount > 0 || jarIsOpen {
+                    JarView(width: side * 0.128, count: jarCount, shakes: jarShakes, isOpen: jarIsOpen, action: onJar)
                         .onGeometryChange(for: CGRect.self) { [space = HomeView.space] proxy in
                             proxy.frame(in: .named(space))
                         } action: { frame in
                             onJarFrame(frame)
                         }
-                        .position(at(0.82, 0.92))
-                        .transition(.scale(scale: 0.3).combined(with: .opacity))
+                        .position(at(0.128, 0.879))
+                        .transition(.scale(scale: 0.3, anchor: .bottom).combined(with: .opacity))
                 }
+
+                CatBedView(width: side * 0.294, action: onCat)
+                    .position(at(0.452, 1.012))
 
                 if let speechLine {
                     SpeechBubble(text: speechLine)
@@ -460,8 +498,9 @@ private struct HomeStage: View {
                         .transition(.opacity.combined(with: .scale(scale: 0.9, anchor: .bottom)))
                 }
             }
-            // A jar collected pops in; the last one opened shrinks away.
-            .animation(.spring(response: 0.4, dampingFraction: 0.65), value: jarCount)
+            // A jar collected pops in; the last one opened shrinks away
+            // once its helpers have landed.
+            .animation(.spring(response: 0.4, dampingFraction: 0.65), value: jarCount > 0 || jarIsOpen)
         }
     }
 }
@@ -500,19 +539,31 @@ private struct CatBedView: View {
     }
 }
 
-/// The unopened treat jars beside grandma's chair, as one jar with an
-/// "Open!" tag, and how many there are on its top right once there's more
-/// than one. A tap opens one. Later: a real lid-off animation.
+/// The unopened treat jars on the side table, as one jar with an "Open!"
+/// tag, and how many there are on its top right once there's more than
+/// one. A tap opens one: it shakes, then its lid comes off (the open
+/// image, drawn to line up exactly with the closed one) with a little hop.
 private struct JarView: View {
     let width: CGFloat
     let count: Int
     /// Increased to play the shake.
     let shakes: Int
+    /// The lid is off while its helpers fly out.
+    let isOpen: Bool
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            Image("jar").resizable().scaledToFit().frame(width: width)
+            Image(isOpen ? "jar-open" : "jar").resizable().scaledToFit().frame(width: width)
+                // The hop as the lid comes off.
+                .keyframeAnimator(initialValue: 1.0, trigger: isOpen) { content, scale in
+                    content.scaleEffect(scale, anchor: .bottom)
+                } keyframes: { _ in
+                    KeyframeTrack {
+                        CubicKeyframe(1.1, duration: 0.08)
+                        SpringKeyframe(1.0, duration: 0.3)
+                    }
+                }
                 // A quick wobble on its base, settling back.
                 .keyframeAnimator(initialValue: 0.0, trigger: shakes) { content, angle in
                     content.rotationEffect(.degrees(angle), anchor: .bottom)
@@ -526,10 +577,10 @@ private struct JarView: View {
                     }
                 }
                 .overlay(alignment: .top) {
-                    NudgeTag(text: "Open!").offset(y: -width * 0.32)
+                    if !isOpen { NudgeTag(text: "Open!").offset(y: -width * 0.2) }
                 }
                 .overlay(alignment: .topTrailing) {
-                    if count > 1 { countBadge.offset(x: width * 0.12, y: -width * 0.05) }
+                    if count > 1, !isOpen { countBadge.offset(x: width * 0.15, y: width * 0.1) }
                 }
         }
         .buttonStyle(SceneButtonStyle())
@@ -573,6 +624,33 @@ private struct StreakButton: View {
     }
 }
 
+/// Grandma's wardrobe, at the back of the room. A tap opens the wardrobe
+/// of knitted things: the way in, now that the top row has no hanger button.
+private struct WardrobeView: View {
+    let width: CGFloat
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image("wardrobe").resizable().scaledToFit().frame(width: width)
+        }
+        .buttonStyle(SceneButtonStyle())
+        .accessibilityLabel("Wardrobe")
+    }
+}
+
+/// The side table the jars stand on. Only furniture: the jar on it is the
+/// thing to tap, so the table lets taps through rather than catching them.
+private struct SideTableView: View {
+    let width: CGFloat
+
+    var body: some View {
+        Image("side-table").resizable().scaledToFit().frame(width: width)
+            .allowsHitTesting(false)
+            .accessibilityHidden(true)
+    }
+}
+
 /// Grandma's yarn bag, with the number of balls in it as a badge and a
 /// "Knit!" tag when there's enough yarn for something new.
 private struct YarnBagView: View {
@@ -584,19 +662,45 @@ private struct YarnBagView: View {
     var body: some View {
         Button(action: action) {
             Image("yarn-bag").resizable().scaledToFit().frame(width: width)
-                // The badge sits on the bag's open top, where the balls are,
-                // rather than the image corner, which is empty space.
-                .overlay(alignment: .topTrailing) {
-                    countBadge.offset(x: -width * 0.08, y: width * 0.1)
-                }
-                .overlay(alignment: .top) {
-                    if canKnit { NudgeTag(text: "Knit!").offset(y: -width * 0.12) }
-                }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Yarn bag")
         .accessibilityValue("\(progress.totalYarn) balls")
         .accessibilityHint(canKnit ? Text("Enough yarn to knit something") : Text(""))
+    }
+}
+
+/// The yarn bag's count and "Knit!" tag, laid out on a frame the size of
+/// the bag so they sit in the same places on it, but drawn as their own
+/// layer in front of grandma (see HomeStage). Only the badge and tag catch
+/// taps, and they open the bag like the bag itself; the frame between them
+/// lets taps through to whatever is underneath.
+private struct YarnBagLabels: View {
+    let progress: PlayerProgress
+    let canKnit: Bool
+    let width: CGFloat
+    let action: () -> Void
+
+    var body: some View {
+        // Invisible, only to take the bag's exact size.
+        Image("yarn-bag").resizable().scaledToFit().frame(width: width)
+            .hidden()
+            // The badge sits on the bag's open top, where the balls are,
+            // rather than the image corner, which is empty space.
+            .overlay(alignment: .topTrailing) {
+                Button(action: action) { countBadge }
+                    .buttonStyle(.plain)
+                    .offset(x: -width * 0.08, y: width * 0.1)
+            }
+            .overlay(alignment: .top) {
+                if canKnit {
+                    Button(action: action) { NudgeTag(text: "Knit!") }
+                        .buttonStyle(.plain)
+                        .offset(y: -width * 0.12)
+                }
+            }
+            // The bag itself already tells VoiceOver the count and the hint.
+            .accessibilityHidden(true)
     }
 
     private var countBadge: some View {
