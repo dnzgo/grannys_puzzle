@@ -5,19 +5,15 @@ import ArrowwordCore
 /// The board inside its square frame, like a view through a window: a
 /// white border round a tinted pane, which sets the board apart from the
 /// screen's background and shows where the board ends when zoomed out.
-/// A board that fits is drawn whole in the pane; a bigger one goes into a
-/// ZoomableBoard.
-///
-/// Keeping the two apart means small boards (and the lesson, whose
-/// spotlight measures the cells' positions on screen) are untouched by the
-/// zooming machinery.
+/// Every board zooms, except the tutorial's: its spotlight measures the
+/// cells' positions on screen, which it can't do inside the zooming view.
 struct BoardViewport: View {
     let model: LevelViewModel
     let metrics: BoardMetrics
 
     var body: some View {
         Group {
-            if metrics.needsZoom {
+            if metrics.isZoomable {
                 ZoomableBoard(
                     model: model,
                     metrics: metrics,
@@ -68,8 +64,8 @@ struct BoardViewport: View {
 /// second finger lands.
 ///
 /// On top of that, three things a puzzle needs:
-/// - **An intro**: the level opens on the whole board for a moment, then
-///   zooms in to the selected word at reading size, so the player sees there's more (under
+/// - **An intro**: a level that opens at reading size starts on the whole
+///   board for a moment, then zooms in to the selected word, so the player sees there's more (under
 ///   half a second, and any touch ends it).
 /// - **Following the word**: when a new word is selected (tapped, or
 ///   reached by typing), the board slides just enough to show all of it and
@@ -195,7 +191,7 @@ struct ZoomableBoard: UIViewRepresentable {
         }
         scrollView.minimumZoomScale = metrics.minimumZoom
         scrollView.maximumZoomScale = 1
-        coordinator.readingZoom = metrics.readingZoom
+        coordinator.openingZoom = metrics.openingZoom
         if scrollView.zoomScale < metrics.minimumZoom { scrollView.zoomScale = metrics.minimumZoom }
         coordinator.centre(scrollView)
         // The cells changed size on screen already showing the board (the
@@ -230,8 +226,8 @@ struct ZoomableBoard: UIViewRepresentable {
         /// the intro uses them as they are when it runs.
         var focus: CGRect?
         var reduceMotion = false
-        /// The zoom at which cells show at reading size.
-        var readingZoom: CGFloat = 1
+        /// The zoom a level opens at (see BoardMetrics).
+        var openingZoom: CGFloat = 1
         /// What a tap on the board does, given the point on the drawn board.
         var onTap: ((CGPoint) -> Void)?
         /// The player has dragged or pinched: from then on the board stays
@@ -272,8 +268,13 @@ struct ZoomableBoard: UIViewRepresentable {
 
         /// The level opens on the whole board, then zooms in to the word.
         func playIntro(in scrollView: UIScrollView) {
-            if reduceMotion {
-                if let focus { show(focus, in: scrollView, animated: false) }
+            // Nothing to zoom in to when the level opens on the whole board.
+            if reduceMotion || opensWhole(scrollView) {
+                if let focus {
+                    show(focus, in: scrollView, animated: false)
+                } else {
+                    showWholeBoard(in: scrollView, animated: false)
+                }
                 return
             }
             showWholeBoard(in: scrollView, animated: false)
@@ -337,12 +338,21 @@ struct ZoomableBoard: UIViewRepresentable {
             scrollView.zoom(to: visible.offsetBy(dx: dx, dy: dy), animated: animated)
         }
 
-        /// Shows a word at reading size, as close to the frame's top-left
-        /// as the board allows, so the rest of the board lies ahead of it.
-        /// A word longer than the frame is zoomed out to fit.
+        private func opensWhole(_ scrollView: UIScrollView) -> Bool {
+            openingZoom <= scrollView.minimumZoomScale + 0.001
+        }
+
+        /// Back to the opening view at a word: the whole board if the level
+        /// opens on it; otherwise the word at reading size, as close to the
+        /// frame's top-left as the board allows, so the rest of the board
+        /// lies ahead of it. A word longer than the frame is zoomed out to fit.
         func show(_ word: CGRect, in scrollView: UIScrollView, animated: Bool) {
+            guard !opensWhole(scrollView) else {
+                showWholeBoard(in: scrollView, animated: animated)
+                return
+            }
             // How much of the drawn board the frame shows at reading size.
-            let side = scrollView.bounds.width / readingZoom
+            let side = scrollView.bounds.width / openingZoom
             let padded = word.insetBy(dx: -margin, dy: -margin).intersection(CGRect(origin: .zero, size: boardSize))
             guard padded.width <= side, padded.height <= side else {
                 scrollView.zoom(to: padded, animated: animated)

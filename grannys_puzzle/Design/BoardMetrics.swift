@@ -16,18 +16,21 @@ import ArrowwordCore
 /// | iPhone 12/13 mini                 | 640–690pt           | 45pt |
 /// | iPhone SE (compact)               | under 640pt         | 40pt |
 ///
-/// A board that fits the viewport with cells of at least three quarters of
-/// reading size is drawn whole, as large as the viewport allows, with no
-/// zoom: that keeps today's 7×9 levels whole on every phone (37pt cells on
-/// a 393pt iPhone, 34pt on an SE). A bigger one (up to 10×12) zooms and
-/// pans inside the viewport (ZoomableBoard), between three sizes:
+/// Every board zooms and pans inside the viewport (ZoomableBoard), the
+/// same way on every phone, between:
 /// - **whole board**, the furthest out;
-/// - **reading size**, where a level opens and words are followed;
+/// - **opening view**, where a level opens and returns after Try again:
+///   the whole board if its cells there are at least three quarters of
+///   reading size (today's 7×9 levels, on every phone), else reading size;
 /// - **close-up**, the furthest in: 5×5 cells fill the viewport.
 ///
-/// Such a board is *drawn* at close-up size and everything else is a zoom
-/// out from there, because zooming scales the drawing: shrunk it stays
-/// sharp, enlarged past its drawn size it would blur.
+/// The board is *drawn* at close-up size and everything else is a zoom out
+/// from there, because zooming scales the drawing: shrunk it stays sharp,
+/// enlarged past its drawn size it would blur.
+///
+/// The exception is the tutorial: its spotlight finds the cells by their
+/// place on screen, which it can't do inside the zooming view, so the
+/// lesson's small board is drawn whole and fixed, as large as it fits.
 ///
 /// The width and height checks below are a safety net for screens not in this
 /// table (iPad split view, future devices): the frame never overflows.
@@ -47,7 +50,7 @@ struct BoardMetrics {
     static let closeUpCells = 5
     /// The window's white border, and its outer corner radius (the
     /// viewport's corners are this minus the border, so the curves match).
-    static let windowBorder: CGFloat = 2.5
+    static let windowBorder: CGFloat = 4
     static let windowCornerRadius: CGFloat = 12
     /// Rows in the letter tray: 8 keys each, so up to 24 distinct letters.
     static let trayRows = 3
@@ -67,19 +70,21 @@ struct BoardMetrics {
     /// The size the cells are drawn at.
     let cellSize: CGFloat
     let isCompact: Bool
-    /// The board is bigger than the viewport at reading size: it zooms and pans.
-    let needsZoom: Bool
-    /// The zoom that shows the whole board in the viewport (1 when it fits).
+    /// The board zooms and pans (every board but the tutorial's).
+    let isZoomable: Bool
+    /// The zoom that shows the whole board in the viewport.
     let minimumZoom: CGFloat
-    /// The zoom at which cells show at reading size (1 when it fits).
-    let readingZoom: CGFloat
+    /// The zoom of the opening view (see the type's comment). Equal to
+    /// `minimumZoom` when the level opens on the whole board.
+    let openingZoom: CGFloat
     /// The whole board as drawn, before any zoom.
     let boardSize: CGSize
 
     /// - Parameters:
     ///   - width: content width (screen width minus side padding).
     ///   - height: height available above the banner ad.
-    init(width: CGFloat, height: CGFloat, columns: Int, rows: Int) {
+    ///   - isZoomable: false for the tutorial's fixed board.
+    init(width: CGFloat, height: CGFloat, columns: Int, rows: Int, isZoomable: Bool) {
         let compact = height < Self.compactHeight
         isCompact = compact
         frameSide = max(0, min(width, height - Self.reservedHeight(isCompact: compact)).rounded(.down))
@@ -89,23 +94,22 @@ struct BoardMetrics {
         let viewport = CGSize(width: side, height: side)
         let reading = Self.preferredCellSize(forHeight: height)
         let fitting = Self.largestCell(fitting: viewport, columns: columns, rows: rows, cap: .infinity)
-        if fitting >= (reading * Self.wholeBoardShare).rounded(.down) {
-            // Fits at a comfortable size: as large as the viewport allows.
-            cellSize = fitting
-            needsZoom = false
-        } else {
-            // Never below reading size, should a tiny screen make the
-            // close-up smaller than that.
+        let opensWhole = fitting >= (reading * Self.wholeBoardShare).rounded(.down)
+        self.isZoomable = isZoomable
+        if isZoomable {
             let closeUp = Self.largestCell(fitting: viewport, columns: Self.closeUpCells, rows: Self.closeUpCells, cap: .infinity)
-            cellSize = max(reading, closeUp)
-            needsZoom = true
+            // Never smaller than reading size (a tiny screen's close-up),
+            // nor than the whole board fits at (a board of under 5×5).
+            cellSize = max(reading, closeUp, fitting)
+        } else {
+            cellSize = fitting
         }
         boardSize = CGSize(
             width: Self.span(of: columns, cellSize: cellSize),
             height: Self.span(of: rows, cellSize: cellSize)
         )
-        minimumZoom = needsZoom ? min(side / boardSize.width, side / boardSize.height, 1) : 1
-        readingZoom = needsZoom ? max(minimumZoom, reading / cellSize) : 1
+        minimumZoom = min(side / boardSize.width, side / boardSize.height, 1)
+        openingZoom = opensWhole ? minimumZoom : max(minimumZoom, reading / cellSize)
     }
 
     /// Where a cell's top-left corner is on the drawn board.
