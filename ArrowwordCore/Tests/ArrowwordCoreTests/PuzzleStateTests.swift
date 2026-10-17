@@ -58,12 +58,27 @@ final class PuzzleStateTests: XCTestCase {
         XCTAssertEqual(state.direction, .across)
     }
 
-    func testPreviousAnswerWrapsAroundFromTheFirst() throws {
-        var state = try newSquareGame()  // starts on answer 0
+    func testFinishingAWordMovesToTheNearestUnfinishedWord() throws {
+        var state = try newSquareGame()  // on CARD, across row 1
 
-        state.selectPreviousAnswer()
+        for letter in "CARD" { XCTAssertTrue(state.place(letter)) }
 
-        XCTAssertEqual(state.activeAnswerID, state.level.answers.count - 1)
+        // The next word in reading order, AREA, starts back at (2, 1). The
+        // down word through the D just placed continues right below it.
+        XCTAssertEqual(state.selection, cell(2, 4))
+        XCTAssertEqual(state.direction, .down)
+    }
+
+    func testFinishingADownWordMovesToTheNearestWordNotTheNextInOrder() throws {
+        var state = try newSquareGame()
+        state.select(cell(1, 1))  // already selected: switches to down, column 1
+
+        for letter in "CARD" { XCTAssertTrue(state.place(letter)) }
+
+        // Next in reading order is the down word in column 2, at the top
+        // (1, 2). The across word DART starts right beside the last letter.
+        XCTAssertEqual(state.selection, cell(4, 2))
+        XCTAssertEqual(state.direction, .across)
     }
 
     // MARK: - Placing and erasing

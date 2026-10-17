@@ -46,25 +46,23 @@ private struct CluePill: View {
         return ClueColors.text(on: colorIndex, strength: ClueColors.clueBarTint)
     }
 
+    /// Clue text sizes, largest first: the clue takes the first one at which
+    /// all of it fits the bar.
+    private static let clueFontSizes: [CGFloat] = [15, 14, 13, 12, 11, 10]
+
     var body: some View {
-        HStack(spacing: 0) {
-            stepButton(systemName: "chevron.left", label: "Previous clue", action: model.showPreviousClue)
-
-            VStack(spacing: 2) {
-                header
-                    .font(.system(size: 10.5, weight: .semibold))
-                    .kerning(0.5)
-                    .monospacedDigit()
-                    .foregroundStyle(textColor)
-                clueLine
-            }
-            // Clear of the progress line along the bottom edge; a clue that
-            // doesn't fit in what's left shrinks instead.
-            .padding(.vertical, 4)
-            .frame(maxWidth: .infinity)
-
-            stepButton(systemName: "chevron.right", label: "Next clue", action: model.showNextClue)
+        VStack(spacing: 2) {
+            header
+                .font(.system(size: 10.5, weight: .semibold))
+                .kerning(0.5)
+                .monospacedDigit()
+                .foregroundStyle(textColor)
+            clueLine
         }
+        // Clear of the progress line along the bottom edge.
+        .padding(.vertical, 4)
+        .padding(.horizontal, 12)
+        .frame(maxWidth: .infinity)
         .frame(height: 52)
         .background(RoundedRectangle(cornerRadius: 14).fill(fill))
         // A quick fade between colours, so the change of word is noticed.
@@ -106,14 +104,21 @@ private struct CluePill: View {
                     .foregroundStyle(textColor)
                     .accessibilityLabel(answer.direction == .across ? Text("Across") : Text("Down"))
                 // Never cut off with "…": a clue missing its end can't be
-                // solved. Up to two lines, then the text shrinks to fit.
+                // solved. ViewThatFits tries each size, largest first, and
+                // keeps the first whose wrapped text fits the bar's height.
+                // (minimumScaleFactor alone, tried before, gave up and cut
+                // long clues: it shrinks text within a fixed line count.)
                 // No letter count: the word's cells in the grid already show it.
-                Text(answer.clueText)
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(textColor)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.6)
+                ViewThatFits(in: .vertical) {
+                    ForEach(Self.clueFontSizes, id: \.self) { size in
+                        clueText(answer.clueText, size: size)
+                    }
+                    // Longer than any clue should be: shrinks further rather
+                    // than losing its end.
+                    clueText(answer.clueText, size: Self.clueFontSizes.last ?? 10)
+                        .lineLimit(3)
+                        .minimumScaleFactor(0.5)
+                }
             }
             .padding(.horizontal, 2)
         } else {
@@ -123,16 +128,11 @@ private struct CluePill: View {
         }
     }
 
-    private func stepButton(systemName: String, label: LocalizedStringKey, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Image(systemName: systemName)
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(textColor)
-                .frame(width: 32, height: 52)
-                .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(label)
+    private func clueText(_ text: String, size: CGFloat) -> some View {
+        Text(text)
+            .font(.system(size: size, weight: .semibold))
+            .foregroundStyle(textColor)
+            .multilineTextAlignment(.center)
     }
 }
 

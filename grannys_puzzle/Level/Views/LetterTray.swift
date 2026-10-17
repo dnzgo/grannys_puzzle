@@ -7,7 +7,8 @@ struct LetterTray: View {
     let model: LevelViewModel
     let keyHeight: CGFloat
 
-    /// 8 columns × 2 rows: the reason a level allows at most 16 distinct letters.
+    /// 8 columns, wrapping onto up to 3 rows: the reason a level allows at
+    /// most 24 distinct letters (BoardMetrics reserves the three rows).
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 6), count: 8)
 
     var body: some View {

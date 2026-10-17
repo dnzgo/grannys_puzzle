@@ -32,7 +32,9 @@ struct LevelScreen: View {
                     TopBar(model: model) { showsSettings = true }
                         .padding(.top, BoardMetrics.topBarTopPadding)
 
-                    BoardGrid(model: model, metrics: metrics)
+                    // The square frame: the board as it is when it fits,
+                    // zoomable inside it when it's bigger.
+                    BoardViewport(model: model, metrics: metrics)
                         .padding(.top, metrics.gridTopPadding)
 
                     // Any leftover height goes around the tray as breathing room.

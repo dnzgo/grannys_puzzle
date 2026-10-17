@@ -3,10 +3,12 @@ import ArrowwordCore
 
 /// Sizes that depend on the screen.
 ///
-/// Every player gets the same level (the daily leaderboard depends on it),
-/// so small phones draw the grid smaller instead of getting a smaller level.
+/// The board sits in a square *frame*, like a window: as large a square as
+/// the screen leaves after the top bar, the three-row letter tray and the
+/// buttons (361pt on a 393pt-wide iPhone, about 330pt on an SE). A white
+/// border runs round it; the board is seen through the *viewport* inside.
 ///
-/// Cell size is a fixed size per screen class, chosen on the simulators:
+/// Each screen has a *reading size* for cells, chosen on the simulators:
 ///
 /// | Screen class                      | Height above banner | Cell |
 /// |-----------------------------------|---------------------|------|
@@ -14,20 +16,41 @@ import ArrowwordCore
 /// | iPhone 12/13 mini                 | 640–690pt           | 45pt |
 /// | iPhone SE (compact)               | under 640pt         | 40pt |
 ///
-/// Those sizes are for the largest grid the rules allow (7×9), and they
-/// define a fixed *board box* per screen. A smaller grid gets the largest
-/// cells that fit in that box, so a 5×6 level fills the same space as a 7×9
-/// one instead of floating in empty space, and no level is ever bigger.
+/// A board that fits the viewport with cells of at least three quarters of
+/// reading size is drawn whole, as large as the viewport allows, with no
+/// zoom: that keeps today's 7×9 levels whole on every phone (37pt cells on
+/// a 393pt iPhone, 34pt on an SE). A bigger one (up to 10×12) zooms and
+/// pans inside the viewport (ZoomableBoard), between three sizes:
+/// - **whole board**, the furthest out;
+/// - **reading size**, where a level opens and words are followed;
+/// - **close-up**, the furthest in: 5×5 cells fill the viewport.
+///
+/// Such a board is *drawn* at close-up size and everything else is a zoom
+/// out from there, because zooming scales the drawing: shrunk it stays
+/// sharp, enlarged past its drawn size it would blur.
 ///
 /// The width and height checks below are a safety net for screens not in this
-/// table (iPad split view, future devices): the grid never overflows.
+/// table (iPad split view, future devices): the frame never overflows.
 struct BoardMetrics {
     /// Height of the area above the banner below which the screen counts as
-    /// compact. An iPhone SE has about 590pt here; a mini about 670pt.
+    /// compact. An iPhone SE has about 580pt here; a mini about 660pt.
     static let compactHeight: CGFloat = 640
-    /// At or above this height, phones get the largest cells.
+    /// At or above this height, phones get the largest cells. A 393×852
+    /// iPhone has about 692pt, so only just: more chrome on the level
+    /// screen would drop it to the mini's size.
     static let regularHeight: CGFloat = 690
+    /// Smallest cells, as a share of reading size, at which a board is
+    /// still drawn whole rather than zoomed.
+    static let wholeBoardShare: CGFloat = 0.75
     static let cellGap: CGFloat = 2
+    /// Cells across the viewport at the closest zoom.
+    static let closeUpCells = 5
+    /// The window's white border, and its outer corner radius (the
+    /// viewport's corners are this minus the border, so the curves match).
+    static let windowBorder: CGFloat = 2.5
+    static let windowCornerRadius: CGFloat = 12
+    /// Rows in the letter tray: 8 keys each, so up to 24 distinct letters.
+    static let trayRows = 3
 
     // Fixed parts of the level screen. LevelScreen lays itself out with these
     // same values, so the height reserved here is the height actually used.
@@ -37,8 +60,21 @@ struct BoardMetrics {
     static let minimumSpacer: CGFloat = 8
     static let actionBottomPadding: CGFloat = 8
 
+    /// The side of the square frame, border included.
+    let frameSide: CGFloat
+    /// The side of the square the board is seen through, inside the border.
+    let viewportSide: CGFloat
+    /// The size the cells are drawn at.
     let cellSize: CGFloat
     let isCompact: Bool
+    /// The board is bigger than the viewport at reading size: it zooms and pans.
+    let needsZoom: Bool
+    /// The zoom that shows the whole board in the viewport (1 when it fits).
+    let minimumZoom: CGFloat
+    /// The zoom at which cells show at reading size (1 when it fits).
+    let readingZoom: CGFloat
+    /// The whole board as drawn, before any zoom.
+    let boardSize: CGSize
 
     /// - Parameters:
     ///   - width: content width (screen width minus side padding).
@@ -46,25 +82,53 @@ struct BoardMetrics {
     init(width: CGFloat, height: CGFloat, columns: Int, rows: Int) {
         let compact = height < Self.compactHeight
         isCompact = compact
-        let available = CGSize(width: width, height: height - Self.reservedHeight(isCompact: compact))
+        frameSide = max(0, min(width, height - Self.reservedHeight(isCompact: compact)).rounded(.down))
+        let side = max(0, frameSide - 2 * Self.windowBorder)
+        viewportSide = side
 
-        // 1. Size the largest allowed grid for this screen: the preferred cell
-        //    size from the table, shrunk only if the screen is too small.
-        let largest = LevelRules.standard
-        let referenceCell = Self.largestCell(
-            fitting: available,
-            columns: largest.columns.upperBound,
-            rows: largest.rows.upperBound,
-            cap: Self.preferredCellSize(forHeight: height)
+        let viewport = CGSize(width: side, height: side)
+        let reading = Self.preferredCellSize(forHeight: height)
+        let fitting = Self.largestCell(fitting: viewport, columns: columns, rows: rows, cap: .infinity)
+        if fitting >= (reading * Self.wholeBoardShare).rounded(.down) {
+            // Fits at a comfortable size: as large as the viewport allows.
+            cellSize = fitting
+            needsZoom = false
+        } else {
+            // Never below reading size, should a tiny screen make the
+            // close-up smaller than that.
+            let closeUp = Self.largestCell(fitting: viewport, columns: Self.closeUpCells, rows: Self.closeUpCells, cap: .infinity)
+            cellSize = max(reading, closeUp)
+            needsZoom = true
+        }
+        boardSize = CGSize(
+            width: Self.span(of: columns, cellSize: cellSize),
+            height: Self.span(of: rows, cellSize: cellSize)
         )
-        // 2. That grid's outline is the board box every level shares.
-        let boardBox = CGSize(
-            width: Self.span(of: largest.columns.upperBound, cellSize: referenceCell),
-            height: Self.span(of: largest.rows.upperBound, cellSize: referenceCell)
-        )
-        // 3. This level's cells grow until its grid touches the box's width
-        //    or height. The box already fits the screen, so this one does too.
-        cellSize = Self.largestCell(fitting: boardBox, columns: columns, rows: rows, cap: .infinity)
+        minimumZoom = needsZoom ? min(side / boardSize.width, side / boardSize.height, 1) : 1
+        readingZoom = needsZoom ? max(minimumZoom, reading / cellSize) : 1
+    }
+
+    /// Where a cell's top-left corner is on the drawn board.
+    func origin(of cell: Coordinate) -> CGPoint {
+        CGPoint(x: CGFloat(cell.column) * (cellSize + gap), y: CGFloat(cell.row) * (cellSize + gap))
+    }
+
+    /// The cell under a point on the drawn board, or nil past its edge. A
+    /// point in the gap between two cells counts for the one before it, so
+    /// a tap there still lands somewhere.
+    func cell(at point: CGPoint, columns: Int, rows: Int) -> Coordinate? {
+        guard point.x >= 0, point.y >= 0 else { return nil }
+        let column = Int(point.x / (cellSize + gap))
+        let row = Int(point.y / (cellSize + gap))
+        guard column < columns, row < rows else { return nil }
+        return Coordinate(row: row, column: column)
+    }
+
+    /// The smallest rectangle around these cells on the drawn board.
+    func rect(around cells: [Coordinate]) -> CGRect {
+        cells.reduce(CGRect.null) { rect, cell in
+            rect.union(CGRect(origin: origin(of: cell), size: CGSize(width: cellSize, height: cellSize)))
+        }
     }
 
     var gap: CGFloat { Self.cellGap }
@@ -101,10 +165,11 @@ struct BoardMetrics {
     private static func trayKeyHeight(isCompact: Bool) -> CGFloat { isCompact ? 36 : 40 }
     private static func actionHeight(isCompact: Bool) -> CGFloat { isCompact ? 44 : 48 }
 
-    /// Everything on the level screen except the grid itself.
+    /// Everything on the level screen except the board's frame.
     private static func reservedHeight(isCompact: Bool) -> CGFloat {
         let topBar = topBarTopPadding + topBarHeight
-        let tray = 2 * trayKeyHeight(isCompact: isCompact) + trayRowSpacing
+        let rows = CGFloat(trayRows)
+        let tray = rows * trayKeyHeight(isCompact: isCompact) + (rows - 1) * trayRowSpacing
         let actions = actionHeight(isCompact: isCompact) + actionBottomPadding
         return topBar + gridTopPadding(isCompact: isCompact) + tray + actions + 2 * minimumSpacer
     }

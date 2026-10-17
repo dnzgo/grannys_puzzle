@@ -1,8 +1,8 @@
 /// One clue and the cells its answer fills.
 public struct Answer: Identifiable, Sendable, Equatable {
     /// The answer's position in reading order: all across answers top to
-    /// bottom, then all down answers left to right. The clue bar's
-    /// previous/next buttons walk this order.
+    /// bottom, then all down answers left to right. Breaks ties when the
+    /// game picks the nearest unfinished answer.
     public let id: Int
     public let clueCell: Coordinate
     public let arrow: ClueArrow

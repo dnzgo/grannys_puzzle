@@ -3,11 +3,11 @@
   "formatVersion": 1,
   "grid": {
     "minRows": 5,
-    "maxRows": 9,
+    "maxRows": 12,
     "minColumns": 5,
-    "maxColumns": 7
+    "maxColumns": 10
   },
-  "maxDistinctLetters": 16,
+  "maxDistinctLetters": 24,
   "maxCluesPerCell": 2,
   "minAnswerLength": 2,
   "maxTwoLetterAnswers": 4,

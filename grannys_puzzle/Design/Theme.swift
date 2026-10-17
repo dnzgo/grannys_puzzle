@@ -41,6 +41,11 @@ enum Theme {
     static let cellBorder = Color(hex: 0xE6D9CF)
     static let progressTrack = Color(hex: 0xEFE5DC)
     static let disabledFill = Color(hex: 0xEDE4DC)
+    /// The pane behind the board, inside its white border: halfway between
+    /// the background and a clear tint, so it sets the board apart without
+    /// weighing on it. About the clue cells' shade, so the white letter
+    /// cells mark the board's edge more than the clue cells do.
+    static let boardWindow = Color(hex: 0xF0E6DC)
 
     // MARK: Text
 

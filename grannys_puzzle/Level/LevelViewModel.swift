@@ -208,7 +208,7 @@ final class LevelViewModel {
     //
     // During the lesson every action first asks the coach, and reports back
     // after it's done. Actions the lesson never uses (tapping a cell,
-    // erasing, the clue bar's arrows) are simply off until it's over.
+    // erasing) are simply off until it's over.
 
     func tapCell(_ cell: Coordinate) {
         guard !isCoaching else { return }
@@ -222,18 +222,6 @@ final class LevelViewModel {
         puzzle.selectAnswer(answerID)
         feel(.select)
         coachSaw(action)
-    }
-
-    func showNextClue() {
-        guard !isCoaching else { return }
-        puzzle.selectNextAnswer()
-        feel(.select)
-    }
-
-    func showPreviousClue() {
-        guard !isCoaching else { return }
-        puzzle.selectPreviousAnswer()
-        feel(.select)
     }
 
     func type(_ letter: Character) {

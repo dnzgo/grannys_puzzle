@@ -26,8 +26,9 @@ final class LevelValidationTests: XCTestCase {
 
     func testRejectsAGridWiderThanTheMaximum() {
         var file = square
-        file.grid = ["########", "#CARDCAR", "#AREAARE", "#REARREA", "#DARTDAR"]
-        assertRejects(file, with: .gridSizeOutOfRange(rows: 5, columns: 8))
+        // 11 columns: one past the maximum of 10.
+        file.grid = ["###########", "#CARDCARDCA", "#AREAAREAAR", "#REARREARRE", "#DARTDARTDA"]
+        assertRejects(file, with: .gridSizeOutOfRange(rows: 5, columns: 11))
     }
 
     func testRejectsRowsOfDifferentLengths() {

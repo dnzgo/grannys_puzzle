@@ -126,28 +126,13 @@ public struct PuzzleState: Sendable {
         }
     }
 
-    /// Jumps to an answer (tapping its clue, or the clue bar's arrows):
+    /// Jumps to an answer (tapping its clue):
     /// its first empty cell, or its first cell if it's full.
     public mutating func selectAnswer(_ answerID: Int) {
         guard !isSubmitted, level.answers.indices.contains(answerID) else { return }
         let answer = level.answers[answerID]
         selection = answer.cells.first(where: { entries[$0] == nil }) ?? answer.cells[0]
         direction = answer.direction
-    }
-
-    public mutating func selectNextAnswer() {
-        stepAnswer(by: 1)
-    }
-
-    public mutating func selectPreviousAnswer() {
-        stepAnswer(by: -1)
-    }
-
-    private mutating func stepAnswer(by delta: Int) {
-        guard let current = activeAnswerID else { return }
-        let count = level.answers.count
-        // Adding `count` before `%` keeps the result positive when stepping back from 0.
-        selectAnswer((current + delta + count) % count)
     }
 
     // MARK: - Editing
@@ -312,8 +297,14 @@ public struct PuzzleState: Sendable {
     }
 
     /// Moves to the next empty cell in the active answer after `cell`, or
-    /// else to the first empty cell of the following answers, wrapping around.
-    /// Stays put when the board is full.
+    /// else to the nearest unfinished answer. Stays put when the board is full.
+    ///
+    /// "Nearest" is measured from `cell` to the first empty cell of each
+    /// unfinished answer (where the selection would land), and ties go to
+    /// the earlier answer in reading order so the choice is predictable.
+    /// Reading order alone, used before, could send the player across the
+    /// board on a big level that only shows part of it; the nearest answer
+    /// is usually already in view, and often crosses the word just finished.
     private mutating func moveToNextEmptyCell(after cell: Coordinate) {
         guard let answerID = activeAnswerID else { return }
         let answer = level.answers[answerID]
@@ -323,15 +314,22 @@ public struct PuzzleState: Sendable {
             direction = answer.direction
             return
         }
-        let count = level.answers.count
-        for step in 1...count {
-            let candidate = level.answers[(answerID + step) % count]
-            if let empty = candidate.cells.first(where: { entries[$0] == nil }) {
-                selection = empty
-                direction = candidate.direction
-                return
-            }
+        let unfinished = level.answers.compactMap { candidate -> (answer: Answer, empty: Coordinate)? in
+            candidate.cells.first(where: { entries[$0] == nil }).map { (candidate, $0) }
         }
+        // min(by:) keeps the first of equal elements, which is the tie rule.
+        guard let nearest = unfinished.min(by: { squaredDistance(cell, $0.empty) < squaredDistance(cell, $1.empty) })
+        else { return }
+        selection = nearest.empty
+        direction = nearest.answer.direction
+    }
+
+    /// Squared straight-line distance in cells; squaring keeps it in whole
+    /// numbers and doesn't change which is nearer.
+    private func squaredDistance(_ first: Coordinate, _ second: Coordinate) -> Int {
+        let rows = first.row - second.row
+        let columns = first.column - second.column
+        return rows * rows + columns * columns
     }
 }
 

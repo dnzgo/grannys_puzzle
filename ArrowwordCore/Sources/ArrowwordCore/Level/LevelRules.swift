@@ -8,10 +8,10 @@
 /// file.)
 public struct LevelRules: Sendable {
     public var supportedFormatVersion = 1
-    public var rows: ClosedRange<Int> = 5...9
-    public var columns: ClosedRange<Int> = 5...7
-    /// The letter tray has 8 columns × 2 rows.
-    public var maxDistinctLetters = 16
+    public var rows: ClosedRange<Int> = 5...12
+    public var columns: ClosedRange<Int> = 5...10
+    /// The letter tray has 8 columns × 3 rows.
+    public var maxDistinctLetters = 24
     /// A clue cell is split in two at most.
     public var maxCluesPerCell = 2
     public var minAnswerLength = 2
