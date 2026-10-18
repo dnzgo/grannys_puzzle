@@ -90,6 +90,11 @@ private struct CluePill: View {
     private var header: some View {
         if model.isTutorial {
             Text("HOW TO PLAY")
+        } else if let start = model.dailyStartedAt {
+            HStack(spacing: 6) {
+                Text("DAILY PUZZLE")
+                DailyStopwatch(start: start, finalSeconds: model.dailyResult?.seconds)
+            }
         } else {
             Text("LEVEL \(model.levelNumber)")
         }
@@ -152,5 +157,29 @@ struct CircleIconButton: View {
         }
         .buttonStyle(.plain)
         .accessibilityLabel(label)
+    }
+}
+
+/// The daily puzzle's running time, ticking once a second, and fixed at the
+/// final time once the board is submitted. Takes its font from the header.
+private struct DailyStopwatch: View {
+    let start: Date
+    let finalSeconds: Int?
+
+    var body: some View {
+        if let finalSeconds {
+            reading(finalSeconds)
+        } else {
+            // TimelineView redraws only this text each second, not the bar.
+            TimelineView(.periodic(from: start, by: 1)) { context in
+                reading(max(0, Int(context.date.timeIntervalSince(start))))
+            }
+        }
+    }
+
+    private func reading(_ seconds: Int) -> some View {
+        Text(verbatim: "· " + DailyFormat.clock(seconds: seconds))
+            .accessibilityLabel(Text("Time"))
+            .accessibilityValue(Text(verbatim: DailyFormat.clock(seconds: seconds)))
     }
 }

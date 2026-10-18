@@ -6,6 +6,8 @@ import ArrowwordCore
 struct GameContent {
     let pack: LevelPack
     let tutorial: Level?
+    /// The daily puzzles: their own pack, apart from the levels.
+    let daily: LevelPack?
 }
 
 /// Loads levels and level packs shipped inside the app bundle.
@@ -40,6 +42,12 @@ enum LevelLoader {
         "tutorial-\(language)"
     }
 
+    /// The daily puzzles for a language, e.g. "daily-tr" (see DailyDay for
+    /// which one is today's).
+    static func dailyPackName(for language: String) -> String {
+        "daily-\(language)"
+    }
+
     /// Everything a language needs to play: its pack and its lesson board.
     /// The lesson is optional: a missing one is a build problem the tests
     /// catch, and not worth stopping the game for, so it's logged and the
@@ -54,7 +62,24 @@ enum LevelLoader {
                 .error("Tutorial couldn't be loaded: \(String(describing: error), privacy: .public)")
             tutorial = nil
         }
-        return GameContent(pack: pack, tutorial: tutorial)
+        return GameContent(pack: pack, tutorial: tutorial, daily: dailyPack(for: language))
+    }
+
+    /// Optional like the lesson: without it the home screen simply has no
+    /// daily button. A language without its own falls back to English's,
+    /// like the levels.
+    private static func dailyPack(for language: String) -> LevelPack? {
+        do {
+            do {
+                return try bundledPack(named: dailyPackName(for: language))
+            } catch LoadError.missingFile where language != fallbackLanguage {
+                return try bundledPack(named: dailyPackName(for: fallbackLanguage))
+            }
+        } catch {
+            Logger(subsystem: "grannys_puzzle", category: "daily")
+                .error("Daily puzzles couldn't be loaded: \(String(describing: error), privacy: .public)")
+            return nil
+        }
     }
 
     /// The puzzle language's first pack, or English's if that language's

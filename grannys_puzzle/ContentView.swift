@@ -92,6 +92,7 @@ private enum Startup {
             let game = Game(
                 pack: content.pack,
                 tutorial: content.tutorial,
+                daily: content.daily,
                 language: language,
                 store: progressStore(),
                 ads: AdsSetup.makeController(),

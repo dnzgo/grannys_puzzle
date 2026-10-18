@@ -1,0 +1,5071 @@
+{
+ "formatVersion": 1,
+ "packId": "daily-tr",
+ "language": "tr",
+ "levels": [
+  {
+   "formatVersion": 1,
+   "id": "tr-900001",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#İ#P#M#",
+    "ESKİ#UN",
+    "#KELİME",
+    "BEKAR##",
+    "#L#VAKA",
+    "GEÇ#DEV",
+    "##ACEMİ",
+    "BORA#İZ",
+    "#TENEKE"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kadim"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Ekmeğin hammaddesi"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Lafız"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Evlenmemiş"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Hadise"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Erken karşıtı"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kocaman"
+    },
+    {
+     "row": 6,
+     "column": 1,
+     "arrow": "right",
+     "text": "Tecrübesiz"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fırtına"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Ayak bırakır"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kutu"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Liman yapısı"
+    },
+    {
+     "row": 6,
+     "column": 1,
+     "arrow": "down",
+     "text": "Yeşil bitki"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Fırında tatlı"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Derman"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Bulgur ___"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "Ruh"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Azim"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Balmumu"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Köpek sever"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "\"___ var ___ yok\""
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kristal lamba"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 6
+    },
+    {
+     "row": 4,
+     "column": 6
+    },
+    {
+     "row": 6,
+     "column": 5
+    },
+    {
+     "row": 8,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900002",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#E#B#D#G",
+    "AK#İDARE",
+    "#İKRAM#N",
+    "AMA#İLAÇ",
+    "##ZARAR#",
+    "CÜMLE#AD",
+    "#SAÇ#ABİ",
+    "ATKI#TAŞ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Beyaz"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Müdürlük"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Hediye"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fakat"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Deva"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Hasar"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Noktayla biter"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Kişiye verilen söz"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Başta uzar"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Ağabey"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Boyna sarılır"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kaya parçası"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Onuncu ay"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Alt karşıtı"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Oymak"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Tek"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Duvar sıvası"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Apartman bölümü"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Katre"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Binek hayvanı"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Otomobil"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Delikanlı"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Ağızda olur"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 1
+    },
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 6
+    },
+    {
+     "row": 6,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900003",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#D#P#V#",
+    "DELİ#EŞ",
+    "###SADE",
+    "KAŞ#RAF",
+    "#YAZI##",
+    "ARPA#EV",
+    "#AKRABA",
+    "ANA#YER"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Akılsız"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Benzer"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "right",
+     "text": "Süssüz"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Göz üstünde"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Dolap bölmesi"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "right",
+     "text": "El ___"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Bira yapılır"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "right",
+     "text": "Oturulan yer"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Aile üyesi"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Anne"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Mekân"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "\"Sen ___ gel\""
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "down",
+     "text": "Köpüklü içecek"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "down",
+     "text": "Başa giyilir"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Kirli"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Tavla aracı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Bal yapan böcek"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Dünyanın uydusu"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Ayrılık"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Doğum yaptırır"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Aşçıbaşı"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Mevcut"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 4,
+     "column": 1
+    },
+    {
+     "row": 7,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900004",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#E#B#G#",
+    "OK#EŞEK",
+    "#ŞELALE",
+    "AİT#KİN",
+    "###BANT",
+    "NEŞE###",
+    "#ŞİŞMAN",
+    "ŞİŞ#ODA",
+    "#TEKRAR"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yayla atılır"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Anırır"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Düşen su"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Birine özgü"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Garez"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Kurdele"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Keyif"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kilolu"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kebap demiri"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Evin bölümü"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Yeniden"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Limon tadı"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Aynı"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Kasap satar"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Cam kap"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Kalça üstü"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Dörtten sonra"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Espri"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Erguvan"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Damadın eşi"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Etrafı su"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kasaba büyüğü"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kırmızı meyve"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 0
+    },
+    {
+     "row": 8,
+     "column": 2
+    },
+    {
+     "row": 8,
+     "column": 5
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900005",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#Y#Y#K#K",
+    "KASABA#A",
+    "##İŞARET",
+    "PAS#YAN#",
+    "#C#GARİP",
+    "CEKET#ŞU",
+    "#MUZ#ATA",
+    "KİŞİ#TEN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Köyden büyük"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "right",
+     "text": "Belirti"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Demir küfü"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kenar"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Tuhaf"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Takım parçası"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Bu değil"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Maymun sever"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Dede"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Birey"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Cilt"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "\"___ sen ___ ben\""
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "down",
+     "text": "Usta karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Duman gibi bulut"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Serçe"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Islak"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Seyahat"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Eski ekmek"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Hüküm"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Yarış hayvanı"
+    },
+    {
+     "row": 1,
+     "column": 6,
+     "arrow": "down",
+     "text": "Halanın kocası"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Apartman bölümü"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "Not"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 5,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900006",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#Y#B#I#",
+    "KEÇİ#SU",
+    "#DALGIÇ",
+    "SİMGE##",
+    "###İLGİ",
+    "GÖZ#MAL",
+    "#TABELA",
+    "YEM#KAN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Dağ ___"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Hayat kaynağı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Derin yüzücü"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sembol"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Alaka"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Görme organı"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Eşya"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Dükkân adı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Hayvan yiyeceği"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Damarda akar"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Altıdan sonra"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Karşı taraf"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Yılbaşı ağacı"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Fiyat artışı"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Haber"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Gitmek karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Derece ölçer"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Resmi davet"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kalemin sivri yeri"
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Duyuru"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 3,
+     "column": 2
+    },
+    {
+     "row": 5,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900007",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#K#R#Y#",
+    "BU#UÇAK",
+    "#LAHANA",
+    "HER#TAS",
+    "##ILIK#",
+    "VAZO##E",
+    "#BAKKAL",
+    "EL#MEŞE",
+    "#ARALIK"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yakındakini gösterir"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Hava taşıtı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Sarması olur"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Bütün"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Hamam kabı"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Ilıman"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kristal kap"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Dükkâncı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Parmakların yeri"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Palamut ağacı"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Son ay"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Burç"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Büyük kız kardeş"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bozukluk"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Can"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Bir ısırık"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Dam"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Saçsız"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Al olur"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Hastalığa karşı iğne"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Adale"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kalbur"
+    }
+   ],
+   "givens": [
+    {
+     "row": 3,
+     "column": 1
+    },
+    {
+     "row": 3,
+     "column": 4
+    },
+    {
+     "row": 3,
+     "column": 5
+    },
+    {
+     "row": 4,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900008",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#D#Ş#K#A",
+    "ÇENE#İLK",
+    "#FENER#Ü",
+    "TAT#SAP#",
+    "###GİZLİ",
+    "SAPAN#AZ",
+    "#LİG#İKİ",
+    "MOLA#ÇAN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Gevezelik"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Başlangıç"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Deniz ışığı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Lezzet"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Tutacak yer"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Açık karşıtı"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Lastikli oyuncak"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Biraz"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Futbol kümesi"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Birden sonra"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ara"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Büyük zil"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Kere"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Telefon sözü"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Açık"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Batarya"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Keyifli"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Kuş ağzı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "İlham"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Saplı meyve"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Dış karşıtı"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Araç numarası"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Araba bataryası"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "Müsaade"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 4,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 5,
+     "column": 4
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900009",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#D#R#N#",
+    "GECE#ON",
+    "#REÇETE",
+    "SEPET##",
+    "###LİSE",
+    "HAT#KUM",
+    "#NEŞELİ",
+    "HIZ#TUR"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Gündüz karşıtı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Dokuzdan sonra"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Tarif"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Küfe"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Orta öğretim"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Telefon bağlantısı"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Plaj zemini"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Keyifli"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sürat"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Devir"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Küçük akarsu"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Geçmişten kalan"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Ceketteki bölme"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bitirme çalışması"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Kahvaltılık tatlı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Fiyat kâğıdı"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Karne puanı"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Akışkan"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Soru sözü"
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Buyruk"
+    }
+   ],
+   "givens": [
+    {
+     "row": 3,
+     "column": 4
+    },
+    {
+     "row": 4,
+     "column": 5
+    },
+    {
+     "row": 7,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900010",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#A#K#K#",
+    "UYKU#ÖN",
+    "#AİT#YA",
+    "ARMUT#N",
+    "####EBE",
+    "MİSİNA#",
+    "#NEŞELİ",
+    "SEN#KOL",
+    "#KEPENK"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Dinlenme hali"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Arka karşıtı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "İlgili"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Veya"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ayvaya benzer"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "right",
+     "text": "Oyunda sobeleyen"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Naylon ip"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Şen"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ben değil"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Dal"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Demir perde"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Kalibre"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Ahırda yaşar"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Hangi kişi"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "On iki ay"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Kap"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "down",
+     "text": "Görev"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "İnce metal"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Kasaba değil"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Uçan küre"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Ferahlatıcı bitki"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Birinci"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 8,
+     "column": 1
+    },
+    {
+     "row": 8,
+     "column": 4
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900011",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#İ#B#A#Ü",
+    "VAZO#SOS",
+    "#DAR#ALT",
+    "SERÇE#A#",
+    "####BOYA",
+    "SOHBET#M",
+    "#DUA#OYA",
+    "YAYLA#AÇ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Çiçek kabı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Ketçap"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Geniş karşıtı"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Aşağı taraf"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Cıvıldar"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "right",
+     "text": "Fırça ile sürülür"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Muhabbet"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Niyaz"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "El işi"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yaz otlağı"
+    },
+    {
+     "row": 7,
+     "column": 5,
+     "arrow": "right",
+     "text": "Karnı boş"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Geri verme"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Salon"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "İnce örtü"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Karakter"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Verecek"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "down",
+     "text": "Arının ürünü"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "Doğum yaptırır"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Baston"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Araba"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Hadise"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "\"___ sen ___ ben\""
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Yukarı taraf"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "Gaye"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 2,
+     "column": 7
+    },
+    {
+     "row": 6,
+     "column": 7
+    },
+    {
+     "row": 7,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900012",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#P#T#Ş#",
+    "ŞATO#AD",
+    "#ŞAHANE",
+    "HAMUR##",
+    "###MASA",
+    "YAZ#MAT",
+    "#MİNARE",
+    "DAL#KIŞ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Avrupa kalesi"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "İsim"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Harika"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Mayalı karışım"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Sehpa"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sıcak mevsim"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Parlak değil"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Cami kulesi"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ağaç kolu"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kar yağar"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "General"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Lakin"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bütün"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Kapıda çalar"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Ekilen tane"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Bulmaya çalışmak"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Ün"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Altın rengi"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Dahi, bile"
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Alev"
+    }
+   ],
+   "givens": [
+    {
+     "row": 3,
+     "column": 1
+    },
+    {
+     "row": 6,
+     "column": 5
+    },
+    {
+     "row": 7,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900013",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#S#Ş#B#",
+    "LALE#İP",
+    "#HARİTA",
+    "HAFİF#M",
+    "###TAPU",
+    "RUH#DEK",
+    "#ZAFER#",
+    "TANE#DE",
+    "#KESMEK"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Bahar çiçeği"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Halat"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Atlas"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ağır karşıtı"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Mülk belgesi"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tin"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Değin"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Galibiyet"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Adet"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "\"Sen ___ gel\""
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Bıçakla ayırmak"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Alan"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Irak"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Konuşma"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Basamak"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Bant"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "Kırmızı başlık"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Anlatım"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Küçük asalak"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Pencereye asılır"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Beyaz lif"
+    },
+    {
+     "row": 6,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kelime sonuna gelen"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 0,
+     "column": 5
+    },
+    {
+     "row": 1,
+     "column": 6
+    },
+    {
+     "row": 3,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900014",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#A#A#O#A",
+    "TREN#TÜY",
+    "#AVİZE#V",
+    "ÜÇ#DOLMA",
+    "##TER#A#",
+    "PLAN#ANA",
+    "#İZ#İCAT",
+    "EFE#SIVA"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Raylı taşıt"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Hav"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Tavan lambası"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sayı"
+    },
+    {
+     "row": 3,
+     "column": 2,
+     "arrow": "right",
+     "text": "Biber ___"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Bedenden çıkan su"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kroki"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "right",
+     "text": "Valide"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Geride kalan işaret"
+    },
+    {
+     "row": 6,
+     "column": 3,
+     "arrow": "right",
+     "text": "Buluş"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yiğit"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Duvar kaplaması"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Alet"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Banyo aracı"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Yuva"
+    },
+    {
+     "row": 3,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bayat karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Ansızın"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Güç"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Duman kirliliği"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Konaklama yeri"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Biberin tadı"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Meyve satıcısı"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Sarı meyve"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Soy büyüğü"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 5
+    },
+    {
+     "row": 1,
+     "column": 0
+    },
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 3,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900015",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#C#T#Y#",
+    "DEDE#AH",
+    "#ZEKİ#U",
+    "CAM#YAN",
+    "###KİŞİ",
+    "TABELA#",
+    "#KELİME",
+    "DÜZ#KAR"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ata"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Acı ünlemi"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Akıllı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Pencere malzemesi"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Taraf"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Şahıs"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Levha"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Sözcük"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Eğri değil"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Beyaz örtü"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Kabahat bedeli"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Elektrik deposu"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "An, zaman"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Kumaş parçası"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Bir"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Saçı dökülmüş"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Kötülük karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Veya"
+    },
+    {
+     "row": 2,
+     "column": 5,
+     "arrow": "down",
+     "text": "Basamak"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Akıtma aracı"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Asker"
+    }
+   ],
+   "givens": [
+    {
+     "row": 4,
+     "column": 3
+    },
+    {
+     "row": 6,
+     "column": 1
+    },
+    {
+     "row": 6,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900016",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#G#D#R#",
+    "KEDİ#AN",
+    "#MELODİ",
+    "ÇİM#YAN",
+    "##İDARE",
+    "DERİ###",
+    "#K#PARA",
+    "ÇİY#TOY",
+    "#PAHALI"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Miyavlar"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kısa süre"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Ezgi"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Futbol sahası zemini"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kenar"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Yönetim"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Cilt"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "right",
+     "text": "Lira"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sabah nemi"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Acemi"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Değerli"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Büyük tekne"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Grup"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Pas tutar"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "down",
+     "text": "\"___ sen ___ ben\""
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Ağızdaki organ"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Alt"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "İğne süsü"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Dede"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Hız ölçer"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Görev"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Büyükanne"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Bal sever hayvan"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 1
+    },
+    {
+     "row": 2,
+     "column": 6
+    },
+    {
+     "row": 3,
+     "column": 4
+    },
+    {
+     "row": 7,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900017",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#S#Ş#B#A",
+    "KORO#İYİ",
+    "#BAVUL#L",
+    "ÇAY#MİDE",
+    "###CUMA#",
+    "HASAT#İÇ",
+    "#NAM#İRİ",
+    "DİZİ#NET"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ses topluluğu"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Güzel"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Valiz"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Demlenip içilir"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Karın"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Hafta sonu öncesi"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Biçim zamanı"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Ortası"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Ün"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Büyük"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sıra"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kesin"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Isıtıcı"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Beklenmedik"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Demir yol"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bataklık otu"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Eğlence"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Mabet"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Beklenti"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Fen"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Hayvan yuvası"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Çember"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Ana baba çocuk"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Bahçe sınırı"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 7
+    },
+    {
+     "row": 6,
+     "column": 7
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900018",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#R#D#R#",
+    "KOKU#ÜN",
+    "#TAT#YA",
+    "HAN#HAL",
+    "##EDA##",
+    "ÇÖP#BİT",
+    "#TENEKE",
+    "DE#ERİK"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Burunla alınır"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Nam"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Çeşni"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Veya"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Hükümdar"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Durum"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Naz"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Atık"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Saç böceği"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kutu"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Dahi, bile"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Can eriği"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Güzergâh"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Uzak taraf"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Divan"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Ağaçta olan meyve"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "\"___ var ___ yok\""
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "Bilgi"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Düş"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Çift"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "At ayakkabısı"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Yalnız"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 7,
+     "column": 0
+    },
+    {
+     "row": 7,
+     "column": 5
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900019",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#K#T#B#",
+    "SIRA#İL",
+    "#TERAZİ",
+    "HATA##G",
+    "###KAÇ#",
+    "BİN#RAF",
+    "#SALATA",
+    "KİN#BAR",
+    "#MEŞALE"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Dizi"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Vilayet"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kantar"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kusur"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Hangi sayı"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "On kere yüz"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kitap dizilir"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Yeşillik yemeği"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Nefret"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Meyhane"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Işık kaynağı"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Asya veya Avrupa"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Ad"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Geri çevirme"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Kokulu ot"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Dişli araç"
+    },
+    {
+     "row": 3,
+     "column": 4,
+     "arrow": "down",
+     "text": "Taşıt"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Siz değil"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Kaşık yanında"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Takımlar sıralaması"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Bilgisayar aracı"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 0
+    },
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 5
+    },
+    {
+     "row": 8,
+     "column": 4
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900020",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#C#F#K#B",
+    "GAGA#ÖĞE",
+    "#DÖNEM#N",
+    "ŞIK#TÜM#",
+    "###MERAK",
+    "YATAK#SU",
+    "#DEV#BAZ",
+    "VALİ#ULU"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sivri burun"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Element"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Devre"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Seçenek"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Bütün"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Bilme isteği"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Döşek"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Musluktan akar"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Masal yaratığı"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kimyada asit karşıtı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "İl yöneticisi"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Büyük"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Masal kötüsü"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Kara parçası"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bulutların yeri"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Gitar ipi"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Hayran"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Deniz rengi"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Dağ dibi"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Maden"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Şu değil"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Hikâye"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Ciltteki leke"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "Koyun yavrusu"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 2
+    },
+    {
+     "row": 4,
+     "column": 6
+    },
+    {
+     "row": 5,
+     "column": 1
+    },
+    {
+     "row": 6,
+     "column": 5
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900021",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#L#F#K#",
+    "YENİ#ÖÇ",
+    "#KELİME",
+    "YEM#YÜN",
+    "###PİRE",
+    "DAVUL##",
+    "#BALİNA",
+    "ÇİY#KEK"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Eski karşıtı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kısas"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Lafız"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Olta ucundaki"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Koyun tüyü"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Deve yapılır"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tokmakla çalınır"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Dev deniz memelisi"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Şebnem"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Pasta türü"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Benek"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Büyük erkek kardeş"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Islaklık"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Hayret sözü"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Hortumlu hayvan"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Balık derisi"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Yardım"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Siyah yakıt"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Soru sözü"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Yüzün alt kısmı"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kara karşıtı"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 3,
+     "column": 1
+    },
+    {
+     "row": 7,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900022",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#O#Ç#K#",
+    "OF#ODUN",
+    "#İSKELE",
+    "ASA#HAM",
+    "##UZAK#",
+    "TANE##C",
+    "#LAHANA",
+    "NE#İMAM",
+    "#TERAZİ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Bıkkınlık ünlemi"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Kütük"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Vapur durağı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Değnek"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Olgunlaşmamış"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Yakın karşıtı"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tohum"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Yapraklı sebze"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "\"___ var ___ yok\""
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Cami görevlisi"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Tartı aleti"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Büro"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Araç"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Buhar odası"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Az karşıtı"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Ağu"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Kabiliyet"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Fakat"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Duyma organı"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Cilve"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Rutubet"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Minareli yapı"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 3,
+     "column": 1
+    },
+    {
+     "row": 4,
+     "column": 5
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900023",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#O#P#Y#B",
+    "AKIL#ANİ",
+    "##SAĞ#EN",
+    "ASIK#ATA",
+    "#A#ALT##",
+    "ANA#ELEK",
+    "#AL#KAFA",
+    "OTO#ESER"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Us"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Birden olan"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "right",
+     "text": "Canlı"
+    },
+    {
+     "row": 2,
+     "column": 5,
+     "arrow": "right",
+     "text": "Boyun karşıtı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Abus"
+    },
+    {
+     "row": 3,
+     "column": 4,
+     "arrow": "right",
+     "text": "Soy büyüğü"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Üst karşıtı"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Anne"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Un ayırır"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Bayraktaki renk"
+    },
+    {
+     "row": 6,
+     "column": 3,
+     "arrow": "right",
+     "text": "Akıl"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Taşıt"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Yapıt"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Yön işareti"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "down",
+     "text": "Hüner"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Sıcaklık"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Telefonu açınca"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Levha"
+    },
+    {
+     "row": 3,
+     "column": 4,
+     "arrow": "down",
+     "text": "Kir izi"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "\"___ sen ___ ben\""
+    },
+    {
+     "row": 2,
+     "column": 5,
+     "arrow": "down",
+     "text": "Harita kitabı"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Açık"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Zeybek"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Apartman"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Kışın yağar"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 3,
+     "column": 0
+    },
+    {
+     "row": 3,
+     "column": 1
+    },
+    {
+     "row": 7,
+     "column": 4
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900024",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#P#K#Ş#",
+    "PİPO#UÇ",
+    "#DAYI#İ",
+    "BEY#LAF",
+    "###SIRT",
+    "SİNEMA#",
+    "#KASABA",
+    "KİR#NAZ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kısa çubuk"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Son nokta"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Akraba"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Efendi"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Söz"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Arka"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Beyaz perde"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Küçük şehir"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Leke"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kırıtma"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Ramazan ekmeği"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Birden sonra"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Hisse"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Taneli meyve"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Deniz girintisi"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Kulağa gelen"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Mutedil"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "İşaret sözü"
+    },
+    {
+     "row": 2,
+     "column": 5,
+     "arrow": "down",
+     "text": "Otomobil"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Tek karşıtı"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Çok değil"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 2
+    },
+    {
+     "row": 4,
+     "column": 3
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900025",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#O#R#Y#",
+    "ORTA#OY",
+    "#DAKİKA",
+    "TUTAR#V",
+    "###MANA",
+    "DEV#DİŞ",
+    "#KAFES#",
+    "FİDE#AY",
+    "#MİSİNA"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ara"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Rey"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Altmış saniye"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Miktar"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Anlam"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kocaman"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Çiğneme organı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kuş evi"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fidan"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Otuz günlük süre"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Olta ipi"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Asker topluluğu"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Tohum serpme"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Lezzet"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Dağlar arası"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Hane"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "Püsküllü başlık"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "İstenç"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Mevcut değil"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Dördüncü ay"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Ağır"
+    },
+    {
+     "row": 6,
+     "column": 6,
+     "arrow": "down",
+     "text": "Veya"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 5
+    },
+    {
+     "row": 7,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900026",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#Y#Ş#Y#B",
+    "YASA#EBE",
+    "#PİL#DAR",
+    "SIR#GİŞE",
+    "##KUR###",
+    "ÖZ#SİMİT",
+    "#AİT#ARI",
+    "İMZA#ÇİĞ"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Kanun"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Oyunda sobeleyen"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Saate takılır"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Sıkışık"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ayna arkası"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Bilet satılan yer"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Döviz değeri"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Asıl kısım"
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "right",
+     "text": "Gevrek"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Birine özgü"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Kovanda yaşar"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Belge altı"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Ham"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Bina"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Maaş artışı"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Palyaço gösterisi"
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "down",
+     "text": "Ayak bırakır"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Atkı benzeri"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Zanaatkâr"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "Boz"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Haftanın günleri"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Futbol oyunu"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kafa"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kocaman"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Kasket"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Dantel iğnesi"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 1
+    },
+    {
+     "row": 5,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 3
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900027",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#İ#B#R#",
+    "AĞ#OTUZ",
+    "#NEŞELİ",
+    "ŞEF#ROL",
+    "##EDA##",
+    "YA#OZAN",
+    "#MİSİNA",
+    "BANT#İL"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Balıkçı aracı"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Ayın günleri"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Keyifli"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Lider"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Oyuncu canlandırır"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Tavır"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "\"___ sen ___ ben\""
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "right",
+     "text": "Âşık"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Naylon ip"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yapıştırıcı şerit"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Şehir"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Aşı aleti"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Lakin"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Yiğit"
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "down",
+     "text": "Mağara"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Bomboş"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Arkadaş"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Kantar"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Sarılmış şey"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Beklenmedik"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Çan"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Demir pabuç"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 6,
+     "column": 1
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900028",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#K#C#H#",
+    "GIDA#EŞ",
+    "#SİNEMA",
+    "GAZ#ŞEN",
+    "###DANS",
+    "GİDER##",
+    "#KİRPİK",
+    "DİZİ#YA",
+    "#ZENGİN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Besin"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Karı veya koca"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Film izlenir"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Hava gibi madde"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Neşeli"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Oynamak"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Gelir karşıtı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Göz kılı"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Televizyon ___"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Veya"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Fakir karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Bodur"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Aynı doğumlu"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bacak eklemi"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Mısra"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Yaşam"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Engin"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Baş örtüsü"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Derhal"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Kötü karşıtı"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Baht"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kırmızı sıvı"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 3
+    },
+    {
+     "row": 5,
+     "column": 0
+    },
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 6,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900029",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#T#S#S#A",
+    "FENA#AİT",
+    "#N#KOLYE",
+    "KEKİK#İŞ",
+    "#KONUK##",
+    "HER#MASA",
+    "##KUAFÖR",
+    "ULU#KAZI"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Berbat"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "İlgili"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "right",
+     "text": "Boyun takısı"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Baharat"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "right",
+     "text": "Meslek"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "right",
+     "text": "Misafir"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tüm"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Yemek yenir"
+    },
+    {
+     "row": 6,
+     "column": 1,
+     "arrow": "right",
+     "text": "Berber"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Yüce"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Arkeoloji işi"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "İnce metal"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "down",
+     "text": "Dehşet"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Durgun"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Kitaba bakmak"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Kayık benzeri"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Baş"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Güzel"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kelime"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Yüksek vücut ısısı"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Bal yapan böcek"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 1
+    },
+    {
+     "row": 1,
+     "column": 3
+    },
+    {
+     "row": 4,
+     "column": 5
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "tr-900030",
+   "clueLanguage": "tr",
+   "answerLanguage": "tr",
+   "grid": [
+    "#K#T#D#",
+    "MAŞA#ÖN",
+    "#PİYANO",
+    "DIŞ#RET",
+    "###ÇAM#",
+    "HAYAL#Y",
+    "#KAYISI",
+    "SÜS#KUL"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Ateş aracı"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "İleri taraf"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Kuyruklu ___"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Haricî"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Kabul etmeme"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "İğne yapraklı ağaç"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Düş"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Malatya ürünü"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Bezek"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Bende"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Girilen yer"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Araba bataryası"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Örgü aracı"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Keder"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Küçük at"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Küçük ırmak"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Yılbaşı ayı"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Çağ"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Hayat kaynağı"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Kâğıda yazılan"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "On iki ay"
+    }
+   ],
+   "givens": [
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 5,
+     "column": 6
+    },
+    {
+     "row": 7,
+     "column": 0
+    }
+   ]
+  }
+ ]
+}

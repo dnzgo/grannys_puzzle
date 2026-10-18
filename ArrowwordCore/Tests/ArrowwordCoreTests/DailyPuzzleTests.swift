@@ -1,0 +1,141 @@
+import Foundation
+import XCTest
+@testable import ArrowwordCore
+
+/// The daily puzzle: its calendar, the one-go-a-day rule, the clock that
+/// keeps running, and how results rank.
+final class DailyPuzzleTests: XCTestCase {
+    // MARK: - Calendar
+
+    func testTheDayChangesAtMidnightUTC() {
+        // 2026-10-19 00:00:00 UTC.
+        let midnight = Date(timeIntervalSince1970: 1_792_368_000)
+        let day = DailyDay.number(for: midnight)
+
+        XCTAssertEqual(DailyDay.number(for: midnight.addingTimeInterval(-1)), day - 1)
+        XCTAssertEqual(DailyDay.number(for: midnight.addingTimeInterval(86_399)), day)
+        XCTAssertEqual(DailyDay.end(of: day), midnight.addingTimeInterval(86_400))
+    }
+
+    func testThePackIsPlayedInOrderAndStartsOver() {
+        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 60, count: 30), 0)
+        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 61, count: 30), 1)
+        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 89, count: 30), 29)
+        XCTAssertNil(DailyDay.puzzleIndex(forDay: 61, count: 0), "an empty pack has no daily")
+    }
+
+    // MARK: - One go a day
+
+    private let start = Date(timeIntervalSince1970: 1_792_400_000)
+    private let today = 20_745
+
+    private func newPlayer() -> PlayerProgress {
+        PlayerProgress(levelNumber: 5, hints: 0, grandmas: 0, yarn: [:])
+    }
+
+    private func result(correct: Int, of judged: Int) -> LevelResult {
+        LevelResult(correctLetters: correct, judgedLetters: judged, rules: .standard)
+    }
+
+    func testComingBackStartsOverWithAFreshClock() {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+
+        let again = player.startDaily(today: today, levelID: "en-900001", now: start.addingTimeInterval(300))
+
+        XCTAssertEqual(again?.startedAt, start.addingTimeInterval(300))
+        XCTAssertEqual(player.dailyStatus(today: today), .inProgress(again!))
+    }
+
+    func testLeavingThrowsTheGoAway() {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+
+        player.leaveDaily()
+
+        XCTAssertEqual(player.dailyStatus(today: today), .notStarted)
+    }
+
+    func testLeavingAfterSubmittingKeepsTheResult() {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+        let finished = player.finishDaily(result(correct: 50, of: 50), now: start.addingTimeInterval(90))
+
+        player.leaveDaily()
+
+        XCTAssertEqual(player.dailyStatus(today: today), .done(finished!))
+    }
+
+    func testTheClockCountsTheTimeTaken() throws {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+
+        // 4 minutes 12 seconds later, the app in the background or not.
+        let finished = player.finishDaily(result(correct: 46, of: 50), now: start.addingTimeInterval(252))
+
+        XCTAssertEqual(finished, DailyResult(correctLetters: 46, judgedLetters: 50, seconds: 252))
+        XCTAssertEqual(player.dailyStatus(today: today), .done(finished!))
+    }
+
+    func testOnlyOneGoADay() throws {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+        player.finishDaily(result(correct: 50, of: 50), now: start.addingTimeInterval(100))
+
+        XCTAssertNil(player.startDaily(today: today, levelID: "en-900001", now: start.addingTimeInterval(200)))
+        XCTAssertNil(player.finishDaily(result(correct: 50, of: 50), now: start.addingTimeInterval(50)),
+                     "a second submit can't improve the time")
+        XCTAssertEqual(player.daily?.result?.seconds, 100)
+    }
+
+    func testANewDayHasANewPuzzle() throws {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+        player.finishDaily(result(correct: 40, of: 50), now: start.addingTimeInterval(100))
+
+        XCTAssertEqual(player.dailyStatus(today: today + 1), .notStarted)
+        let tomorrow = player.startDaily(today: today + 1, levelID: "en-900002", now: start.addingTimeInterval(86_400))
+        XCTAssertEqual(tomorrow?.day, today + 1)
+        XCTAssertNil(tomorrow?.result)
+    }
+
+    func testTheDailySurvivesSavingAndOldSavesHaveNone() throws {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "en-900001", now: start)
+        let reloaded = try JSONDecoder().decode(PlayerProgress.self, from: JSONEncoder().encode(player))
+        XCTAssertEqual(reloaded.daily, player.daily)
+
+        let oldSave = #"{"grandmas": 1, "hints": 3, "levelNumbers": {"en": 8}, "version": 2, "yarn": {}}"#
+        XCTAssertNil(try JSONDecoder().decode(PlayerProgress.self, from: Data(oldSave.utf8)).daily)
+    }
+
+    // MARK: - Ranking
+
+    func testMoreCorrectRanksAboveFaster() {
+        let careful = DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 240)
+        let quick = DailyResult(correctLetters: 47, judgedLetters: 50, seconds: 120)
+        XCTAssertTrue(careful.ranks(above: quick))
+        XCTAssertFalse(quick.ranks(above: careful))
+    }
+
+    func testTimeBreaksTiesInCorrectness() {
+        let slow = DailyResult(correctLetters: 48, judgedLetters: 50, seconds: 300)
+        let fast = DailyResult(correctLetters: 48, judgedLetters: 50, seconds: 200)
+        XCTAssertTrue(fast.ranks(above: slow))
+    }
+
+    func testRankingUsesExactSharesNotRoundedPercents() {
+        // 199/200 is 99.5% and 99/100 is 99%: both show as 99, but the
+        // first is more correct, so it ranks higher although it's slower.
+        let a = DailyResult(correctLetters: 199, judgedLetters: 200, seconds: 500)
+        let b = DailyResult(correctLetters: 99, judgedLetters: 100, seconds: 100)
+        XCTAssertEqual(a.percent, 99)
+        XCTAssertEqual(b.percent, 99)
+        XCTAssertTrue(a.ranks(above: b))
+    }
+
+    func testOnlyAPerfectBoardShowsAHundredPercent() {
+        XCTAssertEqual(DailyResult(correctLetters: 199, judgedLetters: 200, seconds: 1).percent, 99)
+        XCTAssertEqual(DailyResult(correctLetters: 200, judgedLetters: 200, seconds: 1).percent, 100)
+    }
+}

@@ -101,9 +101,18 @@ struct HomeView: View {
                     .padding(.top, 8)
             }
 
-            playButton
-                .padding(.horizontal, 40)
-                .padding(.bottom, 24)
+            VStack(spacing: 14) {
+                playButton
+                if game.dailyPack != nil {
+                    DailyPuzzleButton(status: game.dailyStatus(today:), height: Self.buttonHeight, isHeld: isOpeningJar) {
+                        withAnimation(.easeInOut(duration: 0.25)) { game.playDaily() }
+                    }
+                }
+            }
+            // About 70% of the screen's width, so the two buttons sit under
+            // the scene rather than spanning it.
+            .padding(.horizontal, 58)
+            .padding(.bottom, 20)
         }
         .background(Theme.background.ignoresSafeArea())
         // Applied before the flight's overlay, so the overlay shares this
@@ -435,10 +444,13 @@ struct HomeView: View {
         }
     }
 
+    /// Both home buttons, the level and the daily.
+    private static let buttonHeight: CGFloat = 54
+
     @ViewBuilder
     private var playButton: some View {
         if let number = game.nextLevelNumber {
-            PrimaryButton(title: "Level \(number)", height: 60) {
+            PrimaryButton(title: "Level \(number)", height: Self.buttonHeight) {
                 withAnimation(.easeInOut(duration: 0.25)) { game.play() }
             }
             // Not while a jar is shaking open: leaving then would open it
@@ -449,7 +461,7 @@ struct HomeView: View {
                 .font(.system(size: 19, weight: .bold, design: .rounded))
                 .foregroundStyle(Theme.secondary)
                 .frame(maxWidth: .infinity)
-                .frame(height: 60)
+                .frame(height: Self.buttonHeight)
                 .overlay(Capsule().strokeBorder(Theme.secondary, lineWidth: 2))
         }
     }

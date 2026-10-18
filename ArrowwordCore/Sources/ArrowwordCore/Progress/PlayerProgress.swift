@@ -52,6 +52,10 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     /// RewardedAdLimit.swift). Saved, so restarting the app doesn't reset it.
     public var rewardedAdDay: Int?
     public var rewardedAdsThatDay: Int
+    /// The latest daily puzzle the player started (see DailyPuzzle.swift).
+    /// Shared by all languages: there's one daily a day, in the language
+    /// being played when it's started.
+    public var daily: DailyAttempt?
 
     /// The language being played. Not saved: the app sets it at launch
     /// from the pack it loads (which follows the device language), and
@@ -85,6 +89,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         tutorialDone: Bool = false,
         rewardedAdDay: Int? = nil,
         rewardedAdsThatDay: Int = 0,
+        daily: DailyAttempt? = nil,
         activeLanguage: String = PlayerProgress.legacyLanguage
     ) {
         self.version = version
@@ -101,6 +106,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.tutorialDone = tutorialDone
         self.rewardedAdDay = rewardedAdDay
         self.rewardedAdsThatDay = rewardedAdsThatDay
+        self.daily = daily
         self.activeLanguage = activeLanguage
     }
 
@@ -108,7 +114,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
         case version, levelNumbers, hints, grandmas, yarn, wardrobe, collectedSetJars, boards, jarStreak, lastJarDay, jars, tutorialDone
-        case rewardedAdDay, rewardedAdsThatDay
+        case rewardedAdDay, rewardedAdsThatDay, daily
         // Version 1 only; read when converting, never written.
         case levelNumber, board
     }
@@ -135,6 +141,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         jars = try container.decodeIfPresent([Jar].self, forKey: .jars) ?? []
         rewardedAdDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdDay)
         rewardedAdsThatDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdsThatDay) ?? 0
+        daily = try container.decodeIfPresent(DailyAttempt.self, forKey: .daily)
 
         if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
             self.levelNumbers = levelNumbers
@@ -169,6 +176,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encode(tutorialDone, forKey: .tutorialDone)
         try container.encodeIfPresent(rewardedAdDay, forKey: .rewardedAdDay)
         try container.encode(rewardedAdsThatDay, forKey: .rewardedAdsThatDay)
+        try container.encodeIfPresent(daily, forKey: .daily)
     }
 
     /// What a brand-new player starts with.

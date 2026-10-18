@@ -31,6 +31,9 @@ final class Game {
     /// to load, a build problem that the tests catch; the game then simply
     /// plays without it.
     private(set) var tutorial: Level?
+    /// The daily puzzles in the current language; nil if they failed to
+    /// load, and then the home screen has no daily button.
+    private(set) var dailyPack: LevelPack?
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
     /// The tunable numbers: the defaults, until the server's values are
@@ -44,6 +47,8 @@ final class Game {
     /// Stands in for the game while the lesson plays (see TutorialHost).
     /// Kept here because levels only hold their host weakly.
     @ObservationIgnored private let tutorialHost = TutorialHost()
+    /// Stands in for the game while the daily puzzle plays (see DailyHost).
+    @ObservationIgnored private let dailyHost = DailyHost()
     /// The language the content was loaded for. Not always `pack.language`:
     /// a language whose pack isn't written yet plays the English one.
     @ObservationIgnored private var contentLanguage: String
@@ -65,6 +70,7 @@ final class Game {
     init(
         pack: LevelPack,
         tutorial: Level? = nil,
+        daily: LevelPack? = nil,
         language: String? = nil,
         store: ProgressStore?,
         ads: AdsController? = nil,
@@ -81,6 +87,7 @@ final class Game {
         self.ads = ads
         self.reminders = reminders
         self.tutorial = tutorial
+        self.dailyPack = daily
         self.catalog = catalog
         self.store = store
         self.progress = .newPlayer
@@ -90,6 +97,7 @@ final class Game {
         // Level and saved board are kept per language; play the pack's.
         progress.activeLanguage = pack.language
         tutorialHost.game = self
+        dailyHost.game = self
     }
 
     // MARK: - What the home screen shows
@@ -286,6 +294,7 @@ final class Game {
             let content = try loadContent(language)
             pack = content.pack
             tutorial = content.tutorial
+            dailyPack = content.daily
             contentLanguage = language
             progress.activeLanguage = pack.language
             screen = .home
@@ -346,6 +355,51 @@ final class Game {
         if !progress.tutorialDone {
             update { $0.tutorialDone = true }
         }
+        screen = .home
+    }
+
+    // MARK: - Daily puzzle
+
+    /// The puzzle for `day` (a DailyDay number), if there are daily puzzles.
+    func dailyLevel(day: Int) -> Level? {
+        guard let dailyPack, let index = DailyDay.puzzleIndex(forDay: day, count: dailyPack.levels.count) else {
+            return nil
+        }
+        return dailyPack.levels[index]
+    }
+
+    func dailyStatus(today: Int) -> DailyStatus {
+        progress.dailyStatus(today: today)
+    }
+
+    /// Opens today's daily puzzle on a fresh board with a fresh clock, every
+    /// time until it's submitted (see DailyAttempt for why).
+    func playDaily() {
+        let today = DailyDay.number()
+        guard let level = dailyLevel(day: today) else { return }
+        var attempt: DailyAttempt?
+        update { attempt = $0.startDaily(today: today, levelID: level.id, now: .now) }
+        // Nil once today's is submitted (the button is disabled by then).
+        guard let attempt else { return }
+        screen = .level(LevelViewModel(
+            puzzle: PuzzleState(level: level),
+            levelNumber: 0,
+            host: dailyHost,
+            scoringRules: tuning.scoring,
+            dailyStartedAt: attempt.startedAt
+        ))
+    }
+
+    /// The daily board was submitted: its result and time, saved at once.
+    func finishDaily(_ result: LevelResult) -> DailyResult? {
+        var finished: DailyResult?
+        update { finished = $0.finishDaily(result, now: .now) }
+        return finished
+    }
+
+    /// Back home from the daily. Unsubmitted, the go is thrown away.
+    func leaveDaily() {
+        update { $0.leaveDaily() }
         screen = .home
     }
 

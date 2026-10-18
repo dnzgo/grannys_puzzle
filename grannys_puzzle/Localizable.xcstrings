@@ -4,6 +4,96 @@
     "" : {
       "shouldTranslate" : false
     },
+    "%lld of %lld letters right" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$lld harften %1$lld tanesi doğru"
+          }
+        }
+      }
+    },
+    "Come back tomorrow for a new puzzle." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni görev yarın!"
+          }
+        }
+      }
+    },
+    "correct" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "doğru"
+          }
+        }
+      }
+    },
+    "Daily puzzle" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük Görev"
+          }
+        }
+      }
+    },
+    "DAILY PUZZLE" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GÜNLÜK GÖREV"
+          }
+        }
+      }
+    },
+    "Daily puzzle done" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük Görev tamamlandı"
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süre"
+          }
+        }
+      }
+    },
+    "time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "süre"
+          }
+        }
+      }
+    },
+    "Time left" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalan süre"
+          }
+        }
+      }
+    },
     "· %lld yarn each" : {
       "extractionState" : "stale",
       "localizations" : {

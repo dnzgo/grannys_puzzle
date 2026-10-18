@@ -64,6 +64,8 @@ struct LevelReward {
     /// An item this level's yarn made affordable for the first time, which
     /// grandma mentions. Nil when nothing new became affordable.
     var newlyKnittable: KnitItem?
+    /// The daily puzzle's result, for its stats card; nil on other levels.
+    var daily: DailyResult?
 }
 
 /// The happy moments that may lead to Apple's rating prompt.

@@ -22,6 +22,34 @@ struct LevelEndCard<Stage: View, Footer: View>: View {
     }
 
     var body: some View {
+        LevelEndPanel {
+            VStack(spacing: 4) {
+                Text(result.headline)
+                    .font(.system(size: 30, weight: .heavy, design: .rounded))
+                    .foregroundStyle(Theme.ink)
+                Text(result.scoreLine)
+                    .font(.system(size: 14))
+                    .monospacedDigit()
+                    .foregroundStyle(Theme.secondaryInk)
+            }
+
+            stage
+            footer
+        }
+    }
+}
+
+/// The panel every card at the end of a board sits on (the level endings
+/// and the daily puzzle's stats): the level dimmed behind it and a cream
+/// card in the middle, so they all look like the same moment.
+struct LevelEndPanel<Content: View>: View {
+    private let content: Content
+
+    init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    var body: some View {
         ZStack {
             // Up into the status bar, but not down: below this view is the
             // banner, which must not be dimmed.
@@ -30,18 +58,7 @@ struct LevelEndCard<Stage: View, Footer: View>: View {
                 .accessibilityHidden(true)
 
             VStack(spacing: 12) {
-                VStack(spacing: 4) {
-                    Text(result.headline)
-                        .font(.system(size: 30, weight: .heavy, design: .rounded))
-                        .foregroundStyle(Theme.ink)
-                    Text(result.scoreLine)
-                        .font(.system(size: 14))
-                        .monospacedDigit()
-                        .foregroundStyle(Theme.secondaryInk)
-                }
-
-                stage
-                footer
+                content
             }
             .padding(22)
             .frame(maxWidth: 360)

@@ -115,12 +115,16 @@ struct LevelScreen: View {
     }
 
     /// After Submit and the judging wave: the celebration on a pass,
-    /// grandma's encouragement on a fail. Both on the same card, over the
-    /// judged board.
+    /// grandma's encouragement on a fail, or the daily puzzle's stats. All
+    /// on the same panel, over the judged board.
     @ViewBuilder
     private var levelEnd: some View {
         if case .finished(let result) = model.phase, model.showsLevelEnd {
-            if result.passed {
+            if let daily = model.dailyResult {
+                // The daily has no pass or fail: one go, then its stats.
+                DailyResultCard(result: daily, onHome: model.goHome)
+                    .transition(.opacity)
+            } else if result.passed {
                 LevelCompleteView(
                     result: result,
                     yarn: model.earnedYarn,

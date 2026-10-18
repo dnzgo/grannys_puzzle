@@ -22,6 +22,9 @@ final class LevelViewModel {
     }
 
     let levelNumber: Int
+    /// When the daily puzzle's clock started; nil on other levels. The top
+    /// bar counts up from here.
+    let dailyStartedAt: Date?
     private(set) var puzzle: PuzzleState
     /// Grandma's lesson, when this level is the tutorial; nil for real levels.
     private(set) var coach: TutorialCoach?
@@ -36,6 +39,8 @@ final class LevelViewModel {
     /// The judged board lighting up green and red after Submit, before the
     /// level-end card. Nil until Submit, and again after Try again.
     private(set) var judging: Judging?
+    /// The daily puzzle's result once submitted, for its stats card.
+    private(set) var dailyResult: DailyResult?
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
@@ -63,14 +68,17 @@ final class LevelViewModel {
     ///     when the player left this level halfway.
     ///   - coach: set for the tutorial. It decides which actions are allowed;
     ///     the host (a `TutorialHost`) decides what they cost.
+    ///   - dailyStartedAt: set for the daily puzzle (its host is a DailyHost).
     init(
         puzzle: PuzzleState,
         levelNumber: Int,
         host: LevelHost?,
         coach: TutorialCoach? = nil,
-        scoringRules: ScoringRules = .standard
+        scoringRules: ScoringRules = .standard,
+        dailyStartedAt: Date? = nil
     ) {
         self.levelNumber = levelNumber
+        self.dailyStartedAt = dailyStartedAt
         self.puzzle = puzzle
         self.coach = coach
         self.host = host
@@ -287,6 +295,15 @@ final class LevelViewModel {
         let reward = host?.record(result) ?? LevelReward()
         earnedYarn = reward.yarn
         newlyKnittable = reward.newlyKnittable
+        if let dailyStartedAt {
+            // The host's saved result; worked out here only if it couldn't
+            // be saved (a daily replaced mid-play), so the card still shows.
+            dailyResult = reward.daily ?? DailyResult(
+                correctLetters: result.correctLetters,
+                judgedLetters: result.judgedLetters,
+                seconds: max(0, Int(Date.now.timeIntervalSince(dailyStartedAt)))
+            )
+        }
         // The pass or fail haptic waits for the card (finishJudging), so it
         // lands with the verdict instead of before the board has shown it.
         startJudging(result)
@@ -299,10 +316,11 @@ final class LevelViewModel {
     }
 
     /// After the result: a pass moves on (the host decides where), a fail
-    /// starts this level over with a cleared board.
+    /// starts this level over with a cleared board. The daily has one go,
+    /// so it always moves on.
     func continueAfterResult() {
         guard let result = puzzle.result else { return }
-        if result.passed {
+        if result.passed || isDaily {
             host?.continueToNextLevel()
         } else {
             earnedYarn = []
@@ -446,6 +464,8 @@ final class LevelViewModel {
     // MARK: - Tutorial
 
     var isTutorial: Bool { coach != nil }
+
+    var isDaily: Bool { dailyStartedAt != nil }
 
     /// What grandma is saying; nil outside the lesson and once it's over
     /// (the result screen is the normal one).
