@@ -40,4 +40,10 @@ public struct KnitItem: Hashable, Identifiable, Sendable {
     public var id: String {
         "\(member.rawValue).\(kind.rawValue).\(color.rawValue)"
     }
+
+    /// The set it belongs to, such as "cat.scarf": the same garment for the
+    /// same member in every colour. Saved when a set's jar is collected.
+    public var setID: String {
+        "\(member.rawValue).\(kind.rawValue)"
+    }
 }

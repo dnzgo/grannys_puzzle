@@ -2,17 +2,17 @@ import SwiftUI
 import ArrowwordCore
 
 /// Shown after the knitting moment that finishes a set (one garment in
-/// every colour): the whole set together, and a jar of treats.
+/// every colour): the whole set together, and the jar it has earned.
 ///
-/// The jar is already saved with the player's unopened jars when this
-/// shows (see Game.knit); collecting it here sends the player home, where
-/// it waits beside grandma's chair like the daily ones. What's inside
-/// stays a surprise until it's opened. Placeholder styling until the
-/// reward scenes are redesigned with the new art.
+/// The jar isn't handed over here: it waits in the wardrobe, and the button
+/// opens the wardrobe on this set, where the player collects it (see
+/// PlayerProgress.collectSetJar). That teaches where set jars live, so the
+/// wardrobe's own "Collect jar" isn't a surprise later. Placeholder styling
+/// until the reward scenes are redesigned with the new art.
 struct SetPrizeMoment: View {
     /// Every item in the finished set, in catalog order.
     let items: [KnitItem]
-    let onDone: () -> Void
+    let onOpenWardrobe: () -> Void
 
     @State private var shown = false
     @State private var haptic: HapticSignal?
@@ -58,7 +58,7 @@ struct SetPrizeMoment: View {
                     .animation(reduceMotion ? nil : .spring(response: 0.45, dampingFraction: 0.55).delay(0.45), value: shown)
                     .accessibilityLabel("Treat jar")
 
-                PrimaryButton(title: "Collect jar", height: 52, action: onDone)
+                PrimaryButton(title: "Open wardrobe", height: 52, action: onOpenWardrobe)
             }
             .padding(24)
             .frame(maxWidth: 340)
@@ -77,13 +77,13 @@ struct SetPrizeMoment: View {
     /// "The scarf set is complete! …", named after the garment.
     private var message: String {
         let garment = items.first?.kind.name.lowercased(with: .appLanguage) ?? ""
-        return String(localized: "The \(garment) set is complete! Here's a jar of treats from me.", bundle: .appLanguage, locale: .appLanguage)
+        return String(localized: "The \(garment) set is complete! Your jar of treats is waiting in the wardrobe.", bundle: .appLanguage, locale: .appLanguage)
     }
 }
 
 #Preview {
     SetPrizeMoment(
         items: KnittingCatalog.standard.items.filter { $0.kind == .scarf },
-        onDone: {}
+        onOpenWardrobe: {}
     )
 }

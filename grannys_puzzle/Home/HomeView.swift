@@ -17,12 +17,15 @@ struct HomeView: View {
     @State private var speech = GrandmaSpeech()
     @State private var showsYarnBag = false
     @State private var showsWardrobe = false
+    /// The garment the wardrobe opens on, when it's opened for one (after
+    /// finishing its set); nil lets the wardrobe choose.
+    @State private var wardrobeKind: GarmentKind?
     @State private var showsSettings = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
-    /// A finished set's prize, waiting for the knitting moment to end.
+    /// A finished set's moment, waiting for the knitting moment to end.
     @State private var pendingSetPrize: SetPrize?
-    /// The set prize being shown, if any.
+    /// The finished set's moment being shown, if any.
     @State private var setPrize: SetPrize?
     /// The daily treats card is up.
     @State private var showsStreak = false
@@ -77,6 +80,7 @@ struct HomeView: View {
             HomeStage(
                 progress: game.progress,
                 canKnit: game.canKnitSomething,
+                setJarWaiting: game.hasSetJarWaiting,
                 jarCount: game.progress.jars.count,
                 jarShakes: jarShakes,
                 jarIsOpen: jarIsOpen,
@@ -86,7 +90,7 @@ struct HomeView: View {
                 onJar: tapJar,
                 onJarFrame: { jarFrame = $0 },
                 onYarnBag: { showsYarnBag = true },
-                onWardrobe: { showsWardrobe = true }
+                onWardrobe: { openWardrobe(on: nil) }
             )
             .animation(.easeOut(duration: 0.2), value: speech.line)
             // Like the settings button, but on the right of the scene rather
@@ -118,12 +122,35 @@ struct HomeView: View {
         }
         .preferredColorScheme(.light)
         .gameHaptics(haptic)
-        .sheet(isPresented: $showsYarnBag) {
-            YarnBagSheet(progress: game.progress, catalog: game.catalog, onKnit: startKnitting)
+        // The game's own cards rather than iOS sheets, like settings.
+        .overlay {
+            if showsYarnBag {
+                YarnBagCard(
+                    progress: game.progress,
+                    catalog: game.catalog,
+                    onKnit: { item in
+                        showsYarnBag = false
+                        startKnitting(item)
+                    },
+                    onClose: { showsYarnBag = false }
+                )
+                .transition(.opacity)
+            }
         }
-        .sheet(isPresented: $showsWardrobe) {
-            WardrobeSheet(progress: game.progress, catalog: game.catalog)
+        .animation(.easeOut(duration: 0.2), value: showsYarnBag)
+        .overlay {
+            if showsWardrobe {
+                WardrobeCard(
+                    progress: game.progress,
+                    catalog: game.catalog,
+                    initialKind: wardrobeKind,
+                    onCollectJar: collectSetJar,
+                    onClose: { showsWardrobe = false }
+                )
+                .transition(.opacity)
+            }
         }
+        .animation(.easeOut(duration: 0.2), value: showsWardrobe)
         .overlay {
             if showsSettings {
                 SettingsCard(context: .home(onHowToPlay: {
@@ -153,7 +180,7 @@ struct HomeView: View {
             if let prize = setPrize {
                 SetPrizeMoment(items: game.catalog.itemsInSet(of: prize.item)) {
                     setPrize = nil
-                    afterKnitting()
+                    openWardrobe(on: prize.item.kind)
                 }
                 .transition(.opacity)
             }
@@ -370,18 +397,36 @@ struct HomeView: View {
         Task { await game.answerReminderQuestion(yes: yes) }
     }
 
-    /// Knitting (and any set prize) is saved first; the moments on screen
-    /// are only the reveal.
+    /// Knitting is saved first; the moments on screen are only the reveal.
     private func startKnitting(_ item: KnitItem) {
         guard let report = game.knit(item) else { return }
-        pendingSetPrize = report.earnedSetJar ? SetPrize(item: item) : nil
+        pendingSetPrize = report.completedSet ? SetPrize(item: item) : nil
         knittingItem = item
     }
 
-    /// Grandma's comment once the knitting (and any set prize) is shown,
-    /// and, a finished piece being a happy moment, maybe the rating prompt.
+    private func openWardrobe(on kind: GarmentKind?) {
+        wardrobeKind = kind
+        showsWardrobe = true
+    }
+
+    /// The set's jar goes beside grandma's chair, unopened, like the daily
+    /// ones. The card closes so the player sees it arrive on the table.
+    private func collectSetJar(for item: KnitItem) {
+        guard game.collectSetJar(for: item) != nil else { return }
+        showsWardrobe = false
+        speech.say(GrandmaLines.jarKept)
+        askForReviewIfDue()
+    }
+
+    /// Grandma's comment once the knitting is shown, and, a finished piece
+    /// being a happy moment, maybe the rating prompt.
     private func afterKnitting() {
         speech.say(GrandmaLines.knitted)
+        askForReviewIfDue()
+    }
+
+    /// The rating prompt, after a happy moment, if it's due.
+    private func askForReviewIfDue() {
         guard game.mayAskForReview() else { return }
         Task {
             try? await Task.sleep(for: ReviewTiming.delayAfterHappyMoment)
@@ -418,6 +463,8 @@ struct HomeView: View {
 private struct HomeStage: View {
     let progress: PlayerProgress
     let canKnit: Bool
+    /// A finished set's jar is waiting in the wardrobe.
+    let setJarWaiting: Bool
     /// Unopened jars; the jar is only on the table while there's one (or
     /// while the last one is open).
     let jarCount: Int
@@ -459,7 +506,7 @@ private struct HomeStage: View {
                     .frame(width: side * 1.0, height: side * 0.26)
                     .position(at(0.5, 1.06))
 
-                WardrobeView(width: side * 0.623, action: onWardrobe)
+                WardrobeView(width: side * 0.623, hasJarWaiting: setJarWaiting, action: onWardrobe)
                     .position(at(0.896, 0.411))
 
                 YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.302, action: onYarnBag)
@@ -626,8 +673,10 @@ private struct StreakButton: View {
 
 /// Grandma's wardrobe, at the back of the room. A tap opens the wardrobe
 /// of knitted things: the way in, now that the top row has no hanger button.
+/// A "Collect!" tag says a finished set's jar is waiting inside.
 private struct WardrobeView: View {
     let width: CGFloat
+    let hasJarWaiting: Bool
     let action: () -> Void
 
     var body: some View {
@@ -635,7 +684,18 @@ private struct WardrobeView: View {
             Image("wardrobe").resizable().scaledToFit().frame(width: width)
         }
         .buttonStyle(SceneButtonStyle())
+        // Left of centre: the wardrobe runs off the right edge of the
+        // screen, so its middle is partly hidden.
+        .overlay(alignment: .top) {
+            if hasJarWaiting {
+                Button(action: action) { NudgeTag(text: "Collect!") }
+                    .buttonStyle(.plain)
+                    .offset(x: -width * 0.22, y: width * 0.1)
+                    .accessibilityHidden(true)
+            }
+        }
         .accessibilityLabel("Wardrobe")
+        .accessibilityHint(hasJarWaiting ? Text("Jar waiting") : Text(""))
     }
 }
 
@@ -784,7 +844,7 @@ private struct SceneButtonStyle: ButtonStyle {
 }
 
 /// A finished set's moment: the item that completed it (which names the
-/// set). Its jar is already saved with the unopened ones.
+/// set). Its jar waits in the wardrobe until collected.
 private struct SetPrize: Equatable {
     let item: KnitItem
 }

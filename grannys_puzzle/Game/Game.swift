@@ -105,6 +105,12 @@ final class Game {
         catalog.items.contains(where: progress.canKnit)
     }
 
+    /// True when a finished set's jar is waiting in the wardrobe; the home
+    /// screen uses it to nudge them toward the wardrobe.
+    var hasSetJarWaiting: Bool {
+        catalog.items.contains { progress.hasSetJarWaiting(for: $0, in: catalog) }
+    }
+
     // MARK: - Tuning
 
     /// Switches to the numbers the server set (downloaded on an earlier
@@ -146,34 +152,35 @@ final class Game {
 
     /// What knitting an item led to.
     struct KnitReport {
-        /// This item was the last colour of its garment, which earned a jar
-        /// (already saved with the player's unopened jars).
-        let earnedSetJar: Bool
+        /// This item was the last colour of its garment: the set is done,
+        /// and its jar is waiting in the wardrobe.
+        let completedSet: Bool
     }
 
     /// Knits an item if the player can afford it, and saves at once, before
     /// any animation plays. Nil if it wasn't knitted.
-    ///
-    /// Finishing a set (one garment in every colour) earns a jar holding
-    /// the daily jar's big reward. It's added in the same save as the knit,
-    /// so closing the app mid-animation can't lose it, and only once,
-    /// because each item can only be knitted once, so only one knit
-    /// completes a set.
     func knit(_ item: KnitItem) -> KnitReport? {
         var outcome = PlayerProgress.KnitOutcome.alreadyOwned
-        var earnedJar = false
+        var completedSet = false
         update { progress in
             outcome = progress.knit(item)
-            guard outcome == .knitted, catalog.isSetComplete(for: item, in: progress) else { return }
-            // The big jar's reward: four items is a real achievement, and
-            // this way the same remotely tuned number covers both.
-            progress.earnJar(tuning.jar.bigReward, source: .setComplete)
-            earnedJar = true
+            completedSet = outcome == .knitted && catalog.isSetComplete(for: item, in: progress)
         }
         guard outcome == .knitted else { return nil }
         events?.log(.itemKnitted(item))
-        if earnedJar { events?.log(.setCompleted(item)) }
-        return KnitReport(earnedSetJar: earnedJar)
+        if completedSet { events?.log(.setCompleted(item)) }
+        return KnitReport(completedSet: completedSet)
+    }
+
+    /// Collects a finished set's jar in the wardrobe (any item of the set
+    /// names it), unopened, and saves at once. Nil if there's none waiting.
+    ///
+    /// It holds the daily jar's big reward: four items is a real
+    /// achievement, and this way one remotely tuned number covers both.
+    func collectSetJar(for item: KnitItem) -> Jar? {
+        var jar: Jar?
+        update { jar = $0.collectSetJar(for: item, in: catalog, reward: tuning.jar.bigReward) }
+        return jar
     }
 
     // MARK: - Jars

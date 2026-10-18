@@ -172,6 +172,67 @@ final class CollectionTests: XCTestCase {
         XCTAssertTrue(catalog.isSetComplete(for: blueScarf, in: progress(yarn: [:], owned: three.union(["cat.scarf.blue"]))))
     }
 
+    func testOnlyAffordableItemsNotYetKnittedAreKnittable() {
+        // 8 red affords the red scarf (6) and hat (8); the scarf is owned.
+        let player = progress(yarn: [.red: 8, .blue: 5], owned: ["cat.scarf.red"])
+        XCTAssertEqual(catalog.knittableItems(for: player).map(\.id), ["cat.hat.red"])
+    }
+
+    func testSetsComeOnePerGarmentCheapestFirst() {
+        let sets = catalog.sets(for: .cat)
+        XCTAssertEqual(sets.map { $0.first?.kind }, GarmentKind.allCases)
+        XCTAssertTrue(sets.allSatisfy { $0.map(\.color) == YarnColor.allCases })
+    }
+
+    // MARK: Set jars
+
+    private let reward = JarReward(hints: 3, grandmas: 1)
+    private var allScarves: Set<String> { Set(YarnColor.allCases.map { "cat.scarf.\($0.rawValue)" }) }
+
+    func testAnUnfinishedSetHasNoJarToCollect() {
+        var player = progress(yarn: [:], owned: ["cat.scarf.red", "cat.scarf.blue"])
+        let scarf = catalog.item(withID: "cat.scarf.red")!
+
+        XCTAssertFalse(player.hasSetJarWaiting(for: scarf, in: catalog))
+        XCTAssertNil(player.collectSetJar(for: scarf, in: catalog, reward: reward))
+        XCTAssertEqual(player.jars, [])
+    }
+
+    func testAFinishedSetsJarWaitsUntilCollected() {
+        var player = progress(yarn: [:], owned: allScarves)
+        // Any colour of the set names it.
+        let scarf = catalog.item(withID: "cat.scarf.green")!
+        XCTAssertTrue(player.hasSetJarWaiting(for: scarf, in: catalog))
+        XCTAssertEqual(player.jars, [], "finishing the set alone gives nothing yet")
+
+        let jar = player.collectSetJar(for: scarf, in: catalog, reward: reward)
+
+        XCTAssertEqual(jar, Jar(reward: reward, source: .setComplete))
+        XCTAssertEqual(player.jars, [Jar(reward: reward, source: .setComplete)])
+        XCTAssertFalse(player.hasSetJarWaiting(for: scarf, in: catalog))
+    }
+
+    func testASetsJarIsCollectedOnlyOnce() {
+        var player = progress(yarn: [:], owned: allScarves)
+        let scarf = catalog.item(withID: "cat.scarf.red")!
+        player.collectSetJar(for: scarf, in: catalog, reward: reward)
+
+        XCTAssertNil(player.collectSetJar(for: catalog.item(withID: "cat.scarf.blue")!, in: catalog, reward: reward))
+        XCTAssertEqual(player.jars.count, 1)
+    }
+
+    func testCollectedSetJarsAreSavedAndOldSavesHaveNone() throws {
+        var player = progress(yarn: [:], owned: allScarves)
+        player.collectSetJar(for: catalog.item(withID: "cat.scarf.red")!, in: catalog, reward: reward)
+        let reloaded = try JSONDecoder().decode(PlayerProgress.self, from: JSONEncoder().encode(player))
+        XCTAssertEqual(reloaded.collectedSetJars, ["cat.scarf"])
+
+        // A save from before this field: no "collectedSetJars" key.
+        let oldSave = #"{"grandmas": 1, "hints": 3, "levelNumbers": {"en": 8}, "version": 2, "yarn": {}}"#
+        let old = try JSONDecoder().decode(PlayerProgress.self, from: Data(oldSave.utf8))
+        XCTAssertEqual(old.collectedSetJars, [])
+    }
+
     func testReceivingAPrizeAddsBothHelpers() {
         var player = progress(yarn: [:])
         player.receive(JarReward(hints: 3, grandmas: 1))

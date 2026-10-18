@@ -29,6 +29,10 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var yarn: [YarnColor: Int]
     /// Ids of the items grandma has knitted (see `KnitItem.id`).
     public var wardrobe: Set<String>
+    /// Sets whose prize jar has been collected from the wardrobe (see
+    /// `KnitItem.setID`). Finishing a set doesn't hand the jar over by
+    /// itself; the player collects it in the wardrobe, once.
+    public var collectedSetJars: Set<String>
     /// Each language's level as the player left it, if they left it halfway.
     public var boards: [String: SavedBoard]
     /// The streak day of the last daily jar collected (0 before the first).
@@ -73,6 +77,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         grandmas: Int,
         yarn: [YarnColor: Int],
         wardrobe: Set<String> = [],
+        collectedSetJars: Set<String> = [],
         board: SavedBoard? = nil,
         jarStreak: Int = 0,
         lastJarDay: Int? = nil,
@@ -88,6 +93,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.grandmas = grandmas
         self.yarn = yarn
         self.wardrobe = wardrobe
+        self.collectedSetJars = collectedSetJars
         self.boards = board.map { [activeLanguage: $0] } ?? [:]
         self.jarStreak = jarStreak
         self.lastJarDay = lastJarDay
@@ -101,7 +107,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     // MARK: - Saving format
 
     private enum CodingKeys: String, CodingKey {
-        case version, levelNumbers, hints, grandmas, yarn, wardrobe, boards, jarStreak, lastJarDay, jars, tutorialDone
+        case version, levelNumbers, hints, grandmas, yarn, wardrobe, collectedSetJars, boards, jarStreak, lastJarDay, jars, tutorialDone
         case rewardedAdDay, rewardedAdsThatDay
         // Version 1 only; read when converting, never written.
         case levelNumber, board
@@ -120,6 +126,10 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         grandmas = try container.decode(Int.self, forKey: .grandmas)
         yarn = try container.decode([YarnColor: Int].self, forKey: .yarn)
         wardrobe = try container.decodeIfPresent(Set<String>.self, forKey: .wardrobe) ?? []
+        // Empty for saves from before set jars were collected by hand. The
+        // game isn't released, so the only saves that predate this are
+        // testers', and a tester with a finished set simply gets its jar.
+        collectedSetJars = try container.decodeIfPresent(Set<String>.self, forKey: .collectedSetJars) ?? []
         jarStreak = try container.decodeIfPresent(Int.self, forKey: .jarStreak) ?? 0
         lastJarDay = try container.decodeIfPresent(Int.self, forKey: .lastJarDay)
         jars = try container.decodeIfPresent([Jar].self, forKey: .jars) ?? []
@@ -151,6 +161,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encode(grandmas, forKey: .grandmas)
         try container.encode(yarn, forKey: .yarn)
         try container.encode(wardrobe, forKey: .wardrobe)
+        try container.encode(collectedSetJars, forKey: .collectedSetJars)
         try container.encode(boards, forKey: .boards)
         try container.encode(jarStreak, forKey: .jarStreak)
         try container.encodeIfPresent(lastJarDay, forKey: .lastJarDay)
