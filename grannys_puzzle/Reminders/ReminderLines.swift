@@ -26,13 +26,49 @@ enum ReminderLines {
         ]
     }
 
-    /// The streak would break if they don't come today.
+    /// The play streak breaks unless they solve something today.
     static func streak(days: Int) -> [String] {
         [
-            String(localized: "Your \(days)-day streak is waiting for you today, sweetheart. Don't let it slip!", bundle: .appLanguage, locale: .appLanguage),
-            String(localized: "You've visited me \(days) days in a row! Come by today so we keep it going.", bundle: .appLanguage, locale: .appLanguage),
-            String(localized: "Don't forget your jar today, dear, or your \(days)-day streak starts over.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Your \(days)-day streak needs one puzzle today, sweetheart. Don't let it slip!", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "\(days) days in a row! One puzzle today keeps it going.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Don't forget me today, dear, or your \(days)-day streak starts over.", bundle: .appLanguage, locale: .appLanguage),
             String(localized: "\(days) days in a row, how proud I am! Shall we make it one more?", bundle: .appLanguage, locale: .appLanguage),
+        ]
+    }
+
+    /// Yesterday was missed: a video can still save the streak today.
+    static func streakSave(days: Int) -> [String] {
+        [
+            String(localized: "Oh dear, you missed a day! You can still save your \(days)-day streak today.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Your \(days)-day streak is hanging by a thread, sweetheart. Come save it today!", bundle: .appLanguage, locale: .appLanguage),
+        ]
+    }
+
+    /// A level was left halfway.
+    static var unfinished: [String] {
+        [
+            String(localized: "You left a puzzle half done, dear. I kept your place!", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Your puzzle is waiting right where you left it. Shall we finish it?", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "I peeked at your puzzle, dear. You're doing so well, come finish it!", bundle: .appLanguage, locale: .appLanguage),
+        ]
+    }
+
+    /// There's enough yarn for something. `item` is its name in lowercase,
+    /// as it reads inside a sentence ("red scarf"). The same lines grandma
+    /// says on the level-end card (KnitNudgeLines), so they're translated once.
+    static func knit(item: String) -> [String] {
+        [
+            String(localized: "Ooh, there's enough yarn for a \(item) now, dear! Come and knit it with me.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Look at all that yarn! I could knit the cat a \(item). Pop by my yarn bag when you like.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "That's enough for a \(item), sweetheart. I'll have my needles ready!", bundle: .appLanguage, locale: .appLanguage),
+        ]
+    }
+
+    /// A new daily challenge is out.
+    static var daily: [String] {
+        [
+            String(localized: "A new daily challenge is waiting, dear. How quick can you be today?", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Today's daily challenge is ready. Fancy a race against the clock?", bundle: .appLanguage, locale: .appLanguage),
         ]
     }
 

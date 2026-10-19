@@ -237,7 +237,9 @@ final class Game {
         // Picking a line moves that kind's rotation on even if the reminder
         // is cancelled before it shows (the player came back first). Fine:
         // the point is that the lines that do show vary.
-        let candidates = GrannyReminders.candidates(progress: progress, catalog: catalog, now: now) { lines, kind in
+        let candidates = GrannyReminders.candidates(
+            progress: progress, catalog: catalog, hasDailyChallenge: dailyPack != nil, now: now
+        ) { lines, kind in
             reminders.line(from: lines, kind: kind)
         }
         await reminders.schedule(candidates, now: now)

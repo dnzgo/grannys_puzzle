@@ -4,12 +4,32 @@
     "" : {
       "shouldTranslate" : false
     },
+    "%lld days in a row! One puzzle today keeps it going." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üst üste %lld gün! Bugün bir bulmaca çöz, seri devam etsin."
+          }
+        }
+      }
+    },
     "%lld of %lld letters right" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2$lld harften %1$lld tanesi doğru"
+          }
+        }
+      }
+    },
+    "A new daily challenge is waiting, dear. How quick can you be today?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bir günlük görev seni bekliyor canım. Bugün ne kadar hızlısın?"
           }
         }
       }
@@ -74,6 +94,26 @@
         }
       }
     },
+    "Don't forget me today, dear, or your %lld-day streak starts over." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugün beni unutma canım, yoksa %lld günlük serin baştan başlar."
+          }
+        }
+      }
+    },
+    "I peeked at your puzzle, dear. You're doing so well, come finish it!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulmacana bir göz attım canım. Çok iyi gidiyorsun, gel bitir!"
+          }
+        }
+      }
+    },
     "Keep playing" : {
       "localizations" : {
         "tr" : {
@@ -130,6 +170,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şu an hazır video yok. Biraz sonra tekrar dene."
+          }
+        }
+      }
+    },
+    "Oh dear, you missed a day! You can still save your %lld-day streak today." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eyvah, bir gün kaçırdın! %lld günlük serini bugün hâlâ kurtarabilirsin."
           }
         }
       }
@@ -222,6 +272,16 @@
         }
       }
     },
+    "Today's daily challenge is ready. Fancy a race against the clock?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün görevi hazır. Saatle yarışa var mısın?"
+          }
+        }
+      }
+    },
     "Watch video" : {
       "localizations" : {
         "tr" : {
@@ -232,12 +292,52 @@
         }
       }
     },
+    "You left a puzzle half done, dear. I kept your place!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir bulmacayı yarım bıraktın canım. Yerini sakladım!"
+          }
+        }
+      }
+    },
     "You missed yesterday. Watch a short video to keep your %lld-day streak." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dün oynamadın. %lld günlük serini korumak için kısa bir video izle."
+          }
+        }
+      }
+    },
+    "Your %lld-day streak is hanging by a thread, sweetheart. Come save it today!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serin pamuk ipliğine bağlı tatlım. Gel bugün kurtar!"
+          }
+        }
+      }
+    },
+    "Your %lld-day streak needs one puzzle today, sweetheart. Don't let it slip!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serin bugün tek bir bulmaca bekliyor tatlım. Kaçırma!"
+          }
+        }
+      }
+    },
+    "Your puzzle is waiting right where you left it. Shall we finish it?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulmacan bıraktığın yerde seni bekliyor. Bitirelim mi?"
           }
         }
       }
@@ -789,16 +889,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kedi ne kadar şık olmuş, değil mi?"
-          }
-        }
-      }
-    },
-    "Don't forget your jar today, dear, or your %lld-day streak starts over." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bugün kavanozunu unutma canım, yoksa %lld günlük serin baştan başlar."
           }
         }
       }
@@ -2097,26 +2187,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hepsini çözdün! Yenilerini yazıyorum."
-          }
-        }
-      }
-    },
-    "You've visited me %lld days in a row! Come by today so we keep it going." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld gündür hiç aksatmadan geldin! Bugün de gel, seriyi bozmayalım."
-          }
-        }
-      }
-    },
-    "Your %lld-day streak is waiting for you today, sweetheart. Don't let it slip!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld günlük serin bugün seni bekliyor tatlım. Kaçırma!"
           }
         }
       }
