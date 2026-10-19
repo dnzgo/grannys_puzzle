@@ -210,6 +210,25 @@ final class AdsControllerTests: XCTestCase {
         XCTAssertTrue(onTime)
     }
 
+    func testTunedGapsReplaceTheDefaults() async {
+        let clock = TestClock()
+        let controller = AdsController(network: FakeNetwork(), tracking: FakeTracking(), sleep: WaitLog().sleep, now: clock.now)
+        controller.setInterstitialGaps(minimum: .seconds(60), afterRewarded: .zero)
+        await controller.start()
+        controller.prepareInterstitials()
+        await controller.waitForInterstitialLoad()
+        _ = await controller.showInterstitial()
+        await controller.waitForInterstitialLoad()
+
+        clock.advance(by: .seconds(59))
+        let tooSoon = await controller.showInterstitial()
+        clock.advance(by: .seconds(1))
+        let onTime = await controller.showInterstitial()
+
+        XCTAssertFalse(tooSoon)
+        XCTAssertTrue(onTime, "the shorter tuned gap applies, not the 3-minute default")
+    }
+
     func testNoInterstitialRightAfterARewardedVideo() async {
         let clock = TestClock()
         let controller = AdsController(network: FakeNetwork(), tracking: FakeTracking(), sleep: WaitLog().sleep, now: clock.now)

@@ -63,6 +63,20 @@ final class GameTuningTests: XCTestCase {
         XCTAssertEqual(resolve([.jarHintsMax: 5]).tuning.jar.hintRange, 1...5)
     }
 
+    func testInterstitialTimingCanBeTuned() {
+        let tuned = resolve([.adBreakMinimumSeconds: 300, .adBreakSecondsAfterRewarded: 0, .adBreakLevelsBetween: 3]).tuning
+
+        XCTAssertEqual(tuned.adBreakMinimumSeconds, 300)
+        XCTAssertEqual(tuned.adBreakSecondsAfterRewarded, 0, "0 leaves only the level rule")
+        XCTAssertEqual(tuned.adBreakLevelsBetween, 3)
+    }
+
+    func testInterstitialGapsOverAnHourAreIgnored() {
+        let (tuning, ignored) = resolve([.adBreakMinimumSeconds: 7_200])
+        XCTAssertEqual(tuning.adBreakMinimumSeconds, GameTuning.standard.adBreakMinimumSeconds)
+        XCTAssertEqual(ignored, [.adBreakMinimumSeconds])
+    }
+
     func testWhenToAskCanBeTuned() {
         let tuned = resolve([.reviewMinLevels: 8, .reminderAskMinLevels: 2]).tuning
 

@@ -39,8 +39,16 @@ final class DailyHost: LevelHost {
         game?.amount(of: reward) ?? reward.amount(in: .standard)
     }
 
-    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool {
-        await game?.watchAd(for: reward, amount: amount) ?? false
+    func adOfferOpened(outOf helper: HelperAdReward) {
+        game?.adOfferOpened(outOf: helper)
+    }
+
+    func adOfferCancelled(outOf helper: HelperAdReward) {
+        game?.adOfferCancelled(outOf: helper)
+    }
+
+    func watchAd(for reward: HelperAdReward, amount: Int, outOf helper: HelperAdReward) async -> Bool {
+        await game?.watchAd(for: reward, amount: amount, outOf: helper) ?? false
     }
 
     /// The stats card's only way on is home: there's no next daily today.

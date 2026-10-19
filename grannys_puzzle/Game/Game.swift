@@ -98,6 +98,7 @@ final class Game {
         progress.activeLanguage = pack.language
         tutorialHost.game = self
         dailyHost.game = self
+        apply(tuning)
     }
 
     // MARK: - What the home screen shows
@@ -150,10 +151,17 @@ final class Game {
         await remoteValues.fetchForNextLaunch()
     }
 
+    /// Hands the numbers to the parts that use them. Also called at
+    /// launch, so the tuning's defaults are the one source of truth for the
+    /// ads package's time rules too.
     private func apply(_ newTuning: GameTuning) {
         tuning = newTuning
         adBreaks.firstLevel = newTuning.adBreakFirstLevel
         adBreaks.levelsBetween = newTuning.adBreakLevelsBetween
+        ads?.setInterstitialGaps(
+            minimum: .seconds(newTuning.adBreakMinimumSeconds),
+            afterRewarded: .seconds(newTuning.adBreakSecondsAfterRewarded)
+        )
     }
 
     // MARK: - Knitting
@@ -589,7 +597,21 @@ extension Game: LevelHost {
         events?.log(.reviewPromptRequested(moment))
     }
 
-    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool {
+    /// Helper videos watched today (the streak-save video isn't one).
+    private var helperVideosToday: Int {
+        let perDay = tuning.rewardedAdsPerDay
+        return perDay - progress.rewardedAdsLeft(today: JarDay.number(), perDay: perDay)
+    }
+
+    func adOfferOpened(outOf helper: HelperAdReward) {
+        events?.log(.adOffer(outOf: helper, level: progress.levelNumber, videosToday: helperVideosToday))
+    }
+
+    func adOfferCancelled(outOf helper: HelperAdReward) {
+        events?.log(.adOfferCancel(outOf: helper, level: progress.levelNumber))
+    }
+
+    func watchAd(for reward: HelperAdReward, amount: Int, outOf helper: HelperAdReward) async -> Bool {
         guard let ads, progress.rewardedAdsLeft(today: JarDay.number(), perDay: tuning.rewardedAdsPerDay) > 0 else {
             return false
         }
@@ -597,17 +619,20 @@ extension Game: LevelHost {
         // Granted only when the ad reports the reward as earned, and saved
         // right away like every other change.
         let earned = await ads.showRewarded()
-        events?.log(.rewardedVideo(reward, earned: earned, level: level))
-        guard earned else { return false }
-        let today = JarDay.number()
-        update { progress in
-            switch reward {
-            case .catHints: progress.hints += amount
-            case .grandma: progress.grandmas += amount
+        if earned {
+            let today = JarDay.number()
+            update { progress in
+                switch reward {
+                case .catHints: progress.hints += amount
+                case .grandma: progress.grandmas += amount
+                }
+                progress.recordRewardedAd(today: today)
             }
-            progress.recordRewardedAd(today: today)
         }
-        return true
+        // Logged after the save, so `videos_today` includes this video when
+        // it counted.
+        events?.log(.rewardedVideo(reward, outOf: helper, earned: earned, level: level, videosToday: helperVideosToday))
+        return earned
     }
 
     func saveBoard(_ board: SavedBoard?) {

@@ -58,17 +58,40 @@ extension AnalyticsEvent {
         AnalyticsEvent("helper_used", ["helper": .string(helper.rawValue), "level": .int(level)])
     }
 
-    /// A rewarded video the player chose to watch. Not named "ad_reward":
+    /// A helper video the player chose to watch. Not named "ad_reward":
     /// that name is reserved by Analytics.
-    /// - Parameter earned: watched to the end (false if closed early).
-    static func rewardedVideo(_ reward: HelperAdReward, earned: Bool, level: Int) -> AnalyticsEvent {
-        let choice = switch reward {
-        case .catHints: "cat_hints"
-        case .grandma: "grandma"
-        }
-        return AnalyticsEvent("rewarded_video", [
-            "reward": .string(choice),
+    /// - `reward`: what the player picked on the offer card.
+    /// - `out_of`: the helper whose button opened the offer (the one that ran
+    ///   out). Comparing the two says which helper players value more: out of
+    ///   cats, do they still take cats, or switch to grandma?
+    /// - `videos_today`: helper videos watched today, this one included if
+    ///   it was earned; against the daily cap, it shows whether the cap bites.
+    /// - `earned`: watched to the end (false if closed early).
+    static func rewardedVideo(_ reward: HelperAdReward, outOf helper: HelperAdReward, earned: Bool, level: Int, videosToday: Int) -> AnalyticsEvent {
+        AnalyticsEvent("rewarded_video", [
+            "reward": .string(reward.analyticsName),
+            "out_of": .string(helper.analyticsName),
             "earned": .bool(earned),
+            "level": .int(level),
+            "videos_today": .int(videosToday),
+        ])
+    }
+
+    /// The "watch a video, pick a treat" card opened: the player ran out of
+    /// a helper and a video was ready. With `ad_offer_cancel` and
+    /// `rewarded_video`, it makes the funnel: offered, then watched or not.
+    static func adOffer(outOf helper: HelperAdReward, level: Int, videosToday: Int) -> AnalyticsEvent {
+        AnalyticsEvent("ad_offer", [
+            "out_of": .string(helper.analyticsName),
+            "level": .int(level),
+            "videos_today": .int(videosToday),
+        ])
+    }
+
+    /// The offer card closed without picking a video.
+    static func adOfferCancel(outOf helper: HelperAdReward, level: Int) -> AnalyticsEvent {
+        AnalyticsEvent("ad_offer_cancel", [
+            "out_of": .string(helper.analyticsName),
             "level": .int(level),
         ])
     }
@@ -147,8 +170,9 @@ extension AnalyticsEvent {
     /// "Not now" to grandma's question.
     static let reminderAskDeclined = AnalyticsEvent("reminder_ask_declined")
 
-    /// A reminder was tapped and opened the game. `kind` is jar, streak,
-    /// yarn or miss_you.
+    /// A reminder was tapped and opened the game. `kind` is one of
+    /// GrannyReminders.Kind: jar, streak, streak_save, unfinished, knit,
+    /// yarn, daily or miss_you.
     static func reminderOpened(kind: String) -> AnalyticsEvent {
         AnalyticsEvent("reminder_opened", ["kind": .string(kind)])
     }
@@ -172,4 +196,15 @@ extension AnalyticsEvent {
 enum HelperKind: String {
     case cat
     case grandma
+}
+
+private extension HelperAdReward {
+    /// How a helper is named in events. Fixed strings, so a renamed Swift
+    /// case can't quietly split one report into two.
+    var analyticsName: String {
+        switch self {
+        case .catHints: "cat_hints"
+        case .grandma: "grandma"
+        }
+    }
 }

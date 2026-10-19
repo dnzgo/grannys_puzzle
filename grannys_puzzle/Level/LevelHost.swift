@@ -47,11 +47,17 @@ protocol LevelHost: AnyObject {
     /// decides because the number is tuned remotely (see `GameTuning`).
     func amount(of reward: HelperAdReward) -> Int
 
+    /// The video offer opened because the player ran out of `helper`, or
+    /// closed without a video. For analytics only.
+    func adOfferOpened(outOf helper: HelperAdReward)
+    func adOfferCancelled(outOf helper: HelperAdReward)
+
     /// Plays a rewarded ad and, if it's watched to the end, gives the
     /// reward the player picked, in the `amount` they were shown (asked of
     /// `amount(of:)` when the offer opened, so it can't change mid-video).
-    /// Returns whether it was given.
-    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool
+    /// `helper` is the one that ran out, for analytics. Returns whether it
+    /// was given.
+    func watchAd(for reward: HelperAdReward, amount: Int, outOf helper: HelperAdReward) async -> Bool
 
     func continueToNextLevel()
     func goHome()

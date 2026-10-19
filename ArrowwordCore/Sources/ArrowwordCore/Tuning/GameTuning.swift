@@ -15,9 +15,16 @@ public struct GameTuning: Equatable, Sendable {
     /// grandma, cats are worth too little.
     public var catHintsPerAd = 3
     public var grandmasPerAd = 1
-    /// See `AdBreakSchedule`.
+    /// See `AdBreakSchedule`: the level rules for interstitials.
     public var adBreakFirstLevel = AdBreakSchedule().firstLevel
     public var adBreakLevelsBetween = AdBreakSchedule().levelsBetween
+    /// The time rules for interstitials, enforced by the ads package (its
+    /// `AdPolicy`, whose defaults these match): least time from one
+    /// interstitial to the next, and from a rewarded video to one. A break
+    /// needs both the level rule and the time rule to allow it. 0 leaves
+    /// only the level rule.
+    public var adBreakMinimumSeconds = 180
+    public var adBreakSecondsAfterRewarded = 120
     /// When the rating prompt may be asked for (levels passed and the wait
     /// between asks). Only the level count is tunable from the server.
     public var review = ReviewPromptRules.standard
@@ -49,6 +56,8 @@ public struct GameTuning: Equatable, Sendable {
         case grandmasPerAd = "grandmas_per_ad"
         case adBreakFirstLevel = "ad_break_first_level"
         case adBreakLevelsBetween = "ad_break_levels_between"
+        case adBreakMinimumSeconds = "ad_break_min_seconds"
+        case adBreakSecondsAfterRewarded = "ad_break_seconds_after_rewarded"
         case reviewMinLevels = "review_min_levels"
         case reminderAskMinLevels = "reminder_ask_min_levels"
     }
@@ -107,6 +116,11 @@ public struct GameTuning: Equatable, Sendable {
         tuning.grandmasPerAd = reader.integer(.grandmasPerAd, in: 1...5).value ?? tuning.grandmasPerAd
         tuning.adBreakFirstLevel = reader.integer(.adBreakFirstLevel, in: 1...1_000).value ?? tuning.adBreakFirstLevel
         tuning.adBreakLevelsBetween = reader.integer(.adBreakLevelsBetween, in: 1...50).value ?? tuning.adBreakLevelsBetween
+        // Up to an hour: beyond that a session rarely sees a break at all,
+        // which is better done by raising the levels between them.
+        tuning.adBreakMinimumSeconds = reader.integer(.adBreakMinimumSeconds, in: 0...3_600).value ?? tuning.adBreakMinimumSeconds
+        tuning.adBreakSecondsAfterRewarded = reader.integer(.adBreakSecondsAfterRewarded, in: 0...3_600).value
+            ?? tuning.adBreakSecondsAfterRewarded
 
         // When to ask. At least one level, so neither question can ever come
         // straight after the lesson, whatever the console says.

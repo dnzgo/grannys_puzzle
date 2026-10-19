@@ -60,7 +60,9 @@ public final class AdsController {
 
     private let network: any AdNetwork
     private let tracking: any TrackingPermission
-    private let policy: AdPolicy
+    /// A `var` for the interstitial gaps only, which the app may tune after
+    /// launch (`setInterstitialGaps`); load timing is fixed at creation.
+    private var policy: AdPolicy
     /// Injected so tests can move time forward instead of waiting.
     private let now: () -> ContinuousClock.Instant
 
@@ -179,6 +181,14 @@ public final class AdsController {
         isPresenting = false
         lastInterstitialClosed = now()
         return true
+    }
+
+    /// Changes the time rules for interstitials, e.g. from remote tuning
+    /// that arrived after launch. Takes effect from the next request; an
+    /// ad already on screen isn't affected.
+    public func setInterstitialGaps(minimum: Duration, afterRewarded: Duration) {
+        policy.interstitialMinimumGap = max(.zero, minimum)
+        policy.interstitialGapAfterRewarded = max(.zero, afterRewarded)
     }
 
     private func interstitialTimingAllows() -> Bool {

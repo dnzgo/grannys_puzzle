@@ -147,8 +147,10 @@ final class LevelViewModel {
     /// True while a rewarded ad is on screen, so a second tap can't start
     /// another one.
     private(set) var isWatchingAd = false
-    /// The amounts the open offer promised; see `offerAd()`.
+    /// The amounts the open offer promised; see `offerAd(outOf:)`.
     @ObservationIgnored private var offeredAmounts: [HelperAdReward: Int] = [:]
+    /// The helper whose button opened the offer, for analytics.
+    @ObservationIgnored private var offerOutOf: HelperAdReward = .catHints
 
     private var canWatchAd: Bool { host?.canWatchAdForHelper ?? false }
 
@@ -255,7 +257,7 @@ final class LevelViewModel {
     /// there's nothing to fix.
     func useCat() {
         if hints == 0 {
-            if canWatchAd { offerAd() } else { explainNoVideo() }
+            if canWatchAd { offerAd(outOf: .catHints) } else { explainNoVideo() }
             return
         }
         guard coachAllows(.useCat), let cell = puzzle.revealLetter() else { return }
@@ -269,7 +271,7 @@ final class LevelViewModel {
     /// Grandma solves the selected word, charged only if she changed something.
     func useGrandma() {
         if grandmas == 0 {
-            if canWatchAd { offerAd() } else { explainNoVideo() }
+            if canWatchAd { offerAd(outOf: .grandma) } else { explainNoVideo() }
             return
         }
         guard coachAllows(.useGrandma), let answer = puzzle.activeAnswer else { return }
@@ -434,8 +436,9 @@ final class LevelViewModel {
     /// or one grandma) whichever button was tapped. The reward goes to the
     /// player's helpers rather than being used at once, so they decide when
     /// and where to spend it.
-    private func offerAd() {
+    private func offerAd(outOf helper: HelperAdReward) {
         guard !isWatchingAd, !isCoaching, canWatchAd else { return }
+        offerOutOf = helper
         // The card is a promise: the amounts are fixed now and the same ones
         // are granted after the video. Asking the host again later could give
         // a different answer, e.g. if server tuning arrives during the video.
@@ -443,6 +446,7 @@ final class LevelViewModel {
             (reward, host?.amount(of: reward) ?? 0)
         })
         isOfferingAd = true
+        host?.adOfferOpened(outOf: helper)
     }
 
     /// What each choice on the open offer gives (the card shows these).
@@ -461,7 +465,9 @@ final class LevelViewModel {
     }
 
     func cancelAdOffer() {
+        guard isOfferingAd else { return }
         isOfferingAd = false
+        host?.adOfferCancelled(outOf: offerOutOf)
     }
 
     func watchAd(for reward: HelperAdReward) {
@@ -471,7 +477,7 @@ final class LevelViewModel {
         isWatchingAd = true
         Task { [weak self] in
             guard let self else { return }
-            let earned = await self.host?.watchAd(for: reward, amount: amount) ?? false
+            let earned = await self.host?.watchAd(for: reward, amount: amount, outOf: self.offerOutOf) ?? false
             self.isWatchingAd = false
             guard earned else { return }
             self.feel(.helperEarned)

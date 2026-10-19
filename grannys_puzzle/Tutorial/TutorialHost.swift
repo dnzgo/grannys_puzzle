@@ -36,7 +36,9 @@ final class TutorialHost: LevelHost {
     func mayAskForReview() -> Bool { false }
     func reviewAsked(_ moment: ReviewMoment) {}
     func amount(of reward: HelperAdReward) -> Int { reward.amount(in: .standard) }
-    func watchAd(for reward: HelperAdReward, amount: Int) async -> Bool { false }
+    func adOfferOpened(outOf helper: HelperAdReward) {}
+    func adOfferCancelled(outOf helper: HelperAdReward) {}
+    func watchAd(for reward: HelperAdReward, amount: Int, outOf helper: HelperAdReward) async -> Bool { false }
 
     func continueToNextLevel() {
         game?.leaveTutorial()
