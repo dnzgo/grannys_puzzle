@@ -19,11 +19,13 @@ import ArrowwordCore
 /// Every board zooms and pans inside the viewport (ZoomableBoard), the
 /// same way on every phone, between:
 /// - **whole board**, the furthest out;
-/// - **opening view**, where a level opens and returns after Try again:
-///   the whole board if its cells there are at least three quarters of
-///   reading size (today's 7×9 levels, on every phone), else reading size;
-///   the tutorial opens on the close-up instead, so there's something to
-///   pinch out to;
+/// - **opening view**, where a level opens (after a short look at the
+///   whole board, zooming in from it) and returns after Try again: the
+///   cells at reading size, but always at least a quarter closer than the
+///   whole board, so on a board that nearly fits (a 7×7) the zoom-in is
+///   still seen. Only a board that fits at close-up size (5×5 or less) has
+///   nothing to zoom into. The tutorial opens on the close-up itself, so
+///   there's something to pinch out to;
 /// - **close-up**, the furthest in: 5×5 cells fill the viewport.
 ///
 /// The board is *drawn* at close-up size and everything else is a zoom out
@@ -40,9 +42,8 @@ struct BoardMetrics: Equatable {
     /// iPhone has about 692pt, so only just: more chrome on the level
     /// screen would drop it to the mini's size.
     static let regularHeight: CGFloat = 690
-    /// Smallest cells, as a share of reading size, at which a board is
-    /// still drawn whole rather than zoomed.
-    static let wholeBoardShare: CGFloat = 0.75
+    /// How much closer than the whole board the opening view is, at least.
+    static let openingZoomIn: CGFloat = 1.25
     static let cellGap: CGFloat = 2
     /// Cells across the viewport at the closest zoom.
     static let closeUpCells = 5
@@ -71,7 +72,7 @@ struct BoardMetrics: Equatable {
     /// The zoom that shows the whole board in the viewport.
     let minimumZoom: CGFloat
     /// The zoom of the opening view (see the type's comment). Equal to
-    /// `minimumZoom` when the level opens on the whole board.
+    /// `minimumZoom` only for a board that fits at close-up size.
     let openingZoom: CGFloat
     /// The whole board as drawn, before any zoom.
     let boardSize: CGSize
@@ -91,7 +92,6 @@ struct BoardMetrics: Equatable {
         let viewport = CGSize(width: side, height: side)
         let reading = Self.preferredCellSize(forHeight: height)
         let fitting = Self.largestCell(fitting: viewport, columns: columns, rows: rows, cap: .infinity)
-        let opensWhole = fitting >= (reading * Self.wholeBoardShare).rounded(.down)
         let closeUp = Self.largestCell(fitting: viewport, columns: Self.closeUpCells, rows: Self.closeUpCells, cap: .infinity)
         // Never smaller than reading size (a tiny screen's close-up),
         // nor than the whole board fits at (a board of under 5×5).
@@ -104,7 +104,8 @@ struct BoardMetrics: Equatable {
         if opensCloseUp {
             openingZoom = 1
         } else {
-            openingZoom = opensWhole ? minimumZoom : max(minimumZoom, reading / cellSize)
+            // Capped at 1, the close-up the board is drawn at.
+            openingZoom = min(1, max(reading / cellSize, minimumZoom * Self.openingZoomIn))
         }
     }
 

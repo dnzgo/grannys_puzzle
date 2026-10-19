@@ -77,9 +77,9 @@ enum BoardFocusID: Hashable {
 /// second finger lands.
 ///
 /// On top of that, three things a puzzle needs:
-/// - **An intro**: a level that opens at reading size starts on the whole
-///   board for a moment, then zooms in to the selected word, so the player sees there's more (under
-///   half a second, and any touch ends it).
+/// - **An intro**: every level starts on the whole board for a moment,
+///   then zooms in to the selected word, so the player sees there's more
+///   (under a second, and any touch ends it).
 /// - **Following the word**: when a new word is selected (tapped, or
 ///   reached by typing), the board slides just enough to show all of it and
 ///   its clue, zooming out only if it's longer than the frame.
@@ -299,7 +299,7 @@ struct ZoomableBoard: UIViewRepresentable {
         /// How long the whole board shows once it's on screen before zooming
         /// in (the zoom itself takes about 0.3s), and the margin kept around
         /// a word brought into view.
-        private let introPause: TimeInterval = 0.15
+        private let introPause: TimeInterval = 0.4
         private let margin: CGFloat = 6
 
         func viewForZooming(in scrollView: UIScrollView) -> UIView? { host?.view }

@@ -112,6 +112,13 @@ public struct PuzzleState: Sendable {
 
     /// Selects a letter cell. Tapping the selected cell again switches
     /// direction, but only if the cell has an answer that way.
+    ///
+    /// A new cell keeps the direction being typed, so tapping around a word
+    /// stays in it, with one exception: the first letter of a word selects
+    /// that word, whichever way it reads. Tapping where a word begins is
+    /// almost always meant as "this word", like tapping its clue. Where an
+    /// across and a down word both begin, the direction stays, since
+    /// either could be meant (a second tap turns, as anywhere).
     public mutating func select(_ cell: Coordinate) {
         guard !isSubmitted, level.isLetterCell(cell) else { return }
         if cell == selection {
@@ -121,7 +128,12 @@ public struct PuzzleState: Sendable {
             return
         }
         selection = cell
-        if level.answerID(at: cell, direction: direction) == nil {
+        let startingHere = Direction.allCases.filter { way in
+            level.answerID(at: cell, direction: way).map { level.answers[$0].cells.first == cell } ?? false
+        }
+        if startingHere.count == 1, let way = startingHere.first {
+            direction = way
+        } else if level.answerID(at: cell, direction: direction) == nil {
             direction = direction.other
         }
     }

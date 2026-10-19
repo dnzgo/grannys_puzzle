@@ -40,6 +40,41 @@ final class PuzzleStateTests: XCTestCase {
         XCTAssertEqual(state.activeAnswerID, state.level.answerID(at: cell(1, 1), direction: .down))
     }
 
+    func testTappingTheFirstLetterOfAWordSelectsThatWord() throws {
+        var state = try newSquareGame()
+        // Reading across CARD; (1, 2) is CARD's second letter but the first
+        // of AREA going down.
+        state.select(cell(1, 2))
+
+        XCTAssertEqual(state.selection, cell(1, 2))
+        XCTAssertEqual(state.direction, .down)
+        XCTAssertEqual(state.activeAnswerID, state.level.answerID(at: cell(1, 2), direction: .down))
+
+        // And back: (2, 1) begins AREA across.
+        state.select(cell(2, 1))
+        XCTAssertEqual(state.direction, .across)
+    }
+
+    func testTappingInsideAWordKeepsTheDirection() throws {
+        var state = try newSquareGame()
+
+        // (2, 2) begins nothing: still reading across, now AREA.
+        state.select(cell(2, 2))
+
+        XCTAssertEqual(state.direction, .across)
+    }
+
+    func testWhereTwoWordsBeginTheDirectionStays() throws {
+        var state = try newSquareGame()
+        state.select(cell(1, 2))
+        XCTAssertEqual(state.direction, .down)
+
+        // (1, 1) begins CARD both ways, so either could be meant.
+        state.select(cell(1, 1))
+
+        XCTAssertEqual(state.direction, .down)
+    }
+
     func testClueCellsCannotBeSelected() throws {
         var state = try newSquareGame()
 
