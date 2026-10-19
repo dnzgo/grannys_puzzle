@@ -2,8 +2,8 @@ import SwiftUI
 import ArrowwordCore
 
 /// Grandma's lesson on top of the level screen: everything dimmed except
-/// what she's talking about, a pulsing ring on what to tap, her card with
-/// the words, and a Skip button.
+/// what she's talking about, a pulsing ring on what to tap, her hand
+/// showing how, her card with the words, and a Skip button.
 ///
 /// The dimming also swallows taps everywhere outside the holes, so the
 /// back and settings buttons can't be hit mid-lesson. Which taps *count*
@@ -15,16 +15,15 @@ struct TutorialOverlay: View {
 
     var body: some View {
         if let line = model.tutorialLine {
-            let target = model.tutorialTarget.flatMap { frames.union(of: [.target($0)]) }
-            let lit = frames.union(of: litIDs)
+            let targetRect = model.tutorialTarget.flatMap(rect(of:))
+            let lit = litRect
             // While a word is lit, so is the clue bar: it shows the same
             // clue, larger and easier to read than its clue cell. Only when
             // the bar does show that word's clue (a step can point at a word
-            // before the player has selected it). Its arrows can be tapped
-            // through the hole but do nothing in the lesson.
-            let barShowsLitWord = model.activeAnswer.map { model.tutorialLitClue == .clue(answerID: $0.id) } ?? false
+            // before the player has selected it).
+            let barShowsLitWord = model.activeAnswer.map { $0.id == model.tutorialLitAnswerID } ?? false
             let clueBar = barShowsLitWord ? frames.rects[.clueBar] : nil
-            let holes = [target?.insetBy(dx: -6, dy: -6), lit?.insetBy(dx: -4, dy: -4), clueBar?.insetBy(dx: -4, dy: -4)]
+            let holes = [targetRect?.insetBy(dx: -6, dy: -6), lit?.insetBy(dx: -4, dy: -4), clueBar?.insetBy(dx: -4, dy: -4)]
                 .compactMap { $0 }
 
             ZStack {
@@ -33,9 +32,14 @@ struct TutorialOverlay: View {
                 GuideLayer(
                     text: line.text,
                     showsNext: model.tutorialWaitsForNext,
-                    target: target,
+                    target: targetRect,
+                    // The board is pinched, not tapped: the hand shows how,
+                    // and a ring round the whole board would only frame it.
+                    ringsTarget: !isZoomStep,
                     lit: lit,
                     clueBar: clueBar,
+                    hand: hand(target: targetRect, line: line),
+                    handKey: HandKey(step: model.tutorialStep, target: model.tutorialTarget, visitsClueBar: visitsClueBar(line)),
                     onNext: model.tutorialNext,
                     onSkip: model.skipTutorial
                 )
@@ -44,10 +48,59 @@ struct TutorialOverlay: View {
         }
     }
 
+    private var isZoomStep: Bool {
+        model.tutorialTarget == .zoomOut || model.tutorialTarget == .zoomIn
+    }
+
+    /// Where the thing to act on is, in the level screen's space. Things on
+    /// the board are found through its camera, since it zooms and slides.
+    private func rect(of target: TutorialTarget) -> CGRect? {
+        switch target {
+        case .zoomOut, .zoomIn: frames.rects[.board]
+        case .clue(let id): frames.boardRect(ofClue: id, in: model.level)
+        case .cell(let cell): frames.boardRect(around: [cell])
+        case .key, .cat, .grandma, .submit: frames.rects[.target(target)]
+        }
+    }
+
     /// The lit word's clue and cells, as one hole.
-    private var litIDs: [SpotlightID] {
-        let clue = model.tutorialLitClue.map { [SpotlightID.target($0)] } ?? []
-        return clue + model.tutorialLitCells.map(SpotlightID.cell)
+    private var litRect: CGRect? {
+        guard let id = model.tutorialLitAnswerID else { return nil }
+        let rects = [frames.boardRect(ofClue: id, in: model.level), frames.boardRect(around: model.tutorialLitCells)]
+        return rects.compactMap { $0 }.reduce(nil as CGRect?) { $0?.union($1) ?? $1 }
+    }
+
+    /// On the first letter of the word to type, the hand first points up
+    /// at the clue bar, which the card says shows the clue too. After that
+    /// it only taps the keys, which change with every letter.
+    private func visitsClueBar(_ line: TutorialLine) -> Bool {
+        line == .typeWord && model.tutorialLitCells.allSatisfy { model.puzzle.entries[$0]?.source != .placed }
+    }
+
+    /// What grandma's hand does for this step; nil when what it would
+    /// point at isn't on screen (slid out of the board's window).
+    private func hand(target: CGRect?, line: TutorialLine) -> HandMotion? {
+        guard let target, let kind = model.tutorialTarget else { return nil }
+        let centre = CGPoint(x: target.midX, y: target.midY)
+        switch kind {
+        case .zoomOut:
+            return .pinchClosing(at: centre)
+        case .zoomIn:
+            // Then a slide across the middle, the other thing the card says.
+            let slide = min(60, target.width / 4)
+            return .pinchOpeningThenSlide(
+                at: centre,
+                from: CGPoint(x: centre.x + slide, y: centre.y + slide / 2),
+                to: CGPoint(x: centre.x - slide, y: centre.y + slide / 2)
+            )
+        case .cell:
+            return .doubleTap(at: centre)
+        case .key where visitsClueBar(line):
+            guard let bar = frames.rects[.clueBar] else { return .tap(at: centre) }
+            return .point(at: CGPoint(x: bar.midX, y: bar.midY), thenTap: centre)
+        case .key, .clue, .cat, .grandma, .submit:
+            return .tap(at: centre)
+        }
     }
 }
 
@@ -83,16 +136,21 @@ private struct DimmingLayer: View {
     }
 }
 
-/// The ring, grandma's card and Skip, laid out inside the safe area.
+/// The ring, grandma's card, Skip and her hand, laid out inside the safe area.
 private struct GuideLayer: View {
     let text: String
     let showsNext: Bool
-    /// What to tap, in the level screen's coordinate space.
+    /// What to act on, in the level screen's coordinate space.
     let target: CGRect?
+    let ringsTarget: Bool
     /// The word she's talking about, in the same space.
     let lit: CGRect?
     /// The clue bar, when it's lit with the word.
     let clueBar: CGRect?
+    /// Grandma's hand showing what to do, in the same space.
+    let hand: HandMotion?
+    /// Changes when the hand should start its motion over.
+    let handKey: HandKey
     let onNext: () -> Void
     let onSkip: () -> Void
 
@@ -117,7 +175,7 @@ private struct GuideLayer: View {
             )
 
             ZStack(alignment: .topTrailing) {
-                if let localTarget {
+                if let localTarget, ringsTarget {
                     PulsingRing(rect: localTarget.insetBy(dx: -6, dy: -6))
                 }
                 card
@@ -125,6 +183,11 @@ private struct GuideLayer: View {
                     .position(x: proxy.size.width / 2, y: cardTop + cardHeight / 2)
                     .animation(.easeInOut(duration: 0.25), value: cardTop)
                 skipButton
+                // On top of the card: on its way between two places the
+                // hand can pass over it, and shouldn't vanish behind it.
+                if let hand {
+                    TutorialHand(motion: hand.offsetBy(dx: -origin.x, dy: -origin.y), restartKey: handKey)
+                }
             }
         }
         .onAppear { announce() }
@@ -252,23 +315,23 @@ private struct PulsingRing: View {
 // MARK: - Grandma's words
 
 extension TutorialLine {
-    /// What grandma says at each step. Two lines name the lesson board's
-    /// words (CAT and its T in English; ÇAY and its Y in Turkish), so each
-    /// language's translation goes with its own tutorial-<lang>.json.
+    /// What grandma says at each step. The typing line names the lesson
+    /// board's word (TEA in English, OYA in Turkish), so each language's
+    /// translation goes with its own tutorial-<lang>.json.
     var text: String {
         switch self {
-        case .welcome:
-            String(localized: "Hello, dear! Let me show you how my puzzles work.", bundle: .appLanguage, locale: .appLanguage)
+        case .zoomOut:
+            String(localized: "Hello, dear! This puzzle is bigger than your screen. Pinch your fingers together to see all of it.", bundle: .appLanguage, locale: .appLanguage)
+        case .zoomIn:
+            String(localized: "Now spread them apart to look closer. You can slide the board around, too.", bundle: .appLanguage, locale: .appLanguage)
         case .clueBox:
-            String(localized: "Each clue sits in a little box. The arrow shows where its answer goes.", bundle: .appLanguage, locale: .appLanguage)
+            String(localized: "Each box with words is a clue, and its arrow shows where the answer goes. Tap this one!", bundle: .appLanguage, locale: .appLanguage)
         case .typeWord:
-            String(localized: "A purring pet… that's CAT! Tap the glowing letters to write it in.", bundle: .appLanguage, locale: .appLanguage)
-        case .tapClue:
-            String(localized: "Lovely! Now tap this clue to start the next word.", bundle: .appLanguage, locale: .appLanguage)
+            String(localized: "Its clue shows up top too, nice and big. A hot drink… that's TEA! Tap the glowing letters.", bundle: .appLanguage, locale: .appLanguage)
+        case .switchDirection:
+            String(localized: "Some letters belong to two words. Tap this square twice to turn to the word going down.", bundle: .appLanguage, locale: .appLanguage)
         case .catHelps:
-            String(localized: "The T is already there: words share letters. Stuck on the next one? Tap my cat!", bundle: .appLanguage, locale: .appLanguage)
-        case .finishWord:
-            String(localized: "Clever cat! Now put in the last letter yourself.", bundle: .appLanguage, locale: .appLanguage)
+            String(localized: "Stuck on a letter? Tap my cat, she'll show you one!", bundle: .appLanguage, locale: .appLanguage)
         case .askGrandma:
             String(localized: "For a whole word, just ask me. Tap me!", bundle: .appLanguage, locale: .appLanguage)
         case .submit:

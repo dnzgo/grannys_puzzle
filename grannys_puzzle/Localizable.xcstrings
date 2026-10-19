@@ -611,17 +611,6 @@
         }
       }
     },
-    "A purring pet… that's CAT! Tap the glowing letters to write it in." : {
-      "comment" : "Tutorial. Must name the first word of this language's tutorial board (tutorial-<lang>.json): ÇAY in Turkish.",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Demlenip içilen… bu ÇAY! Yazmak için parlayan harflere dokun."
-          }
-        }
-      }
-    },
     "A wrong stitch is just one to unpick. Let's knit it again!" : {
       "localizations" : {
         "tr" : {
@@ -783,16 +772,6 @@
         }
       }
     },
-    "Clever cat! Now put in the last letter yourself." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Akıllı kedi! Şimdi son harfi sen yaz."
-          }
-        }
-      }
-    },
     "Close" : {
       "localizations" : {
         "tr" : {
@@ -923,12 +902,12 @@
         }
       }
     },
-    "Each clue sits in a little box. The arrow shows where its answer goes." : {
+    "Each box with words is a clue, and its arrow shows where the answer goes. Tap this one!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Her ipucu küçük bir kutuda durur. Ok, cevabın nereye yazılacağını gösterir."
+            "value" : "Yazılı her kutu bir ipucudur, oku da cevabın nereye yazılacağını gösterir. Şuna dokun!"
           }
         }
       }
@@ -1124,12 +1103,12 @@
         }
       }
     },
-    "Hello, dear! Let me show you how my puzzles work." : {
+    "Hello, dear! This puzzle is bigger than your screen. Pinch your fingers together to see all of it." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Merhaba canım! Bulmacalarımın nasıl çözüldüğünü göstereyim."
+            "value" : "Merhaba canım! Bu bulmaca ekranından büyük. Hepsini görmek için iki parmağını birbirine yaklaştır."
           }
         }
       }
@@ -1240,6 +1219,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Artık dolapta."
+          }
+        }
+      }
+    },
+    "Its clue shows up top too, nice and big. A hot drink… that's TEA! Tap the glowing letters." : {
+      "comment" : "Tutorial. Must name the word the player types on this language's tutorial board (tutorial-<lang>.json), and match its clue: OYA in Turkish.",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İpucu yukarıda da yazıyor, hem de kocaman. İğneyle işlenen süs… bu OYA! Parlayan harflere dokun."
           }
         }
       }
@@ -1446,16 +1436,6 @@
         }
       }
     },
-    "Lovely! Now tap this clue to start the next word." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çok güzel! Şimdi sonraki kelimeye başlamak için bu ipucuna dokun."
-          }
-        }
-      }
-    },
     "More puzzles soon!" : {
       "localizations" : {
         "tr" : {
@@ -1603,6 +1583,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tam olmadı"
+          }
+        }
+      }
+    },
+    "Now spread them apart to look closer. You can slide the board around, too." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi yakından bakmak için parmaklarını aç. Bulmacayı kaydırarak da gezebilirsin."
           }
         }
       }
@@ -1889,12 +1879,32 @@
         }
       }
     },
+    "Some letters belong to two words. Tap this square twice to turn to the word going down." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bazı harfler iki kelimeye birden aittir. Aşağı inen kelimeye geçmek için bu kareye iki kez dokun."
+          }
+        }
+      }
+    },
     "Sounds" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sesler"
+          }
+        }
+      }
+    },
+    "Stuck on a letter? Tap my cat, she'll show you one!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir harfe mi takıldın? Kedime dokun, sana göstersin!"
           }
         }
       }
@@ -2026,17 +2036,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bulmacalar yüklenemedi"
-          }
-        }
-      }
-    },
-    "The T is already there: words share letters. Stuck on the next one? Tap my cat!" : {
-      "comment" : "Tutorial. The letter is the first letter of the board's second word, shared with the first word: Y in Turkish.",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Y zaten orada: kelimeler harf paylaşır. Sonrakinde takıldın mı? Kedime dokun!"
           }
         }
       }

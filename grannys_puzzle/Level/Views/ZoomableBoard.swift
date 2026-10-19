@@ -5,27 +5,24 @@ import ArrowwordCore
 /// The board inside its square frame, like a view through a window: a
 /// white border round a tinted pane, which sets the board apart from the
 /// screen's background and shows where the board ends when zoomed out.
-/// Every board zooms, except the tutorial's: its spotlight measures the
-/// cells' positions on screen, which it can't do inside the zooming view.
 struct BoardViewport: View {
     let model: LevelViewModel
     let metrics: BoardMetrics
 
+    /// Only there in the lesson, which needs to know where the board is.
+    @Environment(SpotlightFrames.self) private var spotlightFrames: SpotlightFrames?
+
     var body: some View {
-        Group {
-            if metrics.isZoomable {
-                ZoomableBoard(
-                    model: model,
-                    metrics: metrics,
-                    focus: focusRect,
-                    focusID: model.activeAnswer?.id,
-                    showsWholeBoard: model.puzzle.isSubmitted
-                )
-            } else {
-                BoardGrid(model: model, metrics: metrics)
-            }
-        }
+        ZoomableBoard(
+            model: model,
+            metrics: metrics,
+            focus: focusRect,
+            focusID: focusID,
+            showsWholeBoard: model.puzzle.isSubmitted,
+            onCameraChange: spotlightFrames.map { frames in { (camera: BoardCamera) in frames.boardCamera = camera } }
+        )
         .frame(width: metrics.viewportSide, height: metrics.viewportSide)
+        .spotlight(.board)
         .background(Theme.boardWindow)
         .clipShape(RoundedRectangle(cornerRadius: Self.paneCornerRadius))
         .padding(BoardMetrics.windowBorder)
@@ -39,11 +36,27 @@ struct BoardViewport: View {
     /// Inner corners follow the outer ones at the border's distance.
     static let paneCornerRadius = BoardMetrics.windowCornerRadius - BoardMetrics.windowBorder
 
-    /// The active word with its clue cell: what's kept in view.
+    /// What's kept in view: what the lesson points at on the board, else
+    /// the active word with its clue cell.
     private var focusRect: CGRect? {
+        if let cells = model.tutorialBoardFocus { return metrics.rect(around: cells) }
         guard let answer = model.activeAnswer else { return nil }
         return metrics.rect(around: answer.cells + [answer.clueCell])
     }
+
+    private var focusID: BoardFocusID? {
+        if model.tutorialBoardFocus != nil, let step = model.tutorialStep { return .lessonStep(step) }
+        return model.activeAnswer.map { .word($0.id) }
+    }
+}
+
+/// Which thing the board keeps in view. When it changes, the board moves
+/// to show the new one.
+enum BoardFocusID: Hashable {
+    case word(Int)
+    /// What a lesson step points at, so each step that points somewhere on
+    /// the board brings it into view, even if the player slid it away.
+    case lessonStep(Int)
 }
 
 /// A board larger than its frame, seen through it like a map: pinch to zoom
@@ -71,6 +84,11 @@ struct BoardViewport: View {
 ///   reached by typing), the board slides just enough to show all of it and
 ///   its clue, zooming out only if it's longer than the frame.
 /// - **The whole board after Submit**, for the green and red wave.
+///
+/// The lesson also uses it to teach zooming: the board says when a pinch
+/// ends at the whole board or plainly zoomed in, and where it sits in the
+/// window as it moves, so the spotlight and grandma's hand can follow
+/// things on it.
 struct ZoomableBoard: UIViewRepresentable {
     let model: LevelViewModel
     let metrics: BoardMetrics
@@ -78,8 +96,11 @@ struct ZoomableBoard: UIViewRepresentable {
     let focus: CGRect?
     /// Changes when a different word is selected, which is when the board
     /// follows; not on every letter, so it never fights the player's own drags.
-    let focusID: Int?
+    let focusID: BoardFocusID?
     let showsWholeBoard: Bool
+    /// Told where the board is in its window whenever it zooms or slides;
+    /// only the lesson asks, to point at things on the board.
+    var onCameraChange: ((BoardCamera) -> Void)?
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     /// The game's language, which a hosting controller doesn't pass on by
@@ -119,6 +140,8 @@ struct ZoomableBoard: UIViewRepresentable {
         coordinator.lastFocusID = focusID
         coordinator.showedWholeBoard = showsWholeBoard
         coordinator.onTap = tapHandler
+        coordinator.onPinchEnded = pinchHandler
+        coordinator.onCameraChange = onCameraChange
 
         let tap = UITapGestureRecognizer(target: coordinator, action: #selector(Coordinator.handleTap(_:)))
         scrollView.addGestureRecognizer(tap)
@@ -145,7 +168,10 @@ struct ZoomableBoard: UIViewRepresentable {
         coordinator.focus = focus
         coordinator.reduceMotion = reduceMotion
         coordinator.onTap = tapHandler
+        coordinator.onPinchEnded = pinchHandler
+        coordinator.onCameraChange = onCameraChange
         apply(metrics, to: scrollView, coordinator: coordinator)
+        coordinator.reportCamera(of: scrollView)
         // Before it's first on screen there's no frame to work in yet; the
         // intro takes care of where the board starts.
         guard scrollView.wasShown else { return }
@@ -192,6 +218,7 @@ struct ZoomableBoard: UIViewRepresentable {
         scrollView.minimumZoomScale = metrics.minimumZoom
         scrollView.maximumZoomScale = 1
         coordinator.openingZoom = metrics.openingZoom
+        coordinator.metrics = metrics
         if scrollView.zoomScale < metrics.minimumZoom { scrollView.zoomScale = metrics.minimumZoom }
         coordinator.centre(scrollView)
         // The cells changed size on screen already showing the board (the
@@ -217,10 +244,33 @@ struct ZoomableBoard: UIViewRepresentable {
         }
     }
 
+    /// A pinch the player finished: how far out or in it left the board.
+    private var pinchHandler: (PinchResult) -> Void {
+        { [model] result in
+            switch result {
+            case .wholeBoard: model.playerZoomedOut()
+            case .closeUp: model.playerZoomedIn()
+            case .between: break
+            }
+        }
+    }
+
+    /// Where a pinch left the board. Only the lesson, which teaches
+    /// pinching, listens.
+    enum PinchResult {
+        /// All of the board in view.
+        case wholeBoard
+        /// At least halfway from the whole board to the close-up: plainly
+        /// zoomed in, on any board, even one whose whole view is already
+        /// near reading size (the tutorial's 7×7).
+        case closeUp
+        case between
+    }
+
     final class Coordinator: NSObject, UIScrollViewDelegate {
         var host: UIHostingController<HostedBoard>?
         var boardSize: CGSize = .zero
-        var lastFocusID: Int?
+        var lastFocusID: BoardFocusID?
         var showedWholeBoard = false
         /// The latest word to keep in view and motion setting, kept here so
         /// the intro uses them as they are when it runs.
@@ -230,6 +280,16 @@ struct ZoomableBoard: UIViewRepresentable {
         var openingZoom: CGFloat = 1
         /// What a tap on the board does, given the point on the drawn board.
         var onTap: ((CGPoint) -> Void)?
+        var onPinchEnded: ((PinchResult) -> Void)?
+        var onCameraChange: ((BoardCamera) -> Void)?
+        /// The board's sizes, for the camera reports.
+        var metrics: BoardMetrics?
+        /// The last camera reported, so a scroll that doesn't move (UIKit
+        /// calls back on every layout) isn't reported again.
+        private var reportedCamera: BoardCamera?
+        /// The zoom in progress comes from the player's fingers, not from
+        /// the board following a word.
+        private var isPlayerPinching = false
         /// The player has dragged or pinched: from then on the board stays
         /// where they put it unless a new word needs bringing into view.
         private var playerMoved = false
@@ -244,11 +304,53 @@ struct ZoomableBoard: UIViewRepresentable {
 
         func viewForZooming(in scrollView: UIScrollView) -> UIView? { host?.view }
 
-        func scrollViewDidZoom(_ scrollView: UIScrollView) { centre(scrollView) }
+        func scrollViewDidZoom(_ scrollView: UIScrollView) {
+            centre(scrollView)
+            reportCamera(of: scrollView)
+        }
+
+        func scrollViewDidScroll(_ scrollView: UIScrollView) { reportCamera(of: scrollView) }
 
         // Only the player's own gestures call these, not zoom(to:).
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) { playerMoved = true }
-        func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) { playerMoved = true }
+        func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+            playerMoved = true
+            // Checked on the pinch itself as well, so the board's own
+            // animated moves can never count as the player's pinch.
+            let pinch = scrollView.pinchGestureRecognizer?.state
+            isPlayerPinching = pinch == .began || pinch == .changed
+        }
+
+        /// UIKit calls this once the fingers are up and any bounce back
+        /// into the zoom range is over.
+        func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+            guard isPlayerPinching else { return }
+            isPlayerPinching = false
+            let minimum = scrollView.minimumZoomScale
+            let range = scrollView.maximumZoomScale - minimum
+            // Within a tenth of the range of the whole board counts as all
+            // of it: a pinch rarely stops on the exact limit.
+            let share = range > 0 ? (min(max(scale, minimum), scrollView.maximumZoomScale) - minimum) / range : 0
+            if share <= 0.1 {
+                onPinchEnded?(.wholeBoard)
+            } else if share >= 0.5 {
+                onPinchEnded?(.closeUp)
+            } else {
+                onPinchEnded?(.between)
+            }
+        }
+
+        /// Tells the lesson where the board is now. Sent on the next turn of
+        /// the main loop: UIKit scrolls during SwiftUI's own updates (when
+        /// the board is resized), and changing what SwiftUI watches in the
+        /// middle of an update isn't allowed.
+        func reportCamera(of scrollView: UIScrollView) {
+            guard let onCameraChange, let metrics else { return }
+            let camera = BoardCamera(metrics: metrics, scale: scrollView.zoomScale, offset: scrollView.contentOffset)
+            guard camera != reportedCamera else { return }
+            reportedCamera = camera
+            DispatchQueue.main.async { onCameraChange(camera) }
+        }
 
         @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
             guard recognizer.state == .ended, let hostView = host?.view else { return }

@@ -35,7 +35,6 @@ struct BoardGrid: View {
                 accessibilityText: String(localized: "Row \(cell.row + 1), column \(cell.column + 1)", bundle: .appLanguage, locale: .appLanguage),
                 onTap: { model.tapCell(cell) }
             )
-            .spotlight(.cell(cell))
         }
     }
 }
@@ -98,7 +97,6 @@ struct ClueCellView: View {
                 .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
-        .spotlight(.target(.clue(answerID: clue.answerID)))
         // Whole sentences, not "Across" pasted into a template, so each
         // language can phrase them its own way.
         .accessibilityLabel(clue.arrow.direction == .across ? Text("Across clue: \(clue.text)") : Text("Down clue: \(clue.text)"))

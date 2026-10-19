@@ -25,7 +25,7 @@ struct LevelScreen: View {
                     height: geometry.size.height,
                     columns: model.level.columns,
                     rows: model.level.rows,
-                    isZoomable: !model.isTutorial
+                    opensCloseUp: model.isTutorial
                 )
                 // The spacing values come from BoardMetrics, which reserves
                 // exactly this much height when sizing the cells.

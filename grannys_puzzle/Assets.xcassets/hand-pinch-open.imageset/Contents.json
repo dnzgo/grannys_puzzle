@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "hand-pinch-open.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

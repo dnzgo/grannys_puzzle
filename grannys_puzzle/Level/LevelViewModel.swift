@@ -217,13 +217,27 @@ final class LevelViewModel {
     // MARK: - Player actions
     //
     // During the lesson every action first asks the coach, and reports back
-    // after it's done. Actions the lesson never uses (tapping a cell,
-    // erasing) are simply off until it's over.
+    // after it's done. Actions the lesson never uses (erasing) are simply
+    // off until it's over.
 
     func tapCell(_ cell: Coordinate) {
-        guard !isCoaching else { return }
+        let action = TutorialAction.selectCell(cell)
+        guard coachAllows(action) else { return }
         puzzle.select(cell)
         feel(.select)
+        coachSaw(action)
+    }
+
+    /// The player pinched the board out to all of it, or back in to read.
+    /// Zooming is always allowed (it changes nothing on the board); only
+    /// the lesson, which teaches it, takes note.
+    func playerZoomedOut() { lessonSawZoom(.zoomOut) }
+    func playerZoomedIn() { lessonSawZoom(.zoomIn) }
+
+    private func lessonSawZoom(_ action: TutorialAction) {
+        guard isCoaching, coachAllows(action) else { return }
+        feel(.select)
+        coachSaw(action)
     }
 
     func tapClue(answerID: Int) {
@@ -498,18 +512,33 @@ final class LevelViewModel {
     /// Whether her card shows a Next button (she's explaining).
     var tutorialWaitsForNext: Bool { coach?.waitsForNext ?? false }
 
-    /// The one thing the player can tap now.
+    /// The one thing the player should act on now.
     var tutorialTarget: TutorialTarget? { coach?.target(on: puzzle) }
 
-    /// The cells to keep lit (not dimmed) so the player sees letters land.
+    /// Which lesson step this is, while it runs. Each step that points at
+    /// something on the board brings that into view (see BoardViewport).
+    var tutorialStep: Int? { isCoaching ? coach?.stepIndex : nil }
+
+    /// The word to keep lit (not dimmed), clue and cells, so the player
+    /// sees letters land.
+    var tutorialLitAnswerID: Int? { coach?.litAnswerID(on: puzzle) }
+
     var tutorialLitCells: [Coordinate] {
-        guard let id = coach?.litAnswerID(on: puzzle) else { return [] }
-        return level.answers[id].cells
+        tutorialLitAnswerID.map { level.answers[$0].cells } ?? []
     }
 
-    /// The clue to keep lit with those cells.
-    var tutorialLitClue: TutorialTarget? {
-        coach?.litAnswerID(on: puzzle).map { TutorialTarget.clue(answerID: $0) }
+    /// The squares the board should keep in view for this step: the clue
+    /// or square to tap, with the word lit alongside. Nil when the step is
+    /// about something off the board (or the whole of it), so the board
+    /// follows the selected word as usual.
+    var tutorialBoardFocus: [Coordinate]? {
+        guard isCoaching else { return nil }
+        let litWord = tutorialLitAnswerID.map { level.answers[$0].cells + [level.answers[$0].clueCell] } ?? []
+        switch tutorialTarget {
+        case .clue(let id): return level.answers[id].cells + [level.answers[id].clueCell]
+        case .cell(let cell): return [cell] + litWord
+        default: return nil
+        }
     }
 
     func tutorialNext() {
