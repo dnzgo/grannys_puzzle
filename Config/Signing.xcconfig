@@ -1,0 +1,17 @@
+// Who signs the app, and as what. Read by the app target (its base
+// configuration), so these settings live here instead of in
+// project.pbxproj, where each of us changing them kept fighting in git.
+//
+// These are the team's real values, used for TestFlight and the App Store.
+// To build on your own phone with your own team, don't change them here or
+// in Xcode's Team picker (that writes into project.pbxproj again): put
+// your own values in Config/Local.xcconfig, which git ignores. See
+// docs/Signing.md.
+
+DEVELOPMENT_TEAM = 32M7PA8U93
+PRODUCT_BUNDLE_IDENTIFIER = com.bgorkem.grannyscrossword
+CODE_SIGN_ENTITLEMENTS = grannys_puzzle/grannys_puzzle.entitlements
+
+// Last, so whatever it sets wins. The "?" makes it optional: without the
+// file, the values above are used.
+#include? "Local.xcconfig"

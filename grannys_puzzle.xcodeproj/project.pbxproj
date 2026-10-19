@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		540DBB71307858E60067F8F0 /* grannys_puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grannys_puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54A1C0DE30A0000100F00D01 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -46,8 +47,17 @@
 			isa = PBXGroup;
 			children = (
 				540DBB73307858E60067F8F0 /* grannys_puzzle */,
+				54A1C0DE30A0000100F00D02 /* Config */,
 				540DBB72307858E60067F8F0 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		54A1C0DE30A0000100F00D02 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				54A1C0DE30A0000100F00D01 /* Signing.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		540DBB72307858E60067F8F0 /* Products */ = {
@@ -202,7 +212,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 737WW78VY2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -266,7 +275,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 737WW78VY2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -290,14 +298,13 @@
 		};
 		540DBB7D307858E70067F8F0 /* Debug configuration for PBXNativeTarget "grannys_puzzle" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A1C0DE30A0000100F00D01 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = grannys_puzzle/grannys_puzzle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 32M7PA8U93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/grannys_puzzle-Info.plist";
@@ -316,7 +323,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bgorkem.grannyscrossword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -330,13 +336,12 @@
 		};
 		540DBB7E307858E70067F8F0 /* Release configuration for PBXNativeTarget "grannys_puzzle" */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A1C0DE30A0000100F00D01 /* Signing.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = grannys_puzzle/grannys_puzzle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 32M7PA8U93;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Config/grannys_puzzle-Info.plist";
@@ -355,7 +360,6 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bgorkem.grannyscrossword;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
