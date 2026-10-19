@@ -27,7 +27,7 @@ struct DailyPuzzleButton: View {
 
     private func content(isDone: Bool, secondsLeft: Int) -> some View {
         VStack(spacing: 0) {
-            SecondaryButton(title: isDone ? "Daily puzzle done" : "Daily puzzle", height: height) {
+            SecondaryButton(title: isDone ? "Daily challenge done" : "Daily challenge", height: height) {
                 guard !isDone, !isHeld else { return }
                 action()
             }

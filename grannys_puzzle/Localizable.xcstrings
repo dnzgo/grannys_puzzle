@@ -14,16 +14,6 @@
         }
       }
     },
-    "Come back tomorrow for a new puzzle." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yeni görev yarın!"
-          }
-        }
-      }
-    },
     "correct" : {
       "localizations" : {
         "tr" : {
@@ -34,7 +24,7 @@
         }
       }
     },
-    "Daily puzzle" : {
+    "Daily challenge" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -44,7 +34,7 @@
         }
       }
     },
-    "DAILY PUZZLE" : {
+    "DAILY CHALLENGE" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -54,12 +44,52 @@
         }
       }
     },
-    "Daily puzzle done" : {
+    "Daily challenge done" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Günlük Görev tamamlandı"
+          }
+        }
+      }
+    },
+    "Keep playing" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oynamaya devam et"
+          }
+        }
+      }
+    },
+    "Leave" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çık"
+          }
+        }
+      }
+    },
+    "Leave?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkmak istiyor musun?"
+          }
+        }
+      }
+    },
+    "New challenge tomorrow!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni görev yarın!"
           }
         }
       }
@@ -90,6 +120,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kalan süre"
+          }
+        }
+      }
+    },
+    "Your time and board will reset." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süren ve tahtan sıfırlanacak."
           }
         }
       }

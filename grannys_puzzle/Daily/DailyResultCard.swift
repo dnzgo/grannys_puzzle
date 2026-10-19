@@ -12,7 +12,7 @@ struct DailyResultCard: View {
 
     var body: some View {
         LevelEndPanel {
-            Text("Daily puzzle")
+            Text("Daily challenge")
                 .font(.system(size: 28, weight: .heavy, design: .rounded))
                 .foregroundStyle(Theme.ink)
                 .accessibilityAddTraits(.isHeader)
@@ -27,7 +27,7 @@ struct DailyResultCard: View {
                 .monospacedDigit()
                 .foregroundStyle(Theme.secondaryInk)
 
-            Text("Come back tomorrow for a new puzzle.")
+            Text("New challenge tomorrow!")
                 .font(.system(size: 15, weight: .medium))
                 .foregroundStyle(Theme.secondaryInk)
                 .multilineTextAlignment(.center)

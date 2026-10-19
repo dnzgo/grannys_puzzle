@@ -75,9 +75,17 @@ struct LevelScreen: View {
                         SettingsCard(context: .level(restart: restartOption)) { showsSettings = false }
                             .transition(.opacity)
                     }
+                    if model.confirmsLeavingDaily {
+                        LeaveDailyCard(
+                            onKeepPlaying: model.keepPlayingDaily,
+                            onLeave: { withAnimation(.easeInOut(duration: 0.25)) { model.leaveDaily() } }
+                        )
+                        .transition(.opacity)
+                    }
                 }
                 .animation(.easeOut(duration: 0.25), value: model.showsLevelEnd)
                 .animation(.easeOut(duration: 0.2), value: showsSettings)
+                .animation(.easeOut(duration: 0.2), value: model.confirmsLeavingDaily)
             }
             BannerAdSlot()
         }

@@ -406,7 +406,25 @@ final class LevelViewModel {
 
     /// Back to the home screen. The board is already saved (every letter
     /// change saves it), so coming back picks up where the player left off.
+    /// Not so the daily, which starts over: leaving it mid-way asks first.
     func goHome() {
+        if isDaily, !puzzle.isSubmitted {
+            confirmsLeavingDaily = true
+            return
+        }
+        host?.goHome()
+    }
+
+    /// The "Leave? Your time and board will reset" card is up.
+    private(set) var confirmsLeavingDaily = false
+
+    func keepPlayingDaily() {
+        confirmsLeavingDaily = false
+    }
+
+    /// Confirmed on the card: the daily's go is thrown away (see DailyHost).
+    func leaveDaily() {
+        confirmsLeavingDaily = false
         host?.goHome()
     }
 

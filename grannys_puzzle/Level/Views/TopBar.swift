@@ -92,7 +92,7 @@ private struct CluePill: View {
             Text("HOW TO PLAY")
         } else if let start = model.dailyStartedAt {
             HStack(spacing: 6) {
-                Text("DAILY PUZZLE")
+                Text("DAILY CHALLENGE")
                 DailyStopwatch(start: start, finalSeconds: model.dailyResult?.seconds)
             }
         } else {
