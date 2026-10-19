@@ -68,6 +68,20 @@ enum GrandmaLines {
         }
     }
 
+    /// The streak chip tapped, with today solved.
+    static func streakKept(_ days: Int) -> String {
+        String(localized: "That's \(days) days in a row, dear! See you tomorrow.", bundle: .appLanguage, locale: .appLanguage)
+    }
+
+    /// The streak chip tapped, with today still to solve.
+    static func streakAtRisk(_ days: Int) -> String {
+        String(localized: "Solve a puzzle today to keep your \(days)-day streak!", bundle: .appLanguage, locale: .appLanguage)
+    }
+
+    /// The streak chip tapped, with no streak going.
+    static var streakStart: String { String(localized: "Solve a puzzle every day to build a streak!", bundle: .appLanguage, locale: .appLanguage) }
+    static var streakSaved: String { String(localized: "Your streak is safe, dear! Let's keep it going.", bundle: .appLanguage, locale: .appLanguage) }
+
     /// After Restart from the level's settings.
     static var freshStart: String { String(localized: "A fresh start, dear! Take your time.", bundle: .appLanguage, locale: .appLanguage) }
     static var jarReady: String { String(localized: "My jar has a treat for you today, dear!", bundle: .appLanguage, locale: .appLanguage) }

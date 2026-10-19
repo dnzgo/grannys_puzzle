@@ -73,6 +73,17 @@ extension AnalyticsEvent {
         ])
     }
 
+    /// A video watched (or not finished) to save a streak that missed a
+    /// day. Same event as the helper videos, so one report shows which
+    /// rewards players watch for; `streak_days` says how much was at stake.
+    static func streakSaveVideo(days: Int, earned: Bool) -> AnalyticsEvent {
+        AnalyticsEvent("rewarded_video", [
+            "reward": .string("streak_save"),
+            "earned": .bool(earned),
+            "streak_days": .int(days),
+        ])
+    }
+
     /// An interstitial actually shown between levels.
     static func adBreak(afterLevel level: Int) -> AnalyticsEvent {
         AnalyticsEvent("ad_break", ["level": .int(level)])

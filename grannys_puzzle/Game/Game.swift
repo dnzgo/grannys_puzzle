@@ -391,10 +391,45 @@ final class Game {
     }
 
     /// The daily board was submitted: its result and time, saved at once.
+    /// Submitting it counts as a day solved for the streak, whatever the
+    /// score: there's no Try again to pass it on.
     func finishDaily(_ result: LevelResult) -> DailyResult? {
         var finished: DailyResult?
-        update { finished = $0.finishDaily(result, now: .now) }
+        update { progress in
+            finished = progress.finishDaily(result, now: .now)
+            if finished != nil { progress.recordStreakDay(today: JarDay.number()) }
+        }
         return finished
+    }
+
+    // MARK: - Play streak
+
+    func streakStatus(today: Int) -> StreakStatus {
+        progress.streakStatus(today: today)
+    }
+
+    /// A video is loaded to save a streak with. Not limited by the daily
+    /// cap on helper videos: losing a long streak is the moment a player is
+    /// most likely to give up on the game, and this is the one way back.
+    var canWatchAdToSaveStreak: Bool {
+        ads?.isRewardedReady ?? false
+    }
+
+    /// Plays a rewarded video and, if it's watched to the end, saves the
+    /// streak that missed yesterday. Returns whether it was saved.
+    func watchAdToSaveStreak() async -> Bool {
+        guard let ads, case .canSave(let days) = progress.streakStatus(today: JarDay.number()) else { return false }
+        let earned = await ads.showRewarded()
+        events?.log(.streakSaveVideo(days: days, earned: earned))
+        guard earned else { return false }
+        // The day is read again: the video may have run past midnight.
+        var saved = false
+        update { saved = $0.saveStreak(today: JarDay.number()) }
+        return saved
+    }
+
+    func declineStreakSave() {
+        update { $0.declineStreakSave(today: JarDay.number()) }
     }
 
     /// Back home from the daily. Unsubmitted, the go is thrown away.
@@ -510,6 +545,8 @@ extension Game: LevelHost {
             earned = $0.record(result, using: &generator)
             // Judged boards are finished: a pass moves on, a fail starts over.
             $0.board = nil
+            // A pass is a day solved; a fail isn't, until it's passed.
+            if result.passed { $0.recordStreakDay(today: JarDay.number()) }
         }
 
         let now = ContinuousClock.now

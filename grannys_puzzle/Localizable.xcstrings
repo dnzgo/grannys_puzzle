@@ -64,6 +64,16 @@
         }
       }
     },
+    "Day streak" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gün serisi"
+          }
+        }
+      }
+    },
     "Keep playing" : {
       "localizations" : {
         "tr" : {
@@ -94,12 +104,90 @@
         }
       }
     },
+    "Let it go" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boş ver"
+          }
+        }
+      }
+    },
     "New challenge tomorrow!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeni görev yarın!"
+          }
+        }
+      }
+    },
+    "No video ready just now. Try again in a moment." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şu an hazır video yok. Biraz sonra tekrar dene."
+          }
+        }
+      }
+    },
+    "Save your streak?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serini kurtarmak ister misin?"
+          }
+        }
+      }
+    },
+    "Solve a puzzle every day to build a streak!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her gün bir bulmaca çöz, serin büyüsün!"
+          }
+        }
+      }
+    },
+    "Solve a puzzle today to keep your %lld-day streak!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serini korumak için bugün bir bulmaca çöz!"
+          }
+        }
+      }
+    },
+    "That's %lld days in a row, dear! See you tomorrow." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Your streak has begun, dear! See you tomorrow."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "That's %lld days in a row, dear! See you tomorrow."
+                }
+              }
+            }
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üst üste %lld gün, canım! Yarın görüşürüz."
           }
         }
       }
@@ -130,6 +218,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kalan süre"
+          }
+        }
+      }
+    },
+    "Watch video" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video izle"
+          }
+        }
+      }
+    },
+    "You missed yesterday. Watch a short video to keep your %lld-day streak." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dün oynamadın. %lld günlük serini korumak için kısa bir video izle."
+          }
+        }
+      }
+    },
+    "Your streak is safe, dear! Let's keep it going." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serin güvende canım! Hadi devam edelim."
           }
         }
       }

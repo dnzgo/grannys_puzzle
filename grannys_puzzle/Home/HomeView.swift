@@ -29,6 +29,12 @@ struct HomeView: View {
     @State private var setPrize: SetPrize?
     /// The daily treats card is up.
     @State private var showsStreak = false
+    /// The card offering to save a streak that missed yesterday is up.
+    @State private var showsStreakSave = false
+    /// Its video is playing.
+    @State private var isSavingStreak = false
+    /// Its last try had no video to show.
+    @State private var streakVideoMissing = false
     /// An opened jar's helpers on their way to the counters.
     @State private var flight: PrizeFlight?
     /// Helpers from a jar that haven't landed yet, by kind. The counters
@@ -213,6 +219,20 @@ struct HomeView: View {
         }
         .animation(.easeOut(duration: 0.2), value: showsStreak)
         .overlay {
+            if showsStreakSave, let days = streakToSave {
+                StreakSaveCard(
+                    days: days,
+                    isWatching: isSavingStreak,
+                    noVideo: streakVideoMissing,
+                    onWatch: watchVideoToSaveStreak,
+                    onLetGo: letStreakGo,
+                    onClose: { showsStreakSave = false }
+                )
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: showsStreakSave)
+        .overlay {
             if asksAboutReminders {
                 ReminderAskCard(
                     onYes: { answerReminderQuestion(yes: true) },
@@ -238,7 +258,8 @@ struct HomeView: View {
             // Gone already (Play tapped straight away): today's one automatic
             // showing mustn't be used up on a screen nobody sees.
             guard !Task.isCancelled else { return }
-            showStreakIfFirstVisitToday()
+            // A streak about to be lost comes first: it's today or never.
+            if !offerStreakSaveIfNeeded() { showStreakIfFirstVisitToday() }
         }
         // Grandma's reminder question comes right after a daily jar is
         // collected (see collectDailyJar). A player who passes enough levels
@@ -266,13 +287,72 @@ struct HomeView: View {
             today = JarDay.number()
         }
         // A new day while the app stays open.
-        .onChange(of: today) { showStreakIfFirstVisitToday() }
+        .onChange(of: today) {
+            if !offerStreakSaveIfNeeded() { showStreakIfFirstVisitToday() }
+        }
     }
 
     private var openingLine: String {
         if game.nextLevelNumber == nil { return GrandmaLines.allLevelsDone }
         if dailyJarReady { return GrandmaLines.jarReady }
         return GrandmaLines.greeting()
+    }
+
+    // MARK: - Play streak
+
+    /// The days a save would keep, when yesterday was missed.
+    private var streakToSave: Int? {
+        if case .canSave(let days) = game.streakStatus(today: today) { return days }
+        return nil
+    }
+
+    /// Opens the save card if there's a streak to save and nothing else is
+    /// up. Returns whether it did, so the daily treats card can wait.
+    @discardableResult
+    private func offerStreakSaveIfNeeded() -> Bool {
+        guard streakToSave != nil, !isShowingSomethingElse else { return false }
+        streakVideoMissing = false
+        showsStreakSave = true
+        return true
+    }
+
+    private func watchVideoToSaveStreak() {
+        guard !isSavingStreak else { return }
+        guard game.canWatchAdToSaveStreak else {
+            streakVideoMissing = true
+            return
+        }
+        isSavingStreak = true
+        Task {
+            let saved = await game.watchAdToSaveStreak()
+            isSavingStreak = false
+            // Watched to the end or not, the card stays up unless it worked,
+            // so the player can try again.
+            guard saved else { return }
+            showsStreakSave = false
+            feel(.helperEarned)
+            speech.say(GrandmaLines.streakSaved)
+            try? await Task.sleep(for: .seconds(0.6))
+            showStreakIfFirstVisitToday()
+        }
+    }
+
+    private func letStreakGo() {
+        game.declineStreakSave()
+        showsStreakSave = false
+        Task {
+            try? await Task.sleep(for: .seconds(0.4))
+            showStreakIfFirstVisitToday()
+        }
+    }
+
+    /// What grandma says about the streak when its chip is tapped.
+    private func sayStreakLine() {
+        switch game.streakStatus(today: today) {
+        case .active(let days, solvedToday: true): speech.say(GrandmaLines.streakKept(days))
+        case .active(let days, solvedToday: false): speech.say(GrandmaLines.streakAtRisk(days))
+        case .none, .canSave: speech.say(GrandmaLines.streakStart)
+        }
     }
 
     // MARK: - Jars
@@ -376,6 +456,7 @@ struct HomeView: View {
         HStack(spacing: 8) {
             counter(.cat, label: "Cat hints")
             counter(.grandma, label: "Grandma helpers")
+            StreakChip(status: game.streakStatus(today: today), action: sayStreakLine)
             Spacer()
             // The wardrobe of knitted things opens from the wardrobe in the
             // scene, so the top row only needs settings.
@@ -399,7 +480,7 @@ struct HomeView: View {
     /// A sheet, card or moment is up, which grandma's question and the
     /// streak card mustn't cover.
     private var isShowingSomethingElse: Bool {
-        showsYarnBag || showsWardrobe || showsSettings || showsStreak || asksAboutReminders
+        showsYarnBag || showsWardrobe || showsSettings || showsStreak || showsStreakSave || asksAboutReminders
             || isOpeningJar || jarIsOpen || flight != nil || knittingItem != nil || setPrize != nil
     }
 

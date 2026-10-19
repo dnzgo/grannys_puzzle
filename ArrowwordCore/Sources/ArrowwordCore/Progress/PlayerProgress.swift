@@ -56,6 +56,11 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     /// Shared by all languages: there's one daily a day, in the language
     /// being played when it's started.
     public var daily: DailyAttempt?
+    /// The play streak (see PlayStreak.swift): days in a row with something
+    /// solved, the last such day, and the day a save was turned down.
+    public var streakDays: Int
+    public var lastStreakDay: Int?
+    public var streakSaveDeclinedDay: Int?
 
     /// The language being played. Not saved: the app sets it at launch
     /// from the pack it loads (which follows the device language), and
@@ -90,6 +95,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         rewardedAdDay: Int? = nil,
         rewardedAdsThatDay: Int = 0,
         daily: DailyAttempt? = nil,
+        streakDays: Int = 0,
+        lastStreakDay: Int? = nil,
+        streakSaveDeclinedDay: Int? = nil,
         activeLanguage: String = PlayerProgress.legacyLanguage
     ) {
         self.version = version
@@ -107,6 +115,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.rewardedAdDay = rewardedAdDay
         self.rewardedAdsThatDay = rewardedAdsThatDay
         self.daily = daily
+        self.streakDays = streakDays
+        self.lastStreakDay = lastStreakDay
+        self.streakSaveDeclinedDay = streakSaveDeclinedDay
         self.activeLanguage = activeLanguage
     }
 
@@ -115,6 +126,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     private enum CodingKeys: String, CodingKey {
         case version, levelNumbers, hints, grandmas, yarn, wardrobe, collectedSetJars, boards, jarStreak, lastJarDay, jars, tutorialDone
         case rewardedAdDay, rewardedAdsThatDay, daily
+        case streakDays, lastStreakDay, streakSaveDeclinedDay
         // Version 1 only; read when converting, never written.
         case levelNumber, board
     }
@@ -142,6 +154,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         rewardedAdDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdDay)
         rewardedAdsThatDay = try container.decodeIfPresent(Int.self, forKey: .rewardedAdsThatDay) ?? 0
         daily = try container.decodeIfPresent(DailyAttempt.self, forKey: .daily)
+        streakDays = try container.decodeIfPresent(Int.self, forKey: .streakDays) ?? 0
+        lastStreakDay = try container.decodeIfPresent(Int.self, forKey: .lastStreakDay)
+        streakSaveDeclinedDay = try container.decodeIfPresent(Int.self, forKey: .streakSaveDeclinedDay)
 
         if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
             self.levelNumbers = levelNumbers
@@ -177,6 +192,9 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encodeIfPresent(rewardedAdDay, forKey: .rewardedAdDay)
         try container.encode(rewardedAdsThatDay, forKey: .rewardedAdsThatDay)
         try container.encodeIfPresent(daily, forKey: .daily)
+        try container.encode(streakDays, forKey: .streakDays)
+        try container.encodeIfPresent(lastStreakDay, forKey: .lastStreakDay)
+        try container.encodeIfPresent(streakSaveDeclinedDay, forKey: .streakSaveDeclinedDay)
     }
 
     /// What a brand-new player starts with.
