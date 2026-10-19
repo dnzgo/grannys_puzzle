@@ -21,7 +21,7 @@ public struct KnittingCatalog: Sendable {
         (.scarf, 6),
         (.hat, 8),
         (.sweater, 10),
-        (.mittens, 12),
+        (.booties, 12),
         (.blanket, 15),
     ]
 

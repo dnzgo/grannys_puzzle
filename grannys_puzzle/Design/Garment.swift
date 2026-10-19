@@ -7,22 +7,13 @@ extension GarmentKind {
         case .scarf: String(localized: "Scarf", bundle: .appLanguage, locale: .appLanguage)
         case .hat: String(localized: "Hat", bundle: .appLanguage, locale: .appLanguage)
         case .sweater: String(localized: "Sweater", bundle: .appLanguage, locale: .appLanguage)
-        case .mittens: String(localized: "Mittens", bundle: .appLanguage, locale: .appLanguage)
+        case .booties: String(localized: "Booties", bundle: .appLanguage, locale: .appLanguage)
         case .blanket: String(localized: "Blanket", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 
-    /// Stand-in icons until the garment art exists. Only `GarmentView` uses
-    /// them, so swapping in real images later is a one-place change.
-    fileprivate var placeholderSymbol: String {
-        switch self {
-        case .scarf: "wind"
-        case .hat: "graduationcap.fill"
-        case .sweater: "tshirt.fill"
-        case .mittens: "hand.raised.fill"
-        case .blanket: "bed.double.fill"
-        }
-    }
+    /// The garment's art in the asset catalog, e.g. "garment-scarf".
+    fileprivate var imageName: String { "garment-\(rawValue)" }
 }
 
 extension KnitItem {
@@ -39,21 +30,28 @@ extension KnitItem {
     }
 }
 
-/// A knitted item: a soft card in the yarn's colour with the garment on it.
+/// A knitted item: the garment on a soft white tile, in the yarn's colour.
+///
+/// Like the yarn ball, each garment is drawn once in undyed greys (white
+/// where the light falls, darker in the stitches), and `colorMultiply`
+/// turns it into any yarn colour: a new colour needs no new art.
 struct GarmentView: View {
     let kind: GarmentKind
     let color: YarnColor
     let size: CGFloat
-    /// False draws a pale outline: an item not knitted yet.
+    /// False draws it pale and undyed on a grey tile: not knitted yet.
     var isOwned = true
 
     var body: some View {
         RoundedRectangle(cornerRadius: size * 0.24)
-            .fill(isOwned ? color.tint : Theme.disabledFill)
+            .fill(isOwned ? Theme.surface : Theme.disabledFill)
             .overlay {
-                Image(systemName: kind.placeholderSymbol)
-                    .font(.system(size: size * 0.42, weight: .semibold))
-                    .foregroundStyle(isOwned ? Color.white : Theme.usedUpKey)
+                Image(kind.imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(size * 0.07)
+                    .colorMultiply(isOwned ? color.tint : .white)
+                    .opacity(isOwned ? 1 : 0.45)
             }
             .frame(width: size, height: size)
             // Not hidden from VoiceOver here: callers decide. Where it's

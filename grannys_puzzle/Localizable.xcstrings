@@ -14,6 +14,16 @@
         }
       }
     },
+    "Booties" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patik"
+          }
+        }
+      }
+    },
     "correct" : {
       "localizations" : {
         "tr" : {
@@ -1234,16 +1244,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Çok güzel! Şimdi sonraki kelimeye başlamak için bu ipucuna dokun."
-          }
-        }
-      }
-    },
-    "Mittens" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eldiven"
           }
         }
       }

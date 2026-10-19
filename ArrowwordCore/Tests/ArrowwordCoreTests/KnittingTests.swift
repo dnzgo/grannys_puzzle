@@ -25,7 +25,7 @@ final class KnittingCatalogTests: XCTestCase {
         XCTAssertEqual(price(.scarf), 6)
         XCTAssertEqual(price(.hat), 8)
         XCTAssertEqual(price(.sweater), 10)
-        XCTAssertEqual(price(.mittens), 12)
+        XCTAssertEqual(price(.booties), 12)
         XCTAssertEqual(price(.blanket), 15)
         // The pacing note in KnittingCatalog quotes this total.
         XCTAssertEqual(catalog.items(for: .cat).map(\.cost).reduce(0, +), 204)

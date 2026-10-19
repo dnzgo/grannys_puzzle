@@ -13,7 +13,9 @@ public enum GarmentKind: String, Codable, CaseIterable, Sendable {
     case scarf
     case hat
     case sweater
-    case mittens
+    /// The cat's: a set of four, one per paw. (Mittens before release;
+    /// renamed while no save could hold the old ids yet.)
+    case booties
     case blanket
 }
 
