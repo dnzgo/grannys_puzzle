@@ -18,6 +18,13 @@ struct grannys_puzzleApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(reminderTaps: reminderTaps)
+                // A game is the whole screen: no clock, battery or signal
+                // over grandma's room. On phones with a notch or Dynamic
+                // Island the space stays reserved, so the layout doesn't
+                // move; on an SE the screen gains the bar's 20pt. The home
+                // indicator stays: hiding it makes swiping home harder, and
+                // players expect it.
+                .statusBarHidden()
         }
     }
 }

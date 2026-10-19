@@ -61,8 +61,9 @@ enum BoardFocusID: Hashable {
 
 /// A board larger than its frame, seen through it like a map: pinch to zoom
 /// between the whole board and a close-up of 5×5 cells (see BoardMetrics),
-/// drag to move around. It can't be dragged away, and when zoomed out
-/// smaller than the frame it stays centred.
+/// drag to move around. Any board can be dragged, even one that fits, but
+/// at most half of it out of the frame, and it springs back when let go;
+/// zoomed out smaller than the frame, it rests centred.
 ///
 /// Built on UIScrollView rather than SwiftUI gestures: it already zooms
 /// around the fingers and keeps the content in bounds with a natural
@@ -118,6 +119,10 @@ struct ZoomableBoard: UIViewRepresentable {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.bouncesZoom = true
+        // Every board can be slid, even one that fits the frame, and springs
+        // back when let go; `limitSlide` keeps the slide to half the board.
+        scrollView.alwaysBounceHorizontal = true
+        scrollView.alwaysBounceVertical = true
         scrollView.contentInsetAdjustmentBehavior = .never
         // The frame's edge: what's past it is hidden.
         scrollView.layer.cornerRadius = BoardViewport.paneCornerRadius
@@ -309,7 +314,37 @@ struct ZoomableBoard: UIViewRepresentable {
             reportCamera(of: scrollView)
         }
 
-        func scrollViewDidScroll(_ scrollView: UIScrollView) { reportCamera(of: scrollView) }
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            limitSlide(scrollView)
+            reportCamera(of: scrollView)
+        }
+
+        /// Sliding past the board's edges is allowed (UIKit's bounce, which
+        /// springs back on release) but only so far: half the board as it
+        /// looks now, or half the frame if that's less, so the frame is
+        /// never more than half empty. UIKit's own pull has no hard stop,
+        /// so the offset is held at the limit here.
+        ///
+        /// Only while the player slides: the board's own animated moves and
+        /// pinches (whose bounce UIKit handles) are left alone.
+        private func limitSlide(_ scrollView: UIScrollView) {
+            guard scrollView.isDragging || scrollView.isDecelerating,
+                  !scrollView.isZooming, !scrollView.isZoomBouncing
+            else { return }
+            // contentSize is the board at the current zoom.
+            let size = scrollView.contentSize
+            let frame = scrollView.bounds.size
+            let inset = scrollView.contentInset
+            func limited(_ offset: CGFloat, low: CGFloat, high: CGFloat, slack: CGFloat) -> CGFloat {
+                min(max(offset, low - slack), max(low, high) + slack)
+            }
+            let offset = scrollView.contentOffset
+            let held = CGPoint(
+                x: limited(offset.x, low: -inset.left, high: size.width + inset.right - frame.width, slack: min(size.width, frame.width) / 2),
+                y: limited(offset.y, low: -inset.top, high: size.height + inset.bottom - frame.height, slack: min(size.height, frame.height) / 2)
+            )
+            if held != offset { scrollView.contentOffset = held }
+        }
 
         // Only the player's own gestures call these, not zoom(to:).
         func scrollViewWillBeginDragging(_ scrollView: UIScrollView) { playerMoved = true }
