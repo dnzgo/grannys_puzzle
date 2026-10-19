@@ -76,6 +76,10 @@ struct HomeView: View {
             topRow
                 .padding(.horizontal, Theme.sidePadding)
                 .padding(.top, 4)
+                // Above the scene: on short screens the wardrobe's top
+                // reaches up past the stage into this row, and the stage,
+                // coming later, would otherwise be drawn over the buttons.
+                .zIndex(1)
 
             HomeStage(
                 progress: game.progress,

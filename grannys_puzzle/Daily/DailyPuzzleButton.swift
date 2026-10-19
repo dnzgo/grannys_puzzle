@@ -27,17 +27,26 @@ struct DailyPuzzleButton: View {
 
     private func content(isDone: Bool, secondsLeft: Int) -> some View {
         VStack(spacing: 0) {
-            SecondaryButton(title: isDone ? "Daily puzzle done" : "Daily puzzle", height: height, action: action)
-                .disabled(isDone || isHeld)
-                // Done for today: still there, so the player knows it'll be
-                // back, but plainly not to be tapped.
-                .opacity(isDone ? 0.5 : 1)
-            countdownTab(secondsLeft: secondsLeft)
+            SecondaryButton(title: isDone ? "Daily puzzle done" : "Daily puzzle", height: height) {
+                guard !isDone, !isHeld else { return }
+                action()
+            }
+            // Not `.disabled`: a disabled button is dimmed again by iOS on top
+            // of our fade, and its outline would no longer match the tab.
+            // Taps are turned off instead, and the fade is ours alone.
+            .allowsHitTesting(!isDone && !isHeld)
+            // Done for today: still there, so the player knows it'll be
+            // back, but plainly not to be tapped.
+            .opacity(Self.opacity(isDone: isDone))
+            countdownTab(secondsLeft: secondsLeft, isDone: isDone)
         }
     }
 
     /// Flat on top and tucked under the button, rounded below, like a tab.
-    private func countdownTab(secondsLeft: Int) -> some View {
+    /// Its fill is the button's outline colour, faded by the same amount
+    /// when done, so the two always match; its time stays solid white:
+    /// still worth reading, since it says when the next puzzle comes.
+    private func countdownTab(secondsLeft: Int, isDone: Bool) -> some View {
         let clock = DailyFormat.clock(seconds: secondsLeft)
         return HStack(spacing: 5) {
             Image(systemName: "stopwatch.fill")
@@ -50,12 +59,14 @@ struct DailyPuzzleButton: View {
         .padding(.vertical, 4)
         .background(
             UnevenRoundedRectangle(bottomLeadingRadius: 12, bottomTrailingRadius: 12)
-                .fill(Theme.secondary)
+                .fill(Theme.secondary.opacity(Self.opacity(isDone: isDone)))
         )
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text("Time left"))
         .accessibilityValue(Text(verbatim: clock))
     }
+
+    private static func opacity(isDone: Bool) -> Double { isDone ? 0.5 : 1 }
 
     private static func isDone(_ status: DailyStatus) -> Bool {
         if case .done = status { return true }
