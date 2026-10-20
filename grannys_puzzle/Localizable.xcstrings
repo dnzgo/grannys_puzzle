@@ -621,6 +621,16 @@
         }
       }
     },
+    "Achievements" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başarımlar"
+          }
+        }
+      }
+    },
     "Acknowledgements" : {
       "localizations" : {
         "tr" : {

@@ -12,18 +12,29 @@ a new ID.
 ## How progress is counted
 
 - Progress comes from the saved player progress, not from single events:
-  the game works out how far along every achievement is and reports all of
-  them (after a level, a daily, knitting, and when the player signs in).
+  the game works out how far along every achievement is
+  (`Achievements.progress` in ArrowwordCore) after every saved change and
+  at sign-in, and sends Game Center whatever moved forward
+  (`GameCenter.swift`).
   Game Center keeps the highest value, so reporting again is harmless and
   progress made while offline or signed out catches up later.
-- **A solved word**: at Submit, every letter of the word is right. Words
-  grandma solved don't count; words the cat helped with do. Words made only
-  of starter letters don't count.
+- **A solved word**: at Submit, every letter of the word is right and the
+  player typed at least one of them. So a word grandma (or the cat) filled
+  in alone doesn't count, one the cat helped with does, and one made only of
+  starter letters doesn't. Counted on passed levels (a failed board is
+  played again, so its words would count twice) and on every daily.
+  (`LevelResult.solvedWords`.)
 - **Levels** are counted per language and added up (the tutorial isn't a
   level). **No help** means no cat and no grandma on that level.
 - **Streak** is the longest play streak ever reached (the flame on the home
   screen), so losing a streak later never takes an achievement away.
 - **Dailies** are daily challenges submitted, on any days.
+- The totals that can't be read off the rest of the progress are kept in
+  `PlayerProgress.stats` (`PlayStats`). A test checks this table's IDs
+  against `Achievements.all`, in order.
+- Players sign in after the lesson (Apple shows its own screen, once).
+  Settings → Achievements opens Apple's achievements screen, and only shows
+  while signed in.
 
 ## The list
 

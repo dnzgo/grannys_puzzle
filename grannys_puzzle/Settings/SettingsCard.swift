@@ -10,8 +10,8 @@ import NotifyKit
 ///
 /// The same switches everywhere (music, sounds, haptics, grandma's notes),
 /// then what belongs to where it was opened:
-/// - from home: language, the lesson, feedback, the legal pages, credits
-///   and the version;
+/// - from home: language, the lesson, achievements (when signed in to Game
+///   Center), feedback, the legal pages, credits and the version;
 /// - from a level: feedback and Restart, for this board. No language
 ///   switch, which would swap the board for the other language's level
 ///   mid-solve, and nothing about the app as a whole.
@@ -74,6 +74,8 @@ struct SettingsCard: View {
     @Environment(AdsController.self) private var ads: AdsController?
     /// Nil in previews.
     @Environment(Reminders.self) private var reminders: Reminders?
+    /// Nil in previews.
+    @Environment(GameCenter.self) private var gameCenter: GameCenter?
 
     private let buttonHeight: CGFloat = 50
 
@@ -116,6 +118,14 @@ struct SettingsCard: View {
                 SecondaryButton(title: "How to play", height: buttonHeight) {
                     onClose()
                     onHowToPlay()
+                }
+                // Apple's own screen: Game Center's list can't be drawn by
+                // the game. Only while signed in, since it can't open
+                // otherwise (signing in happens in the Settings app then).
+                if let gameCenter, gameCenter.isSignedIn {
+                    SecondaryButton(title: "Achievements", height: buttonHeight) {
+                        gameCenter.showAchievements()
+                    }
                 }
                 feedbackButton
                 legalLinks

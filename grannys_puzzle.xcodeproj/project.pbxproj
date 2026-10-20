@@ -52,20 +52,20 @@
 			);
 			sourceTree = "<group>";
 		};
-		54A1C0DE30A0000100F00D02 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				54A1C0DE30A0000100F00D01 /* Signing.xcconfig */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		540DBB72307858E60067F8F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				540DBB71307858E60067F8F0 /* grannys_puzzle.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		54A1C0DE30A0000100F00D02 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				54A1C0DE30A0000100F00D01 /* Signing.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

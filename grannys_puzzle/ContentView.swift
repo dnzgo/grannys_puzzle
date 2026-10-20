@@ -27,6 +27,8 @@ struct ContentView: View {
                 .environment(game.ads)
                 // Settings' reminder switch reads it the same way.
                 .environment(game.reminders)
+                // And its Achievements row, Game Center.
+                .environment(game.gameCenter)
                 // Every `Text` below looks its words up in this locale.
                 .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
                 .onChange(of: languageCode) { _, newCode in
@@ -97,6 +99,7 @@ private enum Startup {
                 store: progressStore(),
                 ads: AdsSetup.makeController(),
                 reminders: Reminders(scheduler: SystemReminderScheduler()),
+                gameCenter: GameCenter(),
                 services: services,
                 loadContent: LevelLoader.content(for:)
             )

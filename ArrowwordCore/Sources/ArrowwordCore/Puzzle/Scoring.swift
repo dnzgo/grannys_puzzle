@@ -31,15 +31,25 @@ public struct LevelResult: Sendable, Equatable {
     /// count as correct); kept because it's the clearest sign of how hard
     /// a level felt, which is what analytics wants to know.
     public let revealedLetters: Int
+    /// Words the player solved: every letter right, and at least one of
+    /// them typed by the player. Words the cat or grandma filled in alone,
+    /// and words made only of starter letters, aren't the player's. Counted
+    /// toward the word achievements.
+    public let solvedWords: Int
+
+    /// Every letter right (a perfect board), whatever the yarn thresholds
+    /// are tuned to.
+    public var isPerfect: Bool { correctLetters == judgedLetters }
 
     public var share: Double {
         judgedLetters == 0 ? 1 : Double(correctLetters) / Double(judgedLetters)
     }
 
-    init(correctLetters: Int, judgedLetters: Int, revealedLetters: Int = 0, rules: ScoringRules) {
+    init(correctLetters: Int, judgedLetters: Int, revealedLetters: Int = 0, solvedWords: Int = 0, rules: ScoringRules) {
         self.correctLetters = correctLetters
         self.judgedLetters = judgedLetters
         self.revealedLetters = revealedLetters
+        self.solvedWords = solvedWords
         let share = judgedLetters == 0 ? 1 : Double(correctLetters) / Double(judgedLetters)
         if share >= rules.threeBallThreshold {
             yarnBalls = 3

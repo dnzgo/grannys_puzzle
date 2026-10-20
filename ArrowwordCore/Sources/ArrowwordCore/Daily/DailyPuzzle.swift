@@ -144,6 +144,7 @@ extension PlayerProgress {
         )
         attempt.result = finished
         daily = attempt
+        stats.recordDaily(result)
         return finished
     }
 }

@@ -247,6 +247,7 @@ public struct PuzzleState: Sendable {
             correctLetters: correctCount,
             judgedLetters: judgedCells.count,
             revealedLetters: revealedCount,
+            solvedWords: solvedWordCount(),
             rules: rules
         )
         result = outcome
@@ -269,6 +270,17 @@ public struct PuzzleState: Sendable {
     }
 
     // MARK: - Private
+
+    /// See `LevelResult.solvedWords`. "Typed by the player" rather than
+    /// "not solved by grandma", because it can be read off the board
+    /// itself, so it holds for a board restored from a save, where who
+    /// revealed which letter isn't kept.
+    private func solvedWordCount() -> Int {
+        level.answers.filter { answer in
+            answer.cells.allSatisfy { entries[$0]?.letter == level.letter(at: $0) }
+                && answer.cells.contains { entries[$0]?.source == .placed }
+        }.count
+    }
 
     private func isEditable(_ cell: Coordinate) -> Bool {
         guard let entry = entries[cell] else { return true }

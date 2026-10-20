@@ -61,6 +61,8 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var streakDays: Int
     public var lastStreakDay: Int?
     public var streakSaveDeclinedDay: Int?
+    /// Totals for the achievements (see PlayStats.swift).
+    public var stats: PlayStats
 
     /// The language being played. Not saved: the app sets it at launch
     /// from the pack it loads (which follows the device language), and
@@ -98,6 +100,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         streakDays: Int = 0,
         lastStreakDay: Int? = nil,
         streakSaveDeclinedDay: Int? = nil,
+        stats: PlayStats = PlayStats(),
         activeLanguage: String = PlayerProgress.legacyLanguage
     ) {
         self.version = version
@@ -118,6 +121,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         self.streakDays = streakDays
         self.lastStreakDay = lastStreakDay
         self.streakSaveDeclinedDay = streakSaveDeclinedDay
+        self.stats = stats
         self.activeLanguage = activeLanguage
     }
 
@@ -127,6 +131,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         case version, levelNumbers, hints, grandmas, yarn, wardrobe, collectedSetJars, boards, jarStreak, lastJarDay, jars, tutorialDone
         case rewardedAdDay, rewardedAdsThatDay, daily
         case streakDays, lastStreakDay, streakSaveDeclinedDay
+        case stats
         // Version 1 only; read when converting, never written.
         case levelNumber, board
     }
@@ -157,6 +162,12 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         streakDays = try container.decodeIfPresent(Int.self, forKey: .streakDays) ?? 0
         lastStreakDay = try container.decodeIfPresent(Int.self, forKey: .lastStreakDay)
         streakSaveDeclinedDay = try container.decodeIfPresent(Int.self, forKey: .streakSaveDeclinedDay)
+        // Saves from before the totals start them at 0 (testers only, the
+        // game isn't out), except the longest streak: the current one is
+        // known, so it's at least that.
+        var stats = try container.decodeIfPresent(PlayStats.self, forKey: .stats) ?? PlayStats()
+        stats.longestStreak = max(stats.longestStreak, streakDays)
+        self.stats = stats
 
         if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
             self.levelNumbers = levelNumbers
@@ -195,6 +206,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encode(streakDays, forKey: .streakDays)
         try container.encodeIfPresent(lastStreakDay, forKey: .lastStreakDay)
         try container.encodeIfPresent(streakSaveDeclinedDay, forKey: .streakSaveDeclinedDay)
+        try container.encode(stats, forKey: .stats)
     }
 
     /// What a brand-new player starts with.
@@ -238,6 +250,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         using generator: inout Generator
     ) -> [YarnColor] {
         guard result.passed else { return [] }
+        stats.recordLevel(result)
         let balls = dropper.draw(result.yarnBalls, given: yarn, using: &generator)
         addYarn(balls)
         levelNumber += 1

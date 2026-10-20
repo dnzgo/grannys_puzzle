@@ -55,6 +55,7 @@ extension PlayerProgress {
             streakDays = 1
         }
         lastStreakDay = today
+        stats.longestStreak = max(stats.longestStreak, streakDays)
         return streakDays
     }
 

@@ -27,6 +27,8 @@ final class Game {
     let ads: AdsController?
     /// Grandma's reminders; nil in previews.
     let reminders: Reminders?
+    /// Nil in previews and tests; see GameCenter.swift.
+    let gameCenter: GameCenter?
     /// The lesson's board in the current language. Nil only if it failed
     /// to load, a build problem that the tests catch; the game then simply
     /// plays without it.
@@ -75,6 +77,7 @@ final class Game {
         store: ProgressStore?,
         ads: AdsController? = nil,
         reminders: Reminders? = nil,
+        gameCenter: GameCenter? = nil,
         catalog: KnittingCatalog = .standard,
         services: AppServices = .none,
         loadContent: ((String) throws -> GameContent)? = nil
@@ -86,6 +89,7 @@ final class Game {
         self.loadContent = loadContent
         self.ads = ads
         self.reminders = reminders
+        self.gameCenter = gameCenter
         self.tutorial = tutorial
         self.dailyPack = daily
         self.catalog = catalog
@@ -322,7 +326,11 @@ final class Game {
     /// launch, rather than from `init`, so creating a `Game` (in a preview,
     /// say) never changes the screen by itself.
     func startTutorialIfNeeded() {
-        if !progress.tutorialDone { startTutorial() }
+        if progress.tutorialDone {
+            signInToGameCenter()
+        } else {
+            startTutorial()
+        }
     }
 
     /// Plays the lesson: on first launch, or again from Settings.
@@ -366,6 +374,9 @@ final class Game {
             update { $0.tutorialDone = true }
         }
         screen = .home
+        // After the lesson rather than at first launch: a new player meets
+        // grandma before Apple's sign-in screen.
+        signInToGameCenter()
     }
 
     // MARK: - Daily puzzle
@@ -491,6 +502,23 @@ final class Game {
     private func update(_ change: (inout PlayerProgress) -> Void) {
         change(&progress)
         save()
+        // Every saved change, rather than picking the moments that matter
+        // (a level, a daily, a knit, a streak day): none can be forgotten,
+        // and Game Center is only sent what moved (see GameCenter.report).
+        reportAchievements()
+    }
+
+    // MARK: - Game Center
+
+    private func signInToGameCenter() {
+        gameCenter?.signIn()
+        // Held until sign-in finishes, then sent: catches up on progress
+        // made while signed out or offline.
+        reportAchievements()
+    }
+
+    private func reportAchievements() {
+        gameCenter?.report(Achievements.progress(for: progress, catalog: catalog))
     }
 
     private func save() {
