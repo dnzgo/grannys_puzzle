@@ -22,6 +22,11 @@ enum Theme {
     static let onPrimary = Color(red: 1.0, green: 1.0, blue: 1.0)
     /// Secondary buttons: border and label only (3.3:1 on the background).
     static let secondary = Color(red: 0.710, green: 0.471, blue: 0.294)
+    /// The daily challenge's colour (its home button and countdown tab): the
+    /// purple of grandma's bow and the app icon, so it reads as a second,
+    /// different way to play beside the orange level button. 4.0:1 on the
+    /// bone background, and white on it 4.2:1.
+    static let daily = Color(hex: 0x8B6BC8)
     /// The tick on a collected day (daily treats). A deep green, so the
     /// white tick on it reads (5.1:1); brighter greens fall below 3:1.
     static let switchOn = Color(hex: 0x2E7D32)

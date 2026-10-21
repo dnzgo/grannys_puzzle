@@ -124,7 +124,7 @@ struct HomeView: View {
             .padding(.horizontal, 58)
             .padding(.bottom, 20)
         }
-        .background(Theme.background.ignoresSafeArea())
+        .background { HomeBackground() }
         // Applied before the flight's overlay, so the overlay shares this
         // space and the jar's and counters' frames are its own coordinates.
         .coordinateSpace(.named(Self.space))
@@ -435,10 +435,10 @@ struct HomeView: View {
         feel(.prizeLanded)
     }
 
-    /// Where a helper lands: on its counter's face.
+    /// Where a helper lands: on its face in the helpers' card.
     private func counterPoint(for face: HelperFace) -> CGPoint {
         guard let frame = counterFrames[face] else { return .zero }
-        return CGPoint(x: frame.minX + 25, y: frame.midY)
+        return CGPoint(x: frame.midX, y: frame.midY)
     }
 
     /// What a counter shows: the player's helpers, less any still flying.
@@ -452,29 +452,38 @@ struct HomeView: View {
         haptic = HapticSignal(event: event, id: hapticCount)
     }
 
+    /// The helpers' card on the left, the streak in the middle, settings on
+    /// the right.
+    ///
+    /// The two sides take equal shares of whatever the streak leaves, so the
+    /// streak stays at the screen's centre however wide the card gets (a
+    /// count passing 100 widens it). Centring the streak in a ZStack over
+    /// the row instead would also centre it, but a wide card could then
+    /// slide under it; here the sides can only shrink into their own share.
     private var topRow: some View {
-        HStack(spacing: 8) {
-            counter(.cat, label: "Cat hints")
-            counter(.grandma, label: "Grandma helpers")
+        // Top-aligned: the card is two rows tall and the streak one, and
+        // their top edges in line read as one row; centred, the streak
+        // would float halfway down the card.
+        HStack(alignment: .top, spacing: 8) {
+            HelperCard(
+                counts: [.grandma: shownCount(of: .grandma), .cat: shownCount(of: .cat)],
+                bumps: landings,
+                onFaceFrame: { face, frame in counterFrames[face] = frame }
+            )
+            .frame(maxWidth: .infinity, alignment: .leading)
+
             StreakChip(status: game.streakStatus(today: today), action: sayStreakLine)
-            Spacer()
+                .fixedSize()
+                .layoutPriority(1)
+
             // The wardrobe of knitted things opens from the wardrobe in the
             // scene, so the top row only needs settings.
             CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
+                .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        .frame(height: BoardMetrics.topBarHeight)
-    }
-
-    private func counter(_ face: HelperFace, label: LocalizedStringKey) -> some View {
-        // Copied into a local so the geometry closure, which SwiftUI may run
-        // off the main actor, captures a plain string (as in Spotlight).
-        let space = Self.space
-        return HelperCountChip(face: face, count: shownCount(of: face), bumps: landings[face, default: 0], label: label)
-            .onGeometryChange(for: CGRect.self) { proxy in
-                proxy.frame(in: .named(space))
-            } action: { frame in
-                counterFrames[face] = frame
-            }
+        // At least the level screen's top bar, so the scene below starts at
+        // the same height; the two-row card may make it a little taller.
+        .frame(minHeight: BoardMetrics.topBarHeight)
     }
 
     /// A sheet, card or moment is up, which grandma's question and the
@@ -535,7 +544,7 @@ struct HomeView: View {
     @ViewBuilder
     private var playButton: some View {
         if let number = game.nextLevelNumber {
-            PrimaryButton(title: "Level \(number)", height: Self.buttonHeight) {
+            HomeButton(title: "Level \(number)", accent: Theme.primary, height: Self.buttonHeight) {
                 withAnimation(.easeInOut(duration: 0.25)) { game.play() }
             }
             // Not while a jar is shaking open: leaving then would open it
@@ -549,6 +558,28 @@ struct HomeView: View {
                 .frame(height: Self.buttonHeight)
                 .overlay(Capsule().strokeBorder(Theme.secondary, lineWidth: 2))
         }
+    }
+}
+
+// MARK: - The background
+
+/// The room picture behind the home screen: window, floor and rug. The
+/// scene's furniture and characters are separate images placed on top
+/// (HomeStage), so they can be tapped and animated on their own.
+private struct HomeBackground: View {
+    var body: some View {
+        // Measured over the whole screen, safe areas included, so the
+        // picture reaches every edge. Pinned to the bottom: the floor must
+        // meet the bottom edge, and on a tall screen it's the top (the
+        // ceiling) that's cut instead.
+        GeometryReader { proxy in
+            Image("home-background")
+                .resizable()
+                .scaledToFill()
+                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .bottom)
+                .clipped()
+        }
+        .ignoresSafeArea()
     }
 }
 
@@ -591,18 +622,14 @@ private struct HomeStage: View {
             let at = { (x: CGFloat, y: CGFloat) in CGPoint(x: origin.x + x * side, y: origin.y + y * side) }
 
             ZStack {
-                // Back to front, like layers of a painting: the floor, the
+                // Back to front, like layers of a painting (the room picture
+                // behind, with its floor and rug, is HomeBackground): the
                 // wardrobe at the back on the right (running off the edge, as
                 // a room does), the yarn bag tucked behind grandma's chair on
                 // the right, grandma, the side table with the jars at the
                 // front left, and the cat's bed in front of her.
                 // Measured from the agreed mock-up of the real art (positions
                 // past 1, or a width running off screen, are on purpose).
-                Ellipse()
-                    .fill(Theme.clueCell)
-                    .frame(width: side * 1.0, height: side * 0.26)
-                    .position(at(0.5, 1.06))
-
                 WardrobeView(width: side * 0.623, hasJarWaiting: setJarWaiting, action: onWardrobe)
                     .position(at(0.896, 0.411))
 
@@ -889,35 +916,70 @@ private struct NudgeTag: View {
     }
 }
 
-/// A small pill showing how many of a helper the player has.
-private struct HelperCountChip: View {
-    let face: HelperFace
-    let count: Int
-    /// Increased each time a helper from a jar lands here: a quick bump.
-    let bumps: Int
-    let label: LocalizedStringKey
+/// How many of each helper the player has, in one card: grandma above
+/// the cat, each face with its count.
+///
+/// The card sizes itself to its longest count, so it grows rather than
+/// clipping as counts pass 99 or 999. The faces share one column, and so
+/// the counts start in line however many digits each has.
+private struct HelperCard: View {
+    let counts: [HelperFace: Int]
+    /// Increased each time a helper from a jar lands on a face: a quick bump.
+    let bumps: [HelperFace: Int]
+    /// Reports where a face is in the home screen's space, which is where an
+    /// opened jar's helpers fly to.
+    let onFaceFrame: (HelperFace, CGRect) -> Void
+
+    /// The same size as the faces on the old separate counters.
+    private static let faceSize: CGFloat = 26
 
     var body: some View {
-        HStack(spacing: 6) {
-            HelperFaceImage(face: face, size: 26)
+        VStack(alignment: .leading, spacing: 2) {
+            row(.grandma, label: "Grandma helpers")
+            row(.cat, label: "Cat hints")
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 6)
+        .background(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(Theme.surface)
+                .shadow(color: .black.opacity(0.06), radius: 1, y: 1)
+        )
+    }
+
+    private func row(_ face: HelperFace, label: LocalizedStringKey) -> some View {
+        let count = counts[face, default: 0]
+        // Copied into a local so the geometry closure, which SwiftUI may run
+        // off the main actor, captures a plain string (as in Spotlight).
+        let space = HomeView.space
+        return HStack(spacing: 6) {
+            HelperFaceImage(face: face, size: Self.faceSize)
+                .onGeometryChange(for: CGRect.self) { proxy in
+                    proxy.frame(in: .named(space))
+                } action: { frame in
+                    onFaceFrame(face, frame)
+                }
             Text("\(count)")
                 .font(.system(size: 16, weight: .bold, design: .rounded))
+                // Equal-width digits, so a count ticking up doesn't jiggle.
                 .monospacedDigit()
                 .foregroundStyle(Theme.ink)
+                // A safety net only: the card grows with the digits, and
+                // this shrinks the text a little if a very narrow screen
+                // ever leaves the card less room than its count needs.
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
                 .contentTransition(.numericText(value: Double(count)))
                 .animation(.snappy, value: count)
         }
-        .keyframeAnimator(initialValue: 1.0, trigger: bumps) { content, scale in
-            content.scaleEffect(scale)
+        .keyframeAnimator(initialValue: 1.0, trigger: bumps[face, default: 0]) { content, scale in
+            content.scaleEffect(scale, anchor: .leading)
         } keyframes: { _ in
             KeyframeTrack {
                 CubicKeyframe(1.18, duration: 0.1)
                 SpringKeyframe(1.0, duration: 0.3)
             }
         }
-        .padding(.horizontal, 12)
-        .frame(height: 36)
-        .background(Capsule().fill(Theme.surface).shadow(color: .black.opacity(0.06), radius: 1, y: 1))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(label)
         .accessibilityValue("\(count)")

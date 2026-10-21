@@ -1,7 +1,7 @@
 import SwiftUI
 import ArrowwordCore
 
-/// The play streak on the home screen, beside the helper counters: a flame
+/// The play streak, centred in the home screen's top row: a flame
 /// and the days in a row.
 ///
 /// The flame is orange once today is solved and grey while it isn't yet,
@@ -31,7 +31,7 @@ struct StreakChip: View {
             }
             .padding(.horizontal, 12)
             .frame(height: 36)
-            // The same white pill as the helper counters next to it.
+            // The same white as the helpers' card beside it.
             .background(Capsule().fill(Theme.surface).shadow(color: .black.opacity(0.06), radius: 1, y: 1))
         }
         .buttonStyle(.plain)

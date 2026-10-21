@@ -27,12 +27,12 @@ struct DailyPuzzleButton: View {
 
     private func content(isDone: Bool, secondsLeft: Int) -> some View {
         VStack(spacing: 0) {
-            SecondaryButton(title: isDone ? "Daily challenge done" : "Daily challenge", height: height) {
+            HomeButton(title: isDone ? "Daily challenge done" : "Daily challenge", accent: Theme.daily, height: height) {
                 guard !isDone, !isHeld else { return }
                 action()
             }
             // Not `.disabled`: a disabled button is dimmed again by iOS on top
-            // of our fade, and its outline would no longer match the tab.
+            // of our fade, and it would no longer match the tab.
             // Taps are turned off instead, and the fade is ours alone.
             .allowsHitTesting(!isDone && !isHeld)
             // Done for today: still there, so the player knows it'll be
@@ -43,8 +43,8 @@ struct DailyPuzzleButton: View {
     }
 
     /// Flat on top and tucked under the button, rounded below, like a tab.
-    /// Its fill is the button's outline colour, faded by the same amount
-    /// when done, so the two always match; its time stays solid white:
+    /// Its fill is the button's colour, faded by the same amount
+    /// when done, so the two always match; its time stays solid bone, like the label:
     /// still worth reading, since it says when the next puzzle comes.
     private func countdownTab(secondsLeft: Int, isDone: Bool) -> some View {
         let clock = DailyFormat.clock(seconds: secondsLeft)
@@ -54,12 +54,12 @@ struct DailyPuzzleButton: View {
         }
         .font(.system(size: 15, weight: .heavy, design: .rounded))
         .monospacedDigit()
-        .foregroundStyle(Theme.onPrimary)
+        .foregroundStyle(Theme.background)
         .padding(.horizontal, 12)
         .padding(.vertical, 4)
         .background(
             UnevenRoundedRectangle(bottomLeadingRadius: 12, bottomTrailingRadius: 12)
-                .fill(Theme.secondary.opacity(Self.opacity(isDone: isDone)))
+                .fill(Theme.daily.opacity(Self.opacity(isDone: isDone)))
         )
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text("Time left"))
