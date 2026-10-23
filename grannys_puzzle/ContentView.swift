@@ -12,6 +12,9 @@ struct ContentView: View {
     let reminderTaps: ReminderTapRelay
 
     @State private var startup = Startup.load()
+    /// The logo and the walking cat, once per launch (not on returning from
+    /// the background: the scene, and this state, are still there).
+    @State private var showsSplash = true
     @Environment(\.scenePhase) private var scenePhase
     /// The in-game language choice (Settings → Language). Changing it here
     /// swaps the text at once (through the environment's locale) and the
@@ -21,7 +24,25 @@ struct ContentView: View {
     var body: some View {
         switch startup {
         case .ready(let game):
-            GameView(game: game)
+            // The splash shows in the game's place rather than over it, so
+            // the home screen's first-appearance work (the consent form,
+            // grandma's questions, the daily card) waits until it's seen.
+            // The modifiers below stay on the stack: remote tuning, the
+            // reminders and reminder taps start at launch, splash or not.
+            // A ZStack, not a Group: a Group hands its modifiers to each
+            // child, so the `.task` would run again when the game replaces
+            // the splash (fetching the remote tuning twice).
+            ZStack {
+                if showsSplash {
+                    LaunchSplash {
+                        withAnimation(.easeOut(duration: 0.35)) { showsSplash = false }
+                    }
+                    .transition(.opacity)
+                } else {
+                    GameView(game: game)
+                        .transition(.opacity)
+                }
+            }
                 // Views that show ads (the banner, Settings' privacy row)
                 // read the controller from here instead of through Game.
                 .environment(game.ads)

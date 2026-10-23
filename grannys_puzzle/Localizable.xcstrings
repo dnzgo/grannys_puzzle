@@ -1426,6 +1426,16 @@
         }
       }
     },
+    "Loading" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yükleniyor"
+          }
+        }
+      }
+    },
     "Look at all that yarn! I could knit the cat a %@. Pop by my yarn bag when you like." : {
       "localizations" : {
         "tr" : {

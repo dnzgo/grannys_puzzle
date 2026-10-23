@@ -30,11 +30,10 @@ Apple's app transfer later. The bundle ID changes: the current one
 
 - [ ] Daily challenge leaderboard (decide: time penalty for cat/grandma?)
 - [ ] Word and clue list
-- [ ] Loading screen with the company logo, shown at launch. iOS's own
-      launch screen is a still image only, so this is a SwiftUI screen
-      right after it, styled to match. Needs the logo artwork. Keep it
-      short (about 1.5s) and use it to cover real start-up work rather
-      than adding a wait.
+- [x] Loading screen: logo and the walking cat on a filling bar
+      (`Launch/LaunchSplash.swift`)
+- [ ] Optional: the logo (`company-logo`) is from a compressed JPG,
+      cleaned up; a vector or PNG export of the original would be sharper
 - [ ] Decide on iPad: ship iPhone-only for 1.0 (`TARGETED_DEVICE_FAMILY`)
       or design and test the iPad layout
 - [ ] More daily puzzles: only 30 per language are bundled; bundle a year

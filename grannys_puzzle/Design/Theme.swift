@@ -39,6 +39,11 @@ enum Theme {
 
     /// Warm cream behind everything.
     static let background = Color(hex: 0xF8F2EC)
+    /// The cream of the Dengo Labs logo picture (0xFEF6EB), behind the
+    /// launch splash, so the logo sits on it with no visible edge. Read from
+    /// the LaunchBackground colour asset, which iOS's own launch screen
+    /// also uses (it can only take an asset): one value for both.
+    static let logoBackground = Color("LaunchBackground")
     /// Cards, buttons and letter cells.
     static let surface = Color.white
     static let clueCell = Color(hex: 0xF1E7DE)
