@@ -17,11 +17,18 @@ enum AdsSetup {
         configuration.simulatesEEAForConsent = false
         return configuration
         #else
-        // TODO: Before release, put the real ad unit IDs here (AdMob console →
-        // Apps → Granny's Puzzle → Ad units), and the real app ID in
-        // Config/grannys_puzzle-Info.plist (GADApplicationIdentifier).
-        // Until then release builds also use the test units.
-        return GoogleAdsConfiguration.googleTestUnits
+        return realUnits
         #endif
     }
+
+    /// The real ad units (AdMob → Apps → Granny's Puzzle → Ad units), for
+    /// release builds only, which includes TestFlight: testers see real ads
+    /// there, so they should never tap them on purpose. The app ID that
+    /// goes with them is GADApplicationIdentifier in
+    /// Config/grannys_puzzle-Info.plist.
+    private static let realUnits = GoogleAdsConfiguration(
+        rewardedAdUnitID: "ca-app-pub-9097467595663045/2871355620",
+        interstitialAdUnitID: "ca-app-pub-9097467595663045/1218528459",
+        bannerAdUnitID: "ca-app-pub-9097467595663045/7137903695"
+    )
 }

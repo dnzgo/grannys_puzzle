@@ -37,15 +37,16 @@ enum AppVersion {
 
 /// Where the Settings links go.
 ///
-/// TODO: Fill these in before release. They're nil until the real addresses
-/// exist, and Settings shows them greyed out and inactive while they are.
-/// The App Store also asks for the privacy policy URL in App Store Connect,
-/// so it has to exist before the first submission anyway.
+/// The game's pages on dengolabs.com. Each is optional: a nil one shows
+/// greyed out and inactive in Settings. The same privacy policy URL goes
+/// into App Store Connect and AdMob's consent message.
 enum SupportLinks {
-    /// The address Feedback writes to, e.g. "hello@example.com".
-    static let feedbackEmail: String? = nil
-    static let termsOfUse: URL? = nil
-    static let privacyPolicy: URL? = nil
+    /// The address Feedback writes to: support@, so players' reports are
+    /// kept apart from general mail (hello@) and can later go to a group.
+    /// The website's help page should name the same address.
+    static let feedbackEmail: String? = "support@dengolabs.com"
+    static let termsOfUse = URL(string: "https://dengolabs.com/games/grannys-puzzle/terms/")
+    static let privacyPolicy = URL(string: "https://dengolabs.com/games/grannys-puzzle/privacy/")
 
     /// A ready-to-send email with the app and iOS versions filled in, so a
     /// bug report says which build it's about without the player having to.

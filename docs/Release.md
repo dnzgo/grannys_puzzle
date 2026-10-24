@@ -20,12 +20,13 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [ ] When the bundle ID switches: put the new project's
       `GoogleService-Info.plist` (waiting in the assets folder; git ignores
       it) into the app folder, replacing the old project's
-- [ ] AdMob account under Deniz: the app and its rewarded, interstitial
-      and banner units
+- [x] AdMob account under Deniz: the app and its rewarded, interstitial
+      and banner units; real IDs in `Ads/AdsSetup.swift` (release builds)
+      and the app ID in `Config/grannys_puzzle-Info.plist`
+- [x] `app-ads.txt` line with the publisher ID in the website repo
+      (`public/app-ads.txt`); deploy the site
 - [ ] Repo: `Config/Signing.xcconfig` (team, bundle ID
-      `com.dengolabs.grannyspuzzle`), ad unit IDs in
-      `Ads/AdsSetup.swift`, app ID in `Config/grannys_puzzle-Info.plist`,
-      `docs/Signing.md`
+      `com.dengolabs.grannyspuzzle`), `docs/Signing.md`
 - [ ] After TestFlight works: retire Barış's App Store Connect app and the
       old Firebase iOS app
 
@@ -52,11 +53,27 @@ Apple's app transfer later. The bundle ID changes: the current one
 
 ## Store, privacy and ads
 
-- [ ] Privacy policy, terms and feedback email (`SupportLinks` in
-      `Settings/GameSettings.swift`); a small website, which also hosts:
-- [ ] `app-ads.txt` on the developer website
+- [x] Feedback email: support@dengolabs.com (`SupportLinks`)
+- [x] Privacy policy and terms on dengolabs.com, linked in `SupportLinks`
+- [x] Privacy policy covers Crashlytics, the level-pack downloads, Game
+      Center, reminders and the Feedback email; help page uses support@
+      (dengo_labs website repo)
+- [ ] Legal review of the privacy policy and terms, including the CHECK
+      notes in the website's .mdx files (`npm run check:launch` lists
+      them). Options to compare: a lawyer's fixed-price review of the
+      existing texts (likely best), IT-Recht Kanzlei (subscription, app
+      texts, updates), eRecht24 Premium, Datenschutz-Generator.de. Worth
+      paying for once: a German Abmahnung costs more.
+- [ ] On dengolabs.com:
 - [ ] `PrivacyInfo.xcprivacy` for the app (UserDefaults reason, tracking)
-- [ ] GDPR consent message set up in the AdMob console
+- [x] AdMob: GDPR and US-states consent messages published; ad content
+      rating Teens; blocked: dating, get rich quick, references to sex,
+      sexual & reproductive health (alcohol and gambling were blocked
+      already)
+- [ ] After launch: link the app to its App Store listing in AdMob, then
+      set up mediation (more ad networks bidding) to win back fill and
+      price; later, test the content rating per request through Remote
+      Config
 - [ ] App Store listing in English and Turkish: description, keywords,
       subtitle, screenshots, age rating, App Privacy answers
 - [ ] Achievements (and leaderboard) attached to version 1.0
