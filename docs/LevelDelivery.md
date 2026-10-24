@@ -63,15 +63,18 @@ Static files rather than Remote Config, which is made for small settings
 SDK and access rules we don't need for public files. Hosting is a CDN and
 the app only needs `URLSession`.
 
-The folder `ContentServer/` is the Hosting project: `public/packs` holds the
+The folder `Firebase/` is the Hosting project: `public/packs` holds the
 packs, `firebase.json` the settings (packs may be cached for an hour, so a
 fix reaches everyone within that).
 
-### Setting it up (once, on Deniz's Firebase project)
+The live server is `https://granny-s-puzzle.web.app` (Firebase project
+`granny-s-puzzle`).
+
+### Setting it up (done once; kept for a new project)
 
 1. Install the Firebase CLI and log in: `npm install -g firebase-tools`,
    then `firebase login`.
-2. In `ContentServer/`: `firebase use --add` and pick the project.
+2. In `Firebase/`: `firebase use --add` and pick the project.
 3. Deploy: `firebase deploy --only hosting`.
 4. Put the site's address (e.g. `https://<project>.web.app`) in
    `PackDownloader.contentBaseURL`. Until it's set the app never downloads,
@@ -80,7 +83,7 @@ fix reaches everyone within that).
 ### Publishing a pack
 
 1. Generate it with the content pipeline, named as above (e.g. `en-002`).
-2. Copy it to `ContentServer/public/packs/`.
+2. Copy it to `Firebase/public/packs/`.
 3. Run the ArrowwordCore tests: they check every pack there loads, is named
    after its file and follows on from the app's pack 1 with no gaps.
 4. `firebase deploy --only hosting`.

@@ -33,10 +33,11 @@ struct PackDownloader {
         }
     }
 
-    /// Nil until the content server exists (see docs/LevelDelivery.md):
-    /// then every fetch is `notPublished`, so a player out of levels sees
-    /// "more soon", not a request to go online that couldn't help.
-    static let contentBaseURL: URL? = nil
+    /// The content server: Firebase Hosting on the granny-s-puzzle project
+    /// (see docs/LevelDelivery.md). Optional so it can be switched off: with
+    /// nil, every fetch is `notPublished`, and a player out of levels sees
+    /// "more soon" rather than a request to go online that couldn't help.
+    static let contentBaseURL = URL(string: "https://granny-s-puzzle.web.app")
 
     /// A pack is about 200 KB (20 KB compressed in transit); this is
     /// generous for a slow connection while not leaving the home screen

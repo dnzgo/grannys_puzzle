@@ -88,7 +88,7 @@ pack 2 onwards goes on the content server and is downloaded by the app
 never resized or reordered):
 
 ```
-cp data/en/packs/en-002.json ../ContentServer/public/packs/
+cp data/en/packs/en-002.json ../Firebase/public/packs/
 ```
 
 Pack 1 goes into the app's `Levels` folder (Xcode picks it up

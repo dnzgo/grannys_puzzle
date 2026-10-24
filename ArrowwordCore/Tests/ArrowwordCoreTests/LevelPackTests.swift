@@ -77,7 +77,7 @@ final class LevelPackTests: XCTestCase {
         }
     }
 
-    /// The packs ready on the content server (ContentServer/public/packs)
+    /// The packs ready on the content server (Firebase/public/packs)
     /// must continue the app's bundled pack 1 with no gaps: "en-002" after
     /// the app's "en-001", then "en-003", and each but the last full (see
     /// LevelLibrary). Checked here so a mistake fails before it's deployed.

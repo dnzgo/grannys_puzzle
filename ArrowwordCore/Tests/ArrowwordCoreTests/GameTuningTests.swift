@@ -1,3 +1,4 @@
+import Foundation
 import XCTest
 @testable import ArrowwordCore
 
@@ -100,5 +101,25 @@ final class GameTuningTests: XCTestCase {
         // get it reported, which only happens if it's read.
         let silly = Dictionary(uniqueKeysWithValues: GameTuning.Key.allCases.map { ($0, -1.0) })
         XCTAssertEqual(Set(resolve(silly).ignored), Set(GameTuning.Key.allCases))
+    }
+
+    // MARK: - The console template
+
+    /// Firebase/remoteconfig.template.json creates every key in the
+    /// console (set to "use in-app default"), so tuning later is an edit,
+    /// not typing a key name. It must list exactly the keys the game reads:
+    /// a missing one can't be tuned, an extra one does nothing.
+    func testTheConsoleTemplateListsEveryKey() throws {
+        let url = ShippedFiles.appLevelsFolder
+            .deletingLastPathComponent()  // grannys_puzzle
+            .deletingLastPathComponent()  // repo root
+            .appendingPathComponent("Firebase/remoteconfig.template.json")
+        let template = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: url)) as? [String: Any])
+        let groups = template["parameterGroups"] as? [String: [String: Any]] ?? [:]
+        var keys = Set((template["parameters"] as? [String: Any] ?? [:]).keys)
+        for group in groups.values {
+            keys.formUnion((group["parameters"] as? [String: Any] ?? [:]).keys)
+        }
+        XCTAssertEqual(keys, Set(GameTuning.Key.allCases.map(\.rawValue)))
     }
 }

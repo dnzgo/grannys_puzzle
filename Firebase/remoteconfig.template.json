@@ -1,0 +1,152 @@
+{
+  "conditions": [],
+  "parameters": {},
+  "parameterGroups": {
+    "Ads": {
+      "description": "Rewarded videos and interstitials. An interstitial shows only when both the level and time rules allow it.",
+      "parameters": {
+        "rewarded_ads_per_day": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Helper videos per day (cat and grandma combined). 0 turns them off. Default 3, allowed 0-20.",
+          "valueType": "NUMBER"
+        },
+        "cat_hints_per_ad": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Cat hints one video gives. Default 3, allowed 1-10.",
+          "valueType": "NUMBER"
+        },
+        "grandmas_per_ad": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Grandma helpers one video gives. Default 1, allowed 1-5.",
+          "valueType": "NUMBER"
+        },
+        "ad_break_first_level": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Interstitials can start after this level. Default 10, allowed 1-1000.",
+          "valueType": "NUMBER"
+        },
+        "ad_break_levels_between": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Levels passed between two interstitials. Default 2, allowed 1-50.",
+          "valueType": "NUMBER"
+        },
+        "ad_break_min_seconds": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Least seconds between two interstitials. Default 180, allowed 0-3600.",
+          "valueType": "NUMBER"
+        },
+        "ad_break_seconds_after_rewarded": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "No interstitial this many seconds after a rewarded video. Default 120, allowed 0-3600.",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "Scoring": {
+      "description": "Shares of correct letters, written 0-1. Applied as a group: they must step down (3 balls >= 2 >= 1), or all keep their defaults.",
+      "parameters": {
+        "pass_threshold": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Share needed to pass a level. Default 0.8, allowed 0-1.",
+          "valueType": "NUMBER"
+        },
+        "three_ball_threshold": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Share needed for 3 yarn balls. Default 1.0, allowed 0-1.",
+          "valueType": "NUMBER"
+        },
+        "two_ball_threshold": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Share needed for 2 yarn balls. Default 0.9, allowed 0-1.",
+          "valueType": "NUMBER"
+        },
+        "one_ball_threshold": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Share needed for 1 yarn ball. Default 0.8, allowed 0-1.",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "Daily jar": {
+      "description": "The jar collected once a day on a 7-day calendar. Hint min and max are a group.",
+      "parameters": {
+        "jar_grandma_chance": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Chance an ordinary day's jar holds a grandma instead of cat hints. Default 0.25, allowed 0-1.",
+          "valueType": "NUMBER"
+        },
+        "jar_hints_min": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Fewest cat hints in an ordinary day's jar. Default 1, allowed 1-10.",
+          "valueType": "NUMBER"
+        },
+        "jar_hints_max": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Most cat hints in an ordinary day's jar. Default 3, allowed 1-10.",
+          "valueType": "NUMBER"
+        },
+        "jar_big_reward_hints": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Cat hints in the day-7 jar and a finished set's jar. Default 3, allowed 0-20.",
+          "valueType": "NUMBER"
+        },
+        "jar_big_reward_grandmas": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Grandma helpers in the day-7 jar and a finished set's jar. Default 1, allowed 0-5.",
+          "valueType": "NUMBER"
+        }
+      }
+    },
+    "Prompts": {
+      "description": "When the rating prompt and grandma's reminder question may appear.",
+      "parameters": {
+        "review_min_levels": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Levels passed before the App Store rating prompt may be asked for. Default 5, allowed 1-500.",
+          "valueType": "NUMBER"
+        },
+        "reminder_ask_min_levels": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Levels passed before grandma asks about reminders. Default 3, allowed 1-100.",
+          "valueType": "NUMBER"
+        }
+      }
+    }
+  }
+}

@@ -11,9 +11,16 @@ A test fails if a key is listed there but never read.
 
 ## How it works
 
-- **Where:** Firebase console → Remote Config. Add a parameter with the exact
-  key name and a **Number** value. Set only the ones you want to change;
-  anything not set keeps the default below.
+- **Where:** Firebase console → Remote Config. Every key below is already
+  there, in groups, set to **"Use in-app default"**: the game then uses the
+  default from the code. To tune one, edit it, give it a value, publish.
+  To undo, set it back to "Use in-app default".
+- **How the keys got there:** `Firebase/remoteconfig.template.json`, deployed
+  once with `firebase deploy --only remoteconfig` (from the `Firebase`
+  folder). A test checks the file lists exactly the keys the game reads.
+  **Don't deploy it again** once values are tuned in the console: it would
+  replace the console's template and undo them. A new key is added in the
+  console by hand (and to the file, for the record).
 - **When it applies:** on the player's *next* launch. The game downloads
   values during one launch and uses them from the next, so rules never
   change mid-session.

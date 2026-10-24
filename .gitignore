@@ -19,3 +19,6 @@ GoogleService-Info.plist
 
 # Each person's own signing (see Config/Signing.xcconfig)
 Config/Local.xcconfig
+
+# Firebase CLI cache (deploy hashes), recreated on every deploy
+Firebase/.firebase/

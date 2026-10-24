@@ -14,13 +14,16 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [ ] New bundle ID with the Game Center capability, and the App Store
       Connect app for it
 - [ ] Recreate the 27 achievements there (same IDs, see Achievements.md)
-- [ ] Firebase: Deniz as Owner of the project, an iOS app for the new
-      bundle ID, its `GoogleService-Info.plist` in the repo (also fixes
-      today's mismatch: the plist is for `…grannyspuzzle`, the app builds
-      as `…grannyscrossword`)
+- [x] New Firebase project `granny-s-puzzle` (company account as owner),
+      iOS app `com.dengolabs.grannyspuzzle`, Analytics, Hosting, the Remote
+      Config keys
+- [ ] When the bundle ID switches: put the new project's
+      `GoogleService-Info.plist` (waiting in the assets folder; git ignores
+      it) into the app folder, replacing the old project's
 - [ ] AdMob account under Deniz: the app and its rewarded, interstitial
       and banner units
-- [ ] Repo: `Config/Signing.xcconfig` (team, bundle ID), ad unit IDs in
+- [ ] Repo: `Config/Signing.xcconfig` (team, bundle ID
+      `com.dengolabs.grannyspuzzle`), ad unit IDs in
       `Ads/AdsSetup.swift`, app ID in `Config/grannys_puzzle-Info.plist`,
       `docs/Signing.md`
 - [ ] After TestFlight works: retire Barış's App Store Connect app and the
@@ -39,8 +42,8 @@ Apple's app transfer later. The bundle ID changes: the current one
       never removed again.
 - [x] Level and daily packs of 100, pack 1 bundled, later ones downloaded
       (docs/LevelDelivery.md)
-- [ ] Content server: Firebase Hosting on Deniz's project, its address in
-      `PackDownloader.contentBaseURL` (docs/LevelDelivery.md)
+- [x] Content server: Firebase Hosting on Deniz's project
+      (https://granny-s-puzzle.web.app, in `PackDownloader.contentBaseURL`)
 - [ ] Daily pack 1 has only 30 puzzles per language: fill it to 100
 - [ ] Publish level pack 2 (and daily pack 2) per language before release,
       so early players never wait
