@@ -85,12 +85,23 @@ it (see the image prompts in the chat / art folder).
 | knit | `achievement-knit.png` |
 | languages | `achievement-languages.png` |
 
-## Daily leaderboard (not created yet)
+## Daily leaderboards (not created yet)
 
-One recurring Game Center leaderboard for the daily challenge, created in
-App Store Connect with the Apple account: resets daily at 00:00 UTC (when
-the daily puzzle changes, see `DailyDay`), **higher score is better**,
-score format **integer**.
+One recurring Game Center leaderboard per language, since the English and
+Turkish dailies are different puzzles and can't be compared fairly:
+
+| ID | Language |
+| --- | --- |
+| `grannyspuzzle.daily.en` | English |
+| `grannyspuzzle.daily.tr` | Turkish |
+
+Create both in App Store Connect with the Apple account: recurring, resets
+daily at 00:00 UTC (when the daily puzzle changes, see `DailyDay`),
+**higher score is better**, score format **integer**.
+
+A player still gets one daily a day in total, whichever language; the
+score goes to the leaderboard of the language it was played in
+(`DailyAttempt.leaderboardLanguage`).
 
 The score (`DailyScore` in ArrowwordCore), which the end-of-daily card
 shows being added up:

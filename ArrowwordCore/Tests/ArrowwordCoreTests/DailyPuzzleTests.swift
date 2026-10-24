@@ -118,6 +118,31 @@ final class DailyPuzzleTests: XCTestCase {
         XCTAssertNil(try JSONDecoder().decode(PlayerProgress.self, from: Data(oldSave.utf8)).daily)
     }
 
+    // MARK: - Leaderboard
+
+    func testASubmittedGoBelongsOnItsLanguagesLeaderboard() {
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "daily-tr-1", now: start, language: "tr")
+        XCTAssertNil(player.daily?.leaderboardLanguage, "nothing to submit before the board is judged")
+        player.finishDaily(result(correct: 50, of: 50), now: start.addingTimeInterval(240))
+        XCTAssertEqual(player.daily?.leaderboardLanguage, "tr")
+    }
+
+    func testAFallbackPuzzleStaysOffTheLeaderboard() {
+        // Not the puzzle everyone else had that day, so not comparable.
+        var player = newPlayer()
+        player.startDaily(today: today, levelID: "daily-en-7", now: start, language: "en", isFallbackPuzzle: true)
+        player.finishDaily(result(correct: 50, of: 50), now: start.addingTimeInterval(240))
+        XCTAssertNil(player.daily?.leaderboardLanguage)
+    }
+
+    func testOldSavesKeepTheirDailyWithoutALanguage() throws {
+        let old = #"{"day": 20745, "levelID": "en-900001", "startedAt": 0}"#
+        let attempt = try JSONDecoder().decode(DailyAttempt.self, from: Data(old.utf8))
+        XCTAssertNil(attempt.language)
+        XCTAssertNil(attempt.leaderboardLanguage)
+    }
+
     // MARK: - Ranking
 
     func testTheScoreIsCorrectnessPlusSpeed() {

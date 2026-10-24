@@ -65,12 +65,38 @@ public struct DailyAttempt: Codable, Equatable, Sendable {
     public let startedAt: Date
     /// Set once, when the board is submitted.
     public var result: DailyResult?
+    /// The puzzle's language, which picks the leaderboard: each language
+    /// has its own, since the two languages' puzzles differ. Nil in saves
+    /// from before it was kept.
+    public let language: String?
+    /// True when the day's own puzzle wasn't on the phone and another was
+    /// played instead (see `DailyDay.fallbackNumber`). Nil in older saves,
+    /// read as false.
+    public let isFallbackPuzzle: Bool?
 
-    public init(day: Int, levelID: String, startedAt: Date, result: DailyResult? = nil) {
+    public init(
+        day: Int,
+        levelID: String,
+        startedAt: Date,
+        result: DailyResult? = nil,
+        language: String? = nil,
+        isFallbackPuzzle: Bool = false
+    ) {
         self.day = day
         self.levelID = levelID
         self.startedAt = startedAt
         self.result = result
+        self.language = language
+        self.isFallbackPuzzle = isFallbackPuzzle
+    }
+
+    /// The leaderboard this go's score belongs on, by language, or nil if
+    /// it doesn't belong on one: not submitted yet, a fallback puzzle
+    /// (not the one everyone else had that day), or an old save that
+    /// doesn't know its language.
+    public var leaderboardLanguage: String? {
+        guard result != nil, isFallbackPuzzle != true else { return nil }
+        return language
     }
 
     /// Whole seconds since the start, never negative (a clock set back).
@@ -173,9 +199,18 @@ extension PlayerProgress {
     /// after leaving does: one left unsubmitted (the app closed mid-way,
     /// say) is replaced. Nil once today's is submitted: one result a day.
     @discardableResult
-    public mutating func startDaily(today: Int, levelID: String, now: Date) -> DailyAttempt? {
+    public mutating func startDaily(
+        today: Int,
+        levelID: String,
+        now: Date,
+        language: String? = nil,
+        isFallbackPuzzle: Bool = false
+    ) -> DailyAttempt? {
         if case .done = dailyStatus(today: today) { return nil }
-        let attempt = DailyAttempt(day: today, levelID: levelID, startedAt: now)
+        let attempt = DailyAttempt(
+            day: today, levelID: levelID, startedAt: now,
+            language: language, isFallbackPuzzle: isFallbackPuzzle
+        )
         daily = attempt
         return attempt
     }

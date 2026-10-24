@@ -471,12 +471,14 @@ final class Game {
 
     /// The puzzle for `day` (a DailyDay number), if there are daily
     /// puzzles: the day's own, or, while its pack isn't on the phone, one
-    /// of those that are (see `DailyDay.fallbackNumber`).
-    func dailyLevel(day: Int) -> Level? {
+    /// of those that are (see `DailyDay.fallbackNumber`), marked as such so
+    /// its score stays off the leaderboard.
+    func dailyPuzzle(day: Int) -> (level: Level, isFallback: Bool)? {
         guard let dailies else { return nil }
         let number = DailyDay.puzzleNumber(forDay: day)
-        if let level = dailies.level(number: number) { return level }
-        return DailyDay.fallbackNumber(for: number, available: dailies.levelCount).flatMap(dailies.level(number:))
+        if let level = dailies.level(number: number) { return (level, false) }
+        let fallback = DailyDay.fallbackNumber(for: number, available: dailies.levelCount).flatMap(dailies.level(number:))
+        return fallback.map { ($0, true) }
     }
 
     func dailyStatus(today: Int) -> DailyStatus {
@@ -487,9 +489,17 @@ final class Game {
     /// time until it's submitted (see DailyAttempt for why).
     func playDaily() {
         let today = DailyDay.number()
-        guard let level = dailyLevel(day: today) else { return }
+        guard let dailies, let puzzle = dailyPuzzle(day: today) else { return }
+        let level = puzzle.level
         var attempt: DailyAttempt?
-        update { attempt = $0.startDaily(today: today, levelID: level.id, now: .now) }
+        update {
+            attempt = $0.startDaily(
+                today: today, levelID: level.id, now: .now,
+                // The daily pack's language (English stands in where a
+                // language has none), which picks the leaderboard.
+                language: dailies.language, isFallbackPuzzle: puzzle.isFallback
+            )
+        }
         // Nil once today's is submitted (the button is disabled by then).
         guard let attempt else { return }
         screen = .level(LevelViewModel(
