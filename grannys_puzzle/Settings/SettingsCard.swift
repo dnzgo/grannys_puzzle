@@ -61,6 +61,11 @@ struct SettingsCard: View {
     @State private var page = Page.main
     /// Set when Mail couldn't open, so the player still gets the address.
     @State private var showsMailAddress = false
+    /// While the privacy form is being opened (it can take a moment, see
+    /// GoogleAdNetwork), so a second tap doesn't start a second try.
+    @State private var isOpeningPrivacyChoices = false
+    /// The last try to open it failed: said under the link, not silently.
+    @State private var privacyChoicesFailed = false
 
     @AppStorage(ToggleSetting.music.key) private var musicOn = ToggleSetting.music.defaultValue
     @AppStorage(ToggleSetting.sound.key) private var soundOn = ToggleSetting.sound.defaultValue
@@ -263,11 +268,22 @@ struct SettingsCard: View {
                     // Required by Google's consent rules wherever the form
                     // was shown: changing your mind must be as easy as the
                     // first choice.
-                    textLink("Privacy choices") {
-                        Task { await ads.presentPrivacyOptions() }
+                    textLink("Privacy choices", isAvailable: !isOpeningPrivacyChoices) {
+                        isOpeningPrivacyChoices = true
+                        privacyChoicesFailed = false
+                        Task {
+                            privacyChoicesFailed = !(await ads.presentPrivacyOptions())
+                            isOpeningPrivacyChoices = false
+                        }
                     }
                 }
                 textLink("Acknowledgements") { page = .credits }
+            }
+            if privacyChoicesFailed {
+                Text("Privacy choices couldn't open just now. Please try again in a moment.")
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(Theme.secondaryInk)
+                    .multilineTextAlignment(.center)
             }
             Text("Version \(AppVersion.displayText)")
                 .font(.system(size: 13, weight: .medium))

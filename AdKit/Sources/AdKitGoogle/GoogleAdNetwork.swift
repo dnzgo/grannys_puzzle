@@ -57,13 +57,28 @@ public final class GoogleAdNetwork: AdNetwork {
         ConsentInformation.shared.privacyOptionsRequirementStatus == .required
     }
 
-    public func presentPrivacyOptions() async {
-        do {
-            try await ConsentForm.presentPrivacyOptionsForm(from: nil)
-        } catch {
-            logger.error("Privacy options form failed: \(error.localizedDescription, privacy: .public)")
+    public func presentPrivacyOptions() async -> Bool {
+        // UMP loads the form in the background after the launch's consent
+        // check; a tap before that's done fails with "a privacy options form
+        // is being loaded". So a failed try waits and tries again, briefly:
+        // long enough for a load in progress, short enough that a real
+        // failure (offline) is reported while the player still waits.
+        for attempt in 1...Self.privacyFormAttempts {
+            do {
+                try await ConsentForm.presentPrivacyOptionsForm(from: nil)
+                return true
+            } catch {
+                logger.error("Privacy options form failed (try \(attempt, privacy: .public)): \(error.localizedDescription, privacy: .public)")
+                if attempt < Self.privacyFormAttempts {
+                    try? await Task.sleep(for: Self.privacyFormRetryDelay)
+                }
+            }
         }
+        return false
     }
+
+    private static let privacyFormAttempts = 3
+    private static let privacyFormRetryDelay = Duration.seconds(1)
 
     // MARK: - Ads
 

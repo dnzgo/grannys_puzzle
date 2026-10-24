@@ -20,8 +20,10 @@ public protocol AdNetwork: AnyObject {
     /// (a "Privacy choices" row in Settings). Required where consent was asked.
     var isPrivacyOptionsRequired: Bool { get }
 
-    /// Shows the network's form for changing the consent choice.
-    func presentPrivacyOptions() async
+    /// Shows the network's form for changing the consent choice. False if
+    /// it couldn't be shown (offline, or the form isn't ready), so the app
+    /// can say so instead of the tap seeming to do nothing.
+    func presentPrivacyOptions() async -> Bool
 
     /// Starts the ad SDK. Called once, after consent.
     func start() async

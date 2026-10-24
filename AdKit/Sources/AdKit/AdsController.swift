@@ -126,14 +126,16 @@ public final class AdsController {
 
     /// Lets the player change their consent choice (Settings → Privacy
     /// choices). If they withdraw it, ads stop until it's given again.
-    public func presentPrivacyOptions() async {
-        await network.presentPrivacyOptions()
+    @discardableResult
+    public func presentPrivacyOptions() async -> Bool {
+        let shown = await network.presentPrivacyOptions()
         isPrivacyOptionsRequired = network.isPrivacyOptionsRequired
         if network.canRequestAds {
             if status == .unavailable { await start() }
         } else {
             stopAds()
         }
+        return shown
     }
 
     // MARK: - Banners

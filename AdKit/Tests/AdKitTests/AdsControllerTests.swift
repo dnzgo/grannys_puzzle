@@ -338,7 +338,7 @@ private final class FakeNetwork: AdNetwork {
 
     var canRequestAds: Bool { consentGiven }
     var isPrivacyOptionsRequired: Bool { privacyOptionsRequired }
-    func presentPrivacyOptions() async {}
+    func presentPrivacyOptions() async -> Bool { true }
 
     func start() async { log?.calls.append("start") }
 

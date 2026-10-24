@@ -1748,6 +1748,16 @@
         }
       }
     },
+    "Privacy choices couldn't open just now. Please try again in a moment." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gizlilik seçenekleri şu anda açılamadı. Lütfen birazdan tekrar dene."
+          }
+        }
+      }
+    },
     "Privacy Policy" : {
       "localizations" : {
         "tr" : {
