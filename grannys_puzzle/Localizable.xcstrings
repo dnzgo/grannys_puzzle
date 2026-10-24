@@ -14,16 +14,6 @@
         }
       }
     },
-    "%lld of %lld letters right" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%2$lld harften %1$lld tanesi doğru"
-          }
-        }
-      }
-    },
     "A new daily challenge is waiting, dear. How quick can you be today?" : {
       "localizations" : {
         "tr" : {
@@ -385,17 +375,6 @@
       },
       "shouldTranslate" : false
     },
-    "%@ correct · %lld of %lld letters" : {
-      "comment" : "Result panel: formatted percentage, correct letters, judged letters.",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ doğru · %3$lld harften %2$lld tanesi"
-          }
-        }
-      }
-    },
     "%@ for the cat!" : {
       "localizations" : {
         "tr" : {
@@ -617,6 +596,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yanlış ilmek sökülür, o kadar. Hadi yeniden örelim!"
+          }
+        }
+      }
+    },
+    "%@ correct" : {
+      "comment" : "Result panel: the formatted percentage of correct letters, e.g. \"90%\".",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ doğru"
           }
         }
       }
@@ -858,6 +848,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeni bölümleri yüklemek için internete bağlan"
+          }
+        }
+      }
+    },
+    "Correct letters" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğru harfler"
           }
         }
       }
@@ -1859,6 +1859,26 @@
         }
       }
     },
+    "Score" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puan"
+          }
+        }
+      }
+    },
+    "Score %lld: %lld for correct letters, %lld speed bonus" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Puan %1$lld: doğru harfler için %2$lld, hız bonusu %3$lld"
+          }
+        }
+      }
+    },
     "Set complete!" : {
       "localizations" : {
         "tr" : {
@@ -1945,6 +1965,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sesler"
+          }
+        }
+      }
+    },
+    "Speed bonus" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hız bonusu"
           }
         }
       }

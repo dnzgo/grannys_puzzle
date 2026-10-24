@@ -84,3 +84,24 @@ it (see the image prompts in the chat / art folder).
 | daily | `achievement-daily.png` |
 | knit | `achievement-knit.png` |
 | languages | `achievement-languages.png` |
+
+## Daily leaderboard (not created yet)
+
+One recurring Game Center leaderboard for the daily challenge, created in
+App Store Connect with the Apple account: resets daily at 00:00 UTC (when
+the daily puzzle changes, see `DailyDay`), **higher score is better**,
+score format **integer**.
+
+The score (`DailyScore` in ArrowwordCore), which the end-of-daily card
+shows being added up:
+
+- **Correctness:** up to 10,000 points, the exact share of correct
+  letters.
+- **Speed bonus:** 2.5 points for every second left of 20 minutes, up to
+  3,000; 0 after 20 minutes.
+- Using the cat or grandma costs no time. Equal scores rank the faster
+  board higher.
+
+A go played on a fallback puzzle (the day's pack wasn't on the phone, see
+docs/LevelDelivery.md) must not be submitted.
+

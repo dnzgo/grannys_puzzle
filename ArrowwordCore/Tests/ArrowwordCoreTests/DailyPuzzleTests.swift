@@ -120,27 +120,49 @@ final class DailyPuzzleTests: XCTestCase {
 
     // MARK: - Ranking
 
-    func testMoreCorrectRanksAboveFaster() {
-        let careful = DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 240)
-        let quick = DailyResult(correctLetters: 47, judgedLetters: 50, seconds: 120)
-        XCTAssertTrue(careful.ranks(above: quick))
-        XCTAssertFalse(quick.ranks(above: careful))
+    func testTheScoreIsCorrectnessPlusSpeed() {
+        // 47 of 50 is 94%: 9,400. 240 seconds leaves 960, at 2.5 each: 2,400.
+        let score = DailyResult(correctLetters: 47, judgedLetters: 50, seconds: 240).score
+        XCTAssertEqual(score.correctness, 9_400)
+        XCTAssertEqual(score.speedBonus, 2_400)
+        XCTAssertEqual(score.total, 11_800)
     }
 
-    func testTimeBreaksTiesInCorrectness() {
-        let slow = DailyResult(correctLetters: 48, judgedLetters: 50, seconds: 300)
-        let fast = DailyResult(correctLetters: 48, judgedLetters: 50, seconds: 200)
+    func testTheBestAndSlowestBoards() {
+        XCTAssertEqual(DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 0).score.total, DailyScore.maxTotal)
+        XCTAssertEqual(DailyScore.maxTotal, 13_000)
+        // Past 20 minutes there's no bonus, and it never goes below 0.
+        XCTAssertEqual(DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 1_200).score.speedBonus, 0)
+        XCTAssertEqual(DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 5_000).score.total, 10_000)
+    }
+
+    func testCorrectnessUsesTheExactShare() {
+        // 199/200 shows as 99%, but scores as 99.5%.
+        let result = DailyResult(correctLetters: 199, judgedLetters: 200, seconds: 1_200)
+        XCTAssertEqual(result.percent, 99)
+        XCTAssertEqual(result.score.correctness, 9_950)
+    }
+
+    func testACarefulBoardBeatsARushedSloppyOne() {
+        let careful = DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 240)  // 12,400
+        let rushed = DailyResult(correctLetters: 47, judgedLetters: 50, seconds: 120)   // 12,100
+        XCTAssertTrue(careful.ranks(above: rushed))
+        XCTAssertFalse(rushed.ranks(above: careful))
+    }
+
+    func testAFastNearlyPerfectBoardCanBeatASlowPerfectOne() {
+        // Speed counts: that's what makes it a race.
+        let slowPerfect = DailyResult(correctLetters: 50, judgedLetters: 50, seconds: 900)  // 10,750
+        let fastNearly = DailyResult(correctLetters: 49, judgedLetters: 50, seconds: 180)   // 12,350
+        XCTAssertTrue(fastNearly.ranks(above: slowPerfect))
+    }
+
+    func testEqualScoresGoToTheFasterBoard() {
+        // 2,500 more correctness points exactly matches 1,000 seconds slower.
+        let fast = DailyResult(correctLetters: 15, judgedLetters: 20, seconds: 200)  // 7,500 + 2,500
+        let slow = DailyResult(correctLetters: 20, judgedLetters: 20, seconds: 1_200) // 10,000 + 0
+        XCTAssertEqual(fast.score.total, slow.score.total)
         XCTAssertTrue(fast.ranks(above: slow))
-    }
-
-    func testRankingUsesExactSharesNotRoundedPercents() {
-        // 199/200 is 99.5% and 99/100 is 99%: both show as 99, but the
-        // first is more correct, so it ranks higher although it's slower.
-        let a = DailyResult(correctLetters: 199, judgedLetters: 200, seconds: 500)
-        let b = DailyResult(correctLetters: 99, judgedLetters: 100, seconds: 100)
-        XCTAssertEqual(a.percent, 99)
-        XCTAssertEqual(b.percent, 99)
-        XCTAssertTrue(a.ranks(above: b))
     }
 
     func testOnlyAPerfectBoardShowsAHundredPercent() {

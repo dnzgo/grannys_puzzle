@@ -32,7 +32,8 @@ Apple's app transfer later. The bundle ID changes: the current one
 
 ## Features
 
-- [ ] Daily challenge leaderboard (decide: time penalty for cat/grandma?)
+- [ ] Daily challenge leaderboard. Decided: using the cat or grandma
+      costs no time.
 - [ ] Word and clue list
 - [x] Loading screen: logo and the walking cat on a filling bar
       (`Launch/LaunchSplash.swift`)

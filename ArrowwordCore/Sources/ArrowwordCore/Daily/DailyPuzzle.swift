@@ -79,8 +79,8 @@ public struct DailyAttempt: Codable, Equatable, Sendable {
     }
 }
 
-/// How a daily puzzle went: what the stats card shows, and what a
-/// leaderboard will rank.
+/// How a daily puzzle went: what the stats card shows, and what the
+/// leaderboard ranks (its `score`).
 public struct DailyResult: Codable, Equatable, Sendable {
     public let correctLetters: Int
     public let judgedLetters: Int
@@ -99,17 +99,59 @@ public struct DailyResult: Codable, Equatable, Sendable {
         return correctLetters * 100 / judgedLetters
     }
 
-    /// Whether this result ranks above `other`: more correct first, and
-    /// between equally correct boards, the faster one. Solving well matters
-    /// more than rushing; time only breaks ties.
-    ///
-    /// Compared as exact fractions (cross-multiplied), not percentages, so
-    /// two boards that round to the same percent still rank correctly.
+    /// The leaderboard score (see DailyScore).
+    public var score: DailyScore { DailyScore(self) }
+
+    /// Whether this result ranks above `other`: the higher score, and
+    /// between equal scores, the faster board.
     public func ranks(above other: DailyResult) -> Bool {
-        let mine = correctLetters * max(other.judgedLetters, 1)
-        let theirs = other.correctLetters * max(judgedLetters, 1)
-        if mine != theirs { return mine > theirs }
+        if score.total != other.score.total { return score.total > other.score.total }
         return seconds < other.seconds
+    }
+}
+
+/// The daily leaderboard's score: points for correctness plus a bonus for
+/// speed, shown to the player as those two parts adding up, so the number
+/// is never a mystery.
+///
+/// - **Correctness:** up to 10,000 points, the share of correct letters
+///   (exact, not the rounded percent shown).
+/// - **Speed bonus:** 2.5 points for every second left of 20 minutes, so
+///   up to 3,000. Counted per second rather than in steps, so two quick
+///   boards rarely tie; after 20 minutes it's 0.
+///
+/// Correctness weighs more on purpose: it's a word puzzle, and a rushed,
+/// sloppy board shouldn't beat a careful one by much. Using the cat or
+/// grandma costs no time.
+///
+/// Fixed in code rather than in Remote Config: everyone on one day's
+/// leaderboard must be scored by the same rule, and remote values reach
+/// phones at different launches. A change here starts with a new day and
+/// an app update.
+public struct DailyScore: Equatable, Sendable {
+    /// A perfect board's correctness points.
+    public static let maxCorrectness = 10_000
+    /// The speed bonus runs out after this long.
+    public static let speedWindowSeconds = 1_200
+    /// Bonus points per second left, as a fraction (2.5 = 5/2), so the
+    /// maths stays in whole numbers and every phone gets the same result.
+    private static let bonusPerSecond = (numerator: 5, denominator: 2)
+
+    public let correctness: Int
+    public let speedBonus: Int
+    public var total: Int { correctness + speedBonus }
+
+    /// The highest possible score: a perfect board finished at once.
+    public static var maxTotal: Int {
+        maxCorrectness + speedWindowSeconds * bonusPerSecond.numerator / bonusPerSecond.denominator
+    }
+
+    public init(_ result: DailyResult) {
+        correctness = result.judgedLetters > 0
+            ? result.correctLetters * Self.maxCorrectness / result.judgedLetters
+            : Self.maxCorrectness
+        let secondsLeft = max(0, Self.speedWindowSeconds - max(0, result.seconds))
+        speedBonus = secondsLeft * Self.bonusPerSecond.numerator / Self.bonusPerSecond.denominator
     }
 }
 
