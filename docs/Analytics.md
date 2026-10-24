@@ -71,6 +71,12 @@ or `ad_offer_cancel`.
 | `tutorial_complete` | The lesson's board is solved | — | Tutorial funnel |
 | `tutorial_skip` | The lesson is left before it's solved | — | How many skip it |
 
+## Content
+
+| Event | When | Parameters | Answers |
+| --- | --- | --- | --- |
+| `pack_download` | A try at downloading the next pack of levels or dailies (see docs/LevelDelivery.md) | ★`pack` ("en-002", "daily-tr-003"), ★`outcome`: `ok`, `not_published`, `offline`, `failed` | Whether downloads work in the wild, and how often players reach the end of what's published (`not_published`) |
+
 ## Not tracked yet
 
 - Daily challenge start and result (`daily_start` / `daily_end` with

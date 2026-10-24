@@ -17,11 +17,20 @@ final class DailyPuzzleTests: XCTestCase {
         XCTAssertEqual(DailyDay.end(of: day), midnight.addingTimeInterval(86_400))
     }
 
-    func testThePackIsPlayedInOrderAndStartsOver() {
-        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 60, count: 30), 0)
-        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 61, count: 30), 1)
-        XCTAssertEqual(DailyDay.puzzleIndex(forDay: 89, count: 30), 29)
-        XCTAssertNil(DailyDay.puzzleIndex(forDay: 61, count: 0), "an empty pack has no daily")
+    func testPuzzlesAreNumberedFromTheFirstDay() {
+        XCTAssertEqual(DailyDay.puzzleNumber(forDay: DailyDay.firstDay), 1)
+        XCTAssertEqual(DailyDay.puzzleNumber(forDay: DailyDay.firstDay + 100), 101, "day 101 is the second pack's first")
+        XCTAssertEqual(DailyDay.puzzleNumber(forDay: DailyDay.firstDay - 1), 0)
+    }
+
+    func testWithoutTheDaysPackThePuzzlesOnThePhoneGoRound() {
+        XCTAssertEqual(DailyDay.fallbackNumber(for: 1, available: 30), 1)
+        XCTAssertEqual(DailyDay.fallbackNumber(for: 31, available: 30), 1)
+        XCTAssertEqual(DailyDay.fallbackNumber(for: 130, available: 100), 30)
+        // Before the first day (testing before launch), counting backwards.
+        XCTAssertEqual(DailyDay.fallbackNumber(for: 0, available: 30), 30)
+        XCTAssertEqual(DailyDay.fallbackNumber(for: -29, available: 30), 1)
+        XCTAssertNil(DailyDay.fallbackNumber(for: 5, available: 0), "no puzzles, no daily")
     }
 
     // MARK: - One go a day

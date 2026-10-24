@@ -4,17 +4,18 @@ import ArrowwordCore
 
 /// What the game plays in one language.
 struct GameContent {
-    let pack: LevelPack
+    /// Pack 1 from the app bundle and any packs downloaded since.
+    let levels: LevelLibrary
     let tutorial: Level?
-    /// The daily puzzles: their own pack, apart from the levels.
-    let daily: LevelPack?
+    /// The daily puzzles: their own packs, apart from the levels.
+    let daily: LevelLibrary?
 }
 
-/// Loads levels and level packs shipped inside the app bundle.
-///
-/// Downloaded packs will get their own loader later; everything ends in
-/// `Level` / `LevelPack` validation, so a level is checked the same way
-/// wherever it comes from.
+/// Loads a language's content at launch: pack 1 of the levels and of the
+/// dailies from the app bundle, followed by the packs downloaded on earlier
+/// launches (DownloadedPacks). New packs arrive while playing, through
+/// PackDownloader. Everything ends in `Level` / `LevelPack` validation, so
+/// a level is checked the same way wherever it comes from.
 enum LevelLoader {
     enum LoadError: Error, CustomStringConvertible {
         case missingFile(String)
@@ -30,10 +31,9 @@ enum LevelLoader {
     /// language's pack isn't written yet.
     static let fallbackLanguage = "en"
 
-    /// The first pack for a language, e.g. "tr-001". Moves into a pack
-    /// catalog once a language has more than one.
+    /// The bundled first pack of levels for a language, e.g. "tr-001".
     static func firstPackName(for language: String) -> String {
-        "\(language)-001"
+        PackKind.levels.fileName(language: language, number: 1)
     }
 
     /// The first-time lesson's hand-made board for a language, a pack of
@@ -42,10 +42,10 @@ enum LevelLoader {
         "tutorial-\(language)"
     }
 
-    /// The daily puzzles for a language, e.g. "daily-tr" (see DailyDay for
-    /// which one is today's).
+    /// The bundled first pack of daily puzzles for a language, e.g.
+    /// "daily-tr-001" (see DailyDay for which one is today's).
     static func dailyPackName(for language: String) -> String {
-        "daily-\(language)"
+        PackKind.daily.fileName(language: language, number: 1)
     }
 
     /// Everything a language needs to play: its pack and its lesson board.
@@ -53,7 +53,8 @@ enum LevelLoader {
     /// catch, and not worth stopping the game for, so it's logged and the
     /// game plays without it.
     static func content(for language: String) throws -> GameContent {
-        let pack = try firstPack(for: language)
+        var levels = try LevelLibrary(packs: [firstPack(for: language)])
+        DownloadedPacks.appendStored(.levels, to: &levels)
         let tutorial: Level?
         do {
             tutorial = try bundledPack(named: tutorialPackName(for: language)).levels.first
@@ -62,19 +63,23 @@ enum LevelLoader {
                 .error("Tutorial couldn't be loaded: \(String(describing: error), privacy: .public)")
             tutorial = nil
         }
-        return GameContent(pack: pack, tutorial: tutorial, daily: dailyPack(for: language))
+        return GameContent(levels: levels, tutorial: tutorial, daily: dailyLibrary(for: language))
     }
 
     /// Optional like the lesson: without it the home screen simply has no
     /// daily button. A language without its own falls back to English's,
     /// like the levels.
-    private static func dailyPack(for language: String) -> LevelPack? {
+    private static func dailyLibrary(for language: String) -> LevelLibrary? {
         do {
+            let first: LevelPack
             do {
-                return try bundledPack(named: dailyPackName(for: language))
+                first = try bundledPack(named: dailyPackName(for: language))
             } catch LoadError.missingFile where language != fallbackLanguage {
-                return try bundledPack(named: dailyPackName(for: fallbackLanguage))
+                first = try bundledPack(named: dailyPackName(for: fallbackLanguage))
             }
+            var library = try LevelLibrary(packs: [first])
+            DownloadedPacks.appendStored(.daily, to: &library)
+            return library
         } catch {
             Logger(subsystem: "grannys_puzzle", category: "daily")
                 .error("Daily puzzles couldn't be loaded: \(String(describing: error), privacy: .public)")

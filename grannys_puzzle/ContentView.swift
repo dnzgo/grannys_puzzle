@@ -64,6 +64,11 @@ struct ContentView: View {
                 .onChange(of: scenePhase, initial: true) { _, _ in
                     Task { await game.refreshReminders() }
                 }
+                // Each time the app opens or comes back to the front: the
+                // next pack, if the player is 90% into the last one.
+                .onChange(of: scenePhase, initial: true) { _, phase in
+                    if phase == .active { Task { await game.fetchUpcomingPacks() } }
+                }
                 .onAppear {
                     // Also delivers a tap that launched the app, held until now.
                     reminderTaps.onTap = { kind in game.reminderOpened(kind: kind) }
@@ -113,7 +118,7 @@ private enum Startup {
             let language = AppLanguage.current.rawValue
             let content = try LevelLoader.content(for: language)
             let game = Game(
-                pack: content.pack,
+                levels: content.levels,
                 tutorial: content.tutorial,
                 daily: content.daily,
                 language: language,

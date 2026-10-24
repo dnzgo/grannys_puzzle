@@ -6,7 +6,18 @@ import ArrowwordCore
 import GameServices
 import NotifyKit
 
-/// The running game: the player's saved progress, the level pack, and which
+/// How getting the next pack of levels is going. It only shows on the
+/// home screen once the player has played every level on the phone.
+enum NextPackStatus: Equatable {
+    case idle
+    case loading
+    /// The last try had no connection (or failed): "connect to the internet".
+    case needsInternet
+    /// The server has no next pack yet: "more puzzles soon".
+    case noneYet
+}
+
+/// The running game: the player's saved progress, the levels, and which
 /// screen is showing.
 ///
 /// It's the one place that changes `PlayerProgress`, and it saves after
@@ -20,8 +31,9 @@ final class Game {
         case level(LevelViewModel)
     }
 
-    /// The current language's puzzles; replaced when the language changes.
-    private(set) var pack: LevelPack
+    /// The current language's levels, every pack on the phone; grows as
+    /// packs download, replaced when the language changes.
+    private(set) var levels: LevelLibrary
     let catalog: KnittingCatalog
     /// Nil in previews (no ads there).
     let ads: AdsController?
@@ -35,7 +47,10 @@ final class Game {
     private(set) var tutorial: Level?
     /// The daily puzzles in the current language; nil if they failed to
     /// load, and then the home screen has no daily button.
-    private(set) var dailyPack: LevelPack?
+    private(set) var dailies: LevelLibrary?
+    /// How getting the next pack of levels is going, for the home screen
+    /// once the player has played every level on the phone.
+    private(set) var nextPackStatus = NextPackStatus.idle
     private(set) var progress: PlayerProgress
     private(set) var screen: Screen = .home
     /// The tunable numbers: the defaults, until the server's values are
@@ -51,7 +66,7 @@ final class Game {
     @ObservationIgnored private let tutorialHost = TutorialHost()
     /// Stands in for the game while the daily puzzle plays (see DailyHost).
     @ObservationIgnored private let dailyHost = DailyHost()
-    /// The language the content was loaded for. Not always `pack.language`:
+    /// The language the content was loaded for. Not always `levels.language`:
     /// a language whose pack isn't written yet plays the English one.
     @ObservationIgnored private var contentLanguage: String
     /// Loads another language's content; nil in previews.
@@ -68,11 +83,15 @@ final class Game {
     @ObservationIgnored private var attemptStartedAt: ContinuousClock.Instant?
     /// Whether the lesson now playing was finished, to tell a skip apart.
     @ObservationIgnored private var lessonFinished = false
+    @ObservationIgnored private let downloader: PackDownloader
+    /// The kinds of pack being fetched right now, so a second trigger (the
+    /// app opened again mid-download, say) doesn't fetch the same pack twice.
+    @ObservationIgnored private var fetching: Set<PackKind> = []
 
     init(
-        pack: LevelPack,
+        levels: LevelLibrary,
         tutorial: Level? = nil,
-        daily: LevelPack? = nil,
+        daily: LevelLibrary? = nil,
         language: String? = nil,
         store: ProgressStore?,
         ads: AdsController? = nil,
@@ -80,26 +99,28 @@ final class Game {
         gameCenter: GameCenter? = nil,
         catalog: KnittingCatalog = .standard,
         services: AppServices = .none,
-        loadContent: ((String) throws -> GameContent)? = nil
+        loadContent: ((String) throws -> GameContent)? = nil,
+        downloader: PackDownloader = PackDownloader()
     ) {
-        self.pack = pack
+        self.levels = levels
+        self.downloader = downloader
         self.events = services.events
         self.remoteValues = services.remoteValues
-        self.contentLanguage = language ?? pack.language
+        self.contentLanguage = language ?? levels.language
         self.loadContent = loadContent
         self.ads = ads
         self.reminders = reminders
         self.gameCenter = gameCenter
         self.tutorial = tutorial
-        self.dailyPack = daily
+        self.dailies = daily
         self.catalog = catalog
         self.store = store
         self.progress = .newPlayer
         if let store {
             progress = loadProgress(from: store)
         }
-        // Level and saved board are kept per language; play the pack's.
-        progress.activeLanguage = pack.language
+        // Level and saved board are kept per language; play the levels'.
+        progress.activeLanguage = levels.language
         tutorialHost.game = self
         dailyHost.game = self
         apply(tuning)
@@ -107,9 +128,9 @@ final class Game {
 
     // MARK: - What the home screen shows
 
-    /// The level the Play button starts, if the pack has one left.
+    /// The level the Play button starts, if it's on the phone.
     var nextLevelNumber: Int? {
-        pack.levels.indices.contains(progress.levelNumber - 1) ? progress.levelNumber : nil
+        levels.level(number: progress.levelNumber) == nil ? nil : progress.levelNumber
     }
 
     /// True when the player can afford at least one item they don't own yet;
@@ -250,7 +271,7 @@ final class Game {
         // is cancelled before it shows (the player came back first). Fine:
         // the point is that the lines that do show vary.
         let candidates = GrannyReminders.candidates(
-            progress: progress, catalog: catalog, hasDailyChallenge: dailyPack != nil, now: now
+            progress: progress, catalog: catalog, hasDailyChallenge: dailies != nil, now: now
         ) { lines, kind in
             reminders.line(from: lines, kind: kind)
         }
@@ -306,17 +327,84 @@ final class Game {
         guard language != contentLanguage, let loadContent else { return }
         do {
             let content = try loadContent(language)
-            pack = content.pack
+            levels = content.levels
             tutorial = content.tutorial
-            dailyPack = content.daily
+            dailies = content.daily
             contentLanguage = language
-            progress.activeLanguage = pack.language
+            progress.activeLanguage = levels.language
+            nextPackStatus = .idle
             screen = .home
             events?.log(.languageSwitched(to: language))
+            // The new language may be near the end of its own packs.
+            Task { await fetchUpcomingPacks() }
         } catch {
             // Only a broken build gets here; staying in the current language
             // is better than a game with no puzzles.
             logger.error("Couldn't load \(language, privacy: .public) puzzles: \(String(describing: error), privacy: .public)")
+        }
+    }
+
+    // MARK: - Level packs
+
+    /// Fetches the next pack of levels, and of dailies, if the player is far
+    /// enough into the last one on the phone (LevelLibrary.prefetchAfter,
+    /// 90%). Called when the app opens or comes back to the front, and when
+    /// the player runs out; does nothing when no pack is wanted.
+    func fetchUpcomingPacks() async {
+        if levels.wantsNextPack(nextNumber: progress.levelNumber) {
+            await fetchNextPack(.levels)
+        }
+        let todaysDaily = DailyDay.puzzleNumber(forDay: DailyDay.number())
+        if let dailies, dailies.wantsNextPack(nextNumber: todaysDaily) {
+            await fetchNextPack(.daily)
+        }
+    }
+
+    /// The player tapped the "connect to the internet" message.
+    func retryNextPack() {
+        Task { await fetchNextPack(.levels) }
+    }
+
+    private func fetchNextPack(_ kind: PackKind) async {
+        guard !fetching.contains(kind) else { return }
+        let library: LevelLibrary? = kind == .levels ? levels : dailies
+        guard let library else { return }
+        fetching.insert(kind)
+        defer { fetching.remove(kind) }
+
+        let language = library.language
+        let number = library.nextPackNumber
+        let name = kind.fileName(language: language, number: number)
+        if kind == .levels { nextPackStatus = .loading }
+
+        let outcome = await downloader.fetch(kind, language: language, number: number)
+        events?.log(.packDownload(pack: name, outcome: outcome.label))
+
+        switch outcome {
+        case .downloaded(let pack):
+            // The language may have changed during the download; the pack
+            // is saved either way and joins its language's levels next time.
+            do {
+                switch kind {
+                case .levels:
+                    guard levels.language == language else { break }
+                    try levels.append(pack)
+                case .daily:
+                    guard dailies?.language == language else { break }
+                    try dailies?.append(pack)
+                }
+            } catch {
+                logger.error("Downloaded pack \(name, privacy: .public) didn't fit: \(String(describing: error), privacy: .public)")
+            }
+            if kind == .levels { nextPackStatus = .idle }
+        case .notPublished:
+            if kind == .levels { nextPackStatus = .noneYet }
+        case .offline:
+            if kind == .levels { nextPackStatus = .needsInternet }
+        case .failed(let reason):
+            logger.error("Couldn't get pack \(name, privacy: .public): \(reason, privacy: .public)")
+            // Most likely to work on a later try, like being offline.
+            if kind == .levels { nextPackStatus = .needsInternet }
         }
     }
 
@@ -381,12 +469,14 @@ final class Game {
 
     // MARK: - Daily puzzle
 
-    /// The puzzle for `day` (a DailyDay number), if there are daily puzzles.
+    /// The puzzle for `day` (a DailyDay number), if there are daily
+    /// puzzles: the day's own, or, while its pack isn't on the phone, one
+    /// of those that are (see `DailyDay.fallbackNumber`).
     func dailyLevel(day: Int) -> Level? {
-        guard let dailyPack, let index = DailyDay.puzzleIndex(forDay: day, count: dailyPack.levels.count) else {
-            return nil
-        }
-        return dailyPack.levels[index]
+        guard let dailies else { return nil }
+        let number = DailyDay.puzzleNumber(forDay: day)
+        if let level = dailies.level(number: number) { return level }
+        return DailyDay.fallbackNumber(for: number, available: dailies.levelCount).flatMap(dailies.level(number:))
     }
 
     func dailyStatus(today: Int) -> DailyStatus {
@@ -465,7 +555,7 @@ final class Game {
     /// left it halfway.
     func play() {
         guard let number = nextLevelNumber else { return }
-        let level = pack.levels[number - 1]
+        guard let level = levels.level(number: number) else { return }
         if adBreaks.wantsAdsLoaded(forLevel: number) {
             ads?.prepareInterstitials()
         }
@@ -481,7 +571,7 @@ final class Game {
             scoringRules: tuning.scoring
         ))
         attemptStartedAt = .now
-        events?.log(.levelStart(level: number, language: pack.language, resumed: resumed))
+        events?.log(.levelStart(level: number, language: levels.language, resumed: resumed))
     }
 
     /// The level as the player left it, or fresh if there's no saved board
@@ -591,7 +681,7 @@ extension Game: LevelHost {
         let seconds = attemptStartedAt.map { Int((now - $0).components.seconds) } ?? 0
         // A retry after a fail is timed from here.
         attemptStartedAt = now
-        events?.log(.levelEnd(level: level, language: pack.language, result: result, yarn: earned.count, seconds: seconds))
+        events?.log(.levelEnd(level: level, language: levels.language, result: result, yarn: earned.count, seconds: seconds))
         return LevelReward(yarn: earned, newlyKnittable: catalog.newlyKnittable(before: before, after: progress))
     }
 
@@ -691,11 +781,14 @@ extension Game: LevelHost {
     }
 
     private func openNextLevel() {
-        // After the last level in the pack, home shows that more are coming.
         if nextLevelNumber != nil {
             play()
         } else {
+            // Out of levels on the phone: home shows how getting more is
+            // going, and the next pack is asked for now rather than at the
+            // next launch (normally it arrived long before, at 90%).
             screen = .home
+            Task { await fetchUpcomingPacks() }
         }
     }
 
@@ -709,8 +802,9 @@ extension Game: LevelHost {
 extension Game {
     /// A game for SwiftUI previews: the bundled pack, a made-up bag, no saving.
     static func preview() -> Game? {
-        guard let pack = try? LevelLoader.firstPack(for: LevelLoader.fallbackLanguage) else { return nil }
-        let game = Game(pack: pack, store: nil)
+        guard let pack = try? LevelLoader.firstPack(for: LevelLoader.fallbackLanguage),
+              let levels = try? LevelLibrary(packs: [pack]) else { return nil }
+        let game = Game(levels: levels, store: nil)
         game.progress = PlayerProgress(
             levelNumber: 7, hints: 3, grandmas: 1,
             yarn: [.red: 8, .blue: 2, .green: 1],

@@ -79,9 +79,19 @@ python3 -m pipeline.cli import-clues --lang en clue-batches/en-001-002.csv
 
 Then regenerate the pack: real clues replace the placeholders.
 
-## 5. Ship a pack in the app
+## 5. Ship a pack
 
-Copy the pack into the app's `Levels` folder (Xcode picks it up
+Packs hold 100 levels and are named `en-001`, `en-002`, … (levels) and
+`daily-en-001`, … (daily puzzles). Only pack 1 of each goes in the app;
+pack 2 onwards goes on the content server and is downloaded by the app
+(see `docs/LevelDelivery.md`, including the rule that published packs are
+never resized or reordered):
+
+```
+cp data/en/packs/en-002.json ../ContentServer/public/packs/
+```
+
+Pack 1 goes into the app's `Levels` folder (Xcode picks it up
 automatically):
 
 ```

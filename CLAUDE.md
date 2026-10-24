@@ -8,6 +8,8 @@
   `grannys_puzzle/Services/GameEvents.swift`).
 - `docs/Achievements.md` lists every Game Center achievement: its ID (as
   entered in App Store Connect), target, points and texts.
+- `docs/LevelDelivery.md` describes how level and daily packs are named,
+  numbered, downloaded and published.
 
 Any change that adds, removes or renames a key, event, parameter or
 achievement, or changes a default, range or meaning, updates the matching

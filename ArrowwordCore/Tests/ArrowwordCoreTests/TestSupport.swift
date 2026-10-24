@@ -21,6 +21,15 @@ enum ShippedFiles {
             .appendingPathComponent("grannys_puzzle/Levels")
     }
 
+    /// <repo>/ContentServer/public/packs: the packs deployed to the content
+    /// server, downloaded by the app after its bundled pack 1.
+    static var publishedPacksFolder: URL {
+        appLevelsFolder
+            .deletingLastPathComponent()  // grannys_puzzle
+            .deletingLastPathComponent()  // repo root
+            .appendingPathComponent("ContentServer/public/packs")
+    }
+
     /// Languages with a shipped tutorial board.
     static let tutorialLanguages = ["en", "tr"]
 

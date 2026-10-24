@@ -34,10 +34,18 @@ Apple's app transfer later. The bundle ID changes: the current one
       (`Launch/LaunchSplash.swift`)
 - [ ] Optional: the logo (`company-logo`) is from a compressed JPG,
       cleaned up; a vector or PNG export of the original would be sharper
-- [ ] Decide on iPad: ship iPhone-only for 1.0 (`TARGETED_DEVICE_FAMILY`)
-      or design and test the iPad layout
-- [ ] More daily puzzles: only 30 per language are bundled; bundle a year
-      or deliver them remotely
+- [x] iPhone-only for 1.0 (`TARGETED_DEVICE_FAMILY = 1`). A real iPad
+      layout is planned for 1.1; support can be added in an update but
+      never removed again.
+- [x] Level and daily packs of 100, pack 1 bundled, later ones downloaded
+      (docs/LevelDelivery.md)
+- [ ] Content server: Firebase Hosting on Deniz's project, its address in
+      `PackDownloader.contentBaseURL` (docs/LevelDelivery.md)
+- [ ] Daily pack 1 has only 30 puzzles per language: fill it to 100
+- [ ] Publish level pack 2 (and daily pack 2) per language before release,
+      so early players never wait
+- [ ] Check `DailyDay.firstDay` (1 November 2026) is still right for the
+      release: the day it names plays daily 1
 
 ## Store, privacy and ads
 

@@ -21,18 +21,32 @@ public enum DailyDay {
         Date(timeIntervalSince1970: TimeInterval(day + 1) * secondsPerDay)
     }
 
-    /// Which puzzle of a pack of `count` is the one for `day`: the pack is
-    /// played in order and starts over when it runs out.
+    /// The day the first daily puzzle is played (1 November 2026, as a
+    /// `number(for:)`). Puzzles are numbered from it: this day plays daily
+    /// number 1, the next day number 2, and so on, through the daily packs
+    /// in order (see LevelLibrary).
     ///
-    /// Plain arithmetic on the day, so every phone works out the same
-    /// puzzle with no server. The catch: phones must have the same pack, so
-    /// a later app update that adds puzzles would change the order mid-way.
-    /// Fine while there's no leaderboard; daily puzzles should come from a
-    /// server by the time there is one.
-    public static func puzzleIndex(forDay day: Int, count: Int) -> Int? {
-        guard count > 0 else { return nil }
-        // `%` keeps the sign of the day; adding `count` keeps it positive.
-        return ((day % count) + count) % count
+    /// Counted from a fixed day rather than taken modulo however many
+    /// puzzles a phone has, so adding packs never changes which puzzle a
+    /// day has: every phone plays the same one, which a shared leaderboard
+    /// needs. Changing this after release would reshuffle everyone's days.
+    public static let firstDay = 20_758
+
+    /// The daily puzzle number (1-based) for `day`. Below 1 before
+    /// `firstDay`, which only happens while testing before launch.
+    public static func puzzleNumber(forDay day: Int) -> Int {
+        day - firstDay + 1
+    }
+
+    /// The puzzle to play when `number`'s pack isn't on the phone (not
+    /// downloaded yet, offline) or not written yet: the available puzzles
+    /// in order, starting over when they run out. So there's always a
+    /// daily, but it may not be the one everyone else has that day; a
+    /// leaderboard must not count such a go (`puzzleNumber` would differ).
+    public static func fallbackNumber(for number: Int, available: Int) -> Int? {
+        guard available > 0 else { return nil }
+        // `%` keeps the sign; adding `available` keeps it positive.
+        return ((number - 1) % available + available) % available + 1
     }
 }
 

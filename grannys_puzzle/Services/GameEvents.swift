@@ -159,6 +159,17 @@ extension AnalyticsEvent {
         AnalyticsEvent("language_switched", ["language": .string(language)])
     }
 
+    // MARK: - Content
+
+    /// A try at downloading the next pack (see PackDownloader). `outcome`:
+    /// ok, not_published, offline or failed.
+    static func packDownload(pack: String, outcome: String) -> AnalyticsEvent {
+        AnalyticsEvent("pack_download", [
+            "pack": .string(pack),
+            "outcome": .string(outcome),
+        ])
+    }
+
     // MARK: - Reminders
 
     /// The player answered iOS's notification prompt (after grandma's own

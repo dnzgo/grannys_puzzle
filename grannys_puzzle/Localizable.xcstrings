@@ -852,6 +852,16 @@
         }
       }
     },
+    "Connect to the internet to load new levels" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bölümleri yüklemek için internete bağlan"
+          }
+        }
+      }
+    },
     "Daily treats" : {
       "localizations" : {
         "tr" : {
@@ -1432,6 +1442,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yükleniyor"
+          }
+        }
+      }
+    },
+    "Loading new levels…" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bölümler yükleniyor…"
           }
         }
       }

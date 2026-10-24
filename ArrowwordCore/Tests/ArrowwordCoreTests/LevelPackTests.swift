@@ -68,7 +68,59 @@ final class LevelPackTests: XCTestCase {
         }
     }
 
+    /// A pack's id is its file name: the app finds packs by name and checks
+    /// a downloaded one's id against the name it asked for.
+    func testEveryPackIsNamedAfterItsFile() throws {
+        for url in try shippedPackURLs() + publishedPackURLs() {
+            let pack = try LevelPack.decode(from: Data(contentsOf: url))
+            XCTAssertEqual(pack.id, url.deletingPathExtension().lastPathComponent, url.lastPathComponent)
+        }
+    }
+
+    /// The packs ready on the content server (ContentServer/public/packs)
+    /// must continue the app's bundled pack 1 with no gaps: "en-002" after
+    /// the app's "en-001", then "en-003", and each but the last full (see
+    /// LevelLibrary). Checked here so a mistake fails before it's deployed.
+    func testPublishedPacksFollowOnFromTheShippedOnes() throws {
+        var numbersByPrefix: [String: [Int: URL]] = [:]
+        for url in try publishedPackURLs() {
+            let name = url.deletingPathExtension().lastPathComponent
+            let (prefix, number) = try XCTUnwrap(Self.split(name), "\(name) isn't named <prefix>-<NNN>")
+            numbersByPrefix[prefix, default: [:]][number] = url
+        }
+        for (prefix, urls) in numbersByPrefix {
+            let firstURL = appLevelsFolder.appendingPathComponent("\(prefix)-001.json")
+            var packs = [try LevelPack.decode(from: Data(contentsOf: firstURL))]
+            // Pack 1 is the app's own; the server starts at 2.
+            guard let last = urls.keys.max(), urls[1] == nil else {
+                XCTFail("\(prefix)-001 belongs in the app bundle, not on the server")
+                continue
+            }
+            for number in 2...last {
+                let url = try XCTUnwrap(urls[number], "\(prefix): pack \(number) is missing before later ones")
+                packs.append(try LevelPack.decode(from: Data(contentsOf: url)))
+            }
+            XCTAssertNoThrow(try LevelLibrary(packs: packs), prefix)
+        }
+    }
+
+    /// "daily-en-002" → ("daily-en", 2).
+    private static func split(_ name: String) -> (String, Int)? {
+        guard let dash = name.lastIndex(of: "-"), let number = Int(name[name.index(after: dash)...]),
+              name.distance(from: dash, to: name.endIndex) == 4 else { return nil }
+        return (String(name[..<dash]), number)
+    }
+
     private var appLevelsFolder: URL { ShippedFiles.appLevelsFolder }
+
+    private func publishedPackURLs() throws -> [URL] {
+        let folder = ShippedFiles.publishedPacksFolder
+        guard FileManager.default.fileExists(atPath: folder.path) else { return [] }
+        return try FileManager.default.contentsOfDirectory(atPath: folder.path)
+            .filter { $0.hasSuffix(".json") }
+            .sorted()
+            .map { folder.appendingPathComponent($0) }
+    }
 
     /// Pack files are the JSON files whose top level has a "levels" list;
     /// single-level files such as level-100.json are skipped.

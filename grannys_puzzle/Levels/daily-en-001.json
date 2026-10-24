@@ -1,1500 +1,162 @@
 {
  "formatVersion": 1,
- "packId": "daily-tr",
- "language": "tr",
+ "packId": "daily-en-001",
+ "language": "en",
  "levels": [
   {
    "formatVersion": 1,
-   "id": "tr-900001",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900001",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#İ#P#M#",
-    "ESKİ#UN",
-    "#KELİME",
-    "BEKAR##",
-    "#L#VAKA",
-    "GEÇ#DEV",
-    "##ACEMİ",
-    "BORA#İZ",
-    "#TENEKE"
+    "#G#Y#T#",
+    "OR#ECHO",
+    "#ABSURD",
+    "EYE#ROD",
+    "###NEWS",
+    "ROLE###",
+    "#MATTER",
+    "HIT#AGO",
+    "#TEAPOT"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Kadim"
+     "text": "This ___ that"
     },
     {
      "row": 1,
-     "column": 4,
+     "column": 2,
      "arrow": "right",
-     "text": "Ekmeğin hammaddesi"
+     "text": "Repeat"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Lafız"
+     "text": "Inconsistent with…"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Evlenmemiş"
+     "text": "Seeing organ"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Pole"
     },
     {
      "row": 4,
      "column": 2,
      "arrow": "right",
-     "text": "Hadise"
+     "text": "Information about…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Erken karşıtı"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Kocaman"
+     "text": "Part"
     },
     {
      "row": 6,
-     "column": 1,
+     "column": 0,
      "arrow": "right",
-     "text": "Tecrübesiz"
+     "text": "A vaguely…"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Fırtına"
+     "text": "Strike"
     },
     {
      "row": 7,
-     "column": 4,
+     "column": 3,
      "arrow": "right",
-     "text": "Ayak bırakır"
+     "text": "In the past"
     },
     {
      "row": 8,
      "column": 0,
      "arrow": "right",
-     "text": "Kutu"
+     "text": "Pot for brewing tea"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Liman yapısı"
-    },
-    {
-     "row": 6,
-     "column": 1,
-     "arrow": "down",
-     "text": "Yeşil bitki"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Fırında tatlı"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Derman"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Bulgur ___"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "down",
-     "text": "Ruh"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Azim"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Balmumu"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Köpek sever"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "\"___ var ___ yok\""
-    },
-    {
-     "row": 3,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kristal lamba"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 6
-    },
-    {
-     "row": 4,
-     "column": 6
-    },
-    {
-     "row": 6,
-     "column": 5
-    },
-    {
-     "row": 8,
-     "column": 2
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900002",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#E#B#D#G",
-    "AK#İDARE",
-    "#İKRAM#N",
-    "AMA#İLAÇ",
-    "##ZARAR#",
-    "CÜMLE#AD",
-    "#SAÇ#ABİ",
-    "ATKI#TAŞ"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Beyaz"
-    },
-    {
-     "row": 1,
-     "column": 2,
-     "arrow": "right",
-     "text": "Müdürlük"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Hediye"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Fakat"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Deva"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "right",
-     "text": "Hasar"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Noktayla biter"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "right",
-     "text": "Kişiye verilen söz"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Başta uzar"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Ağabey"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Boyna sarılır"
-    },
-    {
-     "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Kaya parçası"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Onuncu ay"
+     "text": "A neutral…"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "down",
-     "text": "Alt karşıtı"
+     "text": "Leave out"
     },
     {
      "row": 1,
      "column": 2,
      "arrow": "down",
-     "text": "Oymak"
+     "text": "To ___ or not to ___"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Not on time"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Tek"
+     "text": "Not no"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "down",
-     "text": "Duvar sıvası"
+     "text": "Fishing mesh"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "down",
-     "text": "Apartman bölümü"
+     "text": "Provide a cure…"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Faucet"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Katre"
+     "text": "Propel through the…"
     },
     {
      "row": 5,
      "column": 5,
      "arrow": "down",
-     "text": "Binek hayvanı"
-    },
-    {
-     "row": 2,
-     "column": 6,
-     "arrow": "down",
-     "text": "Otomobil"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Delikanlı"
-    },
-    {
-     "row": 4,
-     "column": 7,
-     "arrow": "down",
-     "text": "Ağızda olur"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 1
-    },
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 6
-    },
-    {
-     "row": 6,
-     "column": 2
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900003",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#D#P#V#",
-    "DELİ#EŞ",
-    "###SADE",
-    "KAŞ#RAF",
-    "#YAZI##",
-    "ARPA#EV",
-    "#AKRABA",
-    "ANA#YER"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Akılsız"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Benzer"
-    },
-    {
-     "row": 2,
-     "column": 2,
-     "arrow": "right",
-     "text": "Süssüz"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Göz üstünde"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Dolap bölmesi"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "right",
-     "text": "El ___"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Bira yapılır"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "right",
-     "text": "Oturulan yer"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Aile üyesi"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Anne"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Mekân"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "\"Sen ___ gel\""
-    },
-    {
-     "row": 2,
-     "column": 1,
-     "arrow": "down",
-     "text": "Köpüklü içecek"
-    },
-    {
-     "row": 2,
-     "column": 2,
-     "arrow": "down",
-     "text": "Başa giyilir"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Kirli"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Tavla aracı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Bal yapan böcek"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "down",
-     "text": "Dünyanın uydusu"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Ayrılık"
-    },
-    {
-     "row": 4,
-     "column": 5,
-     "arrow": "down",
-     "text": "Doğum yaptırır"
+     "text": "Self"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Aşçıbaşı"
-    },
-    {
-     "row": 4,
-     "column": 6,
-     "arrow": "down",
-     "text": "Mevcut"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 5
-    },
-    {
-     "row": 4,
-     "column": 1
-    },
-    {
-     "row": 7,
-     "column": 1
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900004",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#E#B#G#",
-    "OK#EŞEK",
-    "#ŞELALE",
-    "AİT#KİN",
-    "###BANT",
-    "NEŞE###",
-    "#ŞİŞMAN",
-    "ŞİŞ#ODA",
-    "#TEKRAR"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Yayla atılır"
-    },
-    {
-     "row": 1,
-     "column": 2,
-     "arrow": "right",
-     "text": "Anırır"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Düşen su"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Birine özgü"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Garez"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Kurdele"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Keyif"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Kilolu"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Kebap demiri"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Evin bölümü"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Yeniden"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Limon tadı"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Aynı"
-    },
-    {
-     "row": 1,
-     "column": 2,
-     "arrow": "down",
-     "text": "Kasap satar"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Cam kap"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Kalça üstü"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Dörtten sonra"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "down",
-     "text": "Espri"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "down",
-     "text": "Erguvan"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Damadın eşi"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Etrafı su"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kasaba büyüğü"
+     "text": "Chances"
     },
     {
      "row": 5,
      "column": 6,
      "arrow": "down",
-     "text": "Kırmızı meyve"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 0
-    },
-    {
-     "row": 8,
-     "column": 2
-    },
-    {
-     "row": 8,
-     "column": 5
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900005",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#Y#Y#K#K",
-    "KASABA#A",
-    "##İŞARET",
-    "PAS#YAN#",
-    "#C#GARİP",
-    "CEKET#ŞU",
-    "#MUZ#ATA",
-    "KİŞİ#TEN"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Köyden büyük"
-    },
-    {
-     "row": 2,
-     "column": 1,
-     "arrow": "right",
-     "text": "Belirti"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Demir küfü"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Kenar"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Tuhaf"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Takım parçası"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "right",
-     "text": "Bu değil"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Maymun sever"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Dede"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Birey"
-    },
-    {
-     "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Cilt"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "\"___ sen ___ ben\""
-    },
-    {
-     "row": 2,
-     "column": 1,
-     "arrow": "down",
-     "text": "Usta karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Duman gibi bulut"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Serçe"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Islak"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Seyahat"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "down",
-     "text": "Eski ekmek"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Hüküm"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Yarış hayvanı"
-    },
-    {
-     "row": 1,
-     "column": 6,
-     "arrow": "down",
-     "text": "Halanın kocası"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Apartman bölümü"
-    },
-    {
-     "row": 3,
-     "column": 7,
-     "arrow": "down",
-     "text": "Not"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 3
-    },
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 2
-    },
-    {
-     "row": 5,
-     "column": 6
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900006",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#Y#B#I#",
-    "KEÇİ#SU",
-    "#DALGIÇ",
-    "SİMGE##",
-    "###İLGİ",
-    "GÖZ#MAL",
-    "#TABELA",
-    "YEM#KAN"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Dağ ___"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Hayat kaynağı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Derin yüzücü"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Sembol"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Alaka"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Görme organı"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Eşya"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Dükkân adı"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Hayvan yiyeceği"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Damarda akar"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Altıdan sonra"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Karşı taraf"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Yılbaşı ağacı"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Fiyat artışı"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Haber"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Gitmek karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Derece ölçer"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Resmi davet"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kalemin sivri yeri"
-    },
-    {
-     "row": 3,
-     "column": 6,
-     "arrow": "down",
-     "text": "Duyuru"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 5
-    },
-    {
-     "row": 3,
-     "column": 2
-    },
-    {
-     "row": 5,
-     "column": 2
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900007",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#K#R#Y#",
-    "BU#UÇAK",
-    "#LAHANA",
-    "HER#TAS",
-    "##ILIK#",
-    "VAZO##E",
-    "#BAKKAL",
-    "EL#MEŞE",
-    "#ARALIK"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Yakındakini gösterir"
-    },
-    {
-     "row": 1,
-     "column": 2,
-     "arrow": "right",
-     "text": "Hava taşıtı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Sarması olur"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Bütün"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Hamam kabı"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "right",
-     "text": "Ilıman"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Kristal kap"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Dükkâncı"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Parmakların yeri"
-    },
-    {
-     "row": 7,
-     "column": 2,
-     "arrow": "right",
-     "text": "Palamut ağacı"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Son ay"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Burç"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Büyük kız kardeş"
-    },
-    {
-     "row": 1,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bozukluk"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Can"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Bir ısırık"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "down",
-     "text": "Dam"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "down",
-     "text": "Saçsız"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Al olur"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Hastalığa karşı iğne"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Adale"
-    },
-    {
-     "row": 4,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kalbur"
-    }
-   ],
-   "givens": [
-    {
-     "row": 3,
-     "column": 1
-    },
-    {
-     "row": 3,
-     "column": 4
-    },
-    {
-     "row": 3,
-     "column": 5
-    },
-    {
-     "row": 4,
-     "column": 2
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900008",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#D#Ş#K#A",
-    "ÇENE#İLK",
-    "#FENER#Ü",
-    "TAT#SAP#",
-    "###GİZLİ",
-    "SAPAN#AZ",
-    "#LİG#İKİ",
-    "MOLA#ÇAN"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Gevezelik"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Başlangıç"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Deniz ışığı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Lezzet"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Tutacak yer"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Açık karşıtı"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Lastikli oyuncak"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "right",
-     "text": "Biraz"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Futbol kümesi"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Birden sonra"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ara"
-    },
-    {
-     "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Büyük zil"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Kere"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Telefon sözü"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Açık"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Batarya"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Keyifli"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Kuş ağzı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "İlham"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Saplı meyve"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Dış karşıtı"
-    },
-    {
-     "row": 2,
-     "column": 6,
-     "arrow": "down",
-     "text": "Araç numarası"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Araba bataryası"
-    },
-    {
-     "row": 3,
-     "column": 7,
-     "arrow": "down",
-     "text": "Müsaade"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 5
-    },
-    {
-     "row": 4,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 2
-    },
-    {
-     "row": 5,
-     "column": 4
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900009",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#D#R#N#",
-    "GECE#ON",
-    "#REÇETE",
-    "SEPET##",
-    "###LİSE",
-    "HAT#KUM",
-    "#NEŞELİ",
-    "HIZ#TUR"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Gündüz karşıtı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Dokuzdan sonra"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Tarif"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Küfe"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Orta öğretim"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Telefon bağlantısı"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Plaj zemini"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Keyifli"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Sürat"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Devir"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Küçük akarsu"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Geçmişten kalan"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Ceketteki bölme"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bitirme çalışması"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Kahvaltılık tatlı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Fiyat kâğıdı"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Karne puanı"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Akışkan"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Soru sözü"
-    },
-    {
-     "row": 3,
-     "column": 6,
-     "arrow": "down",
-     "text": "Buyruk"
+     "text": "Decay"
     }
    ],
    "givens": [
@@ -1503,173 +165,8 @@
      "column": 4
     },
     {
-     "row": 4,
-     "column": 5
-    },
-    {
      "row": 7,
-     "column": 6
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900010",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#A#K#K#",
-    "UYKU#ÖN",
-    "#AİT#YA",
-    "ARMUT#N",
-    "####EBE",
-    "MİSİNA#",
-    "#NEŞELİ",
-    "SEN#KOL",
-    "#KEPENK"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Dinlenme hali"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Arka karşıtı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "İlgili"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "right",
-     "text": "Veya"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ayvaya benzer"
-    },
-    {
-     "row": 4,
-     "column": 3,
-     "arrow": "right",
-     "text": "Oyunda sobeleyen"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Naylon ip"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Şen"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ben değil"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Dal"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Demir perde"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Kalibre"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Ahırda yaşar"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Hangi kişi"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "On iki ay"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Kap"
-    },
-    {
-     "row": 4,
-     "column": 3,
-     "arrow": "down",
-     "text": "Görev"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "down",
-     "text": "İnce metal"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Kasaba değil"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Uçan küre"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Ferahlatıcı bitki"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "Birinci"
-    }
-   ],
-   "givens": [
-    {
-     "row": 0,
-     "column": 3
-    },
-    {
-     "row": 1,
-     "column": 3
+     "column": 1
     },
     {
      "row": 8,
@@ -1677,677 +174,166 @@
     },
     {
      "row": 8,
-     "column": 4
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900011",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#İ#B#A#Ü",
-    "VAZO#SOS",
-    "#DAR#ALT",
-    "SERÇE#A#",
-    "####BOYA",
-    "SOHBET#M",
-    "#DUA#OYA",
-    "YAYLA#AÇ"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Çiçek kabı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Ketçap"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Geniş karşıtı"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "right",
-     "text": "Aşağı taraf"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Cıvıldar"
-    },
-    {
-     "row": 4,
-     "column": 3,
-     "arrow": "right",
-     "text": "Fırça ile sürülür"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Muhabbet"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Niyaz"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "El işi"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Yaz otlağı"
-    },
-    {
-     "row": 7,
-     "column": 5,
-     "arrow": "right",
-     "text": "Karnı boş"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Geri verme"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Salon"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "İnce örtü"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Karakter"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Verecek"
-    },
-    {
-     "row": 4,
-     "column": 3,
-     "arrow": "down",
-     "text": "Arının ürünü"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "down",
-     "text": "Doğum yaptırır"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Baston"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Araba"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Hadise"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "\"___ sen ___ ben\""
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Yukarı taraf"
-    },
-    {
-     "row": 3,
-     "column": 7,
-     "arrow": "down",
-     "text": "Gaye"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 2,
-     "column": 7
-    },
-    {
-     "row": 6,
-     "column": 7
-    },
-    {
-     "row": 7,
-     "column": 3
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900012",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#P#T#Ş#",
-    "ŞATO#AD",
-    "#ŞAHANE",
-    "HAMUR##",
-    "###MASA",
-    "YAZ#MAT",
-    "#MİNARE",
-    "DAL#KIŞ"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Avrupa kalesi"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "İsim"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Harika"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Mayalı karışım"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Sehpa"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Sıcak mevsim"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Parlak değil"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Cami kulesi"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ağaç kolu"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Kar yağar"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "General"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Lakin"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bütün"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Kapıda çalar"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Ekilen tane"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Bulmaya çalışmak"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Ün"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Altın rengi"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Dahi, bile"
-    },
-    {
-     "row": 3,
-     "column": 6,
-     "arrow": "down",
-     "text": "Alev"
-    }
-   ],
-   "givens": [
-    {
-     "row": 3,
-     "column": 1
-    },
-    {
-     "row": 6,
      "column": 5
-    },
-    {
-     "row": 7,
-     "column": 1
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900013",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900002",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#S#Ş#B#",
-    "LALE#İP",
-    "#HARİTA",
-    "HAFİF#M",
-    "###TAPU",
-    "RUH#DEK",
-    "#ZAFER#",
-    "TANE#DE",
-    "#KESMEK"
+    "#S#L#S#U",
+    "DO#ALONG",
+    "#LEGAL#L",
+    "BOX#BABY",
+    "##OPERA#",
+    "VITAL#SO",
+    "#OIL#PIN",
+    "ONCE#ICE"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Bahar çiçeği"
+     "text": "Perform"
     },
     {
      "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Halat"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Atlas"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ağır karşıtı"
-    },
-    {
-     "row": 4,
      "column": 2,
      "arrow": "right",
-     "text": "Mülk belgesi"
+     "text": "With a forward…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Lawful"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "A (usually…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "A very young child…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Sung drama"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Tin"
+     "text": "Urgently needed"
     },
     {
      "row": 5,
-     "column": 3,
+     "column": 5,
      "arrow": "right",
-     "text": "Değin"
+     "text": "Very"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "right",
-     "text": "Galibiyet"
+     "text": "Cooking fat"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Brooch"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Adet"
+     "text": "One time"
     },
     {
      "row": 7,
      "column": 4,
      "arrow": "right",
-     "text": "\"Sen ___ gel\""
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Bıçakla ayırmak"
+     "text": "Frozen water"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Alan"
+     "text": "Alone"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "down",
-     "text": "Irak"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Konuşma"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Basamak"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Bant"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "down",
-     "text": "Kırmızı başlık"
+     "text": "Charged atom"
     },
     {
      "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Being or from or…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Delay"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Very light colored"
+    },
+    {
+     "row": 0,
      "column": 4,
      "arrow": "down",
-     "text": "Anlatım"
+     "text": "Tag"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Küçük asalak"
+     "text": "Sun-powered"
     },
     {
-     "row": 3,
+     "row": 5,
      "column": 5,
      "arrow": "down",
-     "text": "Pencereye asılır"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Beyaz lif"
-    },
-    {
-     "row": 6,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kelime sonuna gelen"
-    }
-   ],
-   "givens": [
-    {
-     "row": 0,
-     "column": 3
-    },
-    {
-     "row": 0,
-     "column": 5
-    },
-    {
-     "row": 1,
-     "column": 6
-    },
-    {
-     "row": 3,
-     "column": 3
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900014",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#A#A#O#A",
-    "TREN#TÜY",
-    "#AVİZE#V",
-    "ÜÇ#DOLMA",
-    "##TER#A#",
-    "PLAN#ANA",
-    "#İZ#İCAT",
-    "EFE#SIVA"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Raylı taşıt"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Hav"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Tavan lambası"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Sayı"
-    },
-    {
-     "row": 3,
-     "column": 2,
-     "arrow": "right",
-     "text": "Biber ___"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "right",
-     "text": "Bedenden çıkan su"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Kroki"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "right",
-     "text": "Valide"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Geride kalan işaret"
-    },
-    {
-     "row": 6,
-     "column": 3,
-     "arrow": "right",
-     "text": "Buluş"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Yiğit"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Duvar kaplaması"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Alet"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Banyo aracı"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Yuva"
-    },
-    {
-     "row": 3,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bayat karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Ansızın"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Güç"
-    },
-    {
-     "row": 5,
-     "column": 4,
-     "arrow": "down",
-     "text": "Duman kirliliği"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Konaklama yeri"
-    },
-    {
-     "row": 4,
-     "column": 5,
-     "arrow": "down",
-     "text": "Biberin tadı"
+     "text": "3.14"
     },
     {
      "row": 2,
      "column": 6,
      "arrow": "down",
-     "text": "Meyve satıcısı"
+     "text": "Pertaining to or…"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "rightDown",
-     "text": "Sarı meyve"
+     "text": "Not pretty"
     },
     {
      "row": 4,
      "column": 7,
      "arrow": "down",
-     "text": "Soy büyüğü"
+     "text": "Single"
     }
    ],
    "givens": [
-    {
-     "row": 0,
-     "column": 5
-    },
     {
      "row": 1,
      "column": 0
@@ -2359,501 +345,331 @@
     {
      "row": 3,
      "column": 1
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900015",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#C#T#Y#",
-    "DEDE#AH",
-    "#ZEKİ#U",
-    "CAM#YAN",
-    "###KİŞİ",
-    "TABELA#",
-    "#KELİME",
-    "DÜZ#KAR"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ata"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Acı ünlemi"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Akıllı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Pencere malzemesi"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Taraf"
     },
     {
      "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Şahıs"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Levha"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Sözcük"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Eğri değil"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Beyaz örtü"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Kabahat bedeli"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Elektrik deposu"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "An, zaman"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Kumaş parçası"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Bir"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Saçı dökülmüş"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Kötülük karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Veya"
-    },
-    {
-     "row": 2,
-     "column": 5,
-     "arrow": "down",
-     "text": "Basamak"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Akıtma aracı"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "Asker"
-    }
-   ],
-   "givens": [
-    {
-     "row": 4,
-     "column": 3
-    },
-    {
-     "row": 6,
-     "column": 1
-    },
-    {
-     "row": 6,
      "column": 3
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900016",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900003",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#G#D#R#",
-    "KEDİ#AN",
-    "#MELODİ",
-    "ÇİM#YAN",
-    "##İDARE",
-    "DERİ###",
-    "#K#PARA",
-    "ÇİY#TOY",
-    "#PAHALI"
+    "#A#W#A#",
+    "INCH#RE",
+    "###OVER",
+    "ASH#EAR",
+    "#PORT##",
+    "LANE#AT",
+    "#REDUCE",
+    "KEY#SEA"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Miyavlar"
+     "text": "Small step"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "right",
-     "text": "Kısa süre"
+     "text": "Do, ___, mi"
     },
     {
      "row": 2,
-     "column": 0,
+     "column": 2,
      "arrow": "right",
-     "text": "Ezgi"
+     "text": "Above"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Futbol sahası zemini"
+     "text": "Fire remains"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "right",
-     "text": "Kenar"
+     "text": "Hearing organ"
     },
     {
      "row": 4,
-     "column": 1,
+     "column": 0,
      "arrow": "right",
-     "text": "Yönetim"
+     "text": "A place (seaport…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Cilt"
+     "text": "A narrow way or road"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "right",
+     "text": "Meet ___ noon"
     },
     {
      "row": 6,
-     "column": 2,
+     "column": 0,
      "arrow": "right",
-     "text": "Lira"
+     "text": "Lower"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Sabah nemi"
+     "text": "Metal device…"
     },
     {
      "row": 7,
      "column": 3,
      "arrow": "right",
-     "text": "Acemi"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Değerli"
+     "text": "Ocean"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Büyük tekne"
+     "text": "___ apple a day"
     },
     {
-     "row": 4,
+     "row": 2,
      "column": 1,
      "arrow": "down",
-     "text": "Grup"
+     "text": "Refrain from harming"
     },
     {
-     "row": 0,
+     "row": 2,
      "column": 2,
      "arrow": "down",
-     "text": "Pas tutar"
-    },
-    {
-     "row": 6,
-     "column": 2,
-     "arrow": "down",
-     "text": "\"___ sen ___ ben\""
+     "text": "A sweet yellow…"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Ağızdaki organ"
+     "text": "Which person"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "down",
-     "text": "Alt"
+     "text": "Rose color"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "down",
-     "text": "İğne süsü"
+     "text": "A doctor who…"
     },
     {
      "row": 5,
      "column": 4,
      "arrow": "down",
-     "text": "Dede"
+     "text": "You and me"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Hız ölçer"
+     "text": "Region"
     },
     {
-     "row": 5,
+     "row": 4,
      "column": 5,
      "arrow": "down",
-     "text": "Görev"
+     "text": "Expert"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Büyükanne"
+     "text": "Make a mistake"
     },
     {
-     "row": 5,
+     "row": 4,
      "column": 6,
      "arrow": "down",
-     "text": "Bal sever hayvan"
+     "text": "Hot drink"
     }
    ],
    "givens": [
     {
-     "row": 0,
-     "column": 1
+     "row": 1,
+     "column": 2
     },
     {
      "row": 2,
      "column": 6
     },
     {
-     "row": 3,
-     "column": 4
-    },
-    {
-     "row": 7,
-     "column": 1
+     "row": 6,
+     "column": 6
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900017",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900004",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#S#Ş#B#A",
-    "KORO#İYİ",
-    "#BAVUL#L",
-    "ÇAY#MİDE",
-    "###CUMA#",
-    "HASAT#İÇ",
-    "#NAM#İRİ",
-    "DİZİ#NET"
+    "#U#G#M#",
+    "AS#ATOM",
+    "#ENSURE",
+    "PRO#BAN",
+    "###HELD",
+    "DATA###",
+    "#CAMERA",
+    "TIP#RAG",
+    "#DEBATE"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Ses topluluğu"
+     "text": "Just ___ good"
     },
     {
      "row": 1,
-     "column": 4,
+     "column": 2,
      "arrow": "right",
-     "text": "Güzel"
+     "text": "Tiny particle"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Valiz"
+     "text": "Make certain"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Demlenip içilir"
+     "text": "Expert"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "right",
-     "text": "Karın"
+     "text": "Forbid the public…"
     },
     {
      "row": 4,
      "column": 2,
      "arrow": "right",
-     "text": "Hafta sonu öncesi"
+     "text": "Occupied or in the…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Biçim zamanı"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "right",
-     "text": "Ortası"
+     "text": "Facts"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "right",
-     "text": "Ün"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Büyük"
+     "text": "Equipment for…"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Sıra"
+     "text": "Hint"
     },
     {
      "row": 7,
-     "column": 4,
+     "column": 3,
      "arrow": "right",
-     "text": "Kesin"
+     "text": "Cloth"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Argue with one…"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Isıtıcı"
+     "text": "Consumer"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "down",
-     "text": "Beklenmedik"
+     "text": "Any of various…"
     },
     {
-     "row": 0,
+     "row": 1,
      "column": 2,
      "arrow": "down",
-     "text": "Demir yol"
+     "text": "Opposite of yes"
     },
     {
      "row": 4,
      "column": 2,
      "arrow": "down",
-     "text": "Bataklık otu"
+     "text": "Sticky strip"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Eğlence"
+     "text": "Fuel"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "down",
-     "text": "Mabet"
+     "text": "Pork"
     },
     {
-     "row": 1,
+     "row": 0,
      "column": 4,
      "arrow": "down",
-     "text": "Beklenti"
+     "text": "Pipe"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Age"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Fen"
+     "text": "The significance…"
     },
     {
      "row": 5,
      "column": 5,
      "arrow": "down",
-     "text": "Hayvan yuvası"
-    },
-    {
-     "row": 2,
-     "column": 6,
-     "arrow": "down",
-     "text": "Çember"
+     "text": "Rodent"
     },
     {
      "row": 0,
      "column": 6,
-     "arrow": "rightDown",
-     "text": "Ana baba çocuk"
+     "arrow": "down",
+     "text": "Fix"
     },
     {
-     "row": 4,
-     "column": 7,
+     "row": 5,
+     "column": 6,
      "arrow": "down",
-     "text": "Bahçe sınırı"
+     "text": "Years lived"
     }
    ],
    "givens": [
@@ -2862,8 +678,673 @@
      "column": 3
     },
     {
+     "row": 4,
+     "column": 6
+    },
+    {
+     "row": 5,
+     "column": 1
+    },
+    {
+     "row": 6,
+     "column": 4
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900005",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#O#T#V#W",
+    "CHOOSE#A",
+    "##POORLY",
+    "GET#USE#",
+    "#X#STEAL",
+    "WIDTH#GO",
+    "#SUE#BUS",
+    "ITEM#YET"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Pick out, select…"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "right",
+     "text": "(`ill' is often…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Receive"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Utilize"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Rob"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "The extent of…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Leave"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Take to court"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "School ___"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Object"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Still"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Wow!"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "down",
+     "text": "Have an existence…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Select as an…"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Owed"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Also"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "(linguistics) the…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "The region of the…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Literature in…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Next to"
+    },
+    {
+     "row": 1,
+     "column": 6,
+     "arrow": "down",
+     "text": "An association of…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "How something is…"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "No longer in your…"
+    }
+   ],
+   "givens": [
+    {
+     "row": 3,
+     "column": 6
+    },
+    {
+     "row": 4,
+     "column": 1
+    },
+    {
+     "row": 5,
+     "column": 6
+    },
+    {
+     "row": 6,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900006",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#K#N#F#",
+    "ZERO#IN",
+    "#POTATO",
+    "UTTER##",
+    "###DRAW",
+    "OFF#ERA",
+    "#ERASER",
+    "KEY#TAP"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Indicating the…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Not out"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Spud"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Speak"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Cause to move by…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Not on"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Period"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Pencil topper"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Metal device…"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Knock"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "(especially of…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Charge"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Spoil"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Be excessively hot"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Famous"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Detain"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Be agreeable or…"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Zone"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Refusal"
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Make false by…"
+    }
+   ],
+   "givens": [
+    {
      "row": 2,
      "column": 3
+    },
+    {
+     "row": 2,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900007",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#W#A#M#",
+    "HE#IRON",
+    "#ARRIVE",
+    "PRO#SIT",
+    "##MAKE#",
+    "GLAD##S",
+    "#ENABLE",
+    "ON#PAIN",
+    "#DOTTED"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "That man"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Metal"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Reach a destination"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "In favor"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Be seated"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Engage in"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Showing or causing…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Render capable or…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Atop"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "A symptom of some…"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Spotted"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Have on"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Loan"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Relating to or…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "What we breathe"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Adjust"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "A source of danger"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Baseball club"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A form of…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Fib"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Goal mesh"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Mail"
+    }
+   ],
+   "givens": [
+    {
+     "row": 5,
+     "column": 6
+    },
+    {
+     "row": 6,
+     "column": 2
+    },
+    {
+     "row": 6,
+     "column": 6
+    },
+    {
+     "row": 8,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900008",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#W#F#N#N",
+    "DIAL#OWE",
+    "#SHY#TAX",
+    "SEE#FELT",
+    "##ALL#K#",
+    "RADIUS#D",
+    "#R#STAIR",
+    "AM#PETTY"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Clock face"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Be in debt"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Start suddenly, as…"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Charge against a…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Look"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "A fabric made of…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Every one"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Circle line"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "right",
+     "text": "Support consisting…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "I ___ ready"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Larceny of…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Smart"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Limb with a hand"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "In front"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Soar"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "A speech defect…"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "A high-pitched…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A brief written…"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Was seated"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "The act of…"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Tag player"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Immediately…"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Not wet"
+    }
+   ],
+   "givens": [
+    {
+     "row": 3,
+     "column": 5
     },
     {
      "row": 5,
@@ -2871,163 +1352,2376 @@
     },
     {
      "row": 6,
+     "column": 6
+    },
+    {
+     "row": 7,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900009",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#F#T#S#",
+    "SANE#HA",
+    "#CENSOR",
+    "FEW#PUT",
+    "###PIT#",
+    "LASER#B",
+    "#RENAME",
+    "ACT#LET"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sensible"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Laugh sound"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Someone who…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "A quantifier that…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Place"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "A sizeable hole…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "An acronym for…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Assign a new name to"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Do something"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Allow"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Visage"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Curve"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Not of long duration"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Put"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Number of toes"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Writing tool"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "A plane curve…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Utter in a loud…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Myself"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Painting, e.g."
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Wager"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 6
+    },
+    {
+     "row": 2,
+     "column": 1
+    },
+    {
+     "row": 5,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900010",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#F#M#M#",
+    "OR#ALAS",
+    "#E#PAGE",
+    "YES#TIE",
+    "##CHECK",
+    "ECHO###",
+    "#LETTER",
+    "SUM#AGO",
+    "#BE#BOW"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Either/___"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Sadly"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "right",
+     "text": "Book leaf"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Okay"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Draw"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Examine so as to…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Reverberation"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Note by mail"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Total"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Long ___"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Exist"
+    },
+    {
+     "row": 8,
+     "column": 3,
+     "arrow": "right",
+     "text": "A knot with two…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "No cost"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "A team of…"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "down",
+     "text": "An elaborate and…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Atlas page"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Very warm"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Tardy"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Tag"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Any art that…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Pride"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Try to get or reach"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Line"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 1
+    },
+    {
+     "row": 5,
+     "column": 0
+    },
+    {
+     "row": 7,
+     "column": 5
+    },
+    {
+     "row": 8,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900011",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#D#T#E#O",
+    "SAGA#RID",
+    "#TAX#ADD",
+    "BASIC#E#",
+    "####ALAS",
+    "BANANA#O",
+    "#LOG#WHO",
+    "ALTER#AN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "A narrative…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Free (of)"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Charge against a…"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "right",
+     "text": "Sum up"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Pertaining to or…"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "right",
+     "text": "Oh no"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Any of several…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Enter into a log…"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "___ is there?"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Cause to change"
+    },
+    {
+     "row": 7,
+     "column": 5,
+     "arrow": "right",
+     "text": "___ hour ago"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Information"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "The whole lot"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Air-like substance"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Negative word"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "A car driven by a…"
+    },
+    {
+     "row": 4,
+     "column": 3,
+     "arrow": "down",
+     "text": "How old you are"
+    },
+    {
+     "row": 2,
+     "column": 4,
+     "arrow": "down",
+     "text": "Preserve in a can…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Age"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Rule"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Thought"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Gotcha!"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Strange"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "In the near future"
+    }
+   ],
+   "givens": [
+    {
+     "row": 0,
+     "column": 3
+    },
+    {
+     "row": 1,
+     "column": 1
+    },
+    {
+     "row": 1,
+     "column": 2
+    },
+    {
+     "row": 2,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900012",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#O#P#O#",
+    "UP#LANE",
+    "#ERASER",
+    "UNIT##R",
+    "##BEST#",
+    "RUB#ERA",
+    "#SO#LEG",
+    "PEN#FEE"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Not down"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "A narrow way or road"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Rubber"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Any division of…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "The supreme effort…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Move over…"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Period"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Therefore"
+    },
+    {
+     "row": 6,
+     "column": 3,
+     "arrow": "right",
+     "text": "Limb"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Pig enclosure"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Cost"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Unlock"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Employ"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Any long object…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "(baseball) base…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Same ___ before"
+    },
+    {
+     "row": 3,
+     "column": 4,
+     "arrow": "down",
+     "text": "Your consciousness…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "First number"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Oak, e.g."
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Slip up"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Years lived"
+    }
+   ],
+   "givens": [
+    {
+     "row": 2,
+     "column": 4
+    },
+    {
+     "row": 3,
+     "column": 2
+    },
+    {
+     "row": 7,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900013",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#S#W#E#",
+    "EACH#AT",
+    "#GROWTH",
+    "MAYOR#R",
+    "###PIPE",
+    "ASH#TIE",
+    "#LEVEL#",
+    "FIRE#ON",
+    "#POTATO"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Every"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Located in"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "(biology) the…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "The head of a city…"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Tube"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tree type"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Neckwear"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "A position on a…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Flames"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Working"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Fry source"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "A narrative…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Slide"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "A loud utterance"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Champion"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Shout, as if with…"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "A doctor who…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Produce a literary…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Dine"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Operate an airplane"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Trio"
+    },
+    {
+     "row": 6,
+     "column": 6,
+     "arrow": "down",
+     "text": "Opposite of yes"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 1
+    },
+    {
+     "row": 2,
+     "column": 6
+    },
+    {
+     "row": 3,
+     "column": 6
+    },
+    {
+     "row": 7,
+     "column": 0
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900014",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#A#B#D#U",
+    "AX#ACORN",
+    "#I#DREAD",
+    "USAGE#GO",
+    "##TEAM##",
+    "OIL#MESS",
+    "#LAD#LIP",
+    "ALSO#TRY"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "An edge tool with…"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Oak nut"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "right",
+     "text": "Fearful…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "The act of using"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "right",
+     "text": "Green light word"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Group"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fuel"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "A state of…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "A boy or man"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Mouth edge"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "In addition"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Attempt"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "A straight line…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Sick"
+    },
+    {
+     "row": 2,
+     "column": 2,
+     "arrow": "down",
+     "text": "(Greek mythology)…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "An emblem (a small…"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "To-___ list"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "The best people or…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Female deer"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Reduce or cause to…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Scrap"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Mister"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Cancel, annul, or…"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Agent"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 2,
+     "column": 1
+    },
+    {
+     "row": 3,
+     "column": 4
+    },
+    {
+     "row": 7,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900015",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#H#R#S#",
+    "DATA#IN",
+    "#TOMATO",
+    "PEN#NEW",
+    "##GUY##",
+    "STUN#IT",
+    "#REDUCE",
+    "BY#OPEN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Facts"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Trendy"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Red fruit"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Writing tool"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Not of long duration"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "An informal term…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Shock"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "right",
+     "text": "That thing"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Cut down"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Close ___"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Not shut"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Loathe"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Test"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "A mobile mass of…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Male sheep"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Cancel, annul, or…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Whichever"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Awake"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "The piece of land…"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Rink surface"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "At once"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Two fives"
+    }
+   ],
+   "givens": [
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 5,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900016",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#B#W#R#",
+    "RACE#US",
+    "#SETTLE",
+    "TEA#WEE",
+    "##STORM",
+    "PLEA###",
+    "#E#GATE",
+    "CAR#CON",
+    "#DEPEND"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Any competition"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "We, as object"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Settle into a…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Earl Grey, e.g."
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "(used informally)…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "A violent weather…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Request"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "right",
+     "text": "A movable barrier…"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Auto"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Trick"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Rely"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Bottom"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Take somebody…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Stop"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "down",
+     "text": "About"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Damp"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Label"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Pair"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Top card"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A person who rules…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Heavy weight"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Give a certain…"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Finish"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 6
+    },
+    {
+     "row": 4,
+     "column": 6
+    },
+    {
+     "row": 6,
+     "column": 4
+    },
+    {
+     "row": 7,
+     "column": 5
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900017",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#J#T#C#S",
+    "FUSE#HAT",
+    "#MANIA#U",
+    "APT#DOWN",
+    "###ALSO#",
+    "STORE#ME",
+    "#AIM#SAY",
+    "UGLY#ONE"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Join"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Cap"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Craze"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fitting"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Being or moving…"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "In addition"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Shop"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "right",
+     "text": "Not you"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Goal"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Speak"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Unattractive"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Single"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Move forward by…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Game of chase"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Took a seat"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Cooking fat"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Number of toes"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Soldiers"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Inactive"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A state of extreme…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Very"
+    },
+    {
+     "row": 2,
+     "column": 6,
+     "arrow": "down",
+     "text": "Lady"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Amaze"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Look at"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 0
+    },
+    {
+     "row": 2,
+     "column": 5
+    },
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 6,
      "column": 7
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900018",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900018",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#R#D#R#",
-    "KOKU#ÜN",
-    "#TAT#YA",
-    "HAN#HAL",
-    "##EDA##",
-    "ÇÖP#BİT",
-    "#TENEKE",
-    "DE#ERİK"
+    "#E#P#L#",
+    "PI#ROOT",
+    "#THOUGH",
+    "WHO#TOE",
+    "#ERR##N",
+    "ARRIVE#",
+    "##OPERA",
+    "WAR#TAX"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Burunla alınır"
+     "text": "Circle number"
     },
     {
      "row": 1,
-     "column": 4,
+     "column": 2,
      "arrow": "right",
-     "text": "Nam"
+     "text": "(botany) the…"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Çeşni"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "right",
-     "text": "Veya"
+     "text": "However"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Hükümdar"
+     "text": "Which person"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "right",
-     "text": "Durum"
+     "text": "Foot digit"
     },
     {
      "row": 4,
+     "column": 0,
+     "arrow": "right",
+     "text": "Make a mistake"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Reach a destination"
+    },
+    {
+     "row": 6,
      "column": 1,
      "arrow": "right",
-     "text": "Naz"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Atık"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Saç böceği"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Kutu"
+     "text": "Musical play"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Dahi, bile"
+     "text": "Conflict"
     },
     {
      "row": 7,
-     "column": 2,
+     "column": 3,
      "arrow": "right",
-     "text": "Can eriği"
+     "text": "Charge against a…"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Güzergâh"
+     "text": "One or the other"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Intense and…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Expert"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Tear or be torn…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Not in"
     },
     {
      "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Uzak taraf"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Divan"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Ağaçta olan meyve"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "down",
-     "text": "\"___ var ___ yok\""
-    },
-    {
-     "row": 2,
      "column": 4,
      "arrow": "down",
-     "text": "Bilgi"
+     "text": "A doctor who…"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Düş"
+     "text": "Emblem"
     },
     {
      "row": 4,
      "column": 5,
      "arrow": "down",
-     "text": "Çift"
+     "text": "Age"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "At ayakkabısı"
+     "text": "Next"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "An edge tool with…"
+    }
+   ],
+   "givens": [
+    {
+     "row": 4,
+     "column": 3
+    },
+    {
+     "row": 6,
+     "column": 5
+    },
+    {
+     "row": 7,
+     "column": 6
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900019",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#C#D#E#",
+    "LOGO#AM",
+    "#UNEASY",
+    "PRO#NET",
+    "#SMUG#H",
+    "KEEPER#",
+    "###SLOW",
+    "MADE#OH",
+    "#NOTIFY"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Brand symbol"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "I ___ here"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Lacking a sense of…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "In favor"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Fishing mesh"
     },
     {
      "row": 4,
+     "column": 0,
+     "arrow": "right",
+     "text": "Marked by…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Guardian"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "right",
+     "text": "Lose velocity"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Created"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "I see!"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Inform (somebody)…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Education imparted…"
+    },
+    {
+     "row": 6,
+     "column": 1,
+     "arrow": "down",
+     "text": "___ apple a day"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "A legendary…"
+    },
+    {
+     "row": 6,
+     "column": 2,
+     "arrow": "down",
+     "text": "Perform"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Mother deer"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Disturb the…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Spiritual being…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Comfort"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "A protective…"
+    },
+    {
+     "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Yalnız"
+     "text": "Legend"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "The cause or…"
     }
    ],
    "givens": [
     {
      "row": 0,
      "column": 3
+    },
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 5,
+     "column": 5
+    },
+    {
+     "row": 8,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900020",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#O#S#N#F",
+    "TRUE#OAR",
+    "##NATURE",
+    "GAS#ONCE",
+    "#BUSY###",
+    "HURT#OWE",
+    "#SEE#PIG",
+    "HE#MOTTO"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Consistent with…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "An implement used…"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "right",
+     "text": "The essential…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Fuel"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Formerly"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "right",
+     "text": "Actively or fully…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Be the source of…"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "right",
+     "text": "Must pay"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Spot"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Domestic swine"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Him, as subject"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "A favorite saying…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "This ___ that"
+    },
+    {
+     "row": 2,
+     "column": 1,
+     "arrow": "down",
+     "text": "Treat badly"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Lacking…"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Waves"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "(linguistics) the…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Plaything"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A content word…"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Select as an…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Rainbow shape"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "A message whose…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "Released"
+    },
+    {
+     "row": 4,
+     "column": 7,
+     "arrow": "down",
+     "text": "Self"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 2
+    },
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 6
+    },
+    {
+     "row": 7,
+     "column": 5
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900021",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#C#A#H#",
+    "LUNG#AS",
+    "#BOOT#A",
+    "FEW#HAM",
+    "###TRUE",
+    "PERIOD#",
+    "#REPAIR",
+    "SAD#TOE"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Either of two…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Just ___ good"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Footwear that…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "A quantifier that…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Overactor"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "Consistent with…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "An amount of time"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Fix"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Experiencing or…"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Little piggy"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "A hexahedron with…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Period"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Right away"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Tomato shade"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "In the past"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Gratuity"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "The passage to the…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Laugh sound"
+    },
+    {
+     "row": 2,
+     "column": 5,
+     "arrow": "down",
+     "text": "The audible part…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Identical"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Do, ___, mi"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 6
+    },
+    {
+     "row": 3,
+     "column": 2
+    },
+    {
+     "row": 6,
+     "column": 2
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900022",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#P#A#C#",
+    "BE#CLUB",
+    "#ESTATE",
+    "ART#WED",
+    "##AT###",
+    "ARM#SUM",
+    "#OPPOSE",
+    "NO#AREA",
+    "#MODERN"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "To ___ or not to ___"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "A team of…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Property"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Museum display"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Marry"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Meet ___ noon"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Sleeve filler"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "right",
+     "text": "Amount"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Be against"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Refusal"
+    },
+    {
+     "row": 7,
+     "column": 2,
+     "arrow": "right",
+     "text": "Region"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Belonging to the…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Equal"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "An area within a…"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Postage"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Part of a play"
+    },
+    {
+     "row": 5,
+     "column": 3,
+     "arrow": "down",
+     "text": "Cushion"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "Legal code"
+    },
+    {
+     "row": 4,
+     "column": 4,
+     "arrow": "down",
+     "text": "Hurting"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Attractive…"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "Customer"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Place to sleep"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Mean or intend to…"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 5,
+     "column": 1
     },
     {
      "row": 7,
@@ -3041,853 +3735,1029 @@
   },
   {
    "formatVersion": 1,
-   "id": "tr-900019",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900023",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#K#T#B#",
-    "SIRA#İL",
-    "#TERAZİ",
-    "HATA##G",
-    "###KAÇ#",
-    "BİN#RAF",
-    "#SALATA",
-    "KİN#BAR",
-    "#MEŞALE"
+    "#F#O#E#O",
+    "NOUN#RID",
+    "#US#SAND",
+    "BREAK###",
+    "###LYRIC",
+    "POLL#ICE",
+    "#LAY#SON",
+    "ADD#SENT"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Dizi"
+     "text": "A content word…"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "right",
-     "text": "Vilayet"
+     "text": "Get ___ of"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Kantar"
+     "text": "You and me"
+    },
+    {
+     "row": 2,
+     "column": 3,
+     "arrow": "right",
+     "text": "A loose material…"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Kusur"
+     "text": "Terminate"
     },
     {
      "row": 4,
      "column": 2,
      "arrow": "right",
-     "text": "Hangi sayı"
+     "text": "Expressing deep…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "On kere yüz"
+     "text": "An inquiry into…"
     },
     {
      "row": 5,
-     "column": 3,
+     "column": 4,
      "arrow": "right",
-     "text": "Kitap dizilir"
+     "text": "Frozen water"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "right",
-     "text": "Yeşillik yemeği"
+     "text": "Put into a certain…"
+    },
+    {
+     "row": 6,
+     "column": 4,
+     "arrow": "right",
+     "text": "Male child"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Nefret"
+     "text": "Put in more"
     },
     {
      "row": 7,
      "column": 3,
      "arrow": "right",
-     "text": "Meyhane"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Işık kaynağı"
+     "text": "Mailed"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Asya veya Avrupa"
+     "text": "The cardinal…"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "down",
-     "text": "Ad"
+     "text": "Aged"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "down",
-     "text": "Geri çevirme"
+     "text": "Utilize"
     },
     {
      "row": 4,
      "column": 2,
      "arrow": "down",
-     "text": "Kokulu ot"
+     "text": "A boy or man"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Dişli araç"
+     "text": "Atop"
     },
     {
-     "row": 3,
+     "row": 2,
+     "column": 3,
+     "arrow": "down",
+     "text": "Friend"
+    },
+    {
+     "row": 1,
      "column": 4,
      "arrow": "down",
-     "text": "Taşıt"
+     "text": "Blue above"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Siz değil"
+     "text": "Age"
     },
     {
      "row": 3,
      "column": 5,
      "arrow": "down",
-     "text": "Kaşık yanında"
+     "text": "Go up"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Takımlar sıralaması"
+     "text": "Not out"
     },
     {
-     "row": 4,
+     "row": 3,
      "column": 6,
      "arrow": "down",
-     "text": "Bilgisayar aracı"
+     "text": "Symbol"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "rightDown",
+     "text": "1, 3 or 5"
+    },
+    {
+     "row": 3,
+     "column": 7,
+     "arrow": "down",
+     "text": "A fractional…"
     }
    ],
    "givens": [
     {
-     "row": 1,
-     "column": 0
+     "row": 0,
+     "column": 7
+    },
+    {
+     "row": 3,
+     "column": 2
+    },
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 1
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900024",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#D#S#D#",
+    "LEFT#OH",
+    "#BRIDGE",
+    "STYLE##",
+    "###LAWN",
+    "RUB#LIE",
+    "#SEVERE",
+    "FED#RED"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Location near or…"
     },
     {
      "row": 1,
-     "column": 3
+     "column": 4,
+     "arrow": "right",
+     "text": "Wow!"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "River crossing"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "How something is…"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "A field of…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Move over…"
     },
     {
      "row": 5,
-     "column": 5
+     "column": 3,
+     "arrow": "right",
+     "text": "Recline"
     },
     {
-     "row": 8,
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Harsh"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Any federal…"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Rose color"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "The state of owing…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Employ"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Be excessively hot"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Garden plot"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Not in physical…"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Someone who…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "A member of the…"
+    },
+    {
+     "row": 3,
+     "column": 5,
+     "arrow": "down",
+     "text": "Ligament made of…"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "That man"
+    },
+    {
+     "row": 3,
+     "column": 6,
+     "arrow": "down",
+     "text": "Require"
+    }
+   ],
+   "givens": [
+    {
+     "row": 5,
+     "column": 2
+    },
+    {
+     "row": 6,
+     "column": 2
+    },
+    {
+     "row": 6,
      "column": 4
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900020",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900025",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#C#F#K#B",
-    "GAGA#ÖĞE",
-    "#DÖNEM#N",
-    "ŞIK#TÜM#",
-    "###MERAK",
-    "YATAK#SU",
-    "#DEV#BAZ",
-    "VALİ#ULU"
+    "#S#B#V#",
+    "AM#ACID",
+    "#UPDATE",
+    "AGE#MAN",
+    "##APPLY",
+    "PACE###",
+    "#KEEPER",
+    "PI#RAGE",
+    "#NO#ROD"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Sivri burun"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Element"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Devre"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Seçenek"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Bütün"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Bilme isteği"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Döşek"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "right",
-     "text": "Musluktan akar"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Masal yaratığı"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Kimyada asit karşıtı"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "İl yöneticisi"
-    },
-    {
-     "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Büyük"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Masal kötüsü"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Kara parçası"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bulutların yeri"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Gitar ipi"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Hayran"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Deniz rengi"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Dağ dibi"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Maden"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Şu değil"
-    },
-    {
-     "row": 2,
-     "column": 6,
-     "arrow": "down",
-     "text": "Hikâye"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Ciltteki leke"
-    },
-    {
-     "row": 3,
-     "column": 7,
-     "arrow": "down",
-     "text": "Koyun yavrusu"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 2
-    },
-    {
-     "row": 4,
-     "column": 6
-    },
-    {
-     "row": 5,
-     "column": 1
-    },
-    {
-     "row": 6,
-     "column": 5
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900021",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#L#F#K#",
-    "YENİ#ÖÇ",
-    "#KELİME",
-    "YEM#YÜN",
-    "###PİRE",
-    "DAVUL##",
-    "#BALİNA",
-    "ÇİY#KEK"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Eski karşıtı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Kısas"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Lafız"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Olta ucundaki"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Koyun tüyü"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Deve yapılır"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Tokmakla çalınır"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Dev deniz memelisi"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Şebnem"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Pasta türü"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Benek"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Büyük erkek kardeş"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Islaklık"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Hayret sözü"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Hortumlu hayvan"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Balık derisi"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Yardım"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Siyah yakıt"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Soru sözü"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Yüzün alt kısmı"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kara karşıtı"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 3,
-     "column": 1
-    },
-    {
-     "row": 7,
-     "column": 1
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900022",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#O#Ç#K#",
-    "OF#ODUN",
-    "#İSKELE",
-    "ASA#HAM",
-    "##UZAK#",
-    "TANE##C",
-    "#LAHANA",
-    "NE#İMAM",
-    "#TERAZİ"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Bıkkınlık ünlemi"
+     "text": "I ___ ready"
     },
     {
      "row": 1,
      "column": 2,
      "arrow": "right",
-     "text": "Kütük"
+     "text": "Any of various…"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Vapur durağı"
+     "text": "Modernize or bring…"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Değnek"
+     "text": "How old you are"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "right",
-     "text": "Olgunlaşmamış"
+     "text": "An adult person…"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "right",
-     "text": "Yakın karşıtı"
+     "text": "Put into service"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Tohum"
+     "text": "The rate of moving…"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "right",
-     "text": "Yapraklı sebze"
+     "text": "Goalie"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "\"___ var ___ yok\""
+     "text": "3.14"
     },
     {
      "row": 7,
      "column": 2,
      "arrow": "right",
-     "text": "Cami görevlisi"
+     "text": "Fury"
     },
     {
      "row": 8,
      "column": 0,
      "arrow": "right",
-     "text": "Tartı aleti"
+     "text": "Opposite of yes"
+    },
+    {
+     "row": 8,
+     "column": 3,
+     "arrow": "right",
+     "text": "Fishing pole"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Büro"
+     "text": "Marked by…"
     },
     {
      "row": 4,
      "column": 1,
      "arrow": "down",
-     "text": "Araç"
+     "text": "Similar in quality…"
     },
     {
      "row": 1,
      "column": 2,
      "arrow": "down",
-     "text": "Buhar odası"
+     "text": "Calm"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Az karşıtı"
+     "text": "Not good"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "down",
-     "text": "Ağu"
+     "text": "Look closely"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "down",
-     "text": "Kabiliyet"
+     "text": "Temporary living…"
     },
     {
      "row": 5,
      "column": 4,
      "arrow": "down",
-     "text": "Fakat"
+     "text": "Golf standard"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Duyma organı"
+     "text": "Urgently needed"
     },
     {
      "row": 5,
      "column": 5,
      "arrow": "down",
-     "text": "Cilve"
+     "text": "Pride"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Rutubet"
+     "text": "Refuse"
     },
     {
-     "row": 4,
+     "row": 5,
      "column": 6,
      "arrow": "down",
-     "text": "Minareli yapı"
+     "text": "Tomato shade"
     }
    ],
    "givens": [
     {
-     "row": 0,
-     "column": 3
+     "row": 2,
+     "column": 6
     },
     {
      "row": 3,
-     "column": 1
+     "column": 4
     },
     {
-     "row": 4,
-     "column": 5
+     "row": 3,
+     "column": 6
     },
     {
      "row": 6,
-     "column": 6
+     "column": 4
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900023",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900026",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#O#P#Y#B",
-    "AKIL#ANİ",
-    "##SAĞ#EN",
-    "ASIK#ATA",
-    "#A#ALT##",
-    "ANA#ELEK",
-    "#AL#KAFA",
-    "OTO#ESER"
+    "#G#P#S#H",
+    "SOLO#WEE",
+    "##APPEAL",
+    "LAB#HARD",
+    "#MOTOR##",
+    "MERIT#SO",
+    "#N#ROMAN",
+    "EDGE#EYE"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Us"
+     "text": "Single performance"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "right",
-     "text": "Birden olan"
+     "text": "(used informally)…"
     },
     {
      "row": 2,
      "column": 1,
      "arrow": "right",
-     "text": "Canlı"
-    },
-    {
-     "row": 2,
-     "column": 5,
-     "arrow": "right",
-     "text": "Boyun karşıtı"
+     "text": "Charm"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Abus"
+     "text": "Science room"
     },
     {
      "row": 3,
-     "column": 4,
+     "column": 3,
      "arrow": "right",
-     "text": "Soy büyüğü"
+     "text": "Not easy"
     },
     {
      "row": 4,
-     "column": 2,
+     "column": 0,
      "arrow": "right",
-     "text": "Üst karşıtı"
+     "text": "Machine that…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Anne"
+     "text": "Any admirable…"
     },
     {
      "row": 5,
-     "column": 3,
+     "column": 5,
      "arrow": "right",
-     "text": "Un ayırır"
+     "text": "Therefore"
     },
     {
      "row": 6,
-     "column": 0,
+     "column": 2,
      "arrow": "right",
-     "text": "Bayraktaki renk"
-    },
-    {
-     "row": 6,
-     "column": 3,
-     "arrow": "right",
-     "text": "Akıl"
+     "text": "Relating to or…"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Taşıt"
+     "text": "Rim"
     },
     {
      "row": 7,
-     "column": 3,
+     "column": 4,
      "arrow": "right",
-     "text": "Yapıt"
+     "text": "Seeing organ"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Yön işareti"
+     "text": "Leave"
     },
     {
      "row": 2,
      "column": 1,
      "arrow": "down",
-     "text": "Hüner"
+     "text": "Make amendments to"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "down",
-     "text": "Sıcaklık"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Telefonu açınca"
+     "text": "A social class…"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Levha"
+     "text": "Soda"
     },
     {
      "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Lose interest or…"
+    },
+    {
+     "row": 1,
      "column": 4,
      "arrow": "down",
-     "text": "Kir izi"
+     "text": "A representation…"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "\"___ sen ___ ben\""
+     "text": "Utter obscenities…"
     },
     {
-     "row": 2,
+     "row": 5,
      "column": 5,
      "arrow": "down",
-     "text": "Harita kitabı"
+     "text": "Myself"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Açık"
+     "text": "Corn part"
     },
     {
      "row": 4,
      "column": 6,
      "arrow": "down",
-     "text": "Zeybek"
+     "text": "State"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "rightDown",
-     "text": "Apartman"
+     "text": "Occupied or in the…"
     },
     {
      "row": 4,
      "column": 7,
      "arrow": "down",
-     "text": "Kışın yağar"
+     "text": "First number"
     }
    ],
    "givens": [
     {
-     "row": 0,
+     "row": 1,
+     "column": 5
+    },
+    {
+     "row": 4,
      "column": 3
     },
     {
-     "row": 3,
-     "column": 0
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 6,
+     "column": 3
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900027",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#S#B#G#",
+    "IT#IDEA",
+    "#ATTEND",
+    "BYE#FED",
+    "##ACE##",
+    "BY#HATE",
+    "#EDITOR",
+    "STOP#OR"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Tag player"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "right",
+     "text": "Plan"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Be present at…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "You advance to the…"
     },
     {
      "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Any federal…"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "right",
+     "text": "Expert"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Next to"
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "right",
+     "text": "Detest"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Text corrector"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Halt"
+    },
+    {
+     "row": 7,
+     "column": 4,
+     "arrow": "right",
+     "text": "Either/___"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Remain"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "But"
+    },
+    {
+     "row": 1,
+     "column": 2,
+     "arrow": "down",
+     "text": "Hot drink"
+    },
+    {
+     "row": 5,
+     "column": 2,
+     "arrow": "down",
+     "text": "To-___ list"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "A small piece or…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "A small fragment…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "down",
+     "text": "An unsuccessful…"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "(genetics) a…"
+    },
+    {
+     "row": 4,
+     "column": 5,
+     "arrow": "down",
+     "text": "As well"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Sum up"
+    },
+    {
+     "row": 4,
+     "column": 6,
+     "arrow": "down",
+     "text": "Slip up"
+    }
+   ],
+   "givens": [
+    {
+     "row": 1,
+     "column": 4
+    },
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 5,
+     "column": 0
+    }
+   ]
+  },
+  {
+   "formatVersion": 1,
+   "id": "en-900028",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
+   "grid": [
+    "#F#J#R#",
+    "DATA#UP",
+    "#CAMERA",
+    "BEG#RAG",
+    "###TALE",
+    "TIME###",
+    "#DANGER",
+    "YES#AGO",
+    "#AS#POT"
+   ],
+   "clues": [
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Information"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "right",
+     "text": "Not down"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "right",
+     "text": "Equipment for…"
+    },
+    {
+     "row": 2,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Call upon in…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "right",
+     "text": "Cloth"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "right",
+     "text": "A message that…"
+    },
+    {
+     "row": 4,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Clock reading"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "right",
+     "text": "Peril"
+    },
+    {
+     "row": 6,
+     "column": 0,
+     "arrow": "downRight",
+     "text": "Not no"
+    },
+    {
+     "row": 7,
+     "column": 3,
+     "arrow": "right",
+     "text": "Long ___"
+    },
+    {
+     "row": 8,
+     "column": 0,
+     "arrow": "right",
+     "text": "Same ___ before"
+    },
+    {
+     "row": 8,
+     "column": 3,
+     "arrow": "right",
+     "text": "Metal or…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Clock front"
+    },
+    {
+     "row": 4,
+     "column": 1,
+     "arrow": "down",
+     "text": "Thought"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "down",
+     "text": "Label"
+    },
+    {
+     "row": 4,
+     "column": 2,
+     "arrow": "down",
+     "text": "Bulk"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "Press tightly…"
+    },
+    {
+     "row": 3,
+     "column": 3,
+     "arrow": "down",
+     "text": "Two fives"
+    },
+    {
+     "row": 1,
+     "column": 4,
+     "arrow": "down",
+     "text": "Period"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Opening"
+    },
+    {
+     "row": 0,
+     "column": 4,
+     "arrow": "rightDown",
+     "text": "Living in or…"
+    },
+    {
+     "row": 5,
+     "column": 5,
+     "arrow": "down",
+     "text": "Self"
+    },
+    {
+     "row": 0,
+     "column": 6,
+     "arrow": "down",
+     "text": "Sheet"
+    },
+    {
+     "row": 5,
+     "column": 6,
+     "arrow": "down",
+     "text": "Decay"
+    }
+   ],
+   "givens": [
+    {
+     "row": 4,
+     "column": 4
+    },
+    {
+     "row": 5,
      "column": 1
+    },
+    {
+     "row": 6,
+     "column": 5
     },
     {
      "row": 7,
@@ -3897,670 +4767,313 @@
   },
   {
    "formatVersion": 1,
-   "id": "tr-900024",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900029",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#P#K#Ş#",
-    "PİPO#UÇ",
-    "#DAYI#İ",
-    "BEY#LAF",
-    "###SIRT",
-    "SİNEMA#",
-    "#KASABA",
-    "KİR#NAZ"
+    "#D#C#B#T",
+    "NEAR#ASH",
+    "#C#AGREE",
+    "COMMA#AN",
+    "#DEPTH##",
+    "JET#HEAP",
+    "##EMERGE",
+    "FAR#ROOT"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Kısa çubuk"
+     "text": "Close by"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "right",
-     "text": "Son nokta"
+     "text": "Fire remains"
     },
     {
      "row": 2,
-     "column": 0,
+     "column": 2,
      "arrow": "right",
-     "text": "Akraba"
+     "text": "Be in accord"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Efendi"
+     "text": "A punctuation mark…"
     },
     {
      "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Söz"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Arka"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Beyaz perde"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Küçük şehir"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Leke"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Kırıtma"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Ramazan ekmeği"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Birden sonra"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Hisse"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Taneli meyve"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Deniz girintisi"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Kulağa gelen"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Mutedil"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "İşaret sözü"
-    },
-    {
-     "row": 2,
      "column": 5,
-     "arrow": "down",
-     "text": "Otomobil"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Tek karşıtı"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "Çok değil"
-    }
-   ],
-   "givens": [
-    {
-     "row": 1,
-     "column": 2
+     "arrow": "right",
+     "text": "___ hour ago"
     },
     {
      "row": 4,
-     "column": 3
-    },
-    {
-     "row": 6,
-     "column": 6
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900025",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#O#R#Y#",
-    "ORTA#OY",
-    "#DAKİKA",
-    "TUTAR#V",
-    "###MANA",
-    "DEV#DİŞ",
-    "#KAFES#",
-    "FİDE#AY",
-    "#MİSİNA"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ara"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Rey"
-    },
-    {
-     "row": 2,
      "column": 0,
      "arrow": "right",
-     "text": "Altmış saniye"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Miktar"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Anlam"
+     "text": "The extent…"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "Kocaman"
+     "text": "An airplane…"
     },
     {
      "row": 5,
      "column": 3,
      "arrow": "right",
-     "text": "Çiğneme organı"
+     "text": "Pile"
     },
     {
      "row": 6,
-     "column": 0,
+     "column": 1,
      "arrow": "right",
-     "text": "Kuş evi"
+     "text": "Appear"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Fidan"
+     "text": "Distant"
     },
     {
      "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Otuz günlük süre"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Olta ipi"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Asker topluluğu"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Tohum serpme"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Lezzet"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Dağlar arası"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Hane"
-    },
-    {
-     "row": 5,
      "column": 3,
+     "arrow": "right",
+     "text": "(botany) the…"
+    },
+    {
+     "row": 0,
+     "column": 0,
+     "arrow": "rightDown",
+     "text": "Convert code into…"
+    },
+    {
+     "row": 2,
+     "column": 2,
      "arrow": "down",
-     "text": "Püsküllü başlık"
+     "text": "Measure"
+    },
+    {
+     "row": 0,
+     "column": 2,
+     "arrow": "rightDown",
+     "text": "A painful and…"
     },
     {
      "row": 1,
      "column": 4,
      "arrow": "down",
-     "text": "İstenç"
+     "text": "Assemble or get…"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Mevcut değil"
+     "text": "Candy ___"
     },
     {
      "row": 3,
      "column": 5,
      "arrow": "down",
-     "text": "Dördüncü ay"
+     "text": "Brave person"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Ağır"
-    },
-    {
-     "row": 6,
-     "column": 6,
-     "arrow": "down",
-     "text": "Veya"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 4
-    },
-    {
-     "row": 6,
-     "column": 5
-    },
-    {
-     "row": 7,
-     "column": 2
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900026",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#Y#Ş#Y#B",
-    "YASA#EBE",
-    "#PİL#DAR",
-    "SIR#GİŞE",
-    "##KUR###",
-    "ÖZ#SİMİT",
-    "#AİT#ARI",
-    "İMZA#ÇİĞ"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Kanun"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Oyunda sobeleyen"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Saate takılır"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "right",
-     "text": "Sıkışık"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ayna arkası"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Bilet satılan yer"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "right",
-     "text": "Döviz değeri"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Asıl kısım"
-    },
-    {
-     "row": 5,
-     "column": 2,
-     "arrow": "right",
-     "text": "Gevrek"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Birine özgü"
-    },
-    {
-     "row": 6,
-     "column": 4,
-     "arrow": "right",
-     "text": "Kovanda yaşar"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Belge altı"
-    },
-    {
-     "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Ham"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Bina"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Maaş artışı"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Palyaço gösterisi"
-    },
-    {
-     "row": 5,
-     "column": 2,
-     "arrow": "down",
-     "text": "Ayak bırakır"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Atkı benzeri"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Zanaatkâr"
-    },
-    {
-     "row": 2,
-     "column": 4,
-     "arrow": "down",
-     "text": "Boz"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Haftanın günleri"
-    },
-    {
-     "row": 4,
-     "column": 5,
-     "arrow": "down",
-     "text": "Futbol oyunu"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kafa"
+     "text": "Ocean"
     },
     {
      "row": 4,
      "column": 6,
      "arrow": "down",
-     "text": "Kocaman"
+     "text": "In the past"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "rightDown",
-     "text": "Kasket"
+     "text": "At that time"
     },
     {
      "row": 4,
      "column": 7,
      "arrow": "down",
-     "text": "Dantel iğnesi"
+     "text": "Dog or cat"
     }
    ],
    "givens": [
     {
-     "row": 2,
-     "column": 1
+     "row": 0,
+     "column": 3
     },
     {
-     "row": 5,
+     "row": 3,
+     "column": 7
+    },
+    {
+     "row": 6,
      "column": 4
     },
     {
-     "row": 6,
-     "column": 3
-    },
-    {
-     "row": 6,
-     "column": 6
+     "row": 7,
+     "column": 2
     }
    ]
   },
   {
    "formatVersion": 1,
-   "id": "tr-900027",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
+   "id": "en-900030",
+   "clueLanguage": "en",
+   "answerLanguage": "en",
    "grid": [
-    "#İ#B#R#",
-    "AĞ#OTUZ",
-    "#NEŞELİ",
-    "ŞEF#ROL",
-    "##EDA##",
-    "YA#OZAN",
-    "#MİSİNA",
-    "BANT#İL"
+    "#O#J#D#",
+    "INFO#AT",
+    "###BETA",
+    "JAM#GAP",
+    "#RING##",
+    "MENU#AS",
+    "#NOTICE",
+    "BAR#NET"
    ],
    "clues": [
     {
      "row": 0,
      "column": 0,
      "arrow": "downRight",
-     "text": "Balıkçı aracı"
+     "text": "Details"
     },
     {
      "row": 1,
-     "column": 2,
+     "column": 4,
      "arrow": "right",
-     "text": "Ayın günleri"
+     "text": "Located in"
     },
     {
      "row": 2,
-     "column": 0,
+     "column": 2,
      "arrow": "right",
-     "text": "Keyifli"
+     "text": "Test version"
     },
     {
      "row": 2,
      "column": 0,
      "arrow": "downRight",
-     "text": "Lider"
+     "text": "Press tightly…"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "right",
-     "text": "Oyuncu canlandırır"
+     "text": "Space between"
     },
     {
      "row": 4,
-     "column": 1,
+     "column": 0,
      "arrow": "right",
-     "text": "Tavır"
+     "text": "Wedding band"
     },
     {
      "row": 4,
      "column": 0,
      "arrow": "downRight",
-     "text": "\"___ sen ___ ben\""
+     "text": "List of dishes"
     },
     {
      "row": 5,
-     "column": 2,
+     "column": 4,
      "arrow": "right",
-     "text": "Âşık"
+     "text": "Just ___ good"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "right",
-     "text": "Naylon ip"
+     "text": "Spot"
     },
     {
      "row": 6,
      "column": 0,
      "arrow": "downRight",
-     "text": "Yapıştırıcı şerit"
+     "text": "Rod"
     },
     {
      "row": 7,
-     "column": 4,
+     "column": 3,
      "arrow": "right",
-     "text": "Şehir"
+     "text": "Goal mesh"
     },
     {
      "row": 0,
      "column": 0,
      "arrow": "rightDown",
-     "text": "Aşı aleti"
+     "text": "Working"
     },
     {
-     "row": 4,
+     "row": 2,
      "column": 1,
      "arrow": "down",
-     "text": "Lakin"
+     "text": "Stadium"
     },
     {
-     "row": 1,
+     "row": 2,
      "column": 2,
      "arrow": "down",
-     "text": "Yiğit"
-    },
-    {
-     "row": 5,
-     "column": 2,
-     "arrow": "down",
-     "text": "Mağara"
+     "text": "Small"
     },
     {
      "row": 0,
      "column": 2,
      "arrow": "rightDown",
-     "text": "Bomboş"
+     "text": "The principal…"
     },
     {
      "row": 3,
      "column": 3,
      "arrow": "down",
-     "text": "Arkadaş"
+     "text": "Usually large…"
     },
     {
-     "row": 0,
+     "row": 1,
      "column": 4,
      "arrow": "down",
-     "text": "Kantar"
+     "text": "Omelet base"
+    },
+    {
+     "row": 5,
+     "column": 4,
+     "arrow": "down",
+     "text": "Trendy"
     },
     {
      "row": 0,
      "column": 4,
      "arrow": "rightDown",
-     "text": "Sarılmış şey"
+     "text": "Facts"
     },
     {
      "row": 4,
      "column": 5,
      "arrow": "down",
-     "text": "Beklenmedik"
+     "text": "Top card"
     },
     {
      "row": 0,
      "column": 6,
      "arrow": "down",
-     "text": "Çan"
+     "text": "Faucet"
     },
     {
      "row": 4,
      "column": 6,
      "arrow": "down",
-     "text": "Demir pabuç"
+     "text": "Group"
     }
    ],
    "givens": [
@@ -4569,501 +5082,12 @@
      "column": 3
     },
     {
-     "row": 6,
+     "row": 5,
      "column": 1
     },
     {
-     "row": 6,
-     "column": 6
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900028",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#K#C#H#",
-    "GIDA#EŞ",
-    "#SİNEMA",
-    "GAZ#ŞEN",
-    "###DANS",
-    "GİDER##",
-    "#KİRPİK",
-    "DİZİ#YA",
-    "#ZENGİN"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Besin"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "Karı veya koca"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Film izlenir"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Hava gibi madde"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Neşeli"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "Oynamak"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Gelir karşıtı"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Göz kılı"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Televizyon ___"
-    },
-    {
      "row": 7,
-     "column": 4,
-     "arrow": "right",
-     "text": "Veya"
-    },
-    {
-     "row": 8,
-     "column": 0,
-     "arrow": "right",
-     "text": "Fakir karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Bodur"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Aynı doğumlu"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Bacak eklemi"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Mısra"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Yaşam"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Engin"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Baş örtüsü"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Derhal"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Kötü karşıtı"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Baht"
-    },
-    {
-     "row": 5,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kırmızı sıvı"
-    }
-   ],
-   "givens": [
-    {
-     "row": 2,
-     "column": 3
-    },
-    {
-     "row": 5,
-     "column": 0
-    },
-    {
-     "row": 5,
-     "column": 2
-    },
-    {
-     "row": 6,
-     "column": 3
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900029",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#T#S#S#A",
-    "FENA#AİT",
-    "#N#KOLYE",
-    "KEKİK#İŞ",
-    "#KONUK##",
-    "HER#MASA",
-    "##KUAFÖR",
-    "ULU#KAZI"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Berbat"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "İlgili"
-    },
-    {
-     "row": 2,
-     "column": 2,
-     "arrow": "right",
-     "text": "Boyun takısı"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Baharat"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "right",
-     "text": "Meslek"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "right",
-     "text": "Misafir"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Tüm"
-    },
-    {
-     "row": 5,
-     "column": 3,
-     "arrow": "right",
-     "text": "Yemek yenir"
-    },
-    {
-     "row": 6,
-     "column": 1,
-     "arrow": "right",
-     "text": "Berber"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Yüce"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Arkeoloji işi"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "İnce metal"
-    },
-    {
-     "row": 2,
-     "column": 2,
-     "arrow": "down",
-     "text": "Dehşet"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Durgun"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Kitaba bakmak"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Kayık benzeri"
-    },
-    {
-     "row": 3,
-     "column": 5,
-     "arrow": "down",
-     "text": "Baş"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Güzel"
-    },
-    {
-     "row": 4,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kelime"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "rightDown",
-     "text": "Yüksek vücut ısısı"
-    },
-    {
-     "row": 4,
-     "column": 7,
-     "arrow": "down",
-     "text": "Bal yapan böcek"
-    }
-   ],
-   "givens": [
-    {
-     "row": 0,
-     "column": 1
-    },
-    {
-     "row": 1,
-     "column": 3
-    },
-    {
-     "row": 4,
-     "column": 5
-    },
-    {
-     "row": 6,
-     "column": 6
-    }
-   ]
-  },
-  {
-   "formatVersion": 1,
-   "id": "tr-900030",
-   "clueLanguage": "tr",
-   "answerLanguage": "tr",
-   "grid": [
-    "#K#T#D#",
-    "MAŞA#ÖN",
-    "#PİYANO",
-    "DIŞ#RET",
-    "###ÇAM#",
-    "HAYAL#Y",
-    "#KAYISI",
-    "SÜS#KUL"
-   ],
-   "clues": [
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Ateş aracı"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "right",
-     "text": "İleri taraf"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "right",
-     "text": "Kuyruklu ___"
-    },
-    {
-     "row": 2,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Haricî"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "right",
-     "text": "Kabul etmeme"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "right",
-     "text": "İğne yapraklı ağaç"
-    },
-    {
-     "row": 4,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Düş"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "right",
-     "text": "Malatya ürünü"
-    },
-    {
-     "row": 6,
-     "column": 0,
-     "arrow": "downRight",
-     "text": "Bezek"
-    },
-    {
-     "row": 7,
-     "column": 3,
-     "arrow": "right",
-     "text": "Bende"
-    },
-    {
-     "row": 0,
-     "column": 0,
-     "arrow": "rightDown",
-     "text": "Girilen yer"
-    },
-    {
-     "row": 4,
-     "column": 1,
-     "arrow": "down",
-     "text": "Araba bataryası"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "down",
-     "text": "Örgü aracı"
-    },
-    {
-     "row": 4,
-     "column": 2,
-     "arrow": "down",
-     "text": "Keder"
-    },
-    {
-     "row": 0,
-     "column": 2,
-     "arrow": "rightDown",
-     "text": "Küçük at"
-    },
-    {
-     "row": 3,
-     "column": 3,
-     "arrow": "down",
-     "text": "Küçük ırmak"
-    },
-    {
-     "row": 1,
-     "column": 4,
-     "arrow": "down",
-     "text": "Yılbaşı ayı"
-    },
-    {
-     "row": 0,
-     "column": 4,
-     "arrow": "rightDown",
-     "text": "Çağ"
-    },
-    {
-     "row": 5,
-     "column": 5,
-     "arrow": "down",
-     "text": "Hayat kaynağı"
-    },
-    {
-     "row": 0,
-     "column": 6,
-     "arrow": "down",
-     "text": "Kâğıda yazılan"
-    },
-    {
-     "row": 4,
-     "column": 6,
-     "arrow": "down",
-     "text": "On iki ay"
-    }
-   ],
-   "givens": [
-    {
-     "row": 5,
-     "column": 2
-    },
-    {
-     "row": 5,
-     "column": 6
-    },
-    {
-     "row": 7,
-     "column": 0
+     "column": 4
     }
    ]
   }

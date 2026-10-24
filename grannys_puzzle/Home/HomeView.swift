@@ -113,7 +113,7 @@ struct HomeView: View {
 
             VStack(spacing: 14) {
                 playButton
-                if game.dailyPack != nil {
+                if game.dailies != nil {
                     DailyPuzzleButton(status: game.dailyStatus(today:), height: Self.buttonHeight, isHeld: isOpeningJar) {
                         withAnimation(.easeInOut(duration: 0.25)) { game.playDaily() }
                     }
@@ -293,7 +293,9 @@ struct HomeView: View {
     }
 
     private var openingLine: String {
-        if game.nextLevelNumber == nil { return GrandmaLines.allLevelsDone }
+        // "I'm writing more" only when that's true: not while the next
+        // pack is downloading or waiting for a connection.
+        if game.nextLevelNumber == nil, game.nextPackStatus == .noneYet { return GrandmaLines.allLevelsDone }
         if dailyJarReady { return GrandmaLines.jarReady }
         return GrandmaLines.greeting()
     }
@@ -551,12 +553,7 @@ struct HomeView: View {
             // with nobody watching. (The flight itself blocks taps.)
             .disabled(isOpeningJar)
         } else {
-            Text("More puzzles soon!")
-                .font(.system(size: 19, weight: .bold, design: .rounded))
-                .foregroundStyle(Theme.secondary)
-                .frame(maxWidth: .infinity)
-                .frame(height: Self.buttonHeight)
-                .overlay(Capsule().strokeBorder(Theme.secondary, lineWidth: 2))
+            OutOfLevelsNote(status: game.nextPackStatus, height: Self.buttonHeight, retry: game.retryNextPack)
         }
     }
 }
@@ -1014,4 +1011,42 @@ private struct PrizeFlight: Equatable {
     /// The top of the jar when it opened.
     let start: CGPoint
     let faces: [HelperFace]
+}
+
+/// In the Play button's place once every level on the phone is played: what
+/// getting more is doing. Kept small and quiet: it's a note, not an error.
+private struct OutOfLevelsNote: View {
+    let status: NextPackStatus
+    let height: CGFloat
+    let retry: () -> Void
+
+    var body: some View {
+        Group {
+            switch status {
+            case .needsInternet:
+                // A tap tries again, for a player who just got a connection
+                // and doesn't want to reopen the app.
+                Button(action: retry) {
+                    Label("Connect to the internet to load new levels", systemImage: "wifi.slash")
+                }
+                .buttonStyle(.plain)
+            case .idle, .loading:
+                // Idle only for a moment: running out starts the download.
+                HStack(spacing: 8) {
+                    ProgressView()
+                    Text("Loading new levels…")
+                }
+            case .noneYet:
+                Text("More puzzles soon!")
+            }
+        }
+        .font(.system(size: 15, weight: .semibold, design: .rounded))
+        .foregroundStyle(Theme.ink)
+        .multilineTextAlignment(.center)
+        .padding(.horizontal, 16)
+        .frame(maxWidth: .infinity)
+        .frame(minHeight: height)
+        // A light backing, so the note reads on any part of the room picture.
+        .background(Capsule().fill(Theme.background.opacity(0.9)))
+    }
 }
