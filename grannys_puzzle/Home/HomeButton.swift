@@ -11,6 +11,13 @@ struct HomeButton: View {
     let height: CGFloat
     let action: () -> Void
 
+    /// Room kept free on each side of the label inside the capsule, so a
+    /// long label never runs into the rounded ends.
+    private static let labelInset: CGFloat = 22
+    /// How far a long label may shrink to fit on one line: 24pt down to
+    /// about 15pt. Below that it would stop looking like a big button.
+    private static let smallestScale: CGFloat = 0.62
+
     var body: some View {
         Button(action: action) {
             // Large and in the heaviest weight: a light label on these fills
@@ -18,6 +25,12 @@ struct HomeButton: View {
             Text(title)
                 .font(.system(size: 24, weight: .black, design: .rounded))
                 .foregroundStyle(Theme.background)
+                // One line, shrinking to fit: "Daily challenge done" and
+                // its Turkish are longer than "Level 12" and would otherwise
+                // wrap or run to the edges.
+                .lineLimit(1)
+                .minimumScaleFactor(Self.smallestScale)
+                .padding(.horizontal, Self.labelInset)
                 .frame(maxWidth: .infinity)
                 .frame(height: height)
                 .background(
@@ -35,6 +48,7 @@ struct HomeButton: View {
     VStack(spacing: 14) {
         HomeButton(title: "Level 12", accent: Theme.primary, height: 54) {}
         HomeButton(title: "Daily challenge", accent: Theme.daily, height: 54) {}
+        HomeButton(title: "Daily challenge done", accent: Theme.daily, height: 54) {}
     }
     .padding(58)
     .background(Color.gray)
