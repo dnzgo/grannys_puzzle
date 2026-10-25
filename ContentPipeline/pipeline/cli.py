@@ -193,7 +193,13 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
     """Builds words.tsv and clues.tsv from hand-written source files."""
     rules = load_rules()
     folder = data_dir(args.lang) / "source"
-    paths = sorted(folder.glob("*.tsv"))
+    # The words workbook (.xlsx) is where words are written now; older
+    # .tsv files still import, so supplements can stay plain text.
+    # "~$name.xlsx" is the lock file Excel keeps beside an open workbook.
+    paths = sorted(
+        path for path in [*folder.glob("*.tsv"), *folder.glob("*.xlsx")]
+        if not path.name.startswith("~$")
+    )
     if not paths:
         print(f"No source files in {folder}", file=sys.stderr)
         return 1
@@ -207,6 +213,11 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
     )
     for p in problems:
         print(f"  {p.file}:{p.line} {p.word}: {p.reason}")
+    if not words:
+        # An empty or freshly started workbook must not wipe the word list
+        # the levels are generated from; keep the old one until there are words.
+        print("No words read; words.tsv and clues.tsv left as they were", file=sys.stderr)
+        return 1
     write_word_list(words, data_dir(args.lang) / "words.tsv")
     write_clue_bank(clues, data_dir(args.lang) / "clues.tsv")
     print(f"Read {len(paths)} source files: {len(words)} words, {len(clues)} clues, {len(problems)} problems")

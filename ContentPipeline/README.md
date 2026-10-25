@@ -138,9 +138,18 @@ comes from there.
 
 There are no open Turkish word lists and dictionaries we can use freely in a
 paid or ad-funded app, so Turkish words are written by us, each with its
-clues, in `data/tr/source/*.tsv` (columns: word, familiarity 10/20/35,
-part_of_speech, clue_1..clue_3). Those files are the record; everything else
-is built from them:
+clues, in the workbook `data/tr/source/turkish_words.xlsx`: one sheet per
+word length, columns Word, Difficulty (Easy/Medium/Hard = familiarity
+10/20/35), Clue 1–3 (no part of speech: one spelling can be several kinds
+of word, MÖ "milattan önce" and a cow's moo, and nothing downstream uses it), with the ID and length columns calculated and
+over-long or duplicate entries coloured. Its Guide sheet explains the
+colours; its Summary sheet counts words per length against our goals.
+Plain `.tsv` files in the same folder (columns: word, familiarity,
+part_of_speech, clue_1..clue_3) import too; the first Turkish batches,
+written that way, are kept in `source/archive/`, which isn't read. (The
+current `words.tsv` and `clues.tsv` were built from them; an import that
+reads no words leaves those files alone.)
+The source folder is the record; everything else is built from it:
 
     python3 -m pipeline.cli import-word-list --lang tr     # -> words.tsv, clues.tsv
     python3 -m pipeline.cli generate --lang tr --count 100 --pack tr-001
@@ -148,6 +157,8 @@ is built from them:
 
 `import-word-list` applies the same clue checks as `import-clues`, with
 Turkish casing (i → İ, ı → I; see `pipeline/textcase.py`), and lists every
-line it rejects. To change a word or a clue, edit its source line and run the
+line it rejects (a workbook line reads "4 letters row 12"). Save and close
+the workbook before importing: the importer reads the values Excel last
+saved. To change a word or a clue, edit its source line and run the
 three commands again. Copy the pack to `grannys_puzzle/Levels/` to ship it.
 
