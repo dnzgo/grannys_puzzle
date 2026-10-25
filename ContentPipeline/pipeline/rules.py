@@ -23,10 +23,23 @@ class Rules:
     max_columns: int
     max_distinct_letters: int
     max_clues_per_cell: int
+    max_gap_share: float
+    max_shape_gap_share: float
     min_answer_length: int
     max_two_letter_answers: int
     clue_max_length: int
     alphabets: dict[str, str]
+
+    def max_gaps(self, rows: int, columns: int, outside: int = 0) -> int:
+        """How many gaps a board may have on the board itself (rounded
+        down, as Swift's Level does): a share of its cells, not counting
+        the `outside` cells a shaped board leaves out."""
+        return int((rows * columns - outside) * self.max_gap_share)
+
+    def max_shaped_gaps(self, rows: int, columns: int) -> int:
+        """How many gaps a shaped level may have in all, its outside cells
+        included (what the app checks, since it doesn't know the shapes)."""
+        return int(rows * columns * self.max_shape_gap_share)
 
     def alphabet(self, language: str) -> str:
         try:
@@ -46,6 +59,8 @@ def load_rules(path: Path = DEFAULT_RULES_PATH) -> Rules:
         max_columns=grid["maxColumns"],
         max_distinct_letters=data["maxDistinctLetters"],
         max_clues_per_cell=data["maxCluesPerCell"],
+        max_gap_share=data["maxGapShare"],
+        max_shape_gap_share=data["maxShapeGapShare"],
         min_answer_length=data["minAnswerLength"],
         max_two_letter_answers=data["maxTwoLetterAnswers"],
         clue_max_length=data["clueMaxLength"],

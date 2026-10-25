@@ -76,7 +76,9 @@ Apple's app transfer later. The bundle ID changes: the current one
       price; later, test the content rating per request through Remote
       Config
 - [ ] App Store listing in English and Turkish: description, keywords,
-      subtitle, screenshots, age rating, App Privacy answers
+      subtitle, screenshots, age rating, App Privacy answers. Marketing
+      URL: https://dengolabs.com/games/grannys-puzzle/ (AdMob finds
+      app-ads.txt through it); support URL: the game's help page
 - [ ] Achievements (and leaderboard) attached to version 1.0
 
 ## Polish and checks

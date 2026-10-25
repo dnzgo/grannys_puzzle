@@ -12,6 +12,48 @@ final class LevelValidationTests: XCTestCase {
         XCTAssertNoThrow(try Level(file: square))
     }
 
+    // MARK: - Gaps
+
+    func testAGapIsNeitherAClueNorALetter() throws {
+        // The square's corner holds no clue: it can just as well be a gap.
+        var file = square
+        file.grid[0] = ".####"
+        let level = try Level(file: file)
+        XCTAssertTrue(level.isGap(cell(0, 0)))
+        XCTAssertFalse(level.isClueCell(cell(0, 0)))
+        XCTAssertFalse(level.isLetterCell(cell(0, 0)))
+        XCTAssertFalse(level.letterCells.contains(cell(0, 0)))
+    }
+
+    func testRejectsAClueOnAGap() {
+        var file = square
+        file.grid[0] = "#.###"  // (0, 1) holds the "Birthday note" clue
+        assertRejects(file, with: .clueNotOnClueCell(cell(0, 1)))
+    }
+
+    func testRejectsMoreGapsThanAllowed() {
+        // 25 cells at 12% allows 3 gaps.
+        var file = square
+        file.grid[0] = "....."
+        file.clues.removeAll { $0.row == 0 }
+        assertRejects(file, with: .tooManyGaps(5))
+    }
+
+    func testAShapedBoardMayLeaveMoreCellsOut() throws {
+        // The top row as gaps: 5, too many for a plain 5×5 board (3 allowed),
+        // fine for a shaped one (45%: 11). The rows' across answers still
+        // cover every letter.
+        var file = square
+        file.grid[0] = "....."
+        file.clues.removeAll { $0.row == 0 }
+        assertRejects(file, with: .tooManyGaps(5))
+
+        file.shape = "circle"
+        let level = try Level(file: file)
+        XCTAssertEqual(level.shape, "circle")
+        XCTAssertEqual(level.gapCells.count, 5)
+    }
+
     func testRejectsANewerFormatVersion() {
         var file = square
         file.formatVersion = 2

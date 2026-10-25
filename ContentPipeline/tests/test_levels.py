@@ -140,12 +140,64 @@ class GeneratorTests(unittest.TestCase):
         self.assertEqual({clue["text"] for clue in level["clues"]}, {"Real clue"})
         self.assertEqual(generator.stats.placeholder_clues, 0)
 
+    def test_every_clue_cell_holds_a_clue_and_the_rest_are_gaps(self):
+        # A blocking cell nobody is clued from is written as a gap, never
+        # as an empty clue cell, and there are no more gaps than allowed.
+        generator = self.make_generator()
+        for number, (rows, columns) in enumerate([(7, 6), (9, 7), (10, 8)], start=1):
+            with self.subTest(size=f"{columns}x{rows}"):
+                level = generator.generate(f"en-{number:06d}", LevelSpec(rows, columns, 50), seed=number)
+                self.assertIsNotNone(level, "no fill found")
+                grid = level["grid"]
+                clued = {(clue["row"], clue["column"]) for clue in level["clues"]}
+                hashes = {(r, c) for r, row in enumerate(grid) for c, ch in enumerate(row) if ch == "#"}
+                self.assertEqual(hashes, clued)
+                gaps = sum(row.count(".") for row in grid)
+                self.assertLessEqual(gaps, RULES.max_gaps(rows, columns))
+
+    def test_validator_accepts_gaps_and_rejects_misuse(self):
+        level = self.make_generator().generate("en-000001", LevelSpec(9, 7, 50), seed=3)
+        self.assertEqual(validate_level(level, RULES), [])
+
+        # Turn a clue's cell into a gap: the clue now sits on a gap.
+        clue_on_gap = copy.deepcopy(level)
+        first = clue_on_gap["clues"][0]
+        row = list(clue_on_gap["grid"][first["row"]])
+        row[first["column"]] = "."
+        clue_on_gap["grid"][first["row"]] = "".join(row)
+        self.assertTrue(any("gap" in p for p in validate_level(clue_on_gap, RULES)))
+
+        too_many = copy.deepcopy(level)
+        too_many["grid"] = ["." * len(row) for row in level["grid"]]
+        self.assertTrue(any("gaps, limit" in p for p in validate_level(too_many, RULES)))
+
+    def test_shaped_levels_keep_their_outline(self):
+        # Every cell outside the shape is a gap; the level says its shape;
+        # it's valid. (Made with the sample words, on each shape's size.)
+        from pipeline.shapes import DEFAULT_SIZES, outside_cells
+        generator = self.make_generator()
+        for number, shape in enumerate(DEFAULT_SIZES, start=1):
+            with self.subTest(shape=shape):
+                rows, columns = DEFAULT_SIZES[shape]
+                level = generator.generate(
+                    f"en-{number:06d}", LevelSpec(rows, columns, 50, shape=shape, max_answer_length=8), seed=number
+                )
+                self.assertIsNotNone(level, "no fill found")
+                self.assertEqual(level["shape"], shape)
+                self.assertEqual(validate_level(level, RULES), [])
+                for r, c in outside_cells(shape, rows, columns):
+                    self.assertEqual(level["grid"][r][c], ".")
+
+    def test_a_plain_level_has_no_shape(self):
+        level = self.make_generator().generate("en-000001", LevelSpec(7, 6, 50), seed=1)
+        self.assertNotIn("shape", level)
+
     def test_starter_letters_are_letter_cells(self):
         level = self.make_generator().generate("en-000001", LevelSpec(9, 7, 50), seed=7)
         grid = level["grid"]
         self.assertGreater(len(level["givens"]), 0)
         for given in level["givens"]:
-            self.assertNotEqual(grid[given["row"]][given["column"]], "#")
+            self.assertNotIn(grid[given["row"]][given["column"]], "#.")
 
 
 if __name__ == "__main__":

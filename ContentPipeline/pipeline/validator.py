@@ -8,6 +8,9 @@ in the same way in its own check.
 The checks mirror Swift's `Level(file:)` (same rules, same order), plus a few
 quality checks the app doesn't need: clue length, no repeated answers, the
 two-letter answer limit, and letters forming one connected board.
+
+Grid characters: "#" a clue cell, "." a gap (a cell left out of the board),
+anything else a letter.
 """
 
 from __future__ import annotations
@@ -61,14 +64,25 @@ def validate_level(level: dict, rules: Rules) -> list[str]:
             problem(f"row {r} has {len(row)} cells, expected {columns}")
             return problems
         for c, character in enumerate(row):
-            if character != "#" and character not in alphabet:
+            if character not in "#." and character not in alphabet:
                 problem(f"letter {character!r} at ({r}, {c}) is not in the alphabet")
                 return problems
 
     def is_clue(r: int, c: int) -> bool:
         return grid[r][c] == "#"
 
-    letter_cells = [(r, c) for r in range(rows) for c in range(columns) if not is_clue(r, c)]
+    def is_letter(r: int, c: int) -> bool:
+        return grid[r][c] not in "#."
+
+    # A shaped level leaves many cells out; the app allows it more gaps in
+    # all (it doesn't know the shapes, only that the level has one).
+    gaps = sum(row.count(".") for row in grid)
+    limit = rules.max_shaped_gaps(rows, columns) if level.get("shape") else rules.max_gaps(rows, columns)
+    if gaps > limit:
+        problem(f"{gaps} gaps, limit is {limit}")
+        return problems
+
+    letter_cells = [(r, c) for r in range(rows) for c in range(columns) if is_letter(r, c)]
     if not letter_cells:
         problem("no letter cells")
         return problems
@@ -84,7 +98,7 @@ def validate_level(level: dict, rules: Rules) -> list[str]:
             problem(f"clue outside the grid at ({r}, {c})")
             continue
         if not is_clue(r, c):
-            problem(f"clue on a letter cell at ({r}, {c})")
+            problem(f"clue on a letter cell or gap at ({r}, {c})")
             continue
         clues_per_cell[(r, c)] = clues_per_cell.get((r, c), 0) + 1
         if clues_per_cell[(r, c)] > rules.max_clues_per_cell:
@@ -93,7 +107,7 @@ def validate_level(level: dict, rules: Rules) -> list[str]:
         step = (0, 1) if _DIRECTION[arrow] == "across" else (1, 0)
         cells = []
         cr, cc = r + dr, c + dc
-        while cr < rows and cc < columns and not is_clue(cr, cc):
+        while cr < rows and cc < columns and is_letter(cr, cc):
             cells.append((cr, cc))
             cr, cc = cr + step[0], cc + step[1]
         if len(cells) < max(1, rules.min_answer_length):
@@ -123,7 +137,7 @@ def validate_level(level: dict, rules: Rules) -> list[str]:
 
     for given in level.get("givens", []):
         r, c = given.get("row"), given.get("column")
-        if not (0 <= r < rows and 0 <= c < columns) or is_clue(r, c):
+        if not (0 <= r < rows and 0 <= c < columns) or not is_letter(r, c):
             problem(f"starter letter on a non-letter cell at ({r}, {c})")
 
     # Quality checks the app doesn't need, but players notice.

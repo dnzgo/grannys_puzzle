@@ -14,6 +14,15 @@ public struct LevelRules: Sendable {
     public var maxDistinctLetters = 24
     /// A clue cell is split in two at most.
     public var maxCluesPerCell = 2
+    /// At most this share of a board's cells may be gaps (see LevelFile):
+    /// enough for the generator to leave awkward spots empty, not so many
+    /// that the board looks moth-eaten.
+    public var maxGapShare = 0.12
+    /// The same for a shaped board (a circle, a diamond, an H: see
+    /// `LevelFile.shape`), counting the cells its shape leaves out. The app
+    /// doesn't know the shapes, so it can't tell those from other gaps; the
+    /// generator keeps the 12% on the shape's own cells.
+    public var maxShapeGapShare = 0.45
     public var minAnswerLength = 2
 
     public init() {}

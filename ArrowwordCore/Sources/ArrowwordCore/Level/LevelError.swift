@@ -10,6 +10,8 @@ public enum LevelError: Error, Equatable, Sendable {
     case raggedGrid(row: Int)
     case letterNotInAlphabet(Character, at: Coordinate)
     case noLetterCells
+    /// More gaps than `LevelRules.maxGapShare` allows.
+    case tooManyGaps(Int)
     case clueOutsideGrid(Coordinate)
     case clueNotOnClueCell(Coordinate)
     case answerTooShort(clueAt: Coordinate)

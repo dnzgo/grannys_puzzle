@@ -12,7 +12,8 @@ Source columns (tab-separated, with a header row):
     familiarity     10 everyday, 20 common, 35 less common (same scale as
                     the English list, so `--max-familiarity 20` means the
                     same thing in both languages)
-    part_of_speech  noun, verb, adjective, adverb, other
+    part_of_speech  noun, verb, adjective, adverb, abbreviation, other
+                    (abbreviation: "kg", "ab", "tl": see CLUE_STYLE.md)
     clue_1..clue_3  clues; clue_1 is also the definition. Empty ones are fine.
 """
 
@@ -27,7 +28,7 @@ from .textcase import upper
 from .wordlist import WordEntry
 
 FAMILIARITY_LEVELS = (10, 20, 35)
-PARTS_OF_SPEECH = ("noun", "verb", "adjective", "adverb", "other")
+PARTS_OF_SPEECH = ("noun", "verb", "adjective", "adverb", "abbreviation", "other")
 
 
 @dataclass(frozen=True)

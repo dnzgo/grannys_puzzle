@@ -24,6 +24,7 @@ from .authored import read_sources, write_clue_bank
 from .clues import ClueBank, append_to_bank, import_batch, write_batches
 from .generator import LevelGenerator, LevelSpec
 from .rules import load_rules
+from .shapes import DEFAULT_SIZES
 from .validator import validate_level
 from .wordlist import WordListSettings, build_word_list, read_blocked_words, read_word_list, write_word_list
 
@@ -79,12 +80,23 @@ def cmd_generate(args: argparse.Namespace) -> int:
     clue_bank = ClueBank.load(data_dir(args.lang) / "clues.tsv")
     generator = LevelGenerator(args.lang, words, clue_bank, rules)
     sizes = parse_sizes(args.sizes)
+    shapes = [name.strip() for name in args.shapes.split(",") if name.strip()]
+    shape_size = parse_sizes(args.shape_size)[0] if args.shape_size else None
 
     levels, failures = [], 0
     for offset in range(args.count):
         number = args.first_number + offset
         rows, columns = sizes[offset % len(sizes)]
-        spec = LevelSpec(rows=rows, columns=columns, max_familiarity=args.max_familiarity)
+        # Every Nth level (by level number) is a shaped one, taking the
+        # shapes in turn, on its own board size.
+        shape = None
+        if args.shape_every and number % args.shape_every == 0:
+            shape = shapes[(number // args.shape_every - 1) % len(shapes)]
+            rows, columns = shape_size or DEFAULT_SIZES[shape]
+        spec = LevelSpec(
+            rows=rows, columns=columns, max_familiarity=args.max_familiarity,
+            max_answer_length=args.max_answer_length, shape=shape,
+        )
         level_id = f"{args.lang}-{number:06d}"
         # The seed comes from the level number, so the same command always
         # makes the same pack. (A level also depends on the ones before it,
@@ -101,7 +113,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
             print("\n".join(f"  {p}" for p in problems), file=sys.stderr)
             continue
         levels.append(level)
-        print(f"  {level_id}: {columns}x{rows}")
+        print(f"  {level_id}: {columns}x{rows}" + (f" {shape}" if shape else ""))
 
     out = data_dir(args.lang) / "packs" / f"{args.pack}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -157,7 +169,7 @@ def _answer_of(grid: list[str], clue: dict) -> str:
     step = (0, 1) if clue["arrow"] in ("right", "downRight") else (1, 0)
     r, c = clue["row"] + start[0], clue["column"] + start[1]
     letters = []
-    while r < len(grid) and c < len(grid[0]) and grid[r][c] != "#":
+    while r < len(grid) and c < len(grid[0]) and grid[r][c] not in "#.":
         letters.append(grid[r][c])
         r, c = r + step[0], c + step[1]
     return "".join(letters)
@@ -231,6 +243,19 @@ def main(argv: list[str] | None = None) -> int:
     generate.add_argument(
         "--max-familiarity", type=int, default=20,
         help="SCOWL size cut-off (default 20: everyday words; 35 adds crossword-veteran words like ARIA, LEVEE)",
+    )
+    generate.add_argument(
+        "--max-answer-length", type=int, default=6,
+        help="longest answer allowed (default 6); longer answers need bigger --sizes and fill less easily",
+    )
+    generate.add_argument(
+        "--shape-every", type=int, default=0,
+        help="make every Nth level (by number) a shaped board, e.g. 10; 0 = none",
+    )
+    generate.add_argument("--shapes", default="circle,diamond,h", help="shapes to take in turn")
+    generate.add_argument(
+        "--shape-size", default=None,
+        help="board size for every shaped level (columns x rows); default: each shape's own, see shapes.py",
     )
     generate.add_argument("--seed", type=int, default=1)
     generate.set_defaults(run=cmd_generate)

@@ -27,6 +27,17 @@ answer away); the rest is up to the writer.
 9. **Always original.** Never copy clues from published crosswords, puzzle
    apps or clue websites; they're someone else's copyrighted writing.
 
+10. **Abbreviations are welcome, and the clue says so.** Short answers
+    are where words repeat most (there are only a few dozen real two-letter
+    words), so abbreviations widen the choice a lot: units (KG, CM),
+    chemical symbols (FE, AU), countries (TR, UK), organisations (UN, EU),
+    music notes (RE, MI). The clue must signal it, so nobody hunts for a
+    word: `Kilogram, briefly`, `Iron's symbol`, `Turkey's code`. In
+    Turkish: `Kilogramın kısası`, `Demirin simgesi`. Mark them
+    `abbreviation` in the part_of_speech column.
+    **No brands** (VW, BMW, THY): it's free advertising, it dates quickly,
+    and some companies object to their names in games.
+
 Good: `Purring pet` · `Mouser` · `Kitty` (CAT)
 Too long: `A small furry animal that purrs` (32)
 Gives it away: `Catnap taker`

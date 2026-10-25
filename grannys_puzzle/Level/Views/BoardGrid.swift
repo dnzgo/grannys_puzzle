@@ -1,7 +1,7 @@
 import SwiftUI
 import ArrowwordCore
 
-/// The arrowword grid: clue cells and letter cells, row by row.
+/// The arrowword grid: clue cells, letter cells and gaps, row by row.
 struct BoardGrid: View {
     let model: LevelViewModel
     let metrics: BoardMetrics
@@ -21,7 +21,12 @@ struct BoardGrid: View {
 
     @ViewBuilder
     private func cellView(at cell: Coordinate) -> some View {
-        if model.level.isClueCell(cell) {
+        if model.level.isGap(cell) {
+            // Left out of the board: nothing drawn, so the board's window
+            // shows through, like a black square in a crossword.
+            Color.clear
+                .accessibilityHidden(true)
+        } else if model.level.isClueCell(cell) {
             ClueCellView(
                 clues: model.clues(atClueCell: cell),
                 fontSize: metrics.clueFontSize,

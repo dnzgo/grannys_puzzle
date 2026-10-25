@@ -20,8 +20,12 @@ public struct Level: Sendable {
     /// The distinct answer letters in the tray's order (the alphabet's order).
     public let trayLetters: [Character]
 
-    /// The solution, row by row; nil marks a clue cell.
+    /// The solution, row by row; nil marks a clue cell or a gap.
     private let solutionGrid: [[Character?]]
+    /// The cells left out of the board (see LevelFile.gapMarker).
+    public let gapCells: Set<Coordinate>
+    /// The board's shape, or nil for a rectangle (see LevelFile.shape).
+    public let shape: String?
     /// For each letter cell, the answer it belongs to in each direction.
     private let answerIDsByCell: [Coordinate: [Direction: Int]]
     /// For each clue cell, its answers, top clue first.
@@ -49,9 +53,12 @@ public struct Level: Sendable {
             throw LevelError.unsupportedLanguage(file.answerLanguage)
         }
 
-        let grid = try Self.parseGrid(file.grid, alphabet: Set(alphabet), rules: rules)
+        let (grid, gapCells) = try Self.parseGrid(file.grid, alphabet: Set(alphabet), rules: rules)
         let rowCount = grid.count
         let columnCount = grid[0].count
+        let gapShare = file.shape == nil ? rules.maxGapShare : rules.maxShapeGapShare
+        let maxGaps = Int((Double(rowCount * columnCount) * gapShare).rounded(.down))
+        guard gapCells.count <= maxGaps else { throw LevelError.tooManyGaps(gapCells.count) }
         func isInside(_ cell: Coordinate) -> Bool {
             (0..<rowCount).contains(cell.row) && (0..<columnCount).contains(cell.column)
         }
@@ -64,7 +71,7 @@ public struct Level: Sendable {
         }
         guard !letterCells.isEmpty else { throw LevelError.noLetterCells }
 
-        let runs = try Self.buildRuns(file.clues, grid: grid, rules: rules, isInside: isInside)
+        let runs = try Self.buildRuns(file.clues, grid: grid, gaps: gapCells, rules: rules, isInside: isInside)
 
         // Number the answers in reading order and index them by cell. An
         // answer is "overlapping" when a cell already belongs to another
@@ -123,6 +130,8 @@ public struct Level: Sendable {
         self.letterCells = letterCells
         self.trayLetters = alphabet.filter { distinctLetters.contains($0) }
         self.solutionGrid = grid
+        self.gapCells = gapCells
+        self.shape = file.shape
         self.answerIDsByCell = answerIDsByCell
         self.answerIDsByClueCell = stackedClues
     }
@@ -134,14 +143,19 @@ public struct Level: Sendable {
     }
 
     public func isClueCell(_ cell: Coordinate) -> Bool {
-        contains(cell) && solutionGrid[cell.row][cell.column] == nil
+        contains(cell) && solutionGrid[cell.row][cell.column] == nil && !gapCells.contains(cell)
+    }
+
+    /// A cell left out of the board: not drawn, never selected.
+    public func isGap(_ cell: Coordinate) -> Bool {
+        gapCells.contains(cell)
     }
 
     public func isLetterCell(_ cell: Coordinate) -> Bool {
         solution(at: cell) != nil
     }
 
-    /// The correct letter for a cell, or nil for clue cells and cells outside the grid.
+    /// The correct letter for a cell, or nil for clue cells, gaps and cells outside the grid.
     public func solution(at cell: Coordinate) -> Character? {
         contains(cell) ? solutionGrid[cell.row][cell.column] : nil
     }
@@ -172,7 +186,7 @@ public struct Level: Sendable {
         _ lines: [String],
         alphabet: Set<Character>,
         rules: LevelRules
-    ) throws -> [[Character?]] {
+    ) throws -> (grid: [[Character?]], gaps: Set<Coordinate>) {
         let characterRows = lines.map { Array($0) }
         let columnCount = characterRows.first?.count ?? 0
         guard rules.rows.contains(characterRows.count), rules.columns.contains(columnCount) else {
@@ -180,12 +194,20 @@ public struct Level: Sendable {
         }
 
         var grid: [[Character?]] = []
+        var gaps: Set<Coordinate> = []
         for (rowIndex, characters) in characterRows.enumerated() {
             guard characters.count == columnCount else { throw LevelError.raggedGrid(row: rowIndex) }
             var row: [Character?] = []
             for (columnIndex, character) in characters.enumerated() {
                 if character == LevelFile.clueMarker {
                     row.append(nil)
+                    continue
+                }
+                // A gap ends answers like a clue cell does (nil in the grid);
+                // it's kept apart only so it can't hold a clue.
+                if character == LevelFile.gapMarker {
+                    row.append(nil)
+                    gaps.insert(Coordinate(row: rowIndex, column: columnIndex))
                     continue
                 }
                 guard alphabet.contains(character) else {
@@ -195,7 +217,7 @@ public struct Level: Sendable {
             }
             grid.append(row)
         }
-        return grid
+        return (grid, gaps)
     }
 
     /// A clue with the cells its answer covers, before numbering.
@@ -210,6 +232,7 @@ public struct Level: Sendable {
     private static func buildRuns(
         _ clues: [LevelFile.ClueEntry],
         grid: [[Character?]],
+        gaps: Set<Coordinate>,
         rules: LevelRules,
         isInside: (Coordinate) -> Bool
     ) throws -> [Run] {
@@ -222,7 +245,9 @@ public struct Level: Sendable {
         for clue in clues {
             let clueCell = Coordinate(row: clue.row, column: clue.column)
             guard isInside(clueCell) else { throw LevelError.clueOutsideGrid(clueCell) }
-            guard grid[clueCell.row][clueCell.column] == nil else { throw LevelError.clueNotOnClueCell(clueCell) }
+            guard grid[clueCell.row][clueCell.column] == nil, !gaps.contains(clueCell) else {
+                throw LevelError.clueNotOnClueCell(clueCell)
+            }
 
             cluesPerCell[clueCell, default: 0] += 1
             guard cluesPerCell[clueCell, default: 0] <= rules.maxCluesPerCell else {
@@ -245,7 +270,7 @@ public struct Level: Sendable {
         return runs.sorted { orderKey($0) < orderKey($1) }
     }
 
-    /// The cells from the arrow's first cell up to the next clue cell or the grid edge.
+    /// The cells from the arrow's first cell up to the next clue cell, gap or the grid edge.
     private static func answerCells(from clueCell: Coordinate, arrow: ClueArrow, grid: [[Character?]]) -> [Coordinate] {
         let step = arrow.direction.step
         var cell = clueCell.moved(rows: arrow.startOffset.rows, columns: arrow.startOffset.columns)

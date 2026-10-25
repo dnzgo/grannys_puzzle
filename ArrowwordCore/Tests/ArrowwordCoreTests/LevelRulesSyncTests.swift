@@ -19,6 +19,8 @@ final class LevelRulesSyncTests: XCTestCase {
         let grid: Grid
         let maxDistinctLetters: Int
         let maxCluesPerCell: Int
+        let maxGapShare: Double
+        let maxShapeGapShare: Double
         let minAnswerLength: Int
         let alphabets: [String: String]
     }
@@ -48,6 +50,8 @@ final class LevelRulesSyncTests: XCTestCase {
         XCTAssertEqual(rules.columns, shared.grid.minColumns...shared.grid.maxColumns)
         XCTAssertEqual(rules.maxDistinctLetters, shared.maxDistinctLetters)
         XCTAssertEqual(rules.maxCluesPerCell, shared.maxCluesPerCell)
+        XCTAssertEqual(rules.maxGapShare, shared.maxGapShare)
+        XCTAssertEqual(rules.maxShapeGapShare, shared.maxShapeGapShare)
         XCTAssertEqual(rules.minAnswerLength, shared.minAnswerLength)
     }
 

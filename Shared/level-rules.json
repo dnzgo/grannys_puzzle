@@ -9,6 +9,8 @@
   },
   "maxDistinctLetters": 24,
   "maxCluesPerCell": 2,
+  "maxGapShare": 0.12,
+  "maxShapeGapShare": 0.45,
   "minAnswerLength": 2,
   "maxTwoLetterAnswers": 4,
   "clueMaxLength": 20,

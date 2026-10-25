@@ -13,8 +13,9 @@ from dataclasses import dataclass
 
 from .clues import ClueBank, placeholder_clue
 from .filler import WordIndex, fill_slots
-from .layout import UNUSABLE, Cell, Layout, LayoutWeights, Slot, find_slots, layout_key, search_layout
+from .layout import UNUSABLE, Cell, Layout, LayoutWeights, Slot, find_slots, gap_cells, layout_key, search_layout
 from .rules import Rules
+from .shapes import outside_cells
 from .wordlist import WordEntry
 
 FORMAT_VERSION = 1
@@ -29,6 +30,8 @@ class LevelSpec:
     # Longer answers make grids much harder to fill (fewer words cross well),
     # and 7–8 letter answers rarely fit a 7-column grid nicely anyway.
     max_answer_length: int = 6
+    # None for the whole rectangle, or a name from shapes.SHAPES.
+    shape: str | None = None
 
 
 @dataclass
@@ -78,6 +81,7 @@ class LevelGenerator:
         # A layout can't ask for answers longer than any word we have.
         max_answer_length = min(spec.max_answer_length, index.longest_word_length)
 
+        outside = outside_cells(spec.shape, spec.rows, spec.columns)
         failed_layouts: set[str] = set()
         for attempt in range(max_attempts):
             self.stats.layouts_tried += 1
@@ -86,11 +90,11 @@ class LevelGenerator:
             weights = LayoutWeights() if attempt == 0 else LayoutWeights.random(rng)
             layout, penalty = search_layout(
                 spec.rows, spec.columns, self.rules, rng, max_answer_length,
-                weights=weights, avoid=frozenset(failed_layouts),
+                weights=weights, avoid=frozenset(failed_layouts), outside=outside,
             )
             if penalty >= UNUSABLE:
                 continue  # a hard problem remains: not playable
-            slots = find_slots(layout, self.rules.min_answer_length)
+            slots = find_slots(layout, self.rules.min_answer_length, outside)
             # A few quick fills per layout, each with a fresh random word order.
             # The first ones keep recently used words out; the last allows
             # them, so a hard layout can still be filled.
@@ -139,10 +143,14 @@ class LevelGenerator:
             row, column = slot.clue_cell
             clues.append({"row": row, "column": column, "arrow": slot.arrow, "text": clue})
 
-        grid = [
-            "".join("#" if layout[r][c] else letters[(r, c)] for c in range(spec.columns))
-            for r in range(spec.rows)
-        ]
+        gaps = gap_cells(layout, slots)
+
+        def character(r: int, c: int) -> str:
+            if not layout[r][c]:
+                return letters[(r, c)]
+            return "." if (r, c) in gaps else "#"
+
+        grid = ["".join(character(r, c) for c in range(spec.columns)) for r in range(spec.rows)]
         level_words = {assignment[position] for position in range(len(slots))}
         self._recent.append(level_words)
         self._total_uses.update(level_words)
@@ -151,7 +159,7 @@ class LevelGenerator:
         starter_count = max(1, round(len(letter_cells) * spec.starter_share))
         givens = sorted(rng.sample(letter_cells, starter_count))
 
-        return {
+        level = {
             "formatVersion": FORMAT_VERSION,
             "id": level_id,
             "clueLanguage": self.language,
@@ -160,3 +168,7 @@ class LevelGenerator:
             "clues": clues,
             "givens": [{"row": r, "column": c} for r, c in givens],
         }
+        # Only shaped levels say so; a plain rectangle has no "shape" key.
+        if spec.shape is not None:
+            level["shape"] = spec.shape
+        return level

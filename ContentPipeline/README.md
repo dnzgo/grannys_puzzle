@@ -51,9 +51,25 @@ python3 -m pipeline.cli generate --lang en --count 100 --pack en-001
 python3 -m pipeline.cli validate data/en/packs/en-001.json
 ```
 
-Options: `--sizes 7x9,6x8,7x7,5x6` (columns x rows, cycled),
-`--max-familiarity 20` (lower = only more common words; 35 adds harder words like ARIA and LEVEE), `--first-number`,
-`--seed`. The same command always makes the same levels.
+Options: `--sizes 7x9,6x8,7x7,5x6` (columns x rows, cycled, up to 10x12),
+`--max-answer-length 6` (raise it for bigger boards: 8 fits 8x10 and 9x11
+well), `--max-familiarity 20` (lower = only more common words; 35 adds
+harder words like ARIA and LEVEE), `--first-number`, `--seed`. The same
+command always makes the same levels.
+
+A blocking cell with no clue to hold is written as a gap (`.`): left out
+of the board in the app, like a black square in a crossword. Gaps are
+capped (`maxGapShare` in `Shared/level-rules.json`, 12% of the cells).
+The layout search uses them where they avoid a two-letter word or an
+unchecked letter: about 2 per board, which halves two-letter answers.
+
+**Shaped boards.** `--shape-every 10` makes every 10th level (10, 20, …)
+a shaped board, taking `--shapes circle,diamond,h` in turn, each on its
+own size (circle 9x11, diamond 8x10, H 10x10; see `pipeline/shapes.py`,
+where a new shape is one function). The cells outside the shape are gaps,
+and the level gets a `"shape"` field, which allows it more gaps in all
+(`maxShapeGapShare`). If a shaped level fails to fill, run again with
+another `--seed`: a pack must end up with exactly 100 levels.
 
 Words without a real clue get a placeholder cut from the dictionary
 definition, so packs are playable straight away.

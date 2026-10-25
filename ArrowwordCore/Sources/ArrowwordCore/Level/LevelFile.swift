@@ -28,14 +28,21 @@ public struct LevelFile: Codable, Sendable, Equatable {
     /// format migration.
     public var clueLanguage: String
     public var answerLanguage: String
-    /// One string per row. "#" marks a clue cell; every other character is
-    /// that cell's solution letter, already uppercased by the generator.
+    /// One string per row. "#" marks a clue cell, "." a gap (a cell left out
+    /// of the board: nothing is drawn there and nothing can be typed, like
+    /// a black square in a crossword); every other character is that cell's
+    /// solution letter, already uppercased by the generator.
     /// (Uppercasing is language-sensitive, as with Turkish i → İ, so the app
     /// never does it.)
     public var grid: [String]
     public var clues: [ClueEntry]
     /// Starter letters shown filled in from the beginning.
     public var givens: [Coordinate]
+    /// The board's shape, such as "circle", when it isn't a plain
+    /// rectangle: the cells outside the shape are gaps. Nil (absent from
+    /// the file) for a rectangle. Only allows more gaps; the app draws a
+    /// shaped board like any other.
+    public var shape: String?
 
     public init(
         formatVersion: Int,
@@ -44,7 +51,8 @@ public struct LevelFile: Codable, Sendable, Equatable {
         answerLanguage: String,
         grid: [String],
         clues: [ClueEntry],
-        givens: [Coordinate]
+        givens: [Coordinate],
+        shape: String? = nil
     ) {
         self.formatVersion = formatVersion
         self.id = id
@@ -53,8 +61,11 @@ public struct LevelFile: Codable, Sendable, Equatable {
         self.grid = grid
         self.clues = clues
         self.givens = givens
+        self.shape = shape
     }
 
     /// The character that marks a clue cell in `grid`.
     static let clueMarker: Character = "#"
+    /// The character that marks a gap in `grid`.
+    static let gapMarker: Character = "."
 }

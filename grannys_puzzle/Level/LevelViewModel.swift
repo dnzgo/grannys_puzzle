@@ -221,6 +221,9 @@ final class LevelViewModel {
     // off until it's over.
 
     func tapCell(_ cell: Coordinate) {
+        // A gap (or anything else that isn't a letter) does nothing, not
+        // even the tap's feel: there's nothing there.
+        guard level.isLetterCell(cell) else { return }
         let action = TutorialAction.selectCell(cell)
         guard coachAllows(action) else { return }
         puzzle.select(cell)
