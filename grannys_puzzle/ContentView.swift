@@ -20,6 +20,9 @@ struct ContentView: View {
     /// swaps the text at once (through the environment's locale) and the
     /// puzzles (through the game).
     @AppStorage(AppLanguage.storageKey) private var languageCode = AppLanguage.current.rawValue
+    @AppStorage(ToggleSetting.music.key) private var musicOn = ToggleSetting.music.defaultValue
+    /// Nil in previews.
+    @Environment(MusicPlayer.self) private var music: MusicPlayer?
 
     var body: some View {
         switch startup {
@@ -69,6 +72,21 @@ struct ContentView: View {
                 .onChange(of: scenePhase, initial: true) { _, phase in
                     if phase == .active { Task { await game.fetchUpcomingPacks() } }
                 }
+                // The music's reasons to be quiet that come from the app as
+                // a whole; which track plays is up to the screen (GameView).
+                // Only the background counts, not "inactive" (Control
+                // Centre pulled down for a second shouldn't stop the music).
+                .onChange(of: scenePhase, initial: true) { _, phase in
+                    music?.hold(.background, phase == .background)
+                }
+                // No ads controller (previews, ads not set up) means no ad
+                // can be on screen.
+                .onChange(of: game.ads?.isPresenting ?? false, initial: true) { _, showing in
+                    music?.hold(.ad, showing)
+                }
+                .onChange(of: musicOn, initial: true) { _, on in
+                    music?.setEnabled(on)
+                }
                 .onAppear {
                     // Also delivers a tap that launched the app, held until now.
                     reminderTaps.onTap = { kind in game.reminderOpened(kind: kind) }
@@ -88,6 +106,8 @@ struct ContentView: View {
 /// Switches between the home screen and a level.
 struct GameView: View {
     let game: Game
+    /// Nil in previews.
+    @Environment(MusicPlayer.self) private var music: MusicPlayer?
 
     var body: some View {
         ZStack {
@@ -102,6 +122,20 @@ struct GameView: View {
                     .id(model.level.id)
                     .transition(.opacity)
             }
+        }
+        // Each screen has its track, chosen here where the screens are
+        // switched, so no screen has to remember to start its music.
+        .onChange(of: game.screen.musicTrack, initial: true) { _, track in
+            music?.play(track)
+        }
+    }
+}
+
+private extension Game.Screen {
+    var musicTrack: MusicTrack {
+        switch self {
+        case .home: .home
+        case .level(let model): model.isDaily ? .daily : .puzzle
         }
     }
 }

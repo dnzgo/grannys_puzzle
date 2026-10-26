@@ -15,8 +15,19 @@
 		54EA3384307D9E19003C547D /* GameServicesFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 54EA3383307D9E19003C547D /* GameServicesFirebase */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		54938456308ED237006D813A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 540DBB69307858E60067F8F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 540DBB70307858E60067F8F0;
+			remoteInfo = grannys_puzzle;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		540DBB71307858E60067F8F0 /* grannys_puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = grannys_puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54938452308ED237006D813A /* grannys_puzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = grannys_puzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A1C0DE30A0000100F00D01 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -24,6 +35,11 @@
 		540DBB73307858E60067F8F0 /* grannys_puzzle */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = grannys_puzzle;
+			sourceTree = "<group>";
+		};
+		54938453308ED237006D813A /* grannys_puzzleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = grannys_puzzleTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -40,6 +56,11 @@
 				540DBB9430785A400067F8F0 /* AdKitGoogle in Frameworks */,
 			);
 		};
+		5493844F308ED237006D813A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			files = (
+			);
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +69,7 @@
 			children = (
 				540DBB73307858E60067F8F0 /* grannys_puzzle */,
 				54A1C0DE30A0000100F00D02 /* Config */,
+				54938453308ED237006D813A /* grannys_puzzleTests */,
 				540DBB72307858E60067F8F0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				540DBB71307858E60067F8F0 /* grannys_puzzle.app */,
+				54938452308ED237006D813A /* grannys_puzzleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +121,27 @@
 			productReference = 540DBB71307858E60067F8F0 /* grannys_puzzle.app */;
 			productType = "com.apple.product-type.application";
 		};
+		54938451308ED237006D813A /* grannys_puzzleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5493845A308ED237006D813A /* Build configuration list for PBXNativeTarget "grannys_puzzleTests" */;
+			buildPhases = (
+				5493844E308ED237006D813A /* Sources */,
+				5493844F308ED237006D813A /* Frameworks */,
+				54938450308ED237006D813A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54938457308ED237006D813A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				54938453308ED237006D813A /* grannys_puzzleTests */,
+			);
+			name = grannys_puzzleTests;
+			productName = grannys_puzzleTests;
+			productReference = 54938452308ED237006D813A /* grannys_puzzleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -105,11 +149,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2700;
+				LastSwiftUpdateCheck = 2710;
 				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					540DBB70307858E60067F8F0 = {
 						CreatedOnToolsVersion = 27.0;
+					};
+					54938451308ED237006D813A = {
+						CreatedOnToolsVersion = 27.1;
+						TestTargetID = 540DBB70307858E60067F8F0;
 					};
 				};
 			};
@@ -135,12 +183,18 @@
 			projectRoot = "";
 			targets = (
 				540DBB70307858E60067F8F0 /* grannys_puzzle */,
+				54938451308ED237006D813A /* grannys_puzzleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		540DBB6F307858E60067F8F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			files = (
+			);
+		};
+		54938450308ED237006D813A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
 			);
@@ -174,7 +228,20 @@
 			files = (
 			);
 		};
+		5493844E308ED237006D813A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			files = (
+			);
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54938457308ED237006D813A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 540DBB70307858E60067F8F0 /* grannys_puzzle */;
+			targetProxy = 54938456308ED237006D813A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		540DBB7A307858E70067F8F0 /* Debug configuration for PBXProject "grannys_puzzle" */ = {
@@ -369,6 +436,50 @@
 			};
 			name = Release;
 		};
+		54938458308ED237006D813A /* Debug configuration for PBXNativeTarget "grannys_puzzleTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 737WW78VY2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dengo.grannys-puzzleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/grannys_puzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/grannys_puzzle";
+			};
+			name = Debug;
+		};
+		54938459308ED237006D813A /* Release configuration for PBXNativeTarget "grannys_puzzleTests" */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 737WW78VY2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 27.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dengo.grannys-puzzleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/grannys_puzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/grannys_puzzle";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -385,6 +496,14 @@
 			buildConfigurations = (
 				540DBB7D307858E70067F8F0 /* Debug configuration for PBXNativeTarget "grannys_puzzle" */,
 				540DBB7E307858E70067F8F0 /* Release configuration for PBXNativeTarget "grannys_puzzle" */,
+			);
+			defaultConfigurationName = Release;
+		};
+		5493845A308ED237006D813A /* Build configuration list for PBXNativeTarget "grannys_puzzleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54938458308ED237006D813A /* Debug configuration for PBXNativeTarget "grannys_puzzleTests" */,
+				54938459308ED237006D813A /* Release configuration for PBXNativeTarget "grannys_puzzleTests" */,
 			);
 			defaultConfigurationName = Release;
 		};

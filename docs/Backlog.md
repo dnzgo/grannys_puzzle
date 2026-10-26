@@ -15,8 +15,10 @@ into the work (and into `Release.md` if it's needed for 1.0).
 
 ## Sound
 
-- [ ] Sound effects and music, made and added. (Settings already has the
-      music and sound switches.)
+- [x] Sound and music players, with placeholder sounds (docs/Audio.md).
+- [ ] Real sound effects and music, recorded or licensed, replacing the
+      placeholders.
+- [ ] The planned moments without a sound yet (docs/Audio.md, "Planned").
 
 ## Remote content
 

@@ -83,6 +83,12 @@ public final class GoogleAdNetwork: AdNetwork {
     // MARK: - Ads
 
     public func start() async {
+        // The app sets its own audio session (the game's is "ambient": quiet
+        // with the silent switch, mixing with the player's music). Left to
+        // itself the SDK changes the session for video ads and may not
+        // restore it, so after one ad the game would ignore the silent
+        // switch. With this, video ads play under the app's session too.
+        MobileAds.shared.audioVideoManager.isAudioSessionApplicationManaged = true
         _ = await MobileAds.shared.start()
     }
 

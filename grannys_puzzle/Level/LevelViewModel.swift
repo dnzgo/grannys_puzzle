@@ -44,8 +44,8 @@ final class LevelViewModel {
 
     /// The cell where the cat's head shows for a moment after a hint.
     private(set) var catCell: Coordinate?
-    /// The latest haptic to play; the level screen turns it into a vibration.
-    private(set) var haptic: HapticSignal?
+    /// The latest moment to feel and hear; the level screen plays it.
+    private(set) var feedback: FeedbackSignal?
     let speech = GrandmaSpeech()
 
     // Internal bookkeeping the views never read, so SwiftUI needn't watch it.
@@ -58,7 +58,7 @@ final class LevelViewModel {
     /// Static because each level gets a new view model; it only has to last
     /// as long as the app is open, since a repeat across launches is unnoticeable.
     private static var lastWave: JudgingWave?
-    @ObservationIgnored private var hapticCount = 0
+    @ObservationIgnored private var feedbackCount = 0
     /// Weak because the host (the Game) owns this view model through its
     /// current screen; a strong reference back would be a retain cycle.
     @ObservationIgnored private weak var host: LevelHost?
@@ -311,6 +311,8 @@ final class LevelViewModel {
         // return value (not `puzzle.result`) makes a double tap on Submit
         // record the level once, not award yarn twice and skip a level.
         guard let result = puzzle.submit(rules: scoringRules) else { return }
+        // After the guard, so a double tap that judges nothing plays nothing.
+        feel(.submitted)
         let reward = host?.record(result) ?? LevelReward()
         earnedYarn = reward.yarn
         newlyKnittable = reward.newlyKnittable
@@ -323,8 +325,8 @@ final class LevelViewModel {
                 seconds: max(0, Int(Date.now.timeIntervalSince(dailyStartedAt)))
             )
         }
-        // The pass or fail haptic waits for the card (finishJudging), so it
-        // lands with the verdict instead of before the board has shown it.
+        // The pass or fail vibration and sound wait for the card (finishJudging), so they
+        // land with the verdict instead of before the board has shown it.
         startJudging(result)
         coachSaw(.submit)
         // Every letter right: a happy moment, if the rules allow asking now.
@@ -394,7 +396,7 @@ final class LevelViewModel {
     }
 
     /// Ends the wave, played through or skipped. Safe to call twice: only
-    /// the first call lights the board and plays the verdict haptic.
+    /// the first call lights the board and plays the verdict vibration and sound.
     private func finishJudging(_ result: LevelResult) {
         guard var finished = judging, !finished.isFinished else { return }
         judgingTask?.cancel()
@@ -579,9 +581,9 @@ final class LevelViewModel {
         host?.saveBoard(puzzle.savedBoard())
     }
 
-    private func feel(_ event: HapticEvent) {
-        hapticCount += 1
-        haptic = HapticSignal(event: event, id: hapticCount)
+    private func feel(_ event: FeedbackEvent) {
+        feedbackCount += 1
+        feedback = FeedbackSignal(event: event, id: feedbackCount)
     }
 
     private func showCat(at cell: Coordinate) {

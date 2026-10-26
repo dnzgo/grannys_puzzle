@@ -108,7 +108,7 @@ struct LevelScreen: View {
         .coordinateSpace(.named(SpotlightFrames.spaceName))
         .environment(model.isTutorial ? spotlightFrames : nil)
         .preferredColorScheme(.light)
-        .gameHaptics(model.haptic)
+        .gameFeedback(model.feedback)
         // After a perfect board, once the celebration has finished and the
         // player has had a moment: a prompt on top of it would cut it short.
         .task(id: model.readyForReviewPrompt) {

@@ -21,7 +21,7 @@ struct KnittingMoment: View {
 
     @State private var phase = Phase.knitting
     @State private var rocking = false
-    @State private var haptic: HapticSignal?
+    @State private var feedback: FeedbackSignal?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// Long enough to read the line and feel the wait, short enough not to drag.
@@ -60,9 +60,9 @@ struct KnittingMoment: View {
                 phase = .finished
             }
             // The success buzz lands with the reveal, not when Knit was tapped.
-            haptic = HapticSignal(event: .itemKnitted, id: 1)
+            feedback = FeedbackSignal(event: .itemKnitted, id: 1)
         }
-        .gameHaptics(haptic)
+        .gameFeedback(feedback)
         .accessibilityAddTraits(.isModal)
     }
 

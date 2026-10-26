@@ -3,8 +3,8 @@ import Foundation
 /// An on/off preference the player sets in Settings, saved in `UserDefaults`.
 ///
 /// Each one is a key plus its default, declared once here. The Settings
-/// screen and whatever obeys the setting (the haptics modifier, later the
-/// music and sound players) both read it through `@AppStorage` with these
+/// screen and whatever obeys the setting (the feedback modifier for haptics
+/// and sounds, ContentView for the music) both read it through `@AppStorage` with these
 /// values, so they can never disagree about the key's spelling or the
 /// default.
 ///
@@ -16,9 +16,9 @@ struct ToggleSetting {
     let key: String
     let defaultValue: Bool
 
-    /// Background music. No music plays yet; the player will read this.
+    /// Background music (MusicPlayer).
     static let music = ToggleSetting(key: "musicEnabled", defaultValue: true)
-    /// Taps, letter clicks and jingles. No sounds play yet either.
+    /// Letter clicks, jingles and the other short sounds (SoundPlayer).
     static let sound = ToggleSetting(key: "soundEnabled", defaultValue: true)
     static let haptics = ToggleSetting(key: "hapticsEnabled", defaultValue: true)
 }

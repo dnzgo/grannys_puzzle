@@ -54,8 +54,8 @@ struct HomeView: View {
     /// Where the jar and the counters are, for the prize's flight.
     @State private var jarFrame = CGRect.zero
     @State private var counterFrames: [HelperFace: CGRect] = [:]
-    @State private var haptic: HapticSignal?
-    @State private var hapticCount = 0
+    @State private var feedback: FeedbackSignal?
+    @State private var feedbackCount = 0
     /// Grandma is asking whether she may send reminders.
     @State private var asksAboutReminders = false
     /// Today as a `JarDay` number. Kept as state and refreshed at midnight
@@ -140,7 +140,7 @@ struct HomeView: View {
             }
         }
         .preferredColorScheme(.light)
-        .gameHaptics(haptic)
+        .gameFeedback(feedback)
         // The game's own cards rather than iOS sheets, like settings.
         .overlay {
             if showsYarnBag {
@@ -449,9 +449,9 @@ struct HomeView: View {
         return owned - unlanded[face, default: 0]
     }
 
-    private func feel(_ event: HapticEvent) {
-        hapticCount += 1
-        haptic = HapticSignal(event: event, id: hapticCount)
+    private func feel(_ event: FeedbackEvent) {
+        feedbackCount += 1
+        feedback = FeedbackSignal(event: event, id: feedbackCount)
     }
 
     /// The helpers' card on the left, the streak in the middle, settings on

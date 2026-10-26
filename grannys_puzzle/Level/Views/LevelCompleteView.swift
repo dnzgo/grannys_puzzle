@@ -42,7 +42,7 @@ struct LevelCompleteView: View {
     @State private var landed = 0
     @State private var rolling = false
     @State private var bagBounce = false
-    @State private var haptic: HapticSignal?
+    @State private var feedback: FeedbackSignal?
     /// Picked once, so the line doesn't change while it's on screen.
     @State private var nudgeLine: String?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -78,7 +78,7 @@ struct LevelCompleteView: View {
         .contentShape(Rectangle())
         .onTapGesture { skipToEnd() }
         .animation(.easeOut(duration: 0.25), value: beat)
-        .gameHaptics(haptic)
+        .gameFeedback(feedback)
         .task { await play() }
     }
 
@@ -158,7 +158,7 @@ struct LevelCompleteView: View {
                 landed += 1
                 bagBounce = true
             }
-            haptic = HapticSignal(event: .yarnLanded, id: landed)
+            feedback = FeedbackSignal(event: .yarnLanded, id: landed)
             guard await pause(0.12) else { return }
             withAnimation(.easeOut(duration: 0.15)) { bagBounce = false }
         }

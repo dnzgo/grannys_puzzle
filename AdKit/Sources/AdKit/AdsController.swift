@@ -71,7 +71,10 @@ public final class AdsController {
     private let interstitial: PreloadedAd<any LoadedInterstitialAd>
 
     @ObservationIgnored private var hasStartedNetwork = false
-    @ObservationIgnored private var isPresenting = false
+    /// True while a full-screen ad is on screen. Observed (unlike the
+    /// bookkeeping around it), so the app can react, e.g. pause its music:
+    /// the ad plays its own sound.
+    public private(set) var isPresenting = false
     /// Off until the app first asks for interstitials, so an app (or a new
     /// player) that isn't showing them yet doesn't request ads it won't use.
     @ObservationIgnored private var wantsInterstitials = false

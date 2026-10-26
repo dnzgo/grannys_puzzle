@@ -15,7 +15,7 @@ struct SetPrizeMoment: View {
     let onOpenWardrobe: () -> Void
 
     @State private var shown = false
-    @State private var haptic: HapticSignal?
+    @State private var feedback: FeedbackSignal?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
@@ -68,9 +68,9 @@ struct SetPrizeMoment: View {
         }
         .onAppear {
             shown = true
-            haptic = HapticSignal(event: .itemKnitted, id: 1)
+            feedback = FeedbackSignal(event: .itemKnitted, id: 1)
         }
-        .gameHaptics(haptic)
+        .gameFeedback(feedback)
         .accessibilityAddTraits(.isModal)
     }
 
