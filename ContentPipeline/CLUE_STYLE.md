@@ -33,8 +33,7 @@ answer away); the rest is up to the writer.
     chemical symbols (FE, AU), countries (TR, UK), organisations (UN, EU),
     music notes (RE, MI). The clue must signal it, so nobody hunts for a
     word: `Kilogram, briefly`, `Iron's symbol`, `Turkey's code`. In
-    Turkish: `Kilogramın kısası`, `Demirin simgesi`. Mark them
-    `abbreviation` in the part_of_speech column.
+    Turkish: `Kilogramın kısası`, `Demirin simgesi`.
     **No brands** (VW, BMW, THY): it's free advertising, it dates quickly,
     and some companies object to their names in games.
 

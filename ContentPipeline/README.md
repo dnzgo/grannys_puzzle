@@ -9,7 +9,8 @@ ContentPipeline/
   pipeline/        the code (see each file's top comment)
   tests/           python3 -m unittest discover -s tests -t .
   sources/         downloaded word sources (not in git, see below)
-  data/en/         words.tsv, clues.tsv, exclude.txt, packs/  (in git)
+  data/<lang>/     source/ (the words workbook), words.tsv, clues.tsv,
+                   exclude.txt, packs/  (in git)
   clue-batches/    CSV files for clue writers (in git)
   CLUE_STYLE.md    how to write clues
 ```
@@ -40,9 +41,21 @@ python3 -m pipeline.cli build-words --lang en \
   --wordnet sources/wordnet/dict --badwords sources/badwords/en
 ```
 
-Writes `data/en/words.tsv`. Read through it: any word that shouldn't be in
-the game goes into `data/en/exclude.txt` (one per line, `#` comments
-allowed), then rebuild. Never edit `words.tsv` by hand; it's regenerated.
+This made the **starting** English list, once. Since then the record is the
+words workbook, `data/en/source/english_words.xlsx` (seeded from that list,
+with WordNet's definitions and the clues written so far), and `words.tsv`
+and `clues.tsv` are built from it, the same way as Turkish:
+
+```
+python3 -m pipeline.cli import-word-list --lang en     # -> words.tsv, clues.tsv
+```
+
+So add, remove or re-rate words in the workbook, not here; running
+`build-words` again would only be overwritten by the next import. Words
+that shouldn't be in the game go into `data/en/exclude.txt` (one per line,
+`#` comments allowed): the import refuses them, and the LDNOOBW list in
+`sources/badwords/`, even when they're typed into the workbook by hand.
+Never edit `words.tsv` or `clues.tsv` by hand; they're rebuilt.
 
 ## 3. Generate levels
 
@@ -80,20 +93,23 @@ definition, so packs are playable straight away.
 python3 -m pipeline.cli clue-batches --lang en --pack data/en/packs/en-001.json
 ```
 
-Writes `clue-batches/en-001-001.csv`, `-002.csv`, … (300 words each) for the
-words in that pack that still need clues.
+Lists the words in that pack that still have no real clue, in
+`clue-batches/en-001-001.csv`, … (300 words each): a to-do list. Write
+their clues **in the words workbook** (`CLUE_STYLE.md` has the rules), run
+`import-word-list`, then regenerate the pack: real clues replace the
+placeholders (the definitions shown for unclued words).
 
-- **Claim a batch before starting** (tell your teammate, or commit an empty
-  change with "claim en-001-002"), so two people never edit the same file.
-- Fill in `clue_1`–`clue_3` following `CLUE_STYLE.md`. Its prompt section is
-  ready to paste into Claude with the batch.
-- Import when done; rejected clues are listed with the reason:
+A word without a clue is fine in the workbook: it's "waiting". An English
+one still goes into `words.tsv` with its definition, so test packs can be
+generated before everything is clued; a pack isn't ready to ship while
+`clue-batches` still lists words for it.
 
-```
-python3 -m pipeline.cli import-clues --lang en clue-batches/en-001-002.csv
-```
+`import-clues` (filled batch CSVs straight into `clues.tsv`) is the old way;
+it refuses to run for a language with a workbook, because the next
+`import-word-list` would rebuild `clues.tsv` and drop those clues.
 
-Then regenerate the pack: real clues replace the placeholders.
+The workbook is one file, so only one person edits it at a time: tell your
+teammate before you start, and commit when you're done.
 
 ## 5. Ship a pack
 
@@ -134,7 +150,7 @@ screen (Settings):
 Check each source's own licence file when downloading: the exact notice text
 comes from there.
 
-## Turkish (and other hand-written languages)
+## Turkish
 
 There are no open Turkish word lists and dictionaries we can use freely in a
 paid or ad-funded app, so Turkish words are written by us, each with its
@@ -155,7 +171,12 @@ The source folder is the record; everything else is built from it:
     python3 -m pipeline.cli generate --lang tr --count 100 --pack tr-001
     python3 -m pipeline.cli validate data/tr/packs/tr-001.json
 
-`import-word-list` applies the same clue checks as `import-clues`, with
+A Turkish word without a clue is "waiting": counted at import, left out of
+`words.tsv` (there's no definition to show instead), and its difficulty can
+stay empty until it's clued. So the whole list can go into the workbook
+first and be clued over time.
+
+`import-word-list` applies the clue checks (length, giving the answer away), with
 Turkish casing (i → İ, ı → I; see `pipeline/textcase.py`), and lists every
 line it rejects (a workbook line reads "4 letters row 12"). Save and close
 the workbook before importing: the importer reads the values Excel last

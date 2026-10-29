@@ -84,7 +84,7 @@ class WorkbookImportTests(unittest.TestCase):
             return read_sources([path], "tr", TR, min_length=2, max_length=8, clue_max_length=20)
 
     def test_a_workbook_row_imports_like_a_tsv_line(self):
-        words, clues, problems = self.read({"3 letters": [
+        words, clues, problems, _ = self.read({"3 letters": [
             HEADER,
             [1, "çay", 3, "Medium", "Demlenip içilir", 15, "Küçük ırmak", 11],
         ]})
@@ -95,7 +95,7 @@ class WorkbookImportTests(unittest.TestCase):
     def test_rows_prepared_for_writing_are_skipped(self):
         # The workbook has ID and length formulas down to row 2000; a row
         # with no word yet isn't a problem, it just hasn't been written.
-        words, _, problems = self.read({"2 letters": [
+        words, _, problems, _ = self.read({"2 letters": [
             HEADER,
             [1, "ev", 2, "Easy", "Yuva"],
             [("ROW()-1", 2), None, ("LEN(B3)", 0)],
@@ -104,27 +104,51 @@ class WorkbookImportTests(unittest.TestCase):
         self.assertEqual(problems, [])
 
     def test_problems_name_the_sheet_and_row(self):
-        _, _, problems = self.read({
+        _, _, problems, _ = self.read({
             "2 letters": [HEADER, [1, "ev", 2, "Easy", "Yuva"]],
-            "4 letters": [HEADER, [1, "ev", 2, "Easy", "Konut"], [2, "masa", 4, "Easy", ""]],
+            "4 letters": [HEADER, [1, "ev", 2, "Easy", "Konut"], [2, "masa", 4, "Easy", "Yemek yenen dört ayaklı"]],
         })
         self.assertEqual(
-            [(p.line, p.word, p.reason) for p in problems],
-            [("4 letters row 2", "EV", "listed twice"), ("4 letters row 3", "MASA", "no clue")],
+            [(p.line, p.word) for p in problems],
+            [("4 letters row 2", "EV"), ("4 letters row 3", "MASA")],
         )
+        self.assertEqual(problems[0].reason, "listed twice")
+        self.assertIn("too long", problems[1].reason)
 
     def test_one_spelling_can_carry_clues_for_different_meanings(self):
         # MÖ is an abbreviation and a cow's moo: with no Type column there's
         # nothing forcing one kind of word, so both clues are kept.
-        words, clues, problems = self.read({"2 letters": [
+        words, clues, problems, _ = self.read({"2 letters": [
             HEADER, [1, "mö", 2, "Easy", "Milattan önce", 13, "İneğin sesi", 11],
         ]})
         self.assertEqual(problems, [])
         self.assertEqual(words[0].part_of_speech, "")
         self.assertEqual(clues, [("MÖ", "Milattan önce"), ("MÖ", "İneğin sesi")])
 
+    def test_the_english_workbook_keeps_definitions_and_rare_words(self):
+        # English rows carry WordNet's definition: a clued word keeps it as
+        # its definition, and an unclued one still goes into words.tsv with
+        # it (the generator can place it in test packs). "Rare" is SCOWL 50.
+        header = ["ID", "Word", "Letters", "Difficulty", "Definition", "Clue 1", "Len"]
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "english_words.xlsx"
+            write_workbook(path, {"4 letters": [
+                header,
+                [1, "able", 4, "Easy", "having the necessary means", "Capable", 7],
+                [2, "aria", 4, "Rare", "an elaborate melody for a single voice"],
+                [3, "abet", 4, "Hard"],
+            ]})
+            result = read_sources([path], "en", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", min_length=2, max_length=8, clue_max_length=20)
+        self.assertEqual(result.problems, [])
+        self.assertEqual(
+            [(w.word, w.familiarity, w.definition) for w in result.words],
+            [("ABLE", 10, "having the necessary means"), ("ARIA", 50, "an elaborate melody for a single voice")],
+        )
+        self.assertEqual(result.clues, [("ABLE", "Capable")])
+        self.assertEqual(result.waiting, ["ABET"])
+
     def test_an_unknown_difficulty_is_reported(self):
-        _, _, problems = self.read({"2 letters": [HEADER, [1, "ev", 2, "Very easy", "Yuva"]]})
+        _, _, problems, _ = self.read({"2 letters": [HEADER, [1, "ev", 2, "Very easy", "Yuva"]]})
         self.assertEqual(len(problems), 1)
         self.assertIn("familiarity", problems[0].reason)
 

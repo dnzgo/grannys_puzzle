@@ -176,6 +176,12 @@ def _answer_of(grid: list[str], clue: dict) -> str:
 
 
 def cmd_import_clues(args: argparse.Namespace) -> int:
+    if any((data_dir(args.lang) / "source").glob("*.xlsx")):
+        # The workbook is the record: import-word-list rebuilds clues.tsv
+        # from it, so clues added here would vanish at the next import.
+        print(f"{args.lang} has a words workbook (data/{args.lang}/source/): write the clues there "
+              "and run import-word-list", file=sys.stderr)
+        return 1
     rules = load_rules()
     all_accepted, all_problems = [], []
     for name in args.paths:
@@ -190,7 +196,7 @@ def cmd_import_clues(args: argparse.Namespace) -> int:
 
 
 def cmd_import_word_list(args: argparse.Namespace) -> int:
-    """Builds words.tsv and clues.tsv from hand-written source files."""
+    """Builds words.tsv and clues.tsv from the source files (the words workbook)."""
     rules = load_rules()
     folder = data_dir(args.lang) / "source"
     # The words workbook (.xlsx) is where words are written now; older
@@ -203,13 +209,21 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
     if not paths:
         print(f"No source files in {folder}", file=sys.stderr)
         return 1
-    words, clues, problems = read_sources(
+    # The same lists build-words uses. LDNOOBW's file is a download
+    # (sources/), so it may be missing on a fresh checkout; exclude.txt is
+    # in the repo and always applies.
+    blocked = read_blocked_words(
+        PIPELINE_ROOT / "sources" / "badwords" / args.lang,
+        data_dir(args.lang) / "exclude.txt",
+    )
+    words, clues, problems, waiting = read_sources(
         paths,
         language=args.lang,
         alphabet=rules.alphabet(args.lang),
         min_length=rules.min_answer_length,
         max_length=rules.max_rows - 1,
         clue_max_length=rules.clue_max_length,
+        blocked=blocked,
     )
     for p in problems:
         print(f"  {p.file}:{p.line} {p.word}: {p.reason}")
@@ -220,7 +234,9 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
         return 1
     write_word_list(words, data_dir(args.lang) / "words.tsv")
     write_clue_bank(clues, data_dir(args.lang) / "clues.tsv")
-    print(f"Read {len(paths)} source files: {len(words)} words, {len(clues)} clues, {len(problems)} problems")
+    clued = len({word for word, _ in clues})
+    print(f"Read {len(paths)} source files: {len(words)} words ({clued} with clues), "
+          f"{len(clues)} clues, {len(waiting)} waiting for a clue, {len(problems)} problems")
     return 0 if not problems else 1
 
 
@@ -240,7 +256,7 @@ def main(argv: list[str] | None = None) -> int:
     build.set_defaults(run=cmd_build_words)
 
     authored = commands.add_parser(
-        "import-word-list", help="build words.tsv and clues.tsv from data/<lang>/source/*.tsv"
+        "import-word-list", help="build words.tsv and clues.tsv from data/<lang>/source/ (the words workbook)"
     )
     authored.add_argument("--lang", required=True)
     authored.set_defaults(run=cmd_import_word_list)
