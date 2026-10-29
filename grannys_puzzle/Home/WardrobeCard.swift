@@ -23,6 +23,9 @@ struct WardrobeCard: View {
     @State private var selectedKind: GarmentKind
     /// A locked Polaroid was tapped: says why it doesn't open.
     @State private var showsLockedNote = false
+    /// The knitted colour tapped to show large; nil shows the first knitted
+    /// one. Cleared when another garment or member is chosen.
+    @State private var shownItemID: String?
 
     /// - Parameter initialItem: any item of the set to show first (after
     ///   finishing a set, that set). Otherwise a set with its jar waiting,
@@ -124,46 +127,70 @@ struct WardrobeCard: View {
             let sets = catalog.sets(for: member)
             let waiting = sets.first { $0.first.map { progress.hasSetJarWaiting(for: $0, in: catalog) } ?? false }
             selectedKind = (waiting ?? sets.first)?.first?.kind ?? selectedKind
+            shownItemID = nil
         }
     }
 
     // MARK: The garment shown large
 
     private func featured(_ set: [KnitItem]) -> some View {
-        let owned = set.filter(progress.owns)
-        return VStack(spacing: 14) {
-            garmentTile(for: set, size: 120)
+        VStack(spacing: 14) {
+            bigTile(for: set)
                 .accessibilityHidden(true)
-            VStack(spacing: 4) {
-                Text(selectedKind.name)
-                    .font(.system(size: 20, weight: .bold, design: .rounded))
-                    .foregroundStyle(Theme.ink)
-                    .accessibilityAddTraits(.isHeader)
-                Text("\(owned.count) of \(set.count) knitted")
-                    .font(.system(size: 15, weight: .medium))
-                    .monospacedDigit()
-                    .foregroundStyle(Theme.secondaryInk)
-            }
+            Text(selectedKind.name)
+                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .foregroundStyle(Theme.ink)
+                .accessibilityAddTraits(.isHeader)
             HStack(spacing: 10) {
-                ForEach(set) { colourSwatch(for: $0) }
+                ForEach(set) { colourSwatch(for: $0, in: set) }
             }
             jarRow(for: set)
         }
         .animation(.easeOut(duration: 0.2), value: selectedKind)
         .animation(.easeOut(duration: 0.2), value: selectedMember)
+        .animation(.easeOut(duration: 0.2), value: shownItemID)
     }
 
-    /// One colour of the garment: knitted in its colour with a tick, or
-    /// still to knit as a pale tile ringed in the colour it needs, so the
-    /// player can see which yarn to collect.
-    private func colourSwatch(for item: KnitItem) -> some View {
+    /// The colour shown large: the knitted one last tapped, else the first
+    /// knitted one, else (none knitted yet) the first, drawn pale.
+    private func shownItem(in set: [KnitItem]) -> KnitItem? {
+        set.first { $0.id == shownItemID && progress.owns($0) }
+            ?? set.first(where: progress.owns)
+            ?? set.first
+    }
+
+    private func bigTile(for set: [KnitItem]) -> some View {
+        let shown = shownItem(in: set)
+        return Group {
+            if let shown {
+                GarmentView(item: shown, size: 120, isOwned: progress.owns(shown))
+                    // A new identity per colour, so the change cross-fades.
+                    .id(shown.id)
+                    .transition(.opacity)
+            }
+        }
+    }
+
+    /// One colour of the garment: knitted in its colour with a tick (tap it
+    /// to see it large), or still to knit as a pale tile ringed in the
+    /// colour it needs, so the player can see which yarn to collect.
+    private func colourSwatch(for item: KnitItem, in set: [KnitItem]) -> some View {
         let isOwned = progress.owns(item)
+        let isShown = isOwned && item.id == shownItem(in: set)?.id
         return GarmentView(item: item, size: 52, isOwned: isOwned)
             .overlay {
                 if !isOwned {
                     RoundedRectangle(cornerRadius: 52 * 0.24)
                         .strokeBorder(item.color.tint, lineWidth: 3)
+                } else if isShown {
+                    RoundedRectangle(cornerRadius: 52 * 0.24)
+                        .strokeBorder(Theme.primary, lineWidth: 3)
                 }
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                guard isOwned else { return }
+                shownItemID = item.id
             }
             .overlay(alignment: .topTrailing) {
                 if isOwned {
@@ -176,6 +203,8 @@ struct WardrobeCard: View {
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(item.displayName)
             .accessibilityValue(isOwned ? Text("Knitted") : Text("Not knitted yet"))
+            .accessibilityAddTraits(isOwned ? .isButton : [])
+            .accessibilityAddTraits(isShown ? .isSelected : [])
     }
 
     /// The set's jar: to collect once every colour is knitted, collected,
@@ -217,7 +246,10 @@ struct WardrobeCard: View {
         let jarWaiting = set.first.map { progress.hasSetJarWaiting(for: $0, in: catalog) } ?? false
         let owned = set.filter(progress.owns).count
         return Button {
-            withAnimation(.easeOut(duration: 0.2)) { selectedKind = kind }
+            withAnimation(.easeOut(duration: 0.2)) {
+                selectedKind = kind
+                shownItemID = nil
+            }
         } label: {
             VStack(spacing: 4) {
                 garmentTile(for: set, size: 50)
