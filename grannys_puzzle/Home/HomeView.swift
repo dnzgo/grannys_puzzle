@@ -61,6 +61,11 @@ struct HomeView: View {
     @State private var jarIsOpen = false
     /// Where the jar and the counters are, for the prize's flight.
     @State private var jarFrame = CGRect.zero
+    /// Where grandma and the wardrobe are, for knitting on the stage.
+    @State private var grannyFrame = CGRect.zero
+    @State private var wardrobeFrame = CGRect.zero
+    /// Grandma rocks while she knits (the start of KnittingOnStage).
+    @State private var isKnitting = false
     @State private var counterFrames: [HelperFace: CGRect] = [:]
     @State private var feedback: FeedbackSignal?
     @State private var feedbackCount = 0
@@ -109,7 +114,10 @@ struct HomeView: View {
                 onJarFrame: { jarFrame = $0 },
                 onYarnBag: { showsYarnBag = true },
                 onWardrobe: { openWardrobe(on: nil) },
-                wardrobeSwaps: wardrobeSwaps
+                wardrobeSwaps: wardrobeSwaps,
+                isKnitting: isKnitting,
+                onGrannyFrame: { grannyFrame = $0 },
+                onWardrobeFrame: { wardrobeFrame = $0 }
             )
             .animation(.easeOut(duration: 0.2), value: speech.line)
             // Like the settings button, but on the right of the scene rather
@@ -137,6 +145,17 @@ struct HomeView: View {
         // Applied before the flight's overlay, so the overlay shares this
         // space and the jar's and counters' frames are its own coordinates.
         .coordinateSpace(.named(Self.space))
+        .overlay {
+            if let item = knittingItem {
+                KnittingOnStage(
+                    item: item,
+                    lap: lapPoint,
+                    wardrobe: wardrobeDoor,
+                    onKnittingDone: { isKnitting = false },
+                    onDone: { knitted(item) }
+                )
+            }
+        }
         .overlay {
             if let flight {
                 JarPrizeFlight(
@@ -188,25 +207,6 @@ struct HomeView: View {
             }
         }
         .animation(.easeOut(duration: 0.2), value: showsSettings)
-        .overlay {
-            if let item = knittingItem {
-                KnittingMoment(item: item) {
-                    knittingItem = nil
-                    // A finished set has its own moment before grandma speaks.
-                    if let prize = pendingSetPrize {
-                        pendingSetPrize = nil
-                        setPrize = prize
-                    } else if let member = pendingWardrobeDone {
-                        pendingWardrobeDone = nil
-                        wardrobeDone = member
-                    } else {
-                        afterKnitting(for: item.member)
-                    }
-                }
-                .transition(.opacity)
-            }
-        }
-        .animation(.easeInOut(duration: 0.25), value: knittingItem)
         .overlay {
             if let prize = setPrize {
                 SetPrizeMoment(
@@ -539,7 +539,35 @@ struct HomeView: View {
         guard let report = game.knit(item) else { return }
         pendingSetPrize = report.completedSet ? SetPrize(item: item) : nil
         pendingWardrobeDone = report.completedWardrobe
+        isKnitting = true
         knittingItem = item
+    }
+
+    /// The knitting has played: a finished set has its own moment before
+    /// grandma speaks (and a finished wardrobe after that).
+    private func knitted(_ item: KnitItem) {
+        knittingItem = nil
+        if let prize = pendingSetPrize {
+            pendingSetPrize = nil
+            setPrize = prize
+        } else if let member = pendingWardrobeDone {
+            pendingWardrobeDone = nil
+            wardrobeDone = member
+        } else {
+            afterKnitting(for: item.member)
+        }
+    }
+
+    /// The yarn ball's spot on grandma's lap, where her knitting is in the
+    /// picture (measured on the granny art).
+    private var lapPoint: CGPoint {
+        CGPoint(x: grannyFrame.minX + grannyFrame.width * 0.62, y: grannyFrame.minY + grannyFrame.height * 0.55)
+    }
+
+    /// The middle of the wardrobe's doors. It runs off the right edge of
+    /// the screen, so this is left of its centre, on the part that's seen.
+    private var wardrobeDoor: CGPoint {
+        CGPoint(x: wardrobeFrame.minX + wardrobeFrame.width * 0.3, y: wardrobeFrame.minY + wardrobeFrame.height * 0.4)
     }
 
     private func openWardrobe(on item: KnitItem?) {
@@ -652,6 +680,11 @@ private struct HomeStage: View {
     let onWardrobe: () -> Void
     /// Increased to play the wardrobe's swap (a wardrobe finished).
     let wardrobeSwaps: Int
+    /// Grandma rocks while she knits.
+    let isKnitting: Bool
+    /// Report where grandma and the wardrobe are, for knitting's animation.
+    let onGrannyFrame: (CGRect) -> Void
+    let onWardrobeFrame: (CGRect) -> Void
 
     /// Stage height as a multiple of its width.
     private let aspect: CGFloat = 1.1
@@ -677,12 +710,22 @@ private struct HomeStage: View {
                 // Measured from the agreed mock-up of the real art (positions
                 // past 1, or a width running off screen, are on purpose).
                 WardrobeView(width: side * 0.623, hasJarWaiting: setJarWaiting, swaps: wardrobeSwaps, action: onWardrobe)
+                    .onGeometryChange(for: CGRect.self) { [space = HomeView.space] proxy in
+                        proxy.frame(in: .named(space))
+                    } action: { frame in
+                        onWardrobeFrame(frame)
+                    }
                     .position(at(0.896, 0.411))
 
                 YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.302, action: onYarnBag)
                     .position(at(0.823, 0.902))
 
-                GrannyView(width: side * 0.804, action: onGranny)
+                GrannyView(width: side * 0.804, isKnitting: isKnitting, action: onGranny)
+                    .onGeometryChange(for: CGRect.self) { [space = HomeView.space] proxy in
+                        proxy.frame(in: .named(space))
+                    } action: { frame in
+                        onGrannyFrame(frame)
+                    }
                     .position(at(0.388, 0.665))
 
                 // The bag's "Knit!" tag and count, drawn in front of grandma
@@ -727,7 +770,11 @@ private struct HomeStage: View {
 /// Grandma in her armchair. Later: talking and knitting animations.
 private struct GrannyView: View {
     let width: CGFloat
+    /// She rocks in her chair while she knits.
+    let isKnitting: Bool
     let action: () -> Void
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         Button(action: action) {
@@ -736,6 +783,17 @@ private struct GrannyView: View {
                 // corners around the armchair don't steal taps meant for
                 // the yarn bag tucked behind it.
                 .contentShape(Ellipse())
+                // A small quick rock, over and over, while the needles go.
+                // Not repeating, it rests at the start: upright.
+                .keyframeAnimator(initialValue: 0.0, repeating: isKnitting && !reduceMotion) { content, degrees in
+                    content.rotationEffect(.degrees(degrees), anchor: .bottom)
+                } keyframes: { _ in
+                    KeyframeTrack {
+                        CubicKeyframe(1.6, duration: 0.15)
+                        CubicKeyframe(-1.6, duration: 0.3)
+                        CubicKeyframe(0, duration: 0.15)
+                    }
+                }
         }
         .buttonStyle(SceneButtonStyle())
         .accessibilityLabel("Grandma")

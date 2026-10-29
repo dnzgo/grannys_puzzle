@@ -42,46 +42,6 @@
         }
       }
     },
-    "%@ for my daughter!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ kızım için!"
-          }
-        }
-      }
-    },
-    "%@ for my granddaughter!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ kız torunum için!"
-          }
-        }
-      }
-    },
-    "%@ for my grandson!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ erkek torunum için!"
-          }
-        }
-      }
-    },
-    "%@ for my son!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ oğlum için!"
-          }
-        }
-      }
-    },
     "%@ for the cat!" : {
       "localizations" : {
         "tr" : {

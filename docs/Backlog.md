@@ -9,9 +9,11 @@ into the work (and into `Release.md` if it's needed for 1.0).
 - [ ] Leaderboard button with its own icon, opening the daily
       leaderboards (see `Achievements.md`).
 - [ ] Grandma's speech bubble with a tail, so it visibly comes from her.
-- [ ] Knitting happens on the home screen, not in a separate screen.
-      Afterwards the finished item appears, flies into the wardrobe, and
-      the wardrobe shakes.
+- [x] Knitting happens on the home screen, not in a separate screen:
+      grandma rocks, a yarn ball spins, the item appears and flies into
+      the wardrobe, vanishing in sparkles (Home/KnittingOnStage.swift).
+- [ ] Knitting animation with real art (Rive), replacing the rocking
+      grandma and spinning ball.
 
 ## Sound
 

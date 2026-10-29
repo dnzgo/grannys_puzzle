@@ -1,8 +1,9 @@
 import SwiftUI
+import Foundation
 
 /// What comes out of an opened jar, on the home screen itself: the cats
-/// and grandmas pop up above the jar, then fly one by one, trailing
-/// sparkles, to their counters at the top left. Each landing adds one to
+/// and grandmas pop up above the jar in a bundle, then fly one by one,
+/// trailing sparkles, to their counters at the top left. Each landing adds one to
 /// its counter (HomeView keeps the counter one behind per ball still in
 /// the air), so the player sees every helper arrive.
 ///
@@ -43,6 +44,9 @@ struct JarPrizeFlight: View {
                 ForEach(faces.indices, id: \.self) { index in
                     if !landed.contains(index) {
                         RewardToken(face: faces[index], size: tokenSize)
+                            // Tilted a little each way, like a handful; level
+                            // again once it's on its way.
+                            .rotationEffect(.degrees(flying.contains(index) ? 0 : tilt(index)))
                             .scaleEffect(popped ? 1 : 0.2)
                             .opacity(popped ? 1 : 0)
                             .modifier(FlightPath(
@@ -51,6 +55,8 @@ struct JarPrizeFlight: View {
                                 to: target(faces[index])
                             ))
                             .allowsHitTesting(false)
+                            // The first to fly sits on top of the bundle.
+                            .zIndex(Double(faces.count - index))
                     }
                 }
             }
@@ -60,14 +66,28 @@ struct JarPrizeFlight: View {
         .task { await play() }
     }
 
-    /// Side by side just above the jar, kept on screen even when there are
-    /// several and the jar is near the edge.
+    /// Bunched together just above the jar, overlapping like a handful
+    /// rather than lined up: a jar's worth comes out as one bundle. Each
+    /// helper sits on a spiral around the first, turned by the golden
+    /// angle (about 137.5°), which spreads any number of them evenly
+    /// without two landing in the same spot. Kept on screen when the jar
+    /// is near the edge.
     private func popPoint(_ index: Int, width: CGFloat) -> CGPoint {
-        let spacing = tokenSize + 8
-        let rowWidth = CGFloat(faces.count - 1) * spacing
-        let margin = tokenSize / 2 + 12
-        let firstX = min(max(start.x - rowWidth / 2, margin), max(margin, width - margin - rowWidth))
-        return CGPoint(x: firstX + CGFloat(index) * spacing, y: start.y - tokenSize * 0.9)
+        let spread = tokenSize * 0.34 * sqrt(Double(faces.count))
+        let margin = tokenSize / 2 + 12 + spread
+        let center = CGPoint(
+            x: min(max(start.x, margin), max(margin, width - margin)),
+            y: start.y - tokenSize * 1.1
+        )
+        let goldenAngle = 2.39996
+        let angle = Double(index) * goldenAngle
+        let radius = tokenSize * 0.34 * sqrt(Double(index))
+        // A little flatter than round, so the bundle sits on the jar.
+        return CGPoint(x: center.x + cos(angle) * radius, y: center.y + sin(angle) * radius * 0.75)
+    }
+
+    private func tilt(_ index: Int) -> Double {
+        index == 0 ? 0 : (index.isMultiple(of: 2) ? -9 : 9)
     }
 
     private var accessibilityText: Text {
@@ -128,7 +148,7 @@ struct JarPrizeFlight: View {
 /// Animatable, so SwiftUI hands it every in-between `progress` while the
 /// flight animates: that's what lets the tail follow the same curve, which
 /// a plain position animation (a straight line between two points) can't.
-private struct FlightPath: ViewModifier, Animatable {
+struct FlightPath: ViewModifier, Animatable {
     var progress: Double
     let from: CGPoint
     let to: CGPoint
