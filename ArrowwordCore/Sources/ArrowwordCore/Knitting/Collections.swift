@@ -13,7 +13,7 @@ extension KnittingCatalog {
     /// Only *newly* affordable, so grandma mentions each item once rather
     /// than after every level while it waits to be knitted.
     public func newlyKnittable(before: PlayerProgress, after: PlayerProgress) -> KnitItem? {
-        items.first { after.canKnit($0) && !before.canKnit($0) }
+        availableItems(for: after).first { after.canKnit($0) && !before.canKnit($0) }
     }
 
     /// The set an item belongs to: the same garment for the same family
@@ -29,9 +29,16 @@ extension KnittingCatalog {
         itemsInSet(of: item).allSatisfy(progress.owns)
     }
 
-    /// What the player can knit right now, in catalog order (cheapest first).
+    /// What the player can knit right now, in catalog order (cheapest
+    /// first): only from the current wardrobe, however much yarn they have.
     public func knittableItems(for progress: PlayerProgress) -> [KnitItem] {
-        items.filter(progress.canKnit)
+        availableItems(for: progress).filter(progress.canKnit)
+    }
+
+    /// Whether `item` was the last one its member's wardrobe needed. Checked
+    /// right after knitting it, like `isSetComplete`.
+    public func isWardrobeComplete(for item: KnitItem, in progress: PlayerProgress) -> Bool {
+        isWardrobeComplete(item.member, in: progress)
     }
 
     /// A member's sets, one per garment, each in its colours' order, in

@@ -246,12 +246,12 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     ///   result screen shows them in this order).
     public mutating func record<Generator: RandomNumberGenerator>(
         _ result: LevelResult,
-        dropper: YarnDropper = YarnDropper(),
+        dropper: YarnDropper? = nil,
         using generator: inout Generator
     ) -> [YarnColor] {
         guard result.passed else { return [] }
         stats.recordLevel(result)
-        let balls = dropper.draw(result.yarnBalls, given: yarn, using: &generator)
+        let balls = (dropper ?? currentDropper).draw(result.yarnBalls, given: yarn, using: &generator)
         addYarn(balls)
         levelNumber += 1
         return balls
@@ -269,14 +269,20 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     ///
     /// - Returns: the balls given, empty on a replay.
     public mutating func completeTutorial<Generator: RandomNumberGenerator>(
-        dropper: YarnDropper = YarnDropper(),
+        dropper: YarnDropper? = nil,
         using generator: inout Generator
     ) -> [YarnColor] {
         guard !tutorialDone else { return [] }
         tutorialDone = true
-        let balls = dropper.draw(Self.tutorialYarn, given: yarn, using: &generator)
+        let balls = (dropper ?? currentDropper).draw(Self.tutorialYarn, given: yarn, using: &generator)
         addYarn(balls)
         return balls
+    }
+
+    /// Without a dropper given: yarn in the colours of the wardrobe being
+    /// knitted (in the standard catalog), so every ball can be used.
+    private var currentDropper: YarnDropper {
+        YarnDropper(colors: KnittingCatalog.standard.yarnColors(for: self))
     }
 
     private mutating func addYarn(_ balls: [YarnColor]) {

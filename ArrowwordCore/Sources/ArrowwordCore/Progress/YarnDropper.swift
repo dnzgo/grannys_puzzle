@@ -6,8 +6,8 @@
 /// proportional to `1 / (1 + balls already owned)`, which makes the colour you
 /// have least of the most likely. It still feels random, but nobody gets stuck.
 ///
-/// Once knitting exists, the weights should follow what the player's *next
-/// item* needs rather than the bag as a whole. Only this type changes then.
+/// The colours are the current wardrobe's (KnittingCatalog.yarnColors), so
+/// a player is never given yarn nobody in the family needs yet.
 public struct YarnDropper: Sendable {
     /// The colours that can drop.
     public var colors: [YarnColor]

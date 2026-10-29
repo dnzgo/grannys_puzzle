@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import ArrowwordCore
 
 /// Grandma's speech bubble: the line on screen and its timer.
 ///
@@ -88,7 +89,28 @@ enum GrandmaLines {
     /// After a jar is collected: it's kept, not opened.
     static var jarKept: String { String(localized: "I've put your jar by my chair, dear. Open it whenever you like!", bundle: .appLanguage, locale: .appLanguage) }
     static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }
-    static var knitted: String { String(localized: "Doesn't the cat look smart?", bundle: .appLanguage, locale: .appLanguage) }
+    /// After knitting something, for whoever it's for.
+    static func knitted(for member: FamilyMember) -> String {
+        switch member {
+        case .cat: String(localized: "Doesn't the cat look smart?", bundle: .appLanguage, locale: .appLanguage)
+        case .daughter: String(localized: "My daughter is going to love this.", bundle: .appLanguage, locale: .appLanguage)
+        case .son: String(localized: "That'll keep my son nice and warm.", bundle: .appLanguage, locale: .appLanguage)
+        case .granddaughter: String(localized: "My granddaughter will be thrilled!", bundle: .appLanguage, locale: .appLanguage)
+        case .grandson: String(localized: "My grandson will look so smart in this!", bundle: .appLanguage, locale: .appLanguage)
+        }
+    }
+
+    /// After a whole wardrobe is finished, as the next one comes in.
+    static func wardrobeStarted(for member: FamilyMember?) -> String {
+        switch member {
+        case .daughter: String(localized: "All done for the cat! Now, something for my daughter.", bundle: .appLanguage, locale: .appLanguage)
+        case .son: String(localized: "Now my son gets his turn, dear.", bundle: .appLanguage, locale: .appLanguage)
+        case .granddaughter: String(localized: "Next, something lovely for my granddaughter!", bundle: .appLanguage, locale: .appLanguage)
+        case .grandson: String(localized: "And now my little grandson's wardrobe!", bundle: .appLanguage, locale: .appLanguage)
+        // The cat is never next; nil is after the last wardrobe.
+        case .cat, nil: String(localized: "The whole family is wrapped up warm. Thank you, dear!", bundle: .appLanguage, locale: .appLanguage)
+        }
+    }
     static var allLevelsDone: String { String(localized: "You've solved them all! I'm writing more.", bundle: .appLanguage, locale: .appLanguage) }
     /// Out of a helper and today's videos are used up. Points at the jar,
     /// where tomorrow's help comes from.

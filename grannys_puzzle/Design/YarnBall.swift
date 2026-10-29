@@ -2,16 +2,22 @@ import SwiftUI
 import ArrowwordCore
 
 extension YarnColor {
-    /// The tint applied to the grey yarn-ball image. Chosen to sit with the
-    /// warm palette and to stay distinct from each other for colour-blind
-    /// players: they differ in lightness as well as hue (yellow is light,
-    /// blue and red mid, green darker), and the bag always shows names too.
+    /// The tint applied to the grey yarn-ball and garment images. Chosen to
+    /// sit with the warm palette and to stay distinct for colour-blind
+    /// players within each wardrobe's four (the only ones shown together):
+    /// they differ in lightness as well as hue, and the bag shows names too.
     var tint: Color {
         switch self {
         case .red: Color(hex: 0xE0504A)
         case .blue: Color(hex: 0x4F86C6)
         case .yellow: Color(hex: 0xF2C14E)
         case .green: Color(hex: 0x5E9E50)
+        case .pink: Color(hex: 0xE88FB4)
+        case .purple: Color(hex: 0x8A60B8)
+        case .navy: Color(hex: 0x34497A)
+        case .orange: Color(hex: 0xEE8A3C)
+        case .teal: Color(hex: 0x37A39B)
+        case .brown: Color(hex: 0x98694A)
         }
     }
 
@@ -22,6 +28,12 @@ extension YarnColor {
         case .blue: String(localized: "Blue", bundle: .appLanguage, locale: .appLanguage)
         case .yellow: String(localized: "Yellow", bundle: .appLanguage, locale: .appLanguage)
         case .green: String(localized: "Green", bundle: .appLanguage, locale: .appLanguage)
+        case .pink: String(localized: "Pink", bundle: .appLanguage, locale: .appLanguage)
+        case .purple: String(localized: "Purple", bundle: .appLanguage, locale: .appLanguage)
+        case .navy: String(localized: "Navy", bundle: .appLanguage, locale: .appLanguage)
+        case .orange: String(localized: "Orange", bundle: .appLanguage, locale: .appLanguage)
+        case .teal: String(localized: "Teal", bundle: .appLanguage, locale: .appLanguage)
+        case .brown: String(localized: "Brown", bundle: .appLanguage, locale: .appLanguage)
         }
     }
 }

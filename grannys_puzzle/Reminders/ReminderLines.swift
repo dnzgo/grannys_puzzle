@@ -59,7 +59,7 @@ enum ReminderLines {
     static func knit(item: String) -> [String] {
         [
             String(localized: "Ooh, there's enough yarn for a \(item) now, dear! Come and knit it with me.", bundle: .appLanguage, locale: .appLanguage),
-            String(localized: "Look at all that yarn! I could knit the cat a \(item). Pop by my yarn bag when you like.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Look at all that yarn! I could knit a \(item). Pop by my yarn bag when you like.", bundle: .appLanguage, locale: .appLanguage),
             String(localized: "That's enough for a \(item), sweetheart. I'll have my needles ready!", bundle: .appLanguage, locale: .appLanguage),
         ]
     }

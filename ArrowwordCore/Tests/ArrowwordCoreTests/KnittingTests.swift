@@ -8,8 +8,8 @@ final class KnittingCatalogTests: XCTestCase {
     func testTheCatHasFiveGarmentsInFourColours() {
         let catItems = catalog.items(for: .cat)
         XCTAssertEqual(catItems.count, 20)
-        XCTAssertEqual(Set(catItems.map(\.kind)), Set(GarmentKind.allCases))
-        XCTAssertEqual(Set(catItems.map(\.color)), Set(YarnColor.allCases))
+        XCTAssertEqual(Set(catItems.map(\.kind)), [.scarf, .hat, .sweater, .booties, .blanket])
+        XCTAssertEqual(catalog.colors(for: .cat), [.red, .blue, .yellow, .green])
     }
 
     func testItemIDsAreUnique() {
@@ -108,7 +108,7 @@ final class YarnNeedTests: XCTestCase {
         // The red scarf is done, so 7 red is now one short of the red hat (8).
         let progress = PlayerProgress(
             levelNumber: 9, hints: 0, grandmas: 0, yarn: [.red: 7],
-            wardrobe: Set(YarnColor.allCases.map { "cat.scarf.\($0.rawValue)" })
+            wardrobe: Set(catalog.colors(for: .cat).map { "cat.scarf.\($0.rawValue)" })
         )
         XCTAssertEqual(progress.closestYarnNeed(in: catalog)?.item.id, "cat.hat.red")
     }
@@ -161,8 +161,9 @@ final class CollectionTests: XCTestCase {
 
     func testASetIsOneGarmentInEveryColour() {
         let scarf = catalog.item(withID: "cat.scarf.red")!
-        XCTAssertEqual(Set(catalog.itemsInSet(of: scarf).map(\.color)), Set(YarnColor.allCases))
-        XCTAssertTrue(catalog.itemsInSet(of: scarf).allSatisfy { $0.kind == .scarf })
+        XCTAssertEqual(catalog.itemsInSet(of: scarf).map(\.color), catalog.colors(for: .cat))
+        // Only the cat's: the son's scarves are a set of their own.
+        XCTAssertTrue(catalog.itemsInSet(of: scarf).allSatisfy { $0.kind == .scarf && $0.member == .cat })
     }
 
     func testTheSetIsCompleteOnlyWithEveryColour() {
@@ -180,14 +181,14 @@ final class CollectionTests: XCTestCase {
 
     func testSetsComeOnePerGarmentCheapestFirst() {
         let sets = catalog.sets(for: .cat)
-        XCTAssertEqual(sets.map { $0.first?.kind }, GarmentKind.allCases)
-        XCTAssertTrue(sets.allSatisfy { $0.map(\.color) == YarnColor.allCases })
+        XCTAssertEqual(sets.map { $0.first?.kind }, [.scarf, .hat, .sweater, .booties, .blanket])
+        XCTAssertTrue(sets.allSatisfy { $0.map(\.color) == catalog.colors(for: .cat) })
     }
 
     // MARK: Set jars
 
     private let reward = JarReward(hints: 3, grandmas: 1)
-    private var allScarves: Set<String> { Set(YarnColor.allCases.map { "cat.scarf.\($0.rawValue)" }) }
+    private var allScarves: Set<String> { Set(catalog.colors(for: .cat).map { "cat.scarf.\($0.rawValue)" }) }
 
     func testAnUnfinishedSetHasNoJarToCollect() {
         var player = progress(yarn: [:], owned: ["cat.scarf.red", "cat.scarf.blue"])

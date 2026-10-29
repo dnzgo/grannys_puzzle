@@ -17,7 +17,8 @@ extension PlayerProgress {
     /// they can already afford something (that's a different, happier
     /// reminder) or the wardrobe is complete.
     public func closestYarnNeed(in catalog: KnittingCatalog) -> YarnNeed? {
-        let notOwned = catalog.items.filter { !owns($0) }
+        // Only the current wardrobe: a later one's items can't be knitted yet.
+        let notOwned = catalog.availableItems(for: self).filter { !owns($0) }
         guard !notOwned.isEmpty, !notOwned.contains(where: canKnit) else { return nil }
         return notOwned
             .map { YarnNeed(item: $0, missing: $0.cost - yarnCount(of: $0.color)) }

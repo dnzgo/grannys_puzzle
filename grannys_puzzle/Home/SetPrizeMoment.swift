@@ -12,6 +12,9 @@ import ArrowwordCore
 struct SetPrizeMoment: View {
     /// Every item in the finished set, in catalog order.
     let items: [KnitItem]
+    /// "Open wardrobe", or "Continue" when another moment follows (a
+    /// finished wardrobe's), so the button doesn't promise the wrong thing.
+    var buttonTitle: LocalizedStringKey = "Open wardrobe"
     let onOpenWardrobe: () -> Void
 
     @State private var shown = false
@@ -32,7 +35,7 @@ struct SetPrizeMoment: View {
 
                 HStack(spacing: 10) {
                     ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
-                        GarmentView(kind: item.kind, color: item.color, size: 56)
+                        GarmentView(item: item, size: 56)
                             .scaleEffect(shown ? 1 : 0.4)
                             .opacity(shown ? 1 : 0)
                             .animation(
@@ -58,7 +61,7 @@ struct SetPrizeMoment: View {
                     .animation(reduceMotion ? nil : .spring(response: 0.45, dampingFraction: 0.55).delay(0.45), value: shown)
                     .accessibilityLabel("Treat jar")
 
-                PrimaryButton(title: "Open wardrobe", height: 52, action: onOpenWardrobe)
+                PrimaryButton(title: buttonTitle, height: 52, action: onOpenWardrobe)
             }
             .padding(24)
             .frame(maxWidth: 340)
@@ -83,7 +86,7 @@ struct SetPrizeMoment: View {
 
 #Preview {
     SetPrizeMoment(
-        items: KnittingCatalog.standard.items.filter { $0.kind == .scarf },
+        items: KnittingCatalog.standard.items(for: .cat).filter { $0.kind == .scarf },
         onOpenWardrobe: {}
     )
 }

@@ -17,9 +17,9 @@ struct HomeView: View {
     @State private var speech = GrandmaSpeech()
     @State private var showsYarnBag = false
     @State private var showsWardrobe = false
-    /// The garment the wardrobe opens on, when it's opened for one (after
-    /// finishing its set); nil lets the wardrobe choose.
-    @State private var wardrobeKind: GarmentKind?
+    /// An item of the set the wardrobe opens on, when it's opened for one
+    /// (after finishing that set); nil lets the wardrobe choose.
+    @State private var wardrobeItem: KnitItem?
     @State private var showsSettings = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
@@ -27,6 +27,14 @@ struct HomeView: View {
     @State private var pendingSetPrize: SetPrize?
     /// The finished set's moment being shown, if any.
     @State private var setPrize: SetPrize?
+    /// A finished wardrobe's moment, waiting for the set's moment to end
+    /// (the last item of a wardrobe always finishes a set too).
+    @State private var pendingWardrobeDone: FamilyMember?
+    /// The finished wardrobe whose moment is showing, if any.
+    @State private var wardrobeDone: FamilyMember?
+    /// Increased to play the wardrobe's swap: out to the right, and back
+    /// in for the next member.
+    @State private var wardrobeSwaps = 0
     /// The daily treats card is up.
     @State private var showsStreak = false
     /// The card offering to save a streak that missed yesterday is up.
@@ -100,7 +108,8 @@ struct HomeView: View {
                 onJar: tapJar,
                 onJarFrame: { jarFrame = $0 },
                 onYarnBag: { showsYarnBag = true },
-                onWardrobe: { openWardrobe(on: nil) }
+                onWardrobe: { openWardrobe(on: nil) },
+                wardrobeSwaps: wardrobeSwaps
             )
             .animation(.easeOut(duration: 0.2), value: speech.line)
             // Like the settings button, but on the right of the scene rather
@@ -162,7 +171,7 @@ struct HomeView: View {
                 WardrobeCard(
                     progress: game.progress,
                     catalog: game.catalog,
-                    initialKind: wardrobeKind,
+                    initialItem: wardrobeItem,
                     onCollectJar: collectSetJar,
                     onClose: { showsWardrobe = false }
                 )
@@ -187,8 +196,11 @@ struct HomeView: View {
                     if let prize = pendingSetPrize {
                         pendingSetPrize = nil
                         setPrize = prize
+                    } else if let member = pendingWardrobeDone {
+                        pendingWardrobeDone = nil
+                        wardrobeDone = member
                     } else {
-                        afterKnitting()
+                        afterKnitting(for: item.member)
                     }
                 }
                 .transition(.opacity)
@@ -197,14 +209,33 @@ struct HomeView: View {
         .animation(.easeInOut(duration: 0.25), value: knittingItem)
         .overlay {
             if let prize = setPrize {
-                SetPrizeMoment(items: game.catalog.itemsInSet(of: prize.item)) {
+                SetPrizeMoment(
+                    items: game.catalog.itemsInSet(of: prize.item),
+                    buttonTitle: pendingWardrobeDone == nil ? "Open wardrobe" : "Continue"
+                ) {
                     setPrize = nil
-                    openWardrobe(on: prize.item.kind)
+                    // A finished wardrobe's moment comes next instead; its
+                    // jar is collected later, from the wardrobe.
+                    if let member = pendingWardrobeDone {
+                        pendingWardrobeDone = nil
+                        wardrobeDone = member
+                    } else {
+                        openWardrobe(on: prize.item)
+                    }
                 }
                 .transition(.opacity)
             }
         }
         .animation(.easeInOut(duration: 0.25), value: setPrize)
+        .overlay {
+            if let member = wardrobeDone {
+                WardrobeDoneMoment(member: member, next: game.catalog.currentMember(for: game.progress)) {
+                    finishWardrobe()
+                }
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeInOut(duration: 0.25), value: wardrobeDone)
         .overlay {
             if showsStreak {
                 StreakCard(
@@ -493,6 +524,7 @@ struct HomeView: View {
     private var isShowingSomethingElse: Bool {
         showsYarnBag || showsWardrobe || showsSettings || showsStreak || showsStreakSave || asksAboutReminders
             || isOpeningJar || jarIsOpen || flight != nil || knittingItem != nil || setPrize != nil
+            || wardrobeDone != nil
     }
 
     /// Closes grandma's card first, so on a yes iOS's own prompt appears
@@ -506,12 +538,27 @@ struct HomeView: View {
     private func startKnitting(_ item: KnitItem) {
         guard let report = game.knit(item) else { return }
         pendingSetPrize = report.completedSet ? SetPrize(item: item) : nil
+        pendingWardrobeDone = report.completedWardrobe
         knittingItem = item
     }
 
-    private func openWardrobe(on kind: GarmentKind?) {
-        wardrobeKind = kind
+    private func openWardrobe(on item: KnitItem?) {
+        wardrobeItem = item
         showsWardrobe = true
+    }
+
+    /// After a finished wardrobe's moment: the wardrobe in the room shakes,
+    /// goes out to the right and comes back for the next member (unless
+    /// that was the last), and grandma says who's next.
+    private func finishWardrobe() {
+        wardrobeDone = nil
+        let next = game.catalog.currentMember(for: game.progress)
+        if next != nil {
+            wardrobeSwaps += 1
+            feel(.wardrobeShaken)
+        }
+        speech.say(GrandmaLines.wardrobeStarted(for: next))
+        askForReviewIfDue()
     }
 
     /// The set's jar goes beside grandma's chair, unopened, like the daily
@@ -525,8 +572,8 @@ struct HomeView: View {
 
     /// Grandma's comment once the knitting is shown, and, a finished piece
     /// being a happy moment, maybe the rating prompt.
-    private func afterKnitting() {
-        speech.say(GrandmaLines.knitted)
+    private func afterKnitting(for member: FamilyMember) {
+        speech.say(GrandmaLines.knitted(for: member))
         askForReviewIfDue()
     }
 
@@ -603,6 +650,8 @@ private struct HomeStage: View {
     let onJarFrame: (CGRect) -> Void
     let onYarnBag: () -> Void
     let onWardrobe: () -> Void
+    /// Increased to play the wardrobe's swap (a wardrobe finished).
+    let wardrobeSwaps: Int
 
     /// Stage height as a multiple of its width.
     private let aspect: CGFloat = 1.1
@@ -627,7 +676,7 @@ private struct HomeStage: View {
                 // front left, and the cat's bed in front of her.
                 // Measured from the agreed mock-up of the real art (positions
                 // past 1, or a width running off screen, are on purpose).
-                WardrobeView(width: side * 0.623, hasJarWaiting: setJarWaiting, action: onWardrobe)
+                WardrobeView(width: side * 0.623, hasJarWaiting: setJarWaiting, swaps: wardrobeSwaps, action: onWardrobe)
                     .position(at(0.896, 0.411))
 
                 YarnBagView(progress: progress, canKnit: canKnit, width: side * 0.302, action: onYarnBag)
@@ -795,14 +844,54 @@ private struct StreakButton: View {
 /// Grandma's wardrobe, at the back of the room. A tap opens the wardrobe
 /// of knitted things: the way in, now that the top row has no hanger button.
 /// A "Collect!" tag says a finished set's jar is waiting inside.
+///
+/// When a family member's wardrobe is finished it shakes, rolls out to the
+/// right, and the next member's comes in (the same picture: what changes
+/// is what's inside) with a smaller shake.
 private struct WardrobeView: View {
     let width: CGFloat
     let hasJarWaiting: Bool
+    /// Each increase plays the swap once.
+    let swaps: Int
     let action: () -> Void
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         Button(action: action) {
             Image("wardrobe").resizable().scaledToFit().frame(width: width)
+                // With Reduce Motion the trigger never changes, so it
+                // doesn't play: grandma's line still says what happened.
+                .keyframeAnimator(initialValue: WardrobeSwap(), trigger: reduceMotion ? 0 : swaps) { content, value in
+                    content
+                        // Rocking on its feet, like a heavy piece of furniture.
+                        .rotationEffect(.degrees(value.degrees), anchor: .bottom)
+                        .offset(x: value.offset * width)
+                } keyframes: { _ in
+                    // Shake, then hold still while it's away, then a smaller
+                    // shake once the new one has arrived (at 1.7 s).
+                    KeyframeTrack(\.degrees) {
+                        CubicKeyframe(-3, duration: 0.09)
+                        CubicKeyframe(3, duration: 0.09)
+                        CubicKeyframe(-3, duration: 0.09)
+                        CubicKeyframe(3, duration: 0.09)
+                        CubicKeyframe(-2, duration: 0.09)
+                        CubicKeyframe(0, duration: 0.09)
+                        LinearKeyframe(0, duration: 1.16)
+                        CubicKeyframe(-1.5, duration: 0.09)
+                        CubicKeyframe(1.5, duration: 0.09)
+                        CubicKeyframe(-1, duration: 0.09)
+                        CubicKeyframe(0, duration: 0.09)
+                    }
+                    // Away to the right (0.9 widths takes it fully off the
+                    // screen from where it stands), a pause, then back.
+                    KeyframeTrack(\.offset) {
+                        LinearKeyframe(0, duration: 0.55)
+                        CubicKeyframe(0.9, duration: 0.45)
+                        LinearKeyframe(0.9, duration: 0.15)
+                        SpringKeyframe(0, duration: 0.55, spring: .bouncy)
+                    }
+                }
         }
         .buttonStyle(SceneButtonStyle())
         // Left of centre: the wardrobe runs off the right edge of the
@@ -1001,6 +1090,13 @@ private struct SceneButtonStyle: ButtonStyle {
 
 /// A finished set's moment: the item that completed it (which names the
 /// set). Its jar waits in the wardrobe until collected.
+/// Where the wardrobe is in its swap: tilt in degrees, and how far right
+/// it has moved, in wardrobe widths.
+private struct WardrobeSwap {
+    var degrees = 0.0
+    var offset: CGFloat = 0
+}
+
 private struct SetPrize: Equatable {
     let item: KnitItem
 }

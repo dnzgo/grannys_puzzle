@@ -1,15 +1,25 @@
 /// Who grandma is knitting for. Each member has a wardrobe of their own,
-/// knitted one member at a time. The grandson and granddaughter come later.
+/// knitted one member at a time, in this order: the next one's wardrobe
+/// opens when the previous one is complete (KnittingCatalog.currentMember).
 ///
-/// Raw values are saved inside item ids, so they must never change.
+/// Raw values are saved inside item ids, so they must never change. New
+/// members go at the end, so existing players keep their place.
 public enum FamilyMember: String, Codable, CaseIterable, Sendable {
     case cat
+    case daughter
+    case son
+    case granddaughter
+    case grandson
 }
 
 /// A kind of knitted piece.
 ///
 /// Raw values are saved inside item ids, so they must never change.
+/// Kinds are shared between members where the garment is the same idea
+/// (the cat's scarf and the son's scarf are both `scarf`); the art differs
+/// per member (GarmentView looks it up by member and kind).
 public enum GarmentKind: String, Codable, CaseIterable, Sendable {
+    // The cat's
     case scarf
     case hat
     case sweater
@@ -17,6 +27,27 @@ public enum GarmentKind: String, Codable, CaseIterable, Sendable {
     /// renamed while no save could hold the old ids yet.)
     case booties
     case blanket
+    // The daughter's
+    case beret
+    case handwarmers
+    case legwarmers
+    case shawl
+    case cardigan
+    // The son's (and his scarf)
+    case beanie
+    case gloves
+    case socks
+    case vest
+    // The granddaughter's
+    case headband
+    case mittens
+    case earflaphat
+    case bunny
+    case pinafore
+    // The grandson's (and his mittens and sweater)
+    case slippers
+    case dinohat
+    case teddy
 }
 
 /// One item grandma can knit: a garment, for a family member, in one colour.

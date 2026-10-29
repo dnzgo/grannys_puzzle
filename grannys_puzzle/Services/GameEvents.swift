@@ -155,6 +155,12 @@ extension AnalyticsEvent {
         ])
     }
 
+    /// The last item of a family member's wardrobe was knitted; the next
+    /// member's wardrobe opens.
+    static func wardrobeCompleted(_ member: FamilyMember, level: Int) -> AnalyticsEvent {
+        AnalyticsEvent("wardrobe_completed", ["member": .string(member.rawValue), "level": .int(level)])
+    }
+
     static func languageSwitched(to language: String) -> AnalyticsEvent {
         AnalyticsEvent("language_switched", ["language": .string(language)])
     }

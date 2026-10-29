@@ -4,353 +4,9 @@
     "" : {
       "shouldTranslate" : false
     },
-    "%lld days in a row! One puzzle today keeps it going." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Üst üste %lld gün! Bugün bir bulmaca çöz, seri devam etsin."
-          }
-        }
-      }
-    },
-    "A new daily challenge is waiting, dear. How quick can you be today?" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yeni bir günlük görev seni bekliyor canım. Bugün ne kadar hızlısın?"
-          }
-        }
-      }
-    },
-    "Booties" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Patik"
-          }
-        }
-      }
-    },
-    "correct" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "doğru"
-          }
-        }
-      }
-    },
-    "Daily challenge" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Günlük Görev"
-          }
-        }
-      }
-    },
-    "DAILY CHALLENGE" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GÜNLÜK GÖREV"
-          }
-        }
-      }
-    },
-    "Daily challenge done" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Günlük Görev tamamlandı"
-          }
-        }
-      }
-    },
-    "Day streak" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gün serisi"
-          }
-        }
-      }
-    },
-    "Don't forget me today, dear, or your %lld-day streak starts over." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bugün beni unutma canım, yoksa %lld günlük serin baştan başlar."
-          }
-        }
-      }
-    },
-    "I peeked at your puzzle, dear. You're doing so well, come finish it!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bulmacana bir göz attım canım. Çok iyi gidiyorsun, gel bitir!"
-          }
-        }
-      }
-    },
-    "Keep playing" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oynamaya devam et"
-          }
-        }
-      }
-    },
-    "Leave" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çık"
-          }
-        }
-      }
-    },
-    "Leave?" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çıkmak istiyor musun?"
-          }
-        }
-      }
-    },
-    "Let it go" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Boş ver"
-          }
-        }
-      }
-    },
-    "New challenge tomorrow!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yeni görev yarın!"
-          }
-        }
-      }
-    },
-    "No video ready just now. Try again in a moment." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Şu an hazır video yok. Biraz sonra tekrar dene."
-          }
-        }
-      }
-    },
-    "Oh dear, you missed a day! You can still save your %lld-day streak today." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eyvah, bir gün kaçırdın! %lld günlük serini bugün hâlâ kurtarabilirsin."
-          }
-        }
-      }
-    },
-    "Save your streak?" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serini kurtarmak ister misin?"
-          }
-        }
-      }
-    },
-    "Solve a puzzle every day to build a streak!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Her gün bir bulmaca çöz, serin büyüsün!"
-          }
-        }
-      }
-    },
-    "Solve a puzzle today to keep your %lld-day streak!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld günlük serini korumak için bugün bir bulmaca çöz!"
-          }
-        }
-      }
-    },
-    "That's %lld days in a row, dear! See you tomorrow." : {
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Your streak has begun, dear! See you tomorrow."
-                }
-              },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "That's %lld days in a row, dear! See you tomorrow."
-                }
-              }
-            }
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Üst üste %lld gün, canım! Yarın görüşürüz."
-          }
-        }
-      }
-    },
-    "Time" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Süre"
-          }
-        }
-      }
-    },
-    "time" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "süre"
-          }
-        }
-      }
-    },
-    "Time left" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kalan süre"
-          }
-        }
-      }
-    },
-    "Today's daily challenge is ready. Fancy a race against the clock?" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bugünün görevi hazır. Saatle yarışa var mısın?"
-          }
-        }
-      }
-    },
-    "Watch video" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video izle"
-          }
-        }
-      }
-    },
-    "You left a puzzle half done, dear. I kept your place!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir bulmacayı yarım bıraktın canım. Yerini sakladım!"
-          }
-        }
-      }
-    },
-    "You missed yesterday. Watch a short video to keep your %lld-day streak." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dün oynamadın. %lld günlük serini korumak için kısa bir video izle."
-          }
-        }
-      }
-    },
-    "Your %lld-day streak is hanging by a thread, sweetheart. Come save it today!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld günlük serin pamuk ipliğine bağlı tatlım. Gel bugün kurtar!"
-          }
-        }
-      }
-    },
-    "Your %lld-day streak needs one puzzle today, sweetheart. Don't let it slip!" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld günlük serin bugün tek bir bulmaca bekliyor tatlım. Kaçırma!"
-          }
-        }
-      }
-    },
-    "Your puzzle is waiting right where you left it. Shall we finish it?" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bulmacan bıraktığın yerde seni bekliyor. Bitirelim mi?"
-          }
-        }
-      }
-    },
-    "Your streak is safe, dear! Let's keep it going." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Serin güvende canım! Hadi devam edelim."
-          }
-        }
-      }
-    },
-    "Your time and board will reset." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Süren ve tahtan sıfırlanacak."
-          }
-        }
-      }
+    "?" : {
+      "comment" : "A placeholder for a locked photo.",
+      "isCommentAutoGenerated" : true
     },
     "· %lld yarn each" : {
       "extractionState" : "stale",
@@ -374,6 +30,57 @@
         }
       },
       "shouldTranslate" : false
+    },
+    "%@ correct" : {
+      "comment" : "Result panel: the formatted percentage of correct letters, e.g. \"90%\".",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ doğru"
+          }
+        }
+      }
+    },
+    "%@ for my daughter!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kızım için!"
+          }
+        }
+      }
+    },
+    "%@ for my granddaughter!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ kız torunum için!"
+          }
+        }
+      }
+    },
+    "%@ for my grandson!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ erkek torunum için!"
+          }
+        }
+      }
+    },
+    "%@ for my son!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ oğlum için!"
+          }
+        }
+      }
     },
     "%@ for the cat!" : {
       "localizations" : {
@@ -472,6 +179,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Üst üste %lld gün, seninle gurur duyuyorum! Bir gün daha yapalım mı?"
+          }
+        }
+      }
+    },
+    "%lld days in a row! One puzzle today keeps it going." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üst üste %lld gün! Bugün bir bulmaca çöz, seri devam etsin."
           }
         }
       }
@@ -590,23 +307,22 @@
         }
       }
     },
+    "A new daily challenge is waiting, dear. How quick can you be today?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni bir günlük görev seni bekliyor canım. Bugün ne kadar hızlısın?"
+          }
+        }
+      }
+    },
     "A wrong stitch is just one to unpick. Let's knit it again!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yanlış ilmek sökülür, o kadar. Hadi yeniden örelim!"
-          }
-        }
-      }
-    },
-    "%@ correct" : {
-      "comment" : "Result panel: the formatted percentage of correct letters, e.g. \"90%\".",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ doğru"
           }
         }
       }
@@ -672,12 +388,32 @@
         }
       }
     },
+    "All done for the cat! Now, something for my daughter." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kedinin her şeyi tamam! Şimdi kızım için bir şeyler öreyim."
+          }
+        }
+      }
+    },
     "All filled in! Tap Submit to see how you did." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hepsi doldu! Nasıl yaptığını görmek için Kontrol et'e dokun."
+          }
+        }
+      }
+    },
+    "And now my little grandson's wardrobe!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi de küçük torunumun dolabı!"
           }
         }
       }
@@ -698,6 +434,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geri"
+          }
+        }
+      }
+    },
+    "Beanie" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bere"
+          }
+        }
+      }
+    },
+    "Beret" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fransız beresi"
           }
         }
       }
@@ -732,12 +488,62 @@
         }
       }
     },
+    "Booties" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Patik"
+          }
+        }
+      }
+    },
+    "Brown" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kahverengi"
+          }
+        }
+      }
+    },
+    "Bunny" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tavşan"
+          }
+        }
+      }
+    },
     "Cancel" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vazgeç"
+          }
+        }
+      }
+    },
+    "Cardigan" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hırka"
+          }
+        }
+      }
+    },
+    "Cat" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kedi"
           }
         }
       }
@@ -842,12 +648,42 @@
         }
       }
     },
+    "Complete!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamamlandı!"
+          }
+        }
+      }
+    },
     "Connect to the internet to load new levels" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeni bölümleri yüklemek için internete bağlan"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devam"
+          }
+        }
+      }
+    },
+    "correct" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "doğru"
           }
         }
       }
@@ -862,12 +698,62 @@
         }
       }
     },
+    "Daily challenge" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük Görev"
+          }
+        }
+      }
+    },
+    "DAILY CHALLENGE" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GÜNLÜK GÖREV"
+          }
+        }
+      }
+    },
+    "Daily challenge done" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük Görev tamamlandı"
+          }
+        }
+      }
+    },
     "Daily treats" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Günlük ikramlar"
+          }
+        }
+      }
+    },
+    "Daughter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kızı"
+          }
+        }
+      }
+    },
+    "Daughter's wardrobe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kızının dolabı"
           }
         }
       }
@@ -882,12 +768,42 @@
         }
       }
     },
+    "Day streak" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gün serisi"
+          }
+        }
+      }
+    },
+    "Dino hat" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinozor bere"
+          }
+        }
+      }
+    },
     "Doesn't the cat look smart?" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kedi ne kadar şık olmuş, değil mi?"
+          }
+        }
+      }
+    },
+    "Don't forget me today, dear, or your %lld-day streak starts over." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugün beni unutma canım, yoksa %lld günlük serin baştan başlar."
           }
         }
       }
@@ -938,6 +854,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Her dilin kendi bulmacaları var ve kaldığın bölüm her dil için ayrı saklanır."
+          }
+        }
+      }
+    },
+    "Ear warmer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kulak bandı"
+          }
+        }
+      }
+    },
+    "Earflap hat" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kulaklı bere"
           }
         }
       }
@@ -1012,6 +948,36 @@
         }
       }
     },
+    "Gloves" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eldiven"
+          }
+        }
+      }
+    },
+    "Granddaughter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kız torunu"
+          }
+        }
+      }
+    },
+    "Granddaughter's wardrobe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kız torununun dolabı"
+          }
+        }
+      }
+    },
     "Grandma" : {
       "localizations" : {
         "tr" : {
@@ -1038,6 +1004,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nine: bu kelimeyi çözer"
+          }
+        }
+      }
+    },
+    "Grandson" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erkek torunu"
+          }
+        }
+      }
+    },
+    "Grandson's wardrobe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erkek torununun dolabı"
           }
         }
       }
@@ -1089,6 +1075,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yeşil"
+          }
+        }
+      }
+    },
+    "Hand warmers" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El ısıtıcı"
           }
         }
       }
@@ -1169,6 +1165,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "NASIL OYNANIR"
+          }
+        }
+      }
+    },
+    "I peeked at your puzzle, dear. You're doing so well, come finish it!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulmacana bir göz attım canım. Çok iyi gidiyorsun, gel bitir!"
           }
         }
       }
@@ -1284,6 +1290,16 @@
         }
       }
     },
+    "Keep playing" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oynamaya devam et"
+          }
+        }
+      }
+    },
     "Kitty and I were just talking about you. Come say hello!" : {
       "localizations" : {
         "tr" : {
@@ -1356,6 +1372,16 @@
         }
       }
     },
+    "Knitting now" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi örülüyor"
+          }
+        }
+      }
+    },
     "Knitting the %@…" : {
       "localizations" : {
         "tr" : {
@@ -1376,12 +1402,52 @@
         }
       }
     },
+    "Leave" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çık"
+          }
+        }
+      }
+    },
+    "Leave?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çıkmak istiyor musun?"
+          }
+        }
+      }
+    },
     "Leaves the lesson" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dersten çıkar"
+          }
+        }
+      }
+    },
+    "Leg warmers" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tozluk"
+          }
+        }
+      }
+    },
+    "Let it go" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boş ver"
           }
         }
       }
@@ -1456,6 +1522,16 @@
         }
       }
     },
+    "Look at all that yarn! I could knit a %@. Pop by my yarn bag when you like." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şu iplere bak! Bir %@ örebilirim. İstediğin zaman yün çantama uğra."
+          }
+        }
+      }
+    },
     "Look at all that yarn! I could knit the cat a %@. Pop by my yarn bag when you like." : {
       "localizations" : {
         "tr" : {
@@ -1476,6 +1552,16 @@
         }
       }
     },
+    "Mittens" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parmaksız eldiven"
+          }
+        }
+      }
+    },
     "More puzzles soon!" : {
       "localizations" : {
         "tr" : {
@@ -1492,6 +1578,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Müzik"
+          }
+        }
+      }
+    },
+    "My daughter is going to love this." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kızım buna bayılacak."
+          }
+        }
+      }
+    },
+    "My granddaughter will be thrilled!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kız torunum çok sevinecek!"
+          }
+        }
+      }
+    },
+    "My grandson will look so smart in this!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torunum bununla ne kadar yakışıklı olacak!"
           }
         }
       }
@@ -1526,12 +1642,32 @@
         }
       }
     },
+    "Navy" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lacivert"
+          }
+        }
+      }
+    },
     "Need a little help?" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Biraz yardım ister misin?"
+          }
+        }
+      }
+    },
+    "New challenge tomorrow!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni görev yarın!"
           }
         }
       }
@@ -1577,12 +1713,42 @@
         }
       }
     },
+    "Next wardrobe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıradaki dolap"
+          }
+        }
+      }
+    },
+    "Next, something lovely for my granddaughter!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sırada kız torunum için güzel şeyler var!"
+          }
+        }
+      }
+    },
     "No video ready just now, dear. Try again in a moment." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şu an hazır video yok canım. Birazdan tekrar dene."
+          }
+        }
+      }
+    },
+    "No video ready just now. Try again in a moment." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şu an hazır video yok. Biraz sonra tekrar dene."
           }
         }
       }
@@ -1617,12 +1783,32 @@
         }
       }
     },
+    "Not open yet" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz açılmadı"
+          }
+        }
+      }
+    },
     "Not quite" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tam olmadı"
+          }
+        }
+      }
+    },
+    "Now my son gets his turn, dear." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şimdi sıra oğlumda, canım."
           }
         }
       }
@@ -1643,6 +1829,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kapalı"
+          }
+        }
+      }
+    },
+    "Oh dear, you missed a day! You can still save your %lld-day streak today." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eyvah, bir gün kaçırdın! %lld günlük serini bugün hâlâ kurtarabilirsin."
           }
         }
       }
@@ -1697,12 +1893,52 @@
         }
       }
     },
+    "Opens when the wardrobe before it is complete." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Önceki dolap tamamlanınca açılır."
+          }
+        }
+      }
+    },
+    "Orange" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turuncu"
+          }
+        }
+      }
+    },
     "Perfect!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mükemmel!"
+          }
+        }
+      }
+    },
+    "Pinafore dress" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salopet elbise"
+          }
+        }
+      }
+    },
+    "Pink" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pembe"
           }
         }
       }
@@ -1778,6 +2014,16 @@
         }
       }
     },
+    "Purple" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mor"
+          }
+        }
+      }
+    },
     "Ready to knit" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1849,6 +2095,16 @@
         }
       }
     },
+    "Save your streak?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serini kurtarmak ister misin?"
+          }
+        }
+      }
+    },
     "Scarf" : {
       "localizations" : {
         "tr" : {
@@ -1909,6 +2165,16 @@
         }
       }
     },
+    "Shawl" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şal"
+          }
+        }
+      }
+    },
     "Shh, the cat's having a little nap." : {
       "localizations" : {
         "tr" : {
@@ -1929,12 +2195,52 @@
         }
       }
     },
+    "Slippers" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terlik"
+          }
+        }
+      }
+    },
     "So close, dear! Every puzzle makes you a little sharper." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Az kaldı, canım! Her bulmacada biraz daha ustalaşıyorsun."
+          }
+        }
+      }
+    },
+    "Socks" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çorap"
+          }
+        }
+      }
+    },
+    "Solve a puzzle every day to build a streak!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Her gün bir bulmaca çöz, serin büyüsün!"
+          }
+        }
+      }
+    },
+    "Solve a puzzle today to keep your %lld-day streak!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serini korumak için bugün bir bulmaca çöz!"
           }
         }
       }
@@ -1955,6 +2261,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bazı harfler iki kelimeye birden aittir. Aşağı inen kelimeye geçmek için bu kareye iki kez dokun."
+          }
+        }
+      }
+    },
+    "Son" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oğlu"
+          }
+        }
+      }
+    },
+    "Son's wardrobe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oğlunun dolabı"
           }
         }
       }
@@ -2009,12 +2335,80 @@
         }
       }
     },
+    "Sweater vest" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süveter"
+          }
+        }
+      }
+    },
+    "Teal" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turkuaz"
+          }
+        }
+      }
+    },
+    "Teddy bear" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oyuncak ayı"
+          }
+        }
+      }
+    },
     "Terms of Use" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kullanım Koşulları"
+          }
+        }
+      }
+    },
+    "That'll keep my son nice and warm." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu, oğlumu güzelce ısıtır."
+          }
+        }
+      }
+    },
+    "That's %lld days in a row, dear! See you tomorrow." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Your streak has begun, dear! See you tomorrow."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "That's %lld days in a row, dear! See you tomorrow."
+                }
+              }
+            }
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Üst üste %lld gün, canım! Yarın görüşürüz."
           }
         }
       }
@@ -2120,12 +2514,62 @@
         }
       }
     },
+    "The whole family is wrapped up warm. Thank you, dear!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bütün aile sıcacık oldu. Teşekkürler, canım!"
+          }
+        }
+      }
+    },
+    "time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "süre"
+          }
+        }
+      }
+    },
+    "Time" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süre"
+          }
+        }
+      }
+    },
+    "Time left" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kalan süre"
+          }
+        }
+      }
+    },
     "Today" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bugün"
+          }
+        }
+      }
+    },
+    "Today's daily challenge is ready. Fancy a race against the clock?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bugünün görevi hazır. Saatle yarışa var mısın?"
           }
         }
       }
@@ -2160,6 +2604,16 @@
         }
       }
     },
+    "Up next" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıradaki"
+          }
+        }
+      }
+    },
     "Version %@" : {
       "localizations" : {
         "tr" : {
@@ -2176,6 +2630,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dolap"
+          }
+        }
+      }
+    },
+    "Wardrobe complete" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dolap tamamlandı"
           }
         }
       }
@@ -2200,12 +2664,32 @@
         }
       }
     },
+    "Watch video" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Video izle"
+          }
+        }
+      }
+    },
     "Well done" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aferin"
+          }
+        }
+      }
+    },
+    "Wonderful!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Harika!"
           }
         }
       }
@@ -2250,6 +2734,26 @@
         }
       }
     },
+    "You left a puzzle half done, dear. I kept your place!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir bulmacayı yarım bıraktın canım. Yerini sakladım!"
+          }
+        }
+      }
+    },
+    "You missed yesterday. Watch a short video to keep your %lld-day streak." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dün oynamadın. %lld günlük serini korumak için kısa bir video izle."
+          }
+        }
+      }
+    },
     "You're doing wonderfully. One more go, I believe in you!" : {
       "localizations" : {
         "tr" : {
@@ -2266,6 +2770,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hepsini çözdün! Yenilerini yazıyorum."
+          }
+        }
+      }
+    },
+    "Your %lld-day streak is hanging by a thread, sweetheart. Come save it today!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serin pamuk ipliğine bağlı tatlım. Gel bugün kurtar!"
+          }
+        }
+      }
+    },
+    "Your %lld-day streak needs one puzzle today, sweetheart. Don't let it slip!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld günlük serin bugün tek bir bulmaca bekliyor tatlım. Kaçırma!"
+          }
+        }
+      }
+    },
+    "Your puzzle is waiting right where you left it. Shall we finish it?" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulmacan bıraktığın yerde seni bekliyor. Bitirelim mi?"
+          }
+        }
+      }
+    },
+    "Your streak is safe, dear! Let's keep it going." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serin güvende canım! Hadi devam edelim."
+          }
+        }
+      }
+    },
+    "Your time and board will reset." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süren ve tahtan sıfırlanacak."
           }
         }
       }

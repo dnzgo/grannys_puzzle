@@ -136,7 +136,12 @@ final class Game {
     /// True when the player can afford at least one item they don't own yet;
     /// the home screen uses it to nudge them toward the yarn bag.
     var canKnitSomething: Bool {
-        catalog.items.contains(where: progress.canKnit)
+        !catalog.knittableItems(for: progress).isEmpty
+    }
+
+    /// Yarn in the colours of the wardrobe being knitted.
+    private var yarnDropper: YarnDropper {
+        YarnDropper(colors: catalog.yarnColors(for: progress))
     }
 
     /// True when a finished set's jar is waiting in the wardrobe; the home
@@ -196,21 +201,29 @@ final class Game {
         /// This item was the last colour of its garment: the set is done,
         /// and its jar is waiting in the wardrobe.
         let completedSet: Bool
+        /// This item was the last one its member's wardrobe needed: the
+        /// next member's wardrobe opens (nil otherwise).
+        let completedWardrobe: FamilyMember?
     }
 
     /// Knits an item if the player can afford it, and saves at once, before
     /// any animation plays. Nil if it wasn't knitted.
     func knit(_ item: KnitItem) -> KnitReport? {
+        // Only the current wardrobe: a later member's items wait their turn.
+        guard catalog.availableItems(for: progress).contains(item) else { return nil }
         var outcome = PlayerProgress.KnitOutcome.alreadyOwned
         var completedSet = false
+        var completedWardrobe = false
         update { progress in
             outcome = progress.knit(item)
             completedSet = outcome == .knitted && catalog.isSetComplete(for: item, in: progress)
+            completedWardrobe = outcome == .knitted && catalog.isWardrobeComplete(for: item, in: progress)
         }
         guard outcome == .knitted else { return nil }
         events?.log(.itemKnitted(item))
         if completedSet { events?.log(.setCompleted(item)) }
-        return KnitReport(completedSet: completedSet)
+        if completedWardrobe { events?.log(.wardrobeCompleted(item.member, level: progress.levelNumber)) }
+        return KnitReport(completedSet: completedSet, completedWardrobe: completedWardrobe ? item.member : nil)
     }
 
     /// Collects a finished set's jar in the wardrobe (any item of the set
@@ -445,7 +458,7 @@ final class Game {
     /// The lesson's board was solved: its yarn, the first time only.
     func completeTutorial() -> [YarnColor] {
         var earned: [YarnColor] = []
-        update { earned = $0.completeTutorial(using: &generator) }
+        update { earned = $0.completeTutorial(dropper: yarnDropper, using: &generator) }
         lessonFinished = true
         events?.log(.tutorialComplete)
         return earned
@@ -680,7 +693,7 @@ extension Game: LevelHost {
         }
         var earned: [YarnColor] = []
         update {
-            earned = $0.record(result, using: &generator)
+            earned = $0.record(result, dropper: yarnDropper, using: &generator)
             // Judged boards are finished: a pass moves on, a fail starts over.
             $0.board = nil
             // A pass is a day solved; a fail isn't, until it's passed.

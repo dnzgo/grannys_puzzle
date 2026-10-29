@@ -133,7 +133,7 @@ final class AchievementsTests: XCTestCase {
 
     func testASetCountsOnlyWithEveryColour() throws {
         let catalog = KnittingCatalog.standard
-        let scarves = catalog.items.filter { $0.kind == .scarf }
+        let scarves = catalog.items(for: .cat).filter { $0.kind == .scarf }
         var progress = PlayerProgress.newPlayer
         progress.wardrobe = Set(scarves.dropLast().map(\.id))
         XCTAssertEqual(Achievements.count(.setsCompleted, for: progress, catalog: catalog), 0)
@@ -143,11 +143,11 @@ final class AchievementsTests: XCTestCase {
         XCTAssertEqual(Achievements.count(.itemsKnitted, for: progress, catalog: catalog), 4)
     }
 
-    func testTheFullWardrobeIsTheWholeCatalogToday() {
-        // Fixed at 20 on purpose (see Achievements.all). If the catalog
-        // grows, this fails as a reminder that "Full Wardrobe" no longer
-        // means all of it: a new achievement may be wanted.
-        XCTAssertEqual(KnittingCatalog.standard.items.count, 20)
+    func testTheFullWardrobeIsTheCatsWholeWardrobe() {
+        // "Full Wardrobe" is fixed at 20 (see Achievements.all): the cat's
+        // wardrobe, the first one. If the cat's ever changes size, this
+        // fails as a reminder to change the achievement with it.
+        XCTAssertEqual(KnittingCatalog.standard.items(for: .cat).count, 20)
     }
 
     func testIDsAreUnique() {

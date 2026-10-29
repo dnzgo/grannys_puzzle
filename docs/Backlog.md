@@ -28,6 +28,9 @@ which one to use, plus a fallback built into the app for when the
 download isn't there yet or fails.
 
 - [ ] Home background image chosen remotely (seasons, holidays).
+- [ ] More family wardrobes after the grandson's (five are built in: the
+      cat, daughter, son, granddaughter, grandson; see KnittingCatalog).
+      Possibly achievements per finished wardrobe.
 - [ ] New wardrobe items, and new wardrobes, added remotely: their art
       and their catalog entries (prices, sets) downloaded, like packs.
       Needs care with progress: a player who owns an item must keep it

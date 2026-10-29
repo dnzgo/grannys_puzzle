@@ -38,6 +38,8 @@ enum FeedbackEvent: Equatable, CaseIterable {
     case prizeLanded
     /// Submit tapped and the board accepted for judging.
     case submitted
+    /// A finished family member's wardrobe shaking before it's swapped.
+    case wardrobeShaken
     /// One group of cells lighting green or red after Submit. The lightest
     /// tick of all: a wave can have fifteen of them in a second.
     case cellsJudged
@@ -55,7 +57,7 @@ enum FeedbackEvent: Equatable, CaseIterable {
         case .letterPlaced, .yarnLanded, .prizeLanded: .impact(flexibility: .soft, intensity: 0.6)
         case .jarShaken: .impact(weight: .light)
         case .cellsJudged: .impact(flexibility: .soft, intensity: 0.35)
-        case .reveal: .impact(weight: .medium)
+        case .reveal, .wardrobeShaken: .impact(weight: .medium)
         case .levelPassed, .itemKnitted, .jarOpened, .helperEarned: .success
         case .levelFailed: .warning
         }

@@ -69,7 +69,7 @@ it (see the image prompts in the chat / art folder).
 | `grannyspuzzle.daily.perfect` | a 100% daily | 40 | Perfect Day | Finish a daily challenge with every letter right. / A perfect daily challenge! | Kusursuz Gün | Bir günlük görevi tüm harfleri doğru bitir. / Kusursuz bir günlük görev! |
 | `grannyspuzzle.knit.1` | 1 item knitted | 10 | First Stitch | Knit your first item. / You knitted your first item! | İlk İlmek | İlk parçanı ör. / İlk parçanı ördün! |
 | `grannyspuzzle.knit.set` | 1 garment, all colours | 30 | Matching Set | Knit one garment in every colour. / A full set! | Takım Tamam | Bir giysiyi her renkte ör. / Takım tamam! |
-| `grannyspuzzle.knit.all` | all 20 items | 80 | Full Wardrobe | Knit everything in the wardrobe. / The wardrobe is full! | Dolap Dolu | Dolaptaki her şeyi ör. / Dolap dopdolu! |
+| `grannyspuzzle.knit.all` | all 20 of the cat's items | 80 | Full Wardrobe | Knit everything in the cat's wardrobe. / The cat's wardrobe is full! | Dolap Dolu | Kedinin dolabındaki her şeyi ör. / Kedinin dolabı dopdolu! |
 | `grannyspuzzle.languages.2` | levels in 2 languages | 30 | Bilingual | Pass a level in English and in Turkish. / Puzzles in two languages! | İki Dilli | İngilizce ve Türkçe birer bölüm geç. / İki dilde bulmaca! |
 
 ## Images (1024 × 1024, RGB, no transparency)

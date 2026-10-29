@@ -43,6 +43,7 @@ can only turn a file down; a sound that's too quiet needs a louder file.
 | `jar-opened` | A jar's treat is revealed | `SFX/Rewards/jar_opened` | temporary |
 | `prize-landed` | A helper from a jar reaches its counter | `SFX/Rewards/prize_landing` | temporary |
 | `yarn-landed-1`…`-3` | A yarn ball drops into the bag | `SFX/Rewards/yarn_landing_01`…`03` | temporary |
+| `wardrobe-shake` | A finished family member's wardrobe shakes before it's swapped | `SFX/Rewards/wardrobe_shake` | temporary |
 
 Several takes (`-1`…`-4`) are for sounds that repeat quickly: the player
 picks one at random, never the one that just played, because an identical
@@ -79,7 +80,6 @@ from the view that shows it), so they're not in the app bundle yet:
 | `SFX/Board/submit_alt_v4` | Alternative submit |
 | `SFX/Rewards/knitting_loop` | Looping under the knitting animation (**to replace**) |
 | `SFX/Rewards/streak_plus_one`, `streak_saved` | Streak +1, streak saved |
-| `SFX/Rewards/wardrobe_shake` | The wardrobe shaking |
 | `SFX/Daily/score_counting`, `total_lands` | The daily score counting up, and its total |
 | `Stingers/achievement` | Achievement unlocked |
 | `Stingers/daily_best` | A new daily best |

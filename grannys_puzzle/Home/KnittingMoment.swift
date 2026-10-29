@@ -86,12 +86,25 @@ struct KnittingMoment: View {
         .accessibilityElement(children: .combine)
     }
 
+    /// "Red scarf for the cat!": whole sentences per member, because the
+    /// Turkish puts the possessive into the word (kızım, oğlum).
+    private var forWhom: String {
+        let name = item.displayName
+        return switch item.member {
+        case .cat: String(localized: "\(name) for the cat!", bundle: .appLanguage, locale: .appLanguage)
+        case .daughter: String(localized: "\(name) for my daughter!", bundle: .appLanguage, locale: .appLanguage)
+        case .son: String(localized: "\(name) for my son!", bundle: .appLanguage, locale: .appLanguage)
+        case .granddaughter: String(localized: "\(name) for my granddaughter!", bundle: .appLanguage, locale: .appLanguage)
+        case .grandson: String(localized: "\(name) for my grandson!", bundle: .appLanguage, locale: .appLanguage)
+        }
+    }
+
     private var finished: some View {
         VStack(spacing: 14) {
-            GarmentView(kind: item.kind, color: item.color, size: 120)
+            GarmentView(item: item, size: 120)
                 .shadow(color: item.color.tint.opacity(0.4), radius: 12, y: 6)
                 .accessibilityHidden(true)
-            Text("\(item.displayName) for the cat!")
+            Text(forWhom)
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .foregroundStyle(Theme.ink)
                 .multilineTextAlignment(.center)

@@ -34,10 +34,13 @@ struct YarnBagCard: View {
 
     // MARK: Yarn
 
-    /// The four colours: grey with no count until the player has some.
+    /// The current wardrobe's four colours: grey with no count until the
+    /// player has some. Only these, not every colour there is: they're the
+    /// ones levels drop and the bag can use now. Yarn kept from an earlier
+    /// wardrobe stays saved and shows again when a later one uses it.
     private var yarnRow: some View {
         HStack(spacing: 0) {
-            ForEach(YarnColor.allCases, id: \.self) { color in
+            ForEach(catalog.yarnColors(for: progress), id: \.self) { color in
                 let count = progress.yarnCount(of: color)
                 VStack(spacing: 4) {
                     YarnBall(color: count > 0 ? color : nil, size: 50)
@@ -79,7 +82,7 @@ struct YarnBagCard: View {
             HStack {
                 arrow(systemName: "chevron.left", label: "Previous item", step: -1)
                 Spacer(minLength: 0)
-                GarmentView(kind: item.kind, color: item.color, size: 120)
+                GarmentView(item: item, size: 120)
                     // A new item fades in rather than snapping, so the arrows
                     // feel like turning a page.
                     .id(item.id)
@@ -96,7 +99,7 @@ struct YarnBagCard: View {
     /// Nothing affordable: the closest item, greyed out, and how far off it is.
     private func nearestItem(_ item: KnitItem) -> some View {
         VStack(spacing: 14) {
-            GarmentView(kind: item.kind, color: item.color, size: 120)
+            GarmentView(item: item, size: 120)
                 .grayscale(1)
                 .opacity(0.6)
                 .accessibilityHidden(true)

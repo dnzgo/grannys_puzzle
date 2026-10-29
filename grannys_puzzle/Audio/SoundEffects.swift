@@ -50,6 +50,7 @@ extension FeedbackEvent {
         case .jarShaken: SoundEffect("jar-shaken")
         case .prizeLanded: SoundEffect("prize-landed")
         case .submitted: SoundEffect("submit")
+        case .wardrobeShaken: SoundEffect("wardrobe-shake")
         case .cellsJudged: SoundEffect("cells-judged", variations: 4)
         }
     }

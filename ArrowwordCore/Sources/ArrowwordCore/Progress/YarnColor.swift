@@ -1,7 +1,9 @@
 /// A colour of yarn the player collects.
 ///
-/// The four starting colours match the cat's wardrobe (5 items × 4 colours).
-/// More colours arrive with the next family members.
+/// Each family member's wardrobe uses four of these (KnittingCatalog):
+/// the cat's are the first four, and each later wardrobe keeps two colours
+/// from the one before and brings new ones, so yarn left over from one
+/// wardrobe is still useful in the next.
 ///
 /// The raw value is what gets saved, so it must never change once shipped:
 /// renaming `red` would make every saved red ball disappear. Adding a new
@@ -15,4 +17,10 @@ public enum YarnColor: String, Codable, CaseIterable, Sendable, CodingKeyReprese
     case blue
     case yellow
     case green
+    case pink
+    case purple
+    case navy
+    case orange
+    case teal
+    case brown
 }

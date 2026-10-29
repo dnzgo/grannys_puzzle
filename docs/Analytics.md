@@ -52,6 +52,7 @@ or `ad_offer_cancel`.
 | `jar_opened` | A kept jar is opened | `hints`, `grandmas`, `jar_source` (`daily` / `set`), `streak_day` (daily jars), ★`still_unopened` | Whether players save jars up |
 | `item_knitted` | An item is knitted | ★`item_id` ("cat.scarf.red"), `cost` | How fast players progress through the wardrobe |
 | `set_completed` | The last colour of a garment is knitted (its jar then waits in the wardrobe) | `member` ("cat"), ★`garment` | How many finish each set |
+| `wardrobe_completed` | The last item of a family member's wardrobe is knitted; the next member's opens | ★`member` (`cat`, `daughter`, `son`, `granddaughter`, `grandson`), `level` | How far players get through the family, and at which level, to tune wardrobe prices |
 | `language_switched` | The game language is changed in Settings | `language` | How many play in a second language |
 
 ## Reminders
