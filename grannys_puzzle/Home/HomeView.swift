@@ -107,7 +107,6 @@ struct HomeView: View {
                 jarCount: game.progress.jars.count,
                 jarShakes: jarShakes,
                 jarIsOpen: jarIsOpen,
-                speechLine: speech.line,
                 onGranny: { speech.say(GrandmaLines.greeting()) },
                 onCat: { speech.say(GrandmaLines.catNapping) },
                 onJar: tapJar,
@@ -119,7 +118,6 @@ struct HomeView: View {
                 onGrannyFrame: { grannyFrame = $0 },
                 onWardrobeFrame: { wardrobeFrame = $0 }
             )
-            .animation(.easeOut(duration: 0.2), value: speech.line)
             // Like the settings button, but on the right of the scene rather
             // than in the top row, beside where the jars appear.
             .overlay(alignment: .topTrailing) {
@@ -273,6 +271,17 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: asksAboutReminders)
+        // Grandma's speech bubble, last so it's above everything: the scene,
+        // the knitting and jar animations, the top row and any card. It
+        // lets taps through, so it never blocks what's underneath.
+        .overlay {
+            if let line = speech.line {
+                GrandmaBubble(text: line, granny: grannyFrame)
+                    .allowsHitTesting(false)
+                    .transition(.opacity.combined(with: .scale(scale: 0.9, anchor: .bottom)))
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: speech.line)
         .onAppear {
             today = JarDay.number()
             speech.say(openingLine)
@@ -670,7 +679,6 @@ private struct HomeStage: View {
     let jarCount: Int
     let jarShakes: Int
     let jarIsOpen: Bool
-    let speechLine: String?
     let onGranny: () -> Void
     let onCat: () -> Void
     let onJar: () -> Void
@@ -751,12 +759,6 @@ private struct HomeStage: View {
 
                 CatBedView(width: side * 0.294, action: onCat)
                     .position(at(0.452, 1.012))
-
-                if let speechLine {
-                    SpeechBubble(text: speechLine)
-                        .position(at(0.5, 0.12))
-                        .transition(.opacity.combined(with: .scale(scale: 0.9, anchor: .bottom)))
-                }
             }
             // A jar collected pops in; the last one opened shrinks away
             // once its helpers have landed.
@@ -1148,6 +1150,40 @@ private struct SceneButtonStyle: ButtonStyle {
 
 /// A finished set's moment: the item that completed it (which names the
 /// set). Its jar waits in the wardrobe until collected.
+/// Grandma's speech bubble on the home screen: just above her head, its
+/// tail pointing down at her, and kept inside the screen's edges. Placed
+/// from her measured frame (in the home screen's space), so it follows her
+/// on every screen size.
+private struct GrandmaBubble: View {
+    let text: String
+    let granny: CGRect
+
+    /// The widest a bubble gets (SpeechBubble wraps the text to fit).
+    private let maxWidth: CGFloat = 260
+    private let margin: CGFloat = 16
+
+    var body: some View {
+        GeometryReader { proxy in
+            // Her head, as a share of the granny picture: the middle of her
+            // face across, the top of her hair down.
+            // (Until she's been measured, the top middle of the screen.)
+            let head = granny == .zero
+                ? CGPoint(x: proxy.size.width / 2, y: 120)
+                : CGPoint(x: granny.minX + granny.width * 0.45, y: granny.minY + granny.height * 0.03)
+            let x = min(max(head.x, margin + maxWidth / 2), proxy.size.width - margin - maxWidth / 2)
+            // A strip as wide as the widest bubble, its bottom where the tail
+            // ends: the bubble hangs from it, growing upwards with longer
+            // lines. (A zero-width spot would squeeze the text to nothing.)
+            Color.clear
+                .frame(width: maxWidth, height: 1)
+                .overlay(alignment: .bottom) {
+                    SpeechBubble(text: text, tailOffset: head.x - x)
+                }
+                .position(x: x, y: head.y)
+        }
+    }
+}
+
 /// Where the wardrobe is in its swap: tilt in degrees, and how far right
 /// it has moved, in wardrobe widths.
 private struct WardrobeSwap {

@@ -140,6 +140,11 @@ final class Game {
     }
 
     /// Yarn in the colours of the wardrobe being knitted.
+    ///
+    /// Read it before `update { … }`, never inside: `update` gives its
+    /// closure `progress` inout, which is exclusive access for the whole
+    /// closure, and this reads `progress` too. Swift stops the app on that
+    /// overlap ("Simultaneous accesses"); it crashed Submit once.
     private var yarnDropper: YarnDropper {
         YarnDropper(colors: catalog.yarnColors(for: progress))
     }
@@ -458,7 +463,10 @@ final class Game {
     /// The lesson's board was solved: its yarn, the first time only.
     func completeTutorial() -> [YarnColor] {
         var earned: [YarnColor] = []
-        update { earned = $0.completeTutorial(dropper: yarnDropper, using: &generator) }
+        // Made before `update`: it reads `progress`, which `update` holds
+        // open for writing (see yarnDropper).
+        let dropper = yarnDropper
+        update { earned = $0.completeTutorial(dropper: dropper, using: &generator) }
         lessonFinished = true
         events?.log(.tutorialComplete)
         return earned
@@ -692,8 +700,10 @@ extension Game: LevelHost {
             adBreaks.levelPassed(number: level)
         }
         var earned: [YarnColor] = []
+        // Made before `update`, not inside it (see yarnDropper).
+        let dropper = yarnDropper
         update {
-            earned = $0.record(result, dropper: yarnDropper, using: &generator)
+            earned = $0.record(result, dropper: dropper, using: &generator)
             // Judged boards are finished: a pass moves on, a fail starts over.
             $0.board = nil
             // A pass is a day solved; a fail isn't, until it's passed.

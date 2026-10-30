@@ -59,8 +59,9 @@ struct BoardMetrics: Equatable {
     static let topBarHeight: CGFloat = 52
     static let topBarTopPadding: CGFloat = 4
     static let trayRowSpacing: CGFloat = 6
+    /// The smallest of the three equal gaps under the board: board to
+    /// tray, tray to helpers, helpers to the banner.
     static let minimumSpacer: CGFloat = 8
-    static let actionBottomPadding: CGFloat = 8
 
     /// The side of the square frame, border included.
     let frameSide: CGFloat
@@ -171,7 +172,7 @@ struct BoardMetrics: Equatable {
         let topBar = topBarTopPadding + topBarHeight
         let rows = CGFloat(trayRows)
         let tray = rows * trayKeyHeight(isCompact: isCompact) + (rows - 1) * trayRowSpacing
-        let actions = actionHeight(isCompact: isCompact) + actionBottomPadding
-        return topBar + gridTopPadding(isCompact: isCompact) + tray + actions + 2 * minimumSpacer
+        let actions = actionHeight(isCompact: isCompact)
+        return topBar + gridTopPadding(isCompact: isCompact) + tray + actions + 3 * minimumSpacer
     }
 }

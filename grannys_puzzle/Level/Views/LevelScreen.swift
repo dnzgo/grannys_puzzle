@@ -38,7 +38,10 @@ struct LevelScreen: View {
                     BoardViewport(model: model, metrics: metrics)
                         .padding(.top, metrics.gridTopPadding)
 
-                    // Any leftover height goes around the tray as breathing room.
+                    // Any leftover height is shared equally by three gaps, so
+                    // the tray and the helpers sit evenly between the board
+                    // and the banner: board to tray, tray to helpers, and
+                    // helpers to the banner are always the same.
                     Spacer(minLength: BoardMetrics.minimumSpacer)
                     // Stays after Submit too, locked: the level-end card
                     // shows the result, so nothing changes under the dimming.
@@ -46,10 +49,10 @@ struct LevelScreen: View {
                     Spacer(minLength: BoardMetrics.minimumSpacer)
 
                     ActionBar(model: model, height: metrics.actionHeight)
-                        .padding(.bottom, BoardMetrics.actionBottomPadding)
                         .overlay(alignment: .top) { grandmaBubble }
                         // Animating on the container lets the bubble fade in and out.
                         .animation(.easeOut(duration: 0.2), value: model.speech.line)
+                    Spacer(minLength: BoardMetrics.minimumSpacer)
                 }
                 .padding(.horizontal, Theme.sidePadding)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -175,6 +178,10 @@ struct LevelScreen: View {
 /// A rounded speech bubble for grandma's lines.
 struct SpeechBubble: View {
     let text: String
+    /// A tail under the bubble, pointing down at the speaker: how far from
+    /// the bubble's middle its tip should be (negative is left). Nil for no
+    /// tail, where it's clear enough who's talking.
+    var tailOffset: CGFloat?
 
     var body: some View {
         Text(text)
@@ -184,12 +191,47 @@ struct SpeechBubble: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .background(
-                RoundedRectangle(cornerRadius: 14)
+                BubbleShape(cornerRadius: 14, tailOffset: tailOffset)
                     .fill(Theme.surface)
                     .shadow(color: .black.opacity(0.12), radius: 8, y: 4)
             )
+            // Room for the tail, below the text's own frame.
+            .padding(.bottom, tailOffset == nil ? 0 : BubbleShape.tailHeight)
             .frame(maxWidth: 260)
             .accessibilityAddTraits(.updatesFrequently)
+    }
+}
+
+/// The bubble's outline: a rounded rectangle and, optionally, a tail under
+/// it. One shape rather than a rectangle with a triangle on top, so the fill
+/// and the shadow run round both without a seam where they meet.
+struct BubbleShape: Shape {
+    static let tailHeight: CGFloat = 12
+    private static let tailBase: CGFloat = 20
+
+    let cornerRadius: CGFloat
+    let tailOffset: CGFloat?
+
+    func path(in rect: CGRect) -> Path {
+        var path = Path(roundedRect: rect, cornerRadius: cornerRadius)
+        guard let tailOffset else { return path }
+        // The tail's root stays on the straight part of the bottom edge (a
+        // short line may be narrower than the speaker is far away); its tip
+        // leans the rest of the way, so it still points at them.
+        let reach = max(0, rect.width / 2 - cornerRadius - Self.tailBase / 2)
+        let root = rect.midX + min(max(tailOffset, -reach), reach)
+        let tipX = min(max(rect.midX + tailOffset, root - Self.tailBase), root + Self.tailBase)
+        path.move(to: CGPoint(x: root - Self.tailBase / 2, y: rect.maxY - 1))
+        path.addQuadCurve(
+            to: CGPoint(x: tipX, y: rect.maxY + Self.tailHeight),
+            control: CGPoint(x: root - Self.tailBase / 4, y: rect.maxY + Self.tailHeight * 0.4)
+        )
+        path.addQuadCurve(
+            to: CGPoint(x: root + Self.tailBase / 2, y: rect.maxY - 1),
+            control: CGPoint(x: root + Self.tailBase / 6, y: rect.maxY + Self.tailHeight * 0.5)
+        )
+        path.closeSubpath()
+        return path
     }
 }
 

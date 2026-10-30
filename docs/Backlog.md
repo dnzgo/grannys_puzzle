@@ -8,7 +8,8 @@ into the work (and into `Release.md` if it's needed for 1.0).
 - [ ] New icons for the settings and daily treat buttons (art to come).
 - [ ] Leaderboard button with its own icon, opening the daily
       leaderboards (see `Achievements.md`).
-- [ ] Grandma's speech bubble with a tail, so it visibly comes from her.
+- [x] Grandma's speech bubble with a tail, so it visibly comes from her,
+      always on top (HomeView's GrandmaBubble).
 - [x] Knitting happens on the home screen, not in a separate screen:
       grandma rocks, a yarn ball spins, the item appears and flies into
       the wardrobe, vanishing in sparkles (Home/KnittingOnStage.swift).

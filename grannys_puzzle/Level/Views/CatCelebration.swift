@@ -1,30 +1,33 @@
 import SwiftUI
 
-/// The cat celebrating a solved level.
-///
-/// A placeholder until the Rive animation (the cat dancing and batting the
-/// yarn about) exists: for now his head bobs and sways. Kept as one
-/// self-contained view on purpose, so the animation replaces only what's
-/// inside it. The yarn balls belong to the celebration around it
-/// (LevelCompleteView), because they have to travel from his paws to
+/// The cat celebrating a solved level: standing up, front paws in the air,
+/// hopping. The yarn balls belong to the celebration around it
+/// (LevelCompleteView), because they circle him and then travel to
 /// grandma's bag in one continuous movement.
+///
+/// Kept as one self-contained view, so a richer animation (Rive, say) can
+/// later replace only what's inside.
 struct CatCelebration: View {
+    /// The picture's height (the cat is about as tall as wide, standing).
     let size: CGFloat
 
-    @State private var bouncing = false
+    @State private var hopping = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        Image("cat-head")
+        Image("cat-cheer")
             .resizable()
             .scaledToFit()
             .frame(width: size, height: size)
-            .rotationEffect(.degrees(bouncing ? 7 : -7), anchor: .bottom)
-            .offset(y: bouncing ? -size * 0.08 : 0)
+            // A little hop with a squash on landing, and a slight sway, so
+            // he looks like he's cheering rather than holding a pose.
+            .scaleEffect(x: hopping ? 0.98 : 1.02, y: hopping ? 1.02 : 0.97, anchor: .bottom)
+            .rotationEffect(.degrees(hopping ? 3 : -3), anchor: .bottom)
+            .offset(y: hopping ? -size * 0.05 : 0)
             .onAppear {
                 guard !reduceMotion else { return }
-                withAnimation(.easeInOut(duration: 0.32).repeatForever(autoreverses: true)) {
-                    bouncing = true
+                withAnimation(.easeInOut(duration: 0.3).repeatForever(autoreverses: true)) {
+                    hopping = true
                 }
             }
             .accessibilityHidden(true)
@@ -32,7 +35,7 @@ struct CatCelebration: View {
 }
 
 #Preview {
-    CatCelebration(size: 120)
+    CatCelebration(size: 150)
         .padding()
         .background(Theme.background)
 }

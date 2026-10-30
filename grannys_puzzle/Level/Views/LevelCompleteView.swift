@@ -1,16 +1,18 @@
 import SwiftUI
 import ArrowwordCore
+import Foundation
 
 /// The celebration after a passed level, in short beats:
-/// 1. the score, with the cat celebrating and the new yarn at his paws;
-/// 2. the balls fly one by one into grandma's yarn bag;
+/// 1. the score, with the cat cheering and the new yarn circling him once,
+///    like electrons round an atom;
+/// 2. the balls drop one by one into grandma's yarn bag;
 /// 3. if this yarn made a new item affordable, grandma says so;
 /// 4. Next level and Home.
 ///
 /// The card itself is shared with a fail (LevelEndCard); this view adds the
 /// celebration on it.
 ///
-/// About two and a half seconds in all, and a tap anywhere jumps straight
+/// About three seconds in all, and a tap anywhere jumps straight
 /// to the end: players see this after every level, potentially thousands
 /// of times, and a ceremony that can't be hurried turns from a treat into a
 /// wait. With Reduce Motion on, it opens at the end.
@@ -31,16 +33,17 @@ struct LevelCompleteView: View {
     let onFinished: () -> Void
 
     private enum Beat {
-        case playing
+        case orbiting
         case flying
         case done
     }
 
-    @State private var beat = Beat.playing
-    /// How many balls have left the cat for the bag, and how many are in.
+    @State private var beat = Beat.orbiting
+    /// When the balls started circling; their place follows the clock.
+    @State private var orbitStart = Date.now
+    /// How many balls have left their orbit for the bag, and how many are in.
     @State private var flown = 0
     @State private var landed = 0
-    @State private var rolling = false
     @State private var bagBounce = false
     @State private var feedback: FeedbackSignal?
     /// Picked once, so the line doesn't change while it's on screen.
@@ -48,13 +51,26 @@ struct LevelCompleteView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     // The stage is drawn on a fixed grid so the balls can travel exactly
-    // from the cat's paws to the bag's mouth.
-    private let stageSize = CGSize(width: 280, height: 230)
-    private let catSize: CGFloat = 110
-    private let ballSize: CGFloat = 34
-    private let bagHeight: CGFloat = 86
-    private var pawsY: CGFloat { 128 }
-    private var bagMouthY: CGFloat { stageSize.height - bagHeight + 18 }
+    // from their orbits to the bag's mouth. The cat stands on the left,
+    // the bag beside him on the right, both on the floor at `groundY`.
+    private let stageSize = CGSize(width: 280, height: 210)
+    private let catSize: CGFloat = 140
+    private let ballSize: CGFloat = 30
+    private let bagHeight: CGFloat = 72
+    private var groundY: CGFloat { stageSize.height - StageFloor.height / 2 - 4 }
+    /// The middle of his picture: his feet are on the floor.
+    private var catCenter: CGPoint { CGPoint(x: 98, y: groundY - catSize / 2) }
+    private var bagX: CGFloat { 222 }
+    private var bagMouth: CGPoint { CGPoint(x: bagX, y: groundY - bagHeight + 14) }
+
+    /// One full turn round the cat.
+    private let orbitSeconds = 1.3
+    /// Each orbit is a flat ellipse (wide, shallow: a circle seen from the
+    /// side), tipped at its own angle, so the paths cross like an atom's.
+    /// Narrow enough to clear the bag beside him.
+    private let orbitWidth: CGFloat = 78
+    private let orbitDepth: CGFloat = 28
+    private let orbitTilts: [Double] = [-50, 0, 50]
 
     var body: some View {
         LevelEndCard(result: result) {
@@ -85,32 +101,32 @@ struct LevelCompleteView: View {
     // MARK: - Pieces
 
     private var stage: some View {
-        ZStack {
-            CatCelebration(size: catSize)
-                .position(x: stageSize.width / 2, y: catSize / 2 + 8)
+        // Redrawn every frame while the balls circle (their place depends on
+        // the time), and still afterwards, when ordinary animations take
+        // them to the bag.
+        TimelineView(.animation(paused: beat != .orbiting)) { context in
+            let turn = beat == .orbiting
+                ? min(max(context.date.timeIntervalSince(orbitStart) / orbitSeconds, 0), 1)
+                : 1
+            ZStack {
+                StageFloor(width: stageSize.width - 16)
+                    .position(x: stageSize.width / 2, y: groundY)
+                ContactShadow(width: catSize * 0.55)
+                    .position(x: catCenter.x, y: groundY)
+                ContactShadow(width: bagHeight * 0.9)
+                    .position(x: bagX, y: groundY)
 
-            Image("yarn-bag")
-                .resizable()
-                .scaledToFit()
-                .frame(height: bagHeight)
-                .scaleEffect(bagBounce ? 1.08 : 1, anchor: .bottom)
-                .overlay(alignment: .topTrailing) {
-                    if landed > 0 {
-                        Text(verbatim: "+\(landed)")
-                            .font(.system(size: 14, weight: .heavy, design: .rounded))
-                            .monospacedDigit()
-                            .foregroundStyle(Theme.onPrimary)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 3)
-                            .background(Capsule().fill(Theme.primary))
-                            .offset(x: 10, y: -6)
-                            .transition(.scale.combined(with: .opacity))
-                    }
+                CatCelebration(size: catSize)
+                    .position(catCenter)
+                    .zIndex(1)
+
+                bag
+                    .position(x: bagX, y: groundY - bagHeight / 2)
+                    .zIndex(1)
+
+                ForEach(Array(yarn.enumerated()), id: \.offset) { index, color in
+                    ball(index: index, color: color, turn: turn)
                 }
-                .position(x: stageSize.width / 2, y: stageSize.height - bagHeight / 2)
-
-            ForEach(Array(yarn.enumerated()), id: \.offset) { index, color in
-                ball(index: index, color: color)
             }
         }
         .frame(width: stageSize.width, height: stageSize.height)
@@ -118,22 +134,65 @@ struct LevelCompleteView: View {
         .accessibilityLabel(Text("\(yarn.count) yarn balls for grandma's bag"))
     }
 
-    /// One ball: at the cat's paws, rolling, until its turn to fly; then in
-    /// the bag's mouth, shrinking as it drops in.
-    private func ball(index: Int, color: YarnColor) -> some View {
+    private var bag: some View {
+        Image("yarn-bag")
+            .resizable()
+            .scaledToFit()
+            .frame(height: bagHeight)
+            .scaleEffect(bagBounce ? 1.08 : 1, anchor: .bottom)
+            .overlay(alignment: .topTrailing) {
+                if landed > 0 {
+                    Text(verbatim: "+\(landed)")
+                        .font(.system(size: 14, weight: .heavy, design: .rounded))
+                        .monospacedDigit()
+                        .foregroundStyle(Theme.onPrimary)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
+                        .background(Capsule().fill(Theme.primary))
+                        .offset(x: 10, y: -6)
+                        .transition(.scale.combined(with: .opacity))
+                }
+            }
+    }
+
+    /// One ball: on its orbit until its turn to go; then in the bag's
+    /// mouth, shrinking as it drops in. On the far side of its orbit it's
+    /// behind the cat and a little smaller, which is what makes the circle
+    /// read as going round him rather than across him.
+    private func ball(index: Int, color: YarnColor, turn: Double) -> some View {
         let hasFlown = index < flown
         let hasLanded = index < landed
-        // Side by side at the paws; bunched together at the bag's mouth.
+        let orbit = orbitPlace(of: index, turn: turn)
+        // Bunched together at the bag's mouth.
         let spread = CGFloat(index) - CGFloat(yarn.count - 1) / 2
-        let x = stageSize.width / 2 + spread * (hasFlown ? 10 : ballSize + 8)
-        let y = hasFlown ? bagMouthY : pawsY
-        let roll = rolling && !hasFlown ? (index.isMultiple(of: 2) ? 7.0 : -7.0) : 0
+        let point = hasFlown ? CGPoint(x: bagMouth.x + spread * 10, y: bagMouth.y) : orbit.point
+        let isBehind = !hasFlown && orbit.depth < 0
 
         return YarnBall(color: color, size: ballSize)
-            .rotationEffect(.degrees(roll * 6))
-            .scaleEffect(hasLanded ? 0.4 : 1)
+            .scaleEffect(hasLanded ? 0.4 : (hasFlown ? 1 : 0.88 + 0.12 * orbit.depth))
             .opacity(hasLanded ? 0 : 1)
-            .position(x: x + roll, y: y)
+            .position(point)
+            .zIndex(isBehind ? 0 : 2)
+    }
+
+    /// Where a ball is on its orbit after `turn` (0 to 1) of a full circle,
+    /// and how near the viewer it is (-1 far side, 1 near side).
+    ///
+    /// The ball goes round a flat ellipse, which is then tipped by the
+    /// orbit's angle (a rotation of the point about the cat's middle).
+    /// The balls start spread evenly round the circle, so they never bunch.
+    private func orbitPlace(of index: Int, turn: Double) -> (point: CGPoint, depth: Double) {
+        let count = max(yarn.count, 1)
+        let angle = 2 * Double.pi * (Double(index) / Double(count) + turn)
+        let flat = CGPoint(x: orbitWidth * cos(angle), y: orbitDepth * sin(angle))
+        // One ball: tipped a little, so it still sweeps behind and in front.
+        let tilt = (count == 1 ? -25 : orbitTilts[index % orbitTilts.count]) * Double.pi / 180
+        let tipped = CGPoint(
+            x: flat.x * cos(tilt) - flat.y * sin(tilt),
+            y: flat.x * sin(tilt) + flat.y * cos(tilt)
+        )
+        // The lower half of the ellipse is the near side.
+        return (CGPoint(x: catCenter.x + tipped.x, y: catCenter.y + tipped.y), sin(angle))
     }
 
     // MARK: - The sequence
@@ -144,10 +203,9 @@ struct LevelCompleteView: View {
             skipToEnd()
             return
         }
-        withAnimation(.easeInOut(duration: 0.3).repeatForever(autoreverses: true)) { rolling = true }
-
-        // Beat 1: the score and the cat with his yarn.
-        guard await pause(0.9) else { return }
+        // Beat 1: the score, and the yarn circling the cat once.
+        orbitStart = .now
+        guard await pause(orbitSeconds) else { return }
 
         // Beat 2: one ball at a time into the bag.
         beat = .flying
@@ -197,7 +255,7 @@ enum KnitNudgeLines {
         let name = item.displayName.lowercased(with: .appLanguage)
         let lines = [
             String(localized: "Ooh, there's enough yarn for a \(name) now, dear! Come and knit it with me.", bundle: .appLanguage, locale: .appLanguage),
-            String(localized: "Look at all that yarn! I could knit the cat a \(name). Pop by my yarn bag when you like.", bundle: .appLanguage, locale: .appLanguage),
+            String(localized: "Look at all that yarn! I could knit a \(name). Pop by my yarn bag when you like.", bundle: .appLanguage, locale: .appLanguage),
             String(localized: "That's enough for a \(name), sweetheart. I'll have my needles ready!", bundle: .appLanguage, locale: .appLanguage),
         ]
         return lines.randomElement() ?? lines[0]

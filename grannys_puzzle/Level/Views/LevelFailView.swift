@@ -20,8 +20,16 @@ struct LevelFailView: View {
 
     var body: some View {
         LevelEndCard(result: result) {
-            SadCat(size: 110)
-                .frame(height: 140)
+            // On the same floor as the celebration, so the two endings
+            // look like one place.
+            ZStack(alignment: .bottom) {
+                StageFloor(width: 220)
+                ContactShadow(width: 90)
+                    .padding(.bottom, StageFloor.height / 2 - 4)
+                SadCat(size: 140)
+                    .padding(.bottom, StageFloor.height / 2)
+            }
+            .frame(height: 170)
         } footer: {
             LevelEndGrandmaLine(text: line)
             LevelEndButtons(
@@ -33,12 +41,12 @@ struct LevelFailView: View {
     }
 }
 
-/// The cat when a level didn't pass: head bowed to one side, a little
-/// greyer, with a slow sigh.
+/// The cat when a level didn't pass: sitting, ears down, looking up a bit
+/// sheepish ("oh no, let's try again"), with a slow sigh. Gently
+/// disappointed rather than upset: a fail is when players are most likely
+/// to quit, and a crying cat would make them feel guilty.
 ///
-/// A placeholder like CatCelebration, kept self-contained for the same
-/// reason: the real sad pose (most likely a state in the same Rive file as
-/// the dance) replaces only what's inside.
+/// Self-contained like CatCelebration, for the same reason.
 struct SadCat: View {
     let size: CGFloat
 
@@ -46,13 +54,10 @@ struct SadCat: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
-        Image("cat-head")
+        Image("cat-sad")
             .resizable()
             .scaledToFit()
             .frame(width: size, height: size)
-            // Muted rather than grey: a fully grey cat reads as "disabled".
-            .saturation(0.7)
-            .rotationEffect(.degrees(-12), anchor: .bottom)
             // The sigh: sinking a little and settling back, slower than the
             // celebration's bounce so it feels heavy rather than lively.
             .scaleEffect(x: 1, y: sighing ? 0.96 : 1, anchor: .bottom)

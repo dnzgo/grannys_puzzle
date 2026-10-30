@@ -43,6 +43,7 @@
       }
     },
     "%@ for the cat!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -1200,6 +1201,7 @@
       }
     },
     "It's in the wardrobe now." : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -1493,6 +1495,7 @@
       }
     },
     "Look at all that yarn! I could knit the cat a %@. Pop by my yarn bag when you like." : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -1503,6 +1506,7 @@
       }
     },
     "Lovely!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
