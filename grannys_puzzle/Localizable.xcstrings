@@ -539,6 +539,16 @@
         }
       }
     },
+    "Challenge complete" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görev tamamlandı"
+          }
+        }
+      }
+    },
     "Close" : {
       "localizations" : {
         "tr" : {
@@ -650,6 +660,7 @@
       }
     },
     "Correct letters" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -885,6 +896,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Her şey örüldü!"
+          }
+        }
+      }
+    },
+    "Family photo" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aile fotoğrafı"
           }
         }
       }
@@ -1364,6 +1385,26 @@
         }
       }
     },
+    "Leaderboard" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tablosu"
+          }
+        }
+      }
+    },
+    "Leaderboards" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tabloları"
+          }
+        }
+      }
+    },
     "Leave" : {
       "localizations" : {
         "tr" : {
@@ -1627,6 +1668,7 @@
       }
     },
     "New challenge tomorrow!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -1642,6 +1684,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İleri"
+          }
+        }
+      }
+    },
+    "Next challenge in %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni görev %@ sonra"
           }
         }
       }
@@ -1917,6 +1969,16 @@
         }
       }
     },
+    "points" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "puan"
+          }
+        }
+      }
+    },
     "Previous clue" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2080,6 +2142,7 @@
       }
     },
     "Score" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -2145,6 +2208,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şşş, kedi biraz kestiriyor."
+          }
+        }
+      }
+    },
+    "Sign in to Game Center in your phone's Settings app to see the leaderboard." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tablosunu görmek için telefonunun Ayarlar uygulamasından Game Center'a giriş yap."
           }
         }
       }
@@ -2260,6 +2333,7 @@
       }
     },
     "Speed bonus" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -2454,6 +2528,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Çay demlendi, kavanozun da dolu. Bir bulmacaya ne dersin?"
+          }
+        }
+      }
+    },
+    "The leaderboards need Game Center, dear. You can sign in from your phone's Settings app." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tabloları için Game Center gerekli, canım. Telefonunun Ayarlar uygulamasından giriş yapabilirsin."
           }
         }
       }
@@ -2794,36 +2878,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kavanozun hazır canım. Gel bak bakalım içinde ne var!"
-          }
-        }
-      }
-    },
-    "Family photo" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aile fotoğrafı"
-          }
-        }
-      }
-    },
-    "Leaderboards" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liderlik tabloları"
-          }
-        }
-      }
-    },
-    "The leaderboards need Game Center, dear. You can sign in from your phone's Settings app." : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liderlik tabloları için Game Center gerekli, canım. Telefonunun Ayarlar uygulamasından giriş yapabilirsin."
           }
         }
       }

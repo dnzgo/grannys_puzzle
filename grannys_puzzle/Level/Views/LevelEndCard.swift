@@ -44,8 +44,19 @@ struct LevelEndCard<Stage: View, Footer: View>: View {
 /// card in the middle, so they all look like the same moment.
 struct LevelEndPanel<Content: View>: View {
     private let content: Content
+    /// A picture peeking over the card's top edge (the daily's cat): its
+    /// flat bottom sits on the edge, overlapping it a little so it looks
+    /// like it's leaning on it. Nil for none.
+    private let peek: String?
 
-    init(@ViewBuilder content: () -> Content) {
+    private static var peekWidth: CGFloat { 160 }
+    /// The peeking picture's height for its width (cat-peek is 480 × 412).
+    private static var peekHeight: CGFloat { peekWidth * 412 / 480 }
+    /// How far the peeking picture's bottom comes down over the card.
+    private static var peekOverlap: CGFloat { 12 }
+
+    init(peek: String? = nil, @ViewBuilder content: () -> Content) {
+        self.peek = peek
         self.content = content()
     }
 
@@ -64,6 +75,20 @@ struct LevelEndPanel<Content: View>: View {
             .frame(maxWidth: 360)
             .background(RoundedRectangle(cornerRadius: 28).fill(Theme.background))
             .shadow(color: .black.opacity(0.2), radius: 20, y: 8)
+            .overlay(alignment: .top) {
+                if let peek {
+                    Image(peek)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: Self.peekWidth, height: Self.peekHeight)
+                        // Lifted out of the card by its own height, less the
+                        // overlap: its bottom ends just over the card's edge.
+                        .offset(y: -(Self.peekHeight - Self.peekOverlap))
+                        .accessibilityHidden(true)
+                }
+            }
+            // Room above the card for the picture, so it's never cut off.
+            .padding(.top, peek == nil ? 0 : Self.peekHeight - Self.peekOverlap)
             .padding(.horizontal, 20)
         }
         // One container marked modal, so VoiceOver stays on the card and

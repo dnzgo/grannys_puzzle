@@ -127,7 +127,10 @@ private struct CluePill: View {
             }
             .padding(.horizontal, 2)
         } else {
-            Text("Level complete")
+            // The daily isn't a level: it has its own words for being done.
+            // Two Texts, not one with a ?: inside: literals in a ternary
+            // become plain Strings, which skip translation.
+            (model.isDaily ? Text("Challenge complete") : Text("Level complete"))
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(Theme.ink)
         }
