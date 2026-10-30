@@ -147,7 +147,7 @@ struct HomeView: View {
             if let item = knittingItem {
                 KnittingOnStage(
                     item: item,
-                    lap: lapPoint,
+                    granny: grannyFrame,
                     wardrobe: wardrobeDoor,
                     onKnittingDone: { isKnitting = false },
                     onDone: { knitted(item) }
@@ -565,12 +565,6 @@ struct HomeView: View {
         } else {
             afterKnitting(for: item.member)
         }
-    }
-
-    /// The yarn ball's spot on grandma's lap, where her knitting is in the
-    /// picture (measured on the granny art).
-    private var lapPoint: CGPoint {
-        CGPoint(x: grannyFrame.minX + grannyFrame.width * 0.62, y: grannyFrame.minY + grannyFrame.height * 0.55)
     }
 
     /// The middle of the wardrobe's doors. It runs off the right edge of
@@ -1178,6 +1172,10 @@ private struct GrandmaBubble: View {
                 .frame(width: maxWidth, height: 1)
                 .overlay(alignment: .bottom) {
                     SpeechBubble(text: text, tailOffset: head.x - x)
+                        // As tall as the text needs: the strip it hangs from
+                        // is only a point high, and without this the text
+                        // was squeezed to one line ending in "…".
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 .position(x: x, y: head.y)
         }

@@ -152,6 +152,9 @@ struct FlightPath: ViewModifier, Animatable {
     var progress: Double
     let from: CGPoint
     let to: CGPoint
+    /// Its size on arrival: the jar's helpers keep about half, to match the
+    /// counters' faces; a knitted piece shrinks away into the wardrobe.
+    var endScale: CGFloat = 0.55
 
     var animatableData: Double {
         get { progress }
@@ -178,8 +181,8 @@ struct FlightPath: ViewModifier, Animatable {
                 }
             }
             content
-                // Shrinks on the way, to about the counter's own face size.
-                .scaleEffect(1 - 0.45 * progress)
+                // Shrinks steadily on the way, to its size on arrival.
+                .scaleEffect(1 - (1 - endScale) * progress)
                 .position(point(at: progress))
         }
     }

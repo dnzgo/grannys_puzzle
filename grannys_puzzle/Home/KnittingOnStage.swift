@@ -3,8 +3,8 @@ import ArrowwordCore
 import Foundation
 
 /// Knitting, played on the home screen itself (it replaced a separate
-/// knitting card): a ball of the item's yarn spins on grandma's lap while
-/// she rocks (HomeStage rocks her while `onKnittingDone` hasn't been
+/// knitting card): a ball of the item's yarn circles grandma while she
+/// rocks (HomeStage rocks her while `onKnittingDone` hasn't been
 /// called), the finished piece pops up above her, then flies off to the
 /// wardrobe and vanishes in a burst of sparkles.
 ///
@@ -15,8 +15,9 @@ import Foundation
 /// simply appears for a moment.
 struct KnittingOnStage: View {
     let item: KnitItem
-    /// Grandma's lap, where the yarn ball spins, in this view's space.
-    let lap: CGPoint
+    /// Where grandma is, in this view's space: the yarn circles her, and the
+    /// finished piece appears above her lap.
+    let granny: CGRect
     /// The wardrobe's door, where the piece goes.
     let wardrobe: CGPoint
     /// The knitting part is over: grandma can stop rocking.
@@ -27,7 +28,8 @@ struct KnittingOnStage: View {
 
     @State private var phase = Phase.knitting
     @State private var ballShown = false
-    @State private var spin = 0.0
+    /// When the ball started circling; its place follows the clock.
+    @State private var orbitStart = Date.now
     @State private var isDone = false
     @State private var feedback: FeedbackSignal?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -35,9 +37,14 @@ struct KnittingOnStage: View {
     private let ballSize: CGFloat = 44
     private let itemSize: CGFloat = 92
     private let knittingSeconds = 1.8
+    private let turns = 2.0
     private let flightSeconds = 0.7
 
-    /// Above grandma's lap, where the finished piece is held up to see.
+    /// Her knitting, in the granny picture (measured on the art).
+    private var lap: CGPoint {
+        CGPoint(x: granny.minX + granny.width * 0.62, y: granny.minY + granny.height * 0.55)
+    }
+    /// Above her lap, where the finished piece is held up to see.
     private var shownPoint: CGPoint { CGPoint(x: lap.x, y: lap.y - itemSize * 0.9) }
 
     var body: some View {
@@ -50,19 +57,26 @@ struct KnittingOnStage: View {
                 .accessibilityHidden(true)
 
             if phase == .knitting {
-                YarnBall(color: item.color, size: ballSize)
-                    .rotationEffect(.degrees(spin))
-                    .scaleEffect(ballShown ? 1 : 0.2)
-                    .opacity(ballShown ? 1 : 0)
-                    .position(lap)
-                    .transition(.scale(scale: 0.2).combined(with: .opacity))
-                    .allowsHitTesting(false)
+                TimelineView(.animation) { context in
+                    let elapsed = context.date.timeIntervalSince(orbitStart)
+                    let orbit = orbitPlace(turn: min(max(elapsed / knittingSeconds, 0), 1) * turns)
+                    YarnBall(color: item.color, size: ballSize)
+                        .scaleEffect((ballShown ? 1 : 0.2) * (0.85 + 0.15 * orbit.depth))
+                        // Round her back it fades away and comes out again on
+                        // the other side: it reads as passing behind her. (This
+                        // layer is above the scene, so it can't truly go behind.)
+                        .opacity(ballShown ? min(max((orbit.depth + 0.35) / 0.5, 0), 1) : 0)
+                        .position(orbit.point)
+                }
+                .transition(.scale(scale: 0.2).combined(with: .opacity))
+                .allowsHitTesting(false)
             }
 
             if phase == .shown || phase == .flying {
-                GarmentView(item: item, size: itemSize)
+                GarmentView(item: item, size: itemSize, showsTile: false)
                     .shadow(color: item.color.tint.opacity(0.45), radius: 12, y: 6)
-                    .modifier(FlightPath(progress: phase == .flying ? 1 : 0, from: shownPoint, to: wardrobe))
+                    // Shrinking all the way into the wardrobe.
+                    .modifier(FlightPath(progress: phase == .flying ? 1 : 0, from: shownPoint, to: wardrobe, endScale: 0.08))
                     .transition(.scale(scale: 0.4).combined(with: .opacity))
                     .allowsHitTesting(false)
             }
@@ -91,9 +105,9 @@ struct KnittingOnStage: View {
             return
         }
 
+        orbitStart = .now
         withAnimation(.spring(response: 0.35, dampingFraction: 0.6)) { ballShown = true }
-        // Three turns while grandma knits: the yarn running off the ball.
-        withAnimation(.linear(duration: knittingSeconds)) { spin = 1080 }
+        // Twice round grandma while she knits.
         guard await pause(knittingSeconds) else { return }
 
         onKnittingDone()
@@ -123,6 +137,26 @@ struct KnittingOnStage: View {
     private func pause(_ seconds: Double) async -> Bool {
         try? await Task.sleep(for: .seconds(seconds))
         return !Task.isCancelled && !isDone
+    }
+}
+
+extension KnittingOnStage {
+    /// Where the ball is after `turn` circles round grandma, and how near
+    /// the viewer (-1 behind her, 1 in front). A flat ellipse round her
+    /// middle, tipped a little; it starts in front of her, at her lap's
+    /// height, so it appears where the knitting is.
+    fileprivate func orbitPlace(turn: Double) -> (point: CGPoint, depth: Double) {
+        let center = CGPoint(x: granny.midX, y: granny.minY + granny.height * 0.55)
+        let width = granny.width * 0.48
+        let depth = granny.height * 0.1
+        let angle = Double.pi / 2 + 2 * Double.pi * turn
+        let flat = CGPoint(x: width * cos(angle), y: depth * sin(angle))
+        let tilt = -12 * Double.pi / 180
+        let point = CGPoint(
+            x: center.x + flat.x * cos(tilt) - flat.y * sin(tilt),
+            y: center.y + flat.x * sin(tilt) + flat.y * cos(tilt)
+        )
+        return (point, sin(angle))
     }
 }
 

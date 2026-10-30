@@ -178,9 +178,9 @@ struct LevelScreen: View {
 /// A rounded speech bubble for grandma's lines.
 struct SpeechBubble: View {
     let text: String
-    /// A tail under the bubble, pointing down at the speaker: how far from
-    /// the bubble's middle its tip should be (negative is left). Nil for no
-    /// tail, where it's clear enough who's talking.
+    /// A trail of small circles under the bubble, leading down to the
+    /// speaker: how far from the bubble's middle the last circle should be
+    /// (negative is left). Nil for none, where it's clear who's talking.
     var tailOffset: CGFloat?
 
     var body: some View {
@@ -190,47 +190,51 @@ struct SpeechBubble: View {
             .multilineTextAlignment(.center)
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
+            // Room under the text for the circles; the outline draws them there.
+            .padding(.bottom, tailOffset == nil ? 0 : BubbleShape.tailHeight)
             .background(
                 BubbleShape(cornerRadius: 14, tailOffset: tailOffset)
                     .fill(Theme.surface)
                     .shadow(color: .black.opacity(0.12), radius: 8, y: 4)
             )
-            // Room for the tail, below the text's own frame.
-            .padding(.bottom, tailOffset == nil ? 0 : BubbleShape.tailHeight)
             .frame(maxWidth: 260)
             .accessibilityAddTraits(.updatesFrequently)
     }
 }
 
-/// The bubble's outline: a rounded rectangle and, optionally, a tail under
-/// it. One shape rather than a rectangle with a triangle on top, so the fill
-/// and the shadow run round both without a seam where they meet.
+/// The bubble's outline: a rounded rectangle and, optionally, three small
+/// circles under it, getting smaller towards the speaker. One shape rather
+/// than separate views, so the fill and the shadow treat them as one.
 struct BubbleShape: Shape {
-    static let tailHeight: CGFloat = 12
-    private static let tailBase: CGFloat = 20
+    /// The space under the bubble the circles take.
+    static let tailHeight: CGFloat = 26
 
     let cornerRadius: CGFloat
     let tailOffset: CGFloat?
 
     func path(in rect: CGRect) -> Path {
-        var path = Path(roundedRect: rect, cornerRadius: cornerRadius)
-        guard let tailOffset else { return path }
-        // The tail's root stays on the straight part of the bottom edge (a
-        // short line may be narrower than the speaker is far away); its tip
-        // leans the rest of the way, so it still points at them.
-        let reach = max(0, rect.width / 2 - cornerRadius - Self.tailBase / 2)
-        let root = rect.midX + min(max(tailOffset, -reach), reach)
-        let tipX = min(max(rect.midX + tailOffset, root - Self.tailBase), root + Self.tailBase)
-        path.move(to: CGPoint(x: root - Self.tailBase / 2, y: rect.maxY - 1))
-        path.addQuadCurve(
-            to: CGPoint(x: tipX, y: rect.maxY + Self.tailHeight),
-            control: CGPoint(x: root - Self.tailBase / 4, y: rect.maxY + Self.tailHeight * 0.4)
-        )
-        path.addQuadCurve(
-            to: CGPoint(x: root + Self.tailBase / 2, y: rect.maxY - 1),
-            control: CGPoint(x: root + Self.tailBase / 6, y: rect.maxY + Self.tailHeight * 0.5)
-        )
-        path.closeSubpath()
+        guard let tailOffset else { return Path(roundedRect: rect, cornerRadius: cornerRadius) }
+        var body = rect
+        body.size.height -= Self.tailHeight
+        var path = Path(roundedRect: body, cornerRadius: cornerRadius)
+
+        // From just under the bubble towards the speaker: the first circle
+        // starts a little way towards them, the last is right above them.
+        // Kept within the bubble's width, so a speaker far to the side gets
+        // a leaning trail rather than circles floating off on their own.
+        let reach = rect.width / 2 - cornerRadius
+        let end = min(max(tailOffset, -reach), reach)
+        let circles: [(along: CGFloat, radius: CGFloat)] = [(0.25, 6), (0.6, 4.2), (0.92, 2.8)]
+        for circle in circles {
+            let center = CGPoint(
+                x: rect.midX + end * (0.35 + 0.65 * circle.along),
+                y: body.maxY + Self.tailHeight * circle.along
+            )
+            path.addEllipse(in: CGRect(
+                x: center.x - circle.radius, y: center.y - circle.radius,
+                width: circle.radius * 2, height: circle.radius * 2
+            ))
+        }
         return path
     }
 }

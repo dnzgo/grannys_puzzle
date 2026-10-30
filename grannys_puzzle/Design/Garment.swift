@@ -62,10 +62,13 @@ struct GarmentView: View {
     let size: CGFloat
     /// False draws it pale and undyed on a grey tile: not knitted yet.
     var isOwned = true
+    /// False draws the garment alone, with no tile: where it appears in
+    /// the room itself (knitting on the home screen) rather than in a list.
+    var showsTile = true
 
     var body: some View {
         RoundedRectangle(cornerRadius: size * 0.24)
-            .fill(isOwned ? Theme.surface : Theme.disabledFill)
+            .fill(showsTile ? (isOwned ? Theme.surface : Theme.disabledFill) : .clear)
             .overlay {
                 Image(item.imageName)
                     .resizable()
