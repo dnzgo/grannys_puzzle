@@ -23,7 +23,10 @@ A test fails if a key is listed there but never read.
   console by hand (and to the file, for the record).
 - **When it applies:** on the player's *next* launch. The game downloads
   values during one launch and uses them from the next, so rules never
-  change mid-session.
+  change mid-session. **Except the very first launch:** with nothing
+  downloaded yet, the game fetches the values right away (waiting at most
+  4 seconds, during the lesson) so a new player starts on the server's
+  values, not the defaults. Offline, the defaults stay for that session.
 - **A bad value is ignored, not applied.** Outside its range, or a fraction
   where a whole number is needed: the default stays and the key is logged.
 - **Some keys only work as a group.** The scoring thresholds must step down
@@ -78,6 +81,24 @@ At least 1 each, so neither can come straight after the tutorial.
 | --- | --- | --- | --- |
 | `review_min_levels` | Levels passed before the App Store rating prompt may be asked for | 5 | 1–500 |
 | `reminder_ask_min_levels` | Levels passed before grandma asks whether she may send reminders | 3 | 1–100 |
+
+## Daily challenge
+
+The daily puzzle's calendar. **Set before launch, never after.** Every
+phone has to agree which puzzle today's is (the leaderboard compares
+scores on the same puzzle), and puzzle numbers count from this day:
+changing it once people play gives everyone a different puzzle than the
+one they expect, and mixes the leaderboard.
+
+| Key | What it controls | Default | Allowed |
+| --- | --- | --- | --- |
+| `daily_first_day` | The day daily puzzle 1 is played, written as a date year-month-day: `20261201` is 1 December 2026. Days change at midnight UTC (01:00 in Berlin in winter). | 20261101 | a real date, 2025–2099 |
+
+**Before launch:** set it to the release day (with manual release in App
+Store Connect, the day you press Release), and the app's default
+(`DailyDay.firstDay`) to the same day in the release build, so even a
+first launch offline agrees. Daily pack 1 then covers the first 100 days.
+**After launch:** leave it alone.
 
 ## Fixed in code (not remote)
 

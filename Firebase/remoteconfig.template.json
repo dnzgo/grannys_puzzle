@@ -147,6 +147,18 @@
           "valueType": "NUMBER"
         }
       }
+    },
+    "Daily challenge": {
+      "description": "The daily puzzle's calendar. Set before launch only: changing it once people play reshuffles everyone's daily puzzles and the leaderboard.",
+      "parameters": {
+        "daily_first_day": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "The day daily puzzle 1 is played, as a date year-month-day: 20261201 is 1 December 2026 (days change at midnight UTC). Set it to the launch day; never change it after launch. Default 20261101.",
+          "valueType": "NUMBER"
+        }
+      }
     }
   }
 }

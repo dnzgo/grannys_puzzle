@@ -49,8 +49,11 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [ ] Daily pack 1 has only 30 puzzles per language: fill it to 100
 - [ ] Publish level pack 2 (and daily pack 2) per language before release,
       so early players never wait
-- [ ] Check `DailyDay.firstDay` (1 November 2026) is still right for the
-      release: the day it names plays daily 1
+- [ ] The daily's first day = the release day (that day plays daily 1):
+      set `DailyDay.firstDay` in the release build to the planned day, and
+      `daily_first_day` in Remote Config (e.g. 20261201) to the actual
+      day before pressing Release, if it slipped. Never change either
+      after launch (docs/RemoteConfig.md, "Daily challenge").
 
 ## Store, privacy and ads
 

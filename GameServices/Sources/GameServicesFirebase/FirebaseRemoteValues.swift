@@ -10,6 +10,8 @@ import os
 public final class FirebaseRemoteValues: RemoteValueSource {
     private let config: RemoteConfig
     private let logger = Logger(subsystem: "GameServices", category: "remote-config")
+    /// Set when the first launch's download (`fetchAndActivateNow`) ends.
+    private var firstFetchDone = false
 
     /// - Parameter minimumFetchInterval: least time between downloads.
     ///   Firebase throttles apps that fetch too often; its default is 12
@@ -37,6 +39,30 @@ public final class FirebaseRemoteValues: RemoteValueSource {
             // Offline or throttled: the values from last time stay, and the
             // next launch tries again. Nothing for the player to see.
             logger.notice("Fetching values failed: \(error.localizedDescription, privacy: .public)")
+        }
+    }
+
+    public var hasFetchedBefore: Bool {
+        config.lastFetchStatus != .noFetchYet
+    }
+
+    public func fetchAndActivateNow(timeout: Duration) async {
+        firstFetchDone = false
+        // The download runs on its own; this waits for whichever comes
+        // first, it finishing or the time limit. (Checked every tenth of a
+        // second: simple, and a few checks are nothing next to a download.)
+        // If it finishes after the limit, the values are there next time.
+        Task {
+            do {
+                _ = try await config.fetchAndActivate()
+            } catch {
+                logger.notice("First fetch failed: \(error.localizedDescription, privacy: .public)")
+            }
+            firstFetchDone = true
+        }
+        let deadline = ContinuousClock.now + timeout
+        while !firstFetchDone, ContinuousClock.now < deadline {
+            try? await Task.sleep(for: .milliseconds(100))
         }
     }
 

@@ -23,6 +23,27 @@ final class DailyPuzzleTests: XCTestCase {
         XCTAssertEqual(DailyDay.puzzleNumber(forDay: DailyDay.firstDay - 1), 0)
     }
 
+    func testTheFirstDayCanBeAnotherDay() {
+        // Launch slipped by ten days: the server moves the first day, and
+        // that day plays puzzle 1 rather than puzzle 11.
+        let later = DailyDay.firstDay + 10
+        XCTAssertEqual(DailyDay.puzzleNumber(forDay: later, firstDay: later), 1)
+        XCTAssertEqual(DailyDay.puzzleNumber(forDay: later), 11)
+    }
+
+    func testADateReadsAsItsDay() {
+        // The built-in first day is 1 November 2026.
+        XCTAssertEqual(DailyDay.number(fromDate: 20261101), DailyDay.firstDay)
+        XCTAssertEqual(DailyDay.number(fromDate: 20261201), DailyDay.firstDay + 30)
+        XCTAssertEqual(DailyDay.number(fromDate: 20270101), DailyDay.firstDay + 61)
+    }
+
+    func testNotARealDateIsRefused() {
+        XCTAssertNil(DailyDay.number(fromDate: 20260231), "no 31 February")
+        XCTAssertNil(DailyDay.number(fromDate: 20261301), "no 13th month")
+        XCTAssertNil(DailyDay.number(fromDate: 2026121), "a digit short")
+    }
+
     func testWithoutTheDaysPackThePuzzlesOnThePhoneGoRound() {
         XCTAssertEqual(DailyDay.fallbackNumber(for: 1, available: 30), 1)
         XCTAssertEqual(DailyDay.fallbackNumber(for: 31, available: 30), 1)

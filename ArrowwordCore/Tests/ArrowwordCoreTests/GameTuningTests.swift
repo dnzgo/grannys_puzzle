@@ -95,6 +95,21 @@ final class GameTuningTests: XCTestCase {
         XCTAssertEqual(Set(ignored), [.reviewMinLevels, .reminderAskMinLevels])
     }
 
+    func testTheDailysFirstDayIsSetAsADate() {
+        let result = resolve([.dailyFirstDay: 20261210])
+        XCTAssertEqual(result.tuning.dailyFirstDay, DailyDay.firstDay + 39)
+        XCTAssertEqual(result.ignored, [])
+    }
+
+    func testAFirstDayThatIsntADateKeepsTheDefault() {
+        // 31 February, and a day number typed instead of a date.
+        for value in [20260231.0, 20_788] {
+            let result = resolve([.dailyFirstDay: value])
+            XCTAssertEqual(result.tuning.dailyFirstDay, DailyDay.firstDay, "\(value)")
+            XCTAssertEqual(result.ignored, [.dailyFirstDay], "\(value)")
+        }
+    }
+
     func testEveryKeyIsReadSomewhere() {
         // A key added to the list but never read would look tunable in the
         // console and do nothing. Setting each to an out-of-range value must

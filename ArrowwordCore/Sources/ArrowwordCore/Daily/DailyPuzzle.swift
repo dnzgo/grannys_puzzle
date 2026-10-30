@@ -29,13 +29,40 @@ public enum DailyDay {
     /// Counted from a fixed day rather than taken modulo however many
     /// puzzles a phone has, so adding packs never changes which puzzle a
     /// day has: every phone plays the same one, which a shared leaderboard
-    /// needs. Changing this after release would reshuffle everyone's days.
+    /// needs.
+    ///
+    /// This is the app's built-in default. The launch day isn't certain
+    /// when a build is made, so Remote Config can set it instead
+    /// (`daily_first_day`, see GameTuning and docs/RemoteConfig.md), but
+    /// only until launch: changing it once people play would reshuffle
+    /// everyone's days.
     public static let firstDay = 20_758
 
-    /// The daily puzzle number (1-based) for `day`. Below 1 before
-    /// `firstDay`, which only happens while testing before launch.
-    public static func puzzleNumber(forDay day: Int) -> Int {
+    /// The daily puzzle number (1-based) for `day`, counting from
+    /// `firstDay` (the tuned one, in the app). Below 1 before it, which
+    /// only happens while testing before launch.
+    public static func puzzleNumber(forDay day: Int, firstDay: Int = DailyDay.firstDay) -> Int {
         day - firstDay + 1
+    }
+
+    /// A date written as a number, year then month then day (20261201 for
+    /// 1 December 2026), as a day number. Nil if it isn't a real date.
+    ///
+    /// That's how the console sets the first day: easy to read and to
+    /// type, where the day number itself (20,788) would be neither.
+    public static func number(fromDate yearMonthDay: Int) -> Int? {
+        let year = yearMonthDay / 10_000
+        let month = yearMonthDay / 100 % 100
+        let day = yearMonthDay % 100
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let parts = DateComponents(year: year, month: month, day: day)
+        // A date like 20261231 → 31 Dec, but 20260231 would quietly become
+        // 3 March: checking the parts survive the round trip catches it.
+        guard let date = calendar.date(from: parts),
+              calendar.dateComponents([.year, .month, .day], from: date) == parts
+        else { return nil }
+        return number(for: date)
     }
 
     /// The puzzle to play when `number`'s pack isn't on the phone (not

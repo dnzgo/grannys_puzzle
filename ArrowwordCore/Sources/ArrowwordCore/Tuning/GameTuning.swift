@@ -32,6 +32,10 @@ public struct GameTuning: Equatable, Sendable {
     /// A player who has played a few levels knows what they'd be reminded
     /// of; the lesson doesn't count.
     public var reminderAskMinLevels = 3
+    /// The day daily puzzle number 1 is played (a `DailyDay` number). Set
+    /// from the server while the launch date isn't certain; see
+    /// `DailyDay.firstDay` for why it mustn't change after launch.
+    public var dailyFirstDay = DailyDay.firstDay
 
     public init() {}
 
@@ -60,6 +64,7 @@ public struct GameTuning: Equatable, Sendable {
         case adBreakSecondsAfterRewarded = "ad_break_seconds_after_rewarded"
         case reviewMinLevels = "review_min_levels"
         case reminderAskMinLevels = "reminder_ask_min_levels"
+        case dailyFirstDay = "daily_first_day"
     }
 
     /// Builds the tuning from server values, looked up by key.
@@ -126,6 +131,17 @@ public struct GameTuning: Equatable, Sendable {
         // straight after the lesson, whatever the console says.
         tuning.review.minLevelsPassed = reader.integer(.reviewMinLevels, in: 1...500).value ?? tuning.review.minLevelsPassed
         tuning.reminderAskMinLevels = reader.integer(.reminderAskMinLevels, in: 1...100).value ?? tuning.reminderAskMinLevels
+
+        // The daily's first day, as a date like 20261201. Not a real date
+        // (20261301, 2026121) is a console mistake: the default stands.
+        let firstDay = reader.integer(.dailyFirstDay, in: 20_250_101...20_991_231)
+        if let date = firstDay.value {
+            if let day = DailyDay.number(fromDate: date) {
+                tuning.dailyFirstDay = day
+            } else {
+                reader.reject([firstDay])
+            }
+        }
 
         return (tuning, reader.ignored)
     }

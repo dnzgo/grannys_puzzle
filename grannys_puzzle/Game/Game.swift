@@ -164,7 +164,14 @@ final class Game {
     /// it opens, so one already open keeps the rules it started with.
     func loadRemoteTuning() async {
         guard let remoteValues else { return }
-        await remoteValues.activateFetched()
+        if remoteValues.hasFetchedBefore {
+            await remoteValues.activateFetched()
+        } else {
+            // First launch: nothing was fetched yet, so get the server's
+            // values now rather than playing a whole session on defaults.
+            // The lesson comes first for a new player, which covers the wait.
+            await remoteValues.fetchAndActivateNow(timeout: .seconds(4))
+        }
         // Read every key up front, so the tuning code works on plain values.
         var values: [String: Double] = [:]
         for key in GameTuning.Key.allCases {
@@ -372,7 +379,7 @@ final class Game {
         if levels.wantsNextPack(nextNumber: progress.levelNumber) {
             await fetchNextPack(.levels)
         }
-        let todaysDaily = DailyDay.puzzleNumber(forDay: DailyDay.number())
+        let todaysDaily = DailyDay.puzzleNumber(forDay: DailyDay.number(), firstDay: tuning.dailyFirstDay)
         if let dailies, dailies.wantsNextPack(nextNumber: todaysDaily) {
             await fetchNextPack(.daily)
         }
@@ -496,7 +503,7 @@ final class Game {
     /// its score stays off the leaderboard.
     func dailyPuzzle(day: Int) -> (level: Level, isFallback: Bool)? {
         guard let dailies else { return nil }
-        let number = DailyDay.puzzleNumber(forDay: day)
+        let number = DailyDay.puzzleNumber(forDay: day, firstDay: tuning.dailyFirstDay)
         if let level = dailies.level(number: number) { return (level, false) }
         let fallback = DailyDay.fallbackNumber(for: number, available: dailies.levelCount).flatMap(dailies.level(number:))
         return fallback.map { ($0, true) }
