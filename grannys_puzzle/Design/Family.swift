@@ -67,10 +67,14 @@ struct FamilyPolaroid: View {
             Text(member.name)
                 .font(.system(size: max(9, width * 0.13), weight: .semibold, design: .rounded))
                 .italic()
-                .foregroundStyle(Theme.ink.opacity(status == .locked ? 0.45 : 0.85))
+                .foregroundStyle(Theme.ink.opacity(0.85))
                 .lineLimit(1)
                 .minimumScaleFactor(0.6)
                 .frame(width: width * 0.9)
+                // A locked member stays a surprise: no name until it's their
+                // turn. Hidden rather than removed, so every Polaroid keeps
+                // the same size.
+                .opacity(status == .locked ? 0 : 1)
         }
         // The Polaroid's frame: even on three sides, deeper at the bottom
         // where the caption is written.
@@ -80,7 +84,7 @@ struct FamilyPolaroid: View {
         .background(Color.white)
         .shadow(color: .black.opacity(0.18), radius: width * 0.05, y: width * 0.03)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(member.name))
+        .accessibilityLabel(status == .locked ? Text("Family photo") : Text(member.name))
         .accessibilityValue(accessibilityStatus)
     }
 

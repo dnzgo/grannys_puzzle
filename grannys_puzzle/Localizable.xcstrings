@@ -2797,6 +2797,36 @@
           }
         }
       }
+    },
+    "Family photo" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aile fotoğrafı"
+          }
+        }
+      }
+    },
+    "Leaderboards" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tabloları"
+          }
+        }
+      }
+    },
+    "The leaderboards need Game Center, dear. You can sign in from your phone's Settings app." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liderlik tabloları için Game Center gerekli, canım. Telefonunun Ayarlar uygulamasından giriş yapabilirsin."
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

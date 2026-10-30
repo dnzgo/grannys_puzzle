@@ -16,7 +16,7 @@ struct TopBar: View {
             CluePill(model: model)
                 // The lesson keeps it lit with the word it's talking about.
                 .spotlight(.clueBar)
-            CircleIconButton(systemName: "gearshape", label: "Settings", action: onSettings)
+            CircleIconButton(assetName: "icon-settings", iconSize: SettingsIcon.size, label: "Settings", action: onSettings)
         }
         .frame(height: BoardMetrics.topBarHeight)
     }
@@ -141,22 +141,67 @@ private struct CluePill: View {
     }
 }
 
-/// A round white 44pt button with an SF Symbol.
+/// The settings gear's drawn size, shared by home and levels so it's the
+/// same everywhere. Bigger than the default 24: its image is centred on
+/// the gear, with room for the yarn curl on one side.
+enum SettingsIcon {
+    static let size: CGFloat = 29
+}
+
+/// A round white 44pt button with an SF Symbol or one of the game's own icons.
 struct CircleIconButton: View {
-    let systemName: String
+    private let icon: Icon
     let label: LocalizedStringKey
     let action: () -> Void
 
+    /// A system symbol, or one of the game's own icons from the asset
+    /// catalog (drawn as a template: the shape only, coloured here).
+    private enum Icon {
+        case system(String)
+        /// With the size it's drawn at: an icon with something sticking
+        /// out (the gear's yarn curl) is centred on its main shape, so it
+        /// fills less of its image and needs drawing a little bigger.
+        case asset(String, size: CGFloat)
+    }
+
+    init(systemName: String, label: LocalizedStringKey, action: @escaping () -> Void) {
+        icon = .system(systemName)
+        self.label = label
+        self.action = action
+    }
+
+    init(assetName: String, iconSize: CGFloat = 24, label: LocalizedStringKey, action: @escaping () -> Void) {
+        icon = .asset(assetName, size: iconSize)
+        self.label = label
+        self.action = action
+    }
+
     var body: some View {
         Button(action: action) {
-            Image(systemName: systemName)
-                .font(.system(size: 18, weight: .semibold))
+            iconImage
                 .foregroundStyle(Theme.ink)
                 .frame(width: 44, height: 44)
                 .background(Circle().fill(Theme.surface).shadow(color: .black.opacity(0.06), radius: 1, y: 1))
         }
         .buttonStyle(.plain)
         .accessibilityLabel(label)
+    }
+
+    @ViewBuilder
+    private var iconImage: some View {
+        switch icon {
+        case .system(let name):
+            Image(systemName: name)
+                .font(.system(size: 18, weight: .semibold))
+        case .asset(let name, let size):
+            Image(name)
+                .renderingMode(.template)
+                .resizable()
+                .scaledToFit()
+                // 24 is about the size an 18 pt symbol looks: the drawn
+                // icons fill their image, symbols leave room around themselves.
+                .frame(width: size, height: size)
+        }
     }
 }
 

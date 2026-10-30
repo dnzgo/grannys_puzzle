@@ -5,9 +5,10 @@ into the work (and into `Release.md` if it's needed for 1.0).
 
 ## Home screen
 
-- [ ] New icons for the settings and daily treat buttons (art to come).
-- [ ] Leaderboard button with its own icon, opening the daily
-      leaderboards (see `Achievements.md`).
+- [x] New icons for the settings and daily treat buttons.
+- [x] Leaderboard button with its own icon (the trophy at the top left
+      of the room), opening Game Center's leaderboards. Shows them once
+      the daily leaderboards exist in App Store Connect (`Achievements.md`).
 - [x] Grandma's speech bubble with a tail, so it visibly comes from her,
       always on top (HomeView's GrandmaBubble).
 - [x] Knitting happens on the home screen, not in a separate screen:

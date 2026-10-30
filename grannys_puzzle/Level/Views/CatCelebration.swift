@@ -10,6 +10,9 @@ import SwiftUI
 struct CatCelebration: View {
     /// The picture's height (the cat is about as tall as wide, standing).
     let size: CGFloat
+    /// He hops while this is true, and settles still when it turns false
+    /// (the yarn is in the bag: the show is over).
+    var isCheering = true
 
     @State private var hopping = false
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -25,10 +28,16 @@ struct CatCelebration: View {
             .rotationEffect(.degrees(hopping ? 3 : -3), anchor: .bottom)
             .offset(y: hopping ? -size * 0.05 : 0)
             .onAppear {
-                guard !reduceMotion else { return }
+                guard !reduceMotion, isCheering else { return }
                 withAnimation(.easeInOut(duration: 0.3).repeatForever(autoreverses: true)) {
                     hopping = true
                 }
+            }
+            .onChange(of: isCheering) { _, cheering in
+                guard !cheering else { return }
+                // A new animation replaces the repeating one: he eases back
+                // to standing rather than freezing mid-hop.
+                withAnimation(.easeOut(duration: 0.25)) { hopping = false }
             }
             .accessibilityHidden(true)
     }

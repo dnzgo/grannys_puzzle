@@ -98,6 +98,15 @@ final class GameCenter {
         GKAccessPoint.shared.trigger(state: .achievements) {}
     }
 
+    /// Apple's leaderboards screen (the trophy in grandma's room). False
+    /// when the player isn't signed in to Game Center, so the caller can
+    /// say why nothing opened.
+    func showLeaderboards() -> Bool {
+        guard isSignedIn else { return false }
+        GKAccessPoint.shared.trigger(state: .leaderboards) {}
+        return true
+    }
+
     // MARK: - Private
 
     private func loadKnownProgress() async {

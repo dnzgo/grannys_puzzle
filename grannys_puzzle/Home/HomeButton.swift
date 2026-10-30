@@ -9,7 +9,12 @@ struct HomeButton: View {
     /// The fill.
     let accent: Color
     let height: CGFloat
+    /// A glint of light sweeps across it now and then, like the trophy's:
+    /// the level button's, so the main way on is the one that catches the eye.
+    var shines = false
     let action: () -> Void
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     /// Room kept free on each side of the label inside the capsule, so a
     /// long label never runs into the rounded ends.
@@ -38,6 +43,13 @@ struct HomeButton: View {
                         .fill(accent)
                         .shadow(color: .black.opacity(0.18), radius: 6, y: 3)
                 )
+                .overlay {
+                    if shines && !reduceMotion {
+                        // The trophy's glint, across the button, inside its shape.
+                        ShineSweep()
+                            .clipShape(Capsule())
+                    }
+                }
                 .contentShape(Capsule())
         }
         .buttonStyle(.plain)
@@ -46,7 +58,7 @@ struct HomeButton: View {
 
 #Preview {
     VStack(spacing: 14) {
-        HomeButton(title: "Level 12", accent: Theme.primary, height: 54) {}
+        HomeButton(title: "Level 12", accent: Theme.primary, height: 54, shines: true) {}
         HomeButton(title: "Daily challenge", accent: Theme.daily, height: 54) {}
         HomeButton(title: "Daily challenge done", accent: Theme.daily, height: 54) {}
     }

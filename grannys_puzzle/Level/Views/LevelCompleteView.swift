@@ -116,7 +116,10 @@ struct LevelCompleteView: View {
                 ContactShadow(width: bagHeight * 0.9)
                     .position(x: bagX, y: groundY)
 
-                CatCelebration(size: catSize)
+                // He cheers while the yarn circles and drops into the bag,
+                // then stands still with the buttons (or straight away
+                // when the show is skipped).
+                CatCelebration(size: catSize, isCheering: beat != .done)
                     .position(catCenter)
                     .zIndex(1)
 

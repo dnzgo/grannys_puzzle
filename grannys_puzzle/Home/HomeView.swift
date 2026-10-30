@@ -126,6 +126,7 @@ struct HomeView: View {
                     .padding(.top, 8)
             }
 
+
             VStack(spacing: 14) {
                 playButton
                 if game.dailies != nil {
@@ -143,6 +144,18 @@ struct HomeView: View {
         // Applied before the flight's overlay, so the overlay shares this
         // space and the jar's and counters' frames are its own coordinates.
         .coordinateSpace(.named(Self.space))
+        // The trophy, for the leaderboards: on the left, a little above the
+        // top of grandma's head (placed from her measured frame, so it lines
+        // up on every screen). Under the animations and cards that follow.
+        .overlay {
+            if grannyFrame != .zero {
+                LeaderboardTrophy(action: openLeaderboards)
+                    .position(
+                        x: Theme.sidePadding + LeaderboardTrophy.size / 2,
+                        y: grannyFrame.minY - 56
+                    )
+            }
+        }
         .overlay {
             if let item = knittingItem {
                 KnittingOnStage(
@@ -278,7 +291,10 @@ struct HomeView: View {
             if let line = speech.line {
                 GrandmaBubble(text: line, granny: grannyFrame)
                     .allowsHitTesting(false)
-                    .transition(.opacity.combined(with: .scale(scale: 0.9, anchor: .bottom)))
+                    // A fade only: this layer is the whole screen, so a
+                    // scale here would shrink it towards the screen's bottom
+                    // and the bubble would seem to drop as it went.
+                    .transition(.opacity)
             }
         }
         .animation(.easeOut(duration: 0.2), value: speech.line)
@@ -520,7 +536,7 @@ struct HomeView: View {
 
             // The wardrobe of knitted things opens from the wardrobe in the
             // scene, so the top row only needs settings.
-            CircleIconButton(systemName: "gearshape", label: "Settings") { showsSettings = true }
+            CircleIconButton(assetName: "icon-settings", iconSize: SettingsIcon.size, label: "Settings") { showsSettings = true }
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
         // At least the level screen's top bar, so the scene below starts at
@@ -571,6 +587,13 @@ struct HomeView: View {
     /// the screen, so this is left of its centre, on the part that's seen.
     private var wardrobeDoor: CGPoint {
         CGPoint(x: wardrobeFrame.minX + wardrobeFrame.width * 0.3, y: wardrobeFrame.minY + wardrobeFrame.height * 0.4)
+    }
+
+    /// Game Center's leaderboards, or grandma explaining why they can't open.
+    private func openLeaderboards() {
+        if game.gameCenter?.showLeaderboards() != true {
+            speech.say(GrandmaLines.leaderboardsNeedGameCenter)
+        }
     }
 
     private func openWardrobe(on item: KnitItem?) {
@@ -624,7 +647,7 @@ struct HomeView: View {
     @ViewBuilder
     private var playButton: some View {
         if let number = game.nextLevelNumber {
-            HomeButton(title: "Level \(number)", accent: Theme.primary, height: Self.buttonHeight) {
+            HomeButton(title: "Level \(number)", accent: Theme.primary, height: Self.buttonHeight, shines: true) {
                 withAnimation(.easeInOut(duration: 0.25)) { game.play() }
             }
             // Not while a jar is shaking open: leaving then would open it
@@ -875,12 +898,55 @@ private struct JarView: View {
 
 /// Opens the daily treats card. A red dot while today's jar is waiting to
 /// be collected, so the player knows there's something to tap for.
+/// The golden trophy at the top left of grandma's room: it opens the
+/// leaderboards. A little picture in the room rather than a round button,
+/// like the jar and the wardrobe: things in her room are what you tap.
+private struct LeaderboardTrophy: View {
+    static let size: CGFloat = 60
+    let action: () -> Void
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        Button(action: action) {
+            Image("leaderboard-trophy")
+                .resizable()
+                .scaledToFit()
+                .frame(width: Self.size, height: Self.size)
+                // Now and then a glint of light sweeps across it.
+                .overlay {
+                    if !reduceMotion {
+                        ShineSweep()
+                            // Cut to the trophy's own shape, so the light
+                            // only crosses the trophy, not the room.
+                            .mask {
+                                Image("leaderboard-trophy")
+                                    .resizable()
+                                    .scaledToFit()
+                            }
+                            .allowsHitTesting(false)
+                    }
+                }
+                // The same white circle as the round buttons, smaller than
+                // the trophy so it stands out over it.
+                .background(
+                    Circle()
+                        .fill(Theme.surface)
+                        .shadow(color: .black.opacity(0.06), radius: 1, y: 1)
+                        .frame(width: 46, height: 46)
+                )
+        }
+        .buttonStyle(SceneButtonStyle())
+        .accessibilityLabel("Leaderboards")
+    }
+}
+
 private struct StreakButton: View {
     let hasJarWaiting: Bool
     let action: () -> Void
 
     var body: some View {
-        CircleIconButton(systemName: "calendar", label: "Daily treats", action: action)
+        CircleIconButton(assetName: "icon-daily", label: "Daily treats", action: action)
             .overlay(alignment: .topTrailing) {
                 if hasJarWaiting {
                     Circle()
@@ -1155,6 +1221,8 @@ private struct GrandmaBubble: View {
     /// The widest a bubble gets (SpeechBubble wraps the text to fit).
     private let maxWidth: CGFloat = 260
     private let margin: CGFloat = 16
+    /// How far right of her head the bubble's middle sits.
+    private let sideShift: CGFloat = 60
 
     var body: some View {
         GeometryReader { proxy in
@@ -1164,7 +1232,9 @@ private struct GrandmaBubble: View {
             let head = granny == .zero
                 ? CGPoint(x: proxy.size.width / 2, y: 120)
                 : CGPoint(x: granny.minX + granny.width * 0.45, y: granny.minY + granny.height * 0.03)
-            let x = min(max(head.x, margin + maxWidth / 2), proxy.size.width - margin - maxWidth / 2)
+            // A little to her right, so the circles lead down and left to
+            // her head, like a cartoon bubble coming out of her.
+            let x = min(max(head.x + sideShift, margin + maxWidth / 2), proxy.size.width - margin - maxWidth / 2)
             // A strip as wide as the widest bubble, its bottom where the tail
             // ends: the bubble hangs from it, growing upwards with longer
             // lines. (A zero-width spot would squeeze the text to nothing.)

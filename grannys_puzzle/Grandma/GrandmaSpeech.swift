@@ -88,6 +88,8 @@ enum GrandmaLines {
     static var jarReady: String { String(localized: "My jar has a treat for you today, dear!", bundle: .appLanguage, locale: .appLanguage) }
     /// After a jar is collected: it's kept, not opened.
     static var jarKept: String { String(localized: "I've put your jar by my chair, dear. Open it whenever you like!", bundle: .appLanguage, locale: .appLanguage) }
+    /// The trophy was tapped, but Game Center isn't signed in.
+    static var leaderboardsNeedGameCenter: String { String(localized: "The leaderboards need Game Center, dear. You can sign in from your phone's Settings app.", bundle: .appLanguage, locale: .appLanguage) }
     static var catNapping: String { String(localized: "Shh, the cat's having a little nap.", bundle: .appLanguage, locale: .appLanguage) }
     /// After knitting something, for whoever it's for.
     static func knitted(for member: FamilyMember) -> String {
