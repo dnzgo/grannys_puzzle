@@ -164,6 +164,9 @@ private enum Startup {
                 loadContent: LevelLoader.content(for:)
             )
             game.startTutorialIfNeeded()
+            #if DEBUG
+            game.applyDebugLaunchOptions()
+            #endif
             return .ready(game)
         } catch {
             return .failed(String(describing: error))

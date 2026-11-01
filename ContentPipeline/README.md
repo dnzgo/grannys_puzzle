@@ -87,6 +87,20 @@ another `--seed`: a pack must end up with exactly 100 levels.
 Words without a real clue get a placeholder cut from the dictionary
 definition, so packs are playable straight away.
 
+**Variety across runs.** `--after a.json b.json …` makes a run carry on
+from levels made before (in order): their words count as recently used and
+their clues as handed out. So a pack can be made in pieces, and a new pack
+can follow the last, with the same variety as one long run.
+`--only-words FILE` uses only the words in a file (one per line), e.g.
+`data/en/starter-words.txt` for gentle first levels. `merge-packs` joins
+pieces into one pack. `scripts/make-packs.sh <lang>` does all of it for a
+language's first packs (docs/LevelDelivery.md, "Making the first packs").
+
+**Clues are tidied on import** (pipeline/tidy.py): first letter capitalised,
+names capitalised from `data/<lang>/names.txt` (`build-names` makes the
+English one from SCOWL), a lone "i" as "I", blanks as `___`. A clue that
+breaks a rule is skipped and listed; its word stays if another clue is good.
+
 ## 4. Write clues (shared work)
 
 ```

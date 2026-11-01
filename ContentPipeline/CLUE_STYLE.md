@@ -11,8 +11,10 @@ answer away); the rest is up to the writer.
 2. **Plain, everyday words.** A definition, a synonym or a simple
    description: `Purring pet`, `Move quickly`, `Not off`. No cryptic
    wordplay, puns that need explaining, or trivia.
-3. **Never contain the answer or a word from its family.** Not `Cat food`
-   for CAT, not `Gardener's place` for GARDEN.
+3. **Never the answer itself as a word.** Not `Cat food` for CAT: the
+   player would just read it off. A longer or related word is fine when it
+   makes a friendly clue: `Female ogre` (OGRESS), `Laboratory, briefly`
+   (LAB). The importer only refuses the first kind.
 4. **Match the answer's form.** A plural answer gets a plural clue, a verb
    gets a verb clue: `Move quickly` (RUN), not `Fast mover`.
 5. **Fill-in-the-blank is fine**: `Credit ___` (CARD). Use three
@@ -39,7 +41,7 @@ answer away); the rest is up to the writer.
 
 Good: `Purring pet` · `Mouser` · `Kitty` (CAT)
 Too long: `A small furry animal that purrs` (32)
-Gives it away: `Catnap taker`
+Gives it away: `Fat cat`
 Too clever: `It has nine lives, allegedly`
 
 ## Prompt for Claude
@@ -50,8 +52,8 @@ Paste this, then the batch file:
 > clue_3 and return the complete CSV, unchanged except for those columns.
 >
 > Rules: at most 20 characters including spaces. Plain everyday English, like
-> a newspaper arrowword for a general audience. Never use the answer or any
-> word from its family. Match the answer's part of speech and number. Use a
+> a newspaper arrowword for a general audience. Never use the answer itself
+> as a word. Match the answer's part of speech and number. Use a
 > different angle for each clue (definition, example, fill-in-the-blank with
 > "___"). Family friendly: no violence, crude humour, politics, religion,
 > brands or real people. American spelling, sentence case, no full stop.

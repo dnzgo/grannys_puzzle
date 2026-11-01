@@ -80,6 +80,31 @@ The live server is `https://granny-s-puzzle.web.app` (Firebase project
    `PackDownloader.contentBaseURL`. Until it's set the app never downloads,
    and a player out of levels sees "More puzzles soon!".
 
+### Making the first packs
+
+`ContentPipeline/scripts/make-packs.sh en` makes a language's 10 level
+packs and 4 daily packs, exactly as shipped (about an hour; the same
+command always gives the same packs):
+
+- **Pack 1, levels 1–20:** small boards (5×6, 6×7), answers up to 6
+  letters, only everyday words (`data/<lang>/starter-words.txt`), no
+  shaped boards: the first impression should be easy.
+- **Levels 21–1000:** 6×8, 7×9, 7×7 and 8×10 boards, Easy and Medium
+  words, answers up to 8 letters, a shaped board every 10th level.
+- **Dailies 1–400:** 7×9, 8×8 and 7×8 boards, Easy and Medium words.
+  400 rather than 365 because packs are 100 and must be full: a phone
+  keeps the copy of a pack it first got, so a part-filled last pack could
+  never be topped up.
+
+Each pack is made in pieces that remember the pieces before them
+(`generate --after`), so words don't come back too soon and each word's
+clues rotate; pack 2 carries on from pack 1. A later pack is one more
+`generate --after` the packs before it.
+
+Shipped so far: **English** pack 1 and daily pack 1 in the app; packs
+2–10 and daily packs 2–4 in `Firebase/public/packs/` (not deployed yet).
+Turkish: test packs only.
+
 ### Publishing a pack
 
 1. Generate it with the content pipeline, named as above (e.g. `en-002`).

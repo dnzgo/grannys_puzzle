@@ -28,10 +28,15 @@ class CheckClueTests(unittest.TestCase):
         self.assertEqual(check_clue("CAT", "  ", 20), "empty")
         self.assertIn("too long", check_clue("CAT", "A small furry animal that purrs", 20))
 
-    def test_rejects_clues_that_give_the_answer_away(self):
+    def test_rejects_the_answer_itself_as_a_word(self):
         self.assertEqual(check_clue("CAT", "Cat food brand", 20), "contains the answer")
-        self.assertEqual(check_clue("GARDEN", "Gardener's place", 20), "contains the answer")
-        self.assertEqual(check_clue("GARDEN", "Garde-manger", 20), "contains the start of the answer")
+        self.assertEqual(check_clue("CAT", "Fat cat", 20), "contains the answer")
+
+    def test_allows_the_answer_inside_a_longer_word(self):
+        # Fair in a casual game: a related or longer word, or a short form.
+        self.assertIsNone(check_clue("OGRESS", "Female ogre", 20))
+        self.assertIsNone(check_clue("LAB", "Laboratory, briefly", 20))
+        self.assertIsNone(check_clue("GARDEN", "Gardener's place", 20))
 
     def test_does_not_flag_unrelated_words_containing_the_letters(self):
         # "concatenate" contains "cat" but not as a word start.

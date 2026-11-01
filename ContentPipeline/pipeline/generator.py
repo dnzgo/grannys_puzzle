@@ -69,6 +69,18 @@ class LevelGenerator:
         self._recent: deque[set[str]] = deque(maxlen=self.recent_window)
         self._total_uses: Counter[str] = Counter()
 
+    def remember(self, words: set[str], clues: list[tuple[str, str]]) -> None:
+        """Takes in a level made earlier (another run, an earlier pack) as
+        if this run had just made it: its words count as recently used and
+        its clues as handed out. Generating a pack in pieces, each one
+        remembering the pieces before it, then gives the same variety as
+        one long run, and a new pack carries on from the last one."""
+        self.used_words.update(words)
+        self._recent.append(set(words))
+        self._total_uses.update(words)
+        for word, clue in clues:
+            self.clue_bank.record(word, clue)
+
     def _index(self, max_familiarity: int) -> WordIndex:
         if max_familiarity not in self._indexes:
             self._indexes[max_familiarity] = self._full_index.restricted(max_familiarity)

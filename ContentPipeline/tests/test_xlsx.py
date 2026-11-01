@@ -110,10 +110,12 @@ class WorkbookImportTests(unittest.TestCase):
         })
         self.assertEqual(
             [(p.line, p.word) for p in problems],
-            [("4 letters row 2", "EV"), ("4 letters row 3", "MASA")],
+            [("4 letters row 2", "EV"), ("4 letters row 3", "MASA"), ("4 letters row 3", "MASA")],
         )
         self.assertEqual(problems[0].reason, "listed twice")
         self.assertIn("too long", problems[1].reason)
+        # MASA's only clue was refused, so it has none left.
+        self.assertEqual(problems[2].reason, "no usable clue")
 
     def test_one_spelling_can_carry_clues_for_different_meanings(self):
         # MÖ is an abbreviation and a cow's moo: with no Type column there's

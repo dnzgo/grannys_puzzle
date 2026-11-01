@@ -155,6 +155,15 @@ final class Game {
         catalog.items.contains { progress.hasSetJarWaiting(for: $0, in: catalog) }
     }
 
+    #if DEBUG
+    /// `-GPStartLevel` (DebugLaunchOptions): jump ahead for testing. Forward
+    /// only, so a game played past it isn't sent back.
+    func applyDebugLaunchOptions() {
+        guard let level = DebugLaunchOptions.startLevel, level > progress.levelNumber else { return }
+        update { $0.levelNumber = level }
+    }
+    #endif
+
     // MARK: - Tuning
 
     /// Switches to the numbers the server set (downloaded on an earlier
@@ -197,6 +206,10 @@ final class Game {
     /// launch, so the tuning's defaults are the one source of truth for the
     /// ads package's time rules too.
     private func apply(_ newTuning: GameTuning) {
+        var newTuning = newTuning
+        #if DEBUG
+        if let day = DebugLaunchOptions.dailyFirstDay { newTuning.dailyFirstDay = day }
+        #endif
         tuning = newTuning
         adBreaks.firstLevel = newTuning.adBreakFirstLevel
         adBreaks.levelsBetween = newTuning.adBreakLevelsBetween
@@ -404,6 +417,9 @@ final class Game {
 
         let outcome = await downloader.fetch(kind, language: language, number: number)
         events?.log(.packDownload(pack: name, outcome: outcome.label))
+        // Also in Xcode's console, where a test of the download is watched.
+        Logger(subsystem: "grannys_puzzle", category: "packs")
+            .notice("Pack \(name, privacy: .public): \(outcome.label, privacy: .public)")
 
         switch outcome {
         case .downloaded(let pack):

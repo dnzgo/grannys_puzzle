@@ -40,6 +40,7 @@ from typing import NamedTuple
 from .clues import CLUE_COLUMNS, check_clue
 from .xlsx import read_sheets
 from .textcase import lower, upper
+from .tidy import tidy_clue
 from .wordlist import WordEntry
 
 FAMILIARITY_LEVELS = (10, 20, 35, 50)
@@ -94,11 +95,16 @@ def read_sources(
     max_length: int,
     clue_max_length: int,
     blocked: set[str] | frozenset[str] = frozenset(),
+    names: dict[str, str] | None = None,
 ) -> SourceRead:
-    """Reads and checks source files. A word with a problem is left out (and
-    reported) rather than half-imported. `blocked` is lowercase words that
-    must never be answers (the bad-word lists): checked here too, because
-    words typed into the workbook by hand never went through build-words."""
+    """Reads and checks source files. A word with a problem (bad letters,
+    wrong length, listed twice, blocked, no difficulty) is left out and
+    reported. A bad *clue* is left out and reported, but the word stays
+    if it has another good one: with three clues a word, one slip
+    shouldn't cost the whole word. `blocked` is lowercase words that must
+    never be answers (the bad-word lists): checked here too, because words
+    typed into the workbook by hand never went through build-words.
+    `names` tidies the clues' capitals (see tidy.py)."""
     allowed = set(alphabet)
     entries: dict[str, WordEntry] = {}
     seen: set[str] = set()
@@ -132,20 +138,23 @@ def read_sources(
                 continue
 
             word_clues: list[str] = []
-            bad_clue = False
+            had_clues = False
             for column in CLUE_COLUMNS:
-                clue = (row.get(column) or "").strip()
-                if not clue:
+                raw_clue = (row.get(column) or "").strip()
+                if not raw_clue:
                     continue
+                had_clues = True
+                clue = tidy_clue(raw_clue, names, language)
                 reason = check_clue(word, clue, clue_max_length, language)
                 if reason:
-                    problem(f"{column} {clue!r}: {reason}")
-                    bad_clue = True
+                    problem(f"{column} {raw_clue!r}: {reason}")
                 elif clue not in word_clues:
                     word_clues.append(clue)
-            if bad_clue:
-                continue
             definition = (row.get("definition") or "").strip()
+            if had_clues and not word_clues:
+                # Every clue it had was refused (each reported above).
+                problem("no usable clue")
+                continue
             if not word_clues and not definition:
                 # Listed but not clued yet: normal while the list is being
                 # written, so counted rather than reported. Checked before

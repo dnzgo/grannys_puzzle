@@ -23,9 +23,11 @@ class TurkishCaseTests(unittest.TestCase):
         self.assertEqual(upper("kit", "en"), "KIT")
 
     def test_giveaway_check_works_with_turkish_capitals(self):
-        # "İçeri" starts with the answer İÇ; a naive lower() would miss it.
-        self.assertEqual(check_clue("İÇ", "İçeri", 20, "tr"), "contains the answer")
+        # "İç" is the answer İÇ; a naive lower() would miss it (i, not ı).
+        self.assertEqual(check_clue("İÇ", "İç taraf, iç kısım", 20, "tr"), "contains the answer")
         self.assertIsNone(check_clue("İÇ", "Dış karşıtı", 20, "tr"))
+        # Inside a longer word is allowed, as in English.
+        self.assertIsNone(check_clue("İÇ", "İçeri", 20, "tr"))
 
 
 class AuthoredImportTests(unittest.TestCase):
@@ -48,7 +50,22 @@ class AuthoredImportTests(unittest.TestCase):
             "battaniye\t10\tnoun\tÖrtü\t\t\n"       # too long for a grid
         )
         self.assertEqual(words, [])
-        self.assertEqual(len(problems), 3)
+        # Three problems, plus "no usable clue" for çay, whose only clue
+        # was refused.
+        self.assertEqual(len(problems), 4)
+        self.assertIn("no usable clue", [p.reason for p in problems])
+
+    def test_one_bad_clue_doesnt_cost_the_word(self):
+        # The second clue gives the answer away: it's dropped and reported,
+        # the word keeps its good one.
+        words, clues, problems, _ = self.read("çay\t10\tnoun\tDemlenip içilir\tÇay bardağı\t\n")
+        self.assertEqual([w.word for w in words], ["ÇAY"])
+        self.assertEqual(clues, [("ÇAY", "Demlenip içilir")])
+        self.assertEqual(len(problems), 1)
+
+    def test_clues_are_tidied_with_turkish_capitals(self):
+        _, clues, _, _ = self.read("çay\t10\tnoun\tiçilen sıcak __\t\t\n")
+        self.assertEqual(clues, [("ÇAY", "İçilen sıcak ___")])
 
     def test_a_word_without_a_clue_is_waiting_not_wrong(self):
         # Words are listed first and clued over time: an unclued word is

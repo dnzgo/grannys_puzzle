@@ -21,6 +21,7 @@ from pathlib import Path
 
 from . import sources
 from .authored import read_sources, write_clue_bank
+from .tidy import build_names, read_names
 from .clues import ClueBank, append_to_bank, import_batch, write_batches
 from .generator import LevelGenerator, LevelSpec
 from .rules import load_rules
@@ -77,8 +78,20 @@ def parse_sizes(text: str) -> list[tuple[int, int]]:
 def cmd_generate(args: argparse.Namespace) -> int:
     rules = load_rules()
     words = read_word_list(data_dir(args.lang) / "words.tsv")
+    if args.only_words:
+        # A gentler start: only words from this list (see README).
+        allowed = {line.strip().upper() for line in Path(args.only_words).read_text(encoding="utf-8").splitlines()
+                   if line.strip() and not line.startswith("#")}
+        words = [entry for entry in words if entry.word in allowed]
+        print(f"Only words from {args.only_words}: {len(words)} words")
     clue_bank = ClueBank.load(data_dir(args.lang) / "clues.tsv")
     generator = LevelGenerator(args.lang, words, clue_bank, rules)
+    # Levels made before these, in order: remembered so this run carries on
+    # from them (words recently used, clues already handed out).
+    for path in args.after:
+        for level in _load_levels(Path(path)):
+            answers = [(_answer_of(level["grid"], clue), clue["text"]) for clue in level["clues"]]
+            generator.remember({word for word, _ in answers}, answers)
     sizes = parse_sizes(args.sizes)
     shapes = [name.strip() for name in args.shapes.split(",") if name.strip()]
     shape_size = parse_sizes(args.shape_size)[0] if args.shape_size else None
@@ -224,6 +237,7 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
         max_length=rules.max_rows - 1,
         clue_max_length=rules.clue_max_length,
         blocked=blocked,
+        names=read_names(data_dir(args.lang) / "names.txt"),
     )
     for p in problems:
         print(f"  {p.file}:{p.line} {p.word}: {p.reason}")
@@ -238,6 +252,38 @@ def cmd_import_word_list(args: argparse.Namespace) -> int:
     print(f"Read {len(paths)} source files: {len(words)} words ({clued} with clues), "
           f"{len(clues)} clues, {len(waiting)} waiting for a clue, {len(problems)} problems")
     return 0 if not problems else 1
+
+
+def cmd_build_names(args: argparse.Namespace) -> int:
+    """data/<lang>/names.txt: the names clues are capitalised with."""
+    names = build_names(Path(args.scowl))
+    out = data_dir(args.lang) / "names.txt"
+    out.write_text(
+        "# Names the importer capitalises in clues (see pipeline/tidy.py).\n"
+        "# Made by build-names from SCOWL; edit it to add or remove one.\n"
+        + "\n".join(names) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {len(names)} names to {out}")
+    return 0
+
+
+def cmd_merge_packs(args: argparse.Namespace) -> int:
+    """One pack from the pieces it was made in (generate's output files),
+    in order: the levels must run on without gaps or repeats."""
+    levels: list[dict] = []
+    for path in args.parts:
+        levels += _load_levels(Path(path))
+    ids = [level["id"] for level in levels]
+    if len(set(ids)) != len(ids) or ids != sorted(ids):
+        print("The pieces' levels repeat or are out of order", file=sys.stderr)
+        return 1
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    pack = {"formatVersion": 1, "packId": args.pack, "language": args.lang, "levels": levels}
+    out.write_text(json.dumps(pack, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    print(f"Wrote {len(levels)} levels ({ids[0]} to {ids[-1]}) to {out}")
+    return 0
 
 
 # MARK: - Entry point
@@ -260,6 +306,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     authored.add_argument("--lang", required=True)
     authored.set_defaults(run=cmd_import_word_list)
+
+    names = commands.add_parser("build-names", help="build data/<lang>/names.txt, the names capitalised in clues")
+    names.add_argument("--lang", required=True)
+    names.add_argument("--scowl", required=True, help="SCOWL final/ folder")
+    names.set_defaults(run=cmd_build_names)
 
     generate = commands.add_parser("generate", help="generate a level pack")
     generate.add_argument("--lang", required=True)
@@ -285,7 +336,25 @@ def main(argv: list[str] | None = None) -> int:
         help="board size for every shaped level (columns x rows); default: each shape's own, see shapes.py",
     )
     generate.add_argument("--seed", type=int, default=1)
+    generate.add_argument(
+        "--after", nargs="*", default=[],
+        help="level or pack files made before these, in order: this run carries on from them "
+             "(avoids their recent words, rotates on from their clues). Use it to make a pack in "
+             "pieces, and for each new pack after the last",
+    )
+    generate.add_argument(
+        "--only-words", default=None,
+        help="a file of words (one per line) to use instead of the whole list, e.g. the first "
+             "levels' everyday words",
+    )
     generate.set_defaults(run=cmd_generate)
+
+    merge = commands.add_parser("merge-packs", help="join generated pieces into one pack")
+    merge.add_argument("--lang", required=True)
+    merge.add_argument("--pack", required=True, help="the pack's id, e.g. en-001")
+    merge.add_argument("--out", required=True, help="where to write it")
+    merge.add_argument("parts", nargs="+", help="the pieces, in order")
+    merge.set_defaults(run=cmd_merge_packs)
 
     validate = commands.add_parser("validate", help="check level or pack files")
     validate.add_argument("paths", nargs="+")

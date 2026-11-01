@@ -58,6 +58,11 @@ class ClueBank:
     def has_clue(self, word: str) -> bool:
         return bool(self._clues.get(word))
 
+    def record(self, word: str, clue: str) -> None:
+        """Counts a clue as used, as if handed out: for levels made in an
+        earlier run (`generate --after`), so the rotation carries on."""
+        self._uses[(word, clue)] += 1
+
     def next_clue(self, word: str) -> str | None:
         options = self._clues.get(word)
         if not options:
@@ -113,12 +118,12 @@ def check_clue(word: str, clue: str, max_length: int, language: str = "en") -> s
         return "contains a line break or tab"
     lowered = lower(text, language)
     answer = lower(word, language)
-    if re.search(rf"\b{re.escape(answer)}", lowered):
+    # Only the answer itself, as a whole word ("Cat food" for CAT): the
+    # player would just read it off. Inside a longer word is fair in a
+    # casual game ("Female ogre" for OGRESS, "Laboratory, briefly" for LAB),
+    # so it's allowed; whether it's a *good* clue is the writer's call.
+    if re.search(rf"\b{re.escape(answer)}\b", lowered):
         return "contains the answer"
-    # "Running" as a clue for RUN gives it away too. Checking a 4-letter stem
-    # catches most of these without flagging unrelated short words.
-    if len(answer) >= 5 and re.search(rf"\b{re.escape(answer[:4])}", lowered):
-        return "contains the start of the answer"
     return None
 
 
