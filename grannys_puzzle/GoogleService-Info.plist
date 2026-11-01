@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyA9D5vsUby1UNPDfMHukNAKFKDCPAmrU08</string>
+	<string>AIzaSyBUxgMGK2GGvrkyk9pxx-LCbbRG4Upy1Rg</string>
 	<key>GCM_SENDER_ID</key>
-	<string>499627274752</string>
+	<string>529994570682</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.bgorkem.grannyspuzzle</string>
+	<string>com.dengolabs.grannyspuzzle</string>
 	<key>PROJECT_ID</key>
-	<string>granny-s-76eb5</string>
+	<string>granny-s-puzzle</string>
 	<key>STORAGE_BUCKET</key>
-	<string>granny-s-76eb5.firebasestorage.app</string>
+	<string>granny-s-puzzle.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:499627274752:ios:b61d4f61c5661aec1f9ee5</string>
+	<string>1:529994570682:ios:31405631f630a1460c5b83</string>
 </dict>
 </plist>
