@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  The privacy manifest for the app's own code (the app and its local
+  packages: ArrowwordCore, AdKit, GameServices, NotifyKit).
+
+  Firebase and Google Mobile Ads ship their own manifests, declaring the
+  data they collect and Google's tracking domains; Xcode merges them all
+  into the privacy report. So this file covers only what our code does:
+
+  - No tracking and no data collected by our code itself. The ads SDK's
+    tracking (after the ATT prompt) is declared in Google's manifest.
+  - UserDefaults (CA92.1: read and written only by this app): settings,
+    progress, reminders.
+
+  A new "required reason" API (file timestamps, disk space, system boot
+  time, keyboards) used by our code must be added here.
+-->
+<plist version="1.0">
+<dict>
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

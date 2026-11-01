@@ -1,0 +1,138 @@
+{
+  "identifier" : "5C2B7E1A",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "6.99",
+      "familyShareable" : true,
+      "internalID" : "6740000001",
+      "localizations" : [
+        {
+          "description" : "Removes ads and adds a bag of cat hints and grandma helpers.",
+          "displayName" : "Welcome Bundle",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Reklamları kaldırır, bir torba kedi ipucu ve nine yardımı ekler.",
+          "displayName" : "Hoş Geldin Paketi",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.welcomebundle",
+      "referenceName" : "Welcome Bundle",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "6740000002",
+      "localizations" : [
+        {
+          "description" : "No ads between levels or under the board. Videos for helpers stay.",
+          "displayName" : "Remove Ads",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Bölümler arasında ve bulmacanın altında reklam yok. Yardımcı videoları kalır.",
+          "displayName" : "Reklamları Kaldır",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.removeads",
+      "referenceName" : "Remove Ads",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6740000003",
+      "localizations" : [
+        {
+          "description" : "A handful of cat hints.",
+          "displayName" : "Small Cat Hint Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Bir avuç kedi ipucu.",
+          "displayName" : "Küçük Kedi İpucu Paketi",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.cathints.small",
+      "referenceName" : "Small Cat Hint Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "6740000004",
+      "localizations" : [
+        {
+          "description" : "A basket full of cat hints.",
+          "displayName" : "Big Cat Hint Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Bir sepet dolusu kedi ipucu.",
+          "displayName" : "Büyük Kedi İpucu Paketi",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.cathints.big",
+      "referenceName" : "Big Cat Hint Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6740000005",
+      "localizations" : [
+        {
+          "description" : "A few grandma helpers.",
+          "displayName" : "Small Grandma Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Birkaç nine yardımı.",
+          "displayName" : "Küçük Nine Paketi",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.grandmas.small",
+      "referenceName" : "Small Grandma Pack",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6740000006",
+      "localizations" : [
+        {
+          "description" : "A pouch full of grandma helpers.",
+          "displayName" : "Big Grandma Pack",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Bir kese dolusu nine yardımı.",
+          "displayName" : "Büyük Nine Paketi",
+          "locale" : "tr"
+        }
+      ],
+      "productID" : "com.dengolabs.grannyspuzzle.grandmas.big",
+      "referenceName" : "Big Grandma Pack",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6740000000",
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "DEU",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

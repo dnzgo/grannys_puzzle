@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- The app's only encryption is Apple's own HTTPS (packs, Firebase,
+	     ads), which is exempt: saying so here stops App Store Connect
+	     asking the export-compliance question on every upload. -->
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9097467595663045~9764067030</string>
 	<key>SKAdNetworkItems</key>

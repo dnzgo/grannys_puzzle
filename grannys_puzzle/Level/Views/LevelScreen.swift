@@ -16,6 +16,8 @@ struct LevelScreen: View {
     @State private var spotlightFrames = SpotlightFrames()
     /// Apple's "Enjoying the game?" prompt (iOS decides whether it shows).
     @Environment(\.requestReview) private var requestReview
+    /// Nil in previews (they show the banner slot).
+    @Environment(Purchases.self) private var purchases: Purchases?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -90,7 +92,11 @@ struct LevelScreen: View {
                 .animation(.easeOut(duration: 0.2), value: showsSettings)
                 .animation(.easeOut(duration: 0.2), value: model.confirmsLeavingDaily)
             }
-            BannerAdSlot()
+            // No slot at all once "Remove ads" is bought (not an empty
+            // one): the space under the board goes back to the game.
+            if purchases?.ownsRemoveAds != true {
+                BannerAdSlot()
+            }
         }
         .background(Theme.background.ignoresSafeArea())
         .overlay {

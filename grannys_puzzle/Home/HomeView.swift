@@ -21,6 +21,8 @@ struct HomeView: View {
     /// (after finishing that set); nil lets the wardrobe choose.
     @State private var wardrobeItem: KnitItem?
     @State private var showsSettings = false
+    /// The shop card is up.
+    @State private var showsStore = false
     /// The item whose knitting moment is playing, if any.
     @State private var knittingItem: KnitItem?
     /// A finished set's moment, waiting for the knitting moment to end.
@@ -63,6 +65,9 @@ struct HomeView: View {
     @State private var jarFrame = CGRect.zero
     /// Where grandma and the wardrobe are, for knitting on the stage.
     @State private var grannyFrame = CGRect.zero
+    /// The top row (helpers card, streak, settings), so the shop stall can
+    /// sit between it and the trophy.
+    @State private var topRowFrame = CGRect.zero
     @State private var wardrobeFrame = CGRect.zero
     /// Grandma rocks while she knits (the start of KnittingOnStage).
     @State private var isKnitting = false
@@ -83,6 +88,8 @@ struct HomeView: View {
     /// The coordinate space the jar's prize flies in, from the jar to the
     /// counters: the whole home screen.
     static let space = "home"
+    /// Space between the helpers card, the shop stall and the trophy.
+    private static let roomButtonGap: CGFloat = 16
     /// The day the daily treats card last opened by itself. Kept on this
     /// device, like the settings: it's about this screen, not the player's
     /// progress.
@@ -99,6 +106,11 @@ struct HomeView: View {
                 // reaches up past the stage into this row, and the stage,
                 // coming later, would otherwise be drawn over the buttons.
                 .zIndex(1)
+                .onGeometryChange(for: CGRect.self) { [space = Self.space] proxy in
+                    proxy.frame(in: .named(space))
+                } action: { frame in
+                    topRowFrame = frame
+                }
 
             HomeStage(
                 progress: game.progress,
@@ -147,13 +159,28 @@ struct HomeView: View {
         // The trophy, for the leaderboards: on the left, a little above the
         // top of grandma's head (placed from her measured frame, so it lines
         // up on every screen). Under the animations and cards that follow.
+        //
+        // The shop stall above it, a fixed gap under the top row (the
+        // helpers card), and the trophy the same gap under the stall: on a
+        // short screen that pushes the trophy down a little rather than
+        // letting the three touch. Gone while the shop has nothing left to
+        // sell (in 1.0, once "Remove ads" is bought): a stall with nothing
+        // to buy would only be in the way.
         .overlay {
             if grannyFrame != .zero {
-                LeaderboardTrophy(action: openLeaderboards)
-                    .position(
-                        x: Theme.sidePadding + LeaderboardTrophy.size / 2,
-                        y: grannyFrame.minY - 56
-                    )
+                let size = RoomPictureButton.size
+                let x = Theme.sidePadding + size / 2
+                let showsStall = game.purchases?.hasSomethingToSell == true && topRowFrame != .zero
+                let stallY = topRowFrame.maxY + Self.roomButtonGap + size / 2
+                let trophyY = showsStall
+                    ? max(grannyFrame.minY - 56, stallY + size + Self.roomButtonGap)
+                    : grannyFrame.minY - 56
+                if showsStall {
+                    RoomPictureButton(imageName: "store-stall", label: "Shop", shineDelay: 1.6, action: openStore)
+                        .position(x: x, y: stallY)
+                }
+                RoomPictureButton(imageName: "leaderboard-trophy", label: "Leaderboards", action: openLeaderboards)
+                    .position(x: x, y: trophyY)
             }
         }
         .overlay {
@@ -178,6 +205,22 @@ struct HomeView: View {
                 )
             }
         }
+        // Grandma's speech bubble: above everything in the room (the scene,
+        // the top row, the knitting and jar animations), but under the cards
+        // and moments that open over the room, which dim it like the rest
+        // of the room. It lets taps through, so it never blocks what's
+        // underneath.
+        .overlay {
+            if let line = speech.line {
+                GrandmaBubble(text: line, granny: grannyFrame)
+                    .allowsHitTesting(false)
+                    // A fade only: this layer is the whole screen, so a
+                    // scale here would shrink it towards the screen's bottom
+                    // and the bubble would seem to drop as it went.
+                    .transition(.opacity)
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: speech.line)
         .preferredColorScheme(.light)
         .gameFeedback(feedback)
         // The game's own cards rather than iOS sheets, like settings.
@@ -196,6 +239,19 @@ struct HomeView: View {
             }
         }
         .animation(.easeOut(duration: 0.2), value: showsYarnBag)
+        .overlay {
+            if showsStore, let purchases = game.purchases {
+                StoreCard(
+                    purchases: purchases,
+                    packs: game.tuning.shop,
+                    onPurchase: game.logPurchase,
+                    onRestore: game.logRestore,
+                    onClose: { showsStore = false }
+                )
+                .transition(.opacity)
+            }
+        }
+        .animation(.easeOut(duration: 0.2), value: showsStore)
         .overlay {
             if showsWardrobe {
                 WardrobeCard(
@@ -284,20 +340,6 @@ struct HomeView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: asksAboutReminders)
-        // Grandma's speech bubble, last so it's above everything: the scene,
-        // the knitting and jar animations, the top row and any card. It
-        // lets taps through, so it never blocks what's underneath.
-        .overlay {
-            if let line = speech.line {
-                GrandmaBubble(text: line, granny: grannyFrame)
-                    .allowsHitTesting(false)
-                    // A fade only: this layer is the whole screen, so a
-                    // scale here would shrink it towards the screen's bottom
-                    // and the bubble would seem to drop as it went.
-                    .transition(.opacity)
-            }
-        }
-        .animation(.easeOut(duration: 0.2), value: speech.line)
         .onAppear {
             today = JarDay.number()
             speech.say(openingLine)
@@ -547,7 +589,7 @@ struct HomeView: View {
     /// A sheet, card or moment is up, which grandma's question and the
     /// streak card mustn't cover.
     private var isShowingSomethingElse: Bool {
-        showsYarnBag || showsWardrobe || showsSettings || showsStreak || showsStreakSave || asksAboutReminders
+        showsYarnBag || showsWardrobe || showsSettings || showsStore || showsStreak || showsStreakSave || asksAboutReminders
             || isOpeningJar || jarIsOpen || flight != nil || knittingItem != nil || setPrize != nil
             || wardrobeDone != nil
     }
@@ -587,6 +629,11 @@ struct HomeView: View {
     /// the screen, so this is left of its centre, on the part that's seen.
     private var wardrobeDoor: CGPoint {
         CGPoint(x: wardrobeFrame.minX + wardrobeFrame.width * 0.3, y: wardrobeFrame.minY + wardrobeFrame.height * 0.4)
+    }
+
+    private func openStore() {
+        game.logStoreOpened()
+        showsStore = true
     }
 
     /// Game Center's leaderboards, or grandma explaining why they can't open.
@@ -896,31 +943,36 @@ private struct JarView: View {
     }
 }
 
-/// Opens the daily treats card. A red dot while today's jar is waiting to
-/// be collected, so the player knows there's something to tap for.
-/// The golden trophy at the top left of grandma's room: it opens the
-/// leaderboards. A little picture in the room rather than a round button,
-/// like the jar and the wardrobe: things in her room are what you tap.
-private struct LeaderboardTrophy: View {
+/// A little picture in grandma's room that's a button: the golden trophy
+/// (leaderboards) and the shop stall, at the top left. Pictures in the room
+/// rather than round buttons, like the jar and the wardrobe: things in her
+/// room are what you tap.
+private struct RoomPictureButton: View {
     static let size: CGFloat = 60
+    let imageName: String
+    let label: LocalizedStringKey
+    /// Extra wait before this one's glints, so two pictures side by side
+    /// don't flash in step, which looks mechanical.
+    var shineDelay: Double = 0
     let action: () -> Void
 
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var shines = false
 
     var body: some View {
         Button(action: action) {
-            Image("leaderboard-trophy")
+            Image(imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(width: Self.size, height: Self.size)
                 // Now and then a glint of light sweeps across it.
                 .overlay {
-                    if !reduceMotion {
+                    if shines && !reduceMotion {
                         ShineSweep()
-                            // Cut to the trophy's own shape, so the light
-                            // only crosses the trophy, not the room.
+                            // Cut to the picture's own shape, so the light
+                            // only crosses it, not the room.
                             .mask {
-                                Image("leaderboard-trophy")
+                                Image(imageName)
                                     .resizable()
                                     .scaledToFit()
                             }
@@ -928,7 +980,7 @@ private struct LeaderboardTrophy: View {
                     }
                 }
                 // The same white circle as the round buttons, smaller than
-                // the trophy so it stands out over it.
+                // the picture so it stands out over it.
                 .background(
                     Circle()
                         .fill(Theme.surface)
@@ -937,10 +989,16 @@ private struct LeaderboardTrophy: View {
                 )
         }
         .buttonStyle(SceneButtonStyle())
-        .accessibilityLabel("Leaderboards")
+        .accessibilityLabel(label)
+        .task {
+            try? await Task.sleep(for: .seconds(shineDelay))
+            shines = true
+        }
     }
 }
 
+/// Opens the daily treats card. A red dot while today's jar is waiting to
+/// be collected, so the player knows there's something to tap for.
 private struct StreakButton: View {
     let hasJarWaiting: Bool
     let action: () -> Void

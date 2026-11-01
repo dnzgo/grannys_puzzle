@@ -85,7 +85,7 @@ it (see the image prompts in the chat / art folder).
 | knit | `achievement-knit.png` |
 | languages | `achievement-languages.png` |
 
-## Daily leaderboards (not created yet)
+## Daily leaderboards (not created in App Store Connect yet)
 
 One recurring Game Center leaderboard per language, since the English and
 Turkish dailies are different puzzles and can't be compared fairly:
@@ -114,5 +114,20 @@ shows being added up:
   board higher.
 
 A go played on a fallback puzzle (the day's pack wasn't on the phone, see
-docs/LevelDelivery.md) must not be submitted.
+docs/LevelDelivery.md) is not submitted.
+
+How scores are sent (`GameCenter.submitDailyScore`, called from `Game`):
+
+- When the daily is submitted, and again at every sign-in (each launch).
+  Game Center keeps each player's best score per period, so sending
+  twice is harmless, and the re-send retries one that failed offline.
+- Only on the day it was played (UTC, `DailyDay`): after midnight the
+  board has reset, and an old score would land on the new day's board.
+- Not signed in yet: held in memory and sent when sign-in finishes, if
+  it's still the same day. Lost if the app is closed first; the score
+  still shows on the player's own result card.
+
+Ties: the in-game card ranks equal scores by time, but Game Center ranks
+equal scores by who submitted first. The per-second speed bonus makes
+exact ties rare, so this is accepted.
 

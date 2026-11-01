@@ -41,6 +41,9 @@ final class Game {
     let reminders: Reminders?
     /// Nil in previews and tests; see GameCenter.swift.
     let gameCenter: GameCenter?
+    /// What the player bought ("Remove ads"); nil in previews and tests,
+    /// which then play with ads, like a player who hasn't bought it.
+    let purchases: Purchases?
     /// The lesson's board in the current language. Nil only if it failed
     /// to load, a build problem that the tests catch; the game then simply
     /// plays without it.
@@ -97,6 +100,7 @@ final class Game {
         ads: AdsController? = nil,
         reminders: Reminders? = nil,
         gameCenter: GameCenter? = nil,
+        purchases: Purchases? = nil,
         catalog: KnittingCatalog = .standard,
         services: AppServices = .none,
         loadContent: ((String) throws -> GameContent)? = nil,
@@ -111,6 +115,7 @@ final class Game {
         self.ads = ads
         self.reminders = reminders
         self.gameCenter = gameCenter
+        self.purchases = purchases
         self.tutorial = tutorial
         self.dailies = daily
         self.catalog = catalog
@@ -564,6 +569,7 @@ final class Game {
             finished = progress.finishDaily(result, now: .now)
             if finished != nil { progress.recordStreakDay(today: JarDay.number()) }
         }
+        submitDailyScore()
         return finished
     }
 
@@ -610,7 +616,7 @@ final class Game {
     func play() {
         guard let number = nextLevelNumber else { return }
         guard let level = levels.level(number: number) else { return }
-        if adBreaks.wantsAdsLoaded(forLevel: number) {
+        if showsAdBreaks, adBreaks.wantsAdsLoaded(forLevel: number) {
             ads?.prepareInterstitials()
         }
         let puzzle = startingPuzzle(for: level)
@@ -641,6 +647,40 @@ final class Game {
         return PuzzleState(level: level)
     }
 
+    // MARK: - Shop
+
+    func logStoreOpened() {
+        events?.log(.storeOpened(level: progress.levelNumber))
+    }
+
+    func logPurchase(_ item: ShopItem, _ outcome: Purchases.PurchaseOutcome) {
+        events?.log(.storePurchase(item: item, outcome: outcome, level: progress.levelNumber))
+    }
+
+    func logRestore(_ outcome: Purchases.RestoreOutcome) {
+        events?.log(.storeRestore(outcome: outcome))
+    }
+
+    /// Adds a purchase's helpers and saves them, once per `key` (see
+    /// `PlayerProgress.grantPurchase`); Purchases calls it for packs and the
+    /// bundle. True once they're in, including when they already were, so
+    /// Purchases can tell Apple the purchase is delivered.
+    ///
+    /// The amounts come from the current tuning, the same the shop showed.
+    /// A purchase delivered at launch (a parent's late approval) may arrive
+    /// before the server's values: it then gets the defaults.
+    func deliverPurchase(_ item: ShopItem, key: String) -> Bool {
+        guard let contents = item.contents else { return true }
+        guard !progress.grantedPurchases.contains(key) else { return true }
+        let reward = tuning.shop[keyPath: contents]
+        // `update` saves at once. If saving fails (a full disk, rare) the
+        // helpers are still in memory and go out with the next save; that's
+        // the same trade every other change in the game makes.
+        update { $0.grantPurchase(key, reward) }
+        events?.log(.storeDelivered(item: item, reward: reward))
+        return true
+    }
+
     // MARK: - Saving
 
     private func update(_ change: (inout PlayerProgress) -> Void) {
@@ -659,6 +699,22 @@ final class Game {
         // Held until sign-in finishes, then sent: catches up on progress
         // made while signed out or offline.
         reportAchievements()
+        // Today's score again, in case the last try didn't get through
+        // (re-sending is harmless, see GameCenter.submitDailyScore).
+        submitDailyScore()
+    }
+
+    /// Today's submitted daily score, if it belongs on a leaderboard (not a
+    /// fallback puzzle, see DailyAttempt.leaderboardLanguage).
+    private func submitDailyScore() {
+        guard let attempt = progress.daily,
+              attempt.day == DailyDay.number(),
+              let language = attempt.leaderboardLanguage,
+              let result = attempt.result
+        else { return }
+        gameCenter?.submitDailyScore(DailyScoreReport(
+            day: attempt.day, language: language, score: result.score.total
+        ))
     }
 
     private func reportAchievements() {
@@ -820,7 +876,7 @@ extension Game: LevelHost {
     /// closes; if no ad shows (too soon, none loaded), it opens at once.
     func continueToNextLevel() {
         guard !isTakingAdBreak else { return }
-        guard adBreaks.isBreakDue, let ads else {
+        guard showsAdBreaks, adBreaks.isBreakDue, let ads else {
             openNextLevel()
             return
         }
@@ -835,6 +891,10 @@ extension Game: LevelHost {
             openNextLevel()
         }
     }
+
+    /// False once "Remove ads" is bought: no interstitials between levels
+    /// (and none loaded). Rewarded videos are unaffected.
+    var showsAdBreaks: Bool { purchases?.ownsRemoveAds != true }
 
     private func openNextLevel() {
         if nextLevelNumber != nil {

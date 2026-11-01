@@ -39,3 +39,29 @@ download isn't there yet or fails.
       and their catalog entries (prices, sets) downloaded, like packs.
       Needs care with progress: a player who owns an item must keep it
       even if it's later removed from the catalog.
+
+## Retention (v2)
+
+Ordered by expected effect for the effort. Before building any: a
+retention view in Firebase (day 1, 7 and 30, and where in the level
+funnel players stop). Its numbers decide the order: if most players
+leave by level 5, the early levels come first.
+
+- [ ] Streak protection: a freeze (earned, or for a rewarded ad) and a
+      repair for a missed day. A lost long streak is a common reason to
+      quit for good.
+- [ ] Daily archive: missed dailies playable, unlocked with a rewarded ad
+      (the 400 dailies are there already).
+- [ ] Progress in iCloud (Game Center saved games or CloudKit): a new
+      phone shouldn't mean starting over.
+- [ ] Smarter reminders: at the hour the player usually plays; "your
+      streak ends tonight".
+- [ ] Remote seasonal content (see Remote content above).
+- [ ] Grandma's story: lines or family moments unlocked by progress (a
+      letter from a grandchild when their wardrobe is done).
+- [ ] Weekly goals (15 levels this week → a special yarn colour), between
+      one level and a whole wardrobe.
+- [ ] iPad layout (planned for 1.1).
+- [ ] Maybe: a home-screen widget with today's daily and the streak.
+      Uncertain: few players add widgets for games; worth it only if
+      the daily turns out to be the main reason players come back.

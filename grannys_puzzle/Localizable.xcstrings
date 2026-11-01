@@ -2881,6 +2881,194 @@
           }
         }
       }
+    },
+    "No earlier purchase was found for this Apple Account." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Apple Hesabı için daha önce yapılmış bir satın alma bulunamadı."
+          }
+        }
+      }
+    },
+    "Remove ads" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reklamları kaldır"
+          }
+        }
+      }
+    },
+    "Restore purchases" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın alımları geri yükle"
+          }
+        }
+      }
+    },
+    "Restoring didn't work just now. Please try again in a moment." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri yükleme şu anda olmadı. Lütfen birazdan tekrar dene."
+          }
+        }
+      }
+    },
+    "Shop" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dükkân"
+          }
+        }
+      }
+    },
+    "Thank you, dear!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teşekkürler, canım!"
+          }
+        }
+      }
+    },
+    "The purchase didn't go through. Please try again." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın alma tamamlanamadı. Lütfen tekrar dene."
+          }
+        }
+      }
+    },
+    "The shop can't be reached just now. Please check your connection." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dükkâna şu anda ulaşılamıyor. Lütfen internet bağlantını kontrol et."
+          }
+        }
+      }
+    },
+    "Videos for helpers stay, whenever you want one" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yardımcı videoları kalır, istediğin zaman izleyebilirsin"
+          }
+        }
+      }
+    },
+    "Buy for %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın al: %@"
+          }
+        }
+      }
+    },
+    "Bought" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın alındı"
+          }
+        }
+      }
+    },
+    "Waiting for approval. It arrives as soon as it's approved." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onay bekleniyor. Onaylanır onaylanmaz gelecek."
+          }
+        }
+      }
+    },
+    "Welcome bundle" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoş geldin paketi"
+          }
+        }
+      }
+    },
+    "Best value" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En avantajlı"
+          }
+        }
+      }
+    },
+    "No ads between levels or under the board" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bölümler arasında ve bulmacanın altında reklam yok"
+          }
+        }
+      }
+    },
+    "%lld grandma helpers" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld grandma helper"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld grandma helpers"
+                }
+              }
+            }
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld nine yardımı"
+          }
+        }
+      }
+    },
+    "%lld cat hints and %lld grandma helpers" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld kedi ipucu ve %2$lld nine yardımı"
+          }
+        }
+      }
     }
   },
   "version" : "1.1"

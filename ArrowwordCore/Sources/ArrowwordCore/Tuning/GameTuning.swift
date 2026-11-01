@@ -36,6 +36,8 @@ public struct GameTuning: Equatable, Sendable {
     /// from the server while the launch date isn't certain; see
     /// `DailyDay.firstDay` for why it mustn't change after launch.
     public var dailyFirstDay = DailyDay.firstDay
+    /// What each helper pack and the welcome bundle give in the shop.
+    public var shop = ShopPacks.standard
 
     public init() {}
 
@@ -65,6 +67,12 @@ public struct GameTuning: Equatable, Sendable {
         case reviewMinLevels = "review_min_levels"
         case reminderAskMinLevels = "reminder_ask_min_levels"
         case dailyFirstDay = "daily_first_day"
+        case shopCatHintsSmall = "shop_cat_hints_small"
+        case shopCatHintsBig = "shop_cat_hints_big"
+        case shopGrandmasSmall = "shop_grandmas_small"
+        case shopGrandmasBig = "shop_grandmas_big"
+        case shopBundleHints = "shop_bundle_hints"
+        case shopBundleGrandmas = "shop_bundle_grandmas"
     }
 
     /// Builds the tuning from server values, looked up by key.
@@ -142,6 +150,27 @@ public struct GameTuning: Equatable, Sendable {
                 reader.reject([firstDay])
             }
         }
+
+        // The shop's packs. Each pack must give at least one helper (a pack
+        // of nothing would be a purchase for nothing); the bundle may give
+        // none, since it also removes ads. The caps are typos guards, far
+        // above anything sensible.
+        tuning.shop.catHintsSmall = JarReward(
+            hints: reader.integer(.shopCatHintsSmall, in: 1...1_000).value ?? tuning.shop.catHintsSmall.hints, grandmas: 0
+        )
+        tuning.shop.catHintsBig = JarReward(
+            hints: reader.integer(.shopCatHintsBig, in: 1...1_000).value ?? tuning.shop.catHintsBig.hints, grandmas: 0
+        )
+        tuning.shop.grandmasSmall = JarReward(
+            hints: 0, grandmas: reader.integer(.shopGrandmasSmall, in: 1...500).value ?? tuning.shop.grandmasSmall.grandmas
+        )
+        tuning.shop.grandmasBig = JarReward(
+            hints: 0, grandmas: reader.integer(.shopGrandmasBig, in: 1...500).value ?? tuning.shop.grandmasBig.grandmas
+        )
+        tuning.shop.welcomeBundle = JarReward(
+            hints: reader.integer(.shopBundleHints, in: 0...1_000).value ?? tuning.shop.welcomeBundle.hints,
+            grandmas: reader.integer(.shopBundleGrandmas, in: 0...500).value ?? tuning.shop.welcomeBundle.grandmas
+        )
 
         return (tuning, reader.ignored)
     }

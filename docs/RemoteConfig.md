@@ -100,6 +100,30 @@ Store Connect, the day you press Release), and the app's default
 first launch offline agrees. Daily pack 1 then covers the first 100 days.
 **After launch:** leave it alone.
 
+## Shop
+
+What each pack in the shop gives (`ShopPacks`, docs/Monetization.md).
+Prices aren't here: they're set in App Store Connect. Together, a pack can
+be re-balanced after launch without an app update.
+
+The shop shows and delivers with the same values, so changing one changes
+what the next buyer sees and gets. A purchase already made keeps what it
+gave. The App Store's product names have no numbers in them on purpose
+("Small Cat Hint Pack"), so they never go stale.
+
+| Key | What it controls | Default | Allowed |
+| --- | --- | --- | --- |
+| `shop_cat_hints_small` | Cat hints in the small cat pack | 15 | 1–1000 |
+| `shop_cat_hints_big` | Cat hints in the big cat pack | 50 | 1–1000 |
+| `shop_grandmas_small` | Grandma helpers in the small grandma pack | 5 | 1–500 |
+| `shop_grandmas_big` | Grandma helpers in the big grandma pack | 15 | 1–500 |
+| `shop_bundle_hints` | Cat hints in the welcome bundle (which also removes ads) | 30 | 0–1000 |
+| `shop_bundle_grandmas` | Grandma helpers in the welcome bundle | 5 | 0–500 |
+
+Keep the big packs cheaper per helper than the small ones, and the
+bundle's helpers worth more than its extra price over "Remove ads"
+(€2 at launch); otherwise the bigger choice looks like a bad deal.
+
 ## Fixed in code (not remote)
 
 - Wait between rating prompts: 120 days (`ReviewPromptRules`).

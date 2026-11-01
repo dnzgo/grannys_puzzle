@@ -159,6 +159,53 @@
           "valueType": "NUMBER"
         }
       }
+    },
+    "Shop": {
+      "description": "What each shop pack gives. Prices are set in App Store Connect.",
+      "parameters": {
+        "shop_cat_hints_small": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Cat hints in the small cat pack. Default 15, allowed 1-1000.",
+          "valueType": "NUMBER"
+        },
+        "shop_cat_hints_big": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Cat hints in the big cat pack. Default 50, allowed 1-1000.",
+          "valueType": "NUMBER"
+        },
+        "shop_grandmas_small": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Grandma helpers in the small grandma pack. Default 5, allowed 1-500.",
+          "valueType": "NUMBER"
+        },
+        "shop_grandmas_big": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Grandma helpers in the big grandma pack. Default 15, allowed 1-500.",
+          "valueType": "NUMBER"
+        },
+        "shop_bundle_hints": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Cat hints in the welcome bundle (also removes ads). Default 30, allowed 0-1000.",
+          "valueType": "NUMBER"
+        },
+        "shop_bundle_grandmas": {
+          "defaultValue": {
+            "useInAppDefault": true
+          },
+          "description": "Grandma helpers in the welcome bundle. Default 5, allowed 0-500.",
+          "valueType": "NUMBER"
+        }
+      }
     }
   }
 }

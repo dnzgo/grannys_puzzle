@@ -63,6 +63,11 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
     public var streakSaveDeclinedDay: Int?
     /// Totals for the achievements (see PlayStats.swift).
     public var stats: PlayStats
+    /// Purchases whose helpers have been given, by a key the app makes from
+    /// the App Store transaction (see `grantPurchase`). Saved with the
+    /// helpers themselves, so "given" and "in the counters" can never
+    /// disagree after a crash.
+    public var grantedPurchases: Set<String> = []
 
     /// The language being played. Not saved: the app sets it at launch
     /// from the pack it loads (which follows the device language), and
@@ -132,6 +137,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         case rewardedAdDay, rewardedAdsThatDay, daily
         case streakDays, lastStreakDay, streakSaveDeclinedDay
         case stats
+        case grantedPurchases
         // Version 1 only; read when converting, never written.
         case levelNumber, board
     }
@@ -168,6 +174,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         var stats = try container.decodeIfPresent(PlayStats.self, forKey: .stats) ?? PlayStats()
         stats.longestStreak = max(stats.longestStreak, streakDays)
         self.stats = stats
+        grantedPurchases = try container.decodeIfPresent(Set<String>.self, forKey: .grantedPurchases) ?? []
 
         if let levelNumbers = try container.decodeIfPresent([String: Int].self, forKey: .levelNumbers) {
             self.levelNumbers = levelNumbers
@@ -207,6 +214,7 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         try container.encodeIfPresent(lastStreakDay, forKey: .lastStreakDay)
         try container.encodeIfPresent(streakSaveDeclinedDay, forKey: .streakSaveDeclinedDay)
         try container.encode(stats, forKey: .stats)
+        try container.encode(grantedPurchases, forKey: .grantedPurchases)
     }
 
     /// What a brand-new player starts with.
@@ -289,6 +297,25 @@ public struct PlayerProgress: Codable, Equatable, Sendable {
         for color in balls {
             yarn[color, default: 0] += 1
         }
+    }
+
+    // MARK: - Purchases
+
+    /// Adds a purchase's helpers, once per `key`.
+    ///
+    /// The App Store can hand the same purchase over more than once: a pack
+    /// bought just before a crash comes back at the next launch, and a
+    /// bundle comes back with every "Restore purchases". Keyed by the
+    /// purchase, a repeat adds nothing, so the app can simply deliver
+    /// whatever the App Store gives it.
+    ///
+    /// - Returns: whether the helpers were added (false for a repeat).
+    @discardableResult
+    public mutating func grantPurchase(_ key: String, _ reward: JarReward) -> Bool {
+        guard grantedPurchases.insert(key).inserted else { return false }
+        hints += reward.hints
+        grandmas += reward.grandmas
+        return true
     }
 
     // MARK: - Knitting

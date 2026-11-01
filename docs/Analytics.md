@@ -63,6 +63,15 @@ or `ad_offer_cancel`.
 | `reminder_ask_declined` | "Not now" to grandma's own question | — | Whether her question is put at the right moment |
 | `reminder_opened` | A reminder was tapped and opened the game | ★`kind`: `jar`, `streak`, `streak_save`, `unfinished`, `knit`, `yarn`, `daily`, `miss_you` | Which reminders bring players back |
 
+## Shop
+
+| Event | When | Parameters | Answers |
+| --- | --- | --- | --- |
+| `store_opened` | The shop card opens (the stall in grandma's room) | `level` | How many look at the shop, and how far into the game |
+| `store_purchase` | The Buy button's result | ★`product` (`welcome_bundle`, `remove_ads`, `cat_hints_small`, `cat_hints_big`, `grandmas_small`, `grandmas_big`), ★`outcome`: `purchased`, `cancelled`, `pending`, `failed`, `level` | How many who look buy, and at which level. Revenue comes from App Store Connect, not from here |
+| `store_delivered` | A purchase's helpers were added: at the purchase, or later (a parent's approval, the bundle restored on a new phone) | ★`product`, `hints`, `grandmas` | Helpers sold, with the amounts tuning gave at the time |
+| `store_restore` | "Restore purchases" was tapped | ★`outcome`: `restored`, `nothing`, `failed` | Whether restoring works, and how often it's needed |
+
 ## Rating and tutorial
 
 | Event | When | Parameters | Answers |

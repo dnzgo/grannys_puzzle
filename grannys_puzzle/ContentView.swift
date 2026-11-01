@@ -53,6 +53,8 @@ struct ContentView: View {
                 .environment(game.reminders)
                 // And its Achievements row, Game Center.
                 .environment(game.gameCenter)
+                // The shop card and the level's banner slot ("Remove ads").
+                .environment(game.purchases)
                 // Every `Text` below looks its words up in this locale.
                 .environment(\.locale, (AppLanguage(rawValue: languageCode) ?? .english).locale)
                 .onChange(of: languageCode) { _, newCode in
@@ -148,6 +150,9 @@ private enum Startup {
         // First, before the ads controller exists: Google's consent check
         // (which the home screen starts) must find Firebase running.
         let services = ServicesSetup.start()
+        // Started once the game exists (below), since delivering a pack
+        // needs somewhere to put the helpers.
+        let purchases = Purchases()
         do {
             let language = AppLanguage.current.rawValue
             let content = try LevelLoader.content(for: language)
@@ -160,9 +165,17 @@ private enum Startup {
                 ads: AdsSetup.makeController(),
                 reminders: Reminders(scheduler: SystemReminderScheduler()),
                 gameCenter: GameCenter(),
+                purchases: purchases,
                 services: services,
                 loadContent: LevelLoader.content(for:)
             )
+            // As early as possible: a purchase that finished while the app
+            // was closed (a parent's approval, a crash mid-purchase) is
+            // delivered as soon as this listens. Weak, so Purchases holding
+            // the closure doesn't keep the game alive in a loop with it.
+            purchases.start { [weak game] item, key in
+                game?.deliverPurchase(item, key: key) ?? false
+            }
             game.startTutorialIfNeeded()
             #if DEBUG
             game.applyDebugLaunchOptions()

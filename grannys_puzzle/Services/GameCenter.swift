@@ -30,6 +30,9 @@ final class GameCenter {
     /// Progress handed over before sign-in finished; sent once it has.
     @ObservationIgnored private var pending: [AchievementProgress] = []
     @ObservationIgnored private var hasStartedSignIn = false
+    /// A daily score handed over before sign-in finished; sent once it has,
+    /// if its day's leaderboard is still the current one.
+    @ObservationIgnored private var pendingDailyScore: DailyScoreReport?
     @ObservationIgnored private let logger = Logger(subsystem: "grannys_puzzle", category: "gamecenter")
 
     /// Signs the player in, once per launch. Apple decides whether to show
@@ -56,7 +59,13 @@ final class GameCenter {
                     self.logger.info("Game Center not available: \(error.localizedDescription, privacy: .public)")
                 }
                 self.isSignedIn = GKLocalPlayer.local.isAuthenticated
-                if self.isSignedIn { await self.loadKnownProgress() }
+                if self.isSignedIn {
+                    if let waiting = self.pendingDailyScore {
+                        self.pendingDailyScore = nil
+                        self.submitDailyScore(waiting)
+                    }
+                    await self.loadKnownProgress()
+                }
             }
         }
     }
@@ -90,6 +99,42 @@ final class GameCenter {
                 await self.loadKnownProgress()
             }
         }
+    }
+
+    /// Sends a daily score to its language's leaderboard.
+    ///
+    /// Safe to send again: Game Center keeps each player's best score per
+    /// leaderboard period, so `Game` simply re-sends today's at every
+    /// sign-in, which also retries one that failed (offline, say) without
+    /// the game having to remember what got through.
+    ///
+    /// The day is checked because the leaderboards are recurring and reset
+    /// at 00:00 UTC, with the daily puzzle: a score held past midnight
+    /// would land on the next day's board, ranked against a puzzle the
+    /// player never played.
+    func submitDailyScore(_ report: DailyScoreReport) {
+        guard report.day == DailyDay.number() else { return }
+        guard isSignedIn else {
+            pendingDailyScore = report
+            return
+        }
+        GKLeaderboard.submitScore(
+            report.score, context: 0, player: GKLocalPlayer.local,
+            leaderboardIDs: [Self.dailyLeaderboardID(language: report.language)]
+        ) { [weak self] error in
+            guard let error else { return }
+            Task { @MainActor in
+                // Not retried here: the next launch's sign-in sends it again.
+                self?.logger.error("Submitting the daily score failed: \(error.localizedDescription, privacy: .public)")
+            }
+        }
+    }
+
+    /// One leaderboard per language (docs/Achievements.md): the English
+    /// and Turkish dailies are different puzzles, so their scores can't be
+    /// ranked together. Must match the IDs in App Store Connect.
+    static func dailyLeaderboardID(language: String) -> String {
+        "grannyspuzzle.daily.\(language)"
     }
 
     /// Apple's achievements screen (Settings → Achievements).
@@ -135,4 +180,12 @@ final class GameCenter {
         while let presented = top?.presentedViewController { top = presented }
         top?.present(viewController, animated: true)
     }
+}
+
+/// A daily score on its way to Game Center: which day it's for (a
+/// `DailyDay` number), which language's leaderboard, and the points.
+struct DailyScoreReport: Equatable {
+    let day: Int
+    let language: String
+    let score: Int
 }

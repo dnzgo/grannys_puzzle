@@ -194,6 +194,50 @@ extension AnalyticsEvent {
         AnalyticsEvent("reminder_opened", ["kind": .string(kind)])
     }
 
+    // MARK: - Shop
+
+    /// The shop card opened. With `store_purchase`, how many who look end
+    /// up buying, and at which level they look.
+    static func storeOpened(level: Int) -> AnalyticsEvent {
+        AnalyticsEvent("store_opened", ["level": .int(level)])
+    }
+
+    /// The Buy button's result. Revenue itself comes from App Store
+    /// Connect's reports (Apple's numbers are the ones that get paid out).
+    static func storePurchase(item: ShopItem, outcome: Purchases.PurchaseOutcome, level: Int) -> AnalyticsEvent {
+        let name = switch outcome {
+        case .purchased: "purchased"
+        case .cancelled: "cancelled"
+        case .pending: "pending"
+        case .failed: "failed"
+        }
+        return AnalyticsEvent("store_purchase", [
+            "product": .string(item.analyticsName),
+            "outcome": .string(name),
+            "level": .int(level),
+        ])
+    }
+
+    /// Helpers from a purchase were added: at the purchase, or later (a
+    /// parent's approval, a restored bundle on a new phone). Counts what was
+    /// actually handed over, with the amounts tuning gave at the time.
+    static func storeDelivered(item: ShopItem, reward: JarReward) -> AnalyticsEvent {
+        AnalyticsEvent("store_delivered", [
+            "product": .string(item.analyticsName),
+            "hints": .int(reward.hints),
+            "grandmas": .int(reward.grandmas),
+        ])
+    }
+
+    static func storeRestore(outcome: Purchases.RestoreOutcome) -> AnalyticsEvent {
+        let name = switch outcome {
+        case .restored: "restored"
+        case .nothingToRestore: "nothing"
+        case .failed: "failed"
+        }
+        return AnalyticsEvent("store_restore", ["outcome": .string(name)])
+    }
+
     // MARK: - Ratings
 
     /// The game asked iOS for the rating prompt at this moment. iOS decides
