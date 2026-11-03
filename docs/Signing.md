@@ -46,8 +46,18 @@ updates the entitlements file); check the same lines afterwards.
 Archive with the Release configuration (Product → Archive), then
 Organizer → Distribute App → App Store Connect. The archive is signed with
 the Apple Development certificate; Xcode re-signs it with the Apple
-Distribution certificate during the upload, so that certificate (with its
-private key) must be in the keychain.
+Distribution certificate during the upload.
+
+**That certificate must be in this Mac's keychain** (Xcode → Settings →
+Accounts → team → Manage Certificates → + → Apple Distribution). Without
+one, Xcode falls back to a "Cloud Managed Apple Distribution" certificate,
+and the upload fails with ITMS-90035 "Invalid Signature" on every binary.
+The cause is the "ö" in the account name: with cloud signing, Xcode writes
+the certificate name into each signature's rule in decomposed form (`o` +
+U+0308) while the certificate has the composed `ö`, so Apple sees no match.
+A local certificate doesn't have this problem. When moving to a new Mac,
+export the certificate with its private key from Keychain Access (.p12),
+or create a new one.
 
 "Upload Symbols Failed" warnings for Google's frameworks (FirebaseAnalytics,
 GoogleMobileAds, UserMessagingPlatform, …) are expected: Google ships them
