@@ -1,8 +1,13 @@
 #!/bin/bash
-# Makes a language's level packs (10) and daily packs (4), exactly as
-# shipped: the same command always gives the same packs. About an hour.
+# Makes a language's level packs and daily packs, exactly as shipped: the
+# same command always gives the same packs. About 5 minutes a pack.
 #
-#   scripts/make-packs.sh en
+#   scripts/make-packs.sh en         10 level packs, 4 daily packs
+#   scripts/make-packs.sh tr 2 2     2 level packs, 2 daily packs
+#
+# Fewer packs for a smaller word list: the more levels one list has to
+# fill, the more often its words come back. The counts are the shipped
+# ones (docs/LevelDelivery.md), so a rebuild gives the same packs.
 #
 # Each pack is made in pieces of 20 levels, each with its own seed, and each
 # piece remembers the pieces before it (--after): recently used words are
@@ -12,12 +17,11 @@
 # Pack 1's first 20 levels use only data/<lang>/starter-words.txt (everyday
 # words), on small boards: the first impression should be easy.
 #
-# Output: data/<lang>/packs/<lang>-001.json … -010.json and
-# daily-<lang>-001.json … -004.json. Then copy pack 1 and daily pack 1 into
+# Output: data/<lang>/packs/<lang>-001.json … and daily-<lang>-001.json …. Then copy pack 1 and daily pack 1 into
 # grannys_puzzle/Levels/, and the others into Firebase/public/packs/
 # (docs/LevelDelivery.md).
 set -euo pipefail
-lang=${1:?usage: scripts/make-packs.sh <lang>}
+lang=${1:?usage: scripts/make-packs.sh <lang> [level packs] [daily packs]}
 cd "$(dirname "$0")/.."
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
@@ -42,8 +46,8 @@ piece() {
   mv "data/$lang/packs/$name.json" "$work/$name.json"
 }
 
-packs=10          # normal packs: pack 1 ships in the app, the rest online
-daily_packs=4     # 400 dailies: a year and a month; every pack full
+packs=${2:-10}         # normal packs: pack 1 ships in the app, the rest online
+daily_packs=${3:-4}    # English: 400 dailies, a year and a month; every pack full
 
 # Pack 1: an easy start, then the usual boards with a shaped one every 10th.
 # Every later pack carries on from all the levels before it.

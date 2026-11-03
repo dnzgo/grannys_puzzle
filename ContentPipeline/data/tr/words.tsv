@@ -1,1907 +1,3800 @@
 word	familiarity	part_of_speech	definition
-ABLA	10	noun	Büyük kız kardeş
-ABİ	10	noun	Ağabey
-ACELE	10	noun	Telaş
-ACEMİ	10	adjective	Tecrübesiz
-ACI	10	adjective	Tatlı karşıtı
-ACIMAK	10	verb	Ağrımak
-ACİL	10	adjective	İvedi
-AD	10	noun	İsim
-ADA	10	noun	Etrafı su
-ADAM	10	noun	Erkek kişi
-ADIM	10	noun	Yürürken atılır
-ADRES	10	noun	Konum bilgisi
-AK	10	adjective	Beyaz
-AKIL	10	noun	Us
-AKILLI	10	adjective	Zeki
-AKRABA	10	noun	Hısım
-AKŞAM	10	noun	Gün batımı
-ALAN	10	noun	Saha
-ALET	10	noun	Araç
-ALEV	10	noun	Ateş dili
-ALKIŞ	10	noun	El çırpma
-ALMAK	10	verb	Vermek karşıtı
-ALO	10	other	Telefon sözü
-ALT	10	noun	Üst karşıtı
-ALTI	10	other	Beşten sonra
-ALTIN	10	noun	Sarı maden
-ALÇAK	10	adjective	Yüksek karşıtı
-AMA	10	other	Fakat
-AMAÇ	10	noun	Hedef
-AMCA	10	noun	Babanın kardeşi
-AMPUL	10	noun	Lamba camı
-ANA	10	noun	Anne
-ANAHTAR	10	noun	Kilidi açar
-ANI	10	noun	Hatıra
-ANIT	10	noun	Abide
-ANLAM	10	noun	Mana
-ANNE	10	noun	Ana
-ANİDEN	10	adverb	Birdenbire
-ARABA	10	noun	Otomobil
-ARALIK	10	noun	Son ay
-ARAMAK	10	verb	Bulmaya çalışmak
-ARAÇ	10	noun	Alet
-ARI	10	noun	Bal yapan böcek
-ARIZA	10	noun	Bozukluk
-ARKA	10	noun	Ön karşıtı
-ARKADAŞ	10	noun	Dost
-ARMAĞAN	10	noun	Hediye
-ARMUT	10	noun	Sulu meyve
-ARPA	10	noun	Tahıl
-ARTMAK	10	verb	Çoğalmak
-ARZU	10	noun	İstek
-ASLAN	10	noun	Ormanlar kralı
-ASMAK	10	verb	Çiviye takmak
-AT	10	noun	Binek hayvanı
-ATEŞ	10	noun	Alev
-ATKI	10	noun	Boyna sarılır
-ATLAS	10	noun	Harita kitabı
-ATMAK	10	verb	Fırlatmak
-AY	10	noun	Dünyanın uydusu
-AYAK	10	noun	Yürüme organı
-AYAKKABI	10	noun	Ayağa giyilir
-AYI	10	noun	Bal sever hayvan
-AYNA	10	noun	Yansıtan cam
-AYRAN	10	noun	Yoğurtlu içecek
-AYVA	10	noun	Tüylü meyve
-AZ	10	adjective	Çok değil
-AÇ	10	adjective	Tok karşıtı
-AÇIK	10	adjective	Kapalı karşıtı
-AÇMAK	10	verb	Kapamak karşıtı
-AĞABEY	10	noun	Büyük kardeş
-AĞAÇ	10	noun	Gövdeli bitki
-AĞIR	10	adjective	Hafif karşıtı
-AĞIZ	10	noun	Dudakların yeri
-AĞLAMAK	10	verb	Gözyaşı dökmek
-AĞRI	10	noun	Sızı
-AĞUSTOS	10	noun	Sekizinci ay
-AİLE	10	noun	Ana baba çocuk
-AŞI	10	noun	Hastalığa karşı iğne
-AŞK	10	noun	Büyük sevgi
-AŞÇI	10	noun	Yemek ustası
-BABA	10	noun	Peder
-BACA	10	noun	Duman yolu
-BACAK	10	noun	Kalçadan ayağa
-BAHAR	10	noun	İlkbahar
-BAHÇE	10	noun	Çiçek ekilen yer
-BAKIŞ	10	noun	Nazar
-BAKKAL	10	noun	Mahalle dükkânı
-BAKLAVA	10	noun	Şerbetli tatlı
-BAKMAK	10	verb	Göz atmak
-BAL	10	noun	Arının ürünü
-BALIK	10	noun	Suda yaşar
-BALKON	10	noun	Evin çıkıntısı
-BALON	10	noun	Şişirilen oyuncak
-BALTA	10	noun	Odun kesici
-BALİNA	10	noun	Dev deniz memelisi
-BANYO	10	noun	Yıkanma yeri
-BARAJ	10	noun	Su seti
-BARDAK	10	noun	Su içilir
-BARIŞ	10	noun	Sulh
-BASAMAK	10	noun	Merdiven adımı
-BASKI	10	noun	Tazyik
-BASMAK	10	verb	Ayakla çiğnemek
-BASİT	10	adjective	Kolay
-BATI	10	noun	Doğu karşıtı
-BATMAK	10	verb	Suya gömülmek
-BAVUL	10	noun	Yolculuk çantası
-BAYAN	10	noun	Hanım
-BAYAT	10	adjective	Taze değil
-BAYKUŞ	10	noun	Gece kuşu
-BAYRAK	10	noun	Sancak
-BAYRAM	10	noun	Kutlama günü
-BAĞ	10	noun	Üzüm bahçesi
-BAĞIŞ	10	noun	Hibe
-BAŞ	10	noun	Kafa
-BEBEK	10	noun	Yeni doğan
-BEDAVA	10	adjective	Ücretsiz
-BEDEL	10	noun	Fiyat
-BEDEN	10	noun	Vücut
-BEKAR	10	adjective	Evlenmemiş
-BEKÇİ	10	noun	Gece nöbetçisi
-BEL	10	noun	Kalça üstü
-BELGE	10	noun	Doküman
-BELKİ	10	adverb	Olabilir
-BEN	10	other	Kendim
-BENZİN	10	noun	Yakıt
-BERBER	10	noun	Saç keser
-BEYAZ	10	adjective	Ak
-BEYİN	10	noun	Düşünme organı
-BEZ	10	noun	Kumaş parçası
-BEŞ	10	other	Dörtten sonra
-BIYIK	10	noun	Dudak üstü kıl
-BIÇAK	10	noun	Kesici araç
-BODRUM	10	noun	Yer altı katı
-BOL	10	adjective	Çok
-BONCUK	10	noun	Delikli süs
-BORÇ	10	noun	Ödenecek para
-BOY	10	noun	Uzunluk
-BOYA	10	noun	Renk verir
-BOYUN	10	noun	Baş ile gövde arası
-BOYUT	10	noun	Ebat
-BOZUK	10	adjective	Arızalı
-BOĞAZ	10	noun	Gırtlak
-BOŞ	10	adjective	Dolu karşıtı
-BOŞLUK	10	noun	Açıklık
-BU	10	other	Şu değil
-BUGÜN	10	adverb	Şimdiki gün
-BUHAR	10	noun	Kaynayan sudan
-BULAŞIK	10	noun	Kirli tabak
-BULGUR	10	noun	Kırık buğday
-BULMACA	10	noun	Kare kare çözülür
-BULMAK	10	verb	Aramanın sonu
-BULUT	10	noun	Gökteki pamuk
-BURUN	10	noun	Koku organı
-BUZ	10	noun	Donmuş su
-BUĞDAY	10	noun	Un yapılır
-BÖCEK	10	noun	Küçük canlı
-BÖLGE	10	noun	Yöre
-BÖLMEK	10	verb	Parçalamak
-BÖREK	10	noun	Yufkalı yiyecek
-BÜTÜN	10	adjective	Tüm
-BÜYÜK	10	adjective	Küçük karşıtı
-BÜYÜMEK	10	verb	Gelişmek
-BİBER	10	noun	Acı veya tatlı
-BİLET	10	noun	Giriş kâğıdı
-BİLGİ	10	noun	Malumat
-BİLMEK	10	verb	Öğrenmiş olmak
-BİLİM	10	noun	İlim
-BİN	10	other	On kere yüz
-BİNA	10	noun	Yapı
-BİNMEK	10	verb	Ata çıkmak
-BİR	10	other	İlk sayı
-BİRAZ	10	adverb	Az miktar
-BİRLİK	10	noun	Beraberlik
-BİTKİ	10	noun	Yeşil canlı
-BİTMEK	10	verb	Sona ermek
-BİTİŞ	10	noun	Son
-BİZ	10	other	Siz değil
-CACIK	10	noun	Yoğurtlu salatalık
-CADDE	10	noun	Geniş yol
-CADI	10	noun	Süpürgeli kadın
-CAM	10	noun	Pencere malzemesi
-CAMİ	10	noun	Minareli yapı
-CAN	10	noun	Ruh
-CANLI	10	adjective	Diri
-CEKET	10	noun	Üste giyilir
-CEP	10	noun	Para konan yer
-CESUR	10	adjective	Yürekli
-CEVAP	10	noun	Yanıt
-CEVİZ	10	noun	Sert kabuklu
-CEZA	10	noun	Yaptırım
-CUMA	10	noun	Perşembeden sonra
-CÜMLE	10	noun	Tümce
-CÜZDAN	10	noun	Para kesesi
-CİMRİ	10	adjective	Eli sıkı
-CİVAR	10	noun	Çevre
-DAKİKA	10	noun	Altmış saniye
-DAL	10	noun	Ağaç kolu
-DALGA	10	noun	Deniz kabarması
-DAMAT	10	noun	Gelinin eşi
-DAMLA	10	noun	Su tanesi
-DANA	10	noun	Sığır yavrusu
-DANS	10	noun	Raks
-DAR	10	adjective	Geniş karşıtı
-DAVET	10	noun	Çağrı
-DAVUL	10	noun	Tokmakla çalınır
-DAYI	10	noun	Annenin kardeşi
-DAĞ	10	noun	Yüksek tepe
-DAİRE	10	noun	Çember
-DEDE	10	noun	Büyükbaba
-DEFA	10	noun	Kere
-DEFTER	10	noun	Yazı yazılır
-DELİ	10	adjective	Akılsız
-DELİK	10	noun	Oyuk
-DEMEK	10	verb	Söylemek
-DEMİR	10	noun	Sert maden
-DENEMEK	10	verb	Sınamak
-DENEY	10	noun	Tecrübe
-DENGE	10	noun	Muvazene
-DENİZ	10	noun	Tuzlu su
-DERE	10	noun	Küçük akarsu
-DERECE	10	noun	Mertebe
-DERGİ	10	noun	Mecmua
-DERS	10	noun	Okulda işlenir
-DERT	10	noun	Sıkıntı
-DERİ	10	noun	Cilt
-DERİN	10	adjective	Sığ karşıtı
-DETAY	10	noun	Ayrıntı
-DEVAM	10	noun	Süreklilik
-DEVE	10	noun	Hörgüçlü hayvan
-DEVLET	10	noun	Ülke yönetimi
-DEĞER	10	noun	Kıymet
-DEĞİRMEN	10	noun	Un öğütür
-DIŞ	10	noun	İç karşıtı
-DIŞARI	10	adverb	Dış taraf
-DOKTOR	10	noun	Hekim
-DOKUZ	10	other	Sekizden sonra
-DOLAP	10	noun	Eşya konur
-DOLMA	10	noun	İçi doldurulur
-DOLMAK	10	verb	Boş kalmamak
-DOLU	10	adjective	Boş karşıtı
-DOMATES	10	noun	Salçası yapılır
-DONDURMA	10	noun	Soğuk tatlı
-DONMAK	10	verb	Buz tutmak
-DOST	10	noun	Arkadaş
-DOĞA	10	noun	Tabiat
-DOĞRU	10	adjective	Yanlış karşıtı
-DOĞUM	10	noun	Dünyaya gelme
-DUDAK	10	noun	Ağız kenarı
-DUMAN	10	noun	Ateşten çıkar
-DURAK	10	noun	Otobüs bekleme yeri
-DURMAK	10	verb	Hareketsiz kalmak
-DUT	10	noun	Ağaçta olan meyve
-DUVAR	10	noun	Örülmüş taş
-DUYGU	10	noun	His
-DUYMAK	10	verb	İşitmek
-DUŞ	10	noun	Banyoda yıkanma
-DÖKMEK	10	verb	Akıtmak
-DÖNEM	10	noun	Devre
-DÖNMEK	10	verb	Geri gelmek
-DÖRT	10	other	Üçten sonra
-DÜDÜK	10	noun	Öten alet
-DÜKKAN	10	noun	Mağaza
-DÜN	10	adverb	Bugünden önce
-DÜNYA	10	noun	Yerküre
-DÜRÜST	10	adjective	Doğru sözlü
-DÜZ	10	adjective	Eğri değil
-DÜZEN	10	noun	Nizam
-DÜĞME	10	noun	İlik ile kapanır
-DÜĞÜN	10	noun	Evlilik töreni
-DÜŞMEK	10	verb	Yere yığılmak
-DÜŞÜNCE	10	noun	Fikir
-DİKKAT	10	noun	Özen
-DİKMEK	10	verb	İğneyle tutturmak
-DİKİŞ	10	noun	İğne işi
-DİL	10	noun	Lisan
-DİLEK	10	noun	İstek
-DİLİM	10	noun	Kesilmiş parça
-DİP	10	noun	Alt
-DİREK	10	noun	Sütun
-DİZ	10	noun	Bacak eklemi
-DİZİ	10	noun	Sıra
-DİŞ	10	noun	Ağızda olur
-ECZANE	10	noun	İlaç satılır
-EFSANE	10	noun	Mit
-EKMEK	10	noun	Fırından alınır
-EKRAN	10	noun	Görüntü yüzeyi
-EKİM	10	noun	Onuncu ay
-EKİP	10	noun	Takım
-EKŞİ	10	adjective	Limon tadı
-EL	10	noun	Parmakların yeri
-ELBİSE	10	noun	Kıyafet
-ELDİVEN	10	noun	Ele giyilir
-ELLİ	10	other	Yarım yüz
-ELMA	10	noun	Kırmızı meyve
-ENERJİ	10	noun	Güç
-ENGEL	10	noun	Mani
-ERKEK	10	noun	Adam
-ERKEN	10	adverb	Geç karşıtı
-ERİK	10	noun	Ekşi meyve
-ESER	10	noun	Yapıt
-ESKİ	10	adjective	Yeni karşıtı
-ESİNTİ	10	noun	Hafif rüzgâr
-ET	10	noun	Kasap satar
-ETEK	10	noun	Kadın giysisi
-ETKİ	10	noun	Tesir
-ETMEK	10	verb	Yapmak
-ETİKET	10	noun	Fiyat kâğıdı
-EV	10	noun	Yuva
-EVET	10	other	Hayır karşıtı
-EVLİLİK	10	noun	Nikâh
-EVREN	10	noun	Kâinat
-EYLÜL	10	noun	Dokuzuncu ay
-EZBER	10	noun	Hafıza işi
-EĞRİ	10	adjective	Düz karşıtı
-EŞ	10	noun	Karı veya koca
-EŞEK	10	noun	Anırır
-EŞYA	10	noun	Mal
-EŞİT	10	adjective	Denk
-FABRİKA	10	noun	İmalathane
-FAKİR	10	adjective	Yoksul
-FAR	10	noun	Araba lambası
-FARE	10	noun	Kedinin avı
-FARK	10	noun	Ayrım
-FASULYE	10	noun	Kuru veya taze
-FAYDA	10	noun	Yarar
-FENA	10	adjective	Kötü
-FENER	10	noun	Taşınan lamba
-FINDIK	10	noun	Karadeniz ürünü
-FIRIN	10	noun	Ekmek pişer
-FIRSAT	10	noun	Şans
-FIRTINA	10	noun	Şiddetli rüzgâr
-FIRÇA	10	noun	Boya aracı
-FORM	10	noun	Biçim
-FİKİR	10	noun	Düşünce
-FİL	10	noun	Hortumlu hayvan
-FİLM	10	noun	Sinemada oynar
-FİNCAN	10	noun	Kahve içilir
-FİYAT	10	noun	Eder
-GAGA	10	noun	Kuş ağzı
-GARİP	10	adjective	Tuhaf
-GAZ	10	noun	Hava gibi madde
-GAZETE	10	noun	Günlük basın
-GAZOZ	10	noun	Köpüklü içecek
-GECE	10	noun	Karanlık vakit
-GELECEK	10	noun	İstikbal
-GELENEK	10	noun	Görenek
-GELMEK	10	verb	Varmak
-GELİN	10	noun	Yeni evli kadın
-GELİR	10	noun	Kazanç
-GEMİ	10	noun	Büyük tekne
-GENÇ	10	adjective	Yaşlı karşıtı
-GENİŞ	10	adjective	Dar karşıtı
-GERÇEK	10	adjective	Hakiki
-GEZGİN	10	noun	Seyyah
-GEZİ	10	noun	Seyahat
-GEÇ	10	adjective	Erken karşıtı
-GEÇİT	10	noun	Dar yol
-GRUP	10	noun	Topluluk
-GRİ	10	adjective	Kül rengi
-GURUR	10	noun	Övünç
-GÖBEK	10	noun	Karın ortası
-GÖK	10	noun	Sema
-GÖL	10	noun	Durgun su
-GÖLGE	10	noun	Güneşte düşer
-GÖMLEK	10	noun	Yakalı giysi
-GÖREV	10	noun	Vazife
-GÖRMEK	10	verb	Göz ile algılamak
-GÖZ	10	noun	Görme organı
-GÖZLÜK	10	noun	Camlı çerçeve
-GÖĞÜS	10	noun	Bağır
-GÜL	10	noun	Dikenli çiçek
-GÜLMEK	10	verb	Kahkaha atmak
-GÜN	10	noun	Yirmi dört saat
-GÜNDÜZ	10	noun	Gece karşıtı
-GÜNEŞ	10	noun	Gündüz yıldızı
-GÜVEN	10	noun	İtimat
-GÜVERCİN	10	noun	Posta kuşu
-GÜZEL	10	adjective	Hoş
-GÜÇ	10	noun	Kuvvet
-GÜÇLÜ	10	adjective	Kuvvetli
-GİDER	10	noun	Masraf
-GİRMEK	10	verb	İçeri geçmek
-GİTMEK	10	verb	Ayrılmak
-GİYSİ	10	noun	Elbise
-GİZLİ	10	adjective	Saklı
-HABER	10	noun	Bilgi
-HAFTA	10	noun	Yedi gün
-HAFİF	10	adjective	Ağır karşıtı
-HAK	10	noun	Adalet
-HALA	10	noun	Babanın kız kardeşi
-HALI	10	noun	Yere serilir
-HAMUR	10	noun	Undan yapılır
-HAP	10	noun	İlaç
-HARF	10	noun	Alfabe ögesi
-HARİTA	10	noun	Yol çizimi
-HASRET	10	noun	Özlem
-HASTA	10	adjective	Sağlıksız
-HASTALIK	10	noun	Rahatsızlık
-HASTANE	10	noun	Şifa yurdu
-HATA	10	noun	Yanlış
-HAVA	10	noun	Teneffüs edilir
-HAVLU	10	noun	Kurulanma bezi
-HAVUZ	10	noun	Yüzme yeri
-HAVUÇ	10	noun	Turuncu sebze
-HAYAL	10	noun	Düş
-HAYAT	10	noun	Yaşam
-HAYIR	10	other	Evet karşıtı
-HAYVAN	10	noun	Canlı varlık
-HAZIR	10	adjective	Hemen kullanılır
-HAZİNE	10	noun	Define
-HAZİRAN	10	noun	Altıncı ay
-HEDEF	10	noun	Amaç
-HEDİYE	10	noun	Armağan
-HELVA	10	noun	Tahin tatlısı
-HEMEN	10	adverb	Derhal
-HEMŞİRE	10	noun	Hastabakıcı
-HEP	10	adverb	Daima
-HER	10	other	Tüm
-HESAP	10	noun	Sayım
-HEYKEL	10	noun	Yontu
-HIRKA	10	noun	Örgü ceket
-HIRSIZ	10	noun	Çalan kişi
-HIZ	10	noun	Sürat
-HIZLI	10	adjective	Süratli
-HOCA	10	noun	Öğretmen
-HOROZ	10	noun	Sabah öter
-HOŞ	10	adjective	Güzel
-HUZUR	10	noun	Rahatlık
-HİKAYE	10	noun	Öykü
-HİLE	10	noun	Oyun
-ISI	10	noun	Sıcaklık
-ISLAK	10	adjective	Kuru karşıtı
-IŞIK	10	noun	Aydınlık
-KABA	10	adjective	Nazik değil
-KABAK	10	noun	Sebze
-KABUK	10	noun	Dış kat
-KADIN	10	noun	Hanım
-KAFA	10	noun	Baş
-KAHKAHA	10	noun	Gürültülü gülme
-KAHRAMAN	10	noun	Yiğit
-KAHVALTI	10	noun	Sabah yemeği
-KAHVE	10	noun	Türk ___
-KALDIRIM	10	noun	Yaya yolu
-KALE	10	noun	Hisar
-KALEM	10	noun	Yazı aracı
-KALIN	10	adjective	İnce karşıtı
-KALIP	10	noun	Döküm modeli
-KALMAK	10	verb	Gitmemek
-KALP	10	noun	Yürek
-KAMYON	10	noun	Yük aracı
-KAN	10	noun	Damarda akar
-KANAL	10	noun	Su yolu
-KANAT	10	noun	Uçma organı
-KANEPE	10	noun	Divan
-KAPAK	10	noun	Örtü
-KAPI	10	noun	Girilen yer
-KAPLAN	10	noun	Çizgili kedi
-KAR	10	noun	Kışın yağar
-KARA	10	adjective	Siyah
-KARAR	10	noun	Hüküm
-KARDEŞ	10	noun	Aynı anneden
-KARGA	10	noun	Siyah kuş
-KARIN	10	noun	Mide bölgesi
-KARINCA	10	noun	Çalışkan böcek
-KARPUZ	10	noun	Yeşil kabuklu
-KART	10	noun	Oyun kâğıdı
-KARTAL	10	noun	Yırtıcı kuş
-KAS	10	noun	Adale
-KASABA	10	noun	Küçük şehir
-KASAP	10	noun	Et satar
-KASE	10	noun	Çanak
-KASIM	10	noun	On birinci ay
-KAT	10	noun	Apartman bölümü
-KAVANOZ	10	noun	Cam kap
-KAVGA	10	noun	Dövüş
-KAVUN	10	noun	Yaz meyvesi
-KAYA	10	noun	Büyük taş
-KAYIK	10	noun	Küçük tekne
-KAYISI	10	noun	Turuncu meyve
-KAYIT	10	noun	Kaydetme
-KAYMAK	10	noun	Süt üstü
-KAZAK	10	noun	Yün giysi
-KAZAN	10	noun	Büyük tencere
-KAZMAK	10	verb	Toprak açmak
-KAÇ	10	other	Soru sözü
-KAÇMAK	10	verb	Firar etmek
-KAŞ	10	noun	Göz üstünde
-KAŞAR	10	noun	Sarı peynir
-KAŞIK	10	noun	Çorba aracı
-KEBAP	10	noun	Şişte et
-KEDİ	10	noun	Miyavlar
-KEK	10	noun	Fırında tatlı
-KELEBEK	10	noun	Renkli kanatlı
-KELİME	10	noun	Sözcük
-KEMAN	10	noun	Yaylı çalgı
-KEMER	10	noun	Bele takılır
-KEMİK	10	noun	İskelet parçası
-KENAR	10	noun	Kıyı
-KENT	10	noun	Şehir
-KESMEK	10	verb	Bıçakla ayırmak
-KEÇİ	10	noun	Meleyen hayvan
-KIR	10	noun	Açık arazi
-KIRK	10	other	Dört kere on
-KIRMAK	10	verb	Parçalamak
-KIRMIZI	10	adjective	Al
-KISA	10	adjective	Uzun karşıtı
-KISIM	10	noun	Bölüm
-KITA	10	noun	Büyük kara
-KIYI	10	noun	Sahil
-KIYMA	10	noun	Çekilmiş et
-KIZAK	10	noun	Karda kayar
-KIŞ	10	noun	Soğuk mevsim
-KOCA	10	noun	Eş
-KOKU	10	noun	Burunla alınır
-KOL	10	noun	Omuzdan ele
-KOLAY	10	adjective	Zor karşıtı
-KOLTUK	10	noun	Oturma yeri
-KOLYE	10	noun	Boyun takısı
-KOMİK	10	adjective	Gülünç
-KOMŞU	10	noun	Yan evdeki
-KONU	10	noun	Mevzu
-KONUK	10	noun	Misafir
-KOPYA	10	noun	Suret
-KORKAK	10	adjective	Ödlek
-KORKU	10	noun	Dehşet
-KORO	10	noun	Toplu şarkı
-KOVA	10	noun	Su taşıma kabı
-KOY	10	noun	Küçük körfez
-KOYMAK	10	verb	Yerleştirmek
-KOYUN	10	noun	Yünü olur
-KOŞMAK	10	verb	Hızlı yürümek
-KOŞU	10	noun	Yarış
-KRALİÇE	10	noun	Hükümdar eşi
-KREM	10	noun	Cilt merhemi
-KULAK	10	noun	Duyma organı
-KULE	10	noun	Yüksek yapı
-KUM	10	noun	Plaj zemini
-KUMAŞ	10	noun	Dokuma
-KUMBARA	10	noun	Para kutusu
-KURABİYE	10	noun	Kuru tatlı
-KURAL	10	noun	Yasa
-KURBAĞA	10	noun	Vıraklar
-KURMAK	10	verb	İnşa etmek
-KURNAZ	10	adjective	Tilki gibi
-KURT	10	noun	Uluyan hayvan
-KURU	10	adjective	Islak karşıtı
-KUTU	10	noun	Kap
-KUYU	10	noun	Su çekilen çukur
-KUZEN	10	noun	Amca çocuğu
-KUZU	10	noun	Koyun yavrusu
-KUĞU	10	noun	Beyaz su kuşu
-KUŞ	10	noun	Uçan hayvan
-KÖFTE	10	noun	Kıyma topu
-KÖK	10	noun	Bitkinin altı
-KÖMÜR	10	noun	Siyah yakıt
-KÖPEK	10	noun	Havlar
-KÖPRÜ	10	noun	Nehir geçidi
-KÖTÜ	10	adjective	İyi karşıtı
-KÖY	10	noun	Kasaba değil
-KÖŞE	10	noun	Kenar birleşimi
-KÜL	10	noun	Yanık artığı
-KÜPE	10	noun	Kulağa takılır
-KÜREK	10	noun	Kazma aracı
-KÜÇÜK	10	adjective	Büyük karşıtı
-KİBRİT	10	noun	Ateş yakar
-KİLİM	10	noun	Dokuma yaygı
-KİLİT	10	noun	Kapıyı kapatır
-KİM	10	other	Soru sözü
-KİR	10	noun	Pislik
-KİRAZ	10	noun	Saplı meyve
-KİRLİ	10	adjective	Pis
-KİRPİ	10	noun	Dikenli hayvan
-KİRPİK	10	noun	Göz kılı
-KİTAP	10	noun	Okunur
-KİŞİ	10	noun	Şahıs
-LAHANA	10	noun	Yapraklı sebze
-LALE	10	noun	Bahar çiçeği
-LAMBA	10	noun	Işık verir
-LEKE	10	noun	Kir izi
-LEZZET	10	noun	Tat
-LEZZETLİ	10	adjective	Tatlı, nefis
-LOKANTA	10	noun	Restoran
-LOKMA	10	noun	Bir ısırık
-LOKUM	10	noun	Şekerli tatlı
-LÜKS	10	adjective	Şatafatlı
-LİDER	10	noun	Önder
-LİMAN	10	noun	Gemi barınağı
-LİMON	10	noun	Ekşi meyve
-LİMONATA	10	noun	Ekşi içecek
-LİSE	10	noun	Orta öğretim
-LİSTE	10	noun	Çizelge
-MADALYA	10	noun	Ödül nişanı
-MADDE	10	noun	Cisim
-MADEN	10	noun	Ocak
-MAHALLE	10	noun	Semt
-MAKARNA	10	noun	Hamur yemeği
-MAKAS	10	noun	Kesme aracı
-MAL	10	noun	Servet
-MANAV	10	noun	Meyve satıcısı
-MANDAL	10	noun	Çamaşır tutar
-MANTAR	10	noun	Şapkalı bitki
-MANZARA	10	noun	Görünüm
-MART	10	noun	Üçüncü ay
-MARTI	10	noun	Deniz kuşu
-MARUL	10	noun	Salata yeşili
-MASA	10	noun	Yemek yenir
-MASAL	10	noun	Hikâye
-MASKE	10	noun	Yüz örtüsü
-MAVİ	10	adjective	Gök rengi
-MAYDANOZ	10	noun	Yeşil ot
-MAYIS	10	noun	Beşinci ay
-MAYMUN	10	noun	Muz sever
-MAÇ	10	noun	Karşılaşma
-MAĞARA	10	noun	İn
-MAĞAZA	10	noun	Dükkân
-MEKTUP	10	noun	Zarfla gider
-MELEK	10	noun	Kanatlı varlık
-MELODİ	10	noun	Ezgi
-MEMUR	10	noun	Devlet görevlisi
-MENDİL	10	noun	Burun silinir
-MERAK	10	noun	Bilme isteği
-MERCİMEK	10	noun	Çorbası olur
-MERDİVEN	10	noun	Basamaklı yol
-MERKEZ	10	noun	Orta
-MESAFE	10	noun	Ara
-MESAJ	10	noun	İleti
-MESLEK	10	noun	İş
-METİN	10	noun	Yazı
-MEVSİM	10	noun	Yılın dörtte biri
-MEYDAN	10	noun	Alan
-MEYVE	10	noun	Ağaç ürünü
-MEŞHUR	10	adjective	Ünlü
-MISIR	10	noun	Patlak yapılır
-MODEL	10	noun	Örnek
-MOLA	10	noun	Ara
-MONT	10	noun	Kalın ceket
-MOR	10	adjective	Menekşe rengi
-MOTOR	10	noun	Makine
-MUM	10	noun	Fitilli ışık
-MUSLUK	10	noun	Su akıtır
-MUTFAK	10	noun	Yemek yapılır
-MUTLU	10	adjective	Sevinçli
-MUZ	10	noun	Sarı meyve
-MÜDÜR	10	noun	Yönetici
-MÜZE	10	noun	Eser sergiler
-MÜZİK	10	noun	Ezgi
-MİDE	10	noun	Sindirim organı
-MİLYON	10	other	Bin kere bin
-MİNİK	10	adjective	Küçük
-MİRAS	10	noun	Kalıt
-MİSAFİR	10	noun	Konuk
-NANE	10	noun	Kokulu ot
-NAR	10	noun	Taneli meyve
-NAZİK	10	adjective	Kibar
-NE	10	other	Soru sözü
-NEDEN	10	noun	Sebep
-NEFES	10	noun	Soluk
-NEFİS	10	adjective	Lezzetli
-NEHİR	10	noun	Irmak
-NEMLİ	10	adjective	Rutubetli
-NESİL	10	noun	Kuşak
-NET	10	adjective	Açık
-NEŞE	10	noun	Sevinç
-NEŞELİ	10	adjective	Şen
-NOHUT	10	noun	Baklagil
-NOKTA	10	noun	Benek
-NOT	10	noun	Karne puanı
-NİNE	10	noun	Büyükanne
-NİSAN	10	noun	Dördüncü ay
-NİŞAN	10	noun	Evlilik sözü
-OCAK	10	noun	Yılın ilk ayı
-ODA	10	noun	Evin bölümü
-ODUN	10	noun	Yakılan tahta
-OFİS	10	noun	Büro
-OK	10	noun	Yayla atılır
-OKUL	10	noun	Öğrenci gider
-OKUMAK	10	verb	Kitaba bakmak
-OKYANUS	10	noun	Büyük deniz
-OLAY	10	noun	Hadise
-OLMAK	10	verb	Mevcut bulunmak
-OMLET	10	noun	Yumurta yemeği
-OMUZ	10	noun	Kol başı
-ON	10	other	Dokuzdan sonra
-ONUR	10	noun	Şeref
-ORDU	10	noun	Asker topluluğu
-ORMAN	10	noun	Ağaçlık
-ORTA	10	noun	Merkez
-ORTAK	10	noun	Paydaş
-OT	10	noun	Çimen
-OTEL	10	noun	Konaklama yeri
-OTOBÜS	10	noun	Yolcu aracı
-OTUZ	10	other	Üç kere on
-OVA	10	noun	Düz arazi
-OYUN	10	noun	Eğlence
-OYUNCAK	10	noun	Çocuk eşyası
-PAHALI	10	adjective	Ucuz karşıtı
-PAKET	10	noun	Koli
-PALTO	10	noun	Uzun kaban
-PALYAÇO	10	noun	Sirk komiği
-PAMUK	10	noun	Beyaz lif
-PANTOLON	10	noun	Bacaklı giysi
-PAPAĞAN	10	noun	Konuşan kuş
-PARA	10	noun	Nakit
-PARK	10	noun	Yeşil alan
-PARLAK	10	adjective	Işıltılı
-PARMAK	10	noun	Elde beş tane
-PARÇA	10	noun	Kısım
-PAS	10	noun	Demir küfü
-PASTA	10	noun	Doğum günü tatlısı
-PATATES	10	noun	Kızartılır
-PATLICAN	10	noun	Mor sebze
-PAY	10	noun	Hisse
-PAZAR	10	noun	Haftanın son günü
-PEMBE	10	adjective	Açık kırmızı
-PENCERE	10	noun	Cam açılır
-PERDE	10	noun	Pencereye asılır
-PERŞEMBE	10	noun	Çarşambadan sonra
-PEYNİR	10	noun	Kahvaltılık
-PLAJ	10	noun	Kumsal
-PLAN	10	noun	Tasarı
-POLİS	10	noun	Güvenlik görevlisi
-PORTAKAL	10	noun	Turuncu meyve
-POSTA	10	noun	Mektup hizmeti
-POĞAÇA	10	noun	Kahvaltı çöreği
-PUAN	10	noun	Not
-PUSULA	10	noun	Yön bulma aracı
-PİDE	10	noun	Yassı ekmek
-PİJAMA	10	noun	Uyku giysisi
-PİKNİK	10	noun	Kır yemeği
-PİL	10	noun	Batarya
-PİLAV	10	noun	Pirinç yemeği
-PİLOT	10	noun	Uçak sürer
-PİRİNÇ	10	noun	Pilav tanesi
-PİS	10	adjective	Kirli
-PİYANO	10	noun	Tuşlu çalgı
-RADYO	10	noun	Dinlenen kutu
-RAF	10	noun	Kitap dizilir
-RAHAT	10	adjective	Konforlu
-RAKAM	10	noun	Sayı işareti
-REHBER	10	noun	Kılavuz
-REKOR	10	noun	En iyi derece
-RENK	10	noun	Boya tonu
-RESSAM	10	noun	Resim yapan
-RESİM	10	noun	Tablo
-REÇEL	10	noun	Meyve ezmesi
-REÇETE	10	noun	İlaç kağıdı
-RUH	10	noun	Can
-RÜYA	10	noun	Uykuda görülür
-RÜZGAR	10	noun	Yel
-RİSK	10	noun	Tehlike
-SAAT	10	noun	Zamanı gösterir
-SABAH	10	noun	Gün doğumu
-SABIR	10	noun	Tahammül
-SABUN	10	noun	Köpüklü temizleyici
-SADE	10	adjective	Süssüz
-SAHA	10	noun	Alan
-SAHNE	10	noun	Tiyatro alanı
-SAHİL	10	noun	Kıyı
-SAKAL	10	noun	Çene kılı
-SAKIZ	10	noun	Çiğnenir
-SAKSI	10	noun	Çiçek kabı
-SAKİN	10	adjective	Durgun
-SALATA	10	noun	Çoban ___
-SALI	10	noun	Haftanın ikinci günü
-SALON	10	noun	Büyük oda
-SALÇA	10	noun	Domates ezmesi
-SANAT	10	noun	Hüner
-SANDAL	10	noun	Kürekli kayık
-SANDALYE	10	noun	Oturulur
-SARAY	10	noun	Padişah evi
-SARI	10	adjective	Limon rengi
-SARIMSAK	10	noun	Kokulu baharat
-SATIR	10	noun	Yazı dizisi
-SATMAK	10	verb	Para ile vermek
-SAYFA	10	noun	Kitap yaprağı
-SAYGI	10	noun	Hürmet
-SAYI	10	noun	Rakam
-SAYMAK	10	verb	Bir iki üç demek
-SAÇ	10	noun	Başta uzar
-SAĞ	10	noun	Sol karşıtı
-SAĞIR	10	adjective	Duymayan
-SAĞLAM	10	adjective	Dayanıklı
-SEBEP	10	noun	Neden
-SEBZE	10	noun	Bostan ürünü
-SEKİZ	10	other	Yediden sonra
-SEL	10	noun	Taşkın
-SEMT	10	noun	Mahalle
-SEN	10	other	Ben değil
-SENE	10	noun	Yıl
-SEPET	10	noun	Örme kap
-SERT	10	adjective	Yumuşak karşıtı
-SERVET	10	noun	Varlık
-SERÇE	10	noun	Küçük kuş
-SERİN	10	adjective	Hafif soğuk
-SES	10	noun	Kulağa gelen
-SESSİZ	10	adjective	Gürültüsüz
-SEVGİ	10	noun	Muhabbet
-SEVMEK	10	verb	Gönül vermek
-SEVİMLİ	10	adjective	Şirin
-SEVİNÇ	10	noun	Neşe
-SEYAHAT	10	noun	Yolculuk
-SEÇİM	10	noun	Tercih
-SICAK	10	adjective	Soğuk karşıtı
-SIFIR	10	noun	Hiç
-SIKI	10	adjective	Gevşek karşıtı
-SINAV	10	noun	İmtihan
-SINIF	10	noun	Derslik
-SINIR	10	noun	Hudut
-SIR	10	noun	Gizli şey
-SIRA	10	noun	Dizi
-SIRT	10	noun	Arka
-SOBA	10	noun	Odun yakılır
-SOFRA	10	noun	Yemek masası
-SOHBET	10	noun	Muhabbet
-SOKAK	10	noun	Dar yol
-SOL	10	noun	Sağ karşıtı
-SON	10	noun	Bitiş
-SONBAHAR	10	noun	Güz
-SONUÇ	10	noun	Netice
-SORMAK	10	verb	Soru yöneltmek
-SORU	10	noun	Sual
-SORUN	10	noun	Problem
-SOS	10	noun	Salça karışımı
-SOSİS	10	noun	Et çubuğu
-SOYAD	10	noun	Aile adı
-SOĞAN	10	noun	Göz yaşartır
-SOĞUK	10	adjective	Sıcak karşıtı
-SPOR	10	noun	İdman
-SU	10	noun	Hayat kaynağı
-SUCUK	10	noun	Baharatlı et
-SULU	10	adjective	Islak
-SUSMAK	10	verb	Sessiz kalmak
-SÖZ	10	noun	Kelime
-SÖZCÜK	10	noun	Kelime
-SÖZLEŞME	10	noun	Anlaşma
-SÖZLÜK	10	noun	Lügat
-SÜPÜRGE	10	noun	Toz alır
-SÜRE	10	noun	Müddet
-SÜRMEK	10	verb	Araç kullanmak
-SÜRÜ	10	noun	Hayvan topluluğu
-SÜS	10	noun	Bezek
-SÜT	10	noun	İnek verir
-SİLGİ	10	noun	Kalemi siler
-SİLMEK	10	verb	Temizlemek
-SİMGE	10	noun	Sembol
-SİMİT	10	noun	Susamlı halka
-SİNCAP	10	noun	Fındık toplar
-SİNEK	10	noun	Vızıldar
-SİNEMA	10	noun	Film izlenir
-SİRK	10	noun	Palyaço gösterisi
-SİS	10	noun	Duman gibi bulut
-SİYAH	10	adjective	Kara
-SİZ	10	other	Biz değil
-TABAK	10	noun	Yemek konur
-TABAN	10	noun	Ayak altı
-TABLO	10	noun	Resim
-TAHTA	10	noun	Ağaç malzeme
-TAKIM	10	noun	Ekip
-TAKMAK	10	verb	Bağlamak
-TAKSİ	10	noun	Sarı araba
-TAKVİM	10	noun	Günleri gösterir
-TAM	10	adjective	Eksiksiz
-TAMAM	10	other	Olur
-TAMİR	10	noun	Onarım
-TANE	10	noun	Adet
-TANIK	10	noun	Şahit
-TARAK	10	noun	Saç düzeltir
-TARLA	10	noun	Ekin yeri
-TARİF	10	noun	Yemek yapılışı
-TARİH	10	noun	Geçmiş
-TAT	10	noun	Lezzet
-TATLI	10	adjective	Şekerli
-TATMAK	10	verb	Lezzete bakmak
-TATİL	10	noun	Dinlence
-TAVA	10	noun	Kızartma kabı
-TAVAN	10	noun	Odanın üstü
-TAVIR	10	noun	Davranış
-TAVLA	10	noun	Zarlı oyun
-TAVUK	10	noun	Yumurta verir
-TAVŞAN	10	noun	Uzun kulaklı
-TAZE	10	adjective	Yeni
-TAÇ	10	noun	Kralın başlığı
-TAŞ	10	noun	Sert madde
-TEBRİK	10	noun	Kutlama
-TEK	10	adjective	Bir
-TEKLİF	10	noun	Öneri
-TEKNE	10	noun	Kayık
-TEKRAR	10	adverb	Yine
-TEL	10	noun	İnce metal
-TEMBEL	10	adjective	Üşengeç
-TEMMUZ	10	noun	Yedinci ay
-TEMİZ	10	adjective	Pak
-TENCERE	10	noun	Yemek pişer
-TEPE	10	noun	Küçük dağ
-TEPKİ	10	noun	Reaksiyon
-TEPSİ	10	noun	Servis düzlüğü
-TER	10	noun	Sıcakta olur
-TERAZİ	10	noun	Tartı aleti
-TERLİK	10	noun	Ev ayakkabısı
-TERZİ	10	noun	Elbise diker
-TEYZE	10	noun	Annenin kız kardeşi
-TEŞEKKÜR	10	noun	Sağ ol demek
-TIRNAK	10	noun	Parmak ucu
-TOHUM	10	noun	Ekilen tane
-TOK	10	adjective	Aç karşıtı
-TOKA	10	noun	Saç tutturucu
-TOP	10	noun	Futbol aracı
-TOPRAK	10	noun	Yer
-TORBA	10	noun	Çuval
-TORUN	10	noun	Çocuğun çocuğu
-TOST	10	noun	Kızarmış sandviç
-TOZ	10	noun	Ufak kir
-TREN	10	noun	Raylı taşıt
-TUHAF	10	adjective	Garip
-TUR	10	noun	Gezi
-TURUNCU	10	adjective	Portakal rengi
-TURŞU	10	noun	Salamura sebze
-TUTAR	10	noun	Toplam
-TUTKU	10	noun	İhtiras
-TUTMAK	10	verb	Elde etmek
-TUZ	10	noun	Yemeğe atılır
-TÖREN	10	noun	Merasim
-TÜCCAR	10	noun	Ticaret yapan
-TÜM	10	adjective	Bütün
-TÜNEL	10	noun	Yer altı yolu
-TÜR	10	noun	Çeşit
-TÜRKÜ	10	noun	Halk şarkısı
-TÜY	10	noun	Kuşta olur
-TİLKİ	10	noun	Kurnaz hayvan
-TİMSAH	10	noun	İri sürüngen
-UCUZ	10	adjective	Pahalı karşıtı
-UFUK	10	noun	Göğün yere değdiği
-UMUT	10	noun	Ümit
-UN	10	noun	Ekmeğin hammaddesi
-USLU	10	adjective	Terbiyeli
-USTA	10	noun	Zanaatkâr
-UYARI	10	noun	İkaz
-UYKU	10	noun	Dinlenme hali
-UYMAK	10	verb	Uygun düşmek
-UZAK	10	adjective	Yakın karşıtı
-UZANMAK	10	verb	Yatmak
-UZAY	10	noun	Feza
-UZMAN	10	noun	Bilirkişi
-UZUN	10	adjective	Kısa karşıtı
-UÇ	10	noun	Kalemin sivri yeri
-UÇAK	10	noun	Hava taşıtı
-UÇMAK	10	verb	Havada süzülmek
-UÇURTMA	10	noun	Rüzgârla yükselir
-VAKİT	10	noun	Zaman
-VALİZ	10	noun	Bavul
-VAPUR	10	noun	Yolcu gemisi
-VAR	10	other	Yok karşıtı
-VARLIK	10	noun	Mevcudiyet
-VATAN	10	noun	Yurt
-VAZO	10	noun	Çiçek kabı
-VEDA	10	noun	Ayrılık
-VERGİ	10	noun	Devlete ödenen
-VERMEK	10	verb	Almak karşıtı
-VİTAMİN	10	noun	Besin öğesi
-VİŞNE	10	noun	Ekşi kiraz
-YAKA	10	noun	Gömlek boynu
-YAKIN	10	adjective	Uzak karşıtı
-YAKMAK	10	verb	Ateşe vermek
-YALAN	10	noun	Doğru değil
-YALNIZ	10	adjective	Tek başına
-YAN	10	noun	Kenar
-YANAK	10	noun	Yüzün yanı
-YANIT	10	noun	Cevap
-YANLIŞ	10	adjective	Hatalı
-YAPI	10	noun	Bina
-YAPMAK	10	verb	Etmek
-YAPRAK	10	noun	Ağaçta yeşerir
-YARA	10	noun	Bere
-YARAMAZ	10	adjective	Haylaz
-YARDIM	10	noun	Destek
-YARGI	10	noun	Hüküm
-YARIM	10	adjective	İkiye bölünmüş
-YARIN	10	adverb	Bugünden sonra
-YARIŞ	10	noun	Müsabaka
-YASA	10	noun	Kanun
-YASTIK	10	noun	Baş konur
-YATAK	10	noun	Uyunan yer
-YATMAK	10	verb	Uzanmak
-YAVAŞ	10	adjective	Ağır
-YAYLA	10	noun	Yaz otlağı
-YAZ	10	noun	Sıcak mevsim
-YAZAR	10	noun	Müellif
-YAZI	10	noun	Metin
-YAZLIK	10	noun	Sayfiye evi
-YAZMAK	10	verb	Kalemle not etmek
-YAĞ	10	noun	Tereyağı
-YAĞLI	10	adjective	Yağ içeren
-YAĞMUR	10	noun	Gökten düşen su
-YAŞ	10	noun	Islak
-YAŞAM	10	noun	Hayat
-YAŞLI	10	adjective	İhtiyar
-YEDİ	10	other	Altıdan sonra
-YELEK	10	noun	Kolsuz ceket
-YELKEN	10	noun	Rüzgârla şişer
-YEM	10	noun	Hayvan yiyeceği
-YEMEK	10	noun	Aş
-YEMİN	10	noun	Ant
-YENİ	10	adjective	Eski karşıtı
-YER	10	noun	Mekân
-YETENEK	10	noun	Kabiliyet
-YETKİ	10	noun	Salahiyet
-YEŞİL	10	adjective	Çimen rengi
-YIKMAK	10	verb	Devirmek
-YIL	10	noun	Sene
-YILAN	10	noun	Sürüngen
-YILDIRIM	10	noun	Gökten düşen ışık
-YILDIZ	10	noun	Gece parlar
-YOK	10	other	Var karşıtı
-YOKUŞ	10	noun	Bayır
-YOL	10	noun	Cadde
-YORGAN	10	noun	Yatak örtüsü
-YORGUN	10	adjective	Bitkin
-YORULMAK	10	verb	Bitkin düşmek
-YORUM	10	noun	Değerlendirme
-YOĞUN	10	adjective	Kesif
-YOĞURT	10	noun	Sütten yapılır
-YUDUM	10	noun	Bir içimlik
-YUMAK	10	noun	Yün topu
-YUMURTA	10	noun	Tavuk verir
-YUMUŞAK	10	adjective	Sert karşıtı
-YURT	10	noun	Vatan
-YUVA	10	noun	Kuş evi
-YÖN	10	noun	İstikamet
-YÜK	10	noun	Taşınan şey
-YÜKSEK	10	adjective	Alçak karşıtı
-YÜN	10	noun	Örgü ipliği
-YÜZ	10	noun	Surat
-YÜZMEK	10	verb	Suda kulaç atmak
-YÜZÜK	10	noun	Parmağa takılır
-YİRMİ	10	other	İki kere on
-ZAFER	10	noun	Galibiyet
-ZAMAN	10	noun	Vakit
-ZARAR	10	noun	Ziyan
-ZARF	10	noun	Mektup kabı
-ZAYIF	10	adjective	Şişman karşıtı
-ZEBRA	10	noun	Çizgili at
-ZEHİR	10	noun	Ağu
-ZEKİ	10	adjective	Akıllı
-ZEMİN	10	noun	Yer
-ZENGİN	10	adjective	Varlıklı
-ZEVK	10	noun	Keyif
-ZEYTİN	10	noun	Kahvaltılık
-ZOR	10	adjective	Kolay değil
-ZÜRAFA	10	noun	Uzun boyunlu
-ZİL	10	noun	Kapıda çalar
-ZİNCİR	10	noun	Halkalı bağ
-ZİRVE	10	noun	Doruk
-ÇABA	10	noun	Gayret
-ÇABUK	10	adverb	Hızlı
-ÇADIR	10	noun	Kamp barınağı
-ÇAKMAK	10	noun	Ateş yakar
-ÇALMAK	10	verb	Hırsızlık etmek
-ÇAM	10	noun	Yılbaşı ağacı
-ÇAMAŞIR	10	noun	Yıkanan giysi
-ÇAMUR	10	noun	Islak toprak
-ÇANTA	10	noun	Eşya taşınır
-ÇARE	10	noun	Çözüm
-ÇATAL	10	noun	Yemek aracı
-ÇATI	10	noun	Dam
-ÇAY	10	noun	Demlenip içilir
-ÇEKMEK	10	verb	Kendine doğru almak
-ÇENE	10	noun	Yüzün alt kısmı
-ÇEREZ	10	noun	Kuruyemiş
-ÇERÇEVE	10	noun	Resim kenarı
-ÇEYREK	10	noun	Dörtte bir
-ÇEŞME	10	noun	Su akan yer
-ÇEŞİT	10	noun	Tür
-ÇIKIŞ	10	noun	Giriş karşıtı
-ÇIKMAK	10	verb	Girmek karşıtı
-ÇOBAN	10	noun	Sürü güder
-ÇOCUK	10	noun	Küçük insan
-ÇOK	10	adjective	Az karşıtı
-ÇORAP	10	noun	Ayağa giyilir
-ÇORBA	10	noun	Kaşıkla içilir
-ÇUKUR	10	noun	Oyuk
-ÇÖL	10	noun	Kumlu bölge
-ÇÖP	10	noun	Atık
-ÇÖZMEK	10	verb	Düğüm açmak
-ÇÜRÜK	10	adjective	Bozulmuş
-ÇİFT	10	noun	İkili
-ÇİFTLİK	10	noun	Tarım işletmesi
-ÇİFTÇİ	10	noun	Toprak işler
-ÇİLEK	10	noun	Kırmızı meyve
-ÇİM	10	noun	Yeşil ot
-ÇİMEN	10	noun	Yeşil ot
-ÇİRKİN	10	adjective	Güzel karşıtı
-ÇİVİ	10	noun	Çekiçle çakılır
-ÇİZGİ	10	noun	Hat
-ÇİZME	10	noun	Uzun ayakkabı
-ÇİZMEK	10	verb	Resim yapmak
-ÇİÇEK	10	noun	Gül veya lale
-ÖDEV	10	noun	Ev çalışması
-ÖDÜL	10	noun	Mükafat
-ÖLÇMEK	10	verb	Miktar bulmak
-ÖLÇÜ	10	noun	Miktar
-ÖMÜR	10	noun	Hayat süresi
-ÖN	10	noun	Arka karşıtı
-ÖPMEK	10	verb	Dudak değdirmek
-ÖRDEK	10	noun	Su kuşu
-ÖRGÜ	10	noun	Şişle yapılır
-ÖRMEK	10	verb	Şişle işlemek
-ÖRNEK	10	noun	Misal
-ÖRTÜ	10	noun	Masaya serilir
-ÖRÜMCEK	10	noun	Ağ örer
-ÖVMEK	10	verb	Methetmek
-ÖYKÜ	10	noun	Hikâye
-ÖZEL	10	adjective	Hususi
-ÖZET	10	noun	Kısaltma
-ÖZGÜR	10	adjective	Hür
-ÖZLEM	10	noun	Hasret
-ÖZÜR	10	noun	Af dileme
-ÖĞRENCİ	10	noun	Talebe
-ÖĞRETMEN	10	noun	Hoca
-ÖĞÜN	10	noun	Kahvaltı veya akşam
-ÜCRET	10	noun	Maaş
-ÜNLÜ	10	adjective	Meşhur
-ÜST	10	noun	Alt karşıtı
-ÜYE	10	noun	Aza
-ÜZMEK	10	verb	Kederlendirmek
-ÜZÜM	10	noun	Salkım meyvesi
-ÜÇ	10	other	İkiden sonra
-İDARE	10	noun	Yönetim
-İFADE	10	noun	Anlatım
-İHTİYAÇ	10	noun	Gereksinim
-İKLİM	10	noun	Hava düzeni
-İKRAM	10	noun	Sunulan
-İKİ	10	other	Birden sonra
-İKİZ	10	noun	Aynı doğumlu
-İLAN	10	noun	Duyuru
-İLAÇ	10	noun	Deva
-İLGİ	10	noun	Alaka
-İLK	10	adjective	Birinci
-İLÇE	10	noun	Kaza
-İMZA	10	noun	Paraf
-İNANÇ	10	noun	İman
-İNAT	10	noun	Direnme
-İNCE	10	adjective	Kalın karşıtı
-İNCİR	10	noun	Ballı meyve
-İNEK	10	noun	Süt verir
-İNMEK	10	verb	Aşağı gitmek
-İNSAN	10	noun	Âdem oğlu
-İP	10	noun	Halat
-İPEK	10	noun	Böcek ipliği
-İPLİK	10	noun	Dikiş teli
-İPUCU	10	noun	Fikir veren işaret
-İRİ	10	adjective	Büyük
-İSTASYON	10	noun	Tren durağı
-İSTEK	10	noun	Arzu
-İSİM	10	noun	Ad
-İTMEK	10	verb	Öteye sürmek
-İYİ	10	adjective	Kötü karşıtı
-İYİLİK	10	noun	Kötülük karşıtı
-İZ	10	noun	Geride kalan işaret
-İZİN	10	noun	Müsaade
-İÇ	10	noun	Dış karşıtı
-İÇMEK	10	verb	Yudumlamak
-İĞNE	10	noun	Dikiş aracı
-İŞ	10	noun	Meslek
-İŞARET	10	noun	Simge
-İŞÇİ	10	noun	Emekçi
-ŞAHANE	10	adjective	Muhteşem
-ŞAKA	10	noun	Latife
-ŞAMPUAN	10	noun	Saç sabunu
-ŞANS	10	noun	Talih
-ŞAPKA	10	noun	Başa giyilir
-ŞARKI	10	noun	Türkü
-ŞEF	10	noun	Lider
-ŞEHİR	10	noun	Kent
-ŞEKER	10	noun	Tatlandırıcı
-ŞELALE	10	noun	Çağlayan
-ŞEMSİYE	10	noun	Yağmurda açılır
-ŞEN	10	adjective	Neşeli
-ŞIK	10	adjective	Zarif
-ŞOFÖR	10	noun	Sürücü
-ŞU	10	other	Bu değil
-ŞUBAT	10	noun	İkinci ay
-ŞİMDİ	10	adverb	Hemen
-ŞİMŞEK	10	noun	Gök gürültüsü öncesi
-ŞİİR	10	noun	Manzume
-ŞİŞ	10	noun	Kebap demiri
-ŞİŞE	10	noun	Cam kap
-ŞİŞMAN	10	adjective	Kilolu
-ABARTI	20	noun	Mübalağa
-ADAY	20	noun	Namzet
-AFET	20	noun	Felaket
-AH	20	other	Acı ünlemi
-AHIR	20	noun	İnek barınağı
-AHŞAP	20	noun	Tahta
-AKIN	20	noun	Hücum
-AKREP	20	noun	Zehirli kuyruklu
-AKÜ	20	noun	Araba bataryası
-AL	20	adjective	Kırmızı
-ALAY	20	noun	Dalga geçme
-ALIM	20	noun	Satın alma
-ALKOL	20	noun	İspirto
-ALÇI	20	noun	Kırık için sarılır
-AMBALAJ	20	noun	Paket
-AMBAR	20	noun	Depo
-AN	20	noun	Kısa süre
-ANMAK	20	verb	Hatırlamak
-ANTEN	20	noun	Yayın alıcı
-ANİ	20	adjective	Birden olan
-ARSA	20	noun	Boş yer
-ART	20	noun	Arka
-ASA	20	noun	Değnek
-ASIK	20	adjective	Somurtkan
-ASIR	20	noun	Yüzyıl
-ASMA	20	noun	Üzüm ağacı
-ASTAR	20	noun	İç kumaş
-ATA	20	noun	Dede
-ATAK	20	adjective	Atılgan
-AVCI	20	noun	Av yapan kişi
-AVLAMAK	20	verb	Av yapmak
-AVLU	20	noun	İç bahçe
-AVUÇ	20	noun	El içi
-AVİZE	20	noun	Tavan lambası
-AYAR	20	noun	Ölçüm düzeni
-AYAZ	20	noun	Kuru soğuk
-AYRINTI	20	noun	Detay
-AYÇİÇEĞİ	20	noun	Güneşe dönen çiçek
-AYİN	20	noun	Tören
-AĞ	20	noun	Balıkçı aracı
-AĞA	20	noun	Köyün zengini
-AĞIT	20	noun	Yas şarkısı
-AİT	20	adjective	İlgili
-AŞAMA	20	noun	Basamak
-AŞURE	20	noun	Karışık tatlı
-BACI	20	noun	Kız kardeş
-BAHÇIVAN	20	noun	Bostan işçisi
-BAKAN	20	noun	Vekil
-BAKIR	20	noun	Kızıl metal
-BAKLA	20	noun	Fava yapılır
-BAMYA	20	noun	Yeşil sebze
-BANDO	20	noun	Mızıka takımı
-BANK	20	noun	Park sırası
-BANT	20	noun	Yapıştırıcı şerit
-BAR	20	noun	İçki yeri
-BARBUNYA	20	noun	Kırmızı fasulye
-BASIN	20	noun	Gazeteler
-BASMA	20	noun	Pamuklu kumaş
-BATAK	20	noun	Çamurlu yer
-BATAKLIK	20	noun	Çamurlu yer
-BAYIR	20	noun	Yokuş
-BAZ	20	noun	Temel
-BELLEK	20	noun	Hafıza
-BENEK	20	noun	Nokta
-BENZEMEK	20	verb	Andırmak
-BERE	20	noun	Yün başlık
-BEY	20	noun	Erkeğe hitap
-BEYGİR	20	noun	Yük atı
-BEŞİK	20	noun	Bebek yatağı
-BLUZ	20	noun	Kadın gömleği
-BOLCA	20	adverb	Çokça
-BOLLUK	20	noun	Bereket
-BOMBA	20	noun	Patlayıcı
-BOR	20	noun	Maden
-BORA	20	noun	Fırtına
-BORSA	20	noun	Hisse piyasası
-BORU	20	noun	Su hattı
-BOZ	20	adjective	Kül rengi
-BOĞA	20	noun	Erkek sığır
-BOĞMAK	20	verb	Nefessiz bırakmak
-BURMAK	20	verb	Çevirmek
-BURÇ	20	noun	Kale kulesi
-BUĞU	20	noun	Cama oturan nem
-BÜTÇE	20	noun	Gelir gider planı
-BİLYE	20	noun	Cam top
-BİRADER	20	noun	Kardeş
-BİSKÜVİ	20	noun	Kuru tatlı
-BİT	20	noun	Saç böceği
-BİÇMEK	20	verb	Kesmek
-CENNET	20	noun	Uçmak
-CEYLAN	20	noun	Ahu
-CIVATA	20	noun	Somunla takılır
-COP	20	noun	Polis sopası
-CÜCE	20	noun	Kısa boylu
-CİLA	20	noun	Parlatıcı
-CİVCİV	20	noun	Tavuk yavrusu
-DADI	20	noun	Çocuk bakıcısı
-DAHİ	20	noun	Deha sahibi
-DALGIÇ	20	noun	Su altı uzmanı
-DALMAK	20	verb	Suya girmek
-DAM	20	noun	Çatı
-DAMAK	20	noun	Ağız tavanı
-DAVA	20	noun	Mahkeme konusu
-DAYAK	20	noun	Kötek
-DAYANAK	20	noun	Destek
-DE	20	other	Dahi, bile
-DEFNE	20	noun	Yaprağı yemeğe
-DEHA	20	noun	Üstün zekâ
-DEK	20	other	Kadar
-DEKOR	20	noun	Süsleme
-DEM	20	noun	Çayın koyuluğu
-DEMET	20	noun	Bağlam
-DEMLİK	20	noun	Çay kabı
-DESTAN	20	noun	Kahramanlık şiiri
-DESTEK	20	noun	Yardım
-DEV	20	adjective	Kocaman
-DEĞNEK	20	noun	Sopa
-DOKU	20	noun	Hücre topluluğu
-DOLAR	20	noun	Para birimi
-DOMUZ	20	noun	Yaban ___
-DOZ	20	noun	İlaç miktarı
-DUA	20	noun	Yakarış
-DÖŞEK	20	noun	Yer yatağı
-DÜET	20	noun	İkili şarkı
-DÜĞÜM	20	noun	İp bağı
-DÜŞ	20	noun	Rüya
-DİNMEK	20	verb	Durulmak
-DİRİ	20	adjective	Canlı
-DİVAN	20	noun	Sedir
-DİZE	20	noun	Şiir satırı
-EBE	20	noun	Doğum yaptırır
-EBRU	20	noun	Su üstü resim
-EDA	20	noun	Tavır
-EFE	20	noun	Zeybek
-EGZOZ	20	noun	Duman borusu
-EJDER	20	noun	Masal yaratığı
-EK	20	noun	Takı
-ELEK	20	noun	Un ayırır
-ELMAS	20	noun	Değerli taş
-ELÇİ	20	noun	Sefir
-EMEK	20	noun	Çaba
-EMLAK	20	noun	Mülk
-EMMEK	20	verb	Çekip içmek
-EMİR	20	noun	Buyruk
-EN	20	noun	Genişlik
-ENİŞTE	20	noun	Halanın kocası
-ER	20	noun	Asker
-ERZAK	20	noun	Yiyecek stoğu
-ESMEK	20	verb	Rüzgâr çıkmak
-ESNAF	20	noun	Dükkân sahipleri
-ESİN	20	noun	İlham
-ESİR	20	noun	Tutsak
-EVLAT	20	noun	Çocuk
-EVRAK	20	noun	Belgeler
-EVRE	20	noun	Aşama
-EZAN	20	noun	Namaza çağrı
-EZGİ	20	noun	Melodi
-EŞARP	20	noun	Baş örtüsü
-EŞİK	20	noun	Kapı altı
-FAL	20	noun	Kahve ile bakılır
-FAN	20	noun	Hayran
-FASIL	20	noun	Bölüm
-FEN	20	noun	Bilim
-FERMUAR	20	noun	Dişli kapama
-FES	20	noun	Püsküllü başlık
-FISTIK	20	noun	Kuruyemiş
-FIÇI	20	noun	Varil
-FON	20	noun	Arka plan
-FİDAN	20	noun	Genç ağaç
-FİDE	20	noun	Fidan
-FİYONK	20	noun	Kurdele süsü
-FİŞ	20	noun	Prize takılır
-GALA	20	noun	Özel gösterim
-GAM	20	noun	Keder
-GELİNCİK	20	noun	Kırmızı kır çiçeği
-GEREK	20	adjective	Lazım
-GERGİN	20	adjective	Sinirli
-GEYİK	20	noun	Boynuzlu hayvan
-GIDA	20	noun	Besin
-GÖLET	20	noun	Küçük göl
-GÖMMEK	20	verb	Toprağa koymak
-GÜVEÇ	20	noun	Toprak kap yemeği
-GÜZ	20	noun	Sonbahar
-GİDON	20	noun	Bisiklet direksiyonu
-GİŞE	20	noun	Bilet satılan yer
-HAL	20	noun	Durum
-HALAT	20	noun	Kalın ip
-HAM	20	adjective	Olgunlaşmamış
-HAMAK	20	noun	Asılı yatak
-HAMAL	20	noun	Yük taşıyan
-HAMAM	20	noun	Kese yapılır
-HAMLE	20	noun	Atılım
-HAN	20	noun	Kervansaray
-HANE	20	noun	Ev
-HANÇER	20	noun	Kısa kılıç
-HARMAN	20	noun	Ekin dövme yeri
-HARÇ	20	noun	Sıva karışımı
-HASAT	20	noun	Ürün toplama
-HASIR	20	noun	Saz örgü
-HAT	20	noun	Çizgi
-HECE	20	noun	Kelime parçası
-HENDEK	20	noun	Çukur
-HENÜZ	20	adverb	Daha
-HUNİ	20	noun	Daralan boru
-HURMA	20	noun	Tatlı meyve
-HUY	20	noun	Karakter
-HÜKÜMDAR	20	noun	Kral
-HİNDİ	20	noun	Yılbaşı kuşu
-HİS	20	noun	Duygu
-HİSSE	20	noun	Pay
-ILIK	20	adjective	Sıcakla soğuk arası
-ILIMAN	20	adjective	Mutedil
-IRK	20	noun	Soy
-IRMAK	20	noun	Büyük akarsu
-ISPANAK	20	noun	Yeşil sebze
-ISSIZ	20	adjective	Tenha
-IZGARA	20	noun	Mangalda pişirme
-IŞIN	20	noun	Işık çizgisi
-JANDARMA	20	noun	Asayiş gücü
-JETON	20	noun	Para yerine
-KABİN	20	noun	Küçük oda
-KADEH	20	noun	Ayaklı bardak
-KADER	20	noun	Alın yazısı
-KAFES	20	noun	Kuş evi
-KAFİLE	20	noun	Kervan
-KALKAN	20	noun	Siper
-KALİTE	20	noun	Nitelik
-KAMIŞ	20	noun	Sazlık bitkisi
-KANARYA	20	noun	Sarı ötücü kuş
-KANUN	20	noun	Yasa
-KAPAN	20	noun	Tuzak
-KAPLICA	20	noun	Sıcak su kaynağı
-KAPMAK	20	verb	Hızla almak
-KARAKOL	20	noun	Polis merkezi
-KARANFİL	20	noun	Kokulu çiçek
-KARDELEN	20	noun	Kar çiçeği
-KARYOLA	20	noun	Demir yatak
-KASA	20	noun	Para kutusu
-KASIRGA	20	noun	Hortum
-KATIR	20	noun	At ile eşek arası
-KAVAK	20	noun	Uzun ağaç
-KAVAL	20	noun	Çoban flütü
-KAZ	20	noun	Kanatlı hayvan
-KAZI	20	noun	Hafriyat
-KAŞİF	20	noun	Keşfeden
-KEKLİK	20	noun	Dağ kuşu
-KEKİK	20	noun	Kokulu ot
-KEL	20	adjective	Saçsız
-KEPENK	20	noun	Dükkân kapağı
-KEPÇE	20	noun	Büyük kaşık
-KERVAN	20	noun	Kafile
-KESE	20	noun	Hamam bezi
-KEÇE	20	noun	Yün tabaka
-KEŞKE	20	other	Dilek sözü
-KILAVUZ	20	noun	Rehber
-KILIF	20	noun	Kap
-KILIÇ	20	noun	Uzun kesici
-KINA	20	noun	Gelin eli boyası
-KIRAÇ	20	adjective	Verimsiz
-KISIR	20	noun	Bulgur salatası
-KIZILCIK	20	noun	Ekşi meyve
-KOKMAK	20	verb	Koku vermek
-KOLİ	20	noun	Karton kutu
-KOMEDİ	20	noun	Güldürü
-KONAK	20	noun	Büyük ev
-KONGRE	20	noun	Kurultay
-KONMAK	20	verb	Kuş tünemek
-KOR	20	noun	Közden ateş
-KOÇ	20	noun	Erkek koyun
-KRAVAT	20	noun	Boyun bağı
-KRİZ	20	noun	Bunalım
-KUAFÖR	20	noun	Saç yapar
-KUBBE	20	noun	Yarım küre çatı
-KUL	20	noun	Köle
-KULÜBE	20	noun	Küçük ev
-KUMRU	20	noun	Güvercin türü
-KUR	20	noun	Döviz değeri
-KURDELE	20	noun	Süs şeridi
-KURŞUN	20	noun	Ağır metal
-KUTSAL	20	adjective	Mukaddes
-KUTUP	20	noun	Buzul bölge
-KUŞAK	20	noun	Nesil
-KUŞKU	20	noun	Şüphe
-KÖR	20	adjective	Görmeyen
-KÖRFEZ	20	noun	Deniz girintisi
-KÖZ	20	noun	Ateş parçası
-KÖŞK	20	noun	Bahçeli ev
-KÜF	20	noun	Ekmekte oluşur
-KÜP	20	noun	Büyük kap
-KÜTLE	20	noun	Yığın
-KÜTÜK	20	noun	Kalın odun
-KİL	20	noun	Çömlek toprağı
-KİLER	20	noun	Erzak odası
-KİN	20	noun	Garez
-KİTLE	20	noun	Yığın
-LABİRENT	20	noun	Çıkışı zor yol
-LAF	20	noun	Söz
-LAKAP	20	noun	Takma ad
-LAVABO	20	noun	El yıkanır
-LAVANTA	20	noun	Mor çiçek
-LEBLEBİ	20	noun	Kavrulmuş nohut
-LEVHA	20	noun	Tabela
-LEYLEK	20	noun	Uzun bacaklı kuş
-LEĞEN	20	noun	Çamaşır kabı
-LİF	20	noun	İnce tel
-LİG	20	noun	Futbol kümesi
-LİSAN	20	noun	Dil
-MABET	20	noun	Tapınak
-MACUN	20	noun	Diş ___
-MAHKEME	20	noun	Yargı yeri
-MAHSUL	20	noun	Ürün
-MAKAM	20	noun	Mevki
-MANA	20	noun	Anlam
-MANGAL	20	noun	Kömür ızgarası
-MANTO	20	noun	Kadın paltosu
-MARANGOZ	20	noun	Tahta işçisi
-MASKARA	20	noun	Rimel
-MASRAF	20	noun	Gider
-MAT	20	adjective	Parlak değil
-MATBAA	20	noun	Basımevi
-MAYA	20	noun	Hamur kabartır
-MAŞA	20	noun	Ateş aracı
-MECLİS	20	noun	Toplantı
-MELTEM	20	noun	Hafif rüzgâr
-MENEKŞE	20	noun	Mor çiçek
-MERHEM	20	noun	Krem ilaç
-MERMER	20	noun	Beyaz taş
-MEVKİ	20	noun	Konum
-MEZUN	20	adjective	Okul bitiren
-MEŞALE	20	noun	Yanan değnek
-MEŞE	20	noun	Sert ağaç
-MIKNATIS	20	noun	Demir çeker
-MISRA	20	noun	Dize
-MIZRAK	20	noun	Uzun silah
-MOZAİK	20	noun	Taş resim
-MUHTAR	20	noun	Köy başkanı
-MUMYA	20	noun	Kurutulmuş ceset
-MÜCEVHER	20	noun	Değerli taş
-MÜHÜR	20	noun	Damga
-MÜREKKEP	20	noun	Kalem sıvısı
-MİNARE	20	noun	Cami kulesi
-MİNDER	20	noun	Yere konan yastık
-MİSKET	20	noun	Cam bilye
-MİSİNA	20	noun	Olta ipi
-NABIZ	20	noun	Kalp atışı
-NAKIŞ	20	noun	İşleme
-NAL	20	noun	At ayakkabısı
-NAM	20	noun	Ün
-NASİHAT	20	noun	Öğüt
-NAZ	20	noun	Cilve
-NAZAR	20	noun	Göz değmesi
-NEM	20	noun	Rutubet
-NERGİS	20	noun	Bahar çiçeği
-NÜFUS	20	noun	Ahali
-NİŞASTA	20	noun	Kola
-OF	20	other	Bıkkınlık ünlemi
-OJE	20	noun	Tırnak cilası
-OKLAVA	20	noun	Hamur açar
-OLTA	20	noun	Balık tutma aracı
-OLUK	20	noun	Yağmur kanalı
-ORAN	20	noun	Nispet
-OTLAK	20	noun	Mera
-OTO	20	noun	Araba
-OY	20	noun	Seçimde atılır
-OYA	20	noun	İğne süsü
-OYMA	20	noun	Kazıma sanatı
-OYMAK	20	verb	Kazımak
-OZAN	20	noun	Âşık
-OĞLAK	20	noun	Keçi yavrusu
-OĞUL	20	noun	Erkek evlat
-PABUÇ	20	noun	Ayakkabı
-PASPAS	20	noun	Yer silici
-PAZI	20	noun	Yapraklı sebze
-PAŞA	20	noun	General
-PEHLİVAN	20	noun	Güreşçi
-PEK	20	adverb	Çok
-PEKMEZ	20	noun	Üzüm şurubu
-PELİKAN	20	noun	Gagası torbalı
-PENGUEN	20	noun	Uçamayan kuş
-PENSE	20	noun	Kerpeten
-PERVANE	20	noun	Dönen kanat
-PERVAZ	20	noun	Kenar çıtası
-PES	20	adjective	Alçak ses
-PINAR	20	noun	Kaynak
-PIRASA	20	noun	Uzun sebze
-PIRLANTA	20	noun	Elmas
-PLAK	20	noun	Gramofon diski
-PLAKA	20	noun	Araç numarası
-PRİZ	20	noun	Fiş takılır
-PUDİNG	20	noun	Muhallebi
-PUL	20	noun	Zarfa yapıştırılır
-PÜF	20	other	Üfleme sesi
-PÜRÜZ	20	noun	Engel
-PİNTİ	20	adjective	Cimri
-PİPO	20	noun	Tütün içilir
-PİRE	20	noun	Zıplayan böcek
-PİST	20	noun	Uçak yolu
-RADAR	20	noun	Uzak algılayıcı
-RAY	20	noun	Tren yolu
-RENDE	20	noun	Doğrama aracı
-RET	20	noun	Kabul etmeme
-RIHTIM	20	noun	İskele
-ROL	20	noun	Oyuncu canlandırır
-ROTA	20	noun	Yön
-ROZET	20	noun	Yaka süsü
-RULO	20	noun	Tomar
-SAF	20	adjective	Arı, katışıksız
-SAKSAĞAN	20	noun	Siyah beyaz kuş
-SAL	20	noun	Tahta yüzer
-SALKIM	20	noun	Üzüm demeti
-SAMAN	20	noun	Kuru sap
-SANCAK	20	noun	Bayrak
-SANDIK	20	noun	Çeyiz kutusu
-SAP	20	noun	Tutacak yer
-SAPAN	20	noun	Taş atar
-SARGI	20	noun	Bandaj
-SARMAŞIK	20	noun	Tırmanan bitki
-SAUNA	20	noun	Buhar odası
-SAZ	20	noun	Bağlama
-SEDİR	20	noun	Divan
-SEFA	20	noun	Keyif
-SEFER	20	noun	Yolculuk
-SEHPA	20	noun	Küçük masa
-SEKRETER	20	noun	Kâtip
-SERAP	20	noun	Göz yanılsaması
-SERGİ	20	noun	Fuar
-SERMEK	20	verb	Yaymak
-SIVA	20	noun	Duvar kaplaması
-SIĞ	20	adjective	Derin karşıtı
-SOKMAK	20	verb	İçine itmek
-SOLUCAN	20	noun	Toprak kurdu
-SOMUN	20	noun	Ekmek türü
-SOPA	20	noun	Değnek
-SOY	20	noun	Nesil
-SUSAM	20	noun	Simit üstünde
-SÖKMEK	20	verb	Dikişi açmak
-SÜNGER	20	noun	Bulaşık aracı
-SİCİM	20	noun	İnce ip
-SİLAH	20	noun	Tüfek
-SİLO	20	noun	Tahıl ambarı
-SİLİNDİR	20	noun	Yuvarlak tüp
-SİTEM	20	noun	Serzeniş
-TABELA	20	noun	Levha
-TABURE	20	noun	Arkalıksız sandalye
-TAD	20	noun	Lezzet
-TAHIL	20	noun	Hububat
-TAHİN	20	noun	Susam ezmesi
-TAKAS	20	noun	Değiş tokuş
-TAPU	20	noun	Mülk belgesi
-TARÇIN	20	noun	Kokulu kabuk
-TAS	20	noun	Çanak
-TASMA	20	noun	Köpek kemeri
-TAY	20	noun	Yavru at
-TEKİR	20	noun	Çizgili kedi
-TEMA	20	noun	Konu
-TEN	20	noun	Cilt
-TENEKE	20	noun	İnce metal
-TESPİH	20	noun	Taneli dizi
-TESPİT	20	noun	Saptama
-TESTERE	20	noun	Odun keser
-TEZ	20	noun	Savunulan fikir
-TIRTIL	20	noun	Kelebek larvası
-TIĞ	20	noun	Dantel iğnesi
-TOMURCUK	20	noun	Gonca
-TOPUK	20	noun	Ayak arkası
-TOY	20	adjective	Acemi
-TUFAN	20	noun	Büyük sel
-TULUM	20	noun	İş giysisi
-TURNA	20	noun	Uzun bacaklı kuş
-TURP	20	noun	Kırmızı kök
-TURTA	20	noun	Meyveli pasta
-TUTKAL	20	noun	Zamk
-TUVAL	20	noun	Resim bezi
-TUĞLA	20	noun	Pişmiş blok
-TUŞ	20	noun	Klavye düğmesi
-TÖRE	20	noun	Gelenek
-TÜL	20	noun	Perde kumaşı
-TÜP	20	noun	Gaz kabı
-TÜTÜN	20	noun	Sigara otu
-ULU	20	adjective	Yüce
-UYSAL	20	adjective	Yumuşak huylu
-UÇURUM	20	noun	Yar
-UĞUR	20	noun	Talih
-VADİ	20	noun	Dağlar arası
-VAGON	20	noun	Tren bölmesi
-VAKA	20	noun	Olay
-VALİ	20	noun	İl yöneticisi
-VAY	20	other	Şaşırma ünlemi
-VAZİFE	20	noun	Görev
-VEZNE	20	noun	Para gişesi
-VİDA	20	noun	Tornavida ile
-VİRAJ	20	noun	Yol dönemeci
-YA	20	other	Veya
-YABAN	20	adjective	Vahşi
-YAKUT	20	noun	Kırmızı taş
-YALI	20	noun	Kıyı köşkü
-YAMAK	20	noun	Yardımcı
-YAMAÇ	20	noun	Dağ eteği
-YAR	20	noun	Sevgili
-YARASA	20	noun	Uçan memeli
-YARIK	20	noun	Çatlak
-YAS	20	noun	Matem
-YATIRIM	20	noun	Sermaye koyma
-YAY	20	noun	Ok atar
-YAYA	20	noun	Yürüyen kişi
-YAYGI	20	noun	Örtü
-YAZGI	20	noun	Kader
-YEL	20	noun	Rüzgâr
-YEMLİK	20	noun	Hayvan yem kabı
-YEMİŞ	20	noun	Meyve
-YENGE	20	noun	Amcanın eşi
-YENGEÇ	20	noun	Yan yürür
-YONCA	20	noun	Dört yapraklı ot
-YUFKA	20	noun	İnce hamur
-ZAM	20	noun	Fiyat artışı
-ZAMBAK	20	noun	Beyaz çiçek
-ZAMK	20	noun	Yapıştırıcı
-ZAR	20	noun	Tavla aracı
-ZIPKIN	20	noun	Balık mızrağı
-ZIRH	20	noun	Koruyucu giysi
-ZURNA	20	noun	Davul eşi
-ZİNDE	20	adjective	Dinç
-ÇAKAL	20	noun	Yabani köpek
-ÇAKI	20	noun	Küçük bıçak
-ÇAKIL	20	noun	Küçük taş
-ÇAN	20	noun	Kilise zili
-ÇANAK	20	noun	Toprak kap
-ÇAP	20	noun	Genişlik
-ÇARK	20	noun	Dişli tekerlek
-ÇARŞI	20	noun	Pazar yeri
-ÇATLAK	20	noun	Yarık
-ÇAYIR	20	noun	Otlak
-ÇAĞ	20	noun	Devir
-ÇAĞLAYAN	20	noun	Şelale
-ÇAĞRI	20	noun	Davet
-ÇEK	20	noun	Banka belgesi
-ÇEKMECE	20	noun	Dolap gözü
-ÇEKİRDEK	20	noun	Meyve tohumu
-ÇEKİÇ	20	noun	Çivi çakılır
-ÇEMBER	20	noun	Halka
-ÇEYİZ	20	noun	Gelin eşyası
-ÇIRAK	20	noun	Usta yardımcısı
-ÇUVAL	20	noun	Büyük torba
-ÇÖMLEK	20	noun	Toprak kap
-ÇİLE	20	noun	Sıkıntı
-ÇİNİ	20	noun	Süslü seramik
-ÇİP	20	noun	Elektronik devre
-ÇİT	20	noun	Bahçe sınırı
-ÇİY	20	noun	Sabah nemi
-ÇİĞ	20	adjective	Pişmemiş
-ÖBÜR	20	adjective	Diğer
-ÖDENEK	20	noun	Tahsisat
-ÖDÜNÇ	20	noun	Geri verilecek
-ÖGE	20	noun	Unsur
-ÖKÜZ	20	noun	Erkek sığır
-ÖLMEK	20	verb	Hayatını kaybetmek
-ÖLÇEK	20	noun	Ölçü kabı
-ÖLÜ	20	adjective	Cansız
-ÖNCÜ	20	noun	İlk giden
-ÖNDER	20	noun	Lider
-ÖTE	20	noun	Uzak taraf
-ÖZ	20	noun	Esas
-ÖZGEÇMİŞ	20	noun	Hayat hikâyesi
-ÖÇ	20	noun	İntikam
-ÖĞE	20	noun	Unsur
-ÖĞLE	20	noun	Gün ortası
-ÖĞÜT	20	noun	Nasihat
-ÜN	20	noun	Şöhret
-ÜNİFORMA	20	noun	Resmi giysi
-İADE	20	noun	Geri verme
-İBRE	20	noun	Gösterge oku
-İCAT	20	noun	Buluş
-İHALE	20	noun	Açık artırma
-İHTİYAR	20	adjective	Yaşlı
-İKİNDİ	20	noun	Öğleden sonra
-İL	20	noun	Vilayet
-İLMEK	20	noun	Düğüm
-İLİK	20	noun	Kemik içi
-İMAM	20	noun	Namaz kıldıran
-İN	20	noun	Hayvan yuvası
-İNCİ	20	noun	İstiridyede olur
-İRADE	20	noun	İstenç
-İRMİK	20	noun	Helva yapılır
-İS	20	noun	Duman kirliliği
-İSKELE	20	noun	Vapur durağı
-İSTİF	20	noun	Yığın
-İTHAL	20	adjective	Dışarıdan gelen
-ŞAHİN	20	noun	Yırtıcı kuş
-ŞAL	20	noun	Omuz örtüsü
-ŞALGAM	20	noun	Kök sebze
-ŞAN	20	noun	Ün
-ŞATO	20	noun	Avrupa kalesi
-ŞAŞMAK	20	verb	Hayret etmek
-ŞEHİT	20	noun	Vatan için ölen
-ŞERBET	20	noun	Tatlı içecek
-ŞERİT	20	noun	Bant
-ŞOK	20	noun	Sarsıntı
-ŞOV	20	noun	Gösteri
-ŞUBE	20	noun	Kol
-ŞİFA	20	noun	Sağlık bulma
-ŞİLTE	20	noun	Döşek
-ABA	35	noun	Kalın yün kumaş
-ABU	35	other	Şaşkınlık ünlemi
-ACUN	35	noun	Dünya
-ADAK	35	noun	Nezir
-AHU	35	noun	Ceylan
-AHÇI	35	noun	Aşçı
-AKÇE	35	noun	Eski para
-ALA	35	adjective	Benekli
-ALIÇ	35	noun	Yaban meyvesi
-ANLIK	35	adjective	Kısa süren
-APAK	35	adjective	Bembeyaz
-AR	35	noun	Utanma duygusu
-ARAF	35	noun	Arada kalmışlık
-ARK	35	noun	Su kanalı
-ARZ	35	noun	Sunma
-ASLI	35	noun	Esası
-AVAR	35	noun	Bağırtı
-AZMAK	35	verb	Şımarmak
-AĞIL	35	noun	Koyun damı
-BADE	35	noun	Şarap
-BALÇIK	35	noun	Yapışkan çamur
-BAS	35	noun	Kalın ses
-BEYİT	35	noun	İki dize
-BOA	35	noun	Büyük yılan
-BOCUK	35	noun	Kayık türü
-BUCAK	35	noun	Köşe
-BİBLO	35	noun	Süs eşyası
-CEVHER	35	noun	Maden filizi
-CİN	35	noun	Peri
-DEKAN	35	noun	Fakülte başı
-DEO	35	noun	Koku giderici
-ECEL	35	noun	Ölüm vakti
-ECZA	35	noun	İlaç maddesi
-ELA	35	adjective	Göz rengi
-EMSAL	35	noun	Benzer örnek
-ERK	35	noun	Güç
-ERMEK	35	verb	Ulaşmak
-ESARET	35	noun	Tutsaklık
-EĞE	35	noun	Törpü
-FELEK	35	noun	Kader
-FİİL	35	noun	Eylem
-GERDAN	35	noun	Boyun önü
-GERGEF	35	noun	Nakış çerçevesi
-GÜRZ	35	noun	Topuz
-ILGIM	35	noun	Serap
-ILGIN	35	noun	Bir ağaç
-IRGAT	35	noun	Tarım işçisi
-ISKARTA	35	noun	Bozuk mal
-KAFTAN	35	noun	Uzun giysi
-KALABAK	35	noun	Yassı kabak
-KAVUK	35	noun	Sarık
-KEM	35	adjective	Kötü
-KEP	35	noun	Mezuniyet şapkası
-KOZMOS	35	noun	Evren
-KUDRET	35	noun	Güç
-KUNDURA	35	noun	Ayakkabı
-KİŞNİŞ	35	noun	Baharat otu
-LİR	35	noun	Telli çalgı
-MAVNA	35	noun	Yük teknesi
-MAZİ	35	noun	Geçmiş
-MECMUA	35	noun	Dergi
-MEKTEP	35	noun	Okul
-MUSKA	35	noun	Tılsım
-MİHRACE	35	noun	Hint hükümdarı
-MİHRAP	35	noun	Cami bölümü
-OBA	35	noun	Göçebe çadırı
-OD	35	noun	Ateş
-OH	35	other	Rahatlama ünlemi
-OTAĞ	35	noun	Hükümdar çadırı
-PAK	35	adjective	Temiz
-PAZEN	35	noun	Tüylü kumaş
-PELİN	35	noun	Acı ot
-PERA	35	noun	Eski Beyoğlu
-PERÇEM	35	noun	Alın saçı
-PİR	35	noun	Usta
-RAB	35	noun	Yaratıcı
-SAHRA	35	noun	Çöl
-SARHOŞ	35	adjective	Kendinden geçmiş
-SARIK	35	noun	Kavuk
-SARNIÇ	35	noun	Su deposu
-SEMAVER	35	noun	Büyük çaydanlık
-SEMİZ	35	adjective	Şişman
-SULH	35	noun	Barış
-SİMSAR	35	noun	Aracı
-TATAR	35	noun	Ulak
-TIMAR	35	noun	At bakımı
-TUĞ	35	noun	At kılı sancak
-TİRAT	35	noun	Uzun konuşma
-UD	35	noun	Telli çalgı
-ULAK	35	noun	Haberci
-UMAK	35	verb	Ummak
-UR	35	noun	Tümör
-US	35	noun	Akıl
-UZ	35	adjective	Usta
-VAH	35	other	Acıma ünlemi
-YEN	35	noun	Elbise kolu
-YULAR	35	noun	At başlığı
-ZAN	35	noun	Sanı
-ZERDALİ	35	noun	Yabani kayısı
-ÇEKÜL	35	noun	Şakul
-ÇEKİ	35	noun	Ağırlık ölçüsü
-ÇIRA	35	noun	Reçineli odun
-ÇUHA	35	noun	Yünlü kumaş
-ÇÖMEZ	35	noun	Öğrenci
-ÇİL	35	noun	Yüzdeki benek
-ÖBEK	35	noun	Küme
-ÖRF	35	noun	Gelenek
-ÖRS	35	noun	Demirci aracı
-ÜS	35	noun	Askeri merkez
-İBLİS	35	noun	Şeytan
-İBİK	35	noun	Horoz tepeliği
-İRFAN	35	noun	Kültür
-İSHAL	35	noun	Amel
-İSLİM	35	noun	Buhar
-İT	35	noun	Köpek
-İĞDE	35	noun	Kokulu meyve
-ŞAH	35	noun	Hükümdar
-ŞARAP	35	noun	Üzüm içkisi
+ABAJUR	10		Lamba şapkası
+ABDEST	10		Namaz öncesi yıkanma
+ABLA	10		Büyük kız kardeş
+ABONE	10		Düzenli alıcı
+ABİ	10		Ağabey
+ACABA	10		Merak sözü
+ACAYİP	10		Tuhaf
+ACELE	10		Telaş
+ACELECİ	10		Telaşlı
+ACEMİ	10		Deneyimsiz
+ACENTE	10		Temsilci
+ACI	10		Ağrı
+AD	10		İsim
+ADA	10		Suyla çevrili kara
+ADALET	10		Hak
+ADAM	10		Yetişkin erkek
+ADRES	10		İkamet yeri
+ADSIZ	10		İsimsiz
+AF	10		Bağışlama
+AFACAN	10		Yaramaz
+AFERİN	10		Bravo
+AFRİKA	10		Kara kıta
+AFİYET	10		Sağlık
+AHA	10		İşte
+AHLAK	10		Töre
+AHTAPOT	10		Sekiz kollu
+AHUDUDU	10		Frambuaz
+AJANDA	10		Not defteri
+AK	10		Beyaz
+AKADEMİ	10		Yüksekokul
+AKBABA	10		Leş kuşu
+AKCİĞER	10		Solunum organı
+AKDENİZ	10		İç deniz
+AKIL	10		Düşünme yeteneği
+AKILLI	10		Zeki
+AKINTI	10		Su yolu
+AKORDEON	10		Körüklü çalgı
+AKRABA	10		Hısım
+AKROBAT	10		Cambaz
+AKTRİS	10		Kadın oyuncu
+AKTÖR	10		Oyuncu
+AKVARYUM	10		Balık evi
+AKŞAM	10		Gün batımı
+ALABALIK	10		Tatlı su balığı
+ALARM	10		Uyarı sesi
+ALBÜM	10		Fotoğraf defteri
+ALERJİ	10		Aşırı duyarlılık
+ALERJİK	10		Aşırı duyarlı
+ALFABE	10		Abece
+ALKIŞ	10		El çırpma
+ALKOLİK	10		Ayyaş
+ALO	10		Telefon hitabı
+ALT	10		Aşağı
+ALTIN	10		Sarı maden
+ALTMIŞ	10		Sayı
+ALÇAK	10		Kısa
+AMA	10		Fakat
+AMATÖR	10		Hevesli
+AMBULANS	10		Cankurtaran
+AMELİYAT	10		Operasyon
+AMERİKA	10		Yeni dünya
+AMPUL	10		Lamba
+AMİRAL	10		Deniz komutanı
+ANA	10		Anne
+ANADOLU	10		Küçük asya
+ANAHTAR	10		Kilit açan
+ANANAS	10		Tropikal meyve
+ANAOKULU	10		Kreş
+ANAYASA	10		Temel yasa
+ANI	10		Hatıra
+ANIT	10		Sembolik mimari eser
+ANKARA	10		Başkent
+ANKET	10		Soru kağıdı
+ANLAM	10		Mana
+ANNEANNE	10		Nine
+ANNELİK	10		Analık
+ANTALYA	10		Turizm başkenti
+ANTİKA	10		Eski eşya
+APARTMAN	10		Bina
+APTAL	10		Ahmak
+ARA	10		Aralık
+ARABA	10		Otomobil
+ARAZİ	10		Toprak
+ARI	10		Bal yapan böcek
+ARKADAŞ	10		Dost
+ARMAĞAN	10		Hediye
+ARMUT	10		Sulu meyve
+AROMA	10		Koku
+ASANSÖR	10		Kat çıkarıcı
+ASFALT	10		Zift
+ASKER	10		Er
+ASLA	10		Hiçbir zaman
+ASLAN	10		Ormanlar kralı
+ASPİRİN	10		Ağrı kesici
+ASTRONOT	10		Uzay adamı
+ASİSTAN	10		Yardımcı
+AT	10		Binek
+ATASÖZÜ	10		Darbımesel
+ATEŞ	10		Yanma olayı sonucu
+ATLAS	10		Harita kitabı
+ATLET	10		Koşucu
+ATÖLYE	10		İşlik
+AV	10		Hayvan yakalama
+AVANTAJ	10		Üstünlük
+AVOKADO	10		Yeşil meyve
+AVRUPA	10		Kıta
+AVUKAT	10		Hukukçu
+AY	10		Dünyanın uydusu
+AYAKKABI	10		Pabuç
+AYDINLIK	10		Işıklı
+AYI	10		Boz hayvan
+AYIP	10		Ahlaka aykırı
+AYRAN	10		Yoğurt içeceği
+AZ	10		Çok karşıtı
+AÇ	10		Tok değil
+AÇGÖZLÜ	10		Tamahkar
+AÇI	10		Bakış yönü
+AÇLIK	10		Karın boşluğu
+AĞABEY	10		Abi
+AĞAÇ	10		Meyve veren bitki
+AĞLAMA	10		Gözyaşı dökme
+AĞUSTOS	10		Yaz ayı
+AŞ	10		Yemek
+AŞI	10		Bağışıklık
+AŞK	10		Sevda
+AŞÇI	10		Yemek yapan kişi
+BABA	10		Çocuğu olan erkek
+BABAANNE	10		Nine
+BACAK	10		Alt uzuv
+BADEM	10		Çerez
+BAGAJ	10		Yük
+BAHANE	10		Mazeret
+BAHAR	10		Yaz öncesi mevsim
+BAHARAT	10		Çeşni
+BAHÇE	10		Bostan
+BAHŞİŞ	10		Garson parası
+BAKANLIK	10		Nezaret
+BAKICI	10		Dadı
+BAKKAL	10		Mahalle dükkanı
+BAKLAVA	10		Şerbetli tatlı
+BAKTERİ	10		Mikrop
+BAL	10		Arı ürünü
+BALAYI	10		Evlilik tatili
+BALDIZ	10		Eşin kız kardeşi
+BALE	10		Sahne sanatı
+BALERİN	10		Dansçı kız
+BALIK	10		Su canlısı
+BALIKÇI	10		Avcı
+BALKON	10		Taraça
+BALON	10		Şişirilen top
+BALTA	10		Odun kesici
+BALİNA	10		Dev deniz memelisi
+BANDAJ	10		Sargı
+BANKA	10		Para kurumu
+BANYO	10		Yıkanma yeri
+BARAJ	10		Bent
+BARBEKÜ	10		Mangal
+BARDAK	10		Su kabı
+BARIŞ	10		Sulh
+BARMEN	10		İçki servisçisi
+BARUT	10		Patlayıcı toz
+BASAMAK	10		Merdiven adımı
+BASKI	10		Tazyik
+BASİT	10		Kolay
+BAVUL	10		Valiz
+BAY	10		Erkek
+BAYAT	10		Eskimiş
+BAYKUŞ	10		Gece kuşu
+BAYRAK	10		Sancak
+BAYRAM	10		Kutlama
+BAĞ	10		Üzüm bahçesi
+BAŞ	10		Kafa
+BAŞARI	10		Muvaffakiyet
+BAŞARILI	10		Muvaffak
+BAŞBAKAN	10		Hükümet başı
+BAŞKAN	10		Lider
+BAŞKENT	10		Hükümet merkezi
+BAŞLIK	10		Şapka
+BAŞÖRTÜ	10		Eşarp
+BEBE	10		Hak ağzı bebek
+BEBEK	10		Yeni doğan
+BEDAVA	10		Ücretsiz
+BEDEN	10		Vücut
+BEL	10		Kalça üstü
+BELEDİYE	10		Şehir yönetimi
+BELGE	10		Doküman
+BELGESEL	10		Dokümanter
+BEMBEYAZ	10		Kar gibi
+BEN	10		Kendim
+BENCİL	10		Egoist
+BENZİN	10		Yakıt
+BERABER	10		Birlikte
+BERBER	10		Kuaför
+BEREKET	10		Bolluk
+BESTE	10		Melodi
+BEYAZ	10		Ak
+BEYİN	10		Akıl organı
+BEZ	10		Kumaş
+BEZELYE	10		Yeşil tane
+BEŞ	10		Dört artı bir
+BIYIK	10		Üst dudak kılı
+BIÇAK	10		Kesici alet
+BODRUM	10		Zemin altı kat
+BOKS	10		Dövüş sporu
+BOL	10		Çok
+BONCUK	10		Nazar taşı
+BORNOZ	10		Banyo giysisi
+BOT	10		Kayık
+BOY	10		Uzunluk
+BOYNUZ	10		Kemik çıkıntı
+BOYUN	10		Gerdan
+BOĞAZ	10		Gırtlak
+BOŞ	10		Hiç
+BROKOLİ	10		Yeşil sebze
+BU	10		Yakını göstermek
+BUDALA	10		Aptal
+BULAŞIK	10		Kirli tabak
+BULDOZER	10		İş makinesi
+BULGUR	10		Kırık buğday
+BULMACA	10		Bilmece
+BULUT	10		Gökyüzü buharı
+BUMERANG	10		Geri dönen sopa
+BURUN	10		Koku organı
+BUZ	10		Donmuş su
+BUĞDAY	10		Tahıl
+BÖBREK	10		İdrar organı
+BÖCEK	10		Haşere
+BÖLGE	10		Yöre
+BÖREK	10		Hamur işi
+BÜLBÜL	10		Ötücü kuş
+BÜTÜN	10		Tüm
+BÜYÜK	10		İri
+BİBER	10		Acı sebze
+BİBERON	10		Emzikli şişe
+BİFTEK	10		Dana eti
+BİLARDO	10		İstaka oyunu
+BİLE	10		Dahi anlamlı bağlaç
+BİLEK	10		El bağlantısı
+BİLET	10		Giriş kartı
+BİLEZİK	10		Kol takısı
+BİLGİ	10		Malumat
+BİLMECE	10		Bulmaca
+BİN	10		Yüz kere on
+BİR	10		Tek
+BİRLİK	10		Beraberlik
+BİRİNCİ	10		İlk
+BİSİKLET	10		Pedallı araç
+BİTKİ	10		Ot
+BİYOLOJİ	10		Canlı bilimi
+BİZ	10		Sen ve ben
+CACIK	10		Yoğurtlu salata
+CADDE	10		Geniş yol
+CADI	10		Kötülük yapan kadın
+CAHİL	10		Bilgisiz
+CAM	10		Pencere
+CAMBAZ	10		İp üstü oyuncu
+CAN	10		Ruh
+CANAVAR	10		Yaratık
+CASUS	10		Ajan
+CAZ	10		Müzik türü
+CAZİP	10		Çekici
+CEHENNEM	10		Tamu
+CEKET	10		Üst giysi
+CENAZE	10		Ölü
+CEP	10		Kese
+CERRAH	10		Ameliyat doktoru
+CESARET	10		Yüreklilik
+CESET	10		Ölü beden
+CESUR	10		Yürekli
+CETVEL	10		Ölçü aleti
+CEVAP	10		Yanıt
+CEVİZ	10		Kuruyemiş
+CEZA	10		Suç yaptırımı
+CEZAEVİ	10		Hapishane
+CEZVE	10		Kahve kabı
+COĞRAFYA	10		Yer bilimi
+CÖMERT	10		Eli açık
+CÜZDAN	10		Para kesesi
+CİMRİ	10		Pinti
+CİNAYET	10		Adam öldürme
+CİNS	10		Türlerin topluluğu
+CİNSİYET	10		Eşey
+CİĞER	10		Arnavut yemeği
+DAKTİLO	10		Yazı makinesi
+DAKİKA	10		Altmış saniye
+DAL	10		Ağaç kolu
+DALGA	10		Kıvrım
+DAMAR	10		Kan yolu
+DAMAT	10		Güvey
+DAMLA	10		Su tanesi
+DANIŞMAN	10		Müşavir
+DANTEL	10		Oya
+DAR	10		Geniş karşıtı
+DAVET	10		Çağrı
+DAVETİYE	10		Çağrı kağıdı
+DAVUL	10		Vurmalı çalgı
+DAĞ	10		Yüksek tepe
+DAĞINIK	10		Karışık
+DAİRE	10		Çember
+DEDEKTİF	10		Hafiye
+DEDİKODU	10		Gıybet
+DEFTER	10		Not kağıtları
+DELİK	10		Oyuk
+DEMİR	10		Maden
+DEMİRCİ	10		Nalbant
+DENEY	10		Tecrübe
+DENGE	10		Muvazene
+DENİZ	10		Tuzlu su
+DENİZCİ	10		Gemici
+DEPREM	10		Zelzele
+DERECE	10		Isı ölçüsü
+DERGİ	10		Mecmua
+DERNEK	10		Cemiyet
+DERİN	10		Dipsiz
+DESEN	10		Motif
+DETERJAN	10		Temizleyici
+DEVAM	10		Süreklilik
+DEVE	10		Hörgüclü hayvan
+DEVLET	10		Hükümet
+DEVRİM	10		İnkılap
+DEĞER	10		Kıymet
+DEĞERLİ	10		Kıymetli
+DEĞİRMEN	10		Un yapan yer
+DIŞ	10		Hariç
+DOKTOR	10		Hekim
+DOKUZ	10		Sayı
+DOLAP	10		Gardırop
+DOLMUŞ	10		Minibüs
+DOMATES	10		Kırmızı sebze
+DOMİNO	10		Taş oyunu
+DON	10		İç giysisi
+DONDURMA	10		Soğuk tatlı
+DOSYA	10		Klasör
+DOĞA	10		Tabiat
+DOĞAL	10		Tabii
+DOĞRU	10		Gerçek
+DUL	10		Eşi ölmüş
+DUMAN	10		İs
+DUT	10		Ağaç meyvesi
+DUVAR	10		Yapı bölmesi
+DUYURU	10		İlan
+DUŞ	10		Ayakta yıkanma
+DÜDÜK	10		Islık aleti
+DÜN	10		Geçen gün
+DÜNYA	10		Yerküre
+DÜRÜST	10		Namuslu
+DÜZ	10		Pürüzsüz
+DÜZİNE	10		On iki tane
+DÜĞME	10		Buton
+DÜĞÜN	10		Evlilik töreni
+DÜŞMAN	10		Hasım
+DÜŞÜNCE	10		Fikir
+DİJİTAL	10		Sayısal
+DİK	10		Sarp
+DİKEN	10		Batan uç
+DİKKAT	10		Özen
+DİKKATLİ	10		Özenli
+DİKTATÖR	10		Zorba
+DİKİŞ	10		İğne işi
+DİL	10		Lisan
+DİLEK	10		İstek
+DİLENCİ	10		Yoksul
+DİLİM	10		Parça
+DİN	10		İnanç
+DİNAMİT	10		Patlayıcı
+DİNOZOR	10		Fosil
+DİP	10		Taban
+DİPLOMA	10		Mezuniyet belgesi
+DİPLOMAT	10		Elçi
+DİRSEK	10		Kol eklemi
+DİSİPLİN	10		Düzen
+DİYET	10		Perhiz
+DİZ	10		Bacak eklemi
+DİŞ	10		Ağızdaki kemik
+DİŞİ	10		Halk arasında kadın
+ECZANE	10		İlaç dükkanı
+EDEBİYAT	10		Yazın
+EFSANE	10		Söylence
+EGZERSİZ	10		Alıştırma
+EHLİYET	10		Sürücü belgesi
+EJDERHA	10		Masal canavarı
+EKMEK	10		Somun
+EKONOMİ	10		İktisat
+EKRAN	10		Perde
+EKSTRA	10		İlave
+EKSİK	10		Noksan
+EKVATOR	10		Sıfır enlem
+EKİM	10		10. ay
+EL	10		5 parmak
+ELBETTE	10		Kuşkusuz
+ELBİSE	10		Giysi
+ELDİVEN	10		El giysisi
+ELEKTRİK	10		Cereyan
+ELEMAN	10		Personel
+ELVEDA	10		Hoşça kal
+EMEKLİ	10		İşten ayrılmış
+EMNİYET	10		Güvenlik
+ENDİŞE	10		Kaygı
+ENDİŞELİ	10		Kaygılı
+ENERJİ	10		Güç
+ENERJİK	10		Dinamik
+ENGEL	10		Mani
+ERKEK	10		Adam
+ERKEN	10		Vakitli
+ERİŞTE	10		Kesme makarna
+ESKİMO	10		Kutup halkı
+ESMER	10		Kara yağız
+ESPRESSO	10		Koyu kahve
+ESPRİ	10		Şaka
+ESTETİK	10		Güzellik bilimi
+ESİNTİ	10		Meltem
+ET	10		Gıda
+ETİKET	10		Fiyat kağıdı
+EV	10		Yuva
+EVLİLİK	10		İzdivaç
+EVREN	10		Kainat
+EYLÜL	10		Sonbahar ayı
+EZBER	10		Hafıza
+EĞLENCE	10		Şenlik
+EĞİTİM	10		Terbiye
+EŞ	10		Hayat arkadaşı
+EŞKIYA	10		Haydut
+EŞOFMAN	10		Spor giysisi
+EŞYA	10		Amaçlı nesneler
+FABRİKA	10		İmalathane
+FAKÜLTE	10		Üniversite bölümü
+FAKİR	10		Yoksul
+FAR	10		Araç lambası
+FASULYE	10		Kuru baklagil
+FATURA	10		Hesap pusulası
+FAVORİ	10		Gözde
+FAYANS	10		Seramik
+FAYDA	10		Yarar
+FELAKET	10		Afet
+FELSEFE	10		Düşünce bilimi
+FENER	10		Lamba
+FESTİVAL	10		Şenlik
+FIKRA	10		Kısa şaka
+FINDIK	10		Kuruyemiş
+FIRIN	10		Ekmek pişirilen
+FIRSAT	10		Şans
+FIRTINA	10		Bora
+FIRÇA	10		Boya aleti
+FLAMİNGO	10		Pembe kuş
+FLÖRT	10		Kur
+FORMA	10		Spor giysisi
+FORMÜL	10		Reçete
+FOSİL	10		Taşıl
+FOTOKOPİ	10		Kopya
+FOTOĞRAF	10		Resim
+FUTBOL	10		Top oyunu
+FUTBOLCU	10		Top oyuncusu
+FİKİR	10		Düşünce
+FİL	10		Hortumlu hayvan
+FİLTRE	10		Süzgeç
+FİNAL	10		Son
+FİNCAN	10		Kahve kabı
+FİYAT	10		Değer
+FİZİK	10		Doğa bilimi
+GALAKSİ	10		Gökada
+GARAJ	10		Araç evi
+GARANTİ	10		Güvence
+GARDIROP	10		Elbise dolabı
+GARGARA	10		Boğaz çalkalama
+GARSON	10		Servis eden
+GARİP	10		Tuhaf
+GAZ	10		Akışkan
+GAZETE	10		Günlük yayın
+GAZETECİ	10		Muhabir
+GAZOZ	10		Köpüklü içecek
+GAZİNO	10		Eğlence yeri
+GECELİK	10		Pijama
+GELECEK	10		İstikbal
+GELENEK	10		Anane
+GELİN	10		Yeni evli kadın
+GELİNLİK	10		Beyaz elbise
+GELİR	10		Kazanç
+GEMİ	10		Deniz aracı
+GENEL	10		Umumi
+GENÇLİK	10		Delikanlılık
+GENİŞ	10		Dar karşıtı
+GEOMETRİ	10		Hendese
+GERGEDAN	10		Tek boynuzlu hayvan
+GERÇEK	10		Hakikat
+GEVEZE	10		Çenesi düşük
+GEZEGEN	10		Seyyare
+GEZGİN	10		Seyyah
+GEZİNTİ	10		Yürüyüş
+GEÇ	10		Gecikmiş
+GOL	10		Sayı
+GORİL	10		İri maymun
+GRAFİK	10		Çizelge
+GREYFURT	10		Altıntop
+GRİ	10		Kül rengi
+GRİP	10		Virüs yollu hastalık
+GÖBEK	10		Karın ortası
+GÖK	10		Gökyüzü
+GÖKDELEN	10		Yüksek bina
+GÖKYÜZÜ	10		Sema
+GÖL	10		Durgun su
+GÖLGE	10		Karartı
+GÖMLEK	10		Yakalı giysi
+GÖNÜL	10		Kalp
+GÖREV	10		Vazife
+GÖSTERİ	10		Şov
+GÖZ	10		Görme organı
+GÖZLÜK	10		Miyop ihtiyacı
+GÖZYAŞI	10		Ağlama
+GÖÇ	10		Taşınma
+GÖÇMEN	10		Muhacir
+GÖĞÜS	10		Bağır
+GÜL	10		Dikenli çiçek
+GÜLÜCÜK	10		Tebessüm
+GÜMRÜK	10		Sınır vergisi
+GÜMÜŞ	10		Beyaz metal
+GÜN	10		Yirmi dört saat
+GÜNAH	10		Suç
+GÜNAYDIN	10		Sabah selamı
+GÜNDEM	10		Güncel konular
+GÜNDÜZ	10		Gece karşıtı
+GÜNEY	10		Cenup
+GÜNEŞ	10		Gündüz yıldızı
+GÜNEŞLİ	10		Açık hava
+GÜNLÜK	10		Hatıra defteri
+GÜREŞ	10		Pehlivanlık
+GÜRÜLTÜ	10		Patırtı
+GÜVEN	10		İtimat
+GÜVENLİK	10		Emniyet
+GÜVERCİN	10		Posta kuşu
+GÜVERTE	10		Gemi tabanı
+GÜZEL	10		Hoş
+GÜZELLİK	10		Hüsün
+GÜÇ	10		Kuvvet
+GİDER	10		Masraf
+GİZLİ	10		Saklı
+HA	10		Gülüş efekti
+HABER	10		Bilgi
+HAFTA	10		Yedi gün
+HAFİF	10		Yeğni
+HAK	10		Adalet
+HAKARET	10		Aşağılama
+HALAY	10		Halk oyunu
+HALKA	10		Çember
+HAMSİ	10		Karadeniz balığı
+HAMUR	10		Un karışımı
+HAMİLE	10		Gebe
+HANIM	10		Bayan
+HAP	10		İlaç
+HAPİS	10		Cezaevi
+HARDAL	10		Sarı sos
+HAREKET	10		Devinim
+HARF	10		Seslerin karşılığı
+HARİKA	10		Mükemmel
+HARİTA	10		Kroki
+HASAR	10		Zarar
+HASRET	10		Özlem
+HASTA	10		Rahatsız
+HASTALIK	10		İllet
+HASTANE	10		Şifahane
+HATIRA	10		Anı
+HAVA	10		Atmosfer
+HAVLU	10		Kurulanma bezi
+HAVUZ	10		Yüzme yeri
+HAVUÇ	10		Turuncu sebze
+HAYAL	10		Düş
+HAYALET	10		Ruh
+HAYAT	10		Yaşam
+HAYDUT	10		Eşkıya
+HAYIR	10		Olumsuz cevap
+HAYVAN	10		Canlı
+HAZIR	10		Mevcut
+HAZİNE	10		Define
+HAZİRAN	10		Yaz ayı
+HE	10		Evet, tamam
+HEDEF	10		Amaç
+HEDİYE	10		Armağan
+HEKİM	10		Doktor
+HELVA	10		Tatlı
+HEM	10		Ayrıca
+HEMŞİRE	10		Hasta bakıcı
+HEP	10		Her zaman
+HER	10		Bütün
+HESAP	10		Sayım
+HEVES	10		İstek
+HEY	10		Seslenme
+HEYECAN	10		Coşku
+HEYKEL	10		Yontu
+HIRKA	10		Yün ceket
+HIRSIZ	10		Soyguncu
+HIYAR	10		Salatalık
+HIZ	10		Sürat
+HIÇKIRIK	10		Ağlama
+HOBİ	10		Uğraş, meşgale
+HOPARLÖR	10		Ses yükseltici
+HOROZ	10		Erkek tavuk
+HORTLAK	10		Hayalet
+HORTUM	10		Su borusu
+HOŞ	10		Güzel
+HUZUR	10		Dinginlik
+HUZUREVİ	10		Yaşlılar yurdu
+HÜZÜN	10		Keder
+HİDROJEN	10		En hafif gaz
+HİZMET	10		İş
+HİZMETÇİ	10		Uşak
+HİÇ	10		Asla
+IHLAMUR	10		Kış çayı
+ISI	10		Sıcaklık
+ISLAK	10		Nemli
+ISLIK	10		Dudak sesi
+ISTAKOZ	10		Pahalı kabuklu
+IŞIK	10		Nur
+JAGUAR	10		Benekli kedi
+JAMBON	10		Tütsülü et
+JEL	10		Kıvamlı madde
+JET	10		Tepkili uçak
+JÜRİ	10		Seçici kurul
+KABA	10		Görgüsüz
+KABAK	10		Sebze
+KABUK	10		Dış katman
+KABUL	10		Onay
+KADAYIF	10		Tel tatlı
+KADIN	10		Hanım
+KAFATASI	10		İskelet başı
+KAHKAHA	10		Gülme
+KAHRAMAN	10		Yiğit
+KAHVALTI	10		Sabah yemeği
+KAHVE	10		Kafein içeceği
+KAHVECİ	10		Kıraathaneci
+KAKTÜS	10		Dikenli bitki
+KAL	10		Maden eritme
+KALDIRIM	10		Yaya yolu
+KALECİ	10		File bekçisi
+KALEM	10		Yazı aracı
+KALEMLİK	10		Masa eşyası
+KALIP	10		Model
+KALORİ	10		Enerji birimi
+KALÇA	10		Kaba et
+KAMBUR	10		Sırt çıkıntısı
+KAMERA	10		Çekim aleti
+KAMPANYA	10		İndirim
+KAMPÜS	10		Okul alanı
+KAMYON	10		Yük taşıtı
+KAMYONET	10		Pikap
+KAN	10		Damar sıvısı
+KANAL	10		Su yolu
+KANAT	10		Kuş kolu
+KANDİL	10		Yağ lambası
+KANEPE	10		Divan
+KANIT	10		Delil
+KANSER	10		Tümör
+KANTİN	10		Büfe
+KANYON	10		Derin vadi
+KAP	10		Kab
+KAPAK	10		Örtü
+KAPLAN	10		Çizgili kedi
+KAPSÜL	10		İlaç zarfı
+KAPTAN	10		Gemi reisi
+KAR	10		Kış yağışı
+KARAKTER	10		Kişilik
+KARAMELA	10		Yanık şeker
+KARANLIK	10		Zifiri
+KARAR	10		Hüküm
+KARATE	10		Dövüş sanatı
+KARBON	10		Element
+KARDEŞ	10		Bacı
+KARGA	10		Kara kuş
+KARGO	10		Yük
+KARIN	10		Göbek
+KARINCA	10		Çalışkan böcek
+KARIŞIK	10		Çeşitli
+KARNAVAL	10		Şenlik
+KARPUZ	10		Yaz meyvesi
+KARTAL	10		Yırtıcı kuş
+KARTON	10		Mukavva
+KARTOPU	10		Kış oyunu
+KARİDES	10		Deniz kabuklusu
+KAS	10		Adale
+KASABA	10		Küçük şehir
+KASAP	10		Et satan
+KASKET	10		Siperli şapka
+KASİYER	10		Kasadar
+KAT	10		Bina katı
+KATALOG	10		Liste
+KATEDRAL	10		Büyük kilise
+KATRAN	10		Zift
+KAVANOZ	10		Cam kap
+KAVGA	10		Dövüş
+KAVUN	10		Yaz meyvesi
+KAVŞAK	10		Kesişim
+KAYAK	10		Kar sporu
+KAYDIRAK	10		Kayma oyuncağı
+KAYIK	10		Sandal
+KAYIP	10		Yitik
+KAYISI	10		Zerdali
+KAYMAK	10		Süt yüzü
+KAYMAKAM	10		İlçe yöneticisi
+KAYNAK	10		Pınar
+KAYNANA	10		Kayınvalide
+KAZAK	10		Yün giysi
+KAZAN	10		Büyük tencere
+KAZIK	10		Sivri direk
+KAÇ	10		Ne kadar
+KAŞ	10		Göz üstü
+KAŞIK	10		Yemek aleti
+KEBAP	10		Et yemeği
+KEK	10		Pasta
+KEKEME	10		Pepe
+KELEBEK	10		Kanatlı böcek
+KELOĞLAN	10		Masal kahramanı
+KELİME	10		Sözcük
+KEMAN	10		Yaylı çalgı
+KEMER	10		Bel kayışı
+KEMİK	10		İskelet parçası
+KENAR	10		Kıyı
+KENT	10		Şehir
+KERPİÇ	10		Tuğla
+KES	10		Spor ayakkabı
+KESKİN	10		Sivri
+KESTANE	10		Kış çerezi
+KETÇAP	10		Domates sosu
+KEYİF	10		Zevk
+KEZ	10		Defa
+KIL	10		Tüy
+KILÇIK	10		Balık kemiği
+KIR	10		Kırsal
+KIRBAÇ	10		Kamçı
+KIRIK	10		Çatlak
+KIRMIZI	10		Al
+KISA	10		Bodur
+KISKANÇ	10		Haset
+KISMET	10		Nasip
+KIYAFET	10		Giysi
+KIZ	10		Evlat
+KIŞ	10		Soğuk mevsim
+KLAVYE	10		Tuş takımı
+KOALA	10		Avustralya hayvanı
+KOCAMAN	10		İri
+KOD	10		Şifre
+KOKU	10		Esans
+KOL	10		Bilek-omuz arası
+KOLAY	10		Basit
+KOLONYA	10		Limon kokusu
+KOLTUK	10		Tekli kanepe
+KOMEDYEN	10		Komik
+KOMUTAN	10		Kumandan
+KOMŞU	10		Yandaki ev
+KONSER	10		Dinleti
+KONSERVE	10		Kutu yiyecek
+KONTROL	10		Denetim
+KONUK	10		Misafir
+KORKU	10		Dehşet
+KORKUNÇ	10		Dehşetli
+KORSAN	10		Deniz haydudu
+KOT	10		Rakım
+KOY	10		Körfez
+KOZ	10		Ceviz
+KOZMETİK	10		Makyaj ürünü
+KRALİYET	10		Saray
+KUKLA	10		Oyuncak bebek
+KULAK	10		İşitme organı
+KULAKLIK	10		Dinleme aleti
+KUM	10		Plaj zemini
+KUMANDA	10		Uzaktan kontrol
+KUMAŞ	10		Dokuma
+KUMBARA	10		Para kutusu
+KUPA	10		Ödül
+KURABİYE	10		Tatlı bisküvi
+KURBAN	10		Adak
+KURBAĞA	10		Vıraklayan
+KURNAZ	10		Tilki gibi
+KUTLAMA	10		Tebrik
+KUYRUK	10		Hayvan arkası
+KUYUMCU	10		Altıncı
+KUZEN	10		Amca oğlu
+KUZEY	10		Şimal
+KUZU	10		Yavru koyun
+KUĞU	10		Göl kuşu
+KUŞ	10		Kanatlı
+KÖFTE	10		Kıyma yemeği
+KÖK	10		Bitki kökü
+KÖMÜR	10		Yakıt
+KÖPEK	10		İt
+KÖPRÜ	10		Geçit
+KÖPÜK	10		Kabarcık
+KÖY	10		Kırsal yerleşim
+KÖŞE	10		Kuytu yer
+KÜL	10		Yanık artığı
+KÜLTÜR	10		Hars
+KÜMES	10		Tavuk evi
+KÜREK	10		Kazma aleti
+KÜÇÜCÜK	10		Minik
+KÜÇÜK	10		Ufak
+Kİ	10		Bağlaç
+KİBAR	10		Nazik
+KİBRİT	10		Çöp ateş
+KİLO	10		Ağırlık
+KİLİM	10		Dokuma yaygı
+KİLİSE	10		Hristiyan mabedi
+KİLİT	10		Kapı emniyeti
+KİM	10		Hangi kişi
+KİMLİK	10		Nüfus kağıdı
+KİR	10		Pislik
+KİRAZ	10		Kırmızı meyve
+KİREMİT	10		Çatı örtüsü
+KİREÇ	10		Badana
+KİRPİ	10		Dikenli hayvan
+KİRPİK	10		Göz kılı
+KİTABEVİ	10		Sahaf
+KİTAP	10		Eser
+KİTAPLIK	10		Raf
+KİTAPÇI	10		Sahaf
+LACİVERT	10		Koyu mavi
+LAHANA	10		Yapraklı sebze
+LAHMACUN	10		Kıymalı hamur
+LALE	10		Bahar çiçeği
+LAMBA	10		Işık
+LANET	10		Beddua
+LASTİK	10		Tekerlek
+LAZANYA	10		İtalyan yemeği
+LEKE	10		Kir
+LEYLAK	10		Mor çiçek
+LEZZET	10		Tat
+LEZZETLİ	10		Tatlı
+LODOS	10		Güney rüzgarı
+LOGO	10		Simge
+LOKANTA	10		Restoran
+LOKMA	10		Ağız dolusu
+LOKUM	10		Türk tatlısı
+LUNAPARK	10		Eğlence parkı
+LÜKS	10		Pahalı
+LÜTFEN	10		Rica ederim
+LİDER	10		Önder
+LİMAN	10		Rıhtım
+LİMON	10		Ekşi meyve
+LİMONATA	10		Ekşi içecek
+LİMUZİN	10		Uzun araba
+LİSANS	10		Üniversite
+LİSTE	10		Dizelge
+MAALESEF	10		Ne yazık ki
+MAAŞ	10		Aylık ücret
+MACERA	10		Serüven
+MACERACI	10		Serüvenci
+MADALYA	10		Nişan
+MADDE	10		Cisim
+MADEN	10		Mineral
+MAFYA	10		Çete
+MAGAZİN	10		Dedikodu basını
+MAHALLE	10		Semt
+MAKALE	10		Yazı
+MAKARA	10		İplik bobini
+MAKARENA	10		Dans türü
+MAKARNA	10		Spagetti
+MAKAS	10		Kesme aleti
+MAKYAJ	10		Boya
+MAKİNE	10		Alet
+MAL	10		Servet
+MALZEME	10		Materyal
+MANASTIR	10		Rahip yurdu
+MANAV	10		Meyveci
+MANDAL	10		Çamaşır tutucu
+MANKEN	10		Model
+MANOLYA	10		Beyaz çiçekli ağaç
+MANTAR	10		Şapkalı bitki
+MANTI	10		Kayseri yemeği
+MANTIK	10		Akıl yürütme
+MANZARA	10		Görünüm
+MARATON	10		Uzun koşu
+MARGARİN	10		Bitkisel yağ
+MARKET	10		Bakkal
+MARTI	10		Deniz kuşu
+MARUL	10		Salata yeşilliği
+MASAJ	10		Ovma
+MASAL	10		Hikaye
+MASKE	10		Yüz örtüsü
+MASKOT	10		Uğur simgesi
+MASMAVİ	10		Çok mavi
+MASUM	10		Suçsuz
+MATKAP	10		Delgi
+MAYDANOZ	10		Yeşillik
+MAYIS	10		Bahar ayı
+MAYMUN	10		Primat
+MAYONEZ	10		Beyaz sos
+MAZOT	10		Yakıt
+MAÇ	10		Karşılaşma
+MAĞARA	10		İn
+MAĞAZA	10		Dükkan
+MAŞALLAH	10		Nazar duası
+MEDYA	10		Basın
+MEKTUP	10		Zarf içi yazı
+MELEK	10		İlahi varlık
+MELODİ	10		Ezgi
+MEMLEKET	10		Vatan
+MEMNUN	10		Hoşnut
+MENDİL	10		Burun bezi
+MENEMEN	10		Yumurtalı yemek
+MENÜ	10		Yemek kartı
+MERAK	10		İlgi
+MERCAN	10		Deniz canlısı
+MERCİMEK	10		Baklagil
+MERDİVEN	10		Basamaklar
+MERHABA	10		Selam
+MERHAMET	10		Acıma
+MERKEZ	10		Orta
+MERMİ	10		Kurşun
+MESAFE	10		Uzaklık
+MESAJ	10		İleti
+MESLEK	10		İş
+METRE	10		Uzunluk birimi
+METİN	10		Yazı
+MEVSİM	10		Sezon
+MEYDAN	10		Alan
+MEYVE	10		Yemiş
+MEZAR	10		Kabir
+MEZARLIK	10		Kabristan
+MEŞHUR	10		Ünlü
+MOBİLYA	10		Döşeme
+MODA	10		Akım
+MODEL	10		Örnek
+MOR	10		Menekşe rengi
+MORAL	10		Güç
+MOTOR	10		Makine
+MUCİZE	10		Harika
+MUHABİR	10		Haberci
+MUHTEŞEM	10		Görkemli
+MUM	10		Balmumu
+MUSLUK	10		Çeşme
+MUTFAK	10		Aşevi
+MUTLU	10		Sevinçli
+MUTLULUK	10		Saadet
+MUTSUZ	10		Bedbaht
+MUZ	10		Sarı meyve
+MÜDÜR	10		Yönetici
+MÜHENDİS	10		Teknik uzman
+MÜJDE	10		İyi haber
+MÜKEMMEL	10		Kusursuz
+MÜMKÜN	10		Olası
+MÜTHİŞ	10		Harika
+MÜZİK	10		Musiki
+MÜZİSYEN	10		Çalgıcı
+MÜŞTERİ	10		Alıcı
+MİDE	10		Karın
+MİDYE	10		Deniz kabuklusu
+MİKROFON	10		Ses alıcı
+MİKROP	10		Bakteri
+MİKSER	10		Karıştırıcı
+MİLLET	10		Ulus
+MİLYON	10		Bin kere bin
+MİLYONER	10		Zengin
+MİMAR	10		Tasarımcı
+MİNİBÜS	10		Dolmuş
+MİNİK	10		Küçük
+MİRAS	10		Kalıt
+MİSAFİR	10		Konuk
+MİTOLOJİ	10		Söylence bilimi
+MİZAH	10		Güldürü
+NAMAZ	10		İbadet
+NAR	10		Kırmızı taneli meyve
+NARGİLE	10		Tütün çubuğu
+NARKOZ	10		Uyuşturma
+NAYLON	10		Plastik
+NAZARLIK	10		Muska
+NAZİK	10		Kibar
+NE	10		17. harf
+NEFES	10		Soluk
+NEHİR	10		Irmak
+NENE	10		Babaanne
+NESİL	10		Kuşak
+NET	10		Açık
+NEŞE	10		Keyif
+NOHUT	10		Baklagil
+NOKTA	10		Benek
+NORMAL	10		Olağan
+NOSTALJİ	10		Geçmiş özlemi
+NOT	10		Puan
+NUMARA	10		Sayı
+NÖBET	10		Sıra
+NİNNİ	10		Uyutma şarkısı
+NİYET	10		Kasıt
+NİŞAN	10		Sözlenme
+NİŞANLI	10		Sözlü
+OBUR	10		Doymaz
+ODA	10		Hücre
+ODUNCU	10		Orman işçisi
+OFSAYT	10		Futbol kuralı
+OK	10		Silah
+OKSİJEN	10		Hava gazı
+OKUL	10		Mektep
+OKYANUS	10		Büyük deniz
+OLİMPİK	10		Oyunlarla ilgili
+OMLET	10		Yumurta yemeği
+OMURGA	10		Belkemiği
+OMUZ	10		Boyunla kol arası
+ONUR	10		Şeref
+OPERA	10		Müzikli tiyatro
+ORGANİK	10		Doğal
+ORKESTRA	10		Çalgı topluluğu
+ORMAN	10		Koru
+ORTAK	10		Hissedar
+ORTAOKUL	10		İlköğretim
+OSMANLI	10		İmparatorluk
+OT	10		Bitki
+OTOBÜS	10		Toplu taşıt
+OTOMATİK	10		Kendiliğinden
+OTOMOBİL	10		Araba
+OTOPARK	10		Park yeri
+OTOSTOP	10		Parasız yolculuk
+OVA	10		Düzlük
+OYUNCAK	10		Çocuk eşyası
+OYUNCU	10		Aktör
+OĞLAN	10		Erkek çocuk
+PAHALI	10		Tuzlu
+PAKET	10		Koli
+PALTO	10		Kaban
+PALYAÇO	10		Soytarı
+PAMUK	10		Beyaz lif
+PANCAR	10		Kırmızı kök
+PANJUR	10		Kepenk
+PANO	10		Tahta
+PANTER	10		Kara pars
+PANTOLON	10		Paçalı giysi
+PANİK	10		Korku
+PAPATYA	10		Beyaz çiçek
+PAPAZ	10		Rahip
+PAPAĞAN	10		Konuşan kuş
+PAPYON	10		Kelebek kravat
+PARAŞÜT	10		Hava şemsiyesi
+PARFÜM	10		Koku
+PARLAK	10		Işıltılı
+PARMAK	10		El uzantısı
+PAROLA	10		Şifre
+PARTİ	10		Siyasi örgüt
+PARÇA	10		Kısım
+PAS	10		Paslanma
+PASAPORT	10		Yol belgesi
+PASTA	10		Kek
+PASTANE	10		Tatlıcı
+PASTIRMA	10		Kurutulmuş et
+PAT	10		Düşme sesi
+PATATES	10		Yumru sebze
+PATLICAN	10		Mor sebze
+PATRON	10		İşveren
+PAY	10		Hisse
+PAZAR	10		Çarşı
+PAZARLIK	10		İndirim isteme
+PEDAL	10		Ayak basılan
+PEMBE	10		Açık kırmızı
+PENALTI	10		On bir adım
+PENCERE	10		Cam
+PERDE	10		Tül
+PERGEL	10		Daire aleti
+PERİ	10		Huri
+PERŞEMBE	10		Hafta günü
+PETEK	10		Arı yuvası
+PETROL	10		Ham yağ
+PEYNİR	10		Süt ürünü
+PEÇETE	10		Mendil
+PLASTİK	10		Naylon
+POLİTİKA	10		Siyaset
+POP	10		Popüler müzik
+POPO	10		Kıç
+PORTAKAL	10		Turunçgil
+POSTA	10		Mektup
+POSTACI	10		Mektup dağıtan
+POZ	10		Duruş
+PRENSES	10		Kral kızı
+PROBLEM	10		Sorun
+PROFESÖR	10		Akademisyen
+PROGRAM	10		Plan
+PUSULA	10		Yön bulucu
+PİDE	10		Yassı ekmek
+PİJAMA	10		Uyku giysisi
+PİKNİK	10		Açık hava yemeği
+PİL	10		Batarya
+PİLAV	10		Pirinç yemeği
+PİLOT	10		Uçak kullanan
+PİLİÇ	10		Tavuk
+PİRİNÇ	10		Pilavlık tane
+PİS	10		Kirli
+PİSİ	10		Kedi
+PİYANGO	10		Şans oyunu
+PİYANO	10		Tuşlu çalgı
+PİZZA	10		İtalyan yemeği
+PİŞMAN	10		Nadim
+RADYATÖR	10		Kalorifer
+RADYO	10		Alıcı
+RAF	10		Duvar rafı
+RAHAT	10		Konforlu
+RAHİP	10		Papaz
+RAKAM	10		Sayı
+RAKİP	10		Hasım
+RAMAZAN	10		Oruç ayı
+RAMPA	10		Yokuş
+RANDEVU	10		Buluşma
+RANZA	10		Katlı yatak
+RAPOR	10		İnceleme yazısı
+REHBER	10		Kılavuz
+REKLAM	10		Tanıtım
+RESSAM	10		Boyacı sanatçı
+RESTORAN	10		Lokanta
+RESİM	10		Tablo
+REYHAN	10		Fesleğen
+REÇEL	10		Marmelat
+REÇETE	10		İlaç kağıdı
+ROBOT	10		Makine insan
+ROKA	10		Acımsı yeşillik
+ROKET	10		Füze
+ROMAN	10		Uzun hikaye
+ROMANTİK	10		Duygusal
+RUH	10		Can
+RUJ	10		Dudak boyası
+RÖPORTAJ	10		Söyleşi
+RÜŞVET	10		Yolsuzluk
+SABAH	10		Seher
+SABIR	10		Tahammül
+SABUN	10		Temizleyici
+SAFRAN	10		Sarı baharat
+SAHA	10		Alan
+SAHNE	10		Tiyatro yeri
+SAHTE	10		Taklit
+SAHİL	10		Kıyı
+SAHİP	10		Malik
+SAKAL	10		Yüz kılı
+SAKIZ	10		Çiklet
+SAKSAFON	10		Nefesli çalgı
+SALAM	10		Şarküteri
+SALATA	10		Yeşillik yemeği
+SALDIRI	10		Hücum
+SALINCAK	10		Hamak
+SALON	10		Oturma odası
+SALÇA	10		Domates ezmesi
+SANAT	10		Zanaat
+SANATÇI	10		Artist
+SANDAL	10		Kayık
+SANDALET	10		Yazlık ayakkabı
+SANDALYE	10		İskemle
+SANDVİÇ	10		Arası dolu ekmek
+SANSÜR	10		Yasaklama
+SANİYE	10		An
+SARAY	10		Köşk
+SARDALYA	10		Küçük balık
+SARIMSAK	10		Diş diş sebze
+SARIŞIN	10		Açık renk saçlı
+SATICI	10		Tüccar
+SATIR	10		Dize
+SATRANÇ	10		Şah oyunu
+SAVAŞ	10		Harp
+SAYFA	10		Yaprak
+SAYGI	10		Hürmet
+SAÇ	10		Kafa kılı
+SAÇMA	10		Anlamsız
+SAĞ	10		Diri
+SAĞANAK	10		Ani yağmur
+SAĞLIK	10		Sıhhat
+SEBEP	10		Neden
+SEBZE	10		Zerzevat
+SEKSEN	10		Sekiz onluk
+SEL	10		Su baskını
+SELAM	10		Merhaba
+SEMBOL	10		Simge
+SEMPATİK	10		Sevimli
+SEN	10		Ben değil
+SEPET	10		Hasır kap
+SERAMİK	10		Çini
+SERBEST	10		Özgür
+SERSERİ	10		Avare
+SERVET	10		Varlık
+SERVİS	10		Hizmet
+SERÇE	10		Küçük kuş
+SERİN	10		Soğukça
+SES	10		Seda
+SESSİZ	10		Sakin
+SET	10		Engel
+SEVDA	10		Aşk
+SEVGİ	10		Muhabbet
+SEVGİLİ	10		Yar
+SEVİMLİ	10		Şirin
+SEVİNÇ	10		Neşe
+SEVİYE	10		Düzey
+SEYAHAT	10		Yolculuk
+SEYİRCİ	10		İzleyici
+SEZON	10		Mevsim
+SICAK	10		Ilık
+SIFIR	10		Hiç
+SIK	10		Yoğun
+SIKI	10		Dar
+SINAV	10		İmtihan
+SINIF	10		Derslik
+SINIR	10		Hudut
+SIR	10		Gizem
+SIÇAN	10		Fare
+SIĞIR	10		İnek
+SKANDAL	10		Rezalet
+SLOGAN	10		Şiar
+SOBA	10		Isıtıcı
+SOFRA	10		Yemek masası
+SOHBET	10		Muhabbet
+SOKAK	10		Cadde
+SOL	10		Sağ karşıtı
+SON	10		Bitiş
+SONBAHAR	10		Güz
+SONUÇ	10		Netice
+SORUN	10		Problem
+SOS	10		Salça
+SOSYAL	10		Toplumsal
+SOĞAN	10		Sebze
+SOĞUK	10		Serin
+SPAGETTİ	10		İnce makarna
+SPOR	10		İdman
+SPORCU	10		Atlet
+STADYUM	10		Stat
+SU	10		Sıvı
+SUCUK	10		Baharatlı et
+SULTAN	10		Padişah
+SURAT	10		Yüz
+SUÇ	10		Kabahat
+SÖZ	10		Kelime
+SÖZLEŞME	10		Anlaşma
+SÖZLÜK	10		Lügat
+SÜPÜRGE	10		Temizlik aleti
+SÜRPRİZ	10		Beklenmedik
+SÜS	10		Ziynet
+SÜT	10		Ak içecek
+SÜTUN	10		Kolon
+SİGARA	10		Tütün
+SİHİR	10		Büyü
+SİHİRBAZ	10		Büyücü
+SİLGİ	10		Lastik
+SİMSİYAH	10		Kapkara
+SİMİT	10		Susamlı halka
+SİNCAP	10		Ağaç hayvanı
+SİNEK	10		Böcek
+SİNEMA	10		Film
+SİNYAL	10		İşaret
+SİNİR	10		Asap
+SİRKE	10		Ekşi sıvı
+SİS	10		Pus
+SİSTEM	10		Düzen
+SİVİLCE	10		Akne
+SİYAH	10		Kara
+SİZ	10		Biz değil
+TABAK	10		Yemek kabı
+TABAN	10		Ayak altı
+TABANCA	10		Silah
+TABLET	10		İlaç
+TABUT	10		Ölü sandığı
+TAHMİN	10		Kestirme
+TAHT	10		İktidar
+TAHTA	10		Ahşap
+TAKIM	10		Ekip
+TAKLİT	10		Kopya
+TAKSİ	10		Dolmuş
+TAKSİCİ	10		Şoför
+TAKSİT	10		Ödeme parçası
+TAKTİK	10		Strateji
+TAKVİM	10		Almanak
+TAKİP	10		İzleme
+TALEP	10		İstek
+TAM	10		Bütün
+TAMPON	10		Araba önü
+TAMİR	10		Onarım
+TAMİRCİ	10		Onarıcı
+TANDIR	10		Toprak fırın
+TANIDIK	10		Aşina
+TANRI	10		Allah
+TARAF	10		Yan
+TARAK	10		Saç düzeltici
+TARLA	10		Ekin yeri
+TARİH	10		Geçmiş
+TASARIM	10		Dizayn
+TAT	10		Lezzet
+TATLI	10		Şekerli
+TATİL	10		Dinlenme
+TAVA	10		Saplı kap
+TAVAN	10		Çatı altı
+TAVLA	10		Zar oyunu
+TAVSİYE	10		Öneri
+TAVUK	10		Kümes hayvanı
+TAVŞAN	10		Uzun kulaklı
+TAYFUN	10		Kasırga
+TAÇ	10		Kral başlığı
+TAŞ	10		Kaya
+TEBEŞİR	10		Kara tahta kalemi
+TEDAVİ	10		İyileştirme
+TEHDİT	10		Gözdağı
+TEHLİKE	10		Risk
+TEK	10		Bir
+TEKLİF	10		Öneri
+TEKNE	10		Kayık
+TEKNİK	10		Yöntem
+TEKRAR	10		Yine
+TEL	10		Kablo
+TELAŞ	10		Acele
+TELEFON	10		Ahize
+TELESKOP	10		Dürbün
+TELSİZ	10		Kablosuz
+TEMBEL	10		Üşengeç
+TEMEL	10		Esas
+TEMMUZ	10		Yaz ayı
+TEMİZ	10		Pak
+TEMİZLİK	10		Paklık
+TENCERE	10		Kap
+TENİS	10		Raket sporu
+TEPKİ	10		Reaksiyon
+TEPSİ	10		Sini
+TER	10		Vücut suyu
+TERAZİ	10		Tartı aleti
+TERCÜMAN	10		Çevirmen
+TEREYAĞI	10		Süt yağı
+TERLİK	10		Ev ayakkabısı
+TERMOS	10		Sıcak tutan
+TERS	10		Zıt
+TERTEMİZ	10		Pırıl pırıl
+TERZİ	10		Dikişçi
+TESLİM	10		Verme
+TESTİ	10		Toprak kap
+TEYZE	10		Annenin kız kardeşi
+TEĞMEN	10		Subay
+TEŞEKKÜR	10		Sağol
+TIK	10		Hafif ses
+TIR	10		Büyük kamyon
+TIRNAK	10		Parmak ucu
+TOHUM	10		Çekirdek
+TOK	10		Aç değil
+TOKAT	10		Şamar
+TOMBALA	10		Şans oyunu
+TON	10		Ağırlık birimi
+TOP	10		Yuvarlak
+TOPLANTI	10		Meclis
+TOPRAK	10		Arazi
+TORBA	10		Çanta
+TORUN	10		Oğul çocuğu
+TOZ	10		Toprak zerresi
+TRABZON	10		Karadeniz ili
+TRAFİK	10		Araç yoğunluğu
+TRAJİK	10		Acıklı
+TRAMVAY	10		Raylı araç
+TRİBÜN	10		Seyirci yeri
+TUHAF	10		Garip
+TUR	10		Gezi
+TURİST	10		Gezgin
+TURŞU	10		Salamura
+TUTKU	10		Aşk
+TUZ	10		Sodyum klorür
+TUZAK	10		Kapan
+TÖREN	10		Merasim
+TÜCCAR	10		Tacir
+TÜFEK	10		Av silahı
+TÜKENMEZ	10		Bitmeyen
+TÜM	10		Bütün
+TÜNEL	10		Yeraltı geçidi
+TÜR	10		Çeşit
+TÜRKÜ	10		Halk şarkısı
+TİLKİ	10		Kurnaz hayvan
+TİMSAH	10		Sürüngen
+TİP	10		Tür
+TİTİZ	10		Özenli
+TİYATRO	10		Sahne sanatı
+TİŞÖRT	10		Kısa kollu
+UCUZ	10		Hesaplı
+UF	10		Acı belirtisi
+UFUK	10		Çevren
+UN	10		Buğday öğütülmesi
+USKUMRU	10		Balık
+USTA	10		İşinin ehli
+UTANGAÇ	10		Çekingen
+UYANIK	10		Kurnaz
+UYARI	10		İkaz
+UYDU	10		Ay
+UYKULU	10		Mahmur
+UZAYLI	10		Yaratık
+UZMAN	10		Usta
+UÇ	10		Baş veya son
+UÇURTMA	10		Kağıt kuş
+VAKİT	10		Zaman
+VALİZ	10		Bavul
+VAMPİR	10		Kan emici
+VANİLYA	10		Aroma
+VAPUR	10		Gemi
+VAR	10		Mevcut
+VATAN	10		Yurt
+VE	10		Bağlama edatı
+VERGİ	10		Haraç
+VOLEYBOL	10		File oyunu
+VOLKAN	10		Yanardağ
+VÜCUT	10		Beden
+VİCDAN	10		İç ses
+VİDEO	10		Görüntü kaydı
+VİLLA	10		Köşk
+VİRGÜL	10		Noktalama işareti
+VİSKİ	10		Tahıl içkisi
+VİTAMİN	10		Besin öğesi
+VİTRİN	10		Dükkan camı
+VİŞNE	10		Ekşi kiraz
+YABANCI	10		Ecnebi
+YAKAMOZ	10		Deniz ışığı
+YAKIN	10		Uzak karşıtı
+YAKIT	10		Benzin
+YALAN	10		Uydurma
+YALANCI	10		Palavracı
+YALNIZ	10		Tek başına
+YAN	10		Kenar
+YANAK	10		Yüz kenarı
+YANARDAĞ	10		Volkan
+YANGIN	10		Ateş
+YANKI	10		Eko
+YANLIŞ	10		Hata
+YAPIŞKAN	10		Tutkallı
+YAPRAK	10		Bitki kısmı
+YARAMAZ	10		Haylaz
+YARATIK	10		Mahluk
+YARDIM	10		Destek
+YARDIMCI	10		Muavin
+YARIMADA	10		Üç yanı deniz
+YARIN	10		Ertesi gün
+YARIŞ	10		Müsabaka
+YARIŞMA	10		Müsabaka
+YASA	10		Kanun
+YASAK	10		Men
+YASEMİN	10		Beyaz çiçek
+YASTIK	10		Başlık
+YAT	10		Tekne
+YATAK	10		Döşek
+YAVAŞ	10		Ağır
+YAVRU	10		Çocuk
+YAYINEVİ	10		Matbaa
+YAYLA	10		Dağ ovası
+YAZ	10		Sıcak mevsim
+YAZAR	10		Muharrir
+YAZILIM	10		Program
+YAZLIK	10		Yaz evi
+YAĞ	10		Gres
+YAĞIŞ	10		Yağmur
+YAĞMUR	10		Yağış
+YAĞMURLU	10		Yağışlı
+YAŞ	10		Ömür
+YE	10		28. harf
+YELKEN	10		Rüzgar bezi
+YELKENLİ	10		Yat
+YELPAZE	10		Serinletici
+YEM	10		Hayvan yiyeceği
+YEMEK	10		Aş
+YEMYEŞİL	10		Çok yeşil
+YEMİN	10		Ant
+YER	10		Mekan
+YETENEK	10		Kabiliyet
+YETİŞKİN	10		Büyük
+YEŞİL	10		Çimen rengi
+YIL	10		Sene
+YILAN	10		Sürüngen
+YILBAŞI	10		Yeni yıl
+YILDIRIM	10		Şimşek
+YILDIZ	10		Gök cismi
+YOK	10		Mevcut değil
+YOL	10		Cadde
+YOLCULUK	10		Seyahat
+YORGAN	10		Kalın örtü
+YORGUN	10		Bitkin
+YORUM	10		Tefsir
+YOSUN	10		Alg
+YOĞURT	10		Süt mayası
+YULAF	10		Tahıl
+YUMRUK	10		Sıkılmış el
+YUMURTA	10		Tavuk ürünü
+YUMUŞAK	10		Sert değil
+YUNUS	10		Deniz memelisi
+YUVARLAK	10		Daire
+YÖN	10		Taraf
+YÖNETMEN	10		Rejisör
+YÖNETİCİ	10		İdareci
+YÜK	10		Ağırlık
+YÜKSEK	10		Alçak karşıtı
+YÜN	10		Koyun kılı
+YÜREK	10		Kalp
+YÜRÜYÜŞ	10		Gezinti
+YÜZ	10		Surat
+YÜZBAŞI	10		Rütbe
+YÜZYIL	10		Asır
+YÜZÜK	10		Alyans
+YİRMİ	10		Sayı
+YİYECEK	10		Gıda
+YİĞİT	10		Cesur
+ZABITA	10		Belediye polisi
+ZAFER	10		Galibiyet
+ZALİM	10		Acımasız
+ZAMAN	10		Vakit
+ZARAR	10		Ziyan
+ZARİF	10		İnce
+ZAVALLI	10		Gariban
+ZAYIF	10		Cılız
+ZEBRA	10		Çizgili at
+ZEHİR	10		Ağı
+ZEKİ	10		Akıllı
+ZEMİN	10		Yer
+ZENCEFİL	10		Baharat
+ZENGİN	10		Varlıklı
+ZEPLİN	10		Hava gemisi
+ZEYTİN	10		Yağlık meyve
+ZEYTİNLİ	10		Ege usulü
+ZIT	10		Karşıt
+ZOR	10		Güç
+ZİL	10		Kapı zili
+ZİNCİR	10		Halkalar
+ZİRVE	10		Doruk
+ZİYAFET	10		Şölen
+ÇABA	10		Gayret
+ÇABUK	10		Hızlı
+ÇADIR	10		Kamp evi
+ÇAKMAK	10		Ateş aleti
+ÇALIŞKAN	10		Gayretli
+ÇAM	10		İğne yapraklı ağaç
+ÇAMAŞIR	10		Giysi
+ÇAMUR	10		Balçık
+ÇANTA	10		Torba
+ÇAPKIN	10		Zampara
+ÇAPRAZ	10		Verev
+ÇARESİZ	10		Umutsuz
+ÇARŞAF	10		Yatak örtüsü
+ÇARŞAMBA	10		Hafta ortası
+ÇATAL	10		Yemek aleti
+ÇAVUŞ	10		Astsubay
+ÇAY	10		Demlik içeceği
+ÇEKİCİ	10		Cazibeli
+ÇEKİRGE	10		Zıplayan böcek
+ÇELİK	10		Sert metal
+ÇENE	10		Ağızdaki kemik
+ÇEREZ	10		Kuruyemiş
+ÇERÇEVE	10		Kenarlık
+ÇEVİRMEN	10		Tercüman
+ÇEYREK	10		Dörtte bir
+ÇEŞME	10		Su kaynağı
+ÇEŞİT	10		Tür
+ÇILGIN	10		Deli
+ÇINAR	10		Ulu ağaç
+ÇIPLAK	10		Üryan
+ÇIĞLIK	10		Feryat
+ÇOBAN	10		Sürü bekçisi
+ÇOCUK	10		Evlat
+ÇOCUKLUK	10		İlk yıllar
+ÇOK	10		Fazla
+ÇORAP	10		Ayak giysisi
+ÇORBA	10		Sıvı yemek
+ÇUKUR	10		Oyuk
+ÇÖL	10		Kum denizi
+ÇÖP	10		Atık
+ÇÖPLÜK	10		Çöp yığını
+ÇÜRÜK	10		Bozuk
+ÇİFTLİK	10		Tarla evi
+ÇİFTÇİ	10		Köylü
+ÇİKOLATA	10		Kakao ürünü
+ÇİLEK	10		Kırmızı meyve
+ÇİLİNGİR	10		Kilit ustası
+ÇİM	10		Çayır
+ÇİMENTO	10		Harç
+ÇİRKİN	10		Güzel karşıtı
+ÇİZGİ	10		Hat
+ÇİÇEK	10		Gül
+ÇİÇEKÇİ	10		Florist
+ÖDEME	10		Ödenti
+ÖDEV	10		Görev
+ÖDÜL	10		Kupa
+ÖFKELİ	10		Kızgın
+ÖKSÜRÜK	10		Boğaz tahrişi
+ÖKSÜZ	10		Annesiz
+ÖN	10		Arkanın zıddı
+ÖNEMLİ	10		Ciddi
+ÖPÜCÜK	10		Buse
+ÖRDEK	10		Su kuşu
+ÖRNEK	10		Misal
+ÖRÜMCEK	10		Ağ ören
+ÖZGÜR	10		Hür
+ÖZGÜRLÜK	10		Hürriyet
+ÖĞRENCİ	10		Talebe
+ÖĞRETMEN	10		Hoca
+ÜCRET	10		Maaş
+ÜLKE	10		Yurt
+ÜLSER	10		Mide yarası
+ÜST	10		Yukarı
+ÜTÜ	10		Kırışık giderici
+ÜYE	10		Aza
+ÜZGÜN	10		Kederli
+ÜZÜNTÜ	10		Keder
+ÜÇ	10		İkiden sonra
+ÜÇGEN	10		Üç kenarlı şekil
+ÜÇÜNCÜ	10		İkinciden sonra
+İDMAN	10		Antrenman
+İFTAR	10		Oruç açma
+İHTİYAÇ	10		Gereksinim
+İKLİM	10		Hava durumu
+İKRAM	10		Sunma
+İKİ	10		Bir artı bir
+İKİNCİ	10		Birinciden sonra
+İKİZ	10		Tıpatıp benzeyen
+İLAVE	10		Ek
+İLAÇ	10		Deva
+İLE	10		Ve
+İLGİ	10		Alaka
+İLGİNÇ	10		Enteresan
+İLK	10		Birinci
+İLKBAHAR	10		Bahar
+İLKOKUL	10		Temel eğitim
+İLİŞKİ	10		Bağ
+İMAJ	10		İmge
+İMTİHAN	10		Sınav
+İNANÇ	10		İman
+İNATÇI	10		Dik kafalı
+İNCE	10		Narin
+İNCİR	10		Tatlı meyve
+İNSAN	10		Kişi
+İNTERNET	10		Ağ
+İNTİKAM	10		Öç
+İNŞAAT	10		Yapım
+İP	10		İplik
+İPEK	10		Böcek lifi
+İPLİK	10		İp
+İPTAL	10		Geçersiz kılma
+İPUCU	10		İşaret
+İRİ	10		Büyük
+İSKAMBİL	10		Oyun kağıdı
+İSKELET	10		Kemik yapısı
+İSPANYA	10		Madrid ülkesi
+İSTASYON	10		Gar
+İSTEK	10		Arzu
+İSTİKLAL	10		Bağımsızlık
+İTFAİYE	10		Yangın söndürme
+İTİRAF	10		Kabul etme
+İTİRAZ	10		Karşı çıkma
+İYİ	10		Güzel
+İYİLİK	10		Hayır
+İYİMSER	10		Optimist
+İZ	10		Bırakılan belirti
+İZCİ	10		Keşifçi
+İÇ	10		Dış karşıtı
+İÇECEK	10		Meşrubat
+İÇKİ	10		Alkol
+İĞNE	10		Dikiş aracı
+İŞ	10		Meslek
+İŞARET	10		Alamet
+İŞSİZLİK	10		Boşta olma
+İŞTAH	10		Yeme isteği
+İŞÇİ	10		Amele
+ŞAFAK	10		Tan
+ŞAHANE	10		Harika
+ŞAMPANYA	10		Köpüklü şarap
+ŞAMPUAN	10		Saç sabunu
+ŞAMPİYON	10		Birinci
+ŞAPKA	10		Başlık
+ŞARKI	10		Türkü
+ŞARKICI	10		Ses sanatçısı
+ŞEF	10		Lider
+ŞEHİR	10		Kent
+ŞEKER	10		Tatlandırıcı
+ŞEKİL	10		Biçim
+ŞELALE	10		Çağlayan
+ŞEMPANZE	10		Maymun
+ŞEMSİYE	10		Yağmurluk alet
+ŞEN	10		Neşeli
+ŞEREF	10		Onur
+ŞEY	10		Nesne
+ŞEYTAN	10		İblis
+ŞIK	10		Zarif
+ŞU	10		İşaret sıfatı
+ŞUBAT	10		Kış ayı
+ŞUT	10		Vuruş
+ŞÖMİNE	10		Ocak
+ŞÖVALYE	10		Atlı savaşçı
+ŞÜPHE	10		Kuşku
+ŞİMDİ	10		Hemen
+ŞİMDİLİK	10		Şu an için
+ŞİMŞEK	10		Yıldırım
+ŞİRKET	10		Firma
+ŞİRİN	10		Sevimli
+ŞİŞ	10		Kebap çubuğu
+ABAKÜS	20		Boncuklu hesap aleti
+ABANOZ	20		Kara ağaç
+ABARTI	20		Mübalağa
+ABECE	20		Alfabe
+ABLUKA	20		Kuşatma
+ABİDE	20		Anıt
+ABİYE	20		Gece elbisesi
+ACEM	20		Toy, usta olmayan
+ACIKLI	20		Hüzünlü
+ACIMASIZ	20		Merhametsiz
+ACİZ	20		Gücü yetmeyen
+ADALETLİ	20		Hakkaniyetli
+ADAPTÖR	20		Dönüştürücü
+ADAY	20		Değerlendirilen kişi
+ADLİYE	20		Mahkeme binası
+ADİ	20		Alçak
+AEROBİK	20		Egzersiz türü
+AFET	20		Doğal zararlar
+AFİLİ	20		Gösterişli
+AGRESİF	20		Saldırgan
+AGU	20		Bebek sesi
+AH	20		Acıdan inlemek
+AHALİ	20		Halk
+AHENK	20		Uyum
+AHLAKSIZ	20		Edepsiz
+AHMAK	20		Aptal
+AHİRET	20		Öbür dünya
+AHŞAP	20		Tahta
+AJANS	20		Haber kurumu
+AKADEMİK	20		Bilimsel
+AKASYA	20		Sarı çiçekli ağaç
+AKNE	20		Sivilce
+AKREP	20		Zehirli böcek
+AKROBASİ	20		Cambazlık
+AKSESUAR	20		Süs eşyası
+AKTÜEL	20		Güncel
+AKTİVİST	20		Eylemci
+AKUSTİK	20		Ses bilimi
+AKÜ	20		Araba bataryası
+AL	20		Kırmızı
+ALABORA	20		Devrilme
+ALACAK	20		Borç karşıtı
+ALACAKLI	20		Borç veren
+ALAMET	20		İşaret
+ALATURKA	20		Doğu usulü
+ALAVERE	20		Karışıklık
+ALBATROS	20		Deniz kuşu
+ALDATMAK	20		Kandırmak
+ALG	20		Su yosunu
+ALINGAN	20		Hassas
+ALINTI	20		İktibas
+ALKOLSÜZ	20		İçkisiz
+ALPİNİST	20		Dağcı
+ALTIGEN	20		Petek şekli
+ALTYAPI	20		Temel tesisat
+ALTÜST	20		Karmakarışık
+ALYANS	20		Evlilik yüzüğü
+ALÇAKLIK	20		Adilik
+ALÇI	20		Duvar malzemesi
+ALÇIPAN	20		Duvar levhası
+AMBALAJ	20		Paket
+AMBARGO	20		Yaptırım
+AMBLEM	20		Logo
+AMONYAK	20		Keskin kokulu gaz
+AN	20		Kısa süre
+ANAKONDA	20		Dev yılan
+ANALİZ	20		Çözümleme
+ANARŞİST	20		Düzen karşıtı
+ANASON	20		Rakı baharatı
+ANATOMİ	20		Vücut bilimi
+ANEKDOT	20		Fıkra
+ANESTEZİ	20		Narkoz
+ANGARYA	20		Karşılıksız iş
+ANLAMSIZ	20		Saçma
+ANLAYIŞ	20		Kavrayış
+ANOMALİ	20		Sapma
+ANONİM	20		Adsız
+ANT	20		Yemin
+ANTLAŞMA	20		Sözleşme
+ANTOLOJİ	20		Seçki
+ANTRENÖR	20		Çalıştırıcı
+ANTREPO	20		Gümrük deposu
+ANTİKACI	20		Eski eşya satıcısı
+ANTİLOP	20		Ceylan türü
+ANTİPATİ	20		Sevimsizlik
+ANİ	20		Birden
+APANDİS	20		Kör bağırsak eki
+APAÇIK	20		Belli
+ARABESK	20		Hüzünlü müzik
+ARAYIŞ	20		Arama
+ARGÜMAN	20		Kanıt
+ARKEOLOG	20		Kazı bilimci
+ARMONİ	20		Uyum
+ARMONİKA	20		Ağız mızıkası
+ARNAVUT	20		Balkan halkı
+ARP	20		Telli çalgı
+ARSENİK	20		Zehir
+ARSLAN	20		Aslan
+ART	20		Arka
+ARTİST	20		Sanatçı
+ARTİSTİK	20		Sanatsal
+AS	20		Sarkıtmak
+ASA	20		Baston
+ASGARİ	20		En az
+ASKERLİK	20		Vatan görevi
+ASLINDA	20		Esasen
+ASTAR	20		İç kumaş
+ASTROLOG	20		Yıldız falcısı
+ASTSUBAY	20		Çavuş
+ASİ	20		İsyankar
+ATA	20		Ced
+ATALET	20		Tembellik
+ATEŞKES	20		Mütareke
+ATMACA	20		Yırtıcı kuş
+ATMOSFER	20		Hava küre
+ATV	20		Arazi motoru
+AUT	20		Taç
+AVANAK	20		Saf
+AVLU	20		Yapının ortası
+AVİZE	20		Tavan lambası
+AYA	20		Avuç içi
+AYDEDE	20		Dolunay
+AYGIR	20		Erkek at
+AYRINTI	20		Detay
+AYYAŞ	20		Sarhoş
+AYÇİÇEĞİ	20		Güneş çiçeği
+AZGIN	20		Kudurmuş
+AZINLIK	20		Az sayıdaki
+AZİM	20		Kararlılık
+AÇACAK	20		Konserve aleti
+AÇIKGÖZ	20		Kurnaz
+AÇIKLAMA	20		İzah
+AÇIŞ	20		Giriş melodisi
+AÇMA	20		Hamur işi
+AĞ	20		Örgü
+AĞA	20		Toprak sahibi
+AİT	20		Özgü
+AŞAĞILIK	20		Alçak
+AŞURE	20		Nuh tatlısı
+AŞÇIBAŞI	20		Şef
+AŞİRET	20		Kabile
+BABACAN	20		Sıcakkanlı
+BACANAK	20		Enişte
+BAHTİYAR	20		Mutlu
+BAHÇIVAN	20		Bostancı
+BAKIR	20		Kızıl metal
+BAKLA	20		Fava
+BAKLİYAT	20		Kuru tane
+BAKİ	20		Kalıcı, sürekli
+BALONCUK	20		Kabarcık
+BALYOZ	20		Büyük çekiç
+BALİSTİK	20		Mermi bilimi
+BAMBAŞKA	20		Apayrı
+BAMYA	20		Sebze
+BANKNOT	20		Kağıt para
+BANLİYÖ	20		Şehir çevresi
+BAR	20		İçki yeri
+BARBUNYA	20		Kırmızı balık
+BARDAKÇI	20		Cam satıcısı
+BARINAK	20		Sığınak
+BARİKAT	20		Engel
+BARİTON	20		Erkek sesi
+BARİYER	20		Engel
+BASINÇ	20		Tazyik
+BASKIN	20		Ani saldırı
+BASTON	20		Değnek
+BASİRET	20		Sağduyu
+BATAKLIK	20		Sazlık
+BATARYA	20		Pil
+BATERİST	20		Davulcu
+BAYRAKLI	20		Sancaklı
+BAZ	20		Asit karşıtı
+BAĞIMSIZ	20		Özgür
+BAĞIRSAK	20		Sindirim kanalı
+BAĞLANTI	20		İlişki
+BAŞAK	20		Ekin
+BAŞHEKİM	20		Hastane müdürü
+BAŞRAHİP	20		Kilise büyüğü
+BAŞVURU	20		Müracaat
+BAŞYAPIT	20		Şaheser
+BAŞYAZI	20		Gazete yorumu
+BEBEKLİK	20		Çocukluk öncesi
+BEDDUA	20		İlenç
+BEGONYA	20		Süs çiçeği
+BEJ	20		Krem rengi
+BEK	20		Defans oyuncusu
+BEKLENTİ	20		Umut
+BELLEK	20		Hafıza
+BELİRGİN	20		Açık
+BELİRSİZ	20		Muğlak
+BENZİNCİ	20		Akaryakıt istasyonu
+BERGAMOT	20		Turunçgil
+BESBELLİ	20		Apaçık
+BESLENME	20		Gıda alımı
+BESMELE	20		Bismillah
+BESTECİ	20		Kompozitör
+BEY	20		Bay
+BEYGİR	20		At
+BEYZBOL	20		Sopa sporu
+BEYİNCİK	20		Denge merkezi
+BEYİNSİZ	20		Aptal
+BEĞENİ	20		Takdir
+BEŞAMEL	20		Beyaz sos
+BEŞİK	20		Bebek yatağı
+BLOKNOT	20		Not defteri
+BODUR	20		Kısa boylu
+BOMBA	20		Patlayıcı
+BOR	20		Element
+BORSA	20		Hisse piyasası
+BOSTAN	20		Sebze bahçesi
+BOTANİK	20		Bitki bilimi
+BOZ	20		Gri
+BOZKIR	20		Step
+BOZKURT	20		Türk simgesi
+BOZUKLUK	20		Arıza
+BOĞA	20		Erkek sığır
+BOĞMACA	20		Öksürük hastalığı
+BOŞBOĞAZ	20		Geveze
+BROŞÜR	20		Kitapçık
+BUL	20		Kaybet karşıtı
+BULUTSUZ	20		Açık hava
+BUNALIM	20		Kriz
+BUNGALOV	20		Tek katlı ev
+BURJUVA	20		Kentsoylu
+BURÇ	20		12 takımyıldızı
+BUT	20		Kalça eti
+BUZAĞI	20		Dana
+BUĞULAMA	20		Buharda pişirme
+BÖLGESEL	20		Yerel
+BÖRÜLCE	20		Fasulye türü
+BÜK	20		Çalılık
+BÜROKRAT	20		Memur
+BÜYÜKBAŞ	20		Sığır
+BÜYÜTEÇ	20		Lup
+BİBERİYE	20		Kokulu ot
+BİLANÇO	20		Denge tablosu
+BİLDİRİ	20		Duyuru
+BİLGE	20		Hakîm
+BİLGİN	20		Alim
+BİLGİSİZ	20		Cahil
+BİLLUR	20		Kristal
+BİLİMSEL	20		İlmi
+BİLİNÇ	20		Şuur
+BİLİNÇLİ	20		Şuurlu
+BİNBAŞI	20		Rütbe
+BİRADER	20		Kardeş
+BİRAHANE	20		Meyhane
+BİRAZCIK	20		Azıcık
+BİREYSEL	20		Kişisel
+BİRLEŞİK	20		Bitişik
+BİRLİKTE	20		Beraber
+BİRİCİK	20		Tek
+BİRİKİM	20		Tasarruf
+BİSKÜVİ	20		Kuru pasta
+BİT	20		Parazit böcek
+BİYOLOG	20		Canlı bilimci
+CAMİA	20		Topluluk
+CANLILIK	20		Dirilik
+CASUSLUK	20		Ajanlık
+CAZİBE	20		Çekicilik
+CAZİBELİ	20		Çekici
+CEHALET	20		Bilgisizlik
+CELLAT	20		İdam eden
+CEMAAT	20		Topluluk
+CEMİYET	20		Dernek
+CENNET	20		Firdevs
+CEPHANE	20		Mühimmat
+CEPHE	20		Ön yüz
+CEREYAN	20		Akım
+CESURLUK	20		Yüreklilik
+CEYLAN	20		Ahu
+CEZERYE	20		Havuç lokumu
+CIVA	20		Sıvı metal
+COP	20		Polis sopası
+CUP	20		Suya düşme sesi
+CURCUNA	20		Karmaşa
+CÖMERTÇE	20		Bonkörce
+CÜZ	20		Parça
+CÜZİ	20		Az miktarda para
+CİDDİYET	20		Vakar
+CİMRİLİK	20		Pintilik
+CİP	20		Arazi aracı
+CİVCİV	20		Tavuk yavrusu
+DADAŞ	20		Erzurumlu
+DADI	20		Çocuk bakan kişi
+DALAVERE	20		Hile
+DALGALI	20		Kıvrımlı
+DALGIN	20		Dikkatsiz
+DALGIÇ	20		Su altı adamı
+DALKAVUK	20		Yağcı
+DAM	20		Çatı
+DAMACANA	20		Büyük şişe
+DAMAK	20		Ağız tavanı
+DAMIZLIK	20		Üreme hayvanı
+DANIŞMA	20		Bilgi masası
+DARAĞACI	20		İdam sehpası
+DARBOĞAZ	20		Kriz
+DARBUKA	20		Dümbelek
+DARGIN	20		Küs
+DARPHANE	20		Para basımevi
+DAVETLİ	20		Konuk
+DAVRANIŞ	20		Tavır
+DAYAK	20		Kötek
+DAYANAK	20		Destek
+DAZLAK	20		Kel
+DAĞARCIK	20		Torba
+DAĞITICI	20		Distribütör
+DE	20		5. harfin okunuşu
+DEF	20		Tef
+DEHA	20		Yüksek düzey zeka
+DEHLİZ	20		Koridor
+DEHŞET	20		Korku
+DEHŞETLİ	20		Korkunç
+DEK	20		Kadar
+DEKOLTE	20		Açık giysi
+DELİKLİ	20		Gözenekli
+DEM	20		An
+DEMOKRAT	20		Halkçı
+DEMİRBAŞ	20		Kalıcı eşya
+DENEME	20		Tecrübe
+DENETİM	20		Kontrol
+DENEYİM	20		Tecrübe
+DENGELİ	20		Ölçülü
+DENKLEM	20		Eşitlik
+DENİZATI	20		At başlı balık
+DEPOZİTO	20		Güvence parası
+DEREBEYİ	20		Feodal
+DERLEME	20		Toplama
+DERSHANE	20		Kurs yeri
+DERVİŞ	20		Sufi
+DERİNLİK	20		Dip
+DESTAN	20		Epope
+DESTE	20		Bağlam
+DESTEK	20		Yardım
+DESTEKÇİ	20		Taraftar
+DESİBEL	20		Ses birimi
+DETAYLI	20		Ayrıntılı
+DEV	20		İri
+DEVAMLI	20		Sürekli
+DEVETÜYÜ	20		Açık kahve
+DEVRİMCİ	20		İnkılapçı
+DEVRİYE	20		Karakol gezisi
+DEĞİŞKEN	20		Dinamik
+DEĞİŞİM	20		Dönüşüm
+DEŞİFRE	20		Çözme
+DIŞBÜKEY	20		Konveks
+DO	20		İlk nota
+DOKUMA	20		Kumaş
+DOLAMBAÇ	20		Labirent
+DOMUZ	20		Yaban hayvanı
+DOZ	20		Ölçü
+DOĞAÜSTÜ	20		Fevkalade
+DOĞRAMA	20		Pencere çerçevesi
+DOĞRUDAN	20		Direkt
+DOĞRULUK	20		Dürüstlük
+DRAMATİK	20		Dokunaklı
+DUA	20		Yakarış
+DUY	20		Ampul yuvası
+DUYGUSAL	20		Hassas
+DÖNEMEÇ	20		Viraj
+DÖNÜŞÜM	20		Değişim
+DÖRTGEN	20		Kare
+DÖRTLÜ	20		Kuartet
+DÖRTNALA	20		Hızla koşma
+DÜELLO	20		İki kişilik dövüş
+DÜET	20		İkili şarkı
+DÜK	20		Soylu unvanı
+DÜRBÜN	20		Uzak gösteren
+DÜZENBAZ	20		Hilekar
+DÜZENLİ	20		Muntazam
+DÜŞ	20		Rüya
+DİKENLİ	20		Sivri uçlu
+DİKSİYON	20		Güzel konuşma
+DİLBER	20		Güzel
+DİLEKÇE	20		Başvuru yazısı
+DİLEMMA	20		İkilem
+DİLSİZ	20		Konuşamayan
+DİNAMİK	20		Hareketli
+DİNGİN	20		Sakin
+DİRAYET	20		Kabiliyet
+DİREKTÖR	20		Müdür
+DİRENİŞ	20		Mukavemet
+DİSKOTEK	20		Dans kulübü
+DİVAN	20		Sedir
+DİYABET	20		Şeker hastalığı
+DİYAFRAM	20		Göğüs zarı
+DİYAGRAM	20		Şema
+DİYALOG	20		Karşılıklı konuşma
+DİŞBUDAK	20		Ağaç türü
+EBAT	20		Boyut veya ölçü
+EBE	20		Doğum yardımcısı
+EBELİK	20		Doğum yardımcılığı
+EBEVEYN	20		Anne baba
+ECDAT	20		Atalar
+EDA	20		Tavır
+EDEVAT	20		Alet
+EFE	20		Kahraman
+EFENDİ	20		Bey
+EFLATUN	20		Mor
+EFSANEVİ	20		Mitolojik
+EGE	20		Batı bölgemiz
+EGEMEN	20		Hükümran
+EGO	20		Ben
+EGZOTİK	20		Tropikal
+EGZOZ	20		Araç borusu
+EH	20		Bıkkınlık
+EJDER	20		Masal canavarı
+EK	20		Tohum serpmek
+EKO	20		Yankı
+EKONOMİK	20		İktisadi
+EKSPRES	20		Hızlı tren
+EKSİKSİZ	20		Tam
+EKİPMAN	20		Donanım
+ELASTİK	20		Esnek
+ELEK	20		Sınıflandırma aracı
+ELEKTRON	20		Eksi yüklü parçacık
+ELEMENT	20		Öğe
+ELEŞTİRİ	20		Tenkit
+ELMAS	20		Pırlanta
+ELÇİ	20		Diplomat
+ELÇİLİK	20		Sefaret
+EM	20		Yalamak
+EMANET	20		Güvenle bırakılan
+EMANETÇİ	20		Vestiyerci
+EMBRİYO	20		Cenin
+EMEK	20		Harcanan çaba
+EMEKTAR	20		Kıdemli
+EMLAK	20		Mülk
+EMPATİ	20		Duygudaşlık
+EN	20		Genişlik
+ENAYİ	20		Saf
+ENDAM	20		Boy pos
+ENDÜSTRİ	20		Sanayi
+ENGEBE	20		Pürüz
+ENGEREK	20		Zehirli yılan
+ENGİNAR	20		Zeytinyağlı sebze
+ENKAZ	20		Yıkıntı
+ENSE	20		Boynun arka kısmı
+ENSTİTÜ	20		Araştırma kurumu
+ENTARİ	20		Uzun giysi
+ENTRİKA	20		Dolap
+ENVANTER	20		Demirbaş listesi
+ENİŞTE	20		Halanın eşi
+ER	20		Rütbesiz asker
+ERDEM	20		Fazilet
+EREN	20		Ermiş
+ERGUVAN	20		Mor çiçekli ağaç
+ERKENDEN	20		Sabahleyin
+EROZYON	20		Toprak kaybı
+ERTELEME	20		Tehir
+ERZAK	20		Kumanya
+ES	20		Müzikte duraksama
+ESNAF	20		Tüccar
+ETKİNLİK	20		Faaliyet
+ETİ	20		Hitit
+EVLAT	20		Çocuk
+EVLATLIK	20		Manevi çocuk
+EVRENSEL	20		Küresel
+EVÇ	20		Doruk
+EY	20		Hitap
+EYVALLAH	20		Teşekkür
+EZGİ	20		Hoş gelen ses
+EĞİK	20		Eğilmiş olan
+EĞİTMEN	20		Öğretmen
+EŞARP	20		Başörtüsü
+FA	20		4. nota
+FAALİYET	20		Etkinlik
+FABL	20		Öykünce
+FACİA	20		Felaket
+FAKTÖR	20		Etken
+FAKİRLİK	20		Yoksulluk
+FAL	20		Kehanet
+FALCI	20		Kahin
+FALCILIK	20		Kahin olma
+FAN	20		Hayran
+FANATİK	20		Bağnaz
+FANTAZYA	20		Hayal
+FANUS	20		Cam kılıf
+FANİLA	20		Atlet
+FAY	20		Kırık hattı
+FAYTON	20		At arabası
+FAZ	20		Evre
+FELÇ	20		Geçici hareketsizlik
+FEN	20		Bilim
+FERMAN	20		Buyruk
+FERMUAR	20		Kayar bağlantı
+FERYAT	20		Çığlık
+FES	20		Kırmızı başlık
+FESAT	20		Bozgunculuk
+FESLEĞEN	20		Reyhan
+FINDIKLI	20		Çerezli
+FIR	20		Hızlı dönme
+FIRILDAK	20		Rüzgargülü
+FIRSATÇI	20		Çıkarcı
+FISKİYE	20		Su püskürtücü
+FISTIK	20		Antep ürünü
+FLU	20		Bulanık
+FOK	20		Deniz memelisi
+FOLKLOR	20		Halk bilimi
+FON	20		Arka plan
+FRAMBUAZ	20		Ahududu
+FREKANS	20		Sıklık
+FUAR	20		Pazar veya sergi
+FUKARA	20		Yoksul
+FUL	20		Bakla
+FÖN	20		Saç kurutma
+FİDAN	20		Genç ağaç
+FİDANLIK	20		Fide bahçesi
+FİDE	20		Dikmeye hazır bitki
+FİGÜRAN	20		Yardımcı oyuncu
+FİLO	20		Gemi grubu
+FİLOZOF	20		Düşünür
+FİLİZ	20		Tomurcuk
+FİN	20		Finli
+FİT	20		Formda
+FİYAKA	20		Gösteriş
+FİYASKO	20		Hüsran
+FİŞ	20		Priz takılan
+GAF	20		Pot
+GAM	20		Keder
+GANİMET	20		Savaş yağması
+GARDİYAN	20		Cezaevi bekçisi
+GARNİTÜR	20		Yan yemek
+GARİBAN	20		Zavallı
+GASP	20		Malın zorla alınması
+GAYRET	20		Çaba
+GEBE	20		Hamile
+GELGİT	20		Med cezir
+GELİNCİK	20		Kırmızı çiçek
+GEN	20		Kalıtım birimi
+GENETİK	20		Kalıtım bilimi
+GENİŞLİK	20		En
+GEREK	20		Lüzum
+GEREKSİZ	20		Lüzumsuz
+GEREKÇE	20		Sebep
+GERGİN	20		Gerilmiş
+GERÇEKÇİ	20		Realist
+GERİLLA	20		Çeteci
+GEVREK	20		Çıtır
+GEYİK	20		Boynuzlu hayvan
+GEZ	20		Nişangah
+GICIK	20		Sinir bozucu
+GIDA	20		Yiyecek
+GIRTLAK	20		Boğaz
+GONCA	20		Tomurcuk
+GRAMOFON	20		Pikap
+GURBET	20		Memleket dışı
+GURBETÇİ	20		Yurt dışı işçisi
+GÖLGELİK	20		Tente
+GÖMÜ	20		Saklanmış hazine
+GÖNÜLLÜ	20		İsteyerek
+GÖRENEK	20		Gelenek
+GÖRKEM	20		İhtişam
+GÖRÜNTÜ	20		İmge
+GÖSTERİŞ	20		Fiyaka
+GÖVDE	20		Beden
+GÖZLEMCİ	20		İzleyici
+GÖZLÜKÇÜ	20		Optisyen
+GÜBRE	20		Hayvan dışkısı
+GÜLÜNÇ	20		Komik
+GÜMRÜKÇÜ	20		Sınır memuru
+GÜNDELİK	20		Günlük
+GÜNEŞLİK	20		Şemsiye
+GÜR	20		Sık
+GÜRBÜZ	20		Sağlıklı
+GÜVENCE	20		Teminat
+GÜZ	20		Sonbahar
+GÜZİDE	20		Seçkin
+GİRDAP	20		Anafor
+GİTARİST	20		Telli sazcı
+GİYOTİN	20		İdam aleti
+GİZ	20		Sır
+GİZEM	20		Sır
+GİZLİLİK	20		Mahremiyet
+GİŞE	20		Bilet satılan yer
+HABERCİ	20		Muhabir
+HABERDAR	20		Bilgili
+HAC	20		Kabe ziyareti
+HAD	20		Sınır
+HADEME	20		Odacı
+HADİSE	20		Olay
+HAFIZA	20		Bellek
+HAFRİYAT	20		Kazı
+HAFTALIK	20		Yedi günlük
+HAKEMLİK	20		Yargıçlık
+HAKSIZ	20		Adaletsiz
+HAKİKAT	20		Gerçek
+HAL	20		Durum
+HAM	20		Olmamış
+HAMAL	20		Yük taşıyıcı
+HAMAM	20		Yıkanma yeri
+HAMARAT	20		Çalışkan
+HAN	20		Konaklama yeri
+HANDİKAP	20		Engel
+HANE	20		Ev, konut
+HANEDAN	20		Soy
+HANIMELİ	20		Sarmaşık çiçek
+HANÇER	20		Kama
+HAPŞIRIK	20		Aksırık
+HAR	20		Sıcak
+HARARET	20		Sıcaklık
+HARMAN	20		Ekin dövme
+HARÇLIK	20		Cep parası
+HAS	20		Özel
+HASAT	20		Ürün toplama
+HAT	20		Çizgi
+HATIR	20		Gönül
+HATUN	20		Kadın
+HAV	20		Kumaş tüyü
+HAVADİS	20		Haber
+HAVALE	20		Para gönderme
+HAY	20		Ünlem
+HAYALBAZ	20		Düşçü
+HAYIRLI	20		Uğurlu
+HAYSİYET	20		Onur
+HAYVANAT	20		Fauna
+HAZ	20		Zevk
+HAZIRLIK	20		Tedarik
+HAÇ	20		Çarmıh
+HAİN	20		Sadakat göstermeyen
+HECE	20		Ses öbeği
+HEKİMLİK	20		Doktorluk
+HELEZON	20		Spiral
+HEMŞEHRİ	20		Memleketli
+HENTBOL	20		El topu
+HERHANGİ	20		Rastgele
+HEYBETLİ	20		Görkemli
+HEZİMET	20		Büyük yenilgi
+HIR	20		Kavga
+HIRDAVAT	20		Nalbur
+HIRILTI	20		Horlama sesi
+HIRS	20		Tutku
+HOKKABAZ	20		El çabukluğu ustası
+HOP	20		Atlama sesi
+HORTUMLU	20		Fil gibi
+HOVARDA	20		Çapkın
+HOŞGÖRÜ	20		Tolerans
+HU	20		Macaristan ülke kodu
+HUN	20		Eski türk devleti
+HUNİ	20		Akıtma aracı
+HURMA	20		Çöl meyvesi
+HUY	20		Mizaç
+HUZURSUZ	20		Tedirgin
+HÜKÜMDAR	20		Kral
+HÜR	20		Özgür
+HÜRRİYET	20		Özgürlük
+HİPODROM	20		At yarışı alanı
+HİS	20		Duygu
+HİT	20		Çok satan
+ILIMAN	20		Ilık
+ILIMLI	20		Ölçülü
+IRAK	20		Uzak
+IRK	20		Soy
+IRMAK	20		Nehir
+ISIRIK	20		Diş izi
+ISLAKLIK	20		Nem
+ISPANAK	20		Yeşil yapraklı sebze
+ISPARTA	20		Gül şehri
+ISSIZLIK	20		Tenhalık
+IZDIRAP	20		Acı
+IZGARA	20		Mangal
+IZGARALI	20		Mangallı
+IŞIKLI	20		Aydınlık
+JANDARMA	20		Kırsal polis
+JELATİN	20		Pelte
+JEST	20		El hareketi
+JETON	20		Fiş
+JUDO	20		Dövüş sporu
+JÖLE	20		Pelte
+JÖN	20		Genç oyuncu
+JİLE	20		Yelek
+KABADAYI	20		Zorba
+KABARCIK	20		Baloncuk
+KABARIK	20		Şişkin
+KABLOSUZ	20		Telsiz
+KABİLE	20		Aşiret
+KABİNE	20		Bakanlar kurulu
+KADASTRO	20		Tapu ölçümü
+KADEH	20		Bardak
+KADEME	20		Basamak
+KADER	20		Alın yazısı
+KADIRGA	20		Kürekli gemi
+KADİFE	20		Yumuşak kumaş
+KAFES	20		Kuş evi
+KAFİLE	20		Kervan
+KAFİYE	20		Uyak
+KAJU	20		Çerez
+KALBUR	20		Büyük elek
+KALDIRAÇ	20		Manivela
+KALINTI	20		Artık
+KALKAN	20		Siper
+KALPAZAN	20		Sahte para basan
+KALSİYUM	20		Kemik minerali
+KALİTE	20		Nitelik
+KALİTELİ	20		Nitelikli
+KAM	20		Şaman
+KAMIŞ	20		Saz
+KAMUFLAJ	20		Gizlenme
+KAMUOYU	20		Halk görüşü
+KAMÇI	20		Kırbaç
+KAMİKAZE	20		İntihar pilotu
+KANARYA	20		Sarı kuş
+KANATLI	20		Uçan
+KANAVİÇE	20		İşleme bezi
+KANGREN	20		Doku ölümü
+KANO	20		Kayık
+KANTARON	20		Şifalı ot
+KAPASİTE	20		Hacim
+KAPLICA	20		Ilıca
+KAPİTONE	20		Dikişli döşeme
+KARACA	20		Küçük geyik
+KARAKOL	20		Polis merkezi
+KARALAMA	20		Müsvedde
+KARAMBOL	20		Çarpışma
+KARAMSAR	20		Kötümser
+KARANFİL	20		Kokulu çiçek
+KARARLI	20		Azimli
+KARARSIZ	20		Tereddütlü
+KARATECİ	20		Dövüş sporcusu
+KARMAŞA	20		Kaos
+KARO	20		Fayans
+KARPUZCU	20		Bostancı
+KARYOLA	20		Demir yatak
+KASADAR	20		Kasiyer
+KASIRGA	20		Hortum
+KATEGORİ	20		Sınıf
+KATILIM	20		İştirak
+KATIR	20		At-eşek melezi
+KATIRCI	20		Eşek sürücüsü
+KAUÇUK	20		Lastik
+KAVAK	20		Uzun ağaç
+KAVAL	20		Çoban düdüğü
+KAVGACI	20		Kabadayı
+KAVRAM	20		Mefhum
+KAVUŞMA	20		Buluşma
+KAYAKÇI	20		Kar sporcusu
+KAYGISIZ	20		Tasasız
+KAYIKÇI	20		Sandalcı
+KAYNAKÇA	20		Bibliyografya
+KAZ	20		Su kuşu
+KAZAKÇA	20		Orta asya dili
+KAZANÇ	20		Kar
+KAZANÇLI	20		Karlı
+KAÇAKÇI	20		Yasadışı satıcı
+KAÇAMAK	20		Kaçış
+KAĞNI	20		Öküz arabası
+KAŞE	20		Damga
+KAŞINTI	20		Uyuz
+KAŞKOL	20		Atkı
+KEDER	20		Üzüntü
+KEF	20		Köpük
+KEHANET	20		Gelecek söyleme
+KEHRİBAR	20		Sarı taş
+KEKELEME	20		Takılma
+KEKLİK	20		Dağ kuşu
+KEKİK	20		Baharat
+KEL	20		Dazlak
+KELAYNAK	20		Nadir kuş
+KELEPÇE	20		Polis halkası
+KEMANCI	20		Yaylı sazcı
+KEMENÇE	20		Karadeniz sazı
+KEPENK	20		Dükkan kapağı
+KEPÇE	20		Büyük kaşık
+KEREVİT	20		Tatlı su ıstakozu
+KERPETEN	20		Kıskaç
+KERVAN	20		Kafile
+KERVANCI	20		Deveci
+KET	20		Engel
+KEVGİR	20		Delikli kepçe
+KEÇE	20		Fötr
+KEŞMEKEŞ	20		Karmaşa
+KIKIRDAK	20		Esnek doku
+KILAVUZ	20		Rehber
+KILIÇ	20		Savaş aleti
+KIN	20		Kılıf
+KIRAĞI	20		Kırç
+KIRINTI	20		Ekmek parçası
+KISRAK	20		Dişi at
+KIT	20		Az
+KIVILCIM	20		Çakım
+KIVIRCIK	20		Buklelı
+KIYAMET	20		Mahşer
+KIYMALI	20		Etli
+KIYMET	20		Değer
+KIZILCIK	20		Kırmızı meyve
+KIÇ	20		Arka
+KLASÖR	20		Dosya
+KLON	20		Genetik kopya
+KLOROFİL	20		Yeşil madde
+KOCAKARI	20		Yaşlı kadın
+KOK	20		Kömür türü
+KOKTEYL	20		Karışık içki
+KOLAYLIK	20		Rahatlık
+KOMBİNE	20		Birleşik
+KOMEDİ	20		Güldürü
+KOMPOST	20		Organik gübre
+KOMİSYON	20		Kurul
+KOMŞULUK	20		Yakınlık
+KONSOLOS	20		Elçi yardımcısı
+KONTRAT	20		Sözleşme
+KONUŞMA	20		Söyleşi
+KOR	20		Köz
+KORKULUK	20		Parmaklık
+KORKUSUZ	20		Cesur
+KORULUK	20		Küçük orman
+KORUYUCU	20		Muhafız
+KOZALAK	20		Çam meyvesi
+KOZMONOT	20		Rus astronot
+KOÇ	20		Erkek koyun
+KREP	20		İnce gözleme
+KROKODİL	20		Timsah
+KUL	20		Köle
+KUMANDAN	20		Komutan
+KUR	20		Döviz değeri
+KURDELE	20		Süs şeridi
+KURŞUN	20		Mermi
+KUT	20		Uğur
+KUZ	20		Gölgelik yer
+KUŞAK	20		Nesil
+KUŞBAŞI	20		Küçük doğranmış et
+KUŞKULU	20		Şüpheli
+KÖFTECİ	20		Izgaracı
+KÖLE	20		Esir
+KÖMÜRCÜ	20		Yakacak satıcısı
+KÖR	20		Görmeyen
+KÖRFEZ	20		Koy
+KÖSTEBEK	20		Yeraltı hayvanı
+KÖSTEK	20		Engel
+KÖTÜLÜK	20		Fenalık
+KÖTÜMSER	20		Karamsar
+KÖZ	20		Kor
+KÜF	20		Bozulma
+KÜP	20		Toprak kap
+KÜRK	20		Post
+KÜS	20		Dargın
+KÜTÜK	20		Ağaç gövdesi
+KİBARCA	20		Nazikçe
+KİBİRLİ	20		Kendini beğenmiş
+KİL	20		Balçık
+KİLOGRAM	20		Bin gram
+KİLİMCİ	20		Halıcı
+KİLİTLİ	20		Kapalı
+KİMSESİZ	20		Yalnız
+KİMYAGER	20		Eczacı
+KİN	20		Garez
+KİP	20		Kalıp
+KİT	20		Takım
+KİŞİLİK	20		Karakter
+LA	20		Argo
+LABİRENT	20		Dolambaç
+LAF	20		Söz
+LAKAP	20		Takma ad
+LAKIRTI	20		Laf
+LANETLİ	20		Uğursuz
+LATA	20		Çıta
+LATİFE	20		Şaka
+LAV	20		Volkan sıvısı
+LAVABO	20		El yıkama yeri
+LAVANTA	20		Mor çiçek
+LAYIK	20		Hak eden
+LAZ	20		Karadenizli
+LEB	20		Dudak
+LEBLEBİ	20		Kavrulmuş nohut
+LEVHA	20		Tabela
+LEYLEK	20		Göçmen kuş
+LEĞEN	20		Çamaşır kabı
+LEŞ	20		Hayvan ölüsü
+LOBİ	20		Salon
+LOHUSA	20		Yeni doğum yapmış
+LOJİSTİK	20		Taşımacılık
+LOR	20		Taze peynir
+LOT	20		Mal partisi
+LOŞ	20		Az aydınlık
+LÜTUF	20		İyilik
+LİBERAL	20		Özgürlükçü
+LİF	20		Elyaf
+LİG	20		Futbol ligi
+LİMONLU	20		Ekşi
+LİYAKAT	20		Hak ediş
+MACUN	20		Diş temizleyici
+MADALYON	20		Kolye ucu
+MAHARET	20		Beceri
+MAHCUP	20		Utangaç
+MAHKEME	20		Yargı yeri
+MAHZEN	20		Bodrum
+MAKAM	20		Mevki
+MAKBUZ	20		Alındı belgesi
+MAKSİMUM	20		En çok
+MAKİNİST	20		Tren sürücüsü
+MALİ	20		Parasal
+MANA	20		Anlam
+MANDIRA	20		Süthane
+MANDOLİN	20		Telli çalgı
+MANEVRA	20		Hareket
+MANGAL	20		Kömür ocağı
+MANTIKLI	20		Akla yatkın
+MANİKÜR	20		Tırnak bakımı
+MANİVELA	20		Kaldıraç
+MARANGOZ	20		Ahşap ustası
+MARMELAT	20		Meyve ezmesi
+MARTAVAL	20		Yalan
+MARİFET	20		Hüner
+MARŞ	20		Ulusal ezgi
+MASAÜSTÜ	20		Bilgisayar ekranı
+MASKARA	20		Rimel
+MASRAF	20		Harcama
+MAT	20		Parlak değil
+MATADOR	20		Boğa güreşçisi
+MATBAA	20		Basımevi
+MATBAACI	20		Basımcı
+MATEM	20		Yas
+MATMAZEL	20		Bekar kız
+MATRUŞKA	20		Rus bebeği
+MAYA	20		Hamur kabartıcı
+MAZERET	20		Bahane
+MAĞAZACI	20		Dükkan sahibi
+MECLİS	20		Parlamento
+MEDRESE	20		Eski okul
+MEDYATİK	20		Ünlü
+MEGAFON	20		Hoparlör
+MEKANİK	20		Makine bilimi
+MELEZ	20		Karışık ırk
+MELTEM	20		Hafif rüzgar
+MEN	20		Yasaklama
+MENAJER	20		Yönetici
+MENEKŞE	20		Mor çiçek
+MENENJİT	20		Beyin zarı iltihabı
+MENTEŞE	20		Kapı bağlantısı
+MERASİM	20		Tören
+MERCEK	20		Lens
+MERHEM	20		Krem
+MERMER	20		Beyaz taş
+MERİDYEN	20		Boylam
+MESELE	20		Sorun
+MET	20		Deniz kabarması
+METEORİT	20		Göktaşı
+METROPOL	20		Büyük şehir
+MEY	20		Şarap
+MEYHANE	20		Taverna
+MEZHEP	20		İnanç kolu
+MEZUN	20		Diplomalı
+MEŞAKKAT	20		Zahmet
+MEŞALE	20		Alevli sopa
+MEŞE	20		Orman ağacı
+MEŞRUBAT	20		İçecek
+MIKNATIS	20		Manyetik
+MINTIKA	20		Bölge
+MIZRAK	20		Kargı
+MONOLOG	20		Tek kişilik konuşma
+MOTOKROS	20		Arazi yarışı
+MUAF	20		Hariç
+MUHABBET	20		Sohbet
+MUHAFAZA	20		Koruma
+MUHAKKAK	20		Mutlaka
+MUHASEBE	20		Hesap işleri
+MUHATAP	20		Hitap edilen
+MUHTIRA	20		Andıç
+MUKAVELE	20		Sözleşme
+MUKAVVA	20		Karton
+MUMYA	20		Korunmuş ceset
+MUT	20		Mutluluk
+MUŞ	20		Doğu ili
+MUŞAMBA	20		Yağmurluk
+MÜCADELE	20		Savaş
+MÜCEVHER	20		Takı
+MÜEZZİN	20		Ezan okuyan
+MÜHÜR	20		Damga
+MÜLTECİ	20		Sığınmacı
+MÜSABAKA	20		Yarışma
+MÜSVEDDE	20		Taslak
+MÜZİKAL	20		Şarkılı oyun
+Mİ	20		Soru eki
+MİKTAR	20		Nicelik
+MİL	20		Uzunluk birimi
+MİMARLIK	20		Yapı sanatı
+MİMOZA	20		Sarı çiçek
+MİNARE	20		Cami kulesi
+MİNDER	20		Oturma yastığı
+MİNYATÜR	20		Küçük resim
+MİS	20		Güzel koku
+MİSKET	20		Cam bilye
+MİSYONER	20		Dini yayıcı
+MİT	20		Efsane
+MİĞFER	20		Başlık
+NAAŞ	20		Ceset
+NABIZ	20		Kalp atışı
+NADİREN	20		Seyrek
+NAFAKA	20		Geçim parası
+NAFTALİN	20		Güve kovucu
+NAKARAT	20		Tekrarlanan bölüm
+NAKLİYE	20		Taşımacılık
+NAL	20		At ayakkabısı
+NAM	20		Ün
+NAME	20		Mektup
+NAMUS	20		İffet
+NAMUSSUZ	20		Şerefsiz
+NAN	20		Ekmek
+NANKÖR	20		İyilik bilmez
+NARKOTİK	20		Uyuşturucu
+NASİHAT	20		Öğüt
+NAZ	20		Eda
+NAZAR	20		Göz değmesi
+NEDENSİZ	20		Sebepsiz
+NEM	20		Rutubet
+NERGİS	20		Beyaz çiçek
+NETİCE	20		Sonuç
+NEVRESİM	20		Yorgan kılıfı
+NEVRUZ	20		Bahar bayramı
+NEY	20		Kamış flüt
+NEZAKET	20		Kibarlık
+NEŞTER	20		Cerrah bıçağı
+NOKTALI	20		Benekli
+NOVA	20		Yeni yıldız
+NUMARALI	20		Sayılı
+NUMUNE	20		Örnek
+NUR	20		Işık
+NÖBETÇİ	20		Bekçi
+NÖROLOJİ	20		Sinir bilimi
+NÜFUS	20		İnsan sayısı
+NÜKTE	20		Espri
+NÜKTEDAN	20		Esprili
+NİM	20		Yarım
+NİMET	20		Lütuf
+NİSPET	20		Oran
+NİTELİK	20		Vasıf
+NİTROJEN	20		Azot
+NİŞASTA	20		Kola
+OBEZ	20		Şişman
+OBEZİTE	20		Aşırı şişmanlık
+OBJEKTİF	20		Tarafsız
+OBRUK	20		Çökme çukuru
+OBURLUK	20		Doymazlık
+ODACI	20		Hademe
+OF	20		Bıkkınlık belirtisi
+OHA	20		Şaşırma ünlemi
+OHM	20		Direnç birimi
+OJE	20		Tırnak cilası
+OKLAVA	20		Hamur sopası
+OKUNAKLI	20		Net
+OLANAK	20		İmkan
+OLASILIK	20		İhtimal
+OLAĞAN	20		Normal
+OLDUKÇA	20		Epey
+OLE	20		Coşku ünlemi
+OLGU	20		Olay
+OLGUN	20		Ermiş
+OMURİLİK	20		Belkemiği iliği
+ONARIM	20		Tamir
+ONBAŞI	20		Rütbe
+ONDALIK	20		Virgüllü sayı
+ONS	20		Ağırlık birimi
+OPERATÖR	20		Cerrah
+OPTİMİST	20		İyimser
+ORA	20		O yer
+ORAN	20		Ölçü
+ORANTI	20		Denge
+ORG	20		Elektronik çalgı
+ORKİDE	20		Tropikal çiçek
+ORKİNOS	20		Ton balığı
+ORMANLIK	20		Ağaçlık
+ORTANCA	20		Mavi çiçek
+ORUÇLU	20		Aç duran
+ORİJİNAL	20		Özgün
+OTANTİK	20		Özgün
+OTLAK	20		Mera
+OTOGAR	20		Terminal
+OTOPSİ	20		Ölüm incelemesi
+OTORİTE	20		Yetke
+OTOYOL	20		Ekspres yol
+OTURAK	20		Tabure
+OVMA	20		Masaj
+OY	20		Görüş bildirisi
+OYA	20		Dantel
+OYNAK	20		Hareketli
+OZAN	20		Şair
+OĞLAK	20		Keçi yavrusu
+PABUÇ	20		Ayakkabı
+PANDOMİM	20		Sessiz tiyatro
+PANKART	20		Afiş
+PANKREAS	20		İnsülin organı
+PANORAMA	20		Geniş manzara
+PANSUMAN	20		Yara bakımı
+PANSİYON	20		Küçük otel
+PANZEHİR	20		Zehir ilacı
+PAPARAZİ	20		Magazin fotoğrafçısı
+PARADOKS	20		Çelişki
+PARAGRAF	20		Bölüm
+PARANOYA	20		Kuşku hastalığı
+PARANTEZ	20		Ayraç
+PARAZİT	20		Asalak
+PASKALYA	20		Hristiyan bayramı
+PASTEL	20		Açık renk
+PATA	20		Denk
+PATİK	20		Bebek ayakkabısı
+PATİKA	20		Dar yol
+PAÇA	20		Pantolon ucu
+PAÇAVRA	20		Bez parçası
+PEHLİVAN	20		Güreşçi
+PEK	20		Çok
+PEKMEZ	20		Üzüm şurubu
+PELERİN	20		Kap
+PENÇE	20		Hayvan tırnağı
+PER	20		Kanat
+PERHİZ	20		Diyet
+PERSONEL	20		Çalışanlar
+PERVANE	20		Kanat
+PERİŞAN	20		Berbat
+PES	20		Alçak ses
+PESTİL	20		Kurutulmuş meyve
+PET	20		Plastik şişe
+PEŞTAMAL	20		Hamam havlusu
+PINAR	20		Kaynak
+PIRASA	20		Kışlık sebze
+PIRLANTA	20		Elmas
+PLATFORM	20		Kürsü
+PLİ	20		Kat
+POPÜLER	20		Ünlü
+POS	20		Gür bıyık
+POT	20		Gaf
+POYRAZ	20		Kuzey rüzgarı
+PRİZ	20		Fiş yeri
+PUF	20		Hafif yastık
+PUL	20		Damga pulu
+PUS	20		Sis
+PUT	20		Heykel
+PÜF	20		Üfleme
+Pİ	20		3.14
+PİK	20		Dökme demir
+PİM	20		Kilit iğnesi
+PİSKOPOS	20		Rahip
+PİŞİ	20		Kızarmış hamur
+RADİKAL	20		Köktenci
+RAFİNERİ	20		Arıtma tesisi
+RAHATSIZ	20		Hasta
+RAHMET	20		Merhamet
+RAKS	20		Dans
+RAM	20		Bilgisayar belleği
+RANDIMAN	20		Verim
+RAP	20		Müzik türü
+RAY	20		Tren yolu
+RAĞBET	20		İlgi
+RE	20		21. harf
+REHAVET	20		Gevşeklik
+REHİN	20		Tutsak
+REKABET	20		Yarış
+RENKSİZ	20		Solgun
+RET	20		Reddetme
+REZALET	20		Skandal
+REÇİNE	20		Ağaç sakızı
+RIHTIM	20		İskele
+RIZA	20		İzin
+ROBOTİK	20		Otomasyon
+ROL	20		Görev
+ROM	20		Şeker kamışı içkisi
+ROMANS	20		Aşk şarkısı
+ROZET	20		Arma
+RUHİ	20		İçsel
+RUM	20		Bizanslı
+RUS	20		Rusyalı
+RUTUBET	20		Nem
+RÖNESANS	20		Yeniden doğuş
+SAADET	20		Mutluluk
+SABA	20		Seher yeli
+SABAHLIK	20		Ev giysisi
+SABAHÇI	20		Erkenci
+SABIKA	20		Sicil
+SABIRLI	20		Sebatlı
+SABIRSIZ	20		Aceleci
+SABOTAJ	20		Baltalama
+SABUNLU	20		Köpüklü
+SACAYAĞI	20		Üç ayaklı ocak
+SADAKA	20		Yardım
+SADRAZAM	20		Vezirazam
+SAF	20		Temiz
+SAHANLIK	20		Merdiven başı
+SAK	20		Uyanık
+SAKARYA	20		Nehir adı
+SAKSAĞAN	20		Siyah beyaz kuş
+SAL	20		Su üstü taşıt
+SALAMURA	20		Tuzlu su
+SALGIN	20		Epidemi
+SALKIM	20		Üzüm demeti
+SALTANAT	20		Hükümranlık
+SAM	20		Sıcak rüzgar
+SAMAN	20		Kuru sap
+SAMANLIK	20		Ahır yanı
+SAMİMİ	20		İçten
+SAN	20		Ün
+SANCAK	20		Bayrak
+SANCI	20		Ağrı
+SANDIK	20		Kutu
+SANSAR	20		Gelincik
+SANSÜRLÜ	20		Yasaklı
+SAP	20		Tutma yeri
+SARAYLI	20		Cariye
+SARDUNYA	20		Saksı çiçeği
+SARGI	20		Bandaj
+SARIYER	20		Boğaz ilçesi
+SARMAŞIK	20		Tırmanan bitki
+SARP	20		Dik
+SARRAF	20		Kuyumcu
+SARSINTI	20		Deprem
+SAV	20		İddia
+SAVURGAN	20		Müsrif
+SAY	20		Emek
+SAYDAM	20		Şeffaf
+SAYFİYE	20		Yazlık
+SAYISAL	20		Rakamsal
+SAZ	20		Bağlama
+SAĞDIÇ	20		Damadın yardımcısı
+SAĞIRLIK	20		İşitme kaybı
+SAĞLIKLI	20		Sıhhatli
+SEFALET	20		Yoksulluk
+SEFER	20		Yolculuk
+SEFERBER	20		Harekete geçmiş
+SEKRETER	20		Yazman
+SEKİZLİ	20		Oktet
+SELA	20		Ölüm duyurusu
+SELAMLIK	20		Erkek dairesi
+SEMBOLİK	20		Simgesel
+SEMER	20		Eşek eyeri
+SEMİZOTU	20		Yeşillik
+SENARİST	20		Film yazarı
+SENTETİK	20		Yapay
+SEPETÇİ	20		Hasırcı
+SER	20		Sera
+SEREMONİ	20		Tören
+SERGİ	20		Fuar
+SERMAYE	20		Kapital
+SERSEM	20		Şaşkın
+SERİNLİK	20		Esinti
+SEVİ	20		Aşk
+SEVİMSİZ	20		Antipatik
+SEVİNÇLİ	20		Neşeli
+SEYYAH	20		Gezgin
+SEYİR	20		İzleme
+SEZARYEN	20		Ameliyatla doğum
+SEÇENEK	20		Alternatif
+SEÇMEN	20		Oy veren
+SICAKLIK	20		Isı
+SIKICI	20		Bıktırıcı
+SIKINTI	20		Dert
+SINIRLI	20		Kısıtlı
+SIRADAN	20		Olağan
+SIRALAMA	20		Dizme
+SIĞ	20		Derin değil
+SIĞINAK	20		Barınak
+SIĞIRCIK	20		Sürü kuşu
+SOF	20		Yün kumaş
+SOLUCAN	20		Yer kurdu
+SOLUNGAÇ	20		Balık nefes organı
+SOLİST	20		Tek sanatçı
+SOM	20		Saf
+SOMUN	20		Ekmek
+SONSUZ	20		Ebedi
+SORUMLU	20		Mesul
+SOSYETE	20		Yüksek tabaka
+SOY	20		Nesil
+SOYAĞACI	20		Şecere
+SOYTARI	20		Palyaço
+SOĞUKLUK	20		Serinlik
+SOĞUKÇA	20		Serin
+SPATULA	20		Mutfak aleti
+STAJYER	20		Kursiyer
+STANDART	20		Ölçüt
+STEP	20		Bozkır
+STRATEJİ	20		Taktik
+SUAL	20		Soru
+SUCUKÇU	20		Şarküteri
+SUNİ	20		Yapay
+SUR	20		Kale duvarı
+SURATSIZ	20		Asık yüzlü
+SUSAM	20		Tohum
+SUSUZLUK	20		Kuraklık
+SUÇLAMA	20		İtham
+SÖYLENTİ	20		Dedikodu
+SÜET	20		Güderi
+SÜMBÜL	20		Bahar çiçeği
+SÜNGER	20		Emici
+SÜNGÜ	20		Tüfek bıçağı
+SÜPRÜNTÜ	20		Çerçöp
+SÜRAHİ	20		Su kabı
+SÜRATLİ	20		Hızlı
+SÜRGÜN	20		Sürülme
+SÜRÜNGEN	20		Yılan
+SÜSLEME	20		Bezeme
+SÜSLÜLÜK	20		Şıklık
+SÜVARİ	20		Atlı asker
+Sİ	20		La ile do arasında
+SİLAH	20		Tüfek
+SİLAHLI	20		Donanımlı
+SİLAHŞOR	20		Tetikçi
+SİLO	20		Yem deposu
+SİLÜET	20		Gölge
+SİLİNDİR	20		Üstüvane
+SİM	20		Gümüş
+SİMİTÇİ	20		Gevrekçi
+SİN	20		Mezar
+SİNEMACI	20		Yönetmen
+SİNSİCE	20		Gizlice
+SİNİRLİ	20		Öfkeli
+SİRKECİ	20		İstanbul semti
+SİSTEMLİ	20		Düzenli
+SİT	20		Koruma alanı
+TABAKA	20		Katman
+TABELA	20		Levha
+TABELACI	20		Levha ustası
+TABURCU	20		Hastaneden çıkma
+TABURE	20		Arkalıksız sandalye
+TABİAT	20		Doğa
+TAHAMMÜL	20		Dayanma
+TAHRİBAT	20		Yıkım
+TAHSİL	20		Eğitim
+TAK	20		Kemer
+TAKIMADA	20		Adalar grubu
+TAKSİTLİ	20		Bölünmüş ödemeli
+TALEBE	20		Öğrenci
+TALİH	20		Şans
+TALİHSİZ	20		Şanssız
+TALİMAT	20		Yönerge
+TAMAMEN	20		Bütünüyle
+TAMBUR	20		Telli çalgı
+TAN	20		Şafak
+TANECİK	20		Zerre
+TANRIÇA	20		İlahe
+TANTANA	20		Debdebe
+TANZİMAT	20		Reform dönemi
+TAPINAK	20		Mabet
+TAR	20		Telli çalgı
+TARAFSIZ	20		Yansız
+TARAFTAR	20		Fanatik
+TARÇIN	20		Baharat
+TARİFE	20		Fiyat listesi
+TARİHÇİ	20		Müverrih
+TAS	20		Kase
+TASARI	20		Plan
+TASARRUF	20		Biriktirme
+TASAVVUF	20		Sufizm
+TASLAK	20		Müsvedde
+TASTAMAM	20		Eksiksiz
+TATBİKAT	20		Uygulama
+TATLICI	20		Pastacı
+TAV	20		Kıvam
+TAVLACI	20		Zar oyuncusu
+TAVUKÇU	20		Piliççi
+TAVŞANCI	20		Av köpeği
+TAY	20		At yavrusu
+TAZMİNAT	20		Kompanzasyon
+TAŞINMA	20		Nakil
+TAŞINMAZ	20		Gayrimenkul
+TEBESSÜM	20		Gülümseme
+TECRÜBE	20		Deneyim
+TECRİT	20		Yalıtım
+TEDARİK	20		Temin
+TEDBİR	20		Önlem
+TEDİRGİN	20		Huzursuz
+TEF	20		Def
+TEKE	20		Erkek keçi
+TEKNOLOG	20		Mühendis
+TEKSTİL	20		Dokuma
+TEKVANDO	20		Kore dövüş sporu
+TELAFFUZ	20		Söyleyiş
+TELAŞE	20		Koşuşturma
+TELAŞLI	20		Aceleci
+TELEPATİ	20		Düşünce okuma
+TEMSİLCİ	20		Vekil
+TEMİNAT	20		Güvence
+TEN	20		Cilt
+TENEFFÜS	20		Ara
+TENEKE	20		Metal kutu
+TERARYUM	20		Sürüngen kafesi
+TERBİYE	20		Eğitim
+TERCİH	20		Seçim
+TEREDDÜT	20		Kararsızlık
+TERMİNAL	20		Otogar
+TESADÜF	20		Rastlantı
+TESPİH	20		Zikir aleti
+TESİSAT	20		Donanım
+TEZ	20		Çabuk
+TEŞKİLAT	20		Örgüt
+TIKIRTI	20		Hafif ses
+TIP	20		Hekimlik
+TIPA	20		Tıkaç
+TIRABZAN	20		Korkuluk
+TIRMANIŞ	20		Yükseliş
+TIRPAN	20		Ot biçme aleti
+TIS	20		Yılan sesi
+TIĞ	20		Örgü iğnesi
+TOKMAK	20		Çekiç
+TOLERANS	20		Hoşgörü
+TOMBUL	20		Dolgun
+TOMURCUK	20		Gonca
+TOPLAMA	20		Artı işlemi
+TOPLULUK	20		Cemiyet
+TOPTANCI	20		Büyük satıcı
+TOPUK	20		Ayak arkası
+TOR	20		Ham
+TORK	20		Döndürme kuvveti
+TORNACI	20		Metal işçisi
+TORPİDO	20		Araç gözü
+TORPİL	20		Su altı mermisi
+TOY	20		Acemi
+TOZPEMBE	20		Açık pembe
+TRANSFER	20		Aktarım
+TROPİKAL	20		Sıcak iklimli
+TRİKOTAJ	20		Örme kumaş
+TRİO	20		Üçlü
+TUBA	20		Kalın sesli boru
+TUHAFİYE	20		Düğme iplik dükkanı
+TURFANDA	20		Mevsiminden önce
+TURUNÇ	20		Ekşi portakal
+TURİSTİK	20		Gezilik
+TURŞUCU	20		Salamuracı
+TUTANAK	20		Zabıt
+TUTKAL	20		Yapıştırıcı
+TUTSAK	20		Esir
+TUTUMLU	20		İdareli
+TUĞLA	20		Yapı taşı
+TUŞ	20		Klavye tuşu
+TÖVBE	20		Pişmanlık
+TÜKETİM	20		Harcama
+TÜKÜRÜK	20		Salya
+TÜL	20		İnce perde
+TÜP	20		Boru
+TÜRKMEN	20		Yörük
+TÜTÜN	20		Sigara otu
+TÜTÜNCÜ	20		Sigaracı
+Tİ	20		Titanyum elementi
+TİK	20		Seğirme
+TİKSİNTİ	20		İğrenme
+TİM	20		Ekip
+TİN	20		Ruh
+TİRBUŞON	20		Şarap açacağı
+TİRE	20		Çizgi
+TİRYAKİ	20		Bağımlı
+TİTREK	20		Ürkek
+TİTREŞİM	20		Salınım
+TİZ	20		İnce ses
+UCA	20		Sağrı
+UCUBE	20		Tuhaf görünen
+UCUZLUK	20		İndirim
+UFACIK	20		Minicik
+UFAKLIK	20		Çocuk
+UFO	20		Uçan daire
+UKALALIK	20		Ukala olma
+UKULELE	20		Küçük gitar
+ULTRASON	20		Ses ötesi
+ULU	20		Yüce
+ULUSAL	20		Milli
+UMACI	20		Öcü
+UMUR	20		Önem
+UMUTLU	20		Ümitli
+UNUTKAN	20		Dalgın
+USTABAŞI	20		Şef
+USTURA	20		Tıraş bıçağı
+UT	20		Çalgı
+UYDURUK	20		Yalan
+UYGARLIK	20		Medeniyet
+UYGULAMA	20		Pratik
+UYSALLIK	20		Yumuşaklık
+UYUMLU	20		Ahenkli
+UZAKTAN	20		Mesafeden
+UZANTI	20		Ek
+UZLAŞI	20		Anlaşma
+UZMANLIK	20		İhtisas
+UÇKUR	20		Don bağı
+UÇURUM	20		Yar
+UĞRAŞ	20		Çaba
+UĞULTU	20		Rüzgar sesi
+UĞURLAMA	20		Yolcu etme
+UĞURLU	20		Şanslı
+UĞURSUZ	20		Kara bahtlı
+VAAT	20		Söz
+VAFTİZ	20		Suyla arınma
+VAGON	20		Tren arabası
+VAKA	20		Olay
+VAN	20		Doğu ili
+VARDİYA	20		Nöbet
+VARLIKLI	20		Zengin
+VASITA	20		Araç
+VASİYET	20		Son istek
+VAT	20		Güç birimi
+VATANDAŞ	20		Yurttaş
+VAY	20		Şaşırma ünlemi
+VAZELİN	20		Merhem
+VAZİFE	20		Görev
+VEBA	20		Kara ölüm
+VELİAHT	20		Taht varisi
+VENA	20		Damar
+VERANDA	20		Taraça
+VERESİYE	20		Borcuna
+VESVESE	20		Kuşku
+VEZİR	20		Sadrazam
+VIN	20		Sinek sesi
+VIZ	20		Önemsiz
+VOLKANİK	20		Yanardağsal
+VURGUN	20		Büyük kazanç
+VİDA	20		Burgu
+VİLAYET	20		İl
+VİTRİNCİ	20		Dekoratör
+VİYADÜK	20		Köprü
+YA	20		Şaşkınlık belirtisi
+YABANİ	20		Vahşi
+YAK	20		Tibet sığırı
+YAKINLIK	20		Samimiyet
+YAKLAŞIK	20		Aşağı yukarı
+YAL	20		Köpek yemeği
+YALDIZ	20		Altın kaplama
+YALDIZLI	20		Altın kaplama
+YALNIZCA	20		Sadece
+YAMAÇ	20		Bayır
+YANILGI	20		Hata
+YAPMACIK	20		Sahte
+YAPRAKLI	20		Yeşil dallı
+YAR	20		Uçurum
+YARASA	20		Gece memelisi
+YARATICI	20		Hayal gücü güçlü
+YARGIÇ	20		Hakim
+YARIÇAP	20		Radius
+YAS	20		Matem
+YATIRIM	20		Sermaye koyma
+YAVAŞÇA	20		Ağır ağır
+YAY	20		Ok atan
+YAYGARA	20		Gürültü
+YAYGIN	20		Olağan
+YAZIHANE	20		Büro
+YAŞLILIK	20		İhtiyarlık
+YEL	20		Rüzgar
+YELKOVAN	20		Dakika kolu
+YENGEÇ	20		Deniz kabuklusu
+YENİDEN	20		Tekrar
+YENİLGİ	20		Mağlubiyet
+YENİLİK	20		İnovasyon
+YENİÇERİ	20		Osmanlı askeri
+YERALTI	20		Toprak altı
+YERKÜRE	20		Dünya
+YERLEŞİM	20		İskan
+YERYÜZÜ	20		Dünya
+YETERSİZ	20		Eksik
+YETKİLİ	20		Sorumlu
+YEVMİYE	20		Gündelik
+YEŞİLLİK	20		Çimen
+YILDIZLI	20		Gökyüzü dolu
+YIRTICI	20		Vahşi hayvan
+YOKLAMA	20		Devam kontrolü
+YONCA	20		Üç yapraklı
+YORGANCI	20		Döşemeci
+YOĞUNLUK	20		Koyuluk
+YUFKA	20		İnce hamur
+YUH	20		Yuhalama
+YUMURCAK	20		Yaramaz çocuk
+YUSUFÇUK	20		Kızböceği
+YÜCE	20		Ulu
+YÜRÜRLÜK	20		Geçerlilik
+YÜZEYSEL	20		Sığ
+ZAHMET	20		Güçlük
+ZAHMETLİ	20		Yorucu
+ZAM	20		Fiyat artışı
+ZAMANSIZ	20		Vakitsiz
+ZAMBAK	20		Beyaz çiçek
+ZANAAT	20		El sanatı
+ZAR	20		Tavla zarı
+ZARARSIZ	20		Tehlikesiz
+ZAYIFLIK	20		Zaaf
+ZELZELE	20		Deprem
+ZEMBEREK	20		Saat yayı
+ZEMHERİ	20		Kış ortası
+ZEN	20		Kadın
+ZERDEÇAL	20		Sarı baharat
+ZERZEVAT	20		Sebze
+ZIMPARA	20		Aşındırıcı kağıt
+ZIP	20		Zıplama
+ZIRH	20		Savaş giysisi
+ZOKA	20		Sahte yem
+ZON	20		Bölge
+ZULA	20		Kuytu
+ZURNA	20		Nefesli çalgı
+ZÜMRÜT	20		Yeşil taş
+ÇABUCAK	20		Hemencecik
+ÇABUKLUK	20		Hız
+ÇAKIL	20		Küçük taş
+ÇALIŞMA	20		Emek
+ÇALIŞTAY	20		Atölye toplantısı
+ÇAMURLU	20		Balçıklı
+ÇAMURLUK	20		Araba kenarı
+ÇAN	20		Kilise zili
+ÇAP	20		Daire genişliği
+ÇAPA	20		Tarım aleti
+ÇAPRAŞIK	20		Karışık
+ÇAPULCU	20		Yağmacı
+ÇARDAK	20		Asma gölgeliği
+ÇARPICI	20		Etkileyici
+ÇARPINTI	20		Kalp atışı
+ÇARÇABUK	20		Hemen
+ÇARŞI	20		Pazar yeri
+ÇAT	20		Ani kırılma sesi
+ÇATIŞMA	20		Çarpışma
+ÇAVDAR	20		Tahıl
+ÇAYIR	20		Çimen
+ÇAYLAK	20		Yırtıcı kuş
+ÇAĞ	20		Devir
+ÇAĞDAŞ	20		Modern
+ÇAĞLAYAN	20		Şelale
+ÇAĞRI	20		Davet
+ÇAĞRIŞIM	20		Tedai
+ÇEK	20		Banka belgesi
+ÇEKMECE	20		Dolap gözü
+ÇEKİLİŞ	20		Kura
+ÇEKİMSER	20		Tarafsız
+ÇEKİNGEN	20		Utangaç
+ÇEKİRDEK	20		Tohum
+ÇEKİÇ	20		Vurma aleti
+ÇELENK	20		Çiçek halkası
+ÇELTİK	20		Kabuklu pirinç
+ÇELİMSİZ	20		Cılız
+ÇELİŞKİ	20		Tezat
+ÇEMBER	20		Halka
+ÇENGEL	20		Kanca
+ÇETREFİL	20		Karışık
+ÇEVRESEL	20		Ekolojik
+ÇEYİZ	20		Gelin eşyası
+ÇEŞİTLİ	20		Türlü
+ÇIKINTI	20		Kabartı
+ÇIN	20		Zil sesi
+ÇINGIRAK	20		Zil
+ÇIRAK	20		Usta adayı
+ÇIRAKLIK	20		Yamaklık
+ÇIT	20		Hafif ses
+ÇITA	20		Ensiz tahta parçası
+ÇIĞ	20		Kar kayması
+ÇOCUKÇA	20		Saf
+ÇORBACI	20		İşkembeci
+ÇOĞUNLUK	20		Ekseriyet
+ÇUVAL	20		Büyük torba
+ÇUVALDIZ	20		Büyük iğne
+ÇÖKELEK	20		Lor
+ÇÖMLEK	20		Toprak kap
+ÇÖMLEKÇİ	20		Toprakçı
+ÇÖPÇATAN	20		Aracı
+ÇÖZ	20		Bağla karşıtı
+ÇÖZELTİ	20		Karışım
+ÇİNEKOP	20		Lüferin küçüğü
+ÇİNGENE	20		Roman
+ÇİP	20		Yonga
+ÇİT	20		Parmaklık
+ÇİTA	20		En hızlı hayvan
+ÇİY	20		Jale
+ÇİZELGE	20		Tablo
+ÇİÇEKLİK	20		Vazo
+ÇİĞ	20		Pişmemiş
+ÇİĞDEM	20		Kır çiçeği
+ÖDENEK	20		Bütçe
+ÖDÜNÇ	20		Emanet
+ÖF	20		Bezginlik belirtisi
+ÖGE	20		Unsur
+ÖKSÜZLÜK	20		Yetimlik
+ÖLÇEK	20		Ölçü kabı
+ÖLÇÜSÜZ	20		Aşırı
+ÖLÜ	20		Cansız
+ÖLÜMLÜ	20		Fani
+ÖLÜMSÜZ	20		Ebedi
+ÖNCELİK	20		İlk sıra
+ÖNCÜ	20		Önder
+ÖNDER	20		Lider
+ÖNDERLİK	20		Liderlik
+ÖNGÖRÜ	20		Kestirim
+ÖNGÖRÜLÜ	20		İleri görüşlü
+ÖNSEZİ	20		İçe doğma
+ÖRGÜLÜ	20		Örülmüş
+ÖRNEKLİK	20		Model olma
+ÖTE	20		Uzak taraf
+ÖTEBERİ	20		Ivır zıvır
+ÖVGÜ	20		Takdir
+ÖZ	20		Bizzat
+ÖZDEYİŞ	20		Vecize
+ÖZELLİK	20		Nitelik
+ÖZEN	20		İtina
+ÖZENLİ	20		Titiz
+ÖZGÜRCE	20		Serbestçe
+ÖZLEMLİ	20		Hasret dolu
+ÖZVERİ	20		Fedakarlık
+ÖZVERİLİ	20		Fedakar
+ÖÇ	20		İntikam
+ÖĞLEÜSTÜ	20		İkindi
+ÖĞRETİ	20		Doktrin
+ÖĞRETİM	20		Eğitim
+ÖĞÜT	20		Nasihat
+ÜCRETLİ	20		Paralı
+ÜCRETSİZ	20		Bedava
+ÜF	20		Acı belirtisi
+ÜN	20		Şan
+ÜNLEM	20		Hayret sözü
+ÜNİFORMA	20		Resmi giysi
+ÜRE	20		İdrar maddesi
+ÜRETİCİ	20		İmalatçı
+ÜRETİM	20		İmalat
+ÜROLOJİ	20		Böbrek bilimi
+ÜRPERTİ	20		Titreme
+ÜSTAT	20		Usta
+ÜSTELİK	20		Ayrıca
+ÜSTEĞMEN	20		Rütbe
+ÜSTYAPI	20		Kurum yapısı
+ÜSTÜNLÜK	20		Avantaj
+ÜTOPYA	20		Hayal ülke
+ÜVEY	20		Öz olmayan
+ÜZENGİ	20		Eyer basamağı
+ÜZÜMLÜ	20		Asmalı
+ÜŞENGEÇ	20		Tembel
+İADE	20		Geri verme
+İBADET	20		Dua
+İBRİK	20		Su kabı
+İDAM	20		Ölüm cezası
+İDEALİST	20		Ülkücü
+İDEOLOJİ	20		Dünya görüşü
+İFA	20		Yerine getirme
+İFFET	20		Namus
+İFLAS	20		Batma
+İFTİHAR	20		Övünç
+İFTİRA	20		Kara çalma
+İGUANA	20		Kertenkele
+İHALE	20		Artırma
+İHANET	20		Hainlik
+İHTİMAL	20		Olasılık
+İHTİYAR	20		Yaşlı
+İHTİŞAM	20		Görkem
+İKRAMİYE	20		Prim
+İKTİDAR	20		Güç
+İKİNDİ	20		Öğleden sonra
+İL	20		Vilayet
+İLAHİYAT	20		Din bilimi
+İLAÇLAMA	20		Haşere temizliği
+İLERLEME	20		Gelişme
+İLETİŞİM	20		Haberleşme
+İLHAM	20		Esin
+İLLÜZYON	20		Yanılsama
+İMA	20		Dolaylı söz
+İMECE	20		Ortak iş
+İMGE	20		İmaj
+İMTİYAZ	20		Ayrıcalık
+İN	20		Hayvan yuvası
+İNCECİK	20		Narin
+İNCELEME	20		Araştırma
+İNKILAP	20		Devrim
+İNSANCIL	20		Hümanist
+İNSANLIK	20		Beşeriyet
+İNSÜLİN	20		Şeker hormonu
+İNTİHAR	20		Kendini öldürme
+İNÇ	20		Uzunluk birimi
+İNİ	20		Küçük kardeş
+İPOTEK	20		Rehin
+İRADE	20		İstenç
+İRS	20		Miras
+İS	20		Duman lekesi
+İSABET	20		Tam vuruş
+İSKARPİN	20		Topuklu ayakkabı
+İSKELE	20		Rıhtım
+İSKEMLE	20		Sandalye
+İSKONTO	20		İndirim
+İSPİNOZ	20		Ötücü kuş
+İSTAVRİT	20		Küçük balık
+İSTEKLİ	20		Hevesli
+İSTİFA	20		İşten ayrılma
+İSTİKBAL	20		Gelecek
+İSTİSMAR	20		Sömürü
+İSYAN	20		Başkaldırı
+İTA	20		Verme
+İTAAT	20		Boyun eğme
+İTİBAR	20		Saygınlık
+İVME	20		Hızlanma
+İZDİHAM	20		Kalabalık
+İZDİVAÇ	20		Evlilik
+İZLEME	20		Takip
+İZLENİM	20		İntiba
+İZLEYİCİ	20		Seyirci
+İZMARİT	20		Sigara kalıntısı
+İZOLE	20		Yalıtılmış
+İÇERİK	20		Kapsam
+İÇGÜDÜ	20		Sezgi
+İĞRENÇ	20		Tiksindirici
+İŞKEMBE	20		Mide
+İŞKENCE	20		Eziyet
+İŞLEM	20		Muamele
+İŞPORTA	20		Seyyar tezgah
+İŞVEREN	20		Patron
+ŞABLON	20		Kalıp
+ŞADIRVAN	20		Abdest çeşmesi
+ŞAHESER	20		Başyapıt
+ŞAHSİYET	20		Kişilik
+ŞAHİN	20		Yırtıcı kuş
+ŞAK	20		Şaplak sesi
+ŞAKAYIK	20		Pembe çiçek
+ŞAKLABAN	20		Soytarı
+ŞAL	20		Atkı
+ŞALGAM	20		Kök sebze
+ŞALVAR	20		Bol pantolon
+ŞAMDAN	20		Mum tutucu
+ŞAN	20		Ün
+ŞANTAJ	20		Tehdit
+ŞANTİYE	20		İnşaat alanı
+ŞANZIMAN	20		Vites kutusu
+ŞAP	20		Kristal tuz
+ŞARK	20		Doğu
+ŞARLATAN	20		Dolandırıcı
+ŞARTNAME	20		Koşullar belgesi
+ŞATAFAT	20		Gösteriş
+ŞAİR	20		Ozan
+ŞAŞKIN	20		Hayret içinde
+ŞEFKAT	20		Merhamet
+ŞEK	20		Şüphe
+ŞEKERCİ	20		Tatlıcı
+ŞEMA	20		Plan
+ŞENLİK	20		Festival
+ŞERBET	20		Tatlı içecek
+ŞERBETÇİ	20		Tatlı içecekçi
+ŞEREFLİ	20		Onurlu
+ŞEYTANİ	20		İblisçe
+ŞOK	20		Sarsıntı
+ŞOKE	20		Şaşkın
+ŞOV	20		Gösteri
+ŞUBE	20		Alt birim
+ŞÖHRET	20		Ün
+ŞÜPHELİ	20		Kuşkulu
+ŞÜPHESİZ	20		Elbette
+ŞİA	20		İslam mezhebi
+ŞİAR	20		İlke
+ŞİDDETLİ	20		Sert
+ŞİFA	20		Deva
+ŞİPŞİRİN	20		Çok tatlı
+Şİİ	20		Mezhep mensubu
+ABA	35		Kalın yün kumaş
+ABAT	35		Bayındır
+ABE	35		Ağabey
+ABUS	35		Somurtkan
+AFT	35		Ağız yarası
+AFİ	35		Gösteriş
+AHU	35		Ceylan
+AHİ	35		Kardeş
+AKA	35		Ağabey
+AKI	35		Cömert
+AKS	35		Dingil
+ALA	35		Alacalı
+ALEGORİ	35		Kinaye
+ALMANAK	35		Yıllık
+ALP	35		Yiğit
+ALİ	35		Yüce
+AMETİST	35		Mor taş
+AR	35		Utanç duyma
+ARK	35		Su kanalı
+ARZ	35		Sunma
+ARŞ	35		Gök
+ASI	35		Fayda
+AST	35		Alt rütbe
+ATİ	35		Gelecek
+AYN	35		Göz
+AZA	35		Üye
+AZI	35		Öğütücü diş
+AĞI	35		Zehir
+BAD	35		Rüzgar
+BALÇIK	35		Çamur
+BAP	35		Bölüm
+BAS	35		Kalın ses
+BAÇ	35		Vergi
+BE	35		2. harfin adı
+BED	35		Kötü
+BET	35		Yüz
+BOA	35		Yılan türü
+BOM	35		Bomba sesi
+BRE	35		Hey
+BÖKE	35		Kahraman
+BÖN	35		Saf
+BÖĞ	35		Zehirli örümcek
+BÜZ	35		Beton boru
+BİS	35		Tekrar
+CAR	35		Bağırış
+CE	35		3. harfin adı
+CEM	35		Toplama
+CER	35		Çekme
+CET	35		Ata
+CIK	35		Hayır işareti
+CIS	35		Sıcak uyarısı
+CIZ	35		Kızgın yağ sesi
+CUK	35		Tam yerinde
+CİN	35		Görünmez varlık
+DAH	35		Eşeği yürütme sözü
+DARP	35		Fiziksel şiddet
+DAZ	35		Kel
+DEH	35		Hayvan yürütme sözü
+DEMAGOG	35		Halkavcısı
+DOK	35		Gemi tamir yeri
+DUN	35		Aşağı
+DÖL	35		Yavru
+DÖŞ	35		Göğüs
+DÜ	35		Farsça iki
+DÜLGER	35		Marangoz
+ECE	35		Kraliçe
+EDE	35		Ağabey
+EFSUN	35		Büyü
+EKLEKTİK	35		Seçmeci
+ELA	35		Yeşilimsi kahve
+EMSAL	35		Benzer
+ERK	35		Güç
+ESARET	35		Tutsaklık
+EVİÇ	35		Onaylamak
+EZA	35		Eziyet
+EĞE	35		Törpü
+FAK	35		Tuzak
+FAŞ	35		Açığa vurma
+FE	35		7. harf
+FEK	35		Kaldırma
+FER	35		Parıltı
+FOL	35		Yumurta
+FOS	35		Çürük
+FÖY	35		Yaprak
+FÜG	35		Müzik formu
+FİĞ	35		Yem bitkisi
+GACI	35		Argoda kadın
+GAG	35		Şaka
+GAK	35		Karga sesi
+GAR	35		İstasyon
+GE	35		8. harf
+GEM	35		Dizgin
+GERDAN	35		Boyun
+GIK	35		Ses
+GO	35		Masa oyunu
+GUT	35		Damla hastalığı
+GÖN	35		Deri
+GÜM	35		Patlama sesi
+HAF	35		Orta saha oyuncusu
+HAH	35		İşte
+HIK	35		Hıçkırık sesi
+HOL	35		Koridor
+HOR	35		Aşağılık
+HUĞ	35		Kulübe
+HUŞ	35		Kayın ağacı
+HÖT	35		Korkutma sözü
+HİN	35		Kurnaz
+IH	35		İsteksizlik sesi
+IRZ	35		Namus
+JALE	35		Çiy
+JANR	35		Tür
+JE	35		13. harf
+JUL	35		Enerji birimi
+JÜT	35		Kenevir lifi
+JİPS	35		Alçı
+KAK	35		Kuru meyve
+KARABİNA	35		Tüfek
+KARTOTEK	35		Fiş dolabı
+KASATURA	35		Süngü
+KAV	35		Tutuşturucu
+KE	35		14. harf
+KEM	35		Kötü
+KEP	35		Mezuniyet şapkası
+KEŞ	35		Kuru peynir
+KIĞ	35		Hayvan dışkısı
+KOF	35		Boş
+KOM	35		Çiftlik evi
+KORUNAK	35		Sığınak
+KUP	35		Dondurma kabı
+KÖS	35		Büyük davul
+KÜR	35		Tedavi
+KÜT	35		Kör
+LAL	35		Dilsiz
+LE	35		15. harf
+LEF	35		Sarma
+LEH	35		Polonyalı
+LEY	35		Romanya parası
+LOP	35		Kemiksiz et parçası
+LOĞ	35		Dam silindiri
+LUP	35		Büyüteç
+LÖK	35		Ağır deve
+LÜP	35		Bedava
+LİR	35		Telli çalgı
+MA	35		Fiilden isim yapan
+MAH	35		Ay
+MAİ	35		Mavi
+MAŞ	35		Fasulye türü
+ME	35		16. harfin adı
+MEÇ	35		İnce kılıç
+MIH	35		Çivi
+MUF	35		Boru eki
+MÖ	35		Milattan önce
+MİM	35		İşaret
+MİR	35		Bey
+NAS	35		İnsanlar
+NEV	35		Tür
+NUH	35		Peygamber
+NÜ	35		Çıplak
+NİHİLİST	35		Hiççi
+NİŞ	35		Duvar oyuğu
+OBA	35		Göçebe çadırı
+OH	35		Rahatlama belirtisi
+PA	35		Protaktinyum element
+PAH	35		Kenar eğimi
+PAK	35		Temiz
+PE	35		20. harfin adı
+PED	35		Yastıkçık
+PEH	35		Hayret ünlemi
+PEY	35		Kapora
+PEŞ	35		Arka
+PIR	35		Kanat sesi
+POF	35		Kabarık kol
+PÖF	35		Tiksinme ünlemi
+PÖÇ	35		Kuyruk
+PÜR	35		Saf
+PİR	35		Usta
+RA	35		Güneş tanrısı
+RAB	35		Tanrı
+RACA	35		Hükümdar
+RAŞE	35		Üşüme
+REY	35		Oy
+RIH	35		Kurutma kumu
+ROT	35		Araba ayarı
+RİSALE	35		Kitapçık
+SAC	35		Demir levha
+SARHOŞ	35		İçkili
+SARNIÇ	35		Su deposu
+SE	35		22. harf
+SEK	35		Sade
+SEM	35		Zehir
+SEMAVER	35		Çaydanlık
+SIFATLI	35		Niteleyen kelimeli
+SÖBE	35		Oval
+SÖR	35		Rahibe
+SÜ	35		Asker
+SİMSAR	35		Komisyoncu
+SİNAMEKİ	35		Müshil otu
+TA	35		Kadar
+TABA	35		Kahverengi
+TE	35		24. harf
+TEFEKKÜR	35		Düşünme
+TENEZZÜH	35		Gezinti
+TOS	35		Kafa vuruşu
+TUH	35		Ayıplama ünlemi
+TUĞ	35		Sancak
+TÖZ	35		Öz
+TÜF	35		Volkanik taş
+TÜH	35		Yazık
+TÜN	35		Gece
+UDİ	35		Ud çalan
+ULAK	35		Kurye
+UMU	35		Umut
+UR	35		Tümör
+URAY	35		Belediye
+US	35		Akıl
+UY	35		Korku belirtisi
+UZ	35		Becerikli
+UZO	35		Anasonlu içki
+VAH	35		Yazık
+VAZ	35		Vazgeçme
+VELESPİT	35		Bisiklet
+VOLE	35		Havadan vuruş
+YABA	35		Dirgen
+YAD	35		Anma
+YEK	35		Bir
+YEKE	35		Dümen kolu
+YEN	35		Kol ucu
+YEĞ	35		Daha iyi
+YIKI	35		Enkaz
+YIR	35		Türkü
+YO	35		Hayır
+YOM	35		Uğur
+YOZ	35		Bozulmuş
+YOĞ	35		Yas töreni
+YUF	35		Ayıplama
+YİV	35		Oluk
+ZADE	35		Oğul
+ZAN	35		Şüphe
+ZAT	35		Kişi
+ZAÇ	35		Göztaşı
+ZAĞ	35		Bıçak ağzı
+ZE	35		29. harf
+ZEDE	35		Mağdur
+ZEM	35		Kötüleme
+ZER	35		Altın
+ZERDALİ	35		Yabani kayısı
+ZIH	35		Kenar şeridi
+ZOM	35		Sarhoş
+ZUM	35		Yakınlaştırma
+ZÜL	35		Alçaklık
+ZİR	35		Alt
+ÇAR	35		Rus kralı
+ÇAV	35		Ün
+ÇE	35		4. harfin okunuşu
+ÇEÇ	35		Harman yığını
+ÇOR	35		Hastalık
+ÇUL	35		Kaba örtü
+ÇÜŞ	35		Eşeği durdurma sözü
+ÇİL	35		Yüz beneği
+ÇİR	35		Kuru kayısı
+ÇİS	35		İnce yağmur
+ÇİŞ	35		Çocuk dilinde idrar
+ÖCÜ	35		Umacı
+ÖD	35		Safra
+ÖHÖ	35		Öksürük sesi
+ÖK	35		Anne
+ÖKE	35		Dahi
+ÖRF	35		Gelenek
+ÖRS	35		Demirci aleti
+ÜMÜK	35		Boğaz
+ÜRKÜNÇ	35		Korkunç
+ÜS	35		Yerleşke
+İBLİS	35		Şeytan
+İBRİŞİM	35		İpek iplik
+İCAP	35		Gerek
+İCAR	35		Buluş
+İDE	35		İdea
+İKEBANA	35		Japon çiçek sanatı
+İLA	35		Kadar
+İM	35		İyelik eki
+İSPİRTO	35		Alkol
+İT	35		Köpek
+İYE	35		Sahip
+İĞ	35		Hastalık veya dert
+ŞAD	35		Mutlu
+ŞAH	35		Kral
+ŞARAP	35		Üzüm içkisi
+ŞE	35		23. harf
+ŞEB	35		Gece
+ŞEM	35		Mum
+ŞER	35		Kötülük
+ŞEV	35		Eğim
+ŞEŞ	35		Zarda altı
+ŞIP	35		Damla sesi
+ŞOM	35		Uğursuz
+ŞOR	35		Tuzlu
+ŞUA	35		Işın
+ŞUH	35		Cilveli

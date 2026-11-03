@@ -17,14 +17,26 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [x] New Firebase project `granny-s-puzzle` (company account as owner),
       iOS app `com.dengolabs.grannyspuzzle`, Analytics, Hosting, the Remote
       Config keys
-- [ ] When the bundle ID switches: put the new project's
-      `GoogleService-Info.plist` (waiting in the assets folder; git ignores
-      it) into the app folder, replacing the old project's
+- [x] The app uses the new Firebase project (`GoogleService-Info.plist`
+      for `granny-s-puzzle`; its bundle ID already says
+      `com.dengolabs.grannyspuzzle`, so nothing to change when the bundle
+      ID switches)
+- [ ] Firebase on the Blaze plan before 15 November 2026 (Remote Config
+      becomes usage-based; upgrading by then delays billing to February
+      2027), with a budget alert (e.g. €10 a month). Company card, so the
+      Google invoices go into the business books
+- [x] Crashlytics opened in the new project's console (app detected)
 - [x] AdMob account under Deniz: the app and its rewarded, interstitial
       and banner units; real IDs in `Ads/AdsSetup.swift` (release builds)
       and the app ID in `Config/grannys_puzzle-Info.plist`
 - [x] `app-ads.txt` line with the publisher ID in the website repo
       (`public/app-ads.txt`); deploy the site
+- [ ] After the bundle ID switch: restrict the Firebase iOS API key to the
+      app (Google Cloud → APIs & Services → Credentials → the "auto created
+      by Firebase" iOS key → Application restrictions → iOS apps →
+      `com.dengolabs.grannyspuzzle`). Not before: test builds with the old
+      bundle ID would lose Firebase. GitHub's secret alert for this key is
+      closed as "won't fix": the key is public by design
 - [ ] Repo: `Config/Signing.xcconfig` (team, bundle ID
       `com.dengolabs.grannyspuzzle`), `docs/Signing.md`
 - [ ] After TestFlight works: retire Barış's App Store Connect app and the
@@ -38,7 +50,12 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [ ] Create the two daily leaderboards in App Store Connect
       (docs/Achievements.md), then test a submission on TestFlight
 - [x] Word and clue list, English (workbook, 10 level packs, 4 daily packs)
-- [ ] Word and clue list, Turkish: import the workbook, `scripts/make-packs.sh tr`
+- [x] Word and clue list, Turkish (3,799 words, 2 level packs, 2 daily packs)
+- [ ] Review the Turkish difficulty ratings (Difficulty column in
+      `data/tr/source/turkish_words.xlsx`, rated by Claude); after
+      changes: re-import and rebuild the packs
+- [ ] Turkish daily pack 3 before day 200 after launch
+      (docs/LevelDelivery.md)
 - [x] Loading screen: logo and the walking cat on a filling bar
       (`Launch/LaunchSplash.swift`)
 - [ ] Optional: the logo (`company-logo`) is from a compressed JPG,
@@ -51,11 +68,11 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [x] Content server: Firebase Hosting on Deniz's project
       (https://granny-s-puzzle.web.app, in `PackDownloader.contentBaseURL`)
 - [x] English daily pack 1 full (100); 400 English dailies in all
-- [ ] Turkish daily pack 1 has only 30 puzzles: replaced by the new
-      Turkish packs
+- [x] Turkish daily pack 1 full (100); 200 Turkish dailies in all
 - [x] English packs 2–10 and daily packs 2–4 published (download
       tested on a phone)
-- [ ] Turkish packs published the same way
+- [ ] Turkish pack 2 and daily pack 2 published (`firebase deploy --only hosting`)
+      and download tested on a phone
 - [ ] The daily's first day = the release day (that day plays daily 1):
       set `DailyDay.firstDay` in the release build to the planned day, and
       `daily_first_day` in Remote Config (e.g. 20261201) to the actual
@@ -102,9 +119,7 @@ Apple's app transfer later. The bundle ID changes: the current one
       an SE-sized phone
 - [ ] Firebase DebugView shows the analytics events; Remote Config
       defaults published
-- [ ] App name in Turkish on the home screen (`CFBundleDisplayName` in
-      InfoPlist.xcstrings has English only): keep "Granny's Puzzle" or
-      translate. Decide together with the Turkish store listing
+- [x] App name: "Granny's Puzzle" in Turkish too (no translation)
 
 ## Music and sounds
 

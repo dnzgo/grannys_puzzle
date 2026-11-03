@@ -82,16 +82,24 @@ The live server is `https://granny-s-puzzle.web.app` (Firebase project
 
 ### Making the first packs
 
-`ContentPipeline/scripts/make-packs.sh en` makes a language's 10 level
-packs and 4 daily packs, exactly as shipped (about an hour; the same
-command always gives the same packs):
+`ContentPipeline/scripts/make-packs.sh <lang> [level packs] [daily packs]`
+makes a language's packs, exactly as shipped (about 5 minutes a pack; the
+same command always gives the same packs):
+
+- English: `make-packs.sh en` (10 level packs, 4 daily packs).
+- Turkish: `make-packs.sh tr 2 2` (2 level packs, 2 daily packs). Its word
+  list is smaller (about 3,800 words against about 20,000), and the more
+  levels one list fills, the more often its words come back; more packs
+  follow as the workbook grows.
+
+What the packs hold:
 
 - **Pack 1, levels 1–20:** small boards (5×6, 6×7), answers up to 6
   letters, only everyday words (`data/<lang>/starter-words.txt`), no
   shaped boards: the first impression should be easy.
-- **Levels 21–1000:** 6×8, 7×9, 7×7 and 8×10 boards, Easy and Medium
+- **Levels 21 on:** 6×8, 7×9, 7×7 and 8×10 boards, Easy and Medium
   words, answers up to 8 letters, a shaped board every 10th level.
-- **Dailies 1–400:** 7×9, 8×8 and 7×8 boards, Easy and Medium words.
+- **Dailies:** 7×9, 8×8 and 7×8 boards, Easy and Medium words.
   400 rather than 365 because packs are 100 and must be full: a phone
   keeps the copy of a pack it first got, so a part-filled last pack could
   never be topped up.
@@ -101,9 +109,21 @@ Each pack is made in pieces that remember the pieces before them
 clues rotate; pack 2 carries on from pack 1. A later pack is one more
 `generate --after` the packs before it.
 
-Shipped so far: **English** pack 1 and daily pack 1 in the app; packs
-2–10 and daily packs 2–4 in `Firebase/public/packs/` (not deployed yet).
-Turkish: test packs only.
+Shipped so far:
+
+- **English:** pack 1 and daily pack 1 in the app; packs 2–10 and daily
+  packs 2–4 online (1,000 levels, 400 dailies).
+- **Turkish:** pack 1 and daily pack 1 in the app; pack 2 and daily pack 2
+  online (200 levels, 200 dailies).
+
+**Turkish dailies run out first:** 200 dailies last 200 days from the
+daily's first day. After that a Turkish player gets earlier dailies again,
+whose scores stay off the leaderboard (`DailyDay.fallbackNumber`). Publish
+daily pack 3 well before day 200: rate and clue more words in the
+workbook, import it, then generate daily pack 3 with `generate --after`
+the two published daily packs (not by rerunning `make-packs.sh`: with a
+bigger word list it would make different packs 1–2 than the ones players
+have).
 
 ### Publishing a pack
 
