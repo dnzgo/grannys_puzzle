@@ -8,8 +8,8 @@
 // your own values in Config/Local.xcconfig, which git ignores. See
 // docs/Signing.md.
 
-DEVELOPMENT_TEAM = 32M7PA8U93
-PRODUCT_BUNDLE_IDENTIFIER = com.bgorkem.grannyscrossword
+DEVELOPMENT_TEAM = GF38VK467T
+PRODUCT_BUNDLE_IDENTIFIER = com.dengolabs.grannyspuzzle
 CODE_SIGN_ENTITLEMENTS = grannys_puzzle/grannys_puzzle.entitlements
 
 // Last, so whatever it sets wins. The "?" makes it optional: without the

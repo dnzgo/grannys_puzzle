@@ -31,9 +31,22 @@
 		54A1C0DE30A0000100F00D01 /* Signing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Signing.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		54A1C0DE30A0000200F00D01 /* Exceptions for "grannys_puzzle" folder in "grannys_puzzle" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Store/Store.storekit,
+			);
+			target = 540DBB70307858E60067F8F0 /* grannys_puzzle */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		540DBB73307858E60067F8F0 /* grannys_puzzle */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				54A1C0DE30A0000200F00D01 /* Exceptions for "grannys_puzzle" folder in "grannys_puzzle" target */,
+			);
 			path = grannys_puzzle;
 			sourceTree = "<group>";
 		};
