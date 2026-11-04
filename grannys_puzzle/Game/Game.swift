@@ -534,11 +534,20 @@ final class Game {
         progress.dailyStatus(today: today)
     }
 
+    /// Whether the daily challenge has begun on `day`: from its first day
+    /// (`daily_first_day`) on. Before it, there's no real puzzle for the
+    /// day (the number would be 0 or less), only a fallback that the
+    /// leaderboard would ignore, so the home screen says "soon" instead.
+    func isDailyOpen(day: Int) -> Bool {
+        DailyDay.puzzleNumber(forDay: day, firstDay: tuning.dailyFirstDay) >= 1
+    }
+
     /// Opens today's daily puzzle on a fresh board with a fresh clock, every
     /// time until it's submitted (see DailyAttempt for why).
     func playDaily() {
         let today = DailyDay.number()
-        guard let dailies, let puzzle = dailyPuzzle(day: today) else { return }
+        // The button is off before the first day; this is the backstop.
+        guard isDailyOpen(day: today), let dailies, let puzzle = dailyPuzzle(day: today) else { return }
         let level = puzzle.level
         var attempt: DailyAttempt?
         update {

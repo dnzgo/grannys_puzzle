@@ -142,7 +142,7 @@ struct HomeView: View {
             VStack(spacing: 14) {
                 playButton
                 if game.dailies != nil {
-                    DailyPuzzleButton(status: game.dailyStatus(today:), height: Self.buttonHeight, isHeld: isOpeningJar) {
+                    DailyPuzzleButton(status: game.dailyStatus(today:), isOpen: game.isDailyOpen(day:), height: Self.buttonHeight, isHeld: isOpeningJar) {
                         withAnimation(.easeInOut(duration: 0.25)) { game.playDaily() }
                     }
                 }

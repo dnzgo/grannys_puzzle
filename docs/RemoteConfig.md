@@ -98,6 +98,11 @@ one they expect, and mixes the leaderboard.
 Store Connect, the day you press Release), and the app's default
 (`DailyDay.firstDay`) to the same day in the release build, so even a
 first launch offline agrees. Daily pack 1 then covers the first 100 days.
+Before this day the home screen's daily button is dimmed and says
+"Daily challenge soon" (`Game.isDailyOpen`), so testers and early
+downloads can't play a stand-in puzzle. On the day it opens by itself, at
+midnight UTC.
+
 **After launch:** leave it alone.
 
 ## Shop

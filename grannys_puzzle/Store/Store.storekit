@@ -8,12 +8,12 @@
       "internalID" : "6740000001",
       "localizations" : [
         {
-          "description" : "Removes ads and adds a bag of cat hints and grandma helpers.",
+          "description" : "No ads, plus a bag of cat hints and grandma helpers.",
           "displayName" : "Welcome Bundle",
           "locale" : "en_US"
         },
         {
-          "description" : "Reklamları kaldırır, bir torba kedi ipucu ve nine yardımı ekler.",
+          "description" : "Reklamsız oyun, bir torba kedi ipucu ve nine yardımı.",
           "displayName" : "Hoş Geldin Paketi",
           "locale" : "tr"
         }
@@ -28,12 +28,12 @@
       "internalID" : "6740000002",
       "localizations" : [
         {
-          "description" : "No ads between levels or under the board. Videos for helpers stay.",
+          "description" : "No banner or break ads. Helper videos stay.",
           "displayName" : "Remove Ads",
           "locale" : "en_US"
         },
         {
-          "description" : "Bölümler arasında ve bulmacanın altında reklam yok. Yardımcı videoları kalır.",
+          "description" : "Banner ve ara reklam yok. Yardım videoları kalır.",
           "displayName" : "Reklamları Kaldır",
           "locale" : "tr"
         }

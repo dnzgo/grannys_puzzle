@@ -62,6 +62,21 @@ leave by level 5, the early levels come first.
 - [ ] Weekly goals (15 levels this week → a special yarn colour), between
       one level and a whole wardrobe.
 - [ ] iPad layout (planned for 1.1).
+
+## Accessibility
+
+Not declared on the App Store for 1.0 (its accessibility answers are
+voluntary, and a feature may only be ticked once every common task works
+with it). Worth building, in this order, since the game suits older players:
+
+- [ ] Larger Text: text follows the iPhone text-size setting (today's
+      fonts are fixed sizes).
+- [ ] VoiceOver: a whole level solvable by VoiceOver (64 labels exist,
+      never tested end to end).
+- [ ] Reduced Motion: checked on every screen (15 already follow it), then
+      declared.
+- [ ] Right/wrong letters shown by more than colour; contrast of the light
+      inks (e.g. `quietInk` on cream) up to Apple's minimum.
 - [ ] Maybe: a home-screen widget with today's daily and the streak.
       Uncertain: few players add widgets for games; worth it only if
       the daily turns out to be the main reason players come back.

@@ -130,8 +130,18 @@ Manage Transactions refunds or deletes a purchase to test again.
 
 Before release:
 
-- [ ] Paid Apps agreement, bank and tax details in App Store Connect
-- [ ] Small Business Program (15% commission instead of 30%)
+- [x] Paid Apps agreement accepted (with the account's wrong name, see
+      below; the agreement follows the account, so no re-signing needed)
+- [ ] Tax form (W-8BEN) and bank details. Blocked: Apple's account data
+      has the legal name as "Deniz Gözc" (the "ü" cut off) and the
+      citizenship as Germany, both locked in every pre-filled form.
+      Support asked to correct them to "Deniz Gözcü" (Gozcu in ASCII, as
+      in the passport's machine-readable line) and Türkiye. Sign the
+      W-8BEN only after the fix (residence Germany, treaty Germany); then
+      check the bank account holder name matches the bank
+- [ ] Small Business Program (15% commission instead of 30%): applied
+      4 November 2026, waiting for Apple. Associated account listed:
+      Deniz's own membership, team `737WW78VY2` (no apps, no proceeds)
 - [ ] The six products in App Store Connect with the same IDs, types and
       prices, English and Turkish names and descriptions (as in
       `Store.storekit`), Family Sharing on the two non-consumables, a

@@ -17,10 +17,10 @@ Apple's app transfer later.
       Config keys
 - [x] The app uses the new Firebase project (`GoogleService-Info.plist`
       for `granny-s-puzzle`)
-- [ ] Firebase on the Blaze plan before 15 November 2026 (Remote Config
-      becomes usage-based; upgrading by then delays billing to February
-      2027), with a budget alert (e.g. €10 a month). Company card, so the
-      Google invoices go into the business books
+- [x] Firebase on the Blaze plan (done 4 November 2026, before the
+      15 November deadline), with a €10-a-month budget alert. Business
+      billing account in EUR on the company card; the invoices come from
+      Google Cloud EMEA Ltd (reverse charge, for the Steuerberater)
 - [x] Crashlytics opened in the new project's console (app detected)
 - [x] AdMob account under Deniz: the app and its rewarded, interstitial
       and banner units; real IDs in `Ads/AdsSetup.swift` (release builds)
@@ -113,7 +113,9 @@ Apple's app transfer later.
 
 ## Polish and checks
 
-- [ ] Full-size home background (about 1290×2796)
+- [x] Home background: kept at 639×1280. A sharper 886×1775 version was
+      tried and looked worse: its crisp room competed with the furniture
+      and characters on top; the softer one keeps them in front
 - [ ] TestFlight pass: Game Center, notifications, real ads, tutorial on
       an SE-sized phone
 - [ ] Firebase DebugView shows the analytics events; Remote Config
@@ -133,9 +135,9 @@ Apple's app transfer later.
 
 ## After launch, to watch
 
-- Firebase Hosting on the free plan: 10 GB a month. Packs go out
-  gzipped at about 33 KB, so roughly 300,000 pack downloads a month.
-  Move to Blaze (pay as you go) before that, with a budget alert.
+- Firebase Hosting: 10 GB a month free, even on Blaze. Packs go out
+  gzipped at about 33 KB, so roughly 300,000 pack downloads a month
+  before it costs anything. The €10 budget alert emails if it does.
 - The daily uses the phone's clock: a player who moves the clock
   forward can play tomorrow's puzzle early, learn it, and score
   perfectly on the day. Accepted for 1.0; if the leaderboards show it,

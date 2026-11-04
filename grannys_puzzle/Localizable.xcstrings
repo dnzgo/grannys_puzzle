@@ -700,6 +700,16 @@
         }
       }
     },
+    "Daily challenge soon" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük Görev yakında"
+          }
+        }
+      }
+    },
     "Daily treats" : {
       "localizations" : {
         "tr" : {
