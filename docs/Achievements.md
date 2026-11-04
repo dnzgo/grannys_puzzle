@@ -85,7 +85,7 @@ it (see the image prompts in the chat / art folder).
 | knit | `achievement-knit.png` |
 | languages | `achievement-languages.png` |
 
-## Daily leaderboards (not created in App Store Connect yet)
+## Daily leaderboards
 
 One recurring Game Center leaderboard per language, since the English and
 Turkish dailies are different puzzles and can't be compared fairly:

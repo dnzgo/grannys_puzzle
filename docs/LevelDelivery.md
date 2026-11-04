@@ -47,7 +47,7 @@ Every pack except the newest must have exactly 100 levels.
 - **Checks before a download is used:** it decodes as a `LevelPack` (every
   level valid), its id is the name asked for, its language is right, and it
   fits after the packs already there.
-- **Dailies** are numbered from `DailyDay.firstDay` (1 November 2026): that
+- **Dailies** are numbered from `DailyDay.firstDay` (20 November 2026): that
   day plays daily 1. While a day's pack isn't on the phone, the dailies that
   are go round in order, so there's always a puzzle. The leaderboard must
   not count such a go, since it isn't the day's real puzzle.
@@ -87,8 +87,8 @@ makes a language's packs, exactly as shipped (about 5 minutes a pack; the
 same command always gives the same packs):
 
 - English: `make-packs.sh en` (10 level packs, 4 daily packs).
-- Turkish: `make-packs.sh tr 2 2` (2 level packs, 2 daily packs). Its word
-  list is smaller (about 3,800 words against about 20,000), and the more
+- Turkish: `make-packs.sh tr 3 2` (3 level packs, 2 daily packs). Its word
+  list is smaller (about 4,300 words against about 20,000), and the more
   levels one list fills, the more often its words come back; more packs
   follow as the workbook grows.
 
@@ -113,8 +113,8 @@ Shipped so far:
 
 - **English:** pack 1 and daily pack 1 in the app; packs 2–10 and daily
   packs 2–4 online (1,000 levels, 400 dailies).
-- **Turkish:** pack 1 and daily pack 1 in the app; pack 2 and daily pack 2
-  online (200 levels, 200 dailies).
+- **Turkish:** pack 1 and daily pack 1 in the app; packs 2–3 and daily
+  pack 2 online (300 levels, 200 dailies).
 
 **Turkish dailies run out first:** 200 dailies last 200 days from the
 daily's first day. After that a Turkish player gets earlier dailies again,
@@ -139,7 +139,7 @@ pack 10 levels before the end of the current one.
 
 ## Costs
 
-A pack is about 200 KB (about 20 KB compressed in transit). 100,000
+A pack is about 250 KB (about 33 KB compressed in transit). 100,000
 players each downloading 10 packs is about 20 GB of transfer in total. The
 pricing of Hosting's free tier and the Blaze plan changes from time to time,
 so check the current numbers before launch, and set a budget alert in the

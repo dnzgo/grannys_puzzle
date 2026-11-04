@@ -21,7 +21,7 @@ public enum DailyDay {
         Date(timeIntervalSince1970: TimeInterval(day + 1) * secondsPerDay)
     }
 
-    /// The day the first daily puzzle is played (1 November 2026, as a
+    /// The day the first daily puzzle is played (20 November 2026, as a
     /// `number(for:)`). Puzzles are numbered from it: this day plays daily
     /// number 1, the next day number 2, and so on, through the daily packs
     /// in order (see LevelLibrary).
@@ -36,7 +36,7 @@ public enum DailyDay {
     /// (`daily_first_day`, see GameTuning and docs/RemoteConfig.md), but
     /// only until launch: changing it once people play would reshuffle
     /// everyone's days.
-    public static let firstDay = 20_758
+    public static let firstDay = 20_777
 
     /// The daily puzzle number (1-based) for `day`, counting from
     /// `firstDay` (the tuned one, in the app). Below 1 before it, which

@@ -9,9 +9,9 @@ struct SoundEffect: Equatable {
     /// File names without the extension. More than one means variations of
     /// the same sound, rotated so the same one never plays twice in a row.
     let files: [String]
-    /// 0 to 1: turns a file down (never up). The current files come
-    /// already mixed against each other (docs/Audio.md), so they all play
-    /// at 1; this is for adjusting one moment after trying it on a phone.
+    /// 0 to 1: turns a file down (never up). The files are mixed against
+    /// each other before they go in (docs/Audio.md), so they all play at 1;
+    /// this is for adjusting one moment after trying it on a phone.
     let volume: Float
 
     init(_ name: String, volume: Float = 1) {
@@ -51,7 +51,7 @@ extension FeedbackEvent {
         case .prizeLanded: SoundEffect("prize-landed")
         case .submitted: SoundEffect("submit")
         case .wardrobeShaken: SoundEffect("wardrobe-shake")
-        case .cellsJudged: SoundEffect("cells-judged", variations: 4)
+        case .cellsJudged: SoundEffect("cells-judged")
         }
     }
 }

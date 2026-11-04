@@ -32,10 +32,10 @@ final class DailyPuzzleTests: XCTestCase {
     }
 
     func testADateReadsAsItsDay() {
-        // The built-in first day is 1 November 2026.
-        XCTAssertEqual(DailyDay.number(fromDate: 20261101), DailyDay.firstDay)
-        XCTAssertEqual(DailyDay.number(fromDate: 20261201), DailyDay.firstDay + 30)
-        XCTAssertEqual(DailyDay.number(fromDate: 20270101), DailyDay.firstDay + 61)
+        // The built-in first day is 20 November 2026.
+        XCTAssertEqual(DailyDay.number(fromDate: 20261120), DailyDay.firstDay)
+        XCTAssertEqual(DailyDay.number(fromDate: 20261201), DailyDay.firstDay + 11)
+        XCTAssertEqual(DailyDay.number(fromDate: 20270101), DailyDay.firstDay + 42)
     }
 
     func testNotARealDateIsRefused() {

@@ -20,8 +20,8 @@ into the work (and into `Release.md` if it's needed for 1.0).
 ## Sound
 
 - [x] Sound and music players, with placeholder sounds (docs/Audio.md).
-- [ ] Real sound effects and music, recorded or licensed, replacing the
-      placeholders.
+- [x] Final sound effects and music (made with ChatGPT), except four
+      V3 placeholders (docs/Audio.md).
 - [ ] The planned moments without a sound yet (docs/Audio.md, "Planned").
 
 ## Remote content

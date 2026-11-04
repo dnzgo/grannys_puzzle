@@ -137,7 +137,7 @@ private extension Game.Screen {
     var musicTrack: MusicTrack {
         switch self {
         case .home: .home
-        case .level(let model): model.isDaily ? .daily : .puzzle
+        case .level: .puzzle
         }
     }
 }

@@ -16,38 +16,48 @@ is easy to forget).
 A missing or unreadable file is logged (`audio` category) and then silent;
 the game never crashes over a sound.
 
-The current files are the **Audio V3 pack**: temporary, not final. Many
-will change; the knitting, cat-helper and grandma-helper sounds are known
-to be wrong. The source pack (with its README) is kept outside the repo.
+The current files are the **final pack** (Nov 2026, `~/Downloads/music`,
+kept outside the repo) for most moments, plus four V3 files that the final
+pack has no replacement for yet (marked V3 below).
+
+Converting the final pack: effects to mono 44.1 kHz 16-bit WAV with the
+silence before the sound cut (5 ms kept, 3 ms fade-in so the cut can't
+click); music to AAC `.m4a` at 160 kbps, ends untouched (they are the loop
+point).
 
 ## Sound effects
 
-One per `FeedbackEvent`. The V3 files come already mixed against each
-other (the frequent board sounds much quieter than the stingers), so every
-moment plays at volume 1 (`Audio/SoundEffects.swift`). The volume there
-can only turn a file down; a sound that's too quiet needs a louder file.
+One per `FeedbackEvent`. Every moment plays at volume 1
+(`Audio/SoundEffects.swift`), so the balance is in the files: the final
+pack came unbalanced (the button press was about 30x quieter than the
+level jingle), so each file was set to the loudness of the V3 file it
+replaces, which had been tried on a phone, and the whole set then raised
+10 dB. Louder files give room to tune by ear, because the code volume can
+only turn a file down.
 
-| Name | Plays when | From V3 | Status |
+| Name | Plays when | From | Gain |
 |---|---|---|---|
-| `select` | A cell is tapped, or the clue changes | `SFX/Board/cell_select` | temporary |
-| `letter-placed-1`…`-4` | A letter is placed from the tray | `SFX/Board/letter_placed_01`…`04` | temporary |
-| `letter-erased` | A letter is erased | `SFX/Board/letter_erased` | temporary |
-| `submit` | Submit accepted (sound only, no vibration) | `SFX/Board/submit_v4` | temporary |
-| `cells-judged-1`…`-4` | Each group of cells lights up after Submit | `SFX/Board/correct_wave_01`…`04` | temporary |
-| `reveal` | The cat **or** grandma fills in letters | `SFX/Helpers/granny_knitting_needles_only` | **to replace** |
-| `helper-earned` | Helpers earned from a video | `SFX/Helpers/helper_earned` | temporary |
-| `level-passed` | The level passes | `Stingers/level_complete` | temporary |
-| `level-failed` | The level fails | `Stingers/level_failed` | temporary |
-| `item-knitted` | A knitted item is revealed | `Stingers/item_knitted` | **to replace** |
-| `jar-shaken` | A tapped jar wobbles | `SFX/Rewards/jar_shaken` | temporary |
-| `jar-opened` | A jar's treat is revealed | `SFX/Rewards/jar_opened` | temporary |
-| `prize-landed` | A helper from a jar reaches its counter | `SFX/Rewards/prize_landing` | temporary |
-| `yarn-landed-1`…`-3` | A yarn ball drops into the bag | `SFX/Rewards/yarn_landing_01`…`03` | temporary |
-| `wardrobe-shake` | A finished family member's wardrobe shakes before it's swapped | `SFX/Rewards/wardrobe_shake` | temporary |
+| `select` | A cell is tapped, or the clue changes | `select_soft_tick` | 0 dB (the quietest board sound: it plays the most) |
+| `letter-placed-1`…`-4` | A letter is placed from the tray | `piano_placement_1`…`4` (piano notes G3, C4, E4, G4: one chord, so any order sounds right) | +2.9 dB (raised 4 dB after a phone test: the piano music hid them) |
+| `letter-erased` | A letter is erased | `remove` | -2.1 dB (a little under placing a letter) |
+| `submit` | Submit accepted (sound only, no vibration) | `soft_wooden_button_press_0_2s` | +19.1 dB (set to the letter level, not V3's loud submit) |
+| `cells-judged` | Each group of cells lights up after Submit | `correct_answer_soft_pluck_0_4s` | -0.1 dB |
+| `level-passed` | The level passes | `cozy_level_complete_jingle_1_5s` | -2.1 dB |
+| `level-failed` | The level fails | `cozy_level_failed_grandma_1_5s` | +2.6 dB |
+| `item-knitted` | A knitted item is revealed | `cozy_biggest_reward_knitting_fanfare_5s` | +6.8 dB |
+| `helper-earned` | Helpers earned from a video | `cozy_reward_magic_sparkle_1_5s` | +8.7 dB |
+| `jar-opened` | A jar's treat is revealed | `cozy_daily_reward_jingle_3s` | -1.5 dB |
+| `prize-landed` | A helper from a jar reaches its counter | `cozy_item_pickup_soft_pluck_0_5s` | -1.2 dB |
+| `reveal` | The cat **or** grandma fills in letters | V3 `SFX/Helpers/granny_knitting_needles_only` | **to replace** |
+| `jar-shaken` | A tapped jar wobbles | V3 `SFX/Rewards/jar_shaken` | V3 |
+| `yarn-landed-1`…`-3` | A yarn ball drops into the bag | V3 `SFX/Rewards/yarn_landing_01`…`03` | V3 |
+| `wardrobe-shake` | A finished family member's wardrobe shakes before it's swapped | V3 `SFX/Rewards/wardrobe_shake` | V3 |
 
 Several takes (`-1`…`-4`) are for sounds that repeat quickly: the player
 picks one at random, never the one that just played, because an identical
 sound repeated is noticed far sooner than a slightly different one.
+`cells-judged` plays several times in a row after Submit but has only one
+take in the final pack; if the repeat stands out on a phone, it needs more.
 
 The cat and grandma share `reveal` because the game has one "reveal"
 moment for both. Real voices (a meow, grandma's "hmm") need the two split
@@ -56,17 +66,34 @@ lists the recordings wanted.
 
 ## Music
 
-Plays through `MusicPlayer`. The screen decides the track (`GameView`);
-the music fades out for the background, full-screen ads, phone calls, and
-while the player's own music or podcast is playing.
+Plays through `MusicPlayer`, at 0.25 under the effects. The screen decides
+the track (`GameView`); the music fades out for the background, full-screen
+ads, phone calls, and while the player's own music or podcast is playing.
 
-| Name | Plays on | From V3 | Status |
+Levels and the daily puzzle share one track: they're the same activity, and
+a change of music between them would only be noticed as a jump.
+
+| Name | Plays on | From | Gain |
 |---|---|---|---|
-| `music-home` | Home | `Music/home_v3.m4a` | temporary |
-| `music-puzzle` | Levels | `Music/puzzle_v3.m4a` | temporary |
-| `music-daily` | The daily puzzle | `Music/daily_v3.m4a` | temporary |
+| `music-home` | Home | `grandmas_living_room_loop` (27 s, mono 22 kHz) | +1.5 dB |
+| `music-puzzle` | Levels and the daily puzzle | `cozy_puzzle_felt_piano_guitar_75bpm` (48 s, stereo) | -7.6 dB (lowered 6 dB after a phone test: it's piano too, so it covered the letter notes) |
 
-## In the V3 pack, not used yet
+Both loops need a listen on a phone at the loop point: AAC can leave a tiny
+gap there that the WAV source doesn't have.
+
+## In the final pack, not used yet
+
+Each needs a moment in the code first (a `FeedbackEvent` case, or a call
+from the view that shows it), so they're not in the app yet:
+
+| File | For |
+|---|---|
+| `wool_yarn_wrong_answer_0_3s` | A judged group with a wrong letter |
+| `cozy_new_high_score_jingle_1_5s` | A new daily best |
+| `cozy_retry_cue_1_5s` | The retry offer after a failed level |
+| `cozy_biggest_reward_fanfare_4_8s` | The biggest reward (a whole family member finished) |
+
+## In the V3 pack, not used yet (older)
 
 These need a moment in the code first (a `FeedbackEvent` case, or a call
 from the view that shows it), so they're not in the app bundle yet:
@@ -119,5 +146,8 @@ game would be flagged.
 
 | File | Source | License | Proof |
 |---|---|---|---|
-| V3 effects and four stingers | Generated (procedural), per the V3 README: no third-party samples | Ours, to confirm before release | V3 `README.md` |
-| V3 music and `level_failed` | Kept from earlier project files, per the V3 README | **Unknown: find out where they came from and under what terms before release** | — |
+| Final pack: every effect and both music tracks, plus the piano letter notes, `select_soft_tick` and `remove` | Made with ChatGPT (OpenAI), Nov 2026 | OpenAI's terms give the output's rights to the user, commercial use included. Not exclusive: someone else could get a similar sound | Keep the chat links (or exports) in `docs/licenses/audio/` |
+| V3 `reveal`, `jar-shaken`, `yarn-landed-1`…`-3`, `wardrobe-shake` (still in the app) | Generated (procedural), per the V3 README: no third-party samples | Ours, to confirm before release | V3 `README.md` |
+
+The V3 music and V3 `level_failed`, whose origin was unknown, are no longer
+in the app.

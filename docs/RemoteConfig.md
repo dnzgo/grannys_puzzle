@@ -92,7 +92,7 @@ one they expect, and mixes the leaderboard.
 
 | Key | What it controls | Default | Allowed |
 | --- | --- | --- | --- |
-| `daily_first_day` | The day daily puzzle 1 is played, written as a date year-month-day: `20261201` is 1 December 2026. Days change at midnight UTC (01:00 in Berlin in winter). | 20261101 | a real date, 2025–2099 |
+| `daily_first_day` | The day daily puzzle 1 is played, written as a date year-month-day: `20261201` is 1 December 2026. Days change at midnight UTC (01:00 in Berlin in winter). | 20261120 | a real date, 2025–2099 |
 
 **Before launch:** set it to the release day (with manual release in App
 Store Connect, the day you press Release), and the app's default

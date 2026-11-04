@@ -5,22 +5,18 @@ they're done, so the list stays the one place to look.
 
 ## Move to Deniz's accounts
 
-Nothing is released yet, so every account moves now rather than through
-Apple's app transfer later. The bundle ID changes: the current one
-(`com.bgorkem.grannyscrossword`) is tied to Barış's App Store Connect app.
+Nothing is released yet, so every account moved now rather than through
+Apple's app transfer later.
 
-- [ ] Deniz's Apple Developer membership (Individual or Organization;
-      answer the EU trader-status question)
-- [ ] New bundle ID with the Game Center capability, and the App Store
-      Connect app for it
-- [ ] Recreate the 27 achievements there (same IDs, see Achievements.md)
+- [x] Dengo Labs' Apple Developer membership (team `GF38VK467T`)
+- [x] Bundle ID `com.dengolabs.grannyspuzzle` with Game Center, and the
+      App Store Connect app for it (build 1 uploaded)
+- [x] The 27 achievements in App Store Connect (same IDs, see Achievements.md)
 - [x] New Firebase project `granny-s-puzzle` (company account as owner),
       iOS app `com.dengolabs.grannyspuzzle`, Analytics, Hosting, the Remote
       Config keys
 - [x] The app uses the new Firebase project (`GoogleService-Info.plist`
-      for `granny-s-puzzle`; its bundle ID already says
-      `com.dengolabs.grannyspuzzle`, so nothing to change when the bundle
-      ID switches)
+      for `granny-s-puzzle`)
 - [ ] Firebase on the Blaze plan before 15 November 2026 (Remote Config
       becomes usage-based; upgrading by then delays billing to February
       2027), with a budget alert (e.g. €10 a month). Company card, so the
@@ -31,31 +27,31 @@ Apple's app transfer later. The bundle ID changes: the current one
       and the app ID in `Config/grannys_puzzle-Info.plist`
 - [x] `app-ads.txt` line with the publisher ID in the website repo
       (`public/app-ads.txt`); deploy the site
-- [ ] After the bundle ID switch: restrict the Firebase iOS API key to the
-      app (Google Cloud → APIs & Services → Credentials → the "auto created
-      by Firebase" iOS key → Application restrictions → iOS apps →
-      `com.dengolabs.grannyspuzzle`). Not before: test builds with the old
-      bundle ID would lose Firebase. GitHub's secret alert for this key is
-      closed as "won't fix": the key is public by design
-- [ ] Repo: `Config/Signing.xcconfig` (team, bundle ID
-      `com.dengolabs.grannyspuzzle`), `docs/Signing.md`
-- [ ] After TestFlight works: retire Barış's App Store Connect app and the
-      old Firebase iOS app
+- [ ] Restrict the Firebase iOS API key to the app (Google Cloud → APIs &
+      Services → Credentials → the "auto created by Firebase" iOS key →
+      Application restrictions → iOS apps → `com.dengolabs.grannyspuzzle`).
+      GitHub's secret alert for this key is closed as "won't fix": the key
+      is public by design
+- [x] Signing: `Config/Signing.xcconfig`, `docs/Signing.md`
+- [ ] After TestFlight works: retire Barış's App Store Connect app
+      (`com.bgorkem.grannyscrossword`) and the old Firebase iOS app
 
 ## Features
 
 - [x] Daily challenge leaderboard: scores sent to Game Center
       (`GameCenter.submitDailyScore`, docs/Achievements.md). Using the cat
       or grandma costs no time.
-- [ ] Create the two daily leaderboards in App Store Connect
-      (docs/Achievements.md), then test a submission on TestFlight
+- [x] The two daily leaderboards created in App Store Connect
+      (docs/Achievements.md)
+- [ ] Leaderboards show their titles in the game (they showed "missing
+      title"), then test a submission on TestFlight
 - [x] Word and clue list, English (workbook, 10 level packs, 4 daily packs)
-- [x] Word and clue list, Turkish (3,799 words, 2 level packs, 2 daily packs)
+- [x] Word and clue list, Turkish (4,289 words, 3 level packs, 2 daily packs)
 - [ ] Review the Turkish difficulty ratings (Difficulty column in
       `data/tr/source/turkish_words.xlsx`, rated by Claude); after
       changes: re-import and rebuild the packs
-- [ ] Turkish daily pack 3 before day 200 after launch
-      (docs/LevelDelivery.md)
+- [ ] Turkish daily pack 3 before day 200: 8 June 2027 with a 20 November
+      launch (docs/LevelDelivery.md)
 - [x] Loading screen: logo and the walking cat on a filling bar
       (`Launch/LaunchSplash.swift`)
 - [ ] Optional: the logo (`company-logo`) is from a compressed JPG,
@@ -71,13 +67,14 @@ Apple's app transfer later. The bundle ID changes: the current one
 - [x] Turkish daily pack 1 full (100); 200 Turkish dailies in all
 - [x] English packs 2–10 and daily packs 2–4 published (download
       tested on a phone)
-- [ ] Turkish pack 2 and daily pack 2 published (`firebase deploy --only hosting`)
+- [ ] Turkish packs 2–3 and daily pack 2 published (`firebase deploy --only hosting`)
       and download tested on a phone
-- [ ] The daily's first day = the release day (that day plays daily 1):
-      set `DailyDay.firstDay` in the release build to the planned day, and
-      `daily_first_day` in Remote Config (e.g. 20261201) to the actual
-      day before pressing Release, if it slipped. Never change either
-      after launch (docs/RemoteConfig.md, "Daily challenge").
+- [x] The daily's first day = the planned release day, 20 November 2026
+      (`DailyDay.firstDay`)
+- [ ] If the release slips: `daily_first_day` in Remote Config to the
+      actual day (e.g. 20261124) before pressing Release, and in the code
+      for the next build. Never change either after launch
+      (docs/RemoteConfig.md, "Daily challenge").
 
 ## Store, privacy and ads
 
@@ -123,9 +120,12 @@ Apple's app transfer later. The bundle ID changes: the current one
 
 ## Music and sounds
 
-- [ ] Final sound effects and music replace every V3 placeholder (the
-      knitting, cat helper and grandma helper sounds first)
-- [ ] Every shipped file has its license or source in docs/Audio.md
+- [x] Final pack in for 13 effects and both music tracks (levels and the
+      daily share one track)
+- [ ] Final sounds for the four V3 files still in the app: `reveal` (cat and
+      grandma helpers) first, then `jar-shaken`, `yarn-landed`, `wardrobe-shake`
+- [ ] Both music loops listened to at the loop point on a phone
+- [x] Every shipped file has its source in docs/Audio.md (made with ChatGPT)
 - [ ] The "Planned" moments in docs/Audio.md: a sound each, or dropped
 - [ ] Volumes checked on a phone with the final files (music is 0.25 now)
 

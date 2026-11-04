@@ -6,10 +6,10 @@ import os
 /// track's file is in the app.
 enum MusicTrack: String, CaseIterable {
     case home = "music-home"
-    /// Levels: calm, for thinking.
+    /// Levels and the daily puzzle. One track for both: they're the same
+    /// activity, and switching music between them would only be noticed
+    /// as a jump.
     case puzzle = "music-puzzle"
-    /// The daily puzzle, which is timed: a little livelier.
-    case daily = "music-daily"
 }
 
 /// Plays the music: the track the current screen asks for, unless

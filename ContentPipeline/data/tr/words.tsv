@@ -32,7 +32,7 @@ AKADEMİ	10		Yüksekokul
 AKBABA	10		Leş kuşu
 AKCİĞER	10		Solunum organı
 AKDENİZ	10		İç deniz
-AKIL	10		Düşünme yeteneği
+AKIL	10		Düşünme
 AKILLI	10		Zeki
 AKINTI	10		Su yolu
 AKORDEON	10		Körüklü çalgı
@@ -127,12 +127,15 @@ AŞK	10		Sevda
 AŞÇI	10		Yemek yapan kişi
 BABA	10		Çocuğu olan erkek
 BABAANNE	10		Nine
+BACA	10		Duman çıkış yolu
 BACAK	10		Alt uzuv
+BACI	10		Kız kardeş
 BADEM	10		Çerez
 BAGAJ	10		Yük
 BAHANE	10		Mazeret
 BAHAR	10		Yaz öncesi mevsim
 BAHARAT	10		Çeşni
+BAHT	10		Talih
 BAHÇE	10		Bostan
 BAHŞİŞ	10		Garson parası
 BAKANLIK	10		Nezaret
@@ -152,7 +155,9 @@ BALON	10		Şişirilen top
 BALTA	10		Odun kesici
 BALİNA	10		Dev deniz memelisi
 BANDAJ	10		Sargı
+BANK	10		Parkta oturma yeri
 BANKA	10		Para kurumu
+BANT	10		Yapışkan şerit
 BANYO	10		Yıkanma yeri
 BARAJ	10		Bent
 BARBEKÜ	10		Mangal
@@ -163,6 +168,7 @@ BARUT	10		Patlayıcı toz
 BASAMAK	10		Merdiven adımı
 BASKI	10		Tazyik
 BASİT	10		Kolay
+BATI	10		Güneşin battığı yön
 BAVUL	10		Valiz
 BAY	10		Erkek
 BAYAT	10		Eskimiş
@@ -178,11 +184,12 @@ BAŞKAN	10		Lider
 BAŞKENT	10		Hükümet merkezi
 BAŞLIK	10		Şapka
 BAŞÖRTÜ	10		Eşarp
-BEBE	10		Hak ağzı bebek
+BEBE	10		Halk ağzı bebek
 BEBEK	10		Yeni doğan
 BEDAVA	10		Ücretsiz
 BEDEN	10		Vücut
 BEL	10		Kalça üstü
+BELA	10		Büyük sıkıntı
 BELEDİYE	10		Şehir yönetimi
 BELGE	10		Doküman
 BELGESEL	10		Dokümanter
@@ -192,6 +199,7 @@ BENCİL	10		Egoist
 BENZİN	10		Yakıt
 BERABER	10		Birlikte
 BERBER	10		Kuaför
+BERE	10		Yün başlık
 BEREKET	10		Bolluk
 BESTE	10		Melodi
 BEYAZ	10		Ak
@@ -201,15 +209,20 @@ BEZELYE	10		Yeşil tane
 BEŞ	10		Dört artı bir
 BIYIK	10		Üst dudak kılı
 BIÇAK	10		Kesici alet
+BLUZ	10		Kadın üst giysisi
 BODRUM	10		Zemin altı kat
 BOKS	10		Dövüş sporu
 BOL	10		Çok
 BONCUK	10		Nazar taşı
 BORNOZ	10		Banyo giysisi
+BORU	10		İçi boş silindir
+BORÇ	10		Geri ödenecek para
 BOT	10		Kayık
 BOY	10		Uzunluk
+BOYA	10		Renk veren madde
 BOYNUZ	10		Kemik çıkıntı
 BOYUN	10		Gerdan
+BOZA	10		Mayalı tahıl içeceği
 BOĞAZ	10		Gırtlak
 BOŞ	10		Hiç
 BROKOLİ	10		Yeşil sebze
@@ -221,6 +234,7 @@ BULGUR	10		Kırık buğday
 BULMACA	10		Bilmece
 BULUT	10		Gökyüzü buharı
 BUMERANG	10		Geri dönen sopa
+BURS	10		Öğrenim yardımı
 BURUN	10		Koku organı
 BUZ	10		Donmuş su
 BUĞDAY	10		Tahıl
@@ -228,8 +242,11 @@ BÖBREK	10		İdrar organı
 BÖCEK	10		Haşere
 BÖLGE	10		Yöre
 BÖREK	10		Hamur işi
+BÜFE	10		Küçük satış yeri
 BÜLBÜL	10		Ötücü kuş
+BÜRO	10		Çalışma odası
 BÜTÜN	10		Tüm
+BÜYÜ	10		Doğaüstü etki
 BÜYÜK	10		İri
 BİBER	10		Acı sebze
 BİBERON	10		Emzikli şişe
@@ -242,8 +259,10 @@ BİLEZİK	10		Kol takısı
 BİLGİ	10		Malumat
 BİLMECE	10		Bulmaca
 BİN	10		Yüz kere on
+BİNA	10		Katlı yapı
 BİR	10		Tek
 BİRLİK	10		Beraberlik
+BİRİ	10		Belirsiz bir kişi
 BİRİNCİ	10		İlk
 BİSİKLET	10		Pedallı araç
 BİTKİ	10		Ot
@@ -255,11 +274,13 @@ CADI	10		Kötülük yapan kadın
 CAHİL	10		Bilgisiz
 CAM	10		Pencere
 CAMBAZ	10		İp üstü oyuncu
+CAMİ	10		İbadet yeri
 CAN	10		Ruh
 CANAVAR	10		Yaratık
 CASUS	10		Ajan
 CAZ	10		Müzik türü
 CAZİP	10		Çekici
+CEFA	10		Eziyet
 CEHENNEM	10		Tamu
 CEKET	10		Üst giysi
 CENAZE	10		Ölü
@@ -271,35 +292,51 @@ CESUR	10		Yürekli
 CETVEL	10		Ölçü aleti
 CEVAP	10		Yanıt
 CEVİZ	10		Kuruyemiş
-CEZA	10		Suç yaptırımı
+CEZA	10		Yaptırım
 CEZAEVİ	10		Hapishane
 CEZVE	10		Kahve kabı
 COĞRAFYA	10		Yer bilimi
+CUMA	10		Beşinci gün
 CÖMERT	10		Eli açık
+CÜCE	10		Çok kısa boylu
 CÜZDAN	10		Para kesesi
+CİCİ	10		Sevimli ve güzel
+CİLA	10		Parlatıcı madde
+CİLT	10		Kitap kapağı
 CİMRİ	10		Pinti
 CİNAYET	10		Adam öldürme
 CİNS	10		Türlerin topluluğu
 CİNSİYET	10		Eşey
+CİPS	10		Çıtır patates
 CİĞER	10		Arnavut yemeği
+DAHA	10		Öncekinden fazla
+DAHİ	10		Üstün zekalı kişi
 DAKTİLO	10		Yazı makinesi
 DAKİKA	10		Altmış saniye
 DAL	10		Ağaç kolu
 DALGA	10		Kıvrım
+DAMA	10		Kareli tahta oyunu
 DAMAR	10		Kan yolu
 DAMAT	10		Güvey
 DAMLA	10		Su tanesi
+DANA	10		Genç sığır
 DANIŞMAN	10		Müşavir
+DANS	10		Müzikle hareket
 DANTEL	10		Oya
 DAR	10		Geniş karşıtı
+DAVA	10		Mahkeme başvurusu
 DAVET	10		Çağrı
 DAVETİYE	10		Çağrı kağıdı
 DAVUL	10		Vurmalı çalgı
+DAYI	10		Ananın erkek kardeşi
 DAĞ	10		Yüksek tepe
 DAĞINIK	10		Karışık
+DAİR	10		Hakkında
 DAİRE	10		Çember
+DEDE	10		Büyükbaba
 DEDEKTİF	10		Hafiye
 DEDİKODU	10		Gıybet
+DEFA	10		Kez
 DEFTER	10		Not kağıtları
 DELİK	10		Oyuk
 DEMİR	10		Maden
@@ -308,10 +345,15 @@ DENEY	10		Tecrübe
 DENGE	10		Muvazene
 DENİZ	10		Tuzlu su
 DENİZCİ	10		Gemici
+DEPO	10		Eşya saklama yeri
 DEPREM	10		Zelzele
+DERE	10		Küçük akarsu
 DERECE	10		Isı ölçüsü
 DERGİ	10		Mecmua
 DERNEK	10		Cemiyet
+DERS	10		Öğrenim saati
+DERT	10		Sıkıntı ve keder
+DERİ	10		Vücudun dış örtüsü
 DERİN	10		Dipsiz
 DESEN	10		Motif
 DETERJAN	10		Temizleyici
@@ -327,20 +369,25 @@ DOKTOR	10		Hekim
 DOKUZ	10		Sayı
 DOLAP	10		Gardırop
 DOLMUŞ	10		Minibüs
+DOLU	10		İçinde hiç yer yok
 DOMATES	10		Kırmızı sebze
 DOMİNO	10		Taş oyunu
 DON	10		İç giysisi
 DONDURMA	10		Soğuk tatlı
+DOST	10		Yakın arkadaş
 DOSYA	10		Klasör
 DOĞA	10		Tabiat
 DOĞAL	10		Tabii
 DOĞRU	10		Gerçek
+DOĞU	10		Güneşin doğduğu yön
 DUL	10		Eşi ölmüş
 DUMAN	10		İs
+DURU	10		Berrak ve temiz
 DUT	10		Ağaç meyvesi
 DUVAR	10		Yapı bölmesi
 DUYURU	10		İlan
 DUŞ	10		Ayakta yıkanma
+DÖRT	10		İkinin iki katı
 DÜDÜK	10		Islık aleti
 DÜN	10		Geçen gün
 DÜNYA	10		Yerküre
@@ -365,17 +412,22 @@ DİLİM	10		Parça
 DİN	10		İnanç
 DİNAMİT	10		Patlayıcı
 DİNOZOR	10		Fosil
+DİNÇ	10		Enerjik ve sağlıklı
 DİP	10		Taban
 DİPLOMA	10		Mezuniyet belgesi
 DİPLOMAT	10		Elçi
 DİRSEK	10		Kol eklemi
+DİRİ	10		Canlı ve yaşayan
 DİSİPLİN	10		Düzen
 DİYET	10		Perhiz
 DİZ	10		Bacak eklemi
 DİŞ	10		Ağızdaki kemik
 DİŞİ	10		Halk arasında kadın
+EBRU	10		Suda yapılan sanat
+ECEL	10		Ölüm vakti
 ECZANE	10		İlaç dükkanı
 EDEBİYAT	10		Yazın
+EDEP	10		Görgü ve terbiye
 EFSANE	10		Söylence
 EGZERSİZ	10		Alıştırma
 EHLİYET	10		Sürücü belgesi
@@ -384,18 +436,25 @@ EKMEK	10		Somun
 EKONOMİ	10		İktisat
 EKRAN	10		Perde
 EKSTRA	10		İlave
+EKSİ	10		Çıkarma işareti
 EKSİK	10		Noksan
 EKVATOR	10		Sıfır enlem
 EKİM	10		10. ay
+EKİP	10		Grup
+EKŞİ	10		Limonun tadı
 EL	10		5 parmak
 ELBETTE	10		Kuşkusuz
 ELBİSE	10		Giysi
 ELDİVEN	10		El giysisi
 ELEKTRİK	10		Cereyan
 ELEMAN	10		Personel
+ELLİ	10		Beş onluk sayı
+ELMA	10		Ağaçta yetişen meyve
 ELVEDA	10		Hoşça kal
 EMEKLİ	10		İşten ayrılmış
 EMNİYET	10		Güvenlik
+EMİN	10		Kuşkusu olmayan
+EMİR	10		Yapılması istenen iş
 ENDİŞE	10		Kaygı
 ENDİŞELİ	10		Kaygılı
 ENERJİ	10		Güç
@@ -403,37 +462,56 @@ ENERJİK	10		Dinamik
 ENGEL	10		Mani
 ERKEK	10		Adam
 ERKEN	10		Vakitli
+ERİK	10		Ekşi yaz meyvesi
 ERİŞTE	10		Kesme makarna
+ESAS	10		Temel ve ana unsur
+ESER	10		Sanat ürünü
 ESKİMO	10		Kutup halkı
 ESMER	10		Kara yağız
 ESPRESSO	10		Koyu kahve
 ESPRİ	10		Şaka
 ESTETİK	10		Güzellik bilimi
 ESİNTİ	10		Meltem
+ESİR	10		Tutsak kişi
 ET	10		Gıda
+ETEK	10		Belden aşağı giysi
+ETKİ	10		Tesir
+ETLİ	10		İçinde et bulunan
 ETİKET	10		Fiyat kağıdı
 EV	10		Yuva
+EVET	10		Olumlu cevap
+EVLİ	10		Nikahı olan
 EVLİLİK	10		İzdivaç
 EVREN	10		Kainat
+EYER	10		At binme takımı
 EYLÜL	10		Sonbahar ayı
+EZAN	10		Namaza çağrı
 EZBER	10		Hafıza
 EĞLENCE	10		Şenlik
+EĞRİ	10		Düz olmayan
 EĞİTİM	10		Terbiye
 EŞ	10		Hayat arkadaşı
+EŞEK	10		Uzun kulaklı hayvan
 EŞKIYA	10		Haydut
 EŞOFMAN	10		Spor giysisi
 EŞYA	10		Amaçlı nesneler
+EŞİK	10		Kapı altı basamağı
+EŞİT	10		Aynı değerde olan
 FABRİKA	10		İmalathane
 FAKÜLTE	10		Üniversite bölümü
 FAKİR	10		Yoksul
 FAR	10		Araç lambası
+FARE	10		Küçük kemirgen
+FARK	10		İki şeyin ayrımı
 FASULYE	10		Kuru baklagil
 FATURA	10		Hesap pusulası
 FAVORİ	10		Gözde
 FAYANS	10		Seramik
 FAYDA	10		Yarar
+FAİZ	10		Borç parası getirisi
 FELAKET	10		Afet
 FELSEFE	10		Düşünce bilimi
+FENA	10		İyi olmayan
 FENER	10		Lamba
 FESTİVAL	10		Şenlik
 FIKRA	10		Kısa şaka
@@ -444,20 +522,25 @@ FIRTINA	10		Bora
 FIRÇA	10		Boya aleti
 FLAMİNGO	10		Pembe kuş
 FLÖRT	10		Kur
+FLÜT	10		Üflemeli çalgı
 FORMA	10		Spor giysisi
 FORMÜL	10		Reçete
 FOSİL	10		Taşıl
+FOTO	10		Kamerayla çekilen
 FOTOKOPİ	10		Kopya
 FOTOĞRAF	10		Resim
+FREN	10		Aracı yavaşlatan
 FUTBOL	10		Top oyunu
 FUTBOLCU	10		Top oyuncusu
 FİKİR	10		Düşünce
 FİL	10		Hortumlu hayvan
+FİLM	10		Sinema eseri
 FİLTRE	10		Süzgeç
 FİNAL	10		Son
 FİNCAN	10		Kahve kabı
 FİYAT	10		Değer
 FİZİK	10		Doğa bilimi
+GAGA	10		Kuşun ağız kısmı
 GALAKSİ	10		Gökada
 GARAJ	10		Araç evi
 GARANTİ	10		Güvence
@@ -470,28 +553,37 @@ GAZETE	10		Günlük yayın
 GAZETECİ	10		Muhabir
 GAZOZ	10		Köpüklü içecek
 GAZİNO	10		Eğlence yeri
+GECE	10		Günün karanlık kısmı
 GECELİK	10		Pijama
 GELECEK	10		İstikbal
 GELENEK	10		Anane
 GELİN	10		Yeni evli kadın
 GELİNLİK	10		Beyaz elbise
 GELİR	10		Kazanç
-GEMİ	10		Deniz aracı
+GEMİ	10		Denizde giden taşıt
+GENE	10		Bir kez daha
 GENEL	10		Umumi
+GENÇ	10		Yaşı küçük olan
 GENÇLİK	10		Delikanlılık
 GENİŞ	10		Dar karşıtı
 GEOMETRİ	10		Hendese
 GERGEDAN	10		Tek boynuzlu hayvan
 GERÇEK	10		Hakikat
+GERİ	10		Ön tarafın karşıtı
 GEVEZE	10		Çenesi düşük
 GEZEGEN	10		Seyyare
 GEZGİN	10		Seyyah
+GEZİ	10		Seyahat amaçlı çıkış
 GEZİNTİ	10		Yürüyüş
 GEÇ	10		Gecikmiş
 GOL	10		Sayı
+GOLF	10		Sopayla top oyunu
 GORİL	10		İri maymun
 GRAFİK	10		Çizelge
+GRAM	10		Ağırlık ölçü birimi
+GREV	10		İş bırakma eylemi
 GREYFURT	10		Altıntop
+GRUP	10		Bir araya gelenler
 GRİ	10		Kül rengi
 GRİP	10		Virüs yollu hastalık
 GÖBEK	10		Karın ortası
@@ -532,6 +624,7 @@ GÜVERTE	10		Gemi tabanı
 GÜZEL	10		Hoş
 GÜZELLİK	10		Hüsün
 GÜÇ	10		Kuvvet
+GİBİ	10		Benzerlik bildiren
 GİDER	10		Masraf
 GİZLİ	10		Saklı
 HA	10		Gülüş efekti
@@ -540,7 +633,10 @@ HAFTA	10		Yedi gün
 HAFİF	10		Yeğni
 HAK	10		Adalet
 HAKARET	10		Aşağılama
+HALA	10		Babanın kız kardeşi
 HALAY	10		Halk oyunu
+HALI	10		Yere serilen dokuma
+HALK	10		Ülkenin insanları
 HALKA	10		Çember
 HAMSİ	10		Karadeniz balığı
 HAMUR	10		Un karışımı
@@ -550,7 +646,7 @@ HAP	10		İlaç
 HAPİS	10		Cezaevi
 HARDAL	10		Sarı sos
 HAREKET	10		Devinim
-HARF	10		Seslerin karşılığı
+HARF	10		Alfabenin birimi
 HARİKA	10		Mükemmel
 HARİTA	10		Kroki
 HASAR	10		Zarar
@@ -572,7 +668,7 @@ HAYVAN	10		Canlı
 HAZIR	10		Mevcut
 HAZİNE	10		Define
 HAZİRAN	10		Yaz ayı
-HE	10		Evet, tamam
+HE	10		Evet
 HEDEF	10		Amaç
 HEDİYE	10		Armağan
 HEKİM	10		Doktor
@@ -601,15 +697,17 @@ HUZUR	10		Dinginlik
 HUZUREVİ	10		Yaşlılar yurdu
 HÜZÜN	10		Keder
 HİDROJEN	10		En hafif gaz
+HİLE	10		Aldatma yöntemi
 HİZMET	10		İş
 HİZMETÇİ	10		Uşak
 HİÇ	10		Asla
 IHLAMUR	10		Kış çayı
+ILIK	10		Ne sıcak ne soğuk
 ISI	10		Sıcaklık
 ISLAK	10		Nemli
 ISLIK	10		Dudak sesi
 ISTAKOZ	10		Pahalı kabuklu
-IŞIK	10		Nur
+IŞIK	10		Aydınlık kaynağı
 JAGUAR	10		Benekli kedi
 JAMBON	10		Tütsülü et
 JEL	10		Kıvamlı madde
@@ -621,7 +719,9 @@ KABUK	10		Dış katman
 KABUL	10		Onay
 KADAYIF	10		Tel tatlı
 KADIN	10		Hanım
+KAFA	10		Başın üst bölümü
 KAFATASI	10		İskelet başı
+KAFE	10		Kahve içilen yer
 KAHKAHA	10		Gülme
 KAHRAMAN	10		Yiğit
 KAHVALTI	10		Sabah yemeği
@@ -630,14 +730,17 @@ KAHVECİ	10		Kıraathaneci
 KAKTÜS	10		Dikenli bitki
 KAL	10		Maden eritme
 KALDIRIM	10		Yaya yolu
+KALE	10		Savunma yapısı
 KALECİ	10		File bekçisi
 KALEM	10		Yazı aracı
 KALEMLİK	10		Masa eşyası
 KALIP	10		Model
 KALORİ	10		Enerji birimi
+KALP	10		Kan pompalayan organ
 KALÇA	10		Kaba et
 KAMBUR	10		Sırt çıkıntısı
 KAMERA	10		Çekim aleti
+KAMP	10		Çadır kurulan alan
 KAMPANYA	10		İndirim
 KAMPÜS	10		Okul alanı
 KAMYON	10		Yük taşıtı
@@ -653,10 +756,12 @@ KANTİN	10		Büfe
 KANYON	10		Derin vadi
 KAP	10		Kab
 KAPAK	10		Örtü
+KAPI	10		Giriş çıkış yeri
 KAPLAN	10		Çizgili kedi
 KAPSÜL	10		İlaç zarfı
 KAPTAN	10		Gemi reisi
 KAR	10		Kış yağışı
+KARA	10		Denizin karşıtı
 KARAKTER	10		Kişilik
 KARAMELA	10		Yanık şeker
 KARANLIK	10		Zifiri
@@ -664,6 +769,7 @@ KARAR	10		Hüküm
 KARATE	10		Dövüş sanatı
 KARBON	10		Element
 KARDEŞ	10		Bacı
+KARE	10		Dört eşit kenarlı
 KARGA	10		Kara kuş
 KARGO	10		Yük
 KARIN	10		Göbek
@@ -676,18 +782,22 @@ KARTON	10		Mukavva
 KARTOPU	10		Kış oyunu
 KARİDES	10		Deniz kabuklusu
 KAS	10		Adale
+KASA	10		Para saklama kutusu
 KASABA	10		Küçük şehir
 KASAP	10		Et satan
+KASK	10		Başı koruyan başlık
 KASKET	10		Siperli şapka
 KASİYER	10		Kasadar
 KAT	10		Bina katı
 KATALOG	10		Liste
 KATEDRAL	10		Büyük kilise
+KATI	10		Sert ve sıkı madde
 KATRAN	10		Zift
 KAVANOZ	10		Cam kap
 KAVGA	10		Dövüş
 KAVUN	10		Yaz meyvesi
 KAVŞAK	10		Kesişim
+KAYA	10		Büyük taş kütlesi
 KAYAK	10		Kar sporu
 KAYDIRAK	10		Kayma oyuncağı
 KAYIK	10		Sandal
@@ -697,6 +807,7 @@ KAYMAK	10		Süt yüzü
 KAYMAKAM	10		İlçe yöneticisi
 KAYNAK	10		Pınar
 KAYNANA	10		Kayınvalide
+KAZA	10		İstenmeyen olay
 KAZAK	10		Yün giysi
 KAZAN	10		Büyük tencere
 KAZIK	10		Sivri direk
@@ -704,6 +815,7 @@ KAÇ	10		Ne kadar
 KAŞ	10		Göz üstü
 KAŞIK	10		Yemek aleti
 KEBAP	10		Et yemeği
+KEDİ	10		Miyavlayan hayvan
 KEK	10		Pasta
 KEKEME	10		Pepe
 KELEBEK	10		Kanatlı böcek
@@ -713,24 +825,32 @@ KEMAN	10		Yaylı çalgı
 KEMER	10		Bel kayışı
 KEMİK	10		İskelet parçası
 KENAR	10		Kıyı
+KENE	10		Kan emen parazit
 KENT	10		Şehir
+KERE	10		Defa
 KERPİÇ	10		Tuğla
 KES	10		Spor ayakkabı
+KESE	10		Küçük para torbası
 KESKİN	10		Sivri
 KESTANE	10		Kış çerezi
 KETÇAP	10		Domates sosu
 KEYİF	10		Zevk
 KEZ	10		Defa
+KEÇİ	10		Boynuzlu çiftlikli
 KIL	10		Tüy
 KILÇIK	10		Balık kemiği
+KINA	10		Ele sürülen boya
 KIR	10		Kırsal
 KIRBAÇ	10		Kamçı
 KIRIK	10		Çatlak
+KIRK	10		Otuz dokuzdan sonra
 KIRMIZI	10		Al
-KISA	10		Bodur
+KISA	10		Uzun olmayan
 KISKANÇ	10		Haset
 KISMET	10		Nasip
+KITA	10		Büyük kara parçası
 KIYAFET	10		Giysi
+KIYI	10		Deniz kara sınırı
 KIZ	10		Evlat
 KIŞ	10		Soğuk mevsim
 KLAVYE	10		Tuş takımı
@@ -742,21 +862,30 @@ KOL	10		Bilek-omuz arası
 KOLAY	10		Basit
 KOLONYA	10		Limon kokusu
 KOLTUK	10		Tekli kanepe
+KOLİ	10		Karton taşıma kutusu
 KOMEDYEN	10		Komik
 KOMUTAN	10		Kumandan
 KOMŞU	10		Yandaki ev
 KONSER	10		Dinleti
 KONSERVE	10		Kutu yiyecek
 KONTROL	10		Denetim
+KONU	10		Anlatılan mesele
 KONUK	10		Misafir
 KORKU	10		Dehşet
 KORKUNÇ	10		Dehşetli
 KORSAN	10		Deniz haydudu
 KOT	10		Rakım
+KOVA	10		Su taşıma kabı
 KOY	10		Körfez
+KOYU	10		Açık rengin karşıtı
 KOZ	10		Ceviz
 KOZMETİK	10		Makyaj ürünü
+KOŞU	10		Hızlı ilerleme sporu
+KRAL	10		Ülke hükümdarı
 KRALİYET	10		Saray
+KREM	10		Cilde sürülen ürün
+KREŞ	10		Küçük çocuk yuvası
+KRİZ	10		Bunalım dönemi
 KUKLA	10		Oyuncak bebek
 KULAK	10		İşitme organı
 KULAKLIK	10		Dinleme aleti
@@ -769,12 +898,17 @@ KURABİYE	10		Tatlı bisküvi
 KURBAN	10		Adak
 KURBAĞA	10		Vıraklayan
 KURNAZ	10		Tilki gibi
+KURS	10		Eğitim programı
+KURT	10		Vahşi köpekgil
+KURU	10		Islak olmayan
 KUTLAMA	10		Tebrik
+KUTU	10		Eşya saklama kabı
 KUYRUK	10		Hayvan arkası
+KUYU	10		Yer altı su çukuru
 KUYUMCU	10		Altıncı
 KUZEN	10		Amca oğlu
 KUZEY	10		Şimal
-KUZU	10		Yavru koyun
+KUZU	10		Koyun yavrusu
 KUĞU	10		Göl kuşu
 KUŞ	10		Kanatlı
 KÖFTE	10		Kıyma yemeği
@@ -783,11 +917,14 @@ KÖMÜR	10		Yakıt
 KÖPEK	10		İt
 KÖPRÜ	10		Geçit
 KÖPÜK	10		Kabarcık
+KÖTÜ	10		İyi olmayan
 KÖY	10		Kırsal yerleşim
-KÖŞE	10		Kuytu yer
+KÖŞE	10		Duvarların kesişimi
 KÜL	10		Yanık artığı
 KÜLTÜR	10		Hars
 KÜMES	10		Tavuk evi
+KÜPE	10		Kulağa takılan takı
+KÜRE	10		Top biçimli cisim
 KÜREK	10		Kazma aleti
 KÜÇÜCÜK	10		Minik
 KÜÇÜK	10		Ufak
@@ -801,6 +938,7 @@ KİLİT	10		Kapı emniyeti
 KİM	10		Hangi kişi
 KİMLİK	10		Nüfus kağıdı
 KİR	10		Pislik
+KİRA	10		Ev için ödenen para
 KİRAZ	10		Kırmızı meyve
 KİREMİT	10		Çatı örtüsü
 KİREÇ	10		Badana
@@ -810,6 +948,8 @@ KİTABEVİ	10		Sahaf
 KİTAP	10		Eser
 KİTAPLIK	10		Raf
 KİTAPÇI	10		Sahaf
+KİVİ	10		Yeşil içli meyve
+KİŞİ	10		Tek bir insan
 LACİVERT	10		Koyu mavi
 LAHANA	10		Yapraklı sebze
 LAHMACUN	10		Kıymalı hamur
@@ -856,6 +996,7 @@ MAKYAJ	10		Boya
 MAKİNE	10		Alet
 MAL	10		Servet
 MALZEME	10		Materyal
+MAMA	10		Bebek yiyeceği
 MANASTIR	10		Rahip yurdu
 MANAV	10		Meyveci
 MANDAL	10		Çamaşır tutucu
@@ -868,8 +1009,10 @@ MANZARA	10		Görünüm
 MARATON	10		Uzun koşu
 MARGARİN	10		Bitkisel yağ
 MARKET	10		Bakkal
+MART	10		Yılın üçüncü ayı
 MARTI	10		Deniz kuşu
 MARUL	10		Salata yeşilliği
+MASA	10		Dört ayaklı mobilya
 MASAJ	10		Ovma
 MASAL	10		Hikaye
 MASKE	10		Yüz örtüsü
@@ -877,6 +1020,7 @@ MASKOT	10		Uğur simgesi
 MASMAVİ	10		Çok mavi
 MASUM	10		Suçsuz
 MATKAP	10		Delgi
+MAVİ	10		Gökyüzünün rengi
 MAYDANOZ	10		Yeşillik
 MAYIS	10		Bahar ayı
 MAYMUN	10		Primat
@@ -917,6 +1061,7 @@ MEŞHUR	10		Ünlü
 MOBİLYA	10		Döşeme
 MODA	10		Akım
 MODEL	10		Örnek
+MOLA	10		Kısa dinlenme arası
 MOR	10		Menekşe rengi
 MORAL	10		Güç
 MOTOR	10		Makine
@@ -980,10 +1125,13 @@ NİYET	10		Kasıt
 NİŞAN	10		Sözlenme
 NİŞANLI	10		Sözlü
 OBUR	10		Doymaz
+OCAK	10		Yılın ilk ayı
 ODA	10		Hücre
+ODUN	10		Yakacak ağaç
 ODUNCU	10		Orman işçisi
 OFSAYT	10		Futbol kuralı
-OK	10		Silah
+OFİS	10		Çalışma bürosu
+OK	10		Eski bir silah
 OKSİJEN	10		Hava gazı
 OKUL	10		Mektep
 OKYANUS	10		Büyük deniz
@@ -991,6 +1139,7 @@ OLİMPİK	10		Oyunlarla ilgili
 OMLET	10		Yumurta yemeği
 OMURGA	10		Belkemiği
 OMUZ	10		Boyunla kol arası
+ON	10		Dokuzdan sonra
 ONUR	10		Şeref
 OPERA	10		Müzikli tiyatro
 ORGANİK	10		Doğal
@@ -1009,6 +1158,7 @@ OVA	10		Düzlük
 OYUNCAK	10		Çocuk eşyası
 OYUNCU	10		Aktör
 OĞLAN	10		Erkek çocuk
+OĞUL	10		Erkek evlat
 PAHALI	10		Tuzlu
 PAKET	10		Koli
 PALTO	10		Kaban
@@ -1024,8 +1174,10 @@ PAPATYA	10		Beyaz çiçek
 PAPAZ	10		Rahip
 PAPAĞAN	10		Konuşan kuş
 PAPYON	10		Kelebek kravat
+PARA	10		Alışveriş aracı
 PARAŞÜT	10		Hava şemsiyesi
 PARFÜM	10		Koku
+PARK	10		Ağaçlı dinlenme yeri
 PARLAK	10		Işıltılı
 PARMAK	10		El uzantısı
 PAROLA	10		Şifre
@@ -1040,10 +1192,12 @@ PAT	10		Düşme sesi
 PATATES	10		Yumru sebze
 PATLICAN	10		Mor sebze
 PATRON	10		İşveren
+PATİ	10		Hayvanın ayağı
 PAY	10		Hisse
 PAZAR	10		Çarşı
 PAZARLIK	10		İndirim isteme
 PEDAL	10		Ayak basılan
+PEKİ	10		Onay bildiren söz
 PEMBE	10		Açık kırmızı
 PENALTI	10		On bir adım
 PENCERE	10		Cam
@@ -1096,6 +1250,7 @@ RANZA	10		Katlı yatak
 RAPOR	10		İnceleme yazısı
 REHBER	10		Kılavuz
 REKLAM	10		Tanıtım
+RENK	10		Görsel ton
 RESSAM	10		Boyacı sanatçı
 RESTORAN	10		Lokanta
 RESİM	10		Tablo
@@ -1111,9 +1266,12 @@ RUH	10		Can
 RUJ	10		Dudak boyası
 RÖPORTAJ	10		Söyleşi
 RÜŞVET	10		Yolsuzluk
+RİCA	10		Nazikçe isteme
+SAAT	10		Zaman ölçme aracı
 SABAH	10		Seher
 SABIR	10		Tahammül
 SABUN	10		Temizleyici
+SADE	10		Süssüz ve yalın
 SAFRAN	10		Sarı baharat
 SAHA	10		Alan
 SAHNE	10		Tiyatro yeri
@@ -1126,6 +1284,7 @@ SAKSAFON	10		Nefesli çalgı
 SALAM	10		Şarküteri
 SALATA	10		Yeşillik yemeği
 SALDIRI	10		Hücum
+SALI	10		Haftanın ikinci günü
 SALINCAK	10		Hamak
 SALON	10		Oturma odası
 SALÇA	10		Domates ezmesi
@@ -1160,10 +1319,12 @@ SELAM	10		Merhaba
 SEMBOL	10		Simge
 SEMPATİK	10		Sevimli
 SEN	10		Ben değil
+SENE	10		Yıl
 SEPET	10		Hasır kap
 SERAMİK	10		Çini
 SERBEST	10		Özgür
 SERSERİ	10		Avare
+SERT	10		Yumuşak olmayan
 SERVET	10		Varlık
 SERVİS	10		Hizmet
 SERÇE	10		Küçük kuş
@@ -1188,6 +1349,8 @@ SINAV	10		İmtihan
 SINIF	10		Derslik
 SINIR	10		Hudut
 SIR	10		Gizem
+SIRT	10		Vücudun arka kısmı
+SIVI	10		Akışkan madde
 SIÇAN	10		Fare
 SIĞIR	10		İnek
 SKANDAL	10		Rezalet
@@ -1200,6 +1363,8 @@ SOL	10		Sağ karşıtı
 SON	10		Bitiş
 SONBAHAR	10		Güz
 SONUÇ	10		Netice
+SOPA	10		Uzun tahta çubuk
+SORU	10		Cevap bekleyen söz
 SORUN	10		Problem
 SOS	10		Salça
 SOSYAL	10		Toplumsal
@@ -1233,9 +1398,11 @@ SİNEK	10		Böcek
 SİNEMA	10		Film
 SİNYAL	10		İşaret
 SİNİR	10		Asap
+SİRK	10		Akrobat gösteri yeri
 SİRKE	10		Ekşi sıvı
 SİS	10		Pus
 SİSTEM	10		Düzen
+SİTE	10		Konutlar topluluğu
 SİVİLCE	10		Akne
 SİYAH	10		Kara
 SİZ	10		Biz değil
@@ -1278,6 +1445,7 @@ TAVSİYE	10		Öneri
 TAVUK	10		Kümes hayvanı
 TAVŞAN	10		Uzun kulaklı
 TAYFUN	10		Kasırga
+TAZE	10		Yeni ve bozulmamış
 TAÇ	10		Kral başlığı
 TAŞ	10		Kaya
 TEBEŞİR	10		Kara tahta kalemi
@@ -1289,7 +1457,7 @@ TEKLİF	10		Öneri
 TEKNE	10		Kayık
 TEKNİK	10		Yöntem
 TEKRAR	10		Yine
-TEL	10		Kablo
+TEL	10		Metalden ince çizgi
 TELAŞ	10		Acele
 TELEFON	10		Ahize
 TELESKOP	10		Dürbün
@@ -1309,10 +1477,11 @@ TERCÜMAN	10		Çevirmen
 TEREYAĞI	10		Süt yağı
 TERLİK	10		Ev ayakkabısı
 TERMOS	10		Sıcak tutan
-TERS	10		Zıt
+TERS	10		Düzün karşıtı
 TERTEMİZ	10		Pırıl pırıl
 TERZİ	10		Dikişçi
 TESLİM	10		Verme
+TEST	10		Bilgi ölçme sınavı
 TESTİ	10		Toprak kap
 TEYZE	10		Annenin kız kardeşi
 TEĞMEN	10		Subay
@@ -1340,6 +1509,7 @@ TUHAF	10		Garip
 TUR	10		Gezi
 TURİST	10		Gezgin
 TURŞU	10		Salamura
+TUT	10		Sıkıca kavra
 TUTKU	10		Aşk
 TUZ	10		Sodyum klorür
 TUZAK	10		Kapan
@@ -1351,14 +1521,16 @@ TÜM	10		Bütün
 TÜNEL	10		Yeraltı geçidi
 TÜR	10		Çeşit
 TÜRKÜ	10		Halk şarkısı
+TÜY	10		Kuşun vücut örtüsü
 TİLKİ	10		Kurnaz hayvan
 TİMSAH	10		Sürüngen
 TİP	10		Tür
 TİTİZ	10		Özenli
 TİYATRO	10		Sahne sanatı
 TİŞÖRT	10		Kısa kollu
-UCUZ	10		Hesaplı
+UCUZ	10		Fiyatı düşük
 UF	10		Acı belirtisi
+UFAK	10		Küçük boyutlu
 UFUK	10		Çevren
 UN	10		Buğday öğütülmesi
 USKUMRU	10		Balık
@@ -1366,12 +1538,18 @@ USTA	10		İşinin ehli
 UTANGAÇ	10		Çekingen
 UYANIK	10		Kurnaz
 UYARI	10		İkaz
-UYDU	10		Ay
+UYDU	10		Gezegen çevresinde
+UYKU	10		Dinlenme hali
 UYKULU	10		Mahmur
+UZAK	10		Yakın olmayan
+UZAY	10		Evrenin boşluğu
 UZAYLI	10		Yaratık
 UZMAN	10		Usta
+UZUN	10		Kısa olmayan
 UÇ	10		Baş veya son
+UÇAK	10		Havada uçan taşıt
 UÇURTMA	10		Kağıt kuş
+UÇUŞ	10		Havada ilerleme
 VAKİT	10		Zaman
 VALİZ	10		Bavul
 VAMPİR	10		Kan emici
@@ -1393,29 +1571,36 @@ VİTAMİN	10		Besin öğesi
 VİTRİN	10		Dükkan camı
 VİŞNE	10		Ekşi kiraz
 YABANCI	10		Ecnebi
+YAKA	10		Gömleğin boyun kısmı
 YAKAMOZ	10		Deniz ışığı
 YAKIN	10		Uzak karşıtı
 YAKIT	10		Benzin
 YALAN	10		Uydurma
 YALANCI	10		Palavracı
+YALI	10		Kıyıdaki büyük ev
 YALNIZ	10		Tek başına
+YAMA	10		Delik kapatan parça
 YAN	10		Kenar
 YANAK	10		Yüz kenarı
 YANARDAĞ	10		Volkan
 YANGIN	10		Ateş
 YANKI	10		Eko
 YANLIŞ	10		Hata
+YANİ	10		Başka bir deyişle
+YAPI	10		İnşa edilmiş eser
 YAPIŞKAN	10		Tutkallı
 YAPRAK	10		Bitki kısmı
+YARA	10		Deride oluşan hasar
 YARAMAZ	10		Haylaz
 YARATIK	10		Mahluk
 YARDIM	10		Destek
 YARDIMCI	10		Muavin
+YARI	10		İki eşit paydan biri
 YARIMADA	10		Üç yanı deniz
 YARIN	10		Ertesi gün
 YARIŞ	10		Müsabaka
 YARIŞMA	10		Müsabaka
-YASA	10		Kanun
+YASA	10		Hukuki kural
 YASAK	10		Men
 YASEMİN	10		Beyaz çiçek
 YASTIK	10		Başlık
@@ -1423,10 +1608,12 @@ YAT	10		Tekne
 YATAK	10		Döşek
 YAVAŞ	10		Ağır
 YAVRU	10		Çocuk
+YAYA	10		Yürüyerek giden kişi
 YAYINEVİ	10		Matbaa
 YAYLA	10		Dağ ovası
 YAZ	10		Sıcak mevsim
 YAZAR	10		Muharrir
+YAZI	10		Harflerle anlatım
 YAZILIM	10		Program
 YAZLIK	10		Yaz evi
 YAĞ	10		Gres
@@ -1435,6 +1622,7 @@ YAĞMUR	10		Yağış
 YAĞMURLU	10		Yağışlı
 YAŞ	10		Ömür
 YE	10		28. harf
+YEDİ	10		Altıdan sonraki sayı
 YELKEN	10		Rüzgar bezi
 YELKENLİ	10		Yat
 YELPAZE	10		Serinletici
@@ -1442,6 +1630,7 @@ YEM	10		Hayvan yiyeceği
 YEMEK	10		Aş
 YEMYEŞİL	10		Çok yeşil
 YEMİN	10		Ant
+YENİ	10		Eski olmayan
 YER	10		Mekan
 YETENEK	10		Kabiliyet
 YETİŞKİN	10		Büyük
@@ -1464,6 +1653,8 @@ YUMRUK	10		Sıkılmış el
 YUMURTA	10		Tavuk ürünü
 YUMUŞAK	10		Sert değil
 YUNUS	10		Deniz memelisi
+YURT	10		Vatan
+YUVA	10		Kuşların barınağı
 YUVARLAK	10		Daire
 YÖN	10		Taraf
 YÖNETMEN	10		Rejisör
@@ -1506,7 +1697,9 @@ ZİYAFET	10		Şölen
 ÇABA	10		Gayret
 ÇABUK	10		Hızlı
 ÇADIR	10		Kamp evi
+ÇAKI	10		Katlanır cep bıçağı
 ÇAKMAK	10		Ateş aleti
+ÇALI	10		Küçük dallı bitki
 ÇALIŞKAN	10		Gayretli
 ÇAM	10		İğne yapraklı ağaç
 ÇAMAŞIR	10		Giysi
@@ -1514,10 +1707,12 @@ ZİYAFET	10		Şölen
 ÇANTA	10		Torba
 ÇAPKIN	10		Zampara
 ÇAPRAZ	10		Verev
+ÇARE	10		Soruna çözüm
 ÇARESİZ	10		Umutsuz
 ÇARŞAF	10		Yatak örtüsü
 ÇARŞAMBA	10		Hafta ortası
 ÇATAL	10		Yemek aleti
+ÇATI	10		Binanın üst örtüsü
 ÇAVUŞ	10		Astsubay
 ÇAY	10		Demlik içeceği
 ÇEKİCİ	10		Cazibeli
@@ -1526,6 +1721,7 @@ ZİYAFET	10		Şölen
 ÇENE	10		Ağızdaki kemik
 ÇEREZ	10		Kuruyemiş
 ÇERÇEVE	10		Kenarlık
+ÇETE	10		Silahlı suçlu grubu
 ÇEVİRMEN	10		Tercüman
 ÇEYREK	10		Dörtte bir
 ÇEŞME	10		Su kaynağı
@@ -1540,19 +1736,24 @@ ZİYAFET	10		Şölen
 ÇOK	10		Fazla
 ÇORAP	10		Ayak giysisi
 ÇORBA	10		Sıvı yemek
+ÇOĞU	10		Büyük bir kısmı
 ÇUKUR	10		Oyuk
 ÇÖL	10		Kum denizi
 ÇÖP	10		Atık
 ÇÖPLÜK	10		Çöp yığını
 ÇÜRÜK	10		Bozuk
+ÇİFT	10		İki kişilik birlik
 ÇİFTLİK	10		Tarla evi
 ÇİFTÇİ	10		Köylü
 ÇİKOLATA	10		Kakao ürünü
+ÇİLE	10		Acı ve sıkıntı
 ÇİLEK	10		Kırmızı meyve
 ÇİLİNGİR	10		Kilit ustası
 ÇİM	10		Çayır
 ÇİMENTO	10		Harç
+ÇİNİ	10		Desenli seramik
 ÇİRKİN	10		Güzel karşıtı
+ÇİVİ	10		Çekiçle çakılan
 ÇİZGİ	10		Hat
 ÇİÇEK	10		Gül
 ÇİÇEKÇİ	10		Florist
@@ -1562,14 +1763,21 @@ ZİYAFET	10		Şölen
 ÖFKELİ	10		Kızgın
 ÖKSÜRÜK	10		Boğaz tahrişi
 ÖKSÜZ	10		Annesiz
+ÖKÜZ	10		Erkek sığır
+ÖLÇÜ	10		Miktar belirleme
 ÖN	10		Arkanın zıddı
 ÖNEMLİ	10		Ciddi
 ÖPÜCÜK	10		Buse
 ÖRDEK	10		Su kuşu
+ÖRGÜ	10		İplikle yapılan iş
 ÖRNEK	10		Misal
+ÖRTÜ	10		Üstünü kapatan kumaş
 ÖRÜMCEK	10		Ağ ören
+ÖZEL	10		Herkese ait olmayan
+ÖZET	10		Kısa anlatım
 ÖZGÜR	10		Hür
 ÖZGÜRLÜK	10		Hürriyet
+ÖZÜR	10		Hata için af dileme
 ÖĞRENCİ	10		Talebe
 ÖĞRETMEN	10		Hoca
 ÜCRET	10		Maaş
@@ -1579,10 +1787,12 @@ ZİYAFET	10		Şölen
 ÜTÜ	10		Kırışık giderici
 ÜYE	10		Aza
 ÜZGÜN	10		Kederli
+ÜZÜM	10		Salkım meyvesi
 ÜZÜNTÜ	10		Keder
 ÜÇ	10		İkiden sonra
 ÜÇGEN	10		Üç kenarlı şekil
 ÜÇÜNCÜ	10		İkinciden sonra
+İCAT	10		Yeni bir buluş
 İDMAN	10		Antrenman
 İFTAR	10		Oruç açma
 İHTİYAÇ	10		Gereksinim
@@ -1591,6 +1801,7 @@ ZİYAFET	10		Şölen
 İKİ	10		Bir artı bir
 İKİNCİ	10		Birinciden sonra
 İKİZ	10		Tıpatıp benzeyen
+İLAN	10		Duyuru
 İLAVE	10		Ek
 İLAÇ	10		Deva
 İLE	10		Ve
@@ -1599,13 +1810,19 @@ ZİYAFET	10		Şölen
 İLK	10		Birinci
 İLKBAHAR	10		Bahar
 İLKOKUL	10		Temel eğitim
+İLÇE	10		İle bağlı yerleşim
 İLİŞKİ	10		Bağ
 İMAJ	10		İmge
+İMAM	10		Namaz kıldıran kişi
+İMAN	10		Dini inanç
 İMTİHAN	10		Sınav
+İMZA	10		Kişisel el işareti
 İNANÇ	10		İman
 İNATÇI	10		Dik kafalı
 İNCE	10		Narin
+İNCİ	10		İstiridye tanesi
 İNCİR	10		Tatlı meyve
+İNEK	10		Süt veren hayvan
 İNSAN	10		Kişi
 İNTERNET	10		Ağ
 İNTİKAM	10		Öç
@@ -1622,6 +1839,7 @@ ZİYAFET	10		Şölen
 İSTASYON	10		Gar
 İSTEK	10		Arzu
 İSTİKLAL	10		Bağımsızlık
+İSİM	10		Ad
 İTFAİYE	10		Yangın söndürme
 İTİRAF	10		Kabul etme
 İTİRAZ	10		Karşı çıkma
@@ -1630,9 +1848,11 @@ ZİYAFET	10		Şölen
 İYİMSER	10		Optimist
 İZ	10		Bırakılan belirti
 İZCİ	10		Keşifçi
+İZİN	10		Resmi müsaade
 İÇ	10		Dış karşıtı
 İÇECEK	10		Meşrubat
 İÇKİ	10		Alkol
+İÇİN	10		Amaç bildiren edat
 İĞNE	10		Dikiş aracı
 İŞ	10		Meslek
 İŞARET	10		Alamet
@@ -1678,7 +1898,7 @@ ABECE	20		Alfabe
 ABLUKA	20		Kuşatma
 ABİDE	20		Anıt
 ABİYE	20		Gece elbisesi
-ACEM	20		Toy, usta olmayan
+ACEM	20		Fars kökenli kimse
 ACIKLI	20		Hüzünlü
 ACIMASIZ	20		Merhametsiz
 ACİZ	20		Gücü yetmeyen
@@ -1803,7 +2023,7 @@ AZİM	20		Kararlılık
 AÇACAK	20		Konserve aleti
 AÇIKGÖZ	20		Kurnaz
 AÇIKLAMA	20		İzah
-AÇIŞ	20		Giriş melodisi
+AÇIŞ	20		Açmak işi
 AÇMA	20		Hamur işi
 AĞ	20		Örgü
 AĞA	20		Toprak sahibi
@@ -1814,6 +2034,7 @@ AŞÇIBAŞI	20		Şef
 AŞİRET	20		Kabile
 BABACAN	20		Sıcakkanlı
 BACANAK	20		Enişte
+BADİ	20		Yakın arkadaş
 BAHTİYAR	20		Mutlu
 BAHÇIVAN	20		Bostancı
 BAKIR	20		Kızıl metal
@@ -1831,6 +2052,8 @@ BAR	20		İçki yeri
 BARBUNYA	20		Kırmızı balık
 BARDAKÇI	20		Cam satıcısı
 BARINAK	20		Sığınak
+BARO	20		Avukatlar birliği
+BARİ	20		Hiç olmazsa
 BARİKAT	20		Engel
 BARİTON	20		Erkek sesi
 BARİYER	20		Engel
@@ -1842,7 +2065,11 @@ BATAKLIK	20		Sazlık
 BATARYA	20		Pil
 BATERİST	20		Davulcu
 BAYRAKLI	20		Sancaklı
+BAYT	20		Sekiz bitlik birim
+BAYİ	20		Yetkili satıcı
 BAZ	20		Asit karşıtı
+BAZA	20		Yatak altı sandığı
+BAĞI	20		Gönül ___
 BAĞIMSIZ	20		Özgür
 BAĞIRSAK	20		Sindirim kanalı
 BAĞLANTI	20		İlişki
@@ -1861,12 +2088,16 @@ BEKLENTİ	20		Umut
 BELLEK	20		Hafıza
 BELİRGİN	20		Açık
 BELİRSİZ	20		Muğlak
+BENT	20		Su tutan set
 BENZİNCİ	20		Akaryakıt istasyonu
 BERGAMOT	20		Turunçgil
+BERİ	20		Bu yana
 BESBELLİ	20		Apaçık
 BESLENME	20		Gıda alımı
 BESMELE	20		Bismillah
 BESTECİ	20		Kompozitör
+BESİ	20		Hayvanı semirtme
+BETA	20		Yunan alfabesi harfi
 BEY	20		Bay
 BEYGİR	20		At
 BEYZBOL	20		Sopa sporu
@@ -1875,10 +2106,18 @@ BEYİNSİZ	20		Aptal
 BEĞENİ	20		Takdir
 BEŞAMEL	20		Beyaz sos
 BEŞİK	20		Bebek yatağı
+BLOG	20		İnternet günlüğü
+BLOK	20		Büyük yapı topluluğu
 BLOKNOT	20		Not defteri
+BLÖF	20		Aldatıcı hamle
+BOCA	20		Birden boşaltma
 BODUR	20		Kısa boylu
+BOLU	20		Karadeniz'de bir il
 BOMBA	20		Patlayıcı
+BONE	20		Yüzücü başlığı
+BONO	20		Yazılı ödeme senedi
 BOR	20		Element
+BORA	20		Sert esen rüzgar
 BORSA	20		Hisse piyasası
 BOSTAN	20		Sebze bahçesi
 BOTANİK	20		Bitki bilimi
@@ -1889,20 +2128,30 @@ BOZUKLUK	20		Arıza
 BOĞA	20		Erkek sığır
 BOĞMACA	20		Öksürük hastalığı
 BOŞBOĞAZ	20		Geveze
+BROŞ	20		Yakaya takılan süs
 BROŞÜR	20		Kitapçık
+BRÜT	20		Kesintisiz tutar
+BRİÇ	20		Dört kişilik oyun
+BUCA	20		İzmir'in bir ilçesi
+BUJİ	20		Motor ateşleme aracı
 BUL	20		Kaybet karşıtı
 BULUTSUZ	20		Açık hava
 BUNALIM	20		Kriz
 BUNGALOV	20		Tek katlı ev
+BURA	20		Bu yer
 BURJUVA	20		Kentsoylu
-BURÇ	20		12 takımyıldızı
+BURÇ	20		Kale savunma kulesi
+BUSE	20		Küçük öpücük
 BUT	20		Kalça eti
 BUZAĞI	20		Dana
+BUĞU	20		Camdaki su buharı
 BUĞULAMA	20		Buharda pişirme
 BÖLGESEL	20		Yerel
+BÖLÜ	20		Kesir çizgisi
 BÖRÜLCE	20		Fasulye türü
 BÜK	20		Çalılık
 BÜROKRAT	20		Memur
+BÜST	20		Baş ve göğüs heykeli
 BÜYÜKBAŞ	20		Sığır
 BÜYÜTEÇ	20		Lup
 BİBERİYE	20		Kokulu ot
@@ -1927,15 +2176,21 @@ BİRİKİM	20		Tasarruf
 BİSKÜVİ	20		Kuru pasta
 BİT	20		Parazit böcek
 BİYOLOG	20		Canlı bilimci
+BİŞİ	20		Yağda kızaran hamur
+CAKA	20		Gösteriş
 CAMİA	20		Topluluk
 CANLILIK	20		Dirilik
+CANİ	20		Acımasız katil
+CARİ	20		Yürürlükte olan
 CASUSLUK	20		Ajanlık
 CAZİBE	20		Çekicilik
 CAZİBELİ	20		Çekici
+CAİZ	20		İzin verilen
 CEHALET	20		Bilgisizlik
 CELLAT	20		İdam eden
 CEMAAT	20		Topluluk
 CEMİYET	20		Dernek
+CENK	20		Savaş
 CENNET	20		Firdevs
 CEPHANE	20		Mühimmat
 CEPHE	20		Ön yüz
@@ -1943,9 +2198,13 @@ CEREYAN	20		Akım
 CESURLUK	20		Yüreklilik
 CEYLAN	20		Ahu
 CEZERYE	20		Havuç lokumu
+CHAT	20		Çevrim içi sohbet
+CILK	20		Bozulmuş yumurta
+CIRT	20		Yırtılma sesi
 CIVA	20		Sıvı metal
 COP	20		Polis sopası
 CUP	20		Suya düşme sesi
+CURA	20		Küçük telli çalgı
 CURCUNA	20		Karmaşa
 CÖMERTÇE	20		Bonkörce
 CÜZ	20		Parça
@@ -1953,6 +2212,7 @@ CÜZİ	20		Az miktarda para
 CİDDİYET	20		Vakar
 CİMRİLİK	20		Pintilik
 CİP	20		Arazi aracı
+CİRO	20		Toplam satış tutarı
 CİVCİV	20		Tavuk yavrusu
 DADAŞ	20		Erzurumlu
 DADI	20		Çocuk bakan kişi
@@ -1966,11 +2226,14 @@ DAMACANA	20		Büyük şişe
 DAMAK	20		Ağız tavanı
 DAMIZLIK	20		Üreme hayvanı
 DANIŞMA	20		Bilgi masası
+DARA	20		Kabın boş ağırlığı
 DARAĞACI	20		İdam sehpası
 DARBOĞAZ	20		Kriz
 DARBUKA	20		Dümbelek
 DARGIN	20		Küs
+DARI	20		Küçük taneli tahıl
 DARPHANE	20		Para basımevi
+DATA	20		İşlenen bilgiler
 DAVETLİ	20		Konuk
 DAVRANIŞ	20		Tavır
 DAYAK	20		Kötek
@@ -1978,7 +2241,9 @@ DAYANAK	20		Destek
 DAZLAK	20		Kel
 DAĞARCIK	20		Torba
 DAĞITICI	20		Distribütör
+DAİM	20		Sürekli olan
 DE	20		5. harfin okunuşu
+DEBİ	20		Sıvının akış miktarı
 DEF	20		Tef
 DEHA	20		Yüksek düzey zeka
 DEHLİZ	20		Koridor
@@ -2001,6 +2266,7 @@ DEREBEYİ	20		Feodal
 DERLEME	20		Toplama
 DERSHANE	20		Kurs yeri
 DERVİŞ	20		Sufi
+DERZ	20		Fayans arası boşluk
 DERİNLİK	20		Dip
 DESTAN	20		Epope
 DESTE	20		Bağlam
@@ -2009,6 +2275,7 @@ DESTEKÇİ	20		Taraftar
 DESİBEL	20		Ses birimi
 DETAYLI	20		Ayrıntılı
 DEV	20		İri
+DEVA	20		Hastalığa çare
 DEVAMLI	20		Sürekli
 DEVETÜYÜ	20		Açık kahve
 DEVRİMCİ	20		İnkılapçı
@@ -2018,6 +2285,7 @@ DEĞİŞİM	20		Dönüşüm
 DEŞİFRE	20		Çözme
 DIŞBÜKEY	20		Konveks
 DO	20		İlk nota
+DOKU	20		Benzer hücre grubu
 DOKUMA	20		Kumaş
 DOLAMBAÇ	20		Labirent
 DOMUZ	20		Yaban hayvanı
@@ -2026,10 +2294,12 @@ DOĞAÜSTÜ	20		Fevkalade
 DOĞRAMA	20		Pencere çerçevesi
 DOĞRUDAN	20		Direkt
 DOĞRULUK	20		Dürüstlük
+DRAM	20		Hüzünlü sahne eseri
 DRAMATİK	20		Dokunaklı
 DUA	20		Yakarış
 DUY	20		Ampul yuvası
 DUYGUSAL	20		Hassas
+DUYU	20		Algılama yetisi
 DÖNEMEÇ	20		Viraj
 DÖNÜŞÜM	20		Değişim
 DÖRTGEN	20		Kare
@@ -2065,11 +2335,15 @@ EBE	20		Doğum yardımcısı
 EBELİK	20		Doğum yardımcılığı
 EBEVEYN	20		Anne baba
 ECDAT	20		Atalar
+ECZA	20		İlaç yapım maddesi
 EDA	20		Tavır
+EDAT	20		Görevli küçük sözcük
+EDER	20		Bir şeyin değeri
 EDEVAT	20		Alet
 EFE	20		Kahraman
 EFENDİ	20		Bey
 EFLATUN	20		Mor
+EFOR	20		Harcanan güç
 EFSANEVİ	20		Mitolojik
 EGE	20		Batı bölgemiz
 EGEMEN	20		Hükümran
@@ -2079,27 +2353,33 @@ EGZOZ	20		Araç borusu
 EH	20		Bıkkınlık
 EJDER	20		Masal canavarı
 EK	20		Tohum serpmek
+EKME	20		Toprağa tohum atma
 EKO	20		Yankı
 EKONOMİK	20		İktisadi
 EKSPRES	20		Hızlı tren
 EKSİKSİZ	20		Tam
 EKİPMAN	20		Donanım
 ELASTİK	20		Esnek
-ELEK	20		Sınıflandırma aracı
+ELEK	20		Unu ayırma aracı
 ELEKTRON	20		Eksi yüklü parçacık
 ELEMENT	20		Öğe
 ELEŞTİRİ	20		Tenkit
 ELMAS	20		Pırlanta
+ELTİ	20		Eşin kardeşinin eşi
 ELÇİ	20		Diplomat
 ELÇİLİK	20		Sefaret
+ELİF	20		Arapçanın ilk harfi
+ELİT	20		Seçkin kesim
 EM	20		Yalamak
 EMANET	20		Güvenle bırakılan
 EMANETÇİ	20		Vestiyerci
 EMBRİYO	20		Cenin
 EMEK	20		Harcanan çaba
 EMEKTAR	20		Kıdemli
+EMEL	20		Ulaşılmak istenen
 EMLAK	20		Mülk
 EMPATİ	20		Duygudaşlık
+EMİŞ	20		İçine çekme
 EN	20		Genişlik
 ENAYİ	20		Saf
 ENDAM	20		Boy pos
@@ -2113,7 +2393,10 @@ ENSTİTÜ	20		Araştırma kurumu
 ENTARİ	20		Uzun giysi
 ENTRİKA	20		Dolap
 ENVANTER	20		Demirbaş listesi
+ENİK	20		Köpek yavrusu
 ENİŞTE	20		Halanın eşi
+EPEY	20		Oldukça fazla
+EPİK	20		Kahramanlıkla ilgili
 ER	20		Rütbesiz asker
 ERDEM	20		Fazilet
 EREN	20		Ermiş
@@ -2122,24 +2405,39 @@ ERKENDEN	20		Sabahleyin
 EROZYON	20		Toprak kaybı
 ERTELEME	20		Tehir
 ERZAK	20		Kumanya
+ERİL	20		Erkek cinsiyetli
 ES	20		Müzikte duraksama
+ESEF	20		Üzüntü ve pişmanlık
+ESEN	20		Sağlıklı ve iyi olan
 ESNAF	20		Tüccar
+ESİN	20		İlham
+ETAP	20		Yarışın bir bölümü
 ETKİNLİK	20		Faaliyet
+ETME	20		Yapma eylemi
+ETÇİ	20		Et yemeyi seven
+ETÜT	20		Ön çalışma
 ETİ	20		Hitit
+ETİK	20		Ahlak kuralları
 EVLAT	20		Çocuk
 EVLATLIK	20		Manevi çocuk
+EVRE	20		Gelişim aşaması
 EVRENSEL	20		Küresel
 EVÇ	20		Doruk
 EY	20		Hitap
 EYVALLAH	20		Teşekkür
+EZEL	20		Başlangıcı olmayan
 EZGİ	20		Hoş gelen ses
+EĞER	20		Koşul bildiren söz
 EĞİK	20		Eğilmiş olan
+EĞİM	20		Yüzeyin yatıklığı
 EĞİTMEN	20		Öğretmen
 EŞARP	20		Başörtüsü
+EŞLİ	20		Yanında biri olan
 FA	20		4. nota
 FAALİYET	20		Etkinlik
 FABL	20		Öykünce
 FACİA	20		Felaket
+FAKS	20		Belge gönderme yolu
 FAKTÖR	20		Etken
 FAKİRLİK	20		Yoksulluk
 FAL	20		Kehanet
@@ -2149,54 +2447,83 @@ FAN	20		Hayran
 FANATİK	20		Bağnaz
 FANTAZYA	20		Hayal
 FANUS	20		Cam kılıf
+FANİ	20		Ölümlü olan
 FANİLA	20		Atlet
+FARZ	20		Yapılması zorunlu
+FAUL	20		Kural dışı hareket
+FAVA	20		Bakladan meze
 FAY	20		Kırık hattı
 FAYTON	20		At arabası
 FAZ	20		Evre
+FAÇA	20		Yüzdeki bıçak izi
+FAİL	20		Eylemi yapan
+FECİ	20		Çok kötü ve korkunç
+FEDA	20		Uğruna vazgeçme
 FELÇ	20		Geçici hareketsizlik
 FEN	20		Bilim
 FERMAN	20		Buyruk
 FERMUAR	20		Kayar bağlantı
+FERT	20		Tek bir birey
 FERYAT	20		Çığlık
 FES	20		Kırmızı başlık
 FESAT	20		Bozgunculuk
 FESLEĞEN	20		Reyhan
+FEZA	20		Uzay boşluğu
 FINDIKLI	20		Çerezli
 FIR	20		Hızlı dönme
 FIRILDAK	20		Rüzgargülü
 FIRSATÇI	20		Çıkarcı
 FISKİYE	20		Su püskürtücü
 FISTIK	20		Antep ürünü
+FIÇI	20		Tahta içki kabı
 FLU	20		Bulanık
+FOBİ	20		Aşırı korku
 FOK	20		Deniz memelisi
+FOLK	20		Halk müziği türü
 FOLKLOR	20		Halk bilimi
 FON	20		Arka plan
+FONT	20		Yazı karakteri
+FOYA	20		Gizli kusur
 FRAMBUAZ	20		Ahududu
 FREKANS	20		Sıklık
 FUAR	20		Pazar veya sergi
 FUKARA	20		Yoksul
 FUL	20		Bakla
 FÖN	20		Saç kurutma
+FÖTR	20		Kenarlı keçe şapka
+FÜME	20		Tütsülenmiş gıda
 FİDAN	20		Genç ağaç
 FİDANLIK	20		Fide bahçesi
 FİDE	20		Dikmeye hazır bitki
 FİGÜRAN	20		Yardımcı oyuncu
-FİLO	20		Gemi grubu
+FİLE	20		Ağdan örülmüş çanta
+FİLO	20		Savaş gemileri grubu
 FİLOZOF	20		Düşünür
 FİLİZ	20		Tomurcuk
 FİN	20		Finli
+FİNO	20		Küçük tüylü köpek
+FİRE	20		Üretimdeki kayıp
 FİT	20		Formda
 FİYAKA	20		Gösteriş
 FİYASKO	20		Hüsran
+FİİL	20		İş veya oluş sözü
 FİŞ	20		Priz takılan
 GAF	20		Pot
+GALA	20		Özel açılış gecesi
 GAM	20		Keder
+GAMA	20		Yunan alfabesi harfi
+GANİ	20		Zengin ve varlıklı
 GANİMET	20		Savaş yağması
+GARD	20		Savunma duruşu
 GARDİYAN	20		Cezaevi bekçisi
 GARNİTÜR	20		Yan yemek
 GARİBAN	20		Zavallı
 GASP	20		Malın zorla alınması
+GAYE	20		Ulaşılmak istenen
 GAYRET	20		Çaba
+GAZA	20		Din uğruna savaş
+GAZİ	20		Savaştan sağ dönen
+GAİP	20		Gözden uzak olan
 GEBE	20		Hamile
 GELGİT	20		Med cezir
 GELİNCİK	20		Kırmızı çiçek
@@ -2212,10 +2539,14 @@ GERİLLA	20		Çeteci
 GEVREK	20		Çıtır
 GEYİK	20		Boynuzlu hayvan
 GEZ	20		Nişangah
+GEÇE	20		Saati aşan dakika
 GICIK	20		Sinir bozucu
-GIDA	20		Yiyecek
+GIDA	20		Yenilebilir besin
+GIDI	20		Çene altındaki yağ
+GINA	20		Bıkma ve usanma
 GIRTLAK	20		Boğaz
 GONCA	20		Tomurcuk
+GONK	20		Büyük metal çan
 GRAMOFON	20		Pikap
 GURBET	20		Memleket dışı
 GURBETÇİ	20		Yurt dışı işçisi
@@ -2259,10 +2590,13 @@ HAKEMLİK	20		Yargıçlık
 HAKSIZ	20		Adaletsiz
 HAKİKAT	20		Gerçek
 HAL	20		Durum
+HALE	20		Işık halkası
+HALT	20		Uygunsuz davranış
 HAM	20		Olmamış
 HAMAL	20		Yük taşıyıcı
 HAMAM	20		Yıkanma yeri
 HAMARAT	20		Çalışkan
+HAMİ	20		Koruyup destekleyen
 HAN	20		Konaklama yeri
 HANDİKAP	20		Engel
 HANE	20		Ev, konut
@@ -2273,6 +2607,8 @@ HAPŞIRIK	20		Aksırık
 HAR	20		Sıcak
 HARARET	20		Sıcaklık
 HARMAN	20		Ekin dövme
+HARP	20		Savaş
+HARÇ	20		Duvar örme karışımı
 HARÇLIK	20		Cep parası
 HAS	20		Özel
 HASAT	20		Ürün toplama
@@ -2291,8 +2627,11 @@ HAZ	20		Zevk
 HAZIRLIK	20		Tedarik
 HAÇ	20		Çarmıh
 HAİN	20		Sadakat göstermeyen
-HECE	20		Ses öbeği
+HEBA	20		Boşa gitmiş
+HECE	20		Kelimenin ses birimi
 HEKİMLİK	20		Doktorluk
+HELA	20		Tuvalet
+HELE	20		Özellikle
 HELEZON	20		Spiral
 HEMŞEHRİ	20		Memleketli
 HENTBOL	20		El topu
@@ -2312,11 +2651,15 @@ HU	20		Macaristan ülke kodu
 HUN	20		Eski türk devleti
 HUNİ	20		Akıtma aracı
 HURMA	20		Çöl meyvesi
+HURİ	20		Cennet güzeli
 HUY	20		Mizaç
 HUZURSUZ	20		Tedirgin
+HUŞU	20		Derin saygı hali
+HÜDA	20		Tanrı
 HÜKÜMDAR	20		Kral
 HÜR	20		Özgür
 HÜRRİYET	20		Özgürlük
+HİBE	20		Karşılıksız bağış
 HİPODROM	20		At yarışı alanı
 HİS	20		Duygu
 HİT	20		Çok satan
@@ -2326,6 +2669,7 @@ IRAK	20		Uzak
 IRK	20		Soy
 IRMAK	20		Nehir
 ISIRIK	20		Diş izi
+ISKA	20		Hedefi tutturamama
 ISLAKLIK	20		Nem
 ISPANAK	20		Yeşil yapraklı sebze
 ISPARTA	20		Gül şehri
@@ -2352,6 +2696,7 @@ KADASTRO	20		Tapu ölçümü
 KADEH	20		Bardak
 KADEME	20		Basamak
 KADER	20		Alın yazısı
+KADI	20		Osmanlıda yargıç
 KADIRGA	20		Kürekli gemi
 KADİFE	20		Yumuşak kumaş
 KAFES	20		Kuş evi
@@ -2368,6 +2713,7 @@ KALİTE	20		Nitelik
 KALİTELİ	20		Nitelikli
 KAM	20		Şaman
 KAMIŞ	20		Saz
+KAMU	20		Halkın bütünü
 KAMUFLAJ	20		Gizlenme
 KAMUOYU	20		Halk görüşü
 KAMÇI	20		Kırbaç
@@ -2378,6 +2724,7 @@ KANAVİÇE	20		İşleme bezi
 KANGREN	20		Doku ölümü
 KANO	20		Kayık
 KANTARON	20		Şifalı ot
+KAOS	20		Düzensizlik
 KAPASİTE	20		Hacim
 KAPLICA	20		Ilıca
 KAPİTONE	20		Dikişli döşeme
@@ -2396,6 +2743,7 @@ KARPUZCU	20		Bostancı
 KARYOLA	20		Demir yatak
 KASADAR	20		Kasiyer
 KASIRGA	20		Hortum
+KAST	20		Bilerek yapma amacı
 KATEGORİ	20		Sınıf
 KATILIM	20		İştirak
 KATIR	20		At-eşek melezi
@@ -2408,12 +2756,14 @@ KAVRAM	20		Mefhum
 KAVUŞMA	20		Buluşma
 KAYAKÇI	20		Kar sporcusu
 KAYGISIZ	20		Tasasız
+KAYI	20		Oğuz boyu
 KAYIKÇI	20		Sandalcı
 KAYNAKÇA	20		Bibliyografya
 KAZ	20		Su kuşu
 KAZAKÇA	20		Orta asya dili
 KAZANÇ	20		Kar
 KAZANÇLI	20		Karlı
+KAZI	20		Toprağı eşme işi
 KAÇAKÇI	20		Yasadışı satıcı
 KAÇAMAK	20		Kaçış
 KAĞNI	20		Öküz arabası
@@ -2422,6 +2772,7 @@ KAŞINTI	20		Uyuz
 KAŞKOL	20		Atkı
 KEDER	20		Üzüntü
 KEF	20		Köpük
+KEFE	20		Terazi gözü
 KEHANET	20		Gelecek söyleme
 KEHRİBAR	20		Sarı taş
 KEKELEME	20		Takılma
@@ -2440,7 +2791,7 @@ KERVAN	20		Kafile
 KERVANCI	20		Deveci
 KET	20		Engel
 KEVGİR	20		Delikli kepçe
-KEÇE	20		Fötr
+KEÇE	20		Sıkıştırılmış yün
 KEŞMEKEŞ	20		Karmaşa
 KIKIRDAK	20		Esnek doku
 KILAVUZ	20		Rehber
@@ -2457,6 +2808,8 @@ KIYMALI	20		Etli
 KIYMET	20		Değer
 KIZILCIK	20		Kırmızı meyve
 KIÇ	20		Arka
+KLAN	20		Akraba topluluğu
+KLAS	20		Üstün nitelikli
 KLASÖR	20		Dosya
 KLON	20		Genetik kopya
 KLOROFİL	20		Yeşil madde
@@ -2464,24 +2817,31 @@ KOCAKARI	20		Yaşlı kadın
 KOK	20		Kömür türü
 KOKTEYL	20		Karışık içki
 KOLAYLIK	20		Rahatlık
+KOMA	20		Derin bilinç kaybı
 KOMBİNE	20		Birleşik
 KOMEDİ	20		Güldürü
 KOMPOST	20		Organik gübre
+KOMİ	20		Garson yardımcısı
 KOMİSYON	20		Kurul
 KOMŞULUK	20		Yakınlık
 KONSOLOS	20		Elçi yardımcısı
+KONT	20		Soyluluk unvanı
 KONTRAT	20		Sözleşme
 KONUŞMA	20		Söyleşi
+KONİ	20		Sivri uçlu cisim
 KOR	20		Köz
 KORKULUK	20		Parmaklık
 KORKUSUZ	20		Cesur
 KORULUK	20		Küçük orman
 KORUYUCU	20		Muhafız
+KOTA	20		Belirlenen üst sınır
+KOZA	20		İpek böceği yuvası
 KOZALAK	20		Çam meyvesi
 KOZMONOT	20		Rus astronot
 KOÇ	20		Erkek koyun
-KREP	20		İnce gözleme
+KREP	20		İnce tava hamuru
 KROKODİL	20		Timsah
+KROM	20		Parlak sert metal
 KUL	20		Köle
 KUMANDAN	20		Komutan
 KUR	20		Döviz değeri
@@ -2493,7 +2853,7 @@ KUŞAK	20		Nesil
 KUŞBAŞI	20		Küçük doğranmış et
 KUŞKULU	20		Şüpheli
 KÖFTECİ	20		Izgaracı
-KÖLE	20		Esir
+KÖLE	20		Özgürlüğü olmayan
 KÖMÜRCÜ	20		Yakacak satıcısı
 KÖR	20		Görmeyen
 KÖRFEZ	20		Koy
@@ -2502,9 +2862,13 @@ KÖSTEK	20		Engel
 KÖTÜLÜK	20		Fenalık
 KÖTÜMSER	20		Karamsar
 KÖZ	20		Kor
+KÖŞK	20		Bahçeli büyük ev
 KÜF	20		Bozulma
+KÜFE	20		Sırtta taşınan sepet
+KÜLT	20		Aşırı hayranlık
+KÜME	20		Bir aradaki nesneler
 KÜP	20		Toprak kap
-KÜRK	20		Post
+KÜRK	20		Hayvan postu
 KÜS	20		Dargın
 KÜTÜK	20		Ağaç gövdesi
 KİBARCA	20		Nazikçe
@@ -2517,6 +2881,7 @@ KİMSESİZ	20		Yalnız
 KİMYAGER	20		Eczacı
 KİN	20		Garez
 KİP	20		Kalıp
+KİST	20		İçi sıvı dolu kese
 KİT	20		Takım
 KİŞİLİK	20		Karakter
 LA	20		Argo
@@ -2567,10 +2932,12 @@ MANDOLİN	20		Telli çalgı
 MANEVRA	20		Hareket
 MANGAL	20		Kömür ocağı
 MANTIKLI	20		Akla yatkın
+MANİ	20		Dört dizelik şiir
 MANİKÜR	20		Tırnak bakımı
 MANİVELA	20		Kaldıraç
 MARANGOZ	20		Ahşap ustası
 MARMELAT	20		Meyve ezmesi
+MARS	20		Kızıl gezegen
 MARTAVAL	20		Yalan
 MARİFET	20		Hüner
 MARŞ	20		Ulusal ezgi
@@ -2584,9 +2951,11 @@ MATBAACI	20		Basımcı
 MATEM	20		Yas
 MATMAZEL	20		Bekar kız
 MATRUŞKA	20		Rus bebeği
-MAYA	20		Hamur kabartıcı
+MAYA	20		Hamuru kabartan
 MAZERET	20		Bahane
+MAZİ	20		Geçmiş zaman
 MAĞAZACI	20		Dükkan sahibi
+MEAL	20		Anlam
 MECLİS	20		Parlamento
 MEDRESE	20		Eski okul
 MEDYATİK	20		Ünlü
@@ -2704,6 +3073,7 @@ OBJEKTİF	20		Tarafsız
 OBRUK	20		Çökme çukuru
 OBURLUK	20		Doymazlık
 ODACI	20		Hademe
+ODAK	20		İlginin merkezi
 OF	20		Bıkkınlık belirtisi
 OHA	20		Şaşırma ünlemi
 OHM	20		Direnç birimi
@@ -2742,7 +3112,7 @@ OTORİTE	20		Yetke
 OTOYOL	20		Ekspres yol
 OTURAK	20		Tabure
 OVMA	20		Masaj
-OY	20		Görüş bildirisi
+OY	20		Seçim tercihi
 OYA	20		Dantel
 OYNAK	20		Hareketli
 OZAN	20		Şair
@@ -2761,17 +3131,23 @@ PARAGRAF	20		Bölüm
 PARANOYA	20		Kuşku hastalığı
 PARANTEZ	20		Ayraç
 PARAZİT	20		Asalak
+PARS	20		Benekli yırtıcı
 PASKALYA	20		Hristiyan bayramı
+PASO	20		İndirimli yol kartı
 PASTEL	20		Açık renk
 PATA	20		Denk
 PATİK	20		Bebek ayakkabısı
 PATİKA	20		Dar yol
+PAYE	20		Makam ve derece
+PAZI	20		Yeşil yapraklı sebze
 PAÇA	20		Pantolon ucu
 PAÇAVRA	20		Bez parçası
+PAŞA	20		Osmanlı yüksek rütbe
 PEHLİVAN	20		Güreşçi
 PEK	20		Çok
 PEKMEZ	20		Üzüm şurubu
 PELERİN	20		Kap
+PENA	20		Gitar çalma aracı
 PENÇE	20		Hayvan tırnağı
 PER	20		Kanat
 PERHİZ	20		Diyet
@@ -2781,6 +3157,7 @@ PERİŞAN	20		Berbat
 PES	20		Alçak ses
 PESTİL	20		Kurutulmuş meyve
 PET	20		Plastik şişe
+PEÇE	20		Yüzü örten örtü
 PEŞTAMAL	20		Hamam havlusu
 PINAR	20		Kaynak
 PIRASA	20		Kışlık sebze
@@ -2788,7 +3165,7 @@ PIRLANTA	20		Elmas
 PLATFORM	20		Kürsü
 PLİ	20		Kat
 POPÜLER	20		Ünlü
-POS	20		Gür bıyık
+POS	20		Kartla ödeme aracı
 POT	20		Gaf
 POYRAZ	20		Kuzey rüzgarı
 PRİZ	20		Fiş yeri
@@ -2815,6 +3192,7 @@ RAĞBET	20		İlgi
 RE	20		21. harf
 REHAVET	20		Gevşeklik
 REHİN	20		Tutsak
+REJİ	20		Yayın yönetimi
 REKABET	20		Yarış
 RENKSİZ	20		Solgun
 RET	20		Reddetme
@@ -2823,7 +3201,7 @@ REÇİNE	20		Ağaç sakızı
 RIHTIM	20		İskele
 RIZA	20		İzin
 ROBOTİK	20		Otomasyon
-ROL	20		Görev
+ROL	20		Oyuncunun görevi
 ROM	20		Şeker kamışı içkisi
 ROMANS	20		Aşk şarkısı
 ROZET	20		Arma
@@ -2883,6 +3261,8 @@ SAZ	20		Bağlama
 SAĞDIÇ	20		Damadın yardımcısı
 SAĞIRLIK	20		İşitme kaybı
 SAĞLIKLI	20		Sıhhatli
+SEDA	20		Ses
+SEFA	20		Keyif ve neşe
 SEFALET	20		Yoksulluk
 SEFER	20		Yolculuk
 SEFERBER	20		Harekete geçmiş
@@ -2892,7 +3272,9 @@ SELA	20		Ölüm duyurusu
 SELAMLIK	20		Erkek dairesi
 SEMBOLİK	20		Simgesel
 SEMER	20		Eşek eyeri
+SEMT	20		Şehrin bir bölgesi
 SEMİZOTU	20		Yeşillik
+SENA	20		Övgü
 SENARİST	20		Film yazarı
 SENTETİK	20		Yapay
 SEPETÇİ	20		Hasırcı
@@ -2901,6 +3283,7 @@ SEREMONİ	20		Tören
 SERGİ	20		Fuar
 SERMAYE	20		Kapital
 SERSEM	20		Şaşkın
+SERİ	20		Ardışık dizi
 SERİNLİK	20		Esinti
 SEVİ	20		Aşk
 SEVİMSİZ	20		Antipatik
@@ -2916,6 +3299,9 @@ SIKINTI	20		Dert
 SINIRLI	20		Kısıtlı
 SIRADAN	20		Olağan
 SIRALAMA	20		Dizme
+SIRF	20		Yalnızca
+SIRP	20		Sırbistanlı kişi
+SIVA	20		Duvara sürülen harç
 SIĞ	20		Derin değil
 SIĞINAK	20		Barınak
 SIĞIRCIK	20		Sürü kuşu
@@ -2928,14 +3314,18 @@ SOMUN	20		Ekmek
 SONSUZ	20		Ebedi
 SORUMLU	20		Mesul
 SOSYETE	20		Yüksek tabaka
+SOTE	20		Az yağda pişirme
 SOY	20		Nesil
 SOYAĞACI	20		Şecere
 SOYTARI	20		Palyaço
 SOĞUKLUK	20		Serinlik
 SOĞUKÇA	20		Serin
 SPATULA	20		Mutfak aleti
+SPOT	20		Kısa reklam filmi
+STAJ	20		Uygulamalı eğitim
 STAJYER	20		Kursiyer
 STANDART	20		Ölçüt
+STAR	20		Ünlü sanatçı
 STEP	20		Bozkır
 STRATEJİ	20		Taktik
 SUAL	20		Soru
@@ -2984,7 +3374,7 @@ TABİAT	20		Doğa
 TAHAMMÜL	20		Dayanma
 TAHRİBAT	20		Yıkım
 TAHSİL	20		Eğitim
-TAK	20		Kemer
+TAK	20		Yerine yerleştir
 TAKIMADA	20		Adalar grubu
 TAKSİTLİ	20		Bölünmüş ödemeli
 TALEBE	20		Öğrenci
@@ -2995,17 +3385,22 @@ TAMAMEN	20		Bütünüyle
 TAMBUR	20		Telli çalgı
 TAN	20		Şafak
 TANECİK	20		Zerre
+TANI	20		Hastalık teşhisi
+TANK	20		Zırhlı savaş aracı
 TANRIÇA	20		İlahe
 TANTANA	20		Debdebe
 TANZİMAT	20		Reform dönemi
+TAPA	20		Delik kapatma tıkacı
 TAPINAK	20		Mabet
 TAR	20		Telli çalgı
 TARAFSIZ	20		Yansız
 TARAFTAR	20		Fanatik
+TARZ	20		Üslup
 TARÇIN	20		Baharat
 TARİFE	20		Fiyat listesi
 TARİHÇİ	20		Müverrih
 TAS	20		Kase
+TASA	20		Kaygı
 TASARI	20		Plan
 TASARRUF	20		Biriktirme
 TASAVVUF	20		Sufizm
@@ -3018,6 +3413,7 @@ TAVLACI	20		Zar oyuncusu
 TAVUKÇU	20		Piliççi
 TAVŞANCI	20		Av köpeği
 TAY	20		At yavrusu
+TAZI	20		Hızlı av köpeği
 TAZMİNAT	20		Kompanzasyon
 TAŞINMA	20		Nakil
 TAŞINMAZ	20		Gayrimenkul
@@ -3027,7 +3423,7 @@ TECRİT	20		Yalıtım
 TEDARİK	20		Temin
 TEDBİR	20		Önlem
 TEDİRGİN	20		Huzursuz
-TEF	20		Def
+TEF	20		Zilli çalgı
 TEKE	20		Erkek keçi
 TEKNOLOG	20		Mühendis
 TEKSTİL	20		Dokuma
@@ -3045,6 +3441,7 @@ TERARYUM	20		Sürüngen kafesi
 TERBİYE	20		Eğitim
 TERCİH	20		Seçim
 TEREDDÜT	20		Kararsızlık
+TERK	20		Bırakıp gitme
 TERMİNAL	20		Otogar
 TESADÜF	20		Rastlantı
 TESPİH	20		Zikir aleti
@@ -3080,7 +3477,10 @@ TRİKOTAJ	20		Örme kumaş
 TRİO	20		Üçlü
 TUBA	20		Kalın sesli boru
 TUHAFİYE	20		Düğme iplik dükkanı
+TUNÇ	20		Bakır kalay alaşımı
+TURA	20		Madeni paranın yüzü
 TURFANDA	20		Mevsiminden önce
+TURP	20		Acı kök sebze
 TURUNÇ	20		Ekşi portakal
 TURİSTİK	20		Gezilik
 TURŞUCU	20		Salamuracı
@@ -3094,7 +3494,7 @@ TÖVBE	20		Pişmanlık
 TÜKETİM	20		Harcama
 TÜKÜRÜK	20		Salya
 TÜL	20		İnce perde
-TÜP	20		Boru
+TÜP	20		Cam boru
 TÜRKMEN	20		Yörük
 TÜTÜN	20		Sigara otu
 TÜTÜNCÜ	20		Sigaracı
@@ -3119,7 +3519,9 @@ UKALALIK	20		Ukala olma
 UKULELE	20		Küçük gitar
 ULTRASON	20		Ses ötesi
 ULU	20		Yüce
+ULUS	20		Millet
 ULUSAL	20		Milli
+ULVİ	20		Yüce ve kutsal
 UMACI	20		Öcü
 UMUR	20		Önem
 UMUTLU	20		Ümitli
@@ -3127,15 +3529,18 @@ UNUTKAN	20		Dalgın
 USTABAŞI	20		Şef
 USTURA	20		Tıraş bıçağı
 UT	20		Çalgı
+UYAK	20		Dize sonu ses uyumu
 UYDURUK	20		Yalan
 UYGARLIK	20		Medeniyet
 UYGULAMA	20		Pratik
 UYSALLIK	20		Yumuşaklık
 UYUMLU	20		Ahenkli
+UYUZ	20		Bulaşıcı deri illeti
 UZAKTAN	20		Mesafeden
 UZANTI	20		Ek
 UZLAŞI	20		Anlaşma
 UZMANLIK	20		İhtisas
+UZUV	20		Vücudun bir parçası
 UÇKUR	20		Don bağı
 UÇURUM	20		Yar
 UĞRAŞ	20		Çaba
@@ -3143,9 +3548,13 @@ UĞULTU	20		Rüzgar sesi
 UĞURLAMA	20		Yolcu etme
 UĞURLU	20		Şanslı
 UĞURSUZ	20		Kara bahtlı
-VAAT	20		Söz
+VAAT	20		Verilen söz
+VAAZ	20		Dini öğüt konuşması
+VADE	20		Ödeme süresi
+VADİ	20		Dağlar arası çukur
 VAFTİZ	20		Suyla arınma
 VAGON	20		Tren arabası
+VAHA	20		Çöldeki yeşil alan
 VAKA	20		Olay
 VAN	20		Doğu ili
 VARDİYA	20		Nöbet
@@ -3217,15 +3626,18 @@ YILDIZLI	20		Gökyüzü dolu
 YIRTICI	20		Vahşi hayvan
 YOKLAMA	20		Devam kontrolü
 YONCA	20		Üç yapraklı
+YONT	20		Taşı şekillendir
 YORGANCI	20		Döşemeci
 YOĞUNLUK	20		Koyuluk
 YUFKA	20		İnce hamur
 YUH	20		Yuhalama
 YUMURCAK	20		Yaramaz çocuk
 YUSUFÇUK	20		Kızböceği
-YÜCE	20		Ulu
+YÖRE	20		Belirli bir bölge
+YÜCE	20		Çok yüksek ve ulu
 YÜRÜRLÜK	20		Geçerlilik
 YÜZEYSEL	20		Sığ
+ZAAF	20		Zayıf yön
 ZAHMET	20		Güçlük
 ZAHMETLİ	20		Yorucu
 ZAM	20		Fiyat artışı
@@ -3262,6 +3674,7 @@ ZÜMRÜT	20		Yeşil taş
 ÇAPRAŞIK	20		Karışık
 ÇAPULCU	20		Yağmacı
 ÇARDAK	20		Asma gölgeliği
+ÇARK	20		Dönen dişli teker
 ÇARPICI	20		Etkileyici
 ÇARPINTI	20		Kalp atışı
 ÇARÇABUK	20		Hemen
@@ -3296,6 +3709,7 @@ ZÜMRÜT	20		Yeşil taş
 ÇIKINTI	20		Kabartı
 ÇIN	20		Zil sesi
 ÇINGIRAK	20		Zil
+ÇIRA	20		Ateş tutuşturucu
 ÇIRAK	20		Usta adayı
 ÇIRAKLIK	20		Yamaklık
 ÇIT	20		Hafif ses
@@ -3340,6 +3754,7 @@ ZÜMRÜT	20		Yeşil taş
 ÖNGÖRÜLÜ	20		İleri görüşlü
 ÖNSEZİ	20		İçe doğma
 ÖRGÜLÜ	20		Örülmüş
+ÖRME	20		İlmek oluşturma
 ÖRNEKLİK	20		Model olma
 ÖTE	20		Uzak taraf
 ÖTEBERİ	20		Ivır zıvır
@@ -3347,10 +3762,14 @@ ZÜMRÜT	20		Yeşil taş
 ÖZ	20		Bizzat
 ÖZDEYİŞ	20		Vecize
 ÖZELLİK	20		Nitelik
-ÖZEN	20		İtina
+ÖZEN	20		Dikkatli davranış
 ÖZENLİ	20		Titiz
+ÖZGE	20		Başka ve farklı
+ÖZGÜ	20		Yalnız ona ait
 ÖZGÜRCE	20		Serbestçe
 ÖZLEMLİ	20		Hasret dolu
+ÖZLÜ	20		Az sözle çok anlatan
+ÖZNE	20		İşi yapan öge
 ÖZVERİ	20		Fedakarlık
 ÖZVERİLİ	20		Fedakar
 ÖÇ	20		İntikam
@@ -3382,6 +3801,7 @@ ZÜMRÜT	20		Yeşil taş
 İADE	20		Geri verme
 İBADET	20		Dua
 İBRİK	20		Su kabı
+İCRA	20		Uygulama
 İDAM	20		Ölüm cezası
 İDEALİST	20		Ülkücü
 İDEOLOJİ	20		Dünya görüşü
@@ -3396,6 +3816,8 @@ ZÜMRÜT	20		Yeşil taş
 İHTİMAL	20		Olasılık
 İHTİYAR	20		Yaşlı
 İHTİŞAM	20		Görkem
+İKNA	20		Birini inandırma
+İKON	20		Ekrandaki simge
 İKRAMİYE	20		Prim
 İKTİDAR	20		Güç
 İKİNDİ	20		Öğleden sonra
@@ -3405,10 +3827,17 @@ ZÜMRÜT	20		Yeşil taş
 İLERLEME	20		Gelişme
 İLETİŞİM	20		Haberleşme
 İLHAM	20		Esin
+İLKE	20		Temel prensip
 İLLÜZYON	20		Yanılsama
+İLİK	20		Kemik içindeki doku
+İLİM	20		Bilim ve bilgi
 İMA	20		Dolaylı söz
+İMAL	20		Üretim yapma
+İMAR	20		Bayındırlaştırma
 İMECE	20		Ortak iş
-İMGE	20		İmaj
+İMGE	20		Zihindeki görüntü
+İMHA	20		Yok etme işlemi
+İMLA	20		Yazım kuralları
 İMTİYAZ	20		Ayrıcalık
 İN	20		Hayvan yuvası
 İNCECİK	20		Narin
@@ -3420,15 +3849,19 @@ ZÜMRÜT	20		Yeşil taş
 İNTİHAR	20		Kendini öldürme
 İNÇ	20		Uzunluk birimi
 İNİ	20		Küçük kardeş
+İNŞA	20		Yapı kurma işi
 İPOTEK	20		Rehin
 İRADE	20		İstenç
 İRS	20		Miras
+İRİS	20		Gözün renkli kısmı
 İS	20		Duman lekesi
 İSABET	20		Tam vuruş
 İSKARPİN	20		Topuklu ayakkabı
 İSKELE	20		Rıhtım
 İSKEMLE	20		Sandalye
 İSKONTO	20		İndirim
+İSLİ	20		Kurumla kaplanmış
+İSOT	20		Acı kırmızı biber
 İSPİNOZ	20		Ötücü kuş
 İSTAVRİT	20		Küçük balık
 İSTEKLİ	20		Hevesli
@@ -3438,8 +3871,11 @@ ZÜMRÜT	20		Yeşil taş
 İSYAN	20		Başkaldırı
 İTA	20		Verme
 İTAAT	20		Boyun eğme
+İTME	20		Öne doğru kakma
 İTİBAR	20		Saygınlık
+İTİŞ	20		Karşılıklı kakışma
 İVME	20		Hızlanma
+İZAH	20		Açıklama
 İZDİHAM	20		Kalabalık
 İZDİVAÇ	20		Evlilik
 İZLEME	20		Takip
@@ -3449,6 +3885,7 @@ ZÜMRÜT	20		Yeşil taş
 İZOLE	20		Yalıtılmış
 İÇERİK	20		Kapsam
 İÇGÜDÜ	20		Sezgi
+İÇİM	20		İçme eylemi
 İĞRENÇ	20		Tiksindirici
 İŞKEMBE	20		Mide
 İŞKENCE	20		Eziyet
@@ -3531,41 +3968,76 @@ AĞI	35		Zehir
 BAD	35		Rüzgar
 BALÇIK	35		Çamur
 BAP	35		Bölüm
+BARK	35		Eski dilde ev
 BAS	35		Kalın ses
+BASI	35		Basma işi
 BAÇ	35		Vergi
 BE	35		2. harfin adı
 BED	35		Kötü
+BEKA	35		Varlığını sürdürme
+BERK	35		Sağlam ve güçlü
 BET	35		Yüz
+BETİ	35		Yüzün görünüşü
+BLUM	35		Bir iskambil oyunu
 BOA	35		Yılan türü
 BOM	35		Bomba sesi
 BRE	35		Hey
+BREŞ	35		Kırıntılı kayaç
+BROM	35		Kimyasal element
+BRİK	35		İki direkli gemi
+BRİT	35		Düğme ilik halkası
+BRİZ	35		Hafif deniz yeli
+BUAT	35		Elektrik ek kutusu
+BUKE	35		Şarabın hoş kokusu
+BULA	35		Yengenin yöresel adı
+BURU	35		Karın sancısı
+BUUT	35		Uzunluk ölçüsü
 BÖKE	35		Kahraman
 BÖN	35		Saf
+BÖRK	35		Eski türk başlığı
+BÖRÜ	35		Eski dilde kurt
 BÖĞ	35		Zehirli örümcek
+BÜVE	35		Sığırı sokan sinek
 BÜZ	35		Beton boru
+BİAT	35		Bağlılık bildirme
+BİDE	35		Bir de sözünün hali
 BİS	35		Tekrar
+BİYE	35		Giysi kenar şeridi
+CANA	35		Can sözüne yönelme
 CAR	35		Bağırış
+CART	35		Kaba yırtılma sesi
 CE	35		3. harfin adı
+CEBE	35		Eski bir zırh türü
+CEDİ	35		Oğlak burcunun adı
+CEHT	35		Çaba ve gayret
+CELP	35		Mahkemeye çağrı
 CEM	35		Toplama
+CEMİ	35		Hepsi birden
 CER	35		Çekme
+CERH	35		Yaralama
 CET	35		Ata
+CEZP	35		Kendine çekme
 CIK	35		Hayır işareti
 CIS	35		Sıcak uyarısı
 CIZ	35		Kızgın yağ sesi
 CUK	35		Tam yerinde
+CÜDA	35		Ayrı düşmüş
 CİN	35		Görünmez varlık
 DAH	35		Eşeği yürütme sözü
 DARP	35		Fiziksel şiddet
+DAYE	35		Eski dilde dadı
 DAZ	35		Kel
 DEH	35		Hayvan yürütme sözü
 DEMAGOG	35		Halkavcısı
 DOK	35		Gemi tamir yeri
+DONE	35		Eldeki bilgi
 DUN	35		Aşağı
 DÖL	35		Yavru
 DÖŞ	35		Göğüs
 DÜ	35		Farsça iki
 DÜLGER	35		Marangoz
 ECE	35		Kraliçe
+ECİR	35		Yapılan işin sevabı
 EDE	35		Ağabey
 EFSUN	35		Büyü
 EKLEKTİK	35		Seçmeci
@@ -3573,18 +4045,24 @@ ELA	35		Yeşilimsi kahve
 EMSAL	35		Benzer
 ERK	35		Güç
 ESARET	35		Tutsaklık
+ETOL	35		Uzun omuz atkısı
+ETİL	35		Organik kimya grubu
 EVİÇ	35		Onaylamak
 EZA	35		Eziyet
 EĞE	35		Törpü
+EŞEY	35		Biyolojik cinsiyet
 FAK	35		Tuzak
+FAİK	35		Üstün olan
 FAŞ	35		Açığa vurma
 FE	35		7. harf
 FEK	35		Kaldırma
 FER	35		Parıltı
+FERZ	35		Eski satranç veziri
 FOL	35		Yumurta
 FOS	35		Çürük
 FÖY	35		Yaprak
 FÜG	35		Müzik formu
+FİNK	35		Başıboş dolaşma
 FİĞ	35		Yem bitkisi
 GACI	35		Argoda kadın
 GAG	35		Şaka
@@ -3593,8 +4071,10 @@ GAR	35		İstasyon
 GE	35		8. harf
 GEM	35		Dizgin
 GERDAN	35		Boyun
+GIGI	35		Çocuk dilinde gerdan
 GIK	35		Ses
 GO	35		Masa oyunu
+GUAJ	35		Opak sulu boya
 GUT	35		Damla hastalığı
 GÖN	35		Deri
 GÜM	35		Patlama sesi
@@ -3603,6 +4083,7 @@ HAH	35		İşte
 HIK	35		Hıçkırık sesi
 HOL	35		Koridor
 HOR	35		Aşağılık
+HURÇ	35		Eşya saklama torbası
 HUĞ	35		Kulübe
 HUŞ	35		Kayın ağacı
 HÖT	35		Korkutma sözü
@@ -3629,6 +4110,7 @@ KOF	35		Boş
 KOM	35		Çiftlik evi
 KORUNAK	35		Sığınak
 KUP	35		Dondurma kabı
+KUŞE	35		Parlak baskı kağıdı
 KÖS	35		Büyük davul
 KÜR	35		Tedavi
 KÜT	35		Kör
@@ -3665,12 +4147,13 @@ OH	35		Rahatlama belirtisi
 PA	35		Protaktinyum element
 PAH	35		Kenar eğimi
 PAK	35		Temiz
+PARE	35		Bir bütünün parçası
 PE	35		20. harfin adı
 PED	35		Yastıkçık
 PEH	35		Hayret ünlemi
-PEY	35		Kapora
-PEŞ	35		Arka
-PIR	35		Kanat sesi
+PEY	35		İhale teklifi
+PEŞ	35		Arka taraf
+PIR	35		Kuş kanadı sesi
 POF	35		Kabarık kol
 PÖF	35		Tiksinme ünlemi
 PÖÇ	35		Kuyruk
@@ -3717,6 +4200,7 @@ URAY	35		Belediye
 US	35		Akıl
 UY	35		Korku belirtisi
 UZ	35		Becerikli
+UZAM	35		Mekânsal genişlik
 UZO	35		Anasonlu içki
 VAH	35		Yazık
 VAZ	35		Vazgeçme
@@ -3753,7 +4237,9 @@ ZÜL	35		Alçaklık
 ZİR	35		Alt
 ÇAR	35		Rus kralı
 ÇAV	35		Ün
+ÇAÇA	35		Usta gemici
 ÇE	35		4. harfin okunuşu
+ÇERİ	35		Eski dilde asker
 ÇEÇ	35		Harman yığını
 ÇOR	35		Hastalık
 ÇUL	35		Kaba örtü
@@ -3761,6 +4247,7 @@ ZİR	35		Alt
 ÇİL	35		Yüz beneği
 ÇİR	35		Kuru kayısı
 ÇİS	35		İnce yağmur
+ÇİZİ	35		Yüzeyde ince iz
 ÇİŞ	35		Çocuk dilinde idrar
 ÖCÜ	35		Umacı
 ÖD	35		Safra
@@ -3776,12 +4263,15 @@ ZİR	35		Alt
 İBRİŞİM	35		İpek iplik
 İCAP	35		Gerek
 İCAR	35		Buluş
+İCAZ	35		Az sözle çok anlatma
 İDE	35		İdea
 İKEBANA	35		Japon çiçek sanatı
 İLA	35		Kadar
 İM	35		İyelik eki
+İSAL	35		Bağırsak bozukluğu
 İSPİRTO	35		Alkol
 İT	35		Köpek
+İTKİ	35		Hareket sağlayan güç
 İYE	35		Sahip
 İĞ	35		Hastalık veya dert
 ŞAD	35		Mutlu

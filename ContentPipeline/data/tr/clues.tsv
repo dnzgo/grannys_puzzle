@@ -55,7 +55,7 @@ ACELE	İvedilik
 ACELECİ	Hızlı davranan
 ACELECİ	Sabırsız
 ACELECİ	Telaşlı
-ACEM	Toy, usta olmayan
+ACEM	Fars kökenli kimse
 ACEM	Türk müziğinde perde
 ACEMİ	Deneyimsiz
 ACEMİ	Toy
@@ -85,7 +85,7 @@ ADALET	Terazi
 ADALETLİ	Adil
 ADALETLİ	Hakkaniyetli
 ADALETLİ	Tarafsız
-ADAM	Kadın karşıtı
+ADAM	Kadın değil
 ADAM	Yetişkin erkek
 ADAPTÖR	Dönüştürücü
 ADAPTÖR	Uyarlayıcı
@@ -203,7 +203,7 @@ AKDENİZ	Antalya denizi
 AKDENİZ	İç deniz
 AKI	Cömert
 AKI	Eli açık
-AKIL	Düşünme yeteneği
+AKIL	Düşünme
 AKILLI	Mantıklı
 AKILLI	Uslu
 AKILLI	Zeki
@@ -768,8 +768,7 @@ AÇIKGÖZ	Uyanık
 AÇIKLAMA	Basın bildirisi
 AÇIKLAMA	Beyan
 AÇIKLAMA	İzah
-AÇIŞ	Açılış konuşması
-AÇIŞ	Giriş melodisi
+AÇIŞ	Açmak işi
 AÇLIK	Doymamışlık
 AÇLIK	Karın boşluğu
 AÇLIK	Yokluk
@@ -824,15 +823,24 @@ BABAANNE	Nine
 BABACAN	Candan
 BABACAN	Sevecen
 BABACAN	Sıcakkanlı
+BACA	Duman çıkış yolu
+BACA	Soba dumanı kanalı
+BACA	Çatıdaki duman yolu
 BACAK	Alt uzuv
 BACAK	Ayak
 BACAK	Diz ile bilek arası
 BACANAK	Enişte
+BACI	Kardeş diye sesleniş
+BACI	Kız kardeş
+BACI	Samimi kadın hitabı
 BAD	Rüzgar
 BAD	Yel
 BADEM	Kuruyemiş
 BADEM	Çağla
 BADEM	Çerez
+BADİ	Kanka
+BADİ	Samimi dost
+BADİ	Yakın arkadaş
 BAGAJ	Araç arkası
 BAGAJ	Valiz
 BAGAJ	Yük
@@ -845,6 +853,9 @@ BAHAR	Çiçek açma vakti
 BAHARAT	Karabiber
 BAHARAT	Kimyon
 BAHARAT	Çeşni
+BAHT	Kısmet
+BAHT	Talih
+BAHT	İnsanın yazgısı
 BAHTİYAR	Mutlu
 BAHTİYAR	Talihli
 BAHTİYAR	Şanslı
@@ -933,6 +944,8 @@ BAMYA	Yaz sebzesi
 BANDAJ	Gazlı bez
 BANDAJ	Sargı
 BANDAJ	Yara bezi
+BANK	Parkta oturma yeri
+BANK	Uzun oturak
 BANKA	Kredi kurumu
 BANKA	Mevduat yeri
 BANKA	Para kurumu
@@ -941,6 +954,9 @@ BANKNOT	Para
 BANLİYÖ	Kent dışı
 BANLİYÖ	Varoş
 BANLİYÖ	Şehir çevresi
+BANT	Yapışkan şerit
+BANT	Yapıştırıcı şerit
+BANT	İnce yapışkan şerit
 BANYO	Duş
 BANYO	Hamam
 BANYO	Yıkanma yeri
@@ -968,12 +984,21 @@ BARINAK	Sığınak
 BARINAK	Yuva
 BARIŞ	Huzur
 BARIŞ	Sulh
+BARK	Eski dilde ev
+BARK	Ev ve ocak
+BARK	Ev yurt
 BARMEN	Bar görevlisi
 BARMEN	Kokteyl ustası
 BARMEN	İçki servisçisi
+BARO	Avukatlar birliği
+BARO	Avukatların kurumu
+BARO	Hukuk meslek örgütü
 BARUT	Mermi tozu
 BARUT	Patlayıcı
 BARUT	Patlayıcı toz
+BARİ	En azından
+BARİ	Hiç değilse
+BARİ	Hiç olmazsa
 BARİKAT	Engel
 BARİKAT	Siper
 BARİKAT	Yol kesme
@@ -989,6 +1014,9 @@ BAS	Pes ses
 BASAMAK	Hane
 BASAMAK	Kademe
 BASAMAK	Merdiven adımı
+BASI	Basma işi
+BASI	Matbaada çoğaltma
+BASI	Yazıyı çoğaltma
 BASINÇ	Atmosfer kuvveti
 BASINÇ	Baskı
 BASINÇ	Tazyik
@@ -1015,6 +1043,9 @@ BATARYA	Pil
 BATERİST	Davul çalan
 BATERİST	Davulcu
 BATERİST	Ritim sanatçısı
+BATI	Akşam güneşi yönü
+BATI	Doğunun karşı yönü
+BATI	Güneşin battığı yön
 BAVUL	Sandık
 BAVUL	Valiz
 BAVUL	Yolculuk çantası
@@ -1035,15 +1066,25 @@ BAYRAKLI	Sancaklı
 BAYRAKLI	İzmir ilçesi
 BAYRAM	Kutlama
 BAYRAM	Şenlik
+BAYT	Dijital bilgi birimi
+BAYT	Sekiz bitlik birim
+BAYT	Sekiz bitlik veri
+BAYİ	Marka satış noktası
+BAYİ	Satış yetkilisi
+BAYİ	Yetkili satıcı
 BAZ	Asit karşıtı
 BAZ	Taban
 BAZ	Temel
+BAZA	Sandıklı yatak altı
+BAZA	Yatak altı sandığı
+BAZA	Yatağın alt desteği
 BAÇ	Geçiş vergisi
 BAÇ	Haraç
 BAÇ	Vergi
 BAĞ	Bağlantı
 BAĞ	Düğüm
 BAĞ	Üzüm bahçesi
+BAĞI	Gönül ___
 BAĞIMSIZ	Bağlantısız
 BAĞIMSIZ	Hür
 BAĞIMSIZ	Özgür
@@ -1098,7 +1139,7 @@ BAŞÖRTÜ	Yazma
 BE	2. harfin adı
 BE	2. harfin okunuşu
 BE	Berilyum elementi
-BEBE	Hak ağzı bebek
+BEBE	Halk ağzı bebek
 BEBE	Küçük çocuk
 BEBEK	Oyuncak
 BEBEK	Yeni doğan
@@ -1123,12 +1164,16 @@ BEJ	Krem rengi
 BEJ	Kum rengi
 BEK	Defans oyuncusu
 BEK	Savunmacı
+BEKA	Kalıcı olma durumu
+BEKA	Varlığını sürdürme
 BEKLENTİ	Hedef
 BEKLENTİ	Umut
 BEKLENTİ	Ümit
 BEL	Dağ geçidi
 BEL	Kalça üstü
 BEL	Kürek
+BELA	Başa gelen kötülük
+BELA	Büyük sıkıntı
 BELEDİYE	Mahalli idare
 BELEDİYE	Uray
 BELEDİYE	Şehir yönetimi
@@ -1156,6 +1201,8 @@ BEN	Siz değil
 BENCİL	Egoist
 BENCİL	Kendini düşünen
 BENCİL	Çıkarcı
+BENT	Su tutan set
+BENT	Şiirde bölüm
 BENZİN	Akaryakıt
 BENZİN	Oktan
 BENZİN	Yakıt
@@ -1168,11 +1215,17 @@ BERABER	Ortak
 BERBER	Kuaför
 BERBER	Saç kesen
 BERBER	Tıraşçı
+BERE	Başa giyilen örgü
+BERE	Yün başlık
 BEREKET	Bolluk
 BEREKET	Feyiz
 BEREKET	Nimet
 BERGAMOT	Kokulu meyve
 BERGAMOT	Turunçgil
+BERK	Sağlam ve güçlü
+BERK	Sert ve dayanıklı
+BERİ	Bu yana
+BERİ	Şu tarafta
 BESBELLİ	Apaçık
 BESBELLİ	Belli ki
 BESBELLİ	Şüphesiz
@@ -1188,9 +1241,14 @@ BESTE	Müzik eseri
 BESTECİ	Kompozitör
 BESTECİ	Melodi yaratan
 BESTECİ	Müzik yazarı
+BESİ	Hayvanı kilo aldırma
+BESİ	Hayvanı semirtme
 BET	Beniz
 BET	Yüz
 BET	Çirkin
+BETA	Yunan alfabesi harfi
+BETİ	Yüzün görünüşü
+BETİ	Yüzün rengi
 BEY	Bay
 BEY	Beylik reisi
 BEY	Efendi
@@ -1235,12 +1293,30 @@ BIYIK	Üst dudak kılı
 BIÇAK	Kesici alet
 BIÇAK	Mutfak aleti
 BIÇAK	Çakı
+BLOG	web yazı günlüğü
+BLOG	Çevrim içi yazılar
+BLOG	İnternet günlüğü
+BLOK	Apartman bölümü
+BLOK	Birleşik yapı grubu
+BLOK	Büyük yapı topluluğu
 BLOKNOT	Ajanda
 BLOKNOT	Karalama kağıdı
 BLOKNOT	Not defteri
+BLUM	Bir iskambil oyunu
+BLUM	Jokerli kart oyunu
+BLUM	Konkene benzer oyun
+BLUZ	Gömlek türü giysi
+BLUZ	Kadın gömleği
+BLUZ	Kadın üst giysisi
+BLÖF	Aldatıcı hamle
+BLÖF	Elini güçlü gösterme
+BLÖF	Kartta yanıltama
 BOA	Büyük yılan
 BOA	Tüy atkı
 BOA	Yılan türü
+BOCA	Bir anda dökme
+BOCA	Birden boşaltma
+BOCA	İçindekini dökme
 BODRUM	Mahzen
 BODRUM	Tatil kenti
 BODRUM	Zemin altı kat
@@ -1252,6 +1328,9 @@ BOKS	Yumruklu müsabaka
 BOL	Bereketli
 BOL	Geniş
 BOL	Çok
+BOLU	Abant gölü ili
+BOLU	Karadeniz'de bir il
+BOLU	Mengen'in bağlı ili
 BOM	Bomba sesi
 BOM	Gürültü
 BOM	Patlama
@@ -1260,15 +1339,30 @@ BOMBA	Patlayıcı
 BONCUK	Küçük taş
 BONCUK	Nazar taşı
 BONCUK	Tespih tanesi
+BONE	Saçı örten başlık
+BONE	Yüzücü başlığı
+BONE	İnce baş örtüsü
+BONO	Ticari ödeme senedi
+BONO	Yazılı ödeme senedi
+BONO	Ödeme taahhüdü
 BOR	Ekilmeyen toprak
 BOR	Element
 BOR	Maden
+BORA	Ani kuvvetli yel
+BORA	Sert esen rüzgar
+BORA	Şiddetli fırtına
 BORNOZ	Banyo giysisi
 BORNOZ	Havlu sabahlık
 BORNOZ	Kurulanma giysisi
 BORSA	Döviz piyasası
 BORSA	Hisse piyasası
 BORSA	Menkul pazar
+BORU	Akışkan taşıyan tüp
+BORU	Su taşıyan kanal
+BORU	İçi boş silindir
+BORÇ	Alınan ödünç para
+BORÇ	Geri ödenecek para
+BORÇ	Ödeme yükümlülüğü
 BOSTAN	Bahçe
 BOSTAN	Karpuz tarlası
 BOSTAN	Sebze bahçesi
@@ -1280,6 +1374,9 @@ BOTANİK	Bitki bilimi
 BOY	Kabile
 BOY	Soy
 BOY	Uzunluk
+BOYA	Duvar renklendirici
+BOYA	Renk veren madde
+BOYA	Yüzeye sürülen renk
 BOYNUZ	Geyik süsü
 BOYNUZ	Kemik çıkıntı
 BOYNUZ	Keçi silahı
@@ -1288,6 +1385,9 @@ BOYUN	Gerdan
 BOZ	Gri
 BOZ	Kül rengi
 BOZ	Kır
+BOZA	Koyu kıvamlı içecek
+BOZA	Kışın içilen içecek
+BOZA	Mayalı tahıl içeceği
 BOZKIR	Kurak düzlük
 BOZKIR	Step
 BOZKIR	Çorak ova
@@ -1312,20 +1412,59 @@ BOŞBOĞAZ	Sır tutamayan
 BOŞBOĞAZ	Çenesi düşük
 BRE	Hey
 BRE	Seslenme ünlemi
+BREŞ	Kırıntılı kayaç
+BREŞ	Yapay mermer türü
+BREŞ	Çimentolu kırıntı
 BROKOLİ	Karnabahar akrabası
 BROKOLİ	Lahana türü
 BROKOLİ	Yeşil sebze
+BROM	Atom numarası 35
+BROM	Br simgeli element
+BROM	Kimyasal element
+BROŞ	Elbise süsü
+BROŞ	Süs iğnesi
+BROŞ	Yakaya takılan süs
 BROŞÜR	El ilanı
 BROŞÜR	Kitapçık
 BROŞÜR	Tanıtım kağıdı
+BRÜT	Darası alınmamış yük
+BRÜT	Kesintisiz tutar
+BRÜT	Vergiden önceki para
+BRİK	Yelkenli savaş gemi
+BRİK	İki direkli gemi
+BRİK	İki direkli yelkenli
+BRİT	Düğme ilik halkası
+BRİT	Giysi askı şeridi
+BRİT	Kumaştan ilik bağı
+BRİZ	Hafif deniz yeli
+BRİZ	Ilık hafif rüzgar
+BRİZ	Yumuşak meltem
+BRİÇ	Dört kişilik oyun
+BRİÇ	Eşli kart oyunu
+BRİÇ	İskambil oyunu
 BU	Yakını göstermek
 BU	Şu değil
+BUAT	Elektrik ek kutusu
+BUAT	Kablo ekleme kutusu
+BUAT	Tesisat ek kutusu
+BUCA	İzmir ilçesi
+BUCA	İzmir'deki ilçe
+BUCA	İzmir'in bir ilçesi
 BUDALA	Ahmak
 BUDALA	Aptal
 BUDALA	Şaşkın
+BUJİ	Ateşleme parçası
+BUJİ	Motor ateşleme aracı
+BUJİ	Motorda kıvılcım
+BUKE	Aromanın hoş tonu
+BUKE	İçkinin özel kokusu
+BUKE	Şarabın hoş kokusu
 BUL	Kaybet karşıtı
 BUL	Keşfet
 BUL	Rastla
+BULA	Kardeşin eşi
+BULA	Yengenin yöresel adı
+BULA	Yöresel kadın akraba
 BULAŞIK	Kirli tabak
 BULAŞIK	Makineye girenler
 BULAŞIK	Yıkanacak kap
@@ -1349,17 +1488,33 @@ BUNALIM	Kriz
 BUNGALOV	Kulübe
 BUNGALOV	Tek katlı ev
 BUNGALOV	Yazlık ev
+BURA	Bu yer
+BURA	Bulunulan yer
+BURA	Şu çevre
 BURJUVA	Kentsoylu
 BURJUVA	Orta sınıf
 BURJUVA	Varlıklı
+BURS	Eğitim destek parası
+BURS	Öğrenim için yardım
+BURS	Öğrenim yardımı
+BURU	Bağırsak ağrısı
+BURU	Buruntu
+BURU	Karın sancısı
 BURUN	Koku organı
 BURUN	Sivri uç
 BURUN	Çıkıntı
-BURÇ	12 takımyıldızı
-BURÇ	Savunma amaçlı kule
+BURÇ	Burçlar kuşağı üyesi
+BURÇ	Kale savunma kulesi
+BURÇ	Yıldız falı simgesi
+BUSE	Dudakla sevgi izi
+BUSE	Küçük öpücük
+BUSE	Sevgi öpüşü
 BUT	Kalça eti
 BUT	Tavuk budu
 BUT	Uyluk
+BUUT	Ebat
+BUUT	En boy derinlik
+BUUT	Uzunluk ölçüsü
 BUZ	Donmuş su
 BUZ	Kristal su
 BUZ	Çok soğuk
@@ -1369,6 +1524,9 @@ BUZAĞI	İnek yavrusu
 BUĞDAY	Başak
 BUĞDAY	Ekmeklik
 BUĞDAY	Tahıl
+BUĞU	Camdaki su buharı
+BUĞU	Havada asılı nem
+BUĞU	Soğuk camdaki sis
 BUĞULAMA	Balık yemeği
 BUĞULAMA	Buharda pişirme
 BUĞULAMA	Kapalı pişirme
@@ -1387,28 +1545,52 @@ BÖLGE	Yöre
 BÖLGESEL	Mahalli
 BÖLGESEL	Yerel
 BÖLGESEL	Yöresel
+BÖLÜ	Bölme işaretinin adı
+BÖLÜ	Kesir çizgisi
+BÖLÜ	Matematikte taksim
 BÖN	Ahmak
 BÖN	Aptal
 BÖN	Saf
 BÖREK	Hamur işi
 BÖREK	Yufka işi
 BÖREK	Çörek
+BÖRK	Eski türk başlığı
+BÖRK	Keçeden başlık
+BÖRK	Tarihi baş giysisi
+BÖRÜ	Bozkırın yaban kurdu
+BÖRÜ	Eski dilde kurt
+BÖRÜ	Kurt için eski ad
 BÖRÜLCE	Ege mezesi
 BÖRÜLCE	Fasulye türü
 BÖRÜLCE	Yeşil baklagil
 BÖĞ	Zehirli örümcek
 BÖĞ	Örümcek türü
+BÜFE	Ayaküstü satış yeri
+BÜFE	Gazete satış yeri
+BÜFE	Küçük satış yeri
 BÜK	Fundalık
 BÜK	Kıvır
 BÜK	Çalılık
 BÜLBÜL	Gül kuşu
 BÜLBÜL	Ötücü kuş
+BÜRO	Ofis
+BÜRO	Çalışma odası
+BÜRO	İş yeri odası
 BÜROKRAT	Devlet görevlisi
 BÜROKRAT	Kırtasiyeci
 BÜROKRAT	Memur
+BÜST	Baş ve göğüs heykeli
+BÜST	Heykelde üst beden
+BÜST	Yarım boy heykel
 BÜTÜN	Hep
 BÜTÜN	Tamamı
 BÜTÜN	Tüm
+BÜVE	Kan emici böcek
+BÜVE	Sığır sokan sinek
+BÜVE	Sığırı sokan sinek
+BÜYÜ	Büyüsel işlem
+BÜYÜ	Doğaüstü etki
+BÜYÜ	Sihirli güç
 BÜYÜK	Kocaman
 BÜYÜK	Küçük karşıtı
 BÜYÜK	İri
@@ -1420,6 +1602,8 @@ BÜYÜTEÇ	Lup
 BÜYÜTEÇ	Mercek
 BÜZ	Beton boru
 BÜZ	Kanal borusu
+BİAT	Bağlılık bildirme
+BİAT	İtaat sözü verme
 BİBER	Acı sebze
 BİBER	Baharat
 BİBER	Dolmalık
@@ -1429,6 +1613,8 @@ BİBERON	Mama şişesi
 BİBERİYE	Akdeniz baharatı
 BİBERİYE	Kokulu ot
 BİBERİYE	Tütsü otu
+BİDE	Ayrıca anlamında
+BİDE	Bir de sözünün hali
 BİFTEK	Dana eti
 BİFTEK	Izgara et
 BİLANÇO	Denge tablosu
@@ -1476,6 +1662,9 @@ BİLİNÇLİ	Kasıtlı
 BİLİNÇLİ	Şuurlu
 BİN	Sayı
 BİN	Yüz kere on
+BİNA	Duvarlı ve çatılı ev
+BİNA	Ev veya iş yapısı
+BİNA	Katlı yapı
 BİNBAŞI	Rütbe
 BİNBAŞI	Subay
 BİNBAŞI	Yüzbaşı üstü
@@ -1503,6 +1692,9 @@ BİRLİK	Topluluk
 BİRLİKTE	Beraber
 BİRLİKTE	Ortaklaşa
 BİRLİKTE	Yanyana
+BİRİ	Belirsiz bir kişi
+BİRİ	Bir kişi
+BİRİ	Herhangi bir kimse
 BİRİCİK	Canım
 BİRİCİK	Tek
 BİRİCİK	Yegane
@@ -1526,6 +1718,9 @@ BİT	Saç böceği
 BİTKİ	Nebat
 BİTKİ	Ot
 BİTKİ	Yeşillik
+BİYE	Giysi kenar şeridi
+BİYE	Kumaş kenar süsü
+BİYE	Yaka kenarı süsü
 BİYOLOG	Bilim insanı
 BİYOLOG	Canlı bilimci
 BİYOLOG	Laboratuvarcı
@@ -1534,6 +1729,9 @@ BİYOLOJİ	Dirimbilim
 BİYOLOJİ	Yaşam bilimi
 BİZ	Delgi aleti
 BİZ	Sen ve ben
+BİŞİ	Tatlı ekmek türü
+BİŞİ	Yağda kızaran hamur
+BİŞİ	Yöresel hamur işi
 CACIK	Salatalık yemeği
 CACIK	Yoğurtlu salata
 CADDE	Ana yol
@@ -1543,26 +1741,43 @@ CADI	Kötülük yapan kadın
 CADI	Süpürgeyle uçan
 CAHİL	Bilgisiz
 CAHİL	Okumamış
+CAKA	Gösteriş
+CAKA	Hava atma
 CAM	Pencere
 CAM	Saydam madde
 CAM	Şişe malzemesi
 CAMBAZ	Akrobat
 CAMBAZ	Hokkabaz
 CAMBAZ	İp üstü oyuncu
+CAMİ	Minareli ibadethane
+CAMİ	Namaz kılınan yer
+CAMİ	İbadet yeri
 CAMİA	Cemiyet
 CAMİA	Topluluk
 CAMİA	Çevre
 CAN	Hayat
 CAN	Ruh
 CAN	Sevgili
+CANA	Can sözüne yönelme
+CANA	Ruha doğru
+CANA	Yaşama yönelme
 CANAVAR	Dev
 CANAVAR	Vahşi
 CANAVAR	Yaratık
 CANLILIK	Dirilik
 CANLILIK	Enerji
 CANLILIK	Hayat
+CANİ	Acımasız katil
+CANİ	Merhametsiz suçlu
+CANİ	Vicdansız katil
 CAR	Bağırış
 CAR	Yüksek sesle ilan
+CART	Kaba yırtılma sesi
+CART	Sert ve kaba ses
+CART	Çatırdayan ses
+CARİ	Geçerli durumda
+CARİ	Hesapta işleyen
+CARİ	Yürürlükte olan
 CASUS	Ajan
 CASUS	Gizli muhbir
 CASUS	Köstebek
@@ -1581,31 +1796,55 @@ CAZİBELİ	Çekici
 CAZİP	Alımlı
 CAZİP	Çekici
 CAZİP	İlgi çekici
+CAİZ	Sakıncasız olan
+CAİZ	Uygun görülen
+CAİZ	İzin verilen
 CE	3. harfin adı
+CEBE	Eski bir zırh türü
+CEBE	Eski savaş giysisi
+CEBE	Eski savaş zırhı
+CEDİ	Burçlardan oğlak
+CEDİ	Eski dilde oğlak
+CEDİ	Oğlak burcunun adı
+CEFA	Acı çektirme
+CEFA	Eziyet
+CEFA	Sıkıntı ve çile
 CEHALET	Bilgisizlik
 CEHALET	Cahillik
 CEHALET	Okumamışlık
 CEHENNEM	Azap yeri
 CEHENNEM	Cennet karşıtı
 CEHENNEM	Tamu
+CEHT	Gayret gösterme
+CEHT	Yoğun uğraş
+CEHT	Çaba ve gayret
 CEKET	Blazer
 CEKET	Sako
 CEKET	Üst giysi
 CELLAT	Kafa kesen
 CELLAT	Zalim
 CELLAT	İdam eden
+CELP	Mahkemeye çağrı
+CELP	Resmi çağrı
+CELP	Çağırma emri
 CEM	Alevi toplantısı
 CEM	Birleşme
 CEM	Toplama
 CEMAAT	Cemiyet
 CEMAAT	Namaz topluluğu
 CEMAAT	Topluluk
+CEMİ	Bütün
+CEMİ	Hepsi birden
+CEMİ	Tümü
 CEMİYET	Dernek
 CEMİYET	Topluluk
 CEMİYET	Toplum
 CENAZE	Defin töreni
 CENAZE	Naaş
 CENAZE	Ölü
+CENK	Savaş
+CENK	Çarpışma
+CENK	İki ordu savaşı
 CENNET	Cehennem karşıtı
 CENNET	Firdevs
 CENNET	Uçmak
@@ -1623,6 +1862,9 @@ CER	Çekme
 CEREYAN	Akım
 CEREYAN	Elektrik
 CEREYAN	Hava akımı
+CERH	Eleştirip çürütme
+CERH	Yara açma
+CERH	Yaralama
 CERRAH	Ameliyat doktoru
 CERRAH	Neşter ustası
 CERRAH	Operatör
@@ -1653,23 +1895,38 @@ CEVİZ	Sert kabuklu
 CEYLAN	Ahu
 CEYLAN	Gazal
 CEYLAN	Zarif hayvan
-CEZA	Suç yaptırımı
+CEZA	Suç karşılığı
+CEZA	Verilen karşılık
+CEZA	Yaptırım
 CEZAEVİ	Hapishane
 CEZAEVİ	Mahpushane
 CEZAEVİ	Tutukevi
 CEZERYE	Havuç lokumu
 CEZERYE	Macun
 CEZERYE	Mersin tatlısı
+CEZP	Büyüleyip çekme
+CEZP	Kendine çekme
+CEZP	İlgi uyandırma
 CEZVE	Kahve kabı
 CEZVE	Kahve pişirme kabı
+CHAT	Yazılı ağ sohbeti
+CHAT	Çevrim içi sohbet
+CHAT	İnternet sohbeti
 CIK	Hayır işareti
 CIK	Olumsuz ses
 CIK	Ret sesi
+CILK	Bozulmuş yumurta
+CILK	Yenmez hale gelmiş
+CILK	İçi bozulmuş
+CIRT	Bant açılma sesi
+CIRT	Cırtlak kopma sesi
+CIRT	Yırtılma sesi
 CIS	Dokunma
 CIS	Sıcak uyarısı
 CIS	Yakar
-CIVA	Sıvı gümüş
+CIVA	Hg simgeli element
 CIVA	Sıvı metal
+CIVA	Termometre metali
 CIZ	Cızırtı
 CIZ	Kızgın yağ sesi
 CIZ	Yanma sesi
@@ -1682,8 +1939,14 @@ COĞRAFYA	Yer bilimi
 CUK	Tam oturan
 CUK	Tam uygun
 CUK	Tam yerinde
+CUMA	Beşinci gün
+CUMA	Haftalık kutsal gün
+CUMA	Perşembeden sonraki
 CUP	Su sesi
 CUP	Suya düşme sesi
+CURA	Bağlamanın küçüğü
+CURA	Küçük telli çalgı
+CURA	İnce sesli saz
 CURCUNA	Gürültü
 CURCUNA	Kargaşa
 CURCUNA	Karmaşa
@@ -1693,6 +1956,12 @@ CÖMERT	Eli açık
 CÖMERTÇE	Bolca
 CÖMERTÇE	Bonkörce
 CÖMERTÇE	Eli açıkça
+CÜCE	Boyu çok kısa olan
+CÜCE	Minik boylu kişi
+CÜCE	Çok kısa boylu
+CÜDA	Ayrı düşmüş
+CÜDA	Ayrılmış olan
+CÜDA	Uzakta kalmış
 CÜZ	Kuran bölümü
 CÜZ	Kısım
 CÜZ	Parça
@@ -1701,9 +1970,18 @@ CÜZDAN	Para kesesi
 CÜZDAN	Para çantası
 CÜZİ	Az miktarda para
 CÜZİ	Az, azıcık
+CİCİ	Hoş ve şirin
+CİCİ	Sevimli ve güzel
+CİCİ	Tatlı ve hoş
 CİDDİYET	Ağırbaşlılık
 CİDDİYET	Vakar
 CİDDİYET	Şaka karşıtı
+CİLA	Parlaklık veren şey
+CİLA	Parlatıcı madde
+CİLA	Yüzey parlatma
+CİLT	Deri kaplama
+CİLT	Kitabın dış örtüsü
+CİLT	Kitap kapağı
 CİMRİ	Eli sıkı
 CİMRİ	Pinti
 CİMRİ	Tamahkar
@@ -1721,6 +1999,12 @@ CİNSİYET	Eşey
 CİP	Arazi aracı
 CİP	Dört çeker
 CİP	Jip
+CİPS	Çıtır patates
+CİPS	Çıtır yiyecek
+CİPS	İnce kızarmış dilim
+CİRO	Satışlardan gelir
+CİRO	Toplam satış tutarı
+CİRO	İşletmenin hasılatı
 CİVCİV	Piliç
 CİVCİV	Sarı yavru
 CİVCİV	Tavuk yavrusu
@@ -1734,6 +2018,12 @@ DADI	Çocuk bakan kişi
 DAH	Deh
 DAH	Eşeği yürütme sözü
 DAH	Yürü
+DAHA	Biraz fazla
+DAHA	Ek olarak
+DAHA	Öncekinden fazla
+DAHİ	Olağanüstü zeka
+DAHİ	Çok zeki insan
+DAHİ	Üstün zekalı kişi
 DAKTİLO	Eski yazıcı
 DAKTİLO	Tuşlu alet
 DAKTİLO	Yazı makinesi
@@ -1764,6 +2054,9 @@ DALKAVUK	Şakşakçı
 DAM	Ahır
 DAM	Hapishane
 DAM	Çatı
+DAMA	Kareli tahta oyunu
+DAMA	Taş sürme oyunu
+DAMA	İki kişilik oyun
 DAMACANA	Büyük şişe
 DAMACANA	Hasırlı şişe
 DAMACANA	Su bidonu
@@ -1780,18 +2073,27 @@ DAMIZLIK	Üreme hayvanı
 DAMLA	Katre
 DAMLA	Su tanesi
 DAMLA	Zerre
+DANA	Buzağıdan büyük
+DANA	Genç sığır
+DANA	İnek yavrusu
 DANIŞMA	Bilgi masası
 DANIŞMA	Resepsiyon
 DANIŞMA	İstişare
 DANIŞMAN	Konsültan
 DANIŞMAN	Müşavir
 DANIŞMAN	Rehber
+DANS	Müzik eşliğinde oyun
+DANS	Müzikle hareket
+DANS	Ritme uygun hareket
 DANTEL	Kenar süsü
 DANTEL	Oya
 DANTEL	İnce örgü
 DAR	Darağacı
 DAR	Geniş karşıtı
 DAR	Sıkı
+DARA	Ambalajın ağırlığı
+DARA	Kabın boş ağırlığı
+DARA	Netten düşülen yük
 DARAĞACI	Urgan
 DARAĞACI	Ölüm direği
 DARAĞACI	İdam sehpası
@@ -1804,10 +2106,19 @@ DARBUKA	Vurmalı çalgı
 DARGIN	Darılmış
 DARGIN	Küs
 DARGIN	Kırgın
+DARI	Başaklı tahıl türü
+DARI	Kuşların yediği yem
+DARI	Küçük taneli tahıl
 DARP	Fiziksel şiddet
 DARPHANE	Madeni para yeri
 DARPHANE	Para basımevi
 DARPHANE	Tedavül fabrikası
+DATA	Bilgisayar verileri
+DATA	Sayısal bilgiler
+DATA	İşlenen bilgiler
+DAVA	Hak arama yolu
+DAVA	Hukuki anlaşmazlık
+DAVA	Mahkeme başvurusu
 DAVET	Ziyafet
 DAVET	Çağrı
 DAVET	Çağırma
@@ -1828,6 +2139,12 @@ DAYAK	Sopa
 DAYANAK	Destek
 DAYANAK	Gerekçe
 DAYANAK	Temel
+DAYE	Eski dilde dadı
+DAYE	Eski dilde sütanne
+DAYE	Çocuk bakıcısı
+DAYI	Ananın erkek kardeşi
+DAYI	Anne tarafı akraba
+DAYI	Annenin kardeşi
 DAZ	Dazlak
 DAZ	Kel
 DAZ	Saçsız
@@ -1844,11 +2161,23 @@ DAĞINIK	Savruk
 DAĞITICI	Distribütör
 DAĞITICI	Tevzi eden
 DAĞITICI	Yayıcı
+DAİM	Hep süren
+DAİM	Kalıcı
+DAİM	Sürekli olan
+DAİR	Hakkında
+DAİR	Konusunda
+DAİR	İle ilgili
 DAİRE	Apartman katı
 DAİRE	Çember
 DE	5. harfin okunuşu
 DE	Almanya kodu
 DE	Bağlaç
+DEBİ	Akarsuyun akış hızı
+DEBİ	Birim zamanda akış
+DEBİ	Sıvının akış miktarı
+DEDE	Babanın babası
+DEDE	Büyükbaba
+DEDE	Torunu olan yaşlı
 DEDEKTİF	Hafiye
 DEDEKTİF	Polis müfettişi
 DEDİKODU	Gıybet
@@ -1856,6 +2185,9 @@ DEDİKODU	Laf
 DEDİKODU	Söylenti
 DEF	Kovma
 DEF	Tef
+DEFA	Bir olayın tekrarı
+DEFA	Kere
+DEFA	Kez
 DEFTER	Kayıt
 DEFTER	Not kağıtları
 DEFTER	Okul eşyası
@@ -1930,12 +2262,18 @@ DENİZATI	Dik yüzen balık
 DENİZCİ	Bahriyeli
 DENİZCİ	Gemici
 DENİZCİ	Kaptan
+DEPO	Eşya saklama yeri
+DEPO	Malların konduğu yer
+DEPO	Stok saklama alanı
 DEPOZİTO	Güvence parası
 DEPOZİTO	Kapora
 DEPOZİTO	Teminat
 DEPREM	Sismik olay
 DEPREM	Yer sarsıntısı
 DEPREM	Zelzele
+DERE	Akan küçük su yolu
+DERE	Küçük akarsu
+DERE	İki tepe arası su
 DEREBEYİ	Ağa
 DEREBEYİ	Feodal
 DEREBEYİ	Toprak beyi
@@ -1950,11 +2288,23 @@ DERLEME	Toplama
 DERNEK	Birlik
 DERNEK	Cemiyet
 DERNEK	Kulüp
+DERS	Okulda işlenen konu
+DERS	Öğrenim saati
+DERS	Öğretim konusu
 DERSHANE	Etüt merkezi
 DERSHANE	Kurs yeri
+DERT	Sıkıntı ve keder
+DERT	Üzüntü veren durum
+DERT	İnsanı üzen sorun
 DERVİŞ	Semazen
 DERVİŞ	Sufi
 DERVİŞ	Tarikat ehli
+DERZ	Fayans arası boşluk
+DERZ	Fayans arası dolgu
+DERZ	İki karo arası
+DERİ	Hayvanın dış örtüsü
+DERİ	Vücudun dış örtüsü
+DERİ	Vücudun dışı
 DERİN	Dipsiz
 DERİN	Koyu
 DERİN	Sığ karşıtı
@@ -1987,6 +2337,9 @@ DETERJAN	Yıkama sıvısı
 DEV	Kocaman
 DEV	Masal canavarı
 DEV	İri
+DEVA	Derde çare olan
+DEVA	Hastalığa çare
+DEVA	İyileştiren ilaç
 DEVAM	Sürdürme
 DEVAM	Süreklilik
 DEVAM	Sürme
@@ -2041,6 +2394,9 @@ DOK	Rıhtım
 DOKTOR	Doçent üstü
 DOKTOR	Hekim
 DOKTOR	Tabip
+DOKU	Benzer hücre grubu
+DOKU	Benzer hücreler
+DOKU	Organları oluşturan
 DOKUMA	Kumaş
 DOKUMA	Tezgah işi
 DOKUMA	Örgü
@@ -2054,6 +2410,9 @@ DOLAP	Hile
 DOLMUŞ	Minibüs
 DOLMUŞ	Ortak taksi
 DOLMUŞ	Toplu taşıt
+DOLU	Boş yeri kalmamış
+DOLU	Tamamen doldurulmuş
+DOLU	İçinde hiç yer yok
 DOMATES	Kırmızı sebze
 DOMATES	Salata sebzesi
 DOMATES	Salça hammaddesi
@@ -2069,6 +2428,12 @@ DON	İç giysisi
 DONDURMA	Külah tatlı
 DONDURMA	Maraş tatlısı
 DONDURMA	Soğuk tatlı
+DONE	Araştırma bilgisi
+DONE	Eldeki bilgi
+DONE	İşlenebilir bilgi
+DOST	Güvenilen kişi
+DOST	Samimi arkadaş
+DOST	Yakın arkadaş
 DOSYA	Belge
 DOSYA	Evrak
 DOSYA	Klasör
@@ -2094,6 +2459,12 @@ DOĞRUDAN	Dolaysız
 DOĞRULUK	Dürüstlük
 DOĞRULUK	Gerçeklik
 DOĞRULUK	Sahicilik
+DOĞU	Batının karşıtı
+DOĞU	Güneşin doğduğu yön
+DOĞU	Pusulada sağ taraf
+DRAM	Acı olaylı oyun
+DRAM	Hüzünlü sahne eseri
+DRAM	Trajik tiyatro eseri
 DRAMATİK	Acıklı
 DRAMATİK	Dokunaklı
 DRAMATİK	Etkileyici
@@ -2108,6 +2479,9 @@ DUMAN	İs
 DUN	Alçak
 DUN	Aşağı
 DUN	Düşük
+DURU	Berrak ve temiz
+DURU	Bulanık olmayan
+DURU	Saf ve katıksız
 DUT	Ağaç meyvesi
 DUT	Pestil meyvesi
 DUT	İpekböceği ağacı
@@ -2119,6 +2493,9 @@ DUY	Lamba yuvası
 DUYGUSAL	Hassas
 DUYGUSAL	Romantik
 DUYGUSAL	İçli
+DUYU	Algılama yetisi
+DUYU	Görme işitme yetisi
+DUYU	Çevreyi algılama
 DUYURU	Anons
 DUYURU	Bildiri
 DUYURU	İlan
@@ -2134,6 +2511,9 @@ DÖNEMEÇ	Viraj
 DÖNÜŞÜM	Değişim
 DÖNÜŞÜM	Evrim
 DÖNÜŞÜM	Metamorfoz
+DÖRT	Çiftin iki katı
+DÖRT	İki artı iki
+DÖRT	İkinin iki katı
 DÖRTGEN	Eşkenar
 DÖRTGEN	Kare
 DÖRTGEN	Poligon
@@ -2257,6 +2637,9 @@ DİNGİN	Huzurlu
 DİNGİN	Sakin
 DİNOZOR	Dev kertenkele
 DİNOZOR	Fosil
+DİNÇ	Enerjik ve sağlıklı
+DİNÇ	Güçlü ve zinde
+DİNÇ	Yorgun olmayan
 DİP	Alt
 DİP	Kök
 DİP	Taban
@@ -2278,6 +2661,9 @@ DİRENİŞ	İsyan
 DİRSEK	Boru eki
 DİRSEK	Kol bükümü
 DİRSEK	Kol eklemi
+DİRİ	Canlı ve yaşayan
+DİRİ	Taze ve canlı
+DİRİ	Ölmemiş olan
 DİSKOTEK	Dans kulübü
 DİSKOTEK	Gece kulübü
 DİSİPLİN	Branş
@@ -2319,22 +2705,43 @@ EBELİK	Oyunda arayan
 EBEVEYN	Aile
 EBEVEYN	Anne baba
 EBEVEYN	Veli
+EBRU	Renkli kağıt süsü
+EBRU	Su üstünde desen
+EBRU	Suda yapılan sanat
 ECDAT	Atalar
 ECDAT	Dedeler
 ECE	Büyük hanım
 ECE	Hanım
 ECE	Kraliçe
+ECEL	Hayatın sona ermesi
+ECEL	Ölüm vakti
+ECEL	Ölümün geldiği an
+ECZA	İlaç yapım maddesi
+ECZA	İlaçların genel adı
+ECZA	Şifa veren maddeler
 ECZANE	Farmasi
 ECZANE	Nöbetçi dükkan
 ECZANE	İlaç dükkanı
+ECİR	Emeğin karşılığı
+ECİR	Yapılan işin sevabı
+ECİR	İyiliğin ödülü
 EDA	Naz
 EDA	Tavır
 EDA	Ödeme
+EDAT	Görevli küçük sözcük
+EDAT	Sözcükler arası bağ
+EDAT	Tek başına anlamsız
 EDE	Abi
 EDE	Ağabey
 EDEBİYAT	Kalem sanatı
 EDEBİYAT	Roman ve şiir
 EDEBİYAT	Yazın
+EDEP	Ahlaklı davranış
+EDEP	Görgü ve terbiye
+EDEP	Utanma ve saygı
+EDER	Bir şeyin değeri
+EDER	Malın satış fiyatı
+EDER	Paha
 EDEVAT	Alet
 EDEVAT	Malzeme
 EDEVAT	Takım
@@ -2347,6 +2754,9 @@ EFENDİ	Sahip
 EFLATUN	Leylak rengi
 EFLATUN	Mor
 EFLATUN	Platon
+EFOR	Bedensel çaba
+EFOR	Güç sarf etme
+EFOR	Harcanan güç
 EFSANE	Masal
 EFSANE	Mit
 EFSANE	Söylence
@@ -2389,6 +2799,9 @@ EK	İlave
 EKLEKTİK	Harmanlanmış
 EKLEKTİK	Karma
 EKLEKTİK	Seçmeci
+EKME	Tohum serpme işi
+EKME	Toprağa tohum atma
+EKME	Toprağa tohum koyma
 EKMEK	Fırın ürünü
 EKMEK	Nan
 EKMEK	Somun
@@ -2409,6 +2822,9 @@ EKSPRES	Hızlı tren
 EKSTRA	Fazladan
 EKSTRA	Üstün kalite
 EKSTRA	İlave
+EKSİ	Artının karşıtı
+EKSİ	Sıfırdan küçük sayı
+EKSİ	Çıkarma işareti
 EKSİK	Kusur
 EKSİK	Noksan
 EKSİK	Tam karşıtı
@@ -2420,9 +2836,15 @@ EKVATOR	Sıcak hat
 EKVATOR	Sıfır enlem
 EKİM	10. ay
 EKİM	Ekme işi
+EKİP	Birlikte iş yapanlar
+EKİP	Grup
+EKİP	Ortak görevli takım
 EKİPMAN	Donanım
 EKİPMAN	Malzeme
 EKİPMAN	Teçhizat
+EKŞİ	Limonun tadı
+EKŞİ	Mayhoş tat
+EKŞİ	Sirkenin tadı
 EL	5 parmak
 EL	Yabancı
 ELA	Açık kahverengi göz
@@ -2439,7 +2861,9 @@ ELBİSE	Kıyafet
 ELDİVEN	Boks aksesuarı
 ELDİVEN	El giysisi
 ELDİVEN	Kış eşyası
-ELEK	Sınıflandırma aracı
+ELEK	Delikli süzme aracı
+ELEK	Taneleri ayırır
+ELEK	Unu ayırma aracı
 ELEKTRON	Atom parçası
 ELEKTRON	Eksi yüklü parçacık
 ELEKTRON	Lepton
@@ -2454,9 +2878,18 @@ ELEMENT	Öğe
 ELEŞTİRİ	Değerlendirme
 ELEŞTİRİ	Kritik
 ELEŞTİRİ	Tenkit
+ELLİ	Beş onluk sayı
+ELLİ	Yarım yüz
+ELLİ	Yüzün yarısı
+ELMA	Adem'in meyvesi
+ELMA	Ağaçta yetişen meyve
+ELMA	Kırmızı meyve
 ELMAS	Değerli taş
 ELMAS	Mücevher
 ELMAS	Pırlanta
+ELTİ	Eşin kardeşinin eşi
+ELTİ	Kayınbiraderin eşi
+ELTİ	İki kardeşin eşleri
 ELVEDA	Güle güle
 ELVEDA	Hoşça kal
 ELVEDA	Veda
@@ -2464,6 +2897,10 @@ ELÇİ	Aracı, haberci
 ELÇİ	Diplomat
 ELÇİLİK	Konsolosluk
 ELÇİLİK	Sefaret
+ELİF	Arapçanın ilk harfi
+ELİT	Ayrıcalıklı zümre
+ELİT	Seçkin kesim
+ELİT	Üst tabaka
 EM	Yalamak
 EMANET	Güvenle bırakılan
 EMANET	Teslim
@@ -2480,6 +2917,9 @@ EMEKLİ	İşten ayrılmış
 EMEKTAR	Eski
 EMEKTAR	Kıdemli
 EMEKTAR	Yaşlı çalışan
+EMEL	Amaç ve gaye
+EMEL	Gerçekleşmesi umulan
+EMEL	Ulaşılmak istenen
 EMLAK	Arsa
 EMLAK	Gayrimenkul
 EMLAK	Mülk
@@ -2492,6 +2932,15 @@ EMPATİ	Yerine koyma
 EMSAL	Benzer
 EMSAL	Eş
 EMSAL	Örnek
+EMİN	Güvenen kişi
+EMİN	Kuşkusu olmayan
+EMİN	Şüphesi bulunmayan
+EMİR	Kesin talimat
+EMİR	Yapılması istenen iş
+EMİR	Üstten gelen buyruk
+EMİŞ	Ağızla sıvı çekme
+EMİŞ	Bebeklerin süt içişi
+EMİŞ	İçine çekme
 EN	Genişlik
 EN	Üstünlük belirten
 EN	İngilizce dil kodu
@@ -2543,9 +2992,18 @@ ENTRİKA	Komplo
 ENVANTER	Demirbaş listesi
 ENVANTER	Mal listesi
 ENVANTER	Sayım
+ENİK	Köpek yavrusu
+ENİK	Küçük köpek
+ENİK	Yeni doğmuş köpek
 ENİŞTE	Abla kocası
 ENİŞTE	Halanın eşi
 ENİŞTE	Teyzenin eşi
+EPEY	Azımsanmayacak kadar
+EPEY	Hayli çok
+EPEY	Oldukça fazla
+EPİK	Destan niteliğinde
+EPİK	Destansı anlatım
+EPİK	Kahramanlıkla ilgili
 ER	Erkek kişi
 ER	Rütbesiz asker
 ER	Yiğit kişi
@@ -2578,6 +3036,12 @@ ERTELEME	Tehir
 ERZAK	Azık
 ERZAK	Kumanya
 ERZAK	Yiyecek
+ERİK	Ekşi yaz meyvesi
+ERİK	Ekşi yeşil meyve
+ERİK	Papaz türüyle ünlü
+ERİL	Dişilin karşıtı
+ERİL	Erkek cinsiyetli
+ERİL	Erkekliği belirten
 ERİŞTE	Ev makarnası
 ERİŞTE	Kesme makarna
 ERİŞTE	Tel hamur
@@ -2586,6 +3050,18 @@ ES	Rüzgarın hareketi
 ESARET	Esirlik
 ESARET	Kölelik
 ESARET	Tutsaklık
+ESAS	Asıl ve temel
+ESAS	Bir şeyin temeli
+ESAS	Temel ve ana unsur
+ESEF	Duyulan üzüntü
+ESEF	Pişmanlık duygusu
+ESEF	Üzüntü ve pişmanlık
+ESEN	Esenlik içinde olan
+ESEN	Rüzgar gibi üfleyen
+ESEN	Sağlıklı ve iyi olan
+ESER	Geride kalan iz
+ESER	Sanat ürünü
+ESER	Yazarın yapıtı
 ESKİMO	Buz evi sakini
 ESKİMO	Kutup halkı
 ESMER	Buğday tenli
@@ -2603,33 +3079,78 @@ ESPRİ	Şaka
 ESTETİK	Güzel görünüm
 ESTETİK	Güzellik bilimi
 ESTETİK	Zarafet
+ESİN	Yaratıcı düşünce
+ESİN	Yaratıcılık kaynağı
+ESİN	İlham
 ESİNTİ	Hafif rüzgar
 ESİNTİ	Meltem
 ESİNTİ	Yel
+ESİR	Savaş tutsağı
+ESİR	Tutsak kişi
+ESİR	Özgürlüğü alınmış
 ET	@
 ET	Gıda
 ET	Kas dokusu
+ETAP	Bir işin aşaması
+ETAP	Yarışın bir bölümü
+ETAP	Yolun bir kısmı
+ETEK	Belden aşağı giysi
+ETEK	Dağın alt bölümü
+ETEK	Kadın alt giysisi
+ETKİ	Bir şeyin sonucu
+ETKİ	Değişim yaratma gücü
+ETKİ	Tesir
 ETKİNLİK	Aktivite
 ETKİNLİK	Faaliyet
 ETKİNLİK	Organizasyon
+ETLİ	Bol et içeren
+ETLİ	Eti bol olan
+ETLİ	İçinde et bulunan
+ETME	Bir işi yapma
+ETME	Gerçekleştirme
+ETME	Yapma eylemi
+ETOL	Geniş omuz şalı
+ETOL	Kürkten uzun şal
+ETOL	Uzun omuz atkısı
+ETÇİ	Et yemeyi seven
+ETÇİ	Ete düşkün kişi
+ETÇİ	Etle beslenen
+ETÜT	Ayrıntılı inceleme
+ETÜT	Ders tekrarı
+ETÜT	Ön çalışma
 ETİ	Anadolu uygarlığı
 ETİ	Hitit
 ETİ	Hititler
+ETİK	Ahlak bilimi
+ETİK	Ahlak kuralları
+ETİK	Ahlaki davranış
 ETİKET	Fiyat kağıdı
 ETİKET	Görgü kuralları
 ETİKET	Marka
+ETİL	C2h5 kimyasal grubu
+ETİL	Organik kimya grubu
+ETİL	İki karbonlu grup
 EV	Barınma
 EV	Yuva
 EV	İçinde yaşanır
+EVET	Hayır karşıtı
+EVET	Olumlu cevap
+EVET	Onay bildiren söz
 EVLAT	Oğul
 EVLAT	Zürriyet
 EVLAT	Çocuk
 EVLATLIK	Büyütülen çocuk
 EVLATLIK	Kendi çocuğu gibi
 EVLATLIK	Manevi çocuk
+EVLİ	Eşi olan kişi
+EVLİ	Nikahlı kişi
+EVLİ	Nikahı olan
 EVLİLİK	Aile kurma
 EVLİLİK	Nikah
 EVLİLİK	İzdivaç
+EVRE	Bir sürecin dönemi
+EVRE	Gelişim aşaması
+EVRE	Oluşumun bir dönemi
 EVREN	Alem
 EVREN	Kainat
 EVREN	Uzay
@@ -2643,6 +3164,9 @@ EVİÇ	Kabul etmek
 EVİÇ	Onaylamak
 EY	Hitap
 EY	Seslenme
+EYER	At binme takımı
+EYER	At üstü oturağı
+EYER	Binicinin oturağı
 EYLÜL	Dokuzuncu ay
 EYLÜL	Sonbahar ayı
 EYVALLAH	Peki
@@ -2650,18 +3174,33 @@ EYVALLAH	Teşekkür
 EZA	Cefa
 EZA	Eziyet
 EZA	Sıkıntı
+EZAN	Namaz vakti çağrısı
+EZAN	Namaza çağrı
+EZAN	İbadete davet sesi
 EZBER	Akılda tutma
 EZBER	Hafıza
+EZEL	Başlangıcı olmayan
+EZEL	Sonsuz geçmiş
+EZEL	Öncesiz zaman
 EZGİ	Hoş gelen ses
 EZGİ	Melodi
 EĞE	Kaburga kemiği
 EĞE	Metal törpüsü
 EĞE	Törpü
+EĞER	Koşul bildiren söz
+EĞER	Olursa anlamı katar
+EĞER	Şart bağlacı
 EĞLENCE	Keyif
 EĞLENCE	Parti
 EĞLENCE	Şenlik
+EĞRİ	Bükülmüş biçim
+EĞRİ	Doğru çizgi olmayan
+EĞRİ	Düz olmayan
 EĞİK	Düz olmayan
 EĞİK	Eğilmiş olan
+EĞİM	Yatayla yapılan açı
+EĞİM	Yokuşun dikliği
+EĞİM	Yüzeyin yatıklığı
 EĞİTMEN	Antrenör
 EĞİTMEN	Hoca
 EĞİTMEN	Öğretmen
@@ -2674,13 +3213,28 @@ EŞ	Kazmak
 EŞARP	Başörtüsü
 EŞARP	Fular
 EŞARP	Şal
+EŞEK	Anıran yük hayvanı
+EŞEK	Uzun kulaklı hayvan
+EŞEK	Yük taşıyan hayvan
+EŞEY	Biyolojik cinsiyet
+EŞEY	Dişi veya erkek olma
+EŞEY	Üreme cinsiyeti
 EŞKIYA	Dağ adamı
 EŞKIYA	Eşkiya
 EŞKIYA	Haydut
+EŞLİ	Birlikte yapılan
+EŞLİ	Yanında biri olan
+EŞLİ	İki kişiyle yapılan
 EŞOFMAN	Antrenman kıyafeti
 EŞOFMAN	Spor giysisi
 EŞOFMAN	Tayt takımı
 EŞYA	Amaçlı nesneler
+EŞİK	Kapı altı basamağı
+EŞİK	Kapı altı yükseltisi
+EŞİK	Kapı girişindeki set
+EŞİT	Aralarında fark yok
+EŞİT	Aynı değerde olan
+EŞİT	Denk ve aynı
 FA	4. nota
 FA	Mi ___ sol
 FAALİYET	Etkinlik
@@ -2695,6 +3249,9 @@ FACİA	Felaket
 FACİA	Trajedi
 FAK	Kapan
 FAK	Tuzak
+FAKS	Belge gönderme yolu
+FAKS	Belge iletme sistemi
+FAKS	Uzaktan belge iletme
 FAKTÖR	Etken
 FAKTÖR	Neden
 FAKTÖR	Çarpan
@@ -2728,18 +3285,36 @@ FANTAZYA	Masal dünyası
 FANUS	Cam kılıf
 FANUS	Koruyucu cam
 FANUS	Lamba camı
+FANİ	Bir gün ölecek olan
+FANİ	Geçici hayat sahibi
+FANİ	Ölümlü olan
 FANİLA	Atlet
 FANİLA	Tişört
 FANİLA	İç giysisi
 FAR	Araç lambası
 FAR	Göz farı
 FAR	Ön ışık
+FARE	Evcil kemirgen
+FARE	Kuyruklu kemirgen
+FARE	Küçük kemirgen
+FARK	Aralarındaki ayrım
+FARK	Aynı olmama durumu
+FARK	İki şeyin ayrımı
+FARZ	Dini yükümlülük
+FARZ	Kesin görev
+FARZ	Yapılması zorunlu
 FASULYE	Barbunya
 FASULYE	Kuru baklagil
 FASULYE	Kuru taneli
 FATURA	Hesap pusulası
 FATURA	Makbuz
 FATURA	Ödeme belgesi
+FAUL	Kural dışı hareket
+FAUL	Oyundaki ihlal
+FAUL	Sportif kural ihlali
+FAVA	Bakladan meze
+FAVA	Ezilmiş bakla ezmesi
+FAVA	Zeytinyağlı bakla
 FAVORİ	En sevilen
 FAVORİ	Gözde
 FAVORİ	Sakal yanı
@@ -2756,11 +3331,29 @@ FAYTON	At arabası
 FAYTON	Landon
 FAZ	Aşama
 FAZ	Evre
+FAÇA	Yüzde kesik yarası
+FAÇA	Yüzdeki bıçak izi
+FAÇA	Yüzdeki kesik izi
+FAİK	Daha başarılı olan
+FAİK	Diğerlerinden üstün
+FAİK	Üstün olan
+FAİL	Bir işin sorumlusu
+FAİL	Eylemi yapan
+FAİL	Suçu işleyen
+FAİZ	Bankanın aldığı pay
+FAİZ	Borcun getirdiği pay
+FAİZ	Borç parası getirisi
 FAŞ	Açığa vurma
 FAŞ	Duyurma
 FAŞ	İfşa
 FE	7. harf
 FE	Demir elementi
+FECİ	Dehşet verici
+FECİ	Çok acı ve üzücü
+FECİ	Çok kötü ve korkunç
+FEDA	Gözden çıkarma
+FEDA	Kendinden verme
+FEDA	Uğruna vazgeçme
 FEK	Kaldırma
 FEK	İptal
 FELAKET	Afet
@@ -2773,6 +3366,9 @@ FELÇ	Geçici hareketsizlik
 FELÇ	Kalıcı hareketsizlik
 FEN	Bilim
 FEN	Teknik
+FENA	Berbat
+FENA	Kötü nitelikli
+FENA	İyi olmayan
 FENER	Işıldak
 FENER	Lamba
 FENER	İşaret kulesi
@@ -2785,9 +3381,15 @@ FERMAN	Padişah emri
 FERMUAR	Kayar bağlantı
 FERMUAR	Zip
 FERMUAR	Çanta kapama
+FERT	Herhangi bir kişi
+FERT	Tek bir birey
+FERT	Toplumdaki bir kişi
 FERYAT	Figan
 FERYAT	Haykırış
 FERYAT	Çığlık
+FERZ	Eski satranç veziri
+FERZ	Satrançta güçlü taş
+FERZ	Şah yanındaki taş
 FES	Kırmızı başlık
 FES	Osmanlı şapkası
 FES	Püsküllü başlık
@@ -2800,6 +3402,9 @@ FESLEĞEN	Saksı bitkisi
 FESTİVAL	Bayram
 FESTİVAL	Kutlama
 FESTİVAL	Şenlik
+FEZA	Göklerin genişliği
+FEZA	Sonsuz gök boşluğu
+FEZA	Uzay boşluğu
 FIKRA	Kısa şaka
 FIKRA	Nükte
 FIKRA	Paragraf
@@ -2834,6 +3439,9 @@ FISKİYE	Çeşme
 FISTIK	Antep ürünü
 FISTIK	Güzel kız
 FISTIK	Çam ürünü
+FIÇI	Tahta içki kabı
+FIÇI	Tahta sıvı kabı
+FIÇI	Şarap saklama kabı
 FLAMİNGO	Göl kuşu
 FLAMİNGO	Pembe kuş
 FLAMİNGO	Tek bacaklı kuş
@@ -2843,17 +3451,29 @@ FLU	Odaksız
 FLÖRT	Arkadaşlık
 FLÖRT	Kur
 FLÖRT	Sevgili
+FLÜT	Nefesle çalınır
+FLÜT	Üflemeli çalgı
+FLÜT	İnce sesli çalgı
+FOBİ	Aşırı korku
+FOBİ	Yersiz korku
+FOBİ	Yoğun korku hali
 FOK	Ayı balığı
 FOK	Deniz memelisi
 FOK	Kutup hayvanı
 FOL	Kuluçka yumurtası
 FOL	Yumurta
+FOLK	Geleneksel müzik
+FOLK	Halk müziği türü
+FOLK	Yerel ezgiler
 FOLKLOR	Gelenek
 FOLKLOR	Halk bilimi
 FOLKLOR	Halk oyunları
 FON	Arka plan
 FON	Para kaynağı
 FON	Yatırım fonu
+FONT	Harf biçimi
+FONT	Yazı karakteri
+FONT	Yazı tipi
 FORMA	Sayfa grubu
 FORMA	Spor giysisi
 FORMA	Takım giysisi
@@ -2866,18 +3486,27 @@ FOS	Çürük
 FOSİL	Eski kalıntı
 FOSİL	Eskimiş kimse
 FOSİL	Taşıl
+FOTO	Anlık görüntü
+FOTO	Kamerayla çekilen
+FOTO	Resim karesi
 FOTOKOPİ	Kopya
 FOTOKOPİ	Tıpkıbasım
 FOTOKOPİ	Çoğaltma
 FOTOĞRAF	Enstantane
 FOTOĞRAF	Poz
 FOTOĞRAF	Resim
+FOYA	Gizli kusur
+FOYA	Ortaya çıkan hile
+FOYA	Saklanan gerçek
 FRAMBUAZ	Ahududu
 FRAMBUAZ	Ağaççileği
 FRAMBUAZ	Kırmızı meyve
 FREKANS	Radyo kanalı
 FREKANS	Sıklık
 FREKANS	Titreşim sayısı
+FREN	Aracı yavaşlatan
+FREN	Hızı azaltan düzenek
+FREN	Tekerlek durdurucu
 FUAR	Pazar veya sergi
 FUKARA	Fakir
 FUKARA	Garip
@@ -2894,11 +3523,17 @@ FUTBOLCU	Top oyuncusu
 FÖN	Saç kurutma
 FÖN	Saç makinesi
 FÖN	Sıcak rüzgar
+FÖTR	Kenarlı keçe şapka
+FÖTR	Klasik erkek şapkası
+FÖTR	Sert kenarlı şapka
 FÖY	Ders notu
 FÖY	Kağıt
 FÖY	Yaprak
 FÜG	Müzik formu
 FÜG	Çok sesli eser
+FÜME	Duman rengi
+FÜME	Tütsülenmiş gıda
+FÜME	İsli gri ton
 FİDAN	Fide
 FİDAN	Genç ağaç
 FİDAN	Körpe ağaç
@@ -2914,7 +3549,15 @@ FİKİR	Görüş
 FİL	Dev memeli
 FİL	Hortumlu hayvan
 FİL	Satranç taşı
-FİLO	Gemi grubu
+FİLE	Ağ biçimli örgü
+FİLE	Ağdan örülmüş çanta
+FİLE	Delikli örgü
+FİLM	Beyaz perde eseri
+FİLM	Kamerayla çekilen
+FİLM	Sinema eseri
+FİLO	Deniz kuvveti grubu
+FİLO	Gemi topluluğu
+FİLO	Savaş gemileri grubu
 FİLOZOF	Bilge
 FİLOZOF	Düşünür
 FİLOZOF	Sokrates
@@ -2933,6 +3576,15 @@ FİNAL	Son maç
 FİNCAN	Kahve kabı
 FİNCAN	Kulplu kap
 FİNCAN	Çay kupası
+FİNK	Başıboş dolaşma
+FİNK	Başıboş gezme deyimi
+FİNK	Gezme eğlenme deyimi
+FİNO	Küçük tüylü köpek
+FİNO	Minik süs köpeği
+FİNO	Ufak ev köpeği
+FİRE	Malzeme zayiatı
+FİRE	Üretimdeki kayıp
+FİRE	İmalatta eksilme
 FİT	Formda
 FİT	Kışkırtma
 FİT	Zinde
@@ -2951,6 +3603,9 @@ FİZİK	Madde bilimi
 FİĞ	Baklagil
 FİĞ	Burçak
 FİĞ	Yem bitkisi
+FİİL	Dil bilgisinde eylem
+FİİL	İş ve hareket sözü
+FİİL	İş veya oluş sözü
 FİŞ	Fatura
 FİŞ	Kayıt kartı
 FİŞ	Priz takılan
@@ -2963,13 +3618,25 @@ GAF	Yanlış söz
 GAG	Espri
 GAG	Komik durum
 GAG	Şaka
+GAGA	Kuşun ağız kısmı
+GAGA	Kuşun beslenme aracı
+GAGA	Kuşun sert ağzı
 GAK	Karga sesi
+GALA	Görkemli açılış
+GALA	Özel açılış gecesi
+GALA	İlk gösterim töreni
 GALAKSİ	Gökada
 GALAKSİ	Samanyolu
 GALAKSİ	Yıldızlar adası
 GAM	Keder
 GAM	Müzik dizisi
 GAM	Tasa
+GAMA	Işın türü
+GAMA	Yunan alfabesi harfi
+GAMA	Üçüncü yunan harfi
+GANİ	Bol ve bereketli
+GANİ	Bolluk içinde olan
+GANİ	Zengin ve varlıklı
 GANİMET	Ele geçen mal
 GANİMET	Savaş yağması
 GANİMET	Çapul
@@ -2981,6 +3648,9 @@ GARAJ	Terminal
 GARANTİ	Güvence
 GARANTİ	Kefalet
 GARANTİ	Sağlama
+GARD	Boksta korunma
+GARD	Dövüşte savunma
+GARD	Savunma duruşu
 GARDIROP	Dolap
 GARDIROP	Elbise dolabı
 GARDIROP	Vestiyer
@@ -3003,12 +3673,18 @@ GARİP	Tuhaf
 GARİP	Yabancı
 GARİP	Zavallı
 GASP	Malın zorla alınması
+GAYE	Amaç ve hedef
+GAYE	Ulaşılmak istenen
+GAYE	Varılacak sonuç
 GAYRET	Emek
 GAYRET	Uğraş
 GAYRET	Çaba
 GAZ	Akışkan
 GAZ	Hava
 GAZ	Pedal türü
+GAZA	Din için mücadele
+GAZA	Din uğruna savaş
+GAZA	Dini savaş
 GAZETE	Basın
 GAZETE	Günlük yayın
 GAZETE	Manşet
@@ -3018,13 +3694,22 @@ GAZETECİ	Muhabir
 GAZOZ	Köpüklü içecek
 GAZOZ	Meşrubat
 GAZOZ	Soda
+GAZİ	Savaş kahramanı
+GAZİ	Savaşta yaralanan
+GAZİ	Savaştan sağ dönen
 GAZİNO	Eğlence yeri
 GAZİNO	Kumarhane
 GAZİNO	Çalgılı yer
+GAİP	Görünmeyen kimse
+GAİP	Gözden uzak olan
+GAİP	Ortada olmayan
 GE	8. harf
 GE	Germanyum elementi
 GEBE	Hamile
 GEBE	Yüklü
+GECE	Akşamdan sabaha dek
+GECE	Gündüzün karşıtı
+GECE	Günün karanlık kısmı
 GECELİK	Otel ücreti
 GECELİK	Pijama
 GECELİK	Uyku giysisi
@@ -3048,15 +3733,23 @@ GELİR	Hasılat
 GELİR	Kazanç
 GEM	Atın ağzındaki demir
 GEM	Dizgin
-GEMİ	Deniz aracı
+GEMİ	Deniz ulaşım aracı
+GEMİ	Denizde giden taşıt
+GEMİ	Su üstü ulaşım aracı
 GEN	DNA parçası
 GEN	Kalıtım birimi
+GENE	Bir kez daha
+GENE	Tekrar
+GENE	Yeniden
 GENEL	Tümel
 GENEL	Umumi
 GENEL	Özel karşıtı
 GENETİK	Gen bilimi
 GENETİK	Kalıtım bilimi
 GENETİK	Soya çekim
+GENÇ	Delikanlı yaşta
+GENÇ	Yaşça küçük kişi
+GENÇ	Yaşı küçük olan
 GENÇLİK	Delikanlılık
 GENÇLİK	Tazelik
 GENÇLİK	Ömrün baharı
@@ -3091,6 +3784,9 @@ GERÇEK	Sahici
 GERÇEKÇİ	Ayakları yere basan
 GERÇEKÇİ	Mantıklı
 GERÇEKÇİ	Realist
+GERİ	Arka tarafa doğru
+GERİ	Ön tarafın karşıtı
+GERİ	İlerinin karşıtı
 GERİLLA	Düzensiz savaşçı
 GERİLLA	Partizan
 GERİLLA	Çeteci
@@ -3112,18 +3808,34 @@ GEZEGEN	Seyyare
 GEZGİN	Gezmen
 GEZGİN	Seyyah
 GEZGİN	Yolcu
+GEZİ	Gezmek için yolculuk
+GEZİ	Seyahat amaçlı çıkış
+GEZİ	Turistik yolculuk
 GEZİNTİ	Tur
 GEZİNTİ	Yürüyüş
 GEÇ	Erken karşıtı
 GEÇ	Gecikmiş
 GEÇ	Vakit aşmış
+GEÇE	Onu beş ___ sözü
+GEÇE	Saat belirtme sözü
+GEÇE	Saati aşan dakika
 GICIK	Boğaz kaşınması
 GICIK	Sinir bozucu
 GICIK	İtici
-GIDA	Besleyici madde
-GIDA	Yiyecek
+GIDA	Vücudun yakıtı
+GIDA	Yaşam için besin
+GIDA	Yenilebilir besin
+GIDI	Çene altı sarkması
+GIDI	Çene altı yağ dokusu
+GIDI	Çene altındaki yağ
+GIGI	Çene altının adı
+GIGI	Çocuk dilinde gerdan
+GIGI	Çocukça çene altı
 GIK	Ses
 GIK	Çıt
+GINA	Artık tahammül yok
+GINA	Bezginlik hali
+GINA	Bıkma ve usanma
 GIRTLAK	Boğaz
 GIRTLAK	Hançere
 GIRTLAK	Ses yolu
@@ -3131,24 +3843,42 @@ GO	Masa oyunu
 GOL	Ağları sarsan
 GOL	Kale vuruşu
 GOL	Sayı
+GOLF	Delikli saha sporu
+GOLF	Sopayla top oyunu
+GOLF	Çim sahada oynanır
 GONCA	Açmamış gül
 GONCA	Filiz
 GONCA	Tomurcuk
+GONK	Büyük metal çan
+GONK	Tokmakla ses çıkarır
+GONK	Vurularak çalınır
 GORİL	Kuvvetli adam
 GORİL	Maymun
 GORİL	İri maymun
 GRAFİK	Tablo
 GRAFİK	Çizelge
 GRAFİK	Şema
+GRAM	Ağırlık ölçü birimi
+GRAM	Kilogramın 1/1000'i
+GRAM	Kütle ölçüsü
 GRAMOFON	Pikap
 GRAMOFON	Plakçalar
+GREV	Çalışmayı durdurma
+GREV	İş bırakma eylemi
+GREV	İşçilerin protestosu
 GREYFURT	Acı turunçgil
 GREYFURT	Altıntop
+GRUP	Bir araya gelenler
+GRUP	Ortak amaçlı kişiler
+GRUP	İnsan topluluğu
 GRİ	Boz
 GRİ	Kurşuni
 GRİ	Kül rengi
 GRİP	Soğuk algınlığı
 GRİP	Virüs yollu hastalık
+GUAJ	Opak sulu boya
+GUAJ	Resim boyası türü
+GUAJ	Su bazlı örtücü boya
 GURBET	Memleket dışı
 GURBET	Sıla karşıtı
 GURBET	Yabancı diyar
@@ -3332,6 +4062,9 @@ GÜZİDE	Seçme
 GÜÇ	Kudret
 GÜÇ	Kuvvet
 GÜÇ	Zor
+GİBİ	Benzerlik bildiren
+GİBİ	Benzetme edatı
+GİBİ	Sanki anlamında
 GİDER	Harcama
 GİDER	Lavabo deliği
 GİDER	Masraf
@@ -3418,12 +4151,27 @@ HAKİKAT	Gerçek
 HAKİKAT	Hak
 HAL	Durum
 HAL	Sebze pazarı
+HALA	Amcanın kız kardeşi
+HALA	Baba tarafı akraba
+HALA	Babanın kız kardeşi
 HALAY	Düğün oyunu
 HALAY	El ele dans
 HALAY	Halk oyunu
+HALE	Ayın çevre halkası
+HALE	Baş çevresi ışığı
+HALE	Işık halkası
+HALI	Dokuma yer örtüsü
+HALI	Evdeki kalın yaygı
+HALI	Yere serilen dokuma
+HALK	Bir ulusun bireyleri
+HALK	Toplumun bütünü
+HALK	Ülkenin insanları
 HALKA	Daire
 HALKA	Zincir parçası
 HALKA	Çember
+HALT	Saçma sapan iş
+HALT	Uygunsuz davranış
+HALT	Yakışıksız hareket
 HAM	Olmamış
 HAM	Çiğ
 HAM	İşlenmemiş
@@ -3442,6 +4190,9 @@ HAMSİ	İstavrit benzeri
 HAMUR	Kıvam
 HAMUR	Maya
 HAMUR	Un karışımı
+HAMİ	Koruyucu kişi
+HAMİ	Koruyup destekleyen
+HAMİ	Yardım eden kişi
 HAMİLE	Aşermiş
 HAMİLE	Gebe
 HAMİLE	Yüklü
@@ -3483,10 +4234,18 @@ HARDAL	Turşu otu
 HAREKET	Devinim
 HAREKET	Eylem
 HAREKET	Kımıldama
-HARF	Seslerin karşılığı
+HARF	Alfabenin birimi
+HARF	Kelimeyi oluşturan
+HARF	Yazıdaki ses işareti
 HARMAN	Ekin dövme
 HARMAN	Karışım
 HARMAN	Tütün karışımı
+HARP	Savaş
+HARP	Silahlı çatışma
+HARP	İki ordu çatışması
+HARÇ	Duvar örme karışımı
+HARÇ	Resmi işlem ücreti
+HARÇ	Çimento kum karışımı
 HARÇLIK	Avanta
 HARÇLIK	Cep parası
 HARÇLIK	Okul parası
@@ -3597,10 +4356,15 @@ HAÇ	Hristiyan simgesi
 HAÇ	Çarmıh
 HAİN	Hıyanet eden
 HAİN	Sadakat göstermeyen
-HE	Evet, tamam
+HE	Evet
 HE	Helyum elementi
-HECE	Ses öbeği
-HECE	Sözcük parçası
+HE	Tamam
+HEBA	Boşa gitmiş
+HEBA	Boşa harcanmış
+HEBA	Ziyan olmuş
+HECE	Bir solukta söylenen
+HECE	Kelimenin ses birimi
+HECE	Sözcüğün ses parçası
 HEDEF	Amaç
 HEDEF	Gaye
 HEDEF	Nişan
@@ -3613,6 +4377,12 @@ HEKİM	Tabip
 HEKİMLİK	Doktorluk
 HEKİMLİK	Tabiplik
 HEKİMLİK	Tıp
+HELA	Ayakyolu
+HELA	Tuvalet
+HELA	İhtiyaç giderme yeri
+HELE	Bilhassa
+HELE	Öncelikle
+HELE	Özellikle
 HELEZON	Burgu
 HELEZON	Sarmal
 HELEZON	Spiral
@@ -3736,6 +4506,12 @@ HUNİ	Koni biçimli araç
 HURMA	Palmiye meyvesi
 HURMA	Tatlı meyve
 HURMA	Çöl meyvesi
+HURÇ	Büyük kumaş torba
+HURÇ	Eşya saklama torbası
+HURÇ	Yorgan çantası
+HURİ	Cennet güzeli
+HURİ	Cennet kızı
+HURİ	Cennetteki güzel
 HUY	Karakter
 HUY	Mizaç
 HUY	Tabiat
@@ -3754,9 +4530,15 @@ HUĞ	Çardak
 HUŞ	Beyaz kabuklu ağaç
 HUŞ	Kayın ağacı
 HUŞ	Sus
+HUŞU	Derin saygı hali
+HUŞU	Manevi ürperti
+HUŞU	İbadette içten saygı
 HÖT	Azarlama
 HÖT	Bağırış
 HÖT	Korkutma sözü
+HÜDA	Tanrı
+HÜDA	Yaradan
+HÜDA	Yüce yaratıcı
 HÜKÜMDAR	Kral
 HÜKÜMDAR	Padişah
 HÜKÜMDAR	Sultan
@@ -3769,9 +4551,15 @@ HÜRRİYET	İstiklal
 HÜZÜN	Keder
 HÜZÜN	Melankoli
 HÜZÜN	Tasa
+HİBE	Bedelsiz verilen
+HİBE	Geri ödemesiz yardım
+HİBE	Karşılıksız bağış
 HİDROJEN	En hafif gaz
 HİDROJEN	H harfi
 HİDROJEN	Su elementi
+HİLE	Aldatma yöntemi
+HİLE	Dürüst olmayan oyun
+HİLE	Kurnazca düzen
 HİN	Fesat
 HİN	Kurnaz
 HİPODROM	At yarışı alanı
@@ -3796,6 +4584,9 @@ IH	İsteksizlik sesi
 IHLAMUR	Bitki çayı
 IHLAMUR	Kış çayı
 IHLAMUR	Sarı çiçekli ağaç
+ILIK	Az sıcak olan
+ILIK	Hafif sıcak
+ILIK	Ne sıcak ne soğuk
 ILIMAN	Ilık
 ILIMAN	Mutedil
 ILIMAN	Yumuşak iklim
@@ -3819,6 +4610,9 @@ ISI	Termik enerji
 ISIRIK	Diş izi
 ISIRIK	Lokma
 ISIRIK	Sivrisinek izi
+ISKA	Boşa giden atış
+ISKA	Hedefi kaçırma
+ISKA	Hedefi tutturamama
 ISLAK	Kuru karşıtı
 ISLAK	Nemli
 ISLAK	Yaş
@@ -3848,7 +4642,9 @@ IZGARA	Mangal
 IZGARALI	Demir parmaklıklı
 IZGARALI	Kızarmış
 IZGARALI	Mangallı
-IŞIK	Nur
+IŞIK	Aydınlık kaynağı
+IŞIK	Görmeyi sağlayan
+IŞIK	Karanlığı gideren
 IŞIKLI	Ampullü
 IŞIKLI	Aydınlık
 IŞIKLI	Parlak
@@ -3946,6 +4742,9 @@ KADEME	Derece
 KADER	Alın yazısı
 KADER	Kısmet
 KADER	Yazgı
+KADI	Eski dönem hakimi
+KADI	Osmanlıda yargıç
+KADI	Şeriat yargıcı
 KADIN	Bayan
 KADIN	Erkek karşıtı
 KADIN	Hanım
@@ -3954,8 +4753,14 @@ KADIRGA	Savaş gemisi
 KADIRGA	Çektiri
 KADİFE	Havlı kumaş
 KADİFE	Yumuşak kumaş
+KAFA	Başın üst bölümü
+KAFA	Beynin bulunduğu yer
+KAFA	İnsanın başı
 KAFATASI	Korsan bayrağı
 KAFATASI	İskelet başı
+KAFE	Kahve içilen yer
+KAFE	Küçük kahvehane
+KAFE	İçecek sunulan yer
 KAFES	Hapis
 KAFES	Kuş evi
 KAFES	Parmaklık
@@ -3996,6 +4801,9 @@ KALDIRAÇ	Manivela
 KALDIRIM	Kenar yol
 KALDIRIM	Trotuvar
 KALDIRIM	Yaya yolu
+KALE	Korunaklı yapı
+KALE	Savunma yapısı
+KALE	Surlu savunma yeri
 KALECİ	Eldivenli oyuncu
 KALECİ	File bekçisi
 KALECİ	Gol önleyen
@@ -4017,6 +4825,9 @@ KALKAN	Yassı balık
 KALORİ	Besin değeri
 KALORİ	Enerji birimi
 KALORİ	Isı birimi
+KALP	Dolaşımın ana organı
+KALP	Göğüsteki organ
+KALP	Kan pompalayan organ
 KALPAZAN	Düzenbaz
 KALPAZAN	Sahte para basan
 KALPAZAN	Sahtekar
@@ -4043,11 +4854,17 @@ KAMERA	Çekim aleti
 KAMIŞ	Kalın ot
 KAMIŞ	Saz
 KAMIŞ	Şeker kaynağı
+KAMP	Doğada konaklama
+KAMP	Çadır kurulan alan
+KAMP	Çadırlı konaklama
 KAMPANYA	Seçim yarışı
 KAMPANYA	Tanıtım süreci
 KAMPANYA	İndirim
 KAMPÜS	Okul alanı
 KAMPÜS	Yerleşke
+KAMU	Devlete ait olan
+KAMU	Halkın bütünü
+KAMU	Toplumun geneli
 KAMUFLAJ	Alaca boya
 KAMUFLAJ	Asker deseni
 KAMUFLAJ	Gizlenme
@@ -4108,6 +4925,9 @@ KANTİN	Yiyecek köşesi
 KANYON	Boğaz
 KANYON	Dar geçit
 KANYON	Derin vadi
+KAOS	Düzensizlik
+KAOS	Kargaşa ortamı
+KAOS	Tam bir karmaşa
 KAP	Kab
 KAP	Kılıf
 KAP	Tas
@@ -4117,6 +4937,9 @@ KAPAK	Örtü
 KAPASİTE	Güç
 KAPASİTE	Hacim
 KAPASİTE	Yetenek
+KAPI	Evin giriş bölümü
+KAPI	Giriş çıkış yeri
+KAPI	Odaya geçiş yeri
 KAPLAN	Bengal hayvanı
 KAPLAN	Yırtıcı
 KAPLAN	Çizgili kedi
@@ -4135,6 +4958,9 @@ KAPİTONE	Kabarık kaplama
 KAR	Beyaz örtü
 KAR	Kazanç
 KAR	Kış yağışı
+KARA	Denizin karşıtı
+KARA	Siyah renk
+KARA	Toprak parçası
 KARABİNA	Av silahı
 KARABİNA	Dağcı halkası
 KARABİNA	Tüfek
@@ -4186,6 +5012,9 @@ KARBON	Kömür maddesi
 KARDEŞ	Aynı anneden
 KARDEŞ	Bacı
 KARDEŞ	Birader
+KARE	Dört eşit kenarlı
+KARE	Dörtgen şekil
+KARE	Eşit kenarlı dörtgen
 KARGA	Gak diyen
 KARGA	Kara kuş
 KARGA	Kuzgun
@@ -4234,6 +5063,9 @@ KARİDES	Pembe kabuklu
 KAS	Adale
 KAS	Lif doku
 KAS	Pazı
+KASA	Değerli eşya dolabı
+KASA	Market ödeme yeri
+KASA	Para saklama kutusu
 KASABA	Belde
 KASABA	Kent altı
 KASABA	Küçük şehir
@@ -4248,9 +5080,15 @@ KASATURA	Süngü
 KASIRGA	Fırtına
 KASIRGA	Hortum
 KASIRGA	Tayfun
+KASK	Başı koruyan başlık
+KASK	Koruyucu başlık
+KASK	Motosikletçi başlığı
 KASKET	Kep
 KASKET	Siperli şapka
 KASKET	İşçi şapkası
+KAST	Bilerek yapma amacı
+KAST	Kasıtlı davranış
+KAST	Niyet
 KASİYER	Kasadar
 KASİYER	Market çalışanı
 KASİYER	Veznedar
@@ -4265,6 +5103,9 @@ KATEDRAL	Büyük kilise
 KATEGORİ	Bölüm
 KATEGORİ	Sınıf
 KATEGORİ	Tür
+KATI	Akışkan olmayan
+KATI	Sert ve sıkı madde
+KATI	Sıvı olmayan madde
 KATILIM	Katkı
 KATILIM	Üyelik
 KATILIM	İştirak
@@ -4307,6 +5148,9 @@ KAVUŞMA	Vuslat
 KAVŞAK	Dört yol ağzı
 KAVŞAK	Göbek
 KAVŞAK	Kesişim
+KAYA	Büyük taş kütlesi
+KAYA	Doğal taş parçası
+KAYA	Sert taş yığını
 KAYAK	Kar sporu
 KAYAK	Kar tahtası
 KAYAK	Kızak
@@ -4317,6 +5161,9 @@ KAYDIRAK	Çocuk parkı aleti
 KAYGISIZ	Rahat
 KAYGISIZ	Tasasız
 KAYGISIZ	Umursamaz
+KAYI	Osmanlıların boyu
+KAYI	Oğuz boyu
+KAYI	Oğuzların bir boyu
 KAYIK	Küçük gemi
 KAYIK	Sandal
 KAYIK	Tekne
@@ -4347,6 +5194,9 @@ KAYNANA	Kayınvalide
 KAZ	Kazmak
 KAZ	Su kuşu
 KAZ	Ördek benzeri
+KAZA	Beklenmedik aksilik
+KAZA	Trafikte çarpışma
+KAZA	İstenmeyen olay
 KAZAK	Boğazlı giysi
 KAZAK	Orta asya halkı
 KAZAK	Yün giysi
@@ -4361,6 +5211,7 @@ KAZANÇ	Kar
 KAZANÇLI	Avantajlı
 KAZANÇLI	Karlı
 KAZANÇLI	Verimli
+KAZI	Toprağı eşme işi
 KAZIK	Aldatma
 KAZIK	Fahiş fiyat
 KAZIK	Sivri direk
@@ -4395,9 +5246,15 @@ KEBAP	Şiş
 KEDER	Dert
 KEDER	Hüzün
 KEDER	Üzüntü
+KEDİ	Evcil tüylü hayvan
+KEDİ	Fare avlayan hayvan
+KEDİ	Miyavlayan hayvan
 KEF	Avuç
 KEF	Köpük
 KEF	Sabun köpüğü
+KEFE	Tartı kabı
+KEFE	Terazi gözü
+KEFE	Terazinin bir gözü
 KEHANET	Fal
 KEHANET	Gelecek söyleme
 KEHANET	Öngörü
@@ -4455,9 +5312,12 @@ KEMİK	İskelet parçası
 KENAR	Köşe
 KENAR	Kıyı
 KENAR	Uç
-KENT	Belde
-KENT	Yerleşim yeri
+KENE	Deriye yapışan canlı
+KENE	Kan emen parazit
+KENE	Kan emici asalak
+KENT	Büyük yerleşim yeri
 KENT	Şehir
+KENT	Şehir yerleşimi
 KEP	Mezuniyet şapkası
 KEP	Siperli şapka
 KEP	Şapka
@@ -4467,6 +5327,9 @@ KEPENK	Panjur
 KEPÇE	Büyük kaşık
 KEPÇE	Kulp
 KEPÇE	İş makinesi
+KERE	Bir kez anlamında
+KERE	Defa
+KERE	Tekrar sayısı
 KEREVİT	Kabuklu
 KEREVİT	Kıskaçlı
 KEREVİT	Tatlı su ıstakozu
@@ -4484,6 +5347,9 @@ KERVANCI	Kafile başı
 KERVANCI	Tüccar
 KES	Bıçakla ayır
 KES	Spor ayakkabı
+KESE	Cilt temizleme lifi
+KESE	Küçük para torbası
+KESE	Para saklama kabı
 KESKİN	Kesen
 KESKİN	Sivri
 KESKİN	Zeki
@@ -4504,8 +5370,12 @@ KEYİF	Zevk
 KEZ	Defa
 KEZ	Kere
 KEZ	Sefer
-KEÇE	Dövülmüş yün
-KEÇE	Fötr
+KEÇE	Dokunmamış kumaş
+KEÇE	Kalın yün kumaş
+KEÇE	Sıkıştırılmış yün
+KEÇİ	Boynuzlu çiftlikli
+KEÇİ	Süt veren küçükbaş
+KEÇİ	İnatçı küçükbaş
 KEŞ	Ayyaş
 KEŞ	Kuru peynir
 KEŞMEKEŞ	Curcuna
@@ -4528,6 +5398,9 @@ KILÇIK	İnce kemik
 KIN	Bıçak kabı
 KIN	Kılıf
 KIN	Kılıç kabı
+KINA	Düğünde yakılan boya
+KINA	Ele sürülen boya
+KINA	Kızıl renk veren ot
 KIR	Kırsal
 KIR	Kırçıl
 KIR	Çayır
@@ -4543,11 +5416,15 @@ KIRIK	Çatlak
 KIRINTI	Döküntü
 KIRINTI	Ekmek parçası
 KIRINTI	Zerre
+KIRK	40 sayısı
+KIRK	Dört çarpı on
+KIRK	Otuz dokuzdan sonra
 KIRMIZI	Al
 KIRMIZI	Kan rengi
 KIRMIZI	Kızıl
-KISA	Bodur
-KISA	Boyu az
+KISA	Boyu az olan
+KISA	Uzun olmayan
+KISA	Uzunun karşıtı
 KISKANÇ	Gıpta eden
 KISKANÇ	Haset
 KISKANÇ	Çekemeyen
@@ -4560,6 +5437,9 @@ KISRAK	Tay anası
 KIT	Az
 KIT	Kıtlık
 KIT	Yetersiz
+KITA	Ana kara bölümü
+KITA	Askeri birlik
+KITA	Büyük kara parçası
 KIVILCIM	Alev parçası
 KIVILCIM	Çakım
 KIVILCIM	İlham
@@ -4572,6 +5452,9 @@ KIYAFET	Kılık
 KIYAMET	Dünyanın sonu
 KIYAMET	Haşir
 KIYAMET	Mahşer
+KIYI	Deniz kara sınırı
+KIYI	Sahil
+KIYI	Su kenarı
 KIYMALI	Etli
 KIYMALI	Pide türü
 KIYMET	Değer
@@ -4588,6 +5471,12 @@ KIĞ	Hayvan dışkısı
 KIĞ	Tezek
 KIŞ	Aralık-şubat
 KIŞ	Soğuk mevsim
+KLAN	Akraba topluluğu
+KLAN	Aynı soydan gelenler
+KLAN	Ortak soylu grup
+KLAS	Birinci sınıf
+KLAS	Kaliteli ve seçkin
+KLAS	Üstün nitelikli
 KLASÖR	Arşiv kabı
 KLASÖR	Dosya
 KLASÖR	Evrak tutucu
@@ -4633,8 +5522,14 @@ KOLONYA	İkram sıvısı
 KOLTUK	Kol altı
 KOLTUK	Makam
 KOLTUK	Tekli kanepe
+KOLİ	Eşya taşıma paketi
+KOLİ	Karton taşıma kutusu
+KOLİ	Paketleme kutusu
 KOM	Mezra
 KOM	Çiftlik evi
+KOMA	Bilinçsizlik hali
+KOMA	Derin bilinç kaybı
+KOMA	Derin bilinçsizlik
 KOMBİNE	Birleşik
 KOMBİNE	Karma
 KOMBİNE	Sezonluk bilet
@@ -4650,6 +5545,9 @@ KOMPOST	Çürümüş atık
 KOMUTAN	General
 KOMUTAN	Kumandan
 KOMUTAN	Lider
+KOMİ	Garson yardımcısı
+KOMİ	Lokanta çalışanı
+KOMİ	Servis yardımcısı
 KOMİSYON	Aracı ücreti
 KOMİSYON	Heyet
 KOMİSYON	Kurul
@@ -4667,18 +5565,27 @@ KONSERVE	Turşu
 KONSOLOS	Diplomat
 KONSOLOS	Elçi yardımcısı
 KONSOLOS	Temsilci
+KONT	Asilzade unvanı
+KONT	Avrupa soylusu
+KONT	Soyluluk unvanı
 KONTRAT	Anlaşma
 KONTRAT	Mukavele
 KONTRAT	Sözleşme
 KONTROL	Denetim
 KONTROL	Kumanda
 KONTROL	Yoklama
+KONU	Anlatılan mesele
+KONU	Bahsedilen şey
+KONU	Ele alınan mesele
 KONUK	Davetli
 KONUK	Misafir
 KONUK	Ziyaretçi
 KONUŞMA	Nutuk
 KONUŞMA	Sohbet
 KONUŞMA	Söyleşi
+KONİ	Daire tabanlı şekil
+KONİ	Külah biçimli şekil
+KONİ	Sivri uçlu cisim
 KOR	Ateş
 KOR	Köz
 KOR	Kızgın kömür
@@ -4707,12 +5614,24 @@ KORUYUCU	Himaye eden
 KORUYUCU	Muhafız
 KOT	Denim
 KOT	Rakım
+KOTA	Ayrılan pay sınırı
+KOTA	Belirlenen üst sınır
+KOTA	Miktar sınırı
+KOVA	Kulplu su kabı
+KOVA	Saplı taşıma kabı
+KOVA	Su taşıma kabı
 KOY	Koymak
 KOY	Körfez
 KOY	Küçük körfez
+KOYU	Açık rengin karşıtı
+KOYU	Yoğun kıvamlı
+KOYU	Yoğun renk tonu
 KOZ	Ceviz
 KOZ	Elindeki güç
 KOZ	Üstünlük
+KOZA	İpek böceği kılıfı
+KOZA	İpek böceği yuvası
+KOZA	İpek üreten yuva
 KOZALAK	Sedir tohumu
 KOZALAK	Çam meyvesi
 KOZALAK	Çam topu
@@ -4725,14 +5644,33 @@ KOZMONOT	Uzay yolcusu
 KOÇ	Antrenör
 KOÇ	Burç
 KOÇ	Erkek koyun
+KOŞU	Atletizm yarışması
+KOŞU	Ayakla hız yarışı
+KOŞU	Hızlı ilerleme sporu
+KRAL	Monarşinin başı
+KRAL	Taç takan yönetici
+KRAL	Ülke hükümdarı
 KRALİYET	Hükümdar ailesi
 KRALİYET	Saray
 KRALİYET	Taç sahipleri
-KREP	Kırışık kumaş
-KREP	İnce gözleme
+KREM	Cilde sürülen ürün
+KREM	Cilt bakım merhemi
+KREM	Cilt bakım ürünü
+KREP	Tavada pişen hamur
+KREP	İnce hamur yiyeceği
+KREP	İnce tava hamuru
+KREŞ	Küçük çocuk yuvası
+KREŞ	Okul öncesi bakım
+KREŞ	Çocuk bakım evi
 KROKODİL	Nil hayvanı
 KROKODİL	Sürüngen
 KROKODİL	Timsah
+KROM	Atom numarası 24
+KROM	Metal kaplama öğesi
+KROM	Parlak sert metal
+KRİZ	Ani zor durum
+KRİZ	Bunalım dönemi
+KRİZ	Ciddi sıkıntı hali
 KUKLA	Oyuncak bebek
 KUKLA	İpli oyuncak
 KUL	Bende
@@ -4777,6 +5715,15 @@ KURDELE	Süs şeridi
 KURNAZ	Cin fikirli
 KURNAZ	Tilki gibi
 KURNAZ	Uyanık
+KURS	Belirli süre eğitim
+KURS	Eğitim programı
+KURS	Öğretim etkinliği
+KURT	Sürü halinde avlanır
+KURT	Sürüyle avlanan
+KURT	Vahşi köpekgil
+KURU	Islak olmayan
+KURU	Nemsiz
+KURU	Yaş olmayan
 KURŞUN	Ağır metal
 KURŞUN	Mermi
 KUT	Bereket
@@ -4785,9 +5732,15 @@ KUT	Uğur
 KUTLAMA	Parti
 KUTLAMA	Tebrik
 KUTLAMA	Şenlik
+KUTU	Eşya saklama kabı
+KUTU	Kapaklı saklama kabı
+KUTU	Karton saklama kabı
 KUYRUK	Bekleme hattı
 KUYRUK	Hayvan arkası
 KUYRUK	Sıra
+KUYU	Derin su çukuru
+KUYU	Su çıkarılan çukur
+KUYU	Yer altı su çukuru
 KUYUMCU	Altıncı
 KUYUMCU	Mücevherci
 KUYUMCU	Sarraf
@@ -4796,6 +5749,8 @@ KUZ	Güneş görmeyen yer
 KUZEN	Amca oğlu
 KUZEY	Güney karşıtı
 KUZEY	Şimal
+KUZU	Koyun yavrusu
+KUZU	Küçük koyun
 KUZU	Yavru koyun
 KUĞU	Beyaz su kuşu
 KUĞU	Göl kuşu
@@ -4808,6 +5763,9 @@ KUŞAK	Nesil
 KUŞBAŞI	Et parçası
 KUŞBAŞI	Kebaplık et
 KUŞBAŞI	Küçük doğranmış et
+KUŞE	Dergi baskı kağıdı
+KUŞE	Parlak baskı kağıdı
+KUŞE	Pürüzsüz kağıt türü
 KUŞKULU	Kararsız
 KUŞKULU	Tedirgin
 KUŞKULU	Şüpheli
@@ -4819,8 +5777,9 @@ KÖFTECİ	İnegöllü esnaf
 KÖK	Bitki kökü
 KÖK	Köken
 KÖK	Temel
-KÖLE	Esir
-KÖLE	Tutsak
+KÖLE	Esir insan
+KÖLE	Özgür olmayan kişi
+KÖLE	Özgürlüğü olmayan
 KÖMÜR	Antrasit
 KÖMÜR	Maden
 KÖMÜR	Yakıt
@@ -4850,6 +5809,9 @@ KÖSTEBEK	Yeraltı hayvanı
 KÖSTEK	Engel
 KÖSTEK	Saat zinciri
 KÖSTEK	Zincir
+KÖTÜ	Olumsuz nitelikli
+KÖTÜ	İyi olmayan
+KÖTÜ	İyinin karşıtı
 KÖTÜLÜK	Fenalık
 KÖTÜLÜK	İyilik karşıtı
 KÖTÜLÜK	Şer
@@ -4861,27 +5823,47 @@ KÖY	Kırsal yerleşim
 KÖZ	Ateş
 KÖZ	Kor
 KÖZ	Közlenmiş
-KÖŞE	Kuytu yer
+KÖŞE	Açının birleşme yeri
+KÖŞE	Duvarların kesişimi
+KÖŞE	İki kenarın kavşağı
+KÖŞK	Bahçe içindeki konak
+KÖŞK	Bahçeli büyük ev
+KÖŞK	Gösterişli konut
 KÜF	Bozulma
 KÜF	Mantar
 KÜF	Paslanma
+KÜFE	Büyük taşıma sepeti
+KÜFE	Hasırdan yük sepeti
+KÜFE	Sırtta taşınan sepet
 KÜL	Küllük
 KÜL	Toz
 KÜL	Yanık artığı
+KÜLT	Aşırı hayranlık
+KÜLT	Kutsallaştırma
+KÜLT	Tapınma derecesi
 KÜLTÜR	Birikim
 KÜLTÜR	Ekin
 KÜLTÜR	Hars
+KÜME	Bir aradaki nesneler
+KÜME	Bir araya gelen grup
+KÜME	Ortak özellikli grup
 KÜMES	Kafes
 KÜMES	Tavuk evi
 KÜP	Toprak kap
 KÜP	Üçüncü kuvvet
+KÜPE	Kulak süsü
+KÜPE	Kulak takısı
+KÜPE	Kulağa takılan takı
 KÜR	Tedavi
+KÜRE	Dünya biçimli şekil
+KÜRE	Top biçimli cisim
+KÜRE	Yuvarlak cisim
 KÜREK	Bel
 KÜREK	Kazma aleti
 KÜREK	Tekne itici
 KÜRK	Hayvan postu
-KÜRK	Post
-KÜRK	Tüylü deri
+KÜRK	Posttan giysi
+KÜRK	Tüylü hayvan derisi
 KÜS	Dargın
 KÜS	Küsmüş
 KÜS	Kırgın
@@ -4954,6 +5936,9 @@ KİP	Model
 KİR	Kirlilik
 KİR	Leke
 KİR	Pislik
+KİRA	Aylık ev bedeli
+KİRA	Ev için ödenen para
+KİRA	Mülk kullanım bedeli
 KİRAZ	Haziran meyvesi
 KİRAZ	Kırmızı meyve
 KİRAZ	Vişne benzeri
@@ -4968,6 +5953,9 @@ KİRPİ	Dikenli memeli
 KİRPİK	Göz kapağı kılı
 KİRPİK	Göz kılı
 KİRPİK	Rimel yeri
+KİST	Anormal doku kesesi
+KİST	Dokuda oluşan kese
+KİST	İçi sıvı dolu kese
 KİT	Malzeme seti
 KİT	Set
 KİT	Takım
@@ -4983,6 +5971,12 @@ KİTAPLIK	Raf
 KİTAPÇI	Kırtasiyeci
 KİTAPÇI	Sahaf
 KİTAPÇI	Yayıncı
+KİVİ	Ekşi tropik meyve
+KİVİ	Tüylü kabuklu meyve
+KİVİ	Yeşil içli meyve
+KİŞİ	Bir birey
+KİŞİ	Tek bir insan
+KİŞİ	İnsan bireyi
 KİŞİLİK	Huy
 KİŞİLİK	Karakter
 KİŞİLİK	Şahsiyet
@@ -5257,8 +6251,12 @@ MALZEME	Gereç
 MALZEME	Materyal
 MALİ	Finansal
 MALİ	Parasal
+MAMA	Bebek için besin
+MAMA	Bebek yiyeceği
+MAMA	Hayvan yemi
 MANA	Anlam
-MANA	İçerik
+MANA	Sözcüğün anlamı
+MANA	Sözün taşıdığı anlam
 MANASTIR	Keşişhane
 MANASTIR	Kilise yurdu
 MANASTIR	Rahip yurdu
@@ -5298,6 +6296,9 @@ MANTIKLI	Makul
 MANTIKLI	Tutarlı
 MANZARA	Görünüm
 MANZARA	Panorama
+MANİ	Dört dizelik şiir
+MANİ	Dörtlük biçimli şiir
+MANİ	Halk şiiri türü
 MANİKÜR	El bakımı
 MANİKÜR	Tırnak bakımı
 MANİKÜR	Tırnak süsleme
@@ -5318,6 +6319,11 @@ MARKET	Dükkan
 MARMELAT	Kahvaltılık
 MARMELAT	Meyve ezmesi
 MARMELAT	Reçel
+MARS	Dördüncü gezegen
+MARS	Kızıl gezegen
+MART	Yılın üçüncü ayı
+MART	İlkbaharın ilk ayı
+MART	Şubattan sonraki ay
 MARTAVAL	Masal
 MARTAVAL	Palavra
 MARTAVAL	Yalan
@@ -5330,8 +6336,12 @@ MARUL	Yeşil yaprak
 MARİFET	Beceri
 MARİFET	Hüner
 MARİFET	Ustalık
-MARŞ	Motor çalıştırıcı
+MARŞ	Askeri tören müziği
+MARŞ	Törenlerde çalınır
 MARŞ	Ulusal ezgi
+MASA	Dört ayaklı mobilya
+MASA	Çalışma yüzeyi
+MASA	Üzerinde yemek yenir
 MASAJ	Ovma
 MASAJ	Rahatlatma
 MASAL	Efsane
@@ -5374,8 +6384,12 @@ MATMAZEL	Genç bayan
 MATMAZEL	Madmazel
 MATRUŞKA	Rus bebeği
 MATRUŞKA	İç içe bebek
-MAYA	Hamur kabartıcı
-MAYA	Kabartma maddesi
+MAVİ	Ana renklerden biri
+MAVİ	Denizin rengi
+MAVİ	Gökyüzünün rengi
+MAYA	Ekmek kabartıcı
+MAYA	Hamuru kabartan
+MAYA	Hamuru mayalayan
 MAYDANOZ	Garnitür otu
 MAYDANOZ	Her işe karışan
 MAYDANOZ	Yeşillik
@@ -5394,6 +6408,9 @@ MAZERET	Özür
 MAZOT	Dizel
 MAZOT	Motorin
 MAZOT	Yakıt
+MAZİ	Eski günler
+MAZİ	Geride kalan yıllar
+MAZİ	Geçmiş zaman
 MAÇ	Karşılaşma
 MAÇ	Müsabaka
 MAÇ	Oyun
@@ -5415,6 +6432,9 @@ MAŞALLAH	Nazar duası
 ME	16. harfin adı
 ME	16. harfin okunuşu
 ME	Koyun sesi
+MEAL	Anlam
+MEAL	Ayetlerin anlamı
+MEAL	Açıklamalı çeviri
 MECLİS	Divan
 MECLİS	Kurul
 MECLİS	Parlamento
@@ -5599,6 +6619,9 @@ MODA	Trend
 MODEL	Manken
 MODEL	Tasarım
 MODEL	Örnek
+MOLA	Dinlenmek için ara
+MOLA	Kısa dinlenme arası
+MOLA	İşe geçici ara
 MONOLOG	Tek kişilik konuşma
 MONOLOG	İçsel konuşma
 MOR	Eflatun
@@ -6011,8 +7034,9 @@ NİTROJEN	N elementi
 NİYET	Amaç
 NİYET	Kasıt
 NİYET	Maksat
+NİŞ	Duvar içi girinti
 NİŞ	Duvar oyuğu
-NİŞ	Girinti
+NİŞ	Heykel konulan oyuk
 NİŞAN	Hedef
 NİŞAN	Sözlenme
 NİŞAN	İşaret
@@ -6042,12 +7066,21 @@ OBUR	Pisboğaz
 OBURLUK	Açgözlülük
 OBURLUK	Doymazlık
 OBURLUK	Çok yemek
+OCAK	Ateş yakılan yer
+OCAK	Yemek pişirme yeri
+OCAK	Yılın ilk ayı
 ODA	Bölme
 ODA	Hücre
 ODA	Salon
 ODACI	Görevli
 ODACI	Hademe
 ODACI	Çaycı
+ODAK	Dikkatin merkezi
+ODAK	Işınların birleşimi
+ODAK	İlginin merkezi
+ODUN	Kesilmiş yakacak
+ODUN	Sobada yanan ağaç
+ODUN	Yakacak ağaç
 ODUNCU	Ağaç kesen
 ODUNCU	Baltacı
 ODUNCU	Orman işçisi
@@ -6055,6 +7088,9 @@ OF	Bıkkınlık belirtisi
 OFSAYT	Bayrak kalkması
 OFSAYT	Futbol kuralı
 OFSAYT	Oyun dışı
+OFİS	Masa başı iş yeri
+OFİS	Çalışma bürosu
+OFİS	İş yapılan yer
 OH	Rahatlama belirtisi
 OH	Sevinç belirtisi
 OH	Şaşkınlık sesi
@@ -6063,7 +7099,9 @@ OHA	Şaşırma ünlemi
 OHM	Direnç birimi
 OJE	Tırnak boyası
 OJE	Tırnak cilası
-OK	Silah
+OK	Eski bir silah
+OK	Yayla atılan
+OK	Yön simgesi
 OKLAVA	Hamur sopası
 OKLAVA	Merdane
 OKLAVA	Yufka aleti
@@ -6107,6 +7145,8 @@ OMURİLİK	Merkezi sinir
 OMURİLİK	Sinir kordonu
 OMUZ	Boyunla kol arası
 OMUZ	Kolun bağlandığı yer
+ON	Dokuz + bir
+ON	Dokuzdan sonra
 ONARIM	Düzeltme
 ONARIM	Restorasyon
 ONARIM	Tamir
@@ -6178,6 +7218,8 @@ OSMANLI	Devlet adı
 OSMANLI	Türk devleti
 OSMANLI	İmparatorluk
 OT	Bitki
+OT	Mevsimlik bitki
+OT	Odunlaşmayan bitki
 OTANTİK	Gerçek
 OTANTİK	Yerel
 OTANTİK	Özgün
@@ -6218,8 +7260,8 @@ OVA	Düzlük
 OVA	Yazı
 OVMA	Masaj
 OVMA	Sürtme
-OY	Görüş bildirisi
-OY	Rey bildirisi
+OY	Seçim tercihi
+OY	Tercih etmek
 OYA	Dantel
 OYA	El işi
 OYA	Kenar süsü
@@ -6240,6 +7282,9 @@ OĞLAK	Yavru keçi
 OĞLAN	Delikanlı
 OĞLAN	Erkek çocuk
 OĞLAN	Oğul
+OĞUL	Ailenin erkek çocuğu
+OĞUL	Erkek evlat
+OĞUL	Erkek çocuk
 PA	Protaktinyum element
 PABUÇ	Ayakkabı
 PABUÇ	Terlik
@@ -6315,6 +7360,9 @@ PAPAĞAN	Taklitçi kuş
 PAPYON	Fiyonk
 PAPYON	Kelebek kravat
 PAPYON	Smokin eki
+PARA	Alışveriş aracı
+PARA	Nakit ödeme aracı
+PARA	Ödeme aracı
 PARADOKS	Açmaz
 PARADOKS	Tezat
 PARADOKS	Çelişki
@@ -6333,9 +7381,15 @@ PARAZİT	Sinyal bozucu
 PARAŞÜT	Düşüş aracı
 PARAŞÜT	Hava şemsiyesi
 PARAŞÜT	Uçaktan atlama aleti
+PARE	Bir bütünün parçası
+PARE	Bütünden kopan parça
+PARE	Küçük bir parça
 PARFÜM	Esans
 PARFÜM	Koku
 PARFÜM	Kolonya
+PARK	Araç bırakma alanı
+PARK	Ağaçlı dinlenme yeri
+PARK	Yeşil gezi alanı
 PARLAK	Işıltılı
 PARLAK	Parıltılı
 PARLAK	Zeki
@@ -6345,6 +7399,9 @@ PARMAK	İşaret eden
 PAROLA	Anahtar söz
 PAROLA	Gizli kelime
 PAROLA	Şifre
+PARS	Benekli yırtıcı
+PARS	Leopar türü
+PARS	İri benekli kedi
 PARTİ	Eğlence
 PARTİ	Siyasi örgüt
 PARTİ	Ürün grubu
@@ -6359,6 +7416,9 @@ PASAPORT	Yol belgesi
 PASKALYA	Diriliş günü
 PASKALYA	Hristiyan bayramı
 PASKALYA	Yumurta bayramı
+PASO	Ulaşım indirim kartı
+PASO	Öğrenci biniş kartı
+PASO	İndirimli yol kartı
 PASTA	Doğum günü tatlısı
 PASTA	Kek
 PASTA	Yaş tatlı
@@ -6384,6 +7444,9 @@ PATLICAN	İmambayıldı
 PATRON	Sahip
 PATRON	İşveren
 PATRON	Şef
+PATİ	Hayvanın ayağı
+PATİ	Kedi ayak ucu
+PATİ	Köpeğin ayak kısmı
 PATİK	Bebek ayakkabısı
 PATİK	Ev ayakkabısı
 PATİK	Yün çorap
@@ -6393,18 +7456,27 @@ PATİKA	İz
 PAY	Hisse
 PAY	Kısım
 PAY	Paylaşım
+PAYE	Makam ve derece
+PAYE	Onursal derece
+PAYE	Rütbe ve unvan
 PAZAR	Haftanın günü
 PAZAR	Tatil günü
 PAZAR	Çarşı
 PAZARLIK	Fiyat tartışması
 PAZARLIK	Uzlaşma
 PAZARLIK	İndirim isteme
+PAZI	Ispanak benzeri ot
+PAZI	Kolun kaslı bölümü
+PAZI	Yeşil yapraklı sebze
 PAÇA	Ayak çorbası
 PAÇA	Hayvan ayağı
 PAÇA	Pantolon ucu
 PAÇAVRA	Bez parçası
 PAÇAVRA	Eski püskü
 PAÇAVRA	Yırtık
+PAŞA	Eski askerî unvan
+PAŞA	Osmanlı yüksek rütbe
+PAŞA	Yüksek devlet unvanı
 PE	20. harfin adı
 PE	20. harfin okunuşu
 PE	P harfi
@@ -6424,12 +7496,17 @@ PEK	Çok
 PEKMEZ	Kahvaltılık
 PEKMEZ	Tatlı sıvı
 PEKMEZ	Üzüm şurubu
+PEKİ	Kabul etme sözü
+PEKİ	Onay bildiren söz
+PEKİ	Tamam anlamında
 PELERİN	Kap
 PELERİN	Kolsuz manto
 PELERİN	Süpermen giysisi
 PEMBE	Açık kırmızı
 PEMBE	Gül rengi
 PEMBE	Toz renk
+PENA	Gitar çalma aracı
+PENA	Tellere vurulan araç
 PENALTI	Ceza atışı
 PENALTI	Futbol cezası
 PENALTI	On bir adım
@@ -6475,25 +7552,30 @@ PETEK	Radyatör dilimi
 PETROL	Akaryakıt kaynağı
 PETROL	Ham yağ
 PETROL	Kara altın
-PEY	Kapora
+PEY	Açık artırma teklifi
 PEY	Ön ödeme
+PEY	İhale teklifi
 PEYNİR	Beyaz kahvaltılık
 PEYNİR	Kaşar
 PEYNİR	Süt ürünü
+PEÇE	Yüzü gizleyen tül
+PEÇE	Yüzü kapatan kumaş
+PEÇE	Yüzü örten örtü
 PEÇETE	Ağız silme kağıdı
 PEÇETE	Mendil
 PEÇETE	Sofra bezi
-PEŞ	Ardı
-PEŞ	Arka
-PEŞ	Takip
+PEŞ	Ardından gidilen
+PEŞ	Arka taraf
+PEŞ	Birinin arkası
 PEŞTAMAL	Bel örtüsü
 PEŞTAMAL	Hamam havlusu
 PEŞTAMAL	İnce havlu
 PINAR	Kaynak
 PINAR	Su gözü
 PINAR	Çeşme
-PIR	Kanat sesi
-PIR	Pırpır
+PIR	Kanat çırpma sesi
+PIR	Kuş kanadı sesi
+PIR	Uçuş sesi
 PIRASA	Kışlık sebze
 PIRASA	Soğan akrabası
 PIRASA	Uzun sebze
@@ -6524,15 +7606,18 @@ POPÜLER	Ünlü
 PORTAKAL	C vitaminli meyve
 PORTAKAL	Turuncu meyve
 PORTAKAL	Turunçgil
-POS	Gür bıyık
+POS	Kartla ödeme aracı
+POS	Kredi kartı cihazı
+POS	Ödeme terminali
 POSTA	Kargo
 POSTA	Mektup
 POSTA	Ptt
 POSTACI	Kurye
 POSTACI	Mektup dağıtan
 POSTACI	Pttci
+POT	Düşüncesiz söz
 POT	Gaf
-POT	Kumaş kırışığı
+POT	Yersiz söz
 POYRAZ	Karayel kardeşi
 POYRAZ	Kuzey rüzgarı
 POYRAZ	Soğuk yel
@@ -6598,8 +7683,8 @@ PİLOT	Uçak kullanan
 PİLİÇ	Genç kız
 PİLİÇ	Körpe tavuk
 PİLİÇ	Tavuk
-PİM	Emniyet pimi
 PİM	Kilit iğnesi
+PİM	Küçük sabitleme mili
 PİR	Tarikat lideri
 PİR	Usta
 PİRİNÇ	Pilavlık tane
@@ -6705,12 +7790,18 @@ REHBER	Yol gösteren
 REHİN	Emanet
 REHİN	Güvence
 REHİN	Tutsak
+REJİ	Sahne düzenleme işi
+REJİ	Yayın yönetimi
+REJİ	Çekim yönetimi
 REKABET	Müsabaka
 REKABET	Yarış
 REKABET	Çekişme
 REKLAM	Propaganda
 REKLAM	Tanıtım
 REKLAM	İlan
+RENK	Görsel ton
+RENK	Işığın görsel etkisi
+RENK	Kırmızı mavi gibi
 RENKSİZ	Solgun
 RENKSİZ	Sönük
 RENKSİZ	Şeffaf
@@ -6761,9 +7852,10 @@ ROKA	Acımsı yeşillik
 ROKET	Füze
 ROKET	Hızlı
 ROKET	Uzay aracı
-ROL	Görev
-ROL	Karakter
-ROL	Oyun rolü
+ROL	Canlandırılan kişi
+ROL	Oyuncunun görevi
+ROL	Üstlenilen görev
+ROM	Damıtılmış içki
 ROM	Şeker kamışı içkisi
 ROMAN	Kitap
 ROMAN	Uzun hikaye
@@ -6775,6 +7867,8 @@ ROMANTİK	Aşk dolu
 ROMANTİK	Duygusal
 ROMANTİK	Hayalperest
 ROT	Araba ayarı
+ROT	Direksiyon parçası
+ROT	Tekerlek yön kolu
 ROZET	Arma
 ROZET	Nişan
 ROZET	Yaka iğnesi
@@ -6800,12 +7894,18 @@ RÖPORTAJ	Söyleşi
 RÜŞVET	Bahşiş değil
 RÜŞVET	El altından para
 RÜŞVET	Yolsuzluk
+RİCA	Birinden dileme
+RİCA	Kibarca talep etme
+RİCA	Nazikçe isteme
 RİSALE	Broşür
 RİSALE	Kitapçık
 RİSALE	Küçük kitap
 SAADET	Bahtiyarlık
 SAADET	Huzur
 SAADET	Mutluluk
+SAAT	Akrep ve yelkovanlı
+SAAT	Altmış dakika
+SAAT	Zaman ölçme aracı
 SABA	Doğu rüzgarı
 SABA	Sabah rüzgarı
 SABA	Seher yeli
@@ -6846,6 +7946,9 @@ SACAYAĞI	Üçlü yapı
 SADAKA	Muhtaca verilen
 SADAKA	Yardım
 SADAKA	Zekat
+SADE	Gösterişsiz
+SADE	Katkısız ve düz
+SADE	Süssüz ve yalın
 SADRAZAM	Başvezir
 SADRAZAM	Osmanlı başbakanı
 SADRAZAM	Vezirazam
@@ -6905,6 +8008,9 @@ SALDIRI	Hücum
 SALGIN	Epidemi
 SALGIN	Pandemi
 SALGIN	Yayılan hastalık
+SALI	Haftanın ikinci günü
+SALI	Pazartesiden sonra
+SALI	Çarşambadan önce
 SALINCAK	Hamak
 SALINCAK	Park aleti
 SALINCAK	Sallanan oyuncak
@@ -7050,7 +8156,7 @@ SAYISAL	Numerik
 SAYISAL	Rakamsal
 SAZ	Bağlama
 SAZ	Kamış
-SAZ	Sazlık
+SAZ	Uzun saplı çalgı
 SAÇ	Kafa kılı
 SAÇ	Perçem
 SAÇ	Zülüf
@@ -7083,6 +8189,12 @@ SEBEP	İllet
 SEBZE	Bostan ürünü
 SEBZE	Yeşillik
 SEBZE	Zerzevat
+SEDA	Ses
+SEDA	Yankılanan ses
+SEDA	İşitilen tını
+SEFA	Keyif ve neşe
+SEFA	Rahat ve mutlu yaşam
+SEFA	Zevk ve eğlence
 SEFALET	Perişanlık
 SEFALET	Sıkıntı
 SEFALET	Yoksulluk
@@ -7128,15 +8240,24 @@ SEMER	Yük eyeri
 SEMPATİK	Cana yakın
 SEMPATİK	Hoş
 SEMPATİK	Sevimli
+SEMT	Kent içindeki bölge
+SEMT	Mahalleler topluluğu
+SEMT	Şehrin bir bölgesi
 SEMİZOTU	Pirpirim
 SEMİZOTU	Yeşillik
 SEMİZOTU	Yoğurtlu ot
 SEN	Ben değil
 SEN	Sana
 SEN	İkinci şahıs
+SENA	Methetme
+SENA	Övgü
+SENA	Övgü dolu sözler
 SENARİST	Dizi yazarı
 SENARİST	Film yazarı
 SENARİST	Metin yazarı
+SENE	365 günlük dönem
+SENE	On iki aylık süre
+SENE	Yıl
 SENTETİK	Doğal olmayan
 SENTETİK	Suni
 SENTETİK	Yapay
@@ -7169,6 +8290,9 @@ SERSEM	Şaşkın
 SERSERİ	Avare
 SERSERİ	Aylak
 SERSERİ	Başıboş
+SERT	Katı ve dayanıklı
+SERT	Kolay bükülmeyen
+SERT	Yumuşak olmayan
 SERVET	Mal mülk
 SERVET	Varlık
 SERVET	Zenginlik
@@ -7178,6 +8302,9 @@ SERVİS	Tenis atışı
 SERÇE	Cıvıl kuş
 SERÇE	Kahverengi kuş
 SERÇE	Küçük kuş
+SERİ	Ardışık dizi
+SERİ	Art arda gelen
+SERİ	Birbirini izleyen
 SERİN	Esintili
 SERİN	Ilık
 SERİN	Soğukça
@@ -7287,6 +8414,20 @@ SIRADAN	Vasat
 SIRALAMA	Derece
 SIRALAMA	Dizme
 SIRALAMA	Liste
+SIRF	Başka amaç olmadan
+SIRF	Sadece anlamında
+SIRF	Yalnızca
+SIRP	Slav kökenli halk
+SIRP	Sırbistanlı kişi
+SIRT	Belin üst bölgesi
+SIRT	Omuzların arka yanı
+SIRT	Vücudun arka kısmı
+SIVA	Duvar kaplama harcı
+SIVA	Duvara sürülen harç
+SIVA	Yüzey düzleme harcı
+SIVI	Akışkan madde
+SIVI	Kabın şeklini alan
+SIVI	Su gibi akışkan
 SIÇAN	Fare
 SIÇAN	Kemirgen
 SIÇAN	Lağım faresi
@@ -7347,6 +8488,12 @@ SONSUZ	Sınırsız
 SONUÇ	Akıbet
 SONUÇ	Netice
 SONUÇ	Son
+SOPA	Elde tutulan değnek
+SOPA	Uzun tahta çubuk
+SOPA	Vurmak için değnek
+SORU	Bilgi isteyen ifade
+SORU	Cevap bekleyen söz
+SORU	Yanıt arayan ifade
 SORUMLU	Görevli
 SORUMLU	Mesul
 SORUMLU	Yükümlü
@@ -7362,6 +8509,9 @@ SOSYAL	İçtimai
 SOSYETE	Elit
 SOSYETE	Kibar çevre
 SOSYETE	Yüksek tabaka
+SOTE	Az yağda kavurma
+SOTE	Az yağda pişirme
+SOTE	Tavada kavurma
 SOY	Kök
 SOY	Nesil
 SOY	Sülale
@@ -7395,15 +8545,24 @@ SPOR	İdman
 SPORCU	Atlet
 SPORCU	Oyuncu
 SPORCU	İdmancı
+SPOT	Işık veren lamba
+SPOT	Kısa reklam filmi
+SPOT	Yönlü aydınlatma
 STADYUM	Arena
 STADYUM	Maç alanı
 STADYUM	Stat
+STAJ	Meslek deneyimi
+STAJ	Uygulamalı eğitim
+STAJ	İş yerinde öğrenme
 STAJYER	Aday
 STAJYER	Kursiyer
 STAJYER	Çırak
 STANDART	Norm
 STANDART	Sıradan
 STANDART	Ölçüt
+STAR	Parlak sahne yıldızı
+STAR	Tanınmış oyuncu
+STAR	Ünlü sanatçı
 STEP	Ağaçsız ova
 STEP	Bozkır
 STRATEJİ	Plan
@@ -7583,6 +8742,9 @@ SİNİR	Öfke
 SİNİRLİ	Gergin
 SİNİRLİ	Hırçın
 SİNİRLİ	Öfkeli
+SİRK	Akrobat gösteri yeri
+SİRK	Palyaçolu gösteri
+SİRK	Çadırda yapılan şov
 SİRKE	Bit yumurtası
 SİRKE	Ekşi sıvı
 SİRKE	Turşu suyu
@@ -7600,6 +8762,8 @@ SİSTEMLİ	Metodik
 SİSTEMLİ	Planlı
 SİT	Koruma alanı
 SİT	Tarihi alan
+SİTE	Konutlar topluluğu
+SİTE	İnternet sayfası
 SİVİLCE	Akne
 SİVİLCE	Ergen yüzü
 SİVİLCE	Kabarcık
@@ -7661,9 +8825,9 @@ TAHT	İktidar
 TAHTA	Ahşap
 TAHTA	Kereste
 TAHTA	Levha
-TAK	Kemer
-TAK	Takmak
-TAK	Zafer takı
+TAK	Bir yere iliştir
+TAK	Yerine yerleştir
+TAK	Üzerine geçir
 TAKIM	Ekip
 TAKIM	Elbise seti
 TAKIM	Set
@@ -7735,9 +8899,15 @@ TANDIR	Toprak fırın
 TANECİK	Partikül
 TANECİK	Parçacık
 TANECİK	Zerre
+TANI	Hastalık teşhisi
+TANI	Hastalığı belirleme
+TANI	Teşhis
 TANIDIK	Ahbap
 TANIDIK	Aşina
 TANIDIK	Bildik
+TANK	Paletli savaş aracı
+TANK	Toplu zırhlı araç
+TANK	Zırhlı savaş aracı
 TANRI	Allah
 TANRI	Yaratan
 TANRI	İlah
@@ -7748,6 +8918,9 @@ TANTANA	Debdebe
 TANZİMAT	1839 fermanı
 TANZİMAT	Düzenlemeler
 TANZİMAT	Reform dönemi
+TAPA	Boru kapatma parçası
+TAPA	Delik kapatma tıkacı
+TAPA	Şişe ağzı tıkacı
 TAPINAK	Kilise
 TAPINAK	Mabet
 TAPINAK	İbadethane
@@ -7767,6 +8940,9 @@ TARAK	Saç düzeltici
 TARLA	Bostan
 TARLA	Ekili alan
 TARLA	Ekin yeri
+TARZ	Kendine özgü biçim
+TARZ	Yapılış biçimi
+TARZ	Üslup
 TARÇIN	Baharat
 TARÇIN	Kabuk baharatı
 TARÇIN	Sütlaç süsü
@@ -7781,6 +8957,9 @@ TARİHÇİ	Müverrih
 TAS	Hamam tası
 TAS	Kap
 TAS	Kase
+TASA	Endişe ve üzüntü
+TASA	Kaygı
+TASA	İç sıkıntısı
 TASARI	Kanun önerisi
 TASARI	Plan
 TASARI	Proje
@@ -7846,6 +9025,12 @@ TAY	Kısrak yavrusu
 TAYFUN	Fırtına
 TAYFUN	Kasırga
 TAYFUN	Tropikal fırtına
+TAZE	Bayat olmayan
+TAZE	Yeni toplanmış
+TAZE	Yeni ve bozulmamış
+TAZI	Avcı köpeği
+TAZI	Hızlı av köpeği
+TAZI	İnce yapılı köpek
 TAZMİNAT	Kompanzasyon
 TAZMİNAT	Kıdem parası
 TAZMİNAT	Zarar karşılığı
@@ -7885,7 +9070,8 @@ TEDBİR	İhtiyat
 TEDİRGİN	Endişeli
 TEDİRGİN	Gergin
 TEDİRGİN	Huzursuz
-TEF	Def
+TEF	Elde çalınan çalgı
+TEF	Ritim çalgısı
 TEF	Zilli çalgı
 TEFEKKÜR	Derin düşünce
 TEFEKKÜR	Düşünme
@@ -7920,8 +9106,9 @@ TEKSTİL	Kumaş sanayi
 TEKVANDO	Kore dövüş sporu
 TEKVANDO	Olimpik dövüş
 TEKVANDO	Tekmeli dövüş
-TEL	Kablo
-TEL	Saç teli
+TEL	Elektrik iletkeni
+TEL	Metalden ince çizgi
+TEL	İnce metal iplik
 TELAFFUZ	Diksiyon
 TELAFFUZ	Okunuş
 TELAFFUZ	Söyleyiş
@@ -8012,6 +9199,9 @@ TEREDDÜT	Şüphe
 TEREYAĞI	Kahvaltılık
 TEREYAĞI	Köy yağı
 TEREYAĞI	Süt yağı
+TERK	Ayrılıp uzaklaşma
+TERK	Bırakıp gitme
+TERK	Vazgeçme
 TERLİK	Ev ayakkabısı
 TERLİK	Patik
 TERLİK	Şıpıdık
@@ -8021,9 +9211,9 @@ TERMOS	Çay kabı
 TERMİNAL	Bilgisayar ucu
 TERMİNAL	Gar
 TERMİNAL	Otogar
-TERS	Düz olmayan
-TERS	Karşıt
-TERS	Zıt
+TERS	Aksi yönde olan
+TERS	Düzün karşıtı
+TERS	Zıt yönde
 TERTEMİZ	Lekesiz
 TERTEMİZ	Pak
 TERTEMİZ	Pırıl pırıl
@@ -8038,6 +9228,9 @@ TESLİM	Bırakma
 TESLİM	Verme
 TESPİH	Boncuk dizisi
 TESPİH	Zikir aleti
+TEST	Bilgi yoklaması
+TEST	Bilgi ölçme sınavı
+TEST	Deneme sınavı
 TESTİ	Su kabı
 TESTİ	Toprak kap
 TESTİ	Çömlek
@@ -8047,6 +9240,8 @@ TESİSAT	Şebeke
 TEYZE	Annenin kız kardeşi
 TEYZE	Hala
 TEYZE	Yaşlı kadın
+TEZ	Bilimsel iddia
+TEZ	Savunulan düşünce
 TEZ	Çabuk
 TEĞMEN	Rütbe
 TEĞMEN	Subay
@@ -8068,6 +9263,8 @@ TIP	Hekimlik
 TIPA	Kapak
 TIPA	Tıkaç
 TIR	Büyük kamyon
+TIR	Büyük yük aracı
+TIR	Çekicili taşıt
 TIRABZAN	Korkuluk
 TIRABZAN	Merdiven parmaklığı
 TIRABZAN	Parmaklık
@@ -8191,12 +9388,19 @@ TUHAF	Garip
 TUHAFİYE	Düğme iplik dükkanı
 TUHAFİYE	Ivır zıvır
 TUHAFİYE	Mercerie
+TUNÇ	Bakır kalay alaşımı
+TUNÇ	Bronz metal
+TUNÇ	Heykel yapım metali
 TUR	Dönüş
 TUR	Gezi
 TUR	Turnuva turu
+TURA	Madeni paranın yüzü
+TURA	Yazı tarafının zıttı
 TURFANDA	Erkenci ürün
 TURFANDA	Mevsiminden önce
 TURFANDA	İlk ürün
+TURP	Acı kök sebze
+TURP	Salatada yenilen kök
 TURUNÇ	Bergamot
 TURUNÇ	Ekşi portakal
 TURUNÇ	Narenciye
@@ -8212,6 +9416,9 @@ TURŞU	Salamura
 TURŞUCU	Ekşi satan
 TURŞUCU	Kavanozcu
 TURŞUCU	Salamuracı
+TUT	Bırakma
+TUT	Elinde bulundur
+TUT	Sıkıca kavra
 TUTANAK	Kayıt
 TUTANAK	Rapor
 TUTANAK	Zabıt
@@ -8227,9 +9434,9 @@ TUTSAK	Rehine
 TUTUMLU	Cimri değil
 TUTUMLU	Ekonomik
 TUTUMLU	İdareli
+TUZ	Billursu madde
 TUZ	Sodyum klorür
-TUZ	Tuzluk
-TUZ	Yemek tuzu
+TUZ	Yemek tatlandırıcı
 TUZAK	Dolap
 TUZAK	Kapan
 TUZAK	Pusu
@@ -8253,6 +9460,7 @@ TÜCCAR	Alım satımcı
 TÜCCAR	Esnaf
 TÜCCAR	Tacir
 TÜF	Volkanik taş
+TÜF	Volkanik çözelti taş
 TÜFEK	Av silahı
 TÜFEK	Çifte
 TÜH	Pişmanlık ünlemi
@@ -8276,7 +9484,8 @@ TÜN	Karanlık
 TÜNEL	Dağ içi yol
 TÜNEL	Galeri
 TÜNEL	Yeraltı geçidi
-TÜP	Boru
+TÜP	Cam boru
+TÜP	Deneyde kullanılan
 TÜR	Cins
 TÜR	Tip
 TÜR	Çeşit
@@ -8292,6 +9501,9 @@ TÜTÜN	Sigara otu
 TÜTÜNCÜ	Nargile satıcısı
 TÜTÜNCÜ	Sigaracı
 TÜTÜNCÜ	Tekel bayi
+TÜY	Hafif kuş örtüsü
+TÜY	Kanat üzerindeki kıl
+TÜY	Kuşun vücut örtüsü
 Tİ	Titanyum elementi
 TİK	Kas hareketi
 TİK	Saat sesi
@@ -8343,8 +9555,9 @@ UCA	Sağrı
 UCUBE	Acayip
 UCUBE	Tuhaf görünen
 UCUBE	Çirkin yaratık
-UCUZ	Ekonomik
-UCUZ	Hesaplı
+UCUZ	Az para gerektiren
+UCUZ	Fiyatı düşük
+UCUZ	Pahalı olmayan
 UCUZLUK	Düşük fiyat
 UCUZLUK	Kampanya
 UCUZLUK	İndirim
@@ -8354,6 +9567,9 @@ UF	Sızı belirtisi
 UFACIK	Küçücük
 UFACIK	Minicik
 UFACIK	Ufak tefek
+UFAK	Küçük boyutlu
+UFAK	Minik
+UFAK	İri olmayan
 UFAKLIK	Küçük
 UFAKLIK	Minik
 UFAKLIK	Çocuk
@@ -8375,9 +9591,15 @@ ULTRASON	Görüntüleme cihazı
 ULTRASON	Ses ötesi
 ULU	Büyük
 ULU	Yüce
+ULUS	Birleşmiş halk
+ULUS	Millet
+ULUS	Ortak kimlikli halk
 ULUSAL	Milli
 ULUSAL	Yerli
 ULUSAL	Ülke çapında
+ULVİ	Manevi açıdan yüce
+ULVİ	Yüce ve kutsal
+ULVİ	Yüksek manevi değer
 UMACI	Korkunç varlık
 UMACI	Çocuk korkutan
 UMACI	Öcü
@@ -8414,6 +9636,9 @@ UTANGAÇ	Sıkılgan
 UTANGAÇ	Çekingen
 UY	Korku belirtisi
 UY	Şaşkınlık belirtisi
+UYAK	Dize sonu benzerliği
+UYAK	Dize sonu ses uyumu
+UYAK	Şiirde kafiye
 UYANIK	Açıkgöz
 UYANIK	Kurnaz
 UYANIK	Uyumayan
@@ -8421,6 +9646,8 @@ UYARI	Dikkat
 UYARI	İhtar
 UYARI	İkaz
 UYDU	Ay
+UYDU	Dünya çevresindeki
+UYDU	Gezegen çevresinde
 UYDURUK	Asılsız
 UYDURUK	Sahte
 UYDURUK	Yalan
@@ -8428,6 +9655,9 @@ UYGARLIK	Kültür
 UYGARLIK	Medeniyet
 UYGULAMA	Pratik
 UYGULAMA	Tatbik
+UYKU	Bilincin dinlenmesi
+UYKU	Dinlenme hali
+UYKU	Gece dinlenmesi
 UYKULU	Mahmur
 UYKULU	Uyuklayan
 UYKULU	Yorgun
@@ -8437,15 +9667,27 @@ UYSALLIK	İtaat
 UYUMLU	Ahenkli
 UYUMLU	Geçimli
 UYUMLU	Uygun
+UYUZ	Akarların yol açtığı
+UYUZ	Bulaşıcı deri illeti
+UYUZ	Bulaşıcı deri sorunu
 UZ	Becerikli
 UZ	Mahir
 UZ	Uzak, çok
+UZAK	Irak
+UZAK	Mesafesi fazla olan
+UZAK	Yakın olmayan
 UZAKTAN	Irak yerden
 UZAKTAN	Mesafeden
 UZAKTAN	Online
+UZAM	Mekânsal genişlik
+UZAM	Yer kaplama alanı
+UZAM	Üç boyutlu alan
 UZANTI	Devam
 UZANTI	Dosya sonu
 UZANTI	Ek
+UZAY	Evrenin boşluğu
+UZAY	Gezegenlerin ortamı
+UZAY	Gök cisimleri alanı
 UZAYLI	Dünya dışı
 UZAYLI	Marslı
 UZAYLI	Yaratık
@@ -8460,9 +9702,18 @@ UZMANLIK	Ustalık
 UZMANLIK	İhtisas
 UZO	Anasonlu içki
 UZO	Yunan rakısı
+UZUN	Boyu fazla olan
+UZUN	Kısa olmayan
+UZUN	Kısanın karşıtı
+UZUV	Bedenin bir bölümü
+UZUV	Kol veya bacak
+UZUV	Vücudun bir parçası
 UÇ	Aşırı
 UÇ	Baş veya son
 UÇ	Ekstrem
+UÇAK	Havada uçan taşıt
+UÇAK	Kanatlı hava aracı
+UÇAK	Pilotun kullandığı
 UÇKUR	Bel bağı
 UÇKUR	Don bağı
 UÇKUR	Şalvar ipi
@@ -8472,6 +9723,9 @@ UÇURTMA	İpli oyuncak
 UÇURUM	Derin boşluk
 UÇURUM	Dik kayalık
 UÇURUM	Yar
+UÇUŞ	Havada ilerleme
+UÇUŞ	Havada yolculuk
+UÇUŞ	Kanatlarla yükselme
 UĞRAŞ	Hobi
 UĞRAŞ	Meşgale
 UĞRAŞ	Çaba
@@ -8486,8 +9740,18 @@ UĞURLU	Şanslı
 UĞURSUZ	Kara bahtlı
 UĞURSUZ	Meşum
 UĞURSUZ	Şanssız
-VAAT	Söz
-VAAT	Taahhüt
+VAAT	Geleceğe dair söz
+VAAT	Verilen söz
+VAAT	Yapma sözü
+VAAZ	Camide verilen öğüt
+VAAZ	Dini nasihat
+VAAZ	Dini öğüt konuşması
+VADE	Belirlenen son tarih
+VADE	Borcun son günü
+VADE	Ödeme süresi
+VADİ	Dağlar arası düzlük
+VADİ	Dağlar arası çukur
+VADİ	İki dağ arası
 VAFTİZ	Adlandırma
 VAFTİZ	Hristiyan töreni
 VAFTİZ	Suyla arınma
@@ -8495,6 +9759,9 @@ VAGON	Tren arabası
 VAGON	Yük arabası
 VAH	Acıma ünlemi
 VAH	Yazık
+VAHA	Çölde sulak bölge
+VAHA	Çölde yeşil bölge
+VAHA	Çöldeki yeşil alan
 VAKA	Hadise
 VAKA	Olay
 VAKA	Olgu
@@ -8546,6 +9813,8 @@ VAZİFE	Görev
 VAZİFE	Ödev
 VAZİFE	İş
 VE	Bağlama edatı
+VE	Bağlaç
+VE	Sen ___ ben
 VEBA	Kara ölüm
 VEBA	Taun
 VELESPİT	Bisiklet
@@ -8641,6 +9910,9 @@ YAD	Anma
 YAD	Hatırlama
 YAD	Yabancı
 YAK	Tibet sığırı
+YAKA	Giysinin üst kenarı
+YAKA	Gömlekte boyun kısmı
+YAKA	Gömleğin boyun kısmı
 YAKAMOZ	Deniz ışığı
 YAKAMOZ	Gece denizi ışıltısı
 YAKAMOZ	Parıltı
@@ -8670,11 +9942,17 @@ YALDIZ	Sırma
 YALDIZLI	Altın kaplama
 YALDIZLI	Parlak
 YALDIZLI	Sırmalı
+YALI	Boğaz kıyısı konağı
+YALI	Deniz kenarı evi
+YALI	Kıyıdaki büyük ev
 YALNIZ	Kimsesiz
 YALNIZ	Tek başına
 YALNIZCA	Ancak
 YALNIZCA	Sadece
 YALNIZCA	Tek başına
+YAMA	Delik kapatan parça
+YAMA	Giysi tamir parçası
+YAMA	Söküğü örten kumaş
 YAMAÇ	Bayır
 YAMAÇ	Dağ eteği
 YAMAÇ	Eğim
@@ -8699,6 +9977,12 @@ YANKI	Etki
 YANLIŞ	Doğru karşıtı
 YANLIŞ	Hata
 YANLIŞ	Yanılgı
+YANİ	Başka bir deyişle
+YANİ	Demek oluyor ki
+YANİ	Diğer bir ifadeyle
+YAPI	Bina veya tesis
+YAPI	Kurulmuş bütün
+YAPI	İnşa edilmiş eser
 YAPIŞKAN	Tutkallı
 YAPIŞKAN	Vıcık
 YAPIŞKAN	Yılışık
@@ -8714,6 +9998,9 @@ YAPRAKLI	Yeşil dallı
 YAR	Sevgili
 YAR	Uçurum
 YAR	Yarmak
+YARA	Bedendeki zedelenme
+YARA	Deride oluşan hasar
+YARA	Kesik veya ezik
 YARAMAZ	Afacan
 YARAMAZ	Haylaz
 YARAMAZ	Şımarık
@@ -8735,6 +10022,9 @@ YARDIMCI	Muavin
 YARGIÇ	Hakim
 YARGIÇ	Jüri
 YARGIÇ	Kadı
+YARI	Bütünün yüzde ellisi
+YARI	Yüzde ellilik kısım
+YARI	İki eşit paydan biri
 YARIMADA	Anadolu
 YARIMADA	Kara çıkıntısı
 YARIMADA	Üç yanı deniz
@@ -8752,8 +10042,9 @@ YARIŞMA	Rekabet
 YARIŞMA	Turnuva
 YAS	Keder
 YAS	Matem
+YASA	Hukuki kural
 YASA	Kanun
-YASA	Kural
+YASA	Resmi hukuk kuralı
 YASAK	Men
 YASAK	Serbest karşıtı
 YASEMİN	Beyaz çiçek
@@ -8782,6 +10073,9 @@ YAVRU	Körpe
 YAVRU	Çocuk
 YAY	Burç
 YAY	Ok atan
+YAYA	Araçsız yolcu
+YAYA	Yürüyen insan
+YAYA	Yürüyerek giden kişi
 YAYGARA	Feryat
 YAYGARA	Gürültü
 YAYGIN	Genel
@@ -8799,6 +10093,9 @@ YAZ	Yazmak
 YAZAR	Edebiyatçı
 YAZAR	Kalem
 YAZAR	Muharrir
+YAZI	Harflerle anlatım
+YAZI	Kalemle yazılan
+YAZI	Okunabilen metin
 YAZIHANE	Büro
 YAZIHANE	Ofis
 YAZIHANE	Çalışma masası
@@ -8825,7 +10122,11 @@ YAŞLILIK	Kocama
 YAŞLILIK	İhtiyarlık
 YAŞLILIK	İleri yaş
 YE	28. harf
+YE	Karın doyurmak
 YE	Tüketmek
+YEDİ	Altıdan sonraki sayı
+YEDİ	Haftadaki gün sayısı
+YEDİ	Sekizden önceki sayı
 YEK	Bir
 YEK	Tek
 YEKE	Dümen kolu
@@ -8860,6 +10161,9 @@ YEN	Kol ucu
 YENGEÇ	Burç
 YENGEÇ	Deniz kabuklusu
 YENGEÇ	Pavurya
+YENİ	Eski olmayan
+YENİ	Henüz yapılmış
+YENİ	İlk kez kullanılan
 YENİDEN	Baştan
 YENİDEN	Bir daha
 YENİDEN	Tekrar
@@ -8934,6 +10238,7 @@ YIRTICI	Aslan
 YIRTICI	Avcı
 YIRTICI	Vahşi hayvan
 YO	Hayır
+YO	Olmaz
 YO	Reddetmek
 YOK	Hiç
 YOK	Mevcut değil
@@ -8952,6 +10257,9 @@ YOM	Uğur
 YONCA	Hayvan yemi
 YONCA	Üç yapraklı
 YONCA	Şans otu
+YONT	Keserek biçim ver
+YONT	Oyarak şekil ver
+YONT	Taşı şekillendir
 YORGAN	Kalın örtü
 YORGAN	Pamuklu örtü
 YORGAN	Yatak örtüsü
@@ -9002,9 +10310,15 @@ YUMUŞAK	Sert değil
 YUNUS	Deniz memelisi
 YUNUS	Dolfin
 YUNUS	Zeki hayvan
+YURT	Vatan
+YURT	Yaşanılan ülke
+YURT	İnsanın memleketi
 YUSUFÇUK	Helikopter böceği
 YUSUFÇUK	Kızböceği
 YUSUFÇUK	Su böceği
+YUVA	Hayvanların evi
+YUVA	Kuşların barınağı
+YUVA	Yumurtlama yeri
 YUVARLAK	Daire
 YUVARLAK	Küre
 YUVARLAK	Top şekli
@@ -9017,9 +10331,12 @@ YÖNETMEN	Rejisör
 YÖNETİCİ	Amir
 YÖNETİCİ	Müdür
 YÖNETİCİ	İdareci
-YÜCE	Büyük
-YÜCE	Ulu
-YÜCE	Ulvi
+YÖRE	Belirli bir bölge
+YÖRE	Bir yerin çevresi
+YÖRE	Çevre ve civar
+YÜCE	Saygıdeğer ve ulu
+YÜCE	Ulu ve görkemli
+YÜCE	Çok yüksek ve ulu
 YÜK	Ağırlık
 YÜK	Hamule
 YÜK	Taşınan şey
@@ -9062,6 +10379,9 @@ YİYECEK	Gıda
 YİĞİT	Cesur
 YİĞİT	Delikanlı
 YİĞİT	Kahraman
+ZAAF	Kişisel güçsüzlük
+ZAAF	Zayıf yön
+ZAAF	İrade zayıflığı
 ZABITA	Belediye görevlisi
 ZABITA	Belediye polisi
 ZABITA	Denetçi
@@ -9231,12 +10551,18 @@ ZİYAFET	Şölen
 ÇADIR	Branda
 ÇADIR	Kamp evi
 ÇADIR	Oba
+ÇAKI	Açılıp kapanan bıçak
+ÇAKI	Cepte taşınan bıçak
+ÇAKI	Katlanır cep bıçağı
 ÇAKIL	Dere taşı
 ÇAKIL	Küçük taş
 ÇAKIL	İri kum
 ÇAKMAK	Ateş aleti
 ÇAKMAK	Sigara aleti
 ÇAKMAK	Yanmaz alet
+ÇALI	Bodur odunsu bitki
+ÇALI	Dallı küçük ağaççık
+ÇALI	Küçük dallı bitki
 ÇALIŞKAN	Emekçi
 ÇALIŞKAN	Gayretli
 ÇALIŞKAN	Tembel karşıtı
@@ -9288,8 +10614,14 @@ ZİYAFET	Şölen
 ÇARDAK	Asma gölgeliği
 ÇARDAK	Kameriye
 ÇARDAK	Kulübe
+ÇARE	Derde deva
+ÇARE	Soruna çözüm
+ÇARE	Çıkış yolu
 ÇARESİZ	Umutsuz
 ÇARESİZ	Çözümsüz
+ÇARK	Dönen dişli teker
+ÇARK	Dönen işleyen parça
+ÇARK	Makinedeki teker
 ÇARPICI	Etkileyici
 ÇARPICI	Göz alıcı
 ÇARPICI	Şaşırtıcı
@@ -9314,6 +10646,9 @@ ZİYAFET	Şölen
 ÇATAL	Ayrım yeri
 ÇATAL	Dirgen
 ÇATAL	Yemek aleti
+ÇATI	Binanın üst örtüsü
+ÇATI	Evi yağmurdan korur
+ÇATI	Kiremitli üst yapı
 ÇATIŞMA	Anlaşmazlık
 ÇATIŞMA	Kavga
 ÇATIŞMA	Çarpışma
@@ -9334,6 +10669,9 @@ ZİYAFET	Şölen
 ÇAYLAK	Acemi
 ÇAYLAK	Yeni gelen
 ÇAYLAK	Yırtıcı kuş
+ÇAÇA	Deneyimli tayfa
+ÇAÇA	Eski denizci
+ÇAÇA	Usta gemici
 ÇAĞ	Devir
 ÇAĞ	Dönem
 ÇAĞ	Zaman
@@ -9405,6 +10743,12 @@ ZİYAFET	Şölen
 ÇERÇEVE	Kenarlık
 ÇERÇEVE	Resim kenarı
 ÇERÇEVE	Sınır
+ÇERİ	Eski dilde asker
+ÇERİ	Ordu eri
+ÇERİ	Savaşçı
+ÇETE	Silahlı suçlu grubu
+ÇETE	Yasa dışı grup
+ÇETE	Örgütlü suç grubu
 ÇETREFİL	Karışık
 ÇETREFİL	Zor
 ÇETREFİL	İçinden çıkılmaz
@@ -9446,6 +10790,9 @@ ZİYAFET	Şölen
 ÇIPLAK	Donsuz
 ÇIPLAK	Giysisiz
 ÇIPLAK	Üryan
+ÇIRA	Ateş tutuşturucu
+ÇIRA	Kolay yanan odun
+ÇIRA	Reçineli odun
 ÇIRAK	Kalfa altı
 ÇIRAK	Usta adayı
 ÇIRAK	Yamak
@@ -9488,6 +10835,9 @@ ZİYAFET	Şölen
 ÇORBACI	Aşevi
 ÇORBACI	Patron
 ÇORBACI	İşkembeci
+ÇOĞU	Azın karşıtı
+ÇOĞU	Büyük bir kısmı
+ÇOĞU	Yarıdan fazlası
 ÇOĞUNLUK	Azınlık karşıtı
 ÇOĞUNLUK	Büyük kısım
 ÇOĞUNLUK	Ekseriyet
@@ -9535,6 +10885,9 @@ ZİYAFET	Şölen
 ÇÜŞ	Dur
 ÇÜŞ	Eşeği durdurma sözü
 ÇÜŞ	Hayret ünlemi
+ÇİFT	Birbirini tamamlayan
+ÇİFT	İki kişilik birlik
+ÇİFT	İki parçadan oluşan
 ÇİFTLİK	Ahırlı arazi
 ÇİFTLİK	Malikane
 ÇİFTLİK	Tarla evi
@@ -9547,6 +10900,9 @@ ZİYAFET	Şölen
 ÇİL	Keklik türü
 ÇİL	Yeni para
 ÇİL	Yüz beneği
+ÇİLE	Acı ve sıkıntı
+ÇİLE	Dert ve keder
+ÇİLE	Çekilen eziyet
 ÇİLEK	Bahar meyvesi
 ÇİLEK	Dut benzeri
 ÇİLEK	Kırmızı meyve
@@ -9563,6 +10919,9 @@ ZİYAFET	Şölen
 ÇİNEKOP	Sarıkanat
 ÇİNGENE	Göçebe
 ÇİNGENE	Roman
+ÇİNİ	Desenli seramik
+ÇİNİ	Renkli duvar süsü
+ÇİNİ	Sırlı süs karosu
 ÇİP	Kumar fişi
 ÇİP	Mikroçip
 ÇİP	Yonga
@@ -9578,6 +10937,9 @@ ZİYAFET	Şölen
 ÇİT	Parmaklık
 ÇİT	Sınır engeli
 ÇİTA	En hızlı hayvan
+ÇİVİ	Sivri metal parça
+ÇİVİ	Çekiçle çakılan
+ÇİVİ	İki parçayı tutturur
 ÇİY	Jale
 ÇİY	Sabah nemi
 ÇİY	Şebnem
@@ -9587,6 +10949,9 @@ ZİYAFET	Şölen
 ÇİZGİ	Hat
 ÇİZGİ	Karikatür
 ÇİZGİ	Çizik
+ÇİZİ	Kalemle çekilen iz
+ÇİZİ	Yüzeyde ince iz
+ÇİZİ	İnce çizilmiş işaret
 ÇİÇEK	Gül
 ÇİÇEK	Lale
 ÇİÇEKLİK	Gül bahçesi
@@ -9644,9 +11009,15 @@ ZİYAFET	Şölen
 ÖKSÜZLÜK	Anasızlık
 ÖKSÜZLÜK	Kimsesizlik
 ÖKSÜZLÜK	Yetimlik
+ÖKÜZ	Erkek sığır
+ÖKÜZ	Çift süren hayvan
+ÖKÜZ	İğdiş edilmiş boğa
 ÖLÇEK	Oran
 ÖLÇEK	Ölçü
 ÖLÇEK	Ölçü kabı
+ÖLÇÜ	Boyut belirleme
+ÖLÇÜ	Büyüklük birimi
+ÖLÇÜ	Miktar belirleme
 ÖLÇÜSÜZ	Aşırı
 ÖLÇÜSÜZ	Dengesiz
 ÖLÇÜSÜZ	Sınırsız
@@ -9693,9 +11064,15 @@ ZİYAFET	Şölen
 ÖRF	Adet
 ÖRF	Gelenek
 ÖRF	Görenek
+ÖRGÜ	İlmekli el işi
+ÖRGÜ	İplikle yapılan iş
+ÖRGÜ	Şişle yapılan dokuma
 ÖRGÜLÜ	Belikli
 ÖRGÜLÜ	Örülmüş
 ÖRGÜLÜ	Şişle yapılmış
+ÖRME	İlmek oluşturma
+ÖRME	İlmek yapma işi
+ÖRME	Şişle dokuma işi
 ÖRNEK	Misal
 ÖRNEK	Model
 ÖRNEK	Numune
@@ -9704,6 +11081,9 @@ ZİYAFET	Şölen
 ÖRNEKLİK	İbretlik
 ÖRS	Demir döşek
 ÖRS	Demirci aleti
+ÖRTÜ	Koruyucu kumaş
+ÖRTÜ	Masa üstü yaygısı
+ÖRTÜ	Üstünü kapatan kumaş
 ÖRÜMCEK	Ağ ören
 ÖRÜMCEK	Sekiz bacaklı
 ÖRÜMCEK	Tarantula
@@ -9722,14 +11102,27 @@ ZİYAFET	Şölen
 ÖZDEYİŞ	Aforizma
 ÖZDEYİŞ	Atasözü
 ÖZDEYİŞ	Vecize
+ÖZEL	Herkese ait olmayan
+ÖZEL	Kişiye özgü
+ÖZEL	Sıradan olmayan
 ÖZELLİK	Huy
 ÖZELLİK	Nitelik
 ÖZELLİK	Vasıf
-ÖZEN	Dikkat
-ÖZEN	İtina
+ÖZEN	Dikkatli davranış
+ÖZEN	Gösterilen titizlik
+ÖZEN	Titizlik ve dikkat
 ÖZENLİ	Dikkatli
 ÖZENLİ	Titiz
 ÖZENLİ	İtinalı
+ÖZET	Ana fikirlerin özü
+ÖZET	Kısa anlatım
+ÖZET	Metnin kısa hali
+ÖZGE	Başka ve farklı
+ÖZGE	Diğerlerinden başka
+ÖZGE	Farklı olan
+ÖZGÜ	Birine has olan
+ÖZGÜ	Sadece ona ait
+ÖZGÜ	Yalnız ona ait
 ÖZGÜR	Bağımsız
 ÖZGÜR	Hür
 ÖZGÜR	Serbest
@@ -9742,12 +11135,21 @@ ZİYAFET	Şölen
 ÖZLEMLİ	Hasret dolu
 ÖZLEMLİ	Hasretli
 ÖZLEMLİ	İçli
+ÖZLÜ	Anlamca yoğun
+ÖZLÜ	Az sözle çok anlatan
+ÖZLÜ	Kısa ve anlamlı
+ÖZNE	Cümlenin temel ögesi
+ÖZNE	Eylemi yapan kişi
+ÖZNE	İşi yapan öge
 ÖZVERİ	Fedakarlık
 ÖZVERİ	Feragat
 ÖZVERİ	Kendini adama
 ÖZVERİLİ	Fedakar
 ÖZVERİLİ	Feragatli
 ÖZVERİLİ	Kendini adayan
+ÖZÜR	Hata için af dileme
+ÖZÜR	Kusur için af dileme
+ÖZÜR	Mazeret
 ÖÇ	İntikam
 ÖĞLEÜSTÜ	Gün ortası sonrası
 ÖĞLEÜSTÜ	Çay saati
@@ -9847,6 +11249,9 @@ ZİYAFET	Şölen
 ÜZGÜN	Hüzünlü
 ÜZGÜN	Kederli
 ÜZGÜN	Mahzun
+ÜZÜM	Asma meyvesi
+ÜZÜM	Salkım meyvesi
+ÜZÜM	Şarap yapılan meyve
 ÜZÜMLÜ	Asmalı
 ÜZÜMLÜ	Bağlı
 ÜZÜMLÜ	Salkımlı
@@ -9880,6 +11285,15 @@ ZİYAFET	Şölen
 İCAP	Gereklilik
 İCAP	Lüzum
 İCAR	Buluş
+İCAT	Bulunan yeni şey
+İCAT	Yeni bir buluş
+İCAT	İlk kez ortaya koyma
+İCAZ	Az sözle çok anlatma
+İCAZ	Kısa ve öz ifade
+İCAZ	Özlü anlatım
+İCRA	Borç tahsil işlemi
+İCRA	Uygulama
+İCRA	Yerine getirme
 İDAM	Ölüm cezası
 İDE	Düşünce
 İDE	Fikir
@@ -9934,6 +11348,11 @@ ZİYAFET	Şölen
 İKLİM	Bölge havası
 İKLİM	Hava durumu
 İKLİM	Mevsim düzeni
+İKNA	Birini inandırma
+İKNA	Fikrini değiştirme
+İKNA	Kabul ettirme
+İKON	Ekrandaki simge
+İKON	Uygulama sembolü
 İKRAM	Armağan
 İKRAM	Ağırlama
 İKRAM	Sunma
@@ -9954,12 +11373,17 @@ ZİYAFET	Şölen
 İKİNDİ	Öğleden sonra
 İKİZ	Bir batında doğan
 İKİZ	Tıpatıp benzeyen
+İL	Kent
 İL	Vilayet
+İL	Şehir
 İLA	Arası
 İLA	Kadar
 İLAHİYAT	Din bilimi
 İLAHİYAT	Dinbilim
 İLAHİYAT	Teoloji
+İLAN	Duyuru
+İLAN	Gazetede duyuru
+İLAN	Herkese bildirme
 İLAVE	Ek
 İLAVE	Ekleme
 İLAVE	Katkı
@@ -9992,12 +11416,24 @@ ZİYAFET	Şölen
 İLKBAHAR	Bahar
 İLKBAHAR	Mart nisan mayıs
 İLKBAHAR	Çiçek mevsimi
+İLKE	Ana kural
+İLKE	Temel düşünce
+İLKE	Temel prensip
 İLKOKUL	Birinci kademe
 İLKOKUL	Temel eğitim
 İLKOKUL	İlk mektep
 İLLÜZYON	Göz aldanması
 İLLÜZYON	Sihir
 İLLÜZYON	Yanılsama
+İLÇE	Kaymakamın yönettiği
+İLÇE	İle bağlı yerleşim
+İLÇE	İlin yönetim bölümü
+İLİK	Düğme deliği
+İLİK	Kemik içindeki doku
+İLİK	Kemiğin yumuşak özü
+İLİM	Bilgi birikimi
+İLİM	Bilim ve bilgi
+İLİM	Bilimsel bilgi
 İLİŞKİ	Alaka
 İLİŞKİ	Bağ
 İLİŞKİ	Münasebet
@@ -10010,15 +11446,38 @@ ZİYAFET	Şölen
 İMAJ	Görüntü
 İMAJ	İmge
 İMAJ	İzlenim
+İMAL	Mal üretme işi
+İMAL	Üretim yapma
+İMAL	Ürün ortaya çıkarma
+İMAM	Cami görevlisi
+İMAM	Cemaate önder olan
+İMAM	Namaz kıldıran kişi
+İMAN	Dini inanç
+İMAN	Kalpten inanma
+İMAN	Tanrıya inanma
+İMAR	Bayındırlaştırma
+İMAR	Yapılaşma düzeni
+İMAR	Şehir düzenleme
 İMECE	Dayanışma
 İMECE	Köy yardımı
 İMECE	Ortak iş
-İMGE	İmaj
+İMGE	Hayali tasarım
+İMGE	Zihindeki görüntü
+İMGE	Zihinsel tasvir
+İMHA	Ortadan kaldırma
+İMHA	Tümüyle yok etme
+İMHA	Yok etme işlemi
+İMLA	Doğru yazma biçimi
+İMLA	Kelimelerin yazılışı
+İMLA	Yazım kuralları
 İMTİHAN	Deneme
 İMTİHAN	Sınav
 İMTİHAN	Test
 İMTİYAZ	Ayrıcalık
 İMTİYAZ	Özel hak
+İMZA	Adın özel yazılışı
+İMZA	Belge onay işareti
+İMZA	Kişisel el işareti
 İN	Eski türkçede insan
 İN	Hayvan yuvası
 İN	İndiyum elementi
@@ -10037,9 +11496,15 @@ ZİYAFET	Şölen
 İNCELEME	Analiz
 İNCELEME	Araştırma
 İNCELEME	Tetkik
+İNCİ	Denizden çıkan süs
+İNCİ	Değerli deniz taşı
+İNCİ	İstiridye tanesi
 İNCİR	Bursa meyvesi
 İNCİR	Dut benzeri
 İNCİR	Tatlı meyve
+İNEK	Dişi sığır
+İNEK	Süt veren hayvan
+İNEK	Çiftlikteki sütçü
 İNKILAP	Devrim
 İNKILAP	Köklü değişim
 İNKILAP	Reform
@@ -10066,6 +11531,9 @@ ZİYAFET	Şölen
 İNÇ	Parmak ölçüsü
 İNÇ	Uzunluk birimi
 İNİ	Küçük kardeş
+İNŞA	Bina yapımı
+İNŞA	Yapı kurma işi
+İNŞA	Yapı oluşturma
 İNŞAAT	Bina işi
 İNŞAAT	Yapım
 İNŞAAT	Şantiye
@@ -10091,10 +11559,16 @@ ZİYAFET	Şölen
 İRS	Soya çekim
 İRİ	Büyük
 İRİ	Kocaman
+İRİS	Göz bebeğini saran
+İRİS	Gözde renkli halka
+İRİS	Gözün renkli kısmı
 İS	Duman lekesi
 İSABET	Denk gelme
 İSABET	Doğru tahmin
 İSABET	Tam vuruş
+İSAL	Bağırsak bozukluğu
+İSAL	Sulu dışkılama
+İSAL	Sık ve sulu dışkı
 İSKAMBİL	Deste
 İSKAMBİL	Kağıt oyunu
 İSKAMBİL	Oyun kağıdı
@@ -10113,6 +11587,12 @@ ZİYAFET	Şölen
 İSKONTO	Kırım
 İSKONTO	Tenzilat
 İSKONTO	İndirim
+İSLİ	Dumanla kararmış
+İSLİ	Kurumla kaplanmış
+İSLİ	Üzerinde kurum olan
+İSOT	Acı kırmızı biber
+İSOT	Koyu renkli baharat
+İSOT	Urfa biberi
 İSPANYA	Boğa güreşi ülkesi
 İSPANYA	Madrid ülkesi
 İSPİNOZ	Serçe akrabası
@@ -10147,6 +11627,9 @@ ZİYAFET	Şölen
 İSYAN	Ayaklanma
 İSYAN	Başkaldırı
 İSYAN	İhtilal
+İSİM	Ad
+İSİM	Kişiye verilen ad
+İSİM	Varlığı tanıtan söz
 İT	Değersiz
 İT	Köpek
 İTA	Verme
@@ -10155,6 +11638,12 @@ ZİYAFET	Şölen
 İTAAT	Uyma
 İTFAİYE	Söndürme ekibi
 İTFAİYE	Yangın söndürme
+İTKİ	Hareket ettiren güç
+İTKİ	Hareket sağlayan güç
+İTKİ	Harekete geçiren güç
+İTME	Güçle uzaklaştırma
+İTME	Uzağa doğru kakma
+İTME	Öne doğru kakma
 İTİBAR	Değer
 İTİBAR	Prestij
 İTİBAR	Saygınlık
@@ -10164,6 +11653,9 @@ ZİYAFET	Şölen
 İTİRAZ	Karşı çıkma
 İTİRAZ	Protesto
 İTİRAZ	Ret
+İTİŞ	Birbirini kakma
+İTİŞ	Kakışma eylemi
+İTİŞ	Karşılıklı kakışma
 İVME	Hız değişimi
 İVME	Hızlanma
 İVME	Hızlanma oranı
@@ -10180,6 +11672,9 @@ ZİYAFET	Şölen
 İYİMSER	Optimist
 İYİMSER	Umutlu
 İZ	Bırakılan belirti
+İZAH	Anlaşılır kılma
+İZAH	Ayrıntılı anlatım
+İZAH	Açıklama
 İZCİ	Kamp yapan kişi
 İZCİ	Keşif eri
 İZCİ	Keşifçi
@@ -10204,6 +11699,8 @@ ZİYAFET	Şölen
 İZOLE	Ayrık
 İZOLE	Tecrit
 İZOLE	Yalıtılmış
+İZİN	Resmi müsaade
+İZİN	Çalışmaya ara hakkı
 İÇ	Dış karşıtı
 İÇ	Ortasında yer alan
 İÇECEK	Meşrubat
@@ -10217,6 +11714,12 @@ ZİYAFET	Şölen
 İÇGÜDÜ	Sezgi
 İÇKİ	Alkol
 İÇKİ	Alkollü içecek
+İÇİM	Bir yudumluk miktar
+İÇİM	İçme biçimi
+İÇİM	İçme eylemi
+İÇİN	Amaç bildiren edat
+İÇİN	Sebep bildiren söz
+İÇİN	Uğruna anlamında
 İĞ	Eğirmen
 İĞ	Hastalık veya dert
 İĞNE	Dikiş aracı
