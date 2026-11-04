@@ -52,8 +52,10 @@ Apple's app transfer later.
       changes: re-import and rebuild the packs
 - [ ] Turkish daily pack 3 before day 200: 8 June 2027 with a 20 November
       launch (docs/LevelDelivery.md)
-- [x] Loading screen: logo and the walking cat on a filling bar
-      (`Launch/LaunchSplash.swift`)
+- [x] Loading screen: the Dengo Labs logo (1 s), then the game logo
+      (granny and the cat, made with ChatGPT) with the walking cat on a
+      filling bar (`Launch/LaunchSplash.swift`). Logo files for the website
+      and the store: `granny_puzzle_assets_V1/logo/`
 - [ ] Optional: the logo (`company-logo`) is from a compressed JPG,
       cleaned up; a vector or PNG export of the original would be sharper
 - [x] iPhone-only for 1.0 (`TARGETED_DEVICE_FAMILY = 1`). A real iPad
