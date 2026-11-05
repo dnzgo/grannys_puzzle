@@ -165,12 +165,15 @@ struct HomeView: View {
         // short screen that pushes the trophy down a little rather than
         // letting the three touch. Gone while the shop has nothing left to
         // sell (in 1.0, once "Remove ads" is bought): a stall with nothing
-        // to buy would only be in the way.
+        // to buy would only be in the way. Also gone while the shop is
+        // switched off on the server (`shop_enabled`, docs/RemoteConfig.md).
         .overlay {
             if grannyFrame != .zero {
                 let size = RoomPictureButton.size
                 let x = Theme.sidePadding + size / 2
-                let showsStall = game.purchases?.hasSomethingToSell == true && topRowFrame != .zero
+                let showsStall = game.tuning.shopEnabled
+                    && game.purchases?.hasSomethingToSell == true
+                    && topRowFrame != .zero
                 let stallY = topRowFrame.maxY + Self.roomButtonGap + size / 2
                 let trophyY = showsStall
                     ? max(grannyFrame.minY - 56, stallY + size + Self.roomButtonGap)

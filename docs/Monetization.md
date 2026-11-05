@@ -132,6 +132,11 @@ Before release:
 
 - [x] Paid Apps agreement accepted (with the account's wrong name, see
       below; the agreement follows the account, so no re-signing needed)
+- [x] Plan B while the tax form waits: 1.0 ships with the shop switched
+      off (`shop_enabled` = 0, the default; docs/RemoteConfig.md) and
+      without its in-app purchases. Once the agreement is active: submit
+      the six products with an update, and after they're approved set
+      `shop_enabled` to 1 in the console (no build needed for that step)
 - [ ] Tax form (W-8BEN) and bank details. Blocked: Apple's account data
       has the legal name as "Deniz Gözc" (the "ü" cut off) and the
       citizenship as Germany, both locked in every pre-filled form.

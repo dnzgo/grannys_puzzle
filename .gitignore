@@ -22,6 +22,8 @@ Config/Local.xcconfig
 
 # Firebase CLI cache (deploy hashes), recreated on every deploy
 Firebase/.firebase/
+# The CLI writes this when a command fails; it holds the signed-in account.
+firebase-debug.log
 
 # Excel keeps a lock file beside an open workbook.
 ~$*

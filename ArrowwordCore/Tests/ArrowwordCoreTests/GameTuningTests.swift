@@ -96,9 +96,25 @@ final class GameTuningTests: XCTestCase {
     }
 
     func testTheDailysFirstDayIsSetAsADate() {
+        // 20 days after the built-in first day (20 November 2026).
         let result = resolve([.dailyFirstDay: 20261210])
-        XCTAssertEqual(result.tuning.dailyFirstDay, DailyDay.firstDay + 39)
+        XCTAssertEqual(result.tuning.dailyFirstDay, DailyDay.firstDay + 20)
         XCTAssertEqual(result.ignored, [])
+    }
+
+    func testTheShopIsOffUntilTheServerTurnsItOn() {
+        // Off by default: 1.0 ships before its purchases can be approved.
+        XCTAssertFalse(resolve([:]).tuning.shopEnabled)
+        XCTAssertTrue(resolve([.shopEnabled: 1]).tuning.shopEnabled)
+        XCTAssertFalse(resolve([.shopEnabled: 0]).tuning.shopEnabled)
+    }
+
+    func testAShopSwitchThatIsntZeroOrOneKeepsTheDefault() {
+        for value in [2.0, 0.5, -1] {
+            let result = resolve([.shopEnabled: value])
+            XCTAssertFalse(result.tuning.shopEnabled, "\(value)")
+            XCTAssertEqual(result.ignored, [.shopEnabled], "\(value)")
+        }
     }
 
     func testAFirstDayThatIsntADateKeepsTheDefault() {

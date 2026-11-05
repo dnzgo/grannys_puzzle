@@ -124,6 +124,7 @@ gave. The App Store's product names have no numbers in them on purpose
 | `shop_grandmas_big` | Grandma helpers in the big grandma pack | 15 | 1–500 |
 | `shop_bundle_hints` | Cat hints in the welcome bundle (which also removes ads) | 30 | 0–1000 |
 | `shop_bundle_grandmas` | Grandma helpers in the welcome bundle | 5 | 0–500 |
+| `shop_enabled` | Whether the shop stall is in grandma's room: 1 on, 0 off. Off for 1.0, which ships before its purchases are approved; turn it on once they are (docs/Monetization.md) | 0 | 0 or 1 |
 
 Keep the big packs cheaper per helper than the small ones, and the
 bundle's helpers worth more than its extra price over "Remove ads"

@@ -20,6 +20,11 @@ noise, so add one only with the question it answers.
   game reports understand them.
 - Firebase also logs its own automatic events (`first_open`,
   `session_start`, `app_remove`, …); they aren't listed here.
+- **Ad revenue:** AdMob is linked to Firebase with impression-level ad
+  revenue on, so every ad shown logs an automatic `ad_impression` event
+  with its earnings (`value`, `currency`, `ad_format`, `ad_unit_name`).
+  No code of ours sends it. It's what Firebase's revenue reports, A/B
+  tests and audiences use.
 - `level` is the player's current level number in the pack being played,
   also during the daily challenge (where it's the level they'd play next).
 

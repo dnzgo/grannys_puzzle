@@ -69,10 +69,14 @@ Apple's app transfer later.
 - [x] Turkish daily pack 1 full (100); 200 Turkish dailies in all
 - [x] English packs 2–10 and daily packs 2–4 published (download
       tested on a phone)
-- [ ] Turkish packs 2–3 and daily pack 2 published (`firebase deploy --only hosting`)
-      and download tested on a phone
+- [x] Turkish packs 2–3 and daily pack 2 published (`firebase deploy --only hosting`,
+      4 November 2026)
+- [ ] Turkish pack download tested on a phone (TestFlight, Turkish, level 91+
+      or `-GPStartLevel 95` in a debug build)
 - [x] The daily's first day = the planned release day, 20 November 2026
       (`DailyDay.firstDay`)
+- [ ] `daily_first_day` set to 20261120 in the Remote Config console (not
+      "Use in-app default"), so the date is moved there if it has to be
 - [ ] If the release slips: `daily_first_day` in Remote Config to the
       actual day (e.g. 20261124) before pressing Release, and in the code
       for the next build. Never change either after launch
@@ -109,7 +113,15 @@ Apple's app transfer later.
       subtitle, screenshots, age rating, App Privacy answers. Marketing
       URL: https://dengolabs.com/games/grannys-puzzle/ (AdMob finds
       app-ads.txt through it); support URL: the game's help page
+- [x] App Privacy answers published (8 data types; tracking declared)
+- [x] Screenshots (EN, TR in Turkish), header and search artwork,
+      promotional text and keywords (assets in `granny_puzzle_assets_V1/app-store/`)
+- [ ] Subtitle and description, English and Turkish
+- [x] Price Free; available everywhere except China mainland; not on Mac
+      or Vision Pro for 1.0
 - [ ] Achievements (and leaderboard) attached to version 1.0
+- [ ] In-app purchases NOT attached to 1.0 (shop off, see
+      docs/Monetization.md); App Review note explains it
 
 ## Polish and checks
 
@@ -120,6 +132,15 @@ Apple's app transfer later.
       an SE-sized phone
 - [ ] Firebase DebugView shows the analytics events; Remote Config
       defaults published
+- [ ] Analytics custom definitions registered before launch (the ★
+      parameters in docs/Analytics.md). Reports only show a parameter from
+      the day it's registered, so launch-week data is lost otherwise
+- [x] AdMob linked to Firebase, impression-level ad revenue on
+      (`ad_impression` events, docs/Analytics.md)
+- [ ] AdMob Privacy & messaging: Google consent mode on, so EU consent
+      choices reach Analytics (GameServices/README.md, step 4)
+- [ ] Crashlytics shows the TestFlight build's dSYM as uploaded (no
+      "missing dSYM" warning)
 - [x] App name: "Granny's Puzzle" in Turkish too (no translation)
 
 ## Music and sounds
