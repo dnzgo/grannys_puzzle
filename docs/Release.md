@@ -77,6 +77,10 @@ Apple's app transfer later.
       (`DailyDay.firstDay`)
 - [ ] `daily_first_day` set to 20261120 in the Remote Config console (not
       "Use in-app default"), so the date is moved there if it has to be
+- [ ] During App Review, `daily_first_day` is 20261105 so the reviewer can
+      play the daily (a "soon" button risks a 2.1 rejection). **Before
+      pressing Release, set it back to 20261120** (or the actual day).
+      Version Release is set to manual, so approval doesn't publish it
 - [ ] If the release slips: `daily_first_day` in Remote Config to the
       actual day (e.g. 20261124) before pressing Release, and in the code
       for the next build. Never change either after launch

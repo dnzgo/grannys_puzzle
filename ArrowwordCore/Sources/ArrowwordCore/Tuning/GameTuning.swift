@@ -38,13 +38,6 @@ public struct GameTuning: Equatable, Sendable {
     public var dailyFirstDay = DailyDay.firstDay
     /// What each helper pack and the welcome bundle give in the shop.
     public var shop = ShopPacks.standard
-    /// Whether the shop stall is in grandma's room at all. Off by default:
-    /// 1.0 goes out before Apple has activated the Paid Apps agreement, so
-    /// its purchases can't be reviewed or bought yet, and a shop whose
-    /// products never load would only confuse players (and fail review).
-    /// Turned on from the server once the purchases are approved, with no
-    /// app update.
-    public var shopEnabled = false
 
     public init() {}
 
@@ -80,7 +73,6 @@ public struct GameTuning: Equatable, Sendable {
         case shopGrandmasBig = "shop_grandmas_big"
         case shopBundleHints = "shop_bundle_hints"
         case shopBundleGrandmas = "shop_bundle_grandmas"
-        case shopEnabled = "shop_enabled"
     }
 
     /// Builds the tuning from server values, looked up by key.
@@ -179,12 +171,6 @@ public struct GameTuning: Equatable, Sendable {
             hints: reader.integer(.shopBundleHints, in: 0...1_000).value ?? tuning.shop.welcomeBundle.hints,
             grandmas: reader.integer(.shopBundleGrandmas, in: 0...500).value ?? tuning.shop.welcomeBundle.grandmas
         )
-
-        // The shop switch: 1 on, 0 off. Anything else (a 2, a "true" typed
-        // as text) is a console mistake, and the default stands.
-        if let enabled = reader.integer(.shopEnabled, in: 0...1).value {
-            tuning.shopEnabled = enabled == 1
-        }
 
         return (tuning, reader.ignored)
     }

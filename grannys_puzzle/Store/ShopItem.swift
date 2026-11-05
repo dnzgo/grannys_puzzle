@@ -12,6 +12,16 @@ import ArrowwordCore
 /// tuning (`contents`, read from `ShopPacks`), so both can change after
 /// launch without an app update.
 struct ShopItem: Identifiable {
+    /// Whether this build has a shop at all (the stall in grandma's room).
+    ///
+    /// Off in 1.0: its in-app purchases can't be submitted until Apple
+    /// activates the Paid Apps agreement. Fixed in the build on purpose,
+    /// not a Remote Config switch: App Review (guideline 2.3.1) doesn't
+    /// allow features that can be turned on after review without being
+    /// reviewed. The update that adds the purchases sets this to true, so
+    /// the build Apple reviews is the one that shows the shop.
+    static let isShopOpen = false
+
     /// How Apple treats the purchase, which decides how it's delivered.
     enum Kind {
         /// Bought once, kept forever, restorable ("Remove ads", the bundle).

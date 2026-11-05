@@ -102,21 +102,6 @@ final class GameTuningTests: XCTestCase {
         XCTAssertEqual(result.ignored, [])
     }
 
-    func testTheShopIsOffUntilTheServerTurnsItOn() {
-        // Off by default: 1.0 ships before its purchases can be approved.
-        XCTAssertFalse(resolve([:]).tuning.shopEnabled)
-        XCTAssertTrue(resolve([.shopEnabled: 1]).tuning.shopEnabled)
-        XCTAssertFalse(resolve([.shopEnabled: 0]).tuning.shopEnabled)
-    }
-
-    func testAShopSwitchThatIsntZeroOrOneKeepsTheDefault() {
-        for value in [2.0, 0.5, -1] {
-            let result = resolve([.shopEnabled: value])
-            XCTAssertFalse(result.tuning.shopEnabled, "\(value)")
-            XCTAssertEqual(result.ignored, [.shopEnabled], "\(value)")
-        }
-    }
-
     func testAFirstDayThatIsntADateKeepsTheDefault() {
         // 31 February, and a day number typed instead of a date.
         for value in [20260231.0, 20_788] {
